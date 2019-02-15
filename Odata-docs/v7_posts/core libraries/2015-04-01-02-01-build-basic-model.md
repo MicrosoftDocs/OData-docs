@@ -20,7 +20,7 @@ In Visual Studio, from the **File** menu, select **New > Project**.
 
 Expand **Installed > Templates > Visual C# > Windows Desktop**, and select the **Console Application** template. Name the project **EdmLibSample**, and click **OK**.
 
-![]({{site.baseurl}}/assets/2015-04-16-new-project.png)
+![]({{site.baseurl}}../assets/2015-04-16-new-project.png)
 
 ### Install the EdmLib package
 From the **Tools** menu, select **NuGet Package Manager > Package Manager Console**. In the Package Manager Console window, type:
