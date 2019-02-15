@@ -57,7 +57,7 @@ From [OData Spec](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/comple
   
 So, both entity types and complex types are structured types with properties, include declared properties and navigation properties. Below picture shows the class relationship between complex type and entity type, navigation property and structural property in ODataLib so far.
 
-![]({{site.baseurl}}/assets/2015-12-21-ODL-Class-Relationship.png)
+![image](../v6_posts/assets/2015-12-21-ODL-Class-Relationship.png)
 
 From above picture, we can find that the DeclaredProperties of IEdmStruturedType is defined as a List of IEdmProperty, which can hold either the navigation property or the structural property. So from interface perspective, the navigation property in complex type is supported without any change.
 
@@ -152,7 +152,7 @@ Then, the complex type in metadata document may have navigation property. Let’
 
 Reading/Parse the navigation property in complex type is a lit bit complex. We can analysis the entity type and complex type class inheritance in CSDL. Below picture shows the class relationship between CSDL complex type and CSDL entity type. Both are derived from _CsdlNamedStructuredType_, then derived from _CsdlStructuredType_:
 
-![]({{site.baseurl}}/assets/2015-12-21-CSDL-Class-Relationship.png)
+![image](../v6_posts/assets/2015-12-21-CSDL-Class-Relationship.png)
 
 So, we should modify as follows:
 
@@ -359,7 +359,7 @@ Then, _selectAndExpand_ has one SelectedItems with the following OData path with
 
 Let’s take a look about the serialization flow about navigation property in entity type. Below picture shows the simple flow about the serialization of entry, includes a) entry without expanded navigation property, b) entry with expanded navigation properties.
 
-![]({{site.baseurl}}/assets/2015-12-21-ODL-Serialize-flow.png)
+![image](../v6_posts/assets/2015-12-21-ODL-Serialize-flow.png)
 
 From the picture, we can find that the serialization flow is more complicated if entry with expanded navigation property. Moreover, there’s no way to expand the navigation property in complex type property, owing that the complex type property is serialized completely in WriteStart process for entry same as other structural properties.
 So, as navigation property be allowed in complex type, we should stop the write process for entry once a complex type property with navigation property is met. Then, we can use the process same as navigation property in entity type to write the complex property with expanded navigation property.
@@ -372,7 +372,7 @@ public void WriteStart(ODataExpandableProperty property);
 #### 2.2.2.2 Single expandable property in entry
 Let’s see how to serialize the entry with complex type property in which the navigation properties are expanded.  Based on the above proposal, the basic serialization flow for entry with expandable property with expanded navigation property should be as follows:
 
-![]({{site.baseurl}}/assets/2015-12-21-Expandable-Serialize-flow.png)
+![image](../v6_posts/assets/2015-12-21-Expandable-Serialize-flow.png)
 
 The corresponding server side codes to serialize the navigation property in complex type should be as:
 {% highlight csharp %}
@@ -616,7 +616,7 @@ public abstract class ODataCollectionExpandablePropertyWriter
 The deserialization, or parse payload, or read payload is a process to covert the payload string into OData object, for example, ODataEntry, ODataProperty, etc. The process uses a state to track the reading. So, there are many read states transferred from one to anther in one deserialization process. 
 Let’s have look about the basic entry payload deserialization.
 
-![]({{site.baseurl}}/assets/2015-12-21-ODL-DeSerialize-flow.png)
+![image](../v6_posts/assets/2015-12-21-ODL-DeSerialize-flow.png)
 
 
 #### 2.2.3.2 Single expandable property in entry
@@ -746,11 +746,11 @@ Client defines different materializers to materialize different kind of payload.
 *	ODataPropertyMaterializer: Handle response of querying a property, e.g. GET ~/Customers(1)/Name
 *	ODataLinksMaterializer: Handle response of querying the reference links e.g. GET ~/Customers(1)/Orders(0)/$ref
 
-![]({{site.baseurl}}/assets/2015-12-21-Client-main-flow.png)
+![image](../v6_posts/assets/2015-12-21-Client-main-flow.png)
 
 The common process of a query is:
 
-![]({{site.baseurl}}/assets/2015-12-21-Client-common-query.png)
+![image](../v6_posts/assets/2015-12-21-Client-common-query.png)
 
 The Materialization (Part 2) is driven at the top level by an instance of MaterializeAtom, which implements the enumerable/enumerator. The materializer reads OData object from payload with ODataReader and materialize by calling different materialization policy and tracks materialization activity in an AtomMaterializerLog. Then MaterializeAtom instance applies AtomMaterializerLog onto the context (entityTracker) for each successful call to MoveNext().
 During an entry materialization, MaterializerEntry/MaterializerFeed/MaterializerNavigationLink will be created to record the materializer state for a given ODataEntry, ODataFeed and NavigationLink respectively.
@@ -823,7 +823,7 @@ do
 {% endhighlight %}
 Then the data flow would be like:
 
-![]({{site.baseurl}}/assets/2015-12-21-Client-data-flow.png)
+![image](../v6_posts/assets/2015-12-21-Client-data-flow.png)
 
 2. Materialize
 The materializer will call EntryValueMaterializationPolicy to materialize an entity, and in EntryValueMaterializationPolicy, we can call ExpandableComplexPropertyMaterializationPolicy to handle complex type having navigation property. 
@@ -902,7 +902,7 @@ The binding of entity and its navigation property which has been tracked (materi
 
 So when we try to query an entity, client will work as:
 
-![]({{site.baseurl}}/assets/2015-12-21-Client-query-entity.png)
+![image](../v6_posts/assets/2015-12-21-Client-query-entity.png)
 
 #### 2.3.3.2 Complex type tracking
 Like entity, in order to support LoadProperty, AddRelatedObject, AddLink… on complex type, we need track as well for those complex type having navigation property. But as we do not have an identity for complex type, so we can only track single-value complex type, and the complex type property must be queried inside an entry (Will explain why we has this restriction later). 
@@ -910,11 +910,11 @@ Like entity, in order to support LoadProperty, AddRelatedObject, AddLink… on c
 1.	Create ComplexTypeDescriptor
 In order to reuse current logic of EntityDescriptor, we can add a base class ResourceDescriptor let EntityDescriptor and ComplexTypeDescriptor inherit from it. 
 
-![]({{site.baseurl}}/assets/2015-12-21-Client-class-relation1.png)
+![image](../v6_posts/assets/2015-12-21-Client-class-relation1.png)
 
 2.	Then for EntiyTracker, it will be like:
 
-![]({{site.baseurl}}/assets/2015-12-21-Client-class-relation2.png)
+![image](../v6_posts/assets/2015-12-21-Client-class-relation2.png)
 
 3.	Then track when complex type property is queried through entry
 **Materializer.Read()**:
@@ -1091,7 +1091,7 @@ Then we can support:
 
 Similar with the entity type and complex type structure, Web API OData has the same configuration class structure. Below picture shows the relationship between complex type configuration, entity type configuration and structural type configuration.
 
-![]({{site.baseurl}}/assets/2015-12-21-WebApi-class-relation1.png)
+![image](../v6_posts/assets/2015-12-21-WebApi-class-relation1.png)
 
 
 Owing that _NavigationPropertyConfiguration_ is derived from _PropertyConfiguration_, and all properties for type (entity type or complex), either structural properties, or navigation properties are saved in the following dictionary in _StrucutralTypeCofiguration_:

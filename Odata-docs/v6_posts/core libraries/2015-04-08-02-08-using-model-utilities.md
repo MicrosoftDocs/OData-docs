@@ -69,8 +69,8 @@ namespace EdmLibSample
 ### Run the Sample
 From the **DEBUG** menu, click **Start Without Debugging** to build and run the sample. The console window should **not** disappear after program exits.
 
-![]({{site.baseurl}}/assets/2015-04-20-debug.png)
+![image](../v6_posts/assets/2015-04-20-debug.png)
 
 The output of the console window should look like the following:
 
-![]({{site.baseurl}}/assets/2015-04-20-output.png)
+![image](../v6_posts/assets/2015-04-20-output.png)

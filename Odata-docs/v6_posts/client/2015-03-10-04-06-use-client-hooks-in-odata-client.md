@@ -71,7 +71,6 @@ But for a batch request for changes. `ReceivingResponse` will be fired for both 
     200
     204
     204
-<p/>
 
 200 is the response status code of the top level message. the other two 204 status codes are of the inner responses. 
 

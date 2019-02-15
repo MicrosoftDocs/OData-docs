@@ -38,7 +38,7 @@ GeographyPoint point6 = GeographyPoint.Create(latitude: 12.34, longitude: 56.78,
 
 Spatial instances can be directly put into `ODataPrimitiveValue` as property values. Using the `Address` type from the last section:
 
-![]({{site.baseurl}}/assets/2015-04-21-csdl.png)
+![image](../v6_posts/assets/2015-04-21-csdl.png)
 
 An `ODataComplexValue` for the `Address` type could be constructed as follows:
 
