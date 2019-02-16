@@ -46,4 +46,4 @@ This code:
 ### Run the sample
 Build and run the sample. Then open the **csdl.xml** file under the **output directory**. The content of **csdl.xml** should look like the following:
 
-![]({{site.baseurl}}/assets/2015-04-21-csdl.png)
+![](../../assets/2015-04-21-csdl.png)

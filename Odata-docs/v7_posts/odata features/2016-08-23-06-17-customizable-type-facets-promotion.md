@@ -29,4 +29,4 @@ You plugin a specific set of conversion rules by setting the `ODataUriResolver.T
 
 Let's see a simple example. Consider the expression `Decimal_6_3 mul Decimal_5_4` where `Decimal_6_3` and `Decimal_5_4` are both structural properties of `Edm.Decimal` type. The former has precision 6 and scale 3, while the latter has 5 and 4. Using the default conversion rules, the result would be:
 
-![]({{site.baseurl}}/assets/2016-08-23-facets.png)
+![](../../assets/2016-08-23-facets.png)

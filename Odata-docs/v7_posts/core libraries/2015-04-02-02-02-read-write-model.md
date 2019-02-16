@@ -105,7 +105,7 @@ This code first reads the model from the CSDL document **csdl.xml**, and then wr
 ### Run the sample
 Build and run the sample. Then open the file **csdl.xml** and the file **csdl1.xml** under the **output directory**. The content of **csdl1.xml** should look like the following:
 
-![]({{site.baseurl}}/assets/2015-04-17-csdl1.png)
+![](../../assets/2015-04-17-csdl1.png)
 
 You can see that the contents of **csdl.xml** and **csdl1.xml** are exactly the same except for **the order of the elements**. This is because EdmLib will reorder the elements when parsing a CSDL document.
 
