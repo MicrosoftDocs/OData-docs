@@ -4,6 +4,7 @@ title : "13.3 Multiple Navigation property binding path"
 description: "Navigation property binding with complex and containment"
 category: "13. 6.x Features "
 ---
+# 13.3 Multiple Navigation property binding path
 
 Since [Web API OData V6.0.0 beta](https://www.nuget.org/packages/Microsoft.AspNet.OData/6.0.0-beta2), It supports to configure multiple navigation property binding paths.
 

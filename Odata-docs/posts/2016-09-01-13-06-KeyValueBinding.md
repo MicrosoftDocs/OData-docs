@@ -4,6 +4,7 @@ title : "13.6 Key value binding "
 description: "Key value binding"
 category: "13. 6.x Features "
 ---
+# 13.6 Key value binding
 
 Since [Web API OData V6.0.0 beta](https://www.nuget.org/packages/Microsoft.AspNet.OData/6.0.0-beta2), Web API OData supports the composite key convention binding.
 

@@ -3,6 +3,7 @@ title : "4.14 Capabilities vocabulary support"
 
 category: "4. OData features"
 ---
+# 4.14 Capabilities vocabulary support
 
 Web API OData supports some query limitations, for example:
 

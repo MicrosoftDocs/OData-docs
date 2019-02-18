@@ -3,6 +3,7 @@ title : "4.5 Abstract entity types"
 
 category: "4. OData features"
 ---
+# 4.5 Abstract entity types
 
 Since [Web API OData V5.5-beta](http://www.nuget.org/packages/Microsoft.AspNet.OData/5.5.0-beta), it is allowed to:
 

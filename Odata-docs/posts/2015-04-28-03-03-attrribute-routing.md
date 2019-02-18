@@ -4,6 +4,7 @@ title: "3.3 Attribute Routing"
 description: "Routing Conventions"
 category: "3. Routing"
 ---
+# 3.3 Attribute Routing
 
 Same as Web API, Web API OData supports a new type of routing called **attribute routing**. It uses two *Attributes* to find **controller** and **action**. One is `ODataPrefixAttribute`, the other is `ODataRouteAttribute`.
 

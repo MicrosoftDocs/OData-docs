@@ -4,6 +4,7 @@ title : "4.13 Delta Feed Support"
 category: "4. OData features"
 permalink: "/DeltaFeed_support"
 ---
+# 4.13 Delta Feed Support
 
 <h3>Serialization Support for Delta Feed</h3>
 This sample will introduce how to create a <strong>[Delta Feed](http://docs.oasis-open.org/odata/odata-json-format/v4.0/errata02/os/odata-json-format-v4.0-errata02-os-complete.html#_Toc403940644)</strong> which is serialized into a Delta Response in Web API OData V4.

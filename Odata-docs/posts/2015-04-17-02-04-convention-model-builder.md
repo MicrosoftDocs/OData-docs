@@ -4,6 +4,7 @@ title: "2.4 Convention model builder"
 description: "convention model builder"
 category: "2. Defining the model"
 ---
+# 2.4 Convention model builder
 
 In the previous two sections, we walk you through the required aspects to build an Edm model by directly using **[ODatalib](https://www.nuget.org/packages/Microsoft.OData.Core/)** or leveraging `ODataModelBuilder` fluent API in WebApi OData. 
 

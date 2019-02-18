@@ -4,6 +4,7 @@ title: "2.2 Build Edm Model Explicitly"
 description: "convention model builder"
 category: "2. Defining the model"
 ---
+# 2.2 Build Edm Model Explicitly
 
 As mentioned in previous section, to build Edm model explicitly is to create an `IEdmModel` object directly using **[ODatalib](https://www.nuget.org/packages/Microsoft.OData.Core/)** API. The Edm model built by this method is called **type-less model**, or **week type model**, or just **un-typed model**.
 

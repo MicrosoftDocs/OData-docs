@@ -4,6 +4,7 @@ title: "2.3 Non-convention model builder"
 description: "convention model builder"
 category: "2. Defining the model"
 ---
+# 2.3 Non-convention model builder
 
 To build an Edm model using non-convention model builder is to create an `IEdmModel` object by directly call fluent APIs of `ODataModelBuilder`. The developer should take all responsibility to add all Edm types, operations, associations, etc into the data model one by one.
 Let's see how to build the Ccustomer-Order* business model by `ODataModelBuilder`.

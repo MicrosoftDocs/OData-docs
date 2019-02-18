@@ -1,9 +1,9 @@
 ---
 title : "4.2 Referential constraint"
-
 category: "4. OData features"
 permalink: "/referential-constraint"
 ---
+# 4.2 Referential constraint
 
 The following sample codes can be used for Web API OData V3 & V4 with a little bit function name changing.
 

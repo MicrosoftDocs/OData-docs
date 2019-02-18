@@ -3,6 +3,7 @@ title : "4.6 Function parameter support"
 
 category: "4. OData features"
 ---
+# 4.6 Function parameter support
 
 Since [Web API OData V5.5-beta](http://www.nuget.org/packages/Microsoft.AspNet.OData/5.5.0-beta), it supports the following types as function parameter:
 

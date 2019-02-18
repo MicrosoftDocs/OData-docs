@@ -3,6 +3,7 @@ title : "4.7 Action parameter support"
 
 category: "4. OData features"
 ---
+# 4.7 Action parameter support
 
 Since [Web API OData V5.5-beta](http://www.nuget.org/packages/Microsoft.AspNet.OData/5.5.0-beta), it supports the following types as action parameter:
 

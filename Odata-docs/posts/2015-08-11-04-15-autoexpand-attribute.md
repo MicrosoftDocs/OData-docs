@@ -4,6 +4,7 @@ title: "4.15 AutoExpand attribute"
 description: ""
 category: "4. OData features"
 ---
+# 4.15 AutoExpand attribute
 
 In OData WebApi 5.7, we can put `AutoExpand` attribute on navigation property to make it automatically expand without `expand` query option, or can put this attribute on class to make all Navigation Property on this class automatically expand.
 

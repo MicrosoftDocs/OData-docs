@@ -3,6 +3,7 @@ title : "4.9 Query by dynamic properties"
 
 category: "4. OData features"
 ---
+# 4.9 Query by dynamic properties
 
 Since Web API OData V5.5, it supports filter, select and orderby on dynamic properties.
 

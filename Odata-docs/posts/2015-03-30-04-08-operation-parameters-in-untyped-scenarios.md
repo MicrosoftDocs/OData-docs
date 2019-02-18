@@ -3,6 +3,7 @@ title : "4.8 Operation paramters in untyped scenarios"
 
 category: "4. OData features"
 ---
+# 4.8 Operation paramters in untyped scenarios
 
 In this page, we introduce the Function/Action parameter in untyped scenario. For CLR typed scenarios, please refer to [Function page](http://odata.github.io/WebApi/04-06-function-parameter-support/) and [Action page](http://odata.github.io/WebApi/04-07-action-parameter-support/).
 

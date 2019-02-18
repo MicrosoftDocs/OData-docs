@@ -5,6 +5,7 @@ description: ""
 category: "8. V1-3 specific features"
 permalink: "/concurrency-and-etag"
 ---
+# 8.1 ConcurrencyMode and ETag
 
 In OData V3 protocol, concurrencyMode is a special facet that can be applied to any primitive Entity Data Model (EDM) type. Possible values are `None`, which is the default, and `Fixed`. When used on an EntityType property, `ConcurrencyMode` specifies that the value of that declared property should be used for optimistic concurrency checks. In the metadata, concurrencyMode will be shown as following:
 

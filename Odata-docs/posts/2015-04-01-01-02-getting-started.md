@@ -4,6 +4,7 @@ title:  "1.2 Write a simple OData V4 service"
 date:   2015-03-30 16:54:10
 category: "1. Introduction"
 ---
+# 1.2 Write a simple OData V4 service
 
 Let's get started by creating a simple OData V4 service. It has one entity set `Products`, one entity type `Product`. `Product` has two properties `ID` and `Name`, with `ID` being an integer and `Name` being a string. The service is read only. The only data clients can get besides the service document and metadata document, is the `Products` entity set.
 

@@ -4,6 +4,7 @@ title: "13.2 Complex Type with Navigation Property"
 description: "Build Navigation Property on Complex Type"
 category: "13. 6.x Features "
 ---
+# 13.2 Complex Type with Navigation Property
 
 Since [Web API OData V6.0.0 beta](https://www.nuget.org/packages/Microsoft.AspNet.OData/6.0.0-beta2), It supports to configure navigation property on complex type.
 

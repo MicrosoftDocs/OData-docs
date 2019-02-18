@@ -3,6 +3,7 @@ title : "4.24 MaxExpansionDepth in EnableQueryAttribute"
 
 category: "4. OData features"
 ---
+# 4.24 MaxExpansionDepth in EnableQueryAttribute
 
 Since [Web API OData V5.9.1](http://www.nuget.org/packages/Microsoft.AspNet.OData/5.9.1), it corrected the behavior of MaxExpansionDepth of EnableQueryAtrribute. MaxExpansionDepth means the max expansion depth for the $expand query option.
 

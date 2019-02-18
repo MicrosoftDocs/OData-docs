@@ -4,6 +4,7 @@ title : "14.2 Simplified optional-$-prefix for OData query option for WebAPI que
 description: "7.x WebAPI query parser use optional-$-prefix for OData query option"
 category: "14. 7.x Features "
 ---
+# 14.2 Simplified optional-$-prefix for OData query option for WebAPI query parsing
 
 Since ODL-6.x, **OData Core Library** supports query option with optional-$-prefix as described in [this docs](http://odata.github.io/odata.net/v7/#01-05-di-support).
 

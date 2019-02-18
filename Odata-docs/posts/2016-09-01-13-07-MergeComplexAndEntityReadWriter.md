@@ -4,6 +4,7 @@ title : "13.7 Merge complex & entity value serialize/deserialize"
 description: "Merge complex & entity"
 category: "13. 6.x Features "
 ---
+# 13.7 Merge complex & entity value serialize/deserialize
 
 You can refer the detail in: [complex type and entity type](http://odata.github.io/odata.net/v7/#10-42-merge-complex-and-entity) in ODL 7.0 doc.
 

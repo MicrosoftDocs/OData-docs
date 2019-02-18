@@ -4,6 +4,7 @@ title : "13.5 Use ODL path classes "
 description: "Path change"
 category: "13. 6.x Features "
 ---
+# 13.5 Use ODL path classes
 
 Since [Web API OData V6.0.0 beta](https://www.nuget.org/packages/Microsoft.AspNet.OData/6.0.0-beta2), Web API OData uses the ODL path classes directly.
 

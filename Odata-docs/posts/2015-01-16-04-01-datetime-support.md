@@ -1,9 +1,10 @@
 ---
 title : "4.1 DateTime support"
-
 category: "4. OData features"
 permalink: "/datetime-support"
 ---
+
+# 4.1 DateTime support
 
 This sample will introduce how to support *DateTime* type in Web API OData V4.
 

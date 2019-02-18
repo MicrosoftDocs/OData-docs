@@ -1,9 +1,9 @@
 ---
 title : "6.1 Custom URL parsing"
-
 category: "6. Customization"
 permalink: "/case-insensitive"
 ---
+# 6.1 Custom URL parsing
 
 Let's show how to extend the default OData Uri Parser behavior:
 
