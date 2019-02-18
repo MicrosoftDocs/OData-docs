@@ -1,2 +1,201 @@
 - name: Index
   href: index.md
+  items:
+  - name: 1. Introduction
+    items:
+    - name: 1.1 Preface
+      href: Odata-docs\posts\2015-03-30-01-01-preface.md
+    - name: 1.2 Write a simple OData V4 service
+      href: Odata-docs\posts\2015-04-01-01-02-getting-started.md
+  - name: 2. Defining the model
+    items:
+    - name: 2.1 Introduction to the model builders
+      href: Odata-docs\posts\2015-04-17-02-01-model-builder-abstract.md
+    - name: 2.2 Build Edm Model Explicitly
+      href: Odata-docs\posts\2015-04-17-02-02-model-builder-untyped.md
+    - name: 2.3 Non-convention model builder
+      href: Odata-docs\posts\2015-04-17-02-03-model-builder-nonconvention.md
+    - name: 2.4 Convention model builder
+      href: Odata-docs\posts\2015-04-17-02-04-convention-model-builder.md
+    - name: 2.5 Summary
+      href: Odata-docs\posts\2015-04-17-02-05-model-builder-summary.md
+  - name: 3. Routing
+    items:
+    - name: 3.1 Introduction Routing
+      href: Odata-docs\posts\2015-04-27-03-01-routing-abstract.md
+    - name: 3.2 Built-in routing conventions
+      href: Odata-docs\posts\2015-04-27-03-02-built-in-routing-conventions.md
+    - name: 3.3 Attribute Routing
+      href: Odata-docs\posts\2015-04-28-03-03-attrribute-routing.md
+    - name: 3.4 Custom routing convention
+      href: Odata-docs\posts\2015-04-28-03-04-custom-routing-convention.md
+  - name: 4. OData features
+    href: 
+    items:
+    - name: 4.1 DateTime support
+      href: posts/2015-01-16-04-01-datetime-support.md
+    - name: 4.2 Referential constraint
+      href: posts/2015-01-16-04-02-referential-constraint.md
+    - name: 4.3 Nested $filter in $expand
+      href: Odata-docs\posts\2015-03-20-04-03-filter-in-expand.md
+    - name: 4.4 Edm.Date and Edm.TimeOfDay
+      href: Odata-docs\posts\2015-03-23-04-04-date-and-timeofday-support.md
+    - name: 4.5 Abstract entity types
+      href: Odata-docs\posts\2015-03-24-04-05-abstract-entity-types.md
+    - name: 4.6 Function parameter support
+      href: Odata-docs\posts\2015-03-25-04-06-function-parameter-support.md
+    - name: 4.7 Action parameter support
+      href: Odata-docs\posts\2015-03-30-04-07-action-parameter-support.md
+    - name: 4.8 Operation paramters in untyped scenarios
+      href: Odata-docs\posts\2015-03-30-04-08-operation-parameters-in-untyped-scenarios.md
+    - name: 4.9 Query by dynamic properties
+      href: Odata-docs\posts\2015-03-31-04-09-query-by-dynamic-properties.md
+    - name: 4.10 Open type in untyped scenarios
+      href: Odata-docs\posts\2015-03-31-04-10-open-type-in-untyped-scenarios.md
+    - name: 4.11 Query Options
+      href: Odata-docs\posts\2015-05-06-04-11-query-option.md
+    - name: 4.12 Batch Support
+      href: Odata-docs\posts\2015-05-12-04-12-batch.md
+    - name: 4.13 Delta Feed Support
+      href: Odata-docs\posts\2015-05-19-04-13-DeltaFeed_support.md
+    - name: 4.14 Capabilities vocabulary support
+      href: Odata-docs\posts\2015-07-15-04-14-capabilities-vocabulary-support.md
+    - name: 4.15 AutoExpand attribute
+      href: Odata-docs\posts\2015-08-11-04-15-autoexpand-attribute.md
+    - name: 4.16 Ignore query option
+      href: Odata-docs\posts\2015-08-11-04-16-ignore-query-option.md
+    - name: 4.17 Alternate keys
+      href: Odata-docs\posts\2015-08-11-04-17-Alternate-Key.md
+    - name: 4.18 Add NextPageLink and $count for collection property
+      href: Odata-docs\posts\2015-09-15-04-18-AddNextPageLinkAndCountForCollectionProperty.md
+    - name: 4.19 Prefer odata.include-annotations
+      href: Odata-docs\posts\2015-09-16-04-19-odataIncludeAnnotations.md
+    - name: 4.20 Prefer odata.continue-on-error
+      href: Odata-docs\posts\2015-09-16-04-20-ContinueOnError.md
+    - name: 4.21 Set namespace for operations in model builder
+      href: Odata-docs\posts\2015-09-16-04-21-Set-namespaces-for-operations.md
+    - name: 4.22 Use HttpRequestMessage Extension Methods
+      href: Odata-docs\posts\2015-09-17-04-22-Use-HttpRequestMessage-Extension-Method.md
+    - name: 4.23 OData Simplified Uri convention
+      href: Odata-docs\posts\2015-12-20-04-23-simplified-uri-convention.md
+    - name: 4.24 MaxExpansionDepth in EnableQueryAttribute
+      href: Odata-docs\posts\2016-07-12-04-24-MaxExpansionDepthInEnableQueryAttribute.md
+    - name: 4.25 Bind Custom UriFunctions to CLR Methods
+      href: Odata-docs\posts\2016-07-12-04-25-bind-custom-urifunctions-to-clr-methods.md
+    - name: 4.26 IN Operator
+      href: Odata-docs\posts\2018-07-03-04-26-InOperator.md
+  - name: 5. Security
+    items:
+    - name: 5.1 Basic authentication over HTTPS
+      href: Odata-docs\posts\2015-04-17-05-01-basic-auth.md
+  - name: 6. Customization
+    items:
+    - name: 6.1 Custom URL parsing
+      href: Odata-docs\posts\2015-01-16-06-01-custom-url-parsing.md
+    - name: 6.2 Relax version constraints
+      href: Odata-docs\posts\2015-01-16-06-02-relax-version-constraints.md
+    - name: 6.3 Customize OData Formatter
+      href: Odata-docs\posts\2015-04-21-06-03-costomize-odata-formatter.md
+    - name: 6.4 Custom Stream Entity
+      href: Odata-docs\posts\2015-09-16-06-04-streamEntity.md
+    - name: 6.5 Customize unsupported types
+      href: Odata-docs\posts\2017-09-11-06-04-UnsupportedTypeUsage.md
+  - name: 7. Release notes
+    href:
+    items:
+    - name: 7.1 OData Web API 5.4 Beta
+      href: posts/2015-01-16-07-01-5-4-beta.md
+    - name: 7.2 OData Web API 5.4 RC
+      href: Odata-docs\posts\2015-01-30-07-02-5-4-rc.md
+    - name: 7.3 OData Web API 5.4
+      href: Odata-docs\posts\2015-02-06-07-03-5-4.md
+    - name: 7.4 OData Web API 5.5
+      href: Odata-docs\posts\2015-03-30-07-04-5-5.md
+    - name: 7.5 OData Web API 5.5.1
+      href: Odata-docs\posts\2015-04-03-07-05-5-5-1.md
+    - name: 7.6 OData Web API 5.6 beta1
+      href: Odata-docs\posts\2015-04-30-07-06-5-6-beta1.md
+    - name: 7.7 OData Web API 5.6
+      href: Odata-docs\posts\2015-05-28-07-07-5-6-rtm.md
+    - name: 7.8 OData Web API 6.0.0 alpha1
+      href: Odata-docs\posts\2015-06-05-07-07-6-0-0-alpha1.md
+    - name: 7.9 OData Web API 5.7 beta
+      href: Odata-docs\posts\2015-07-24-07-09-5-7-beta.md
+    - name: 7.10 OData Web API 5.7 rc
+      href: Odata-docs\posts\2015-08-05-07-10-5-7-rc.md
+    - name: 7.11 OData Web API 5.7
+      href: Odata-docs\posts\2015-08-21-07-11-5-7.md
+    - name: 7.13 OData Web API 5.8 rc
+      href: Odata-docs\posts\2015-12-24-07-13-5-8-rc.md
+    - name: 7.14 OData Web API 5.8
+      href: Odata-docs\posts\2016-01-13-07-14-5-8.md
+    - name: 7.15 OData Web API 5.9
+      href: Odata-docs\posts\2016-02-04-07-15-5-9.md
+    - name: 7.16 OData Web API 5.9.1
+      href: Odata-docs\posts\2016-07-01-07-16-5-9-1.md
+    - name: 7.17 OData Web API 6.0.0-beta
+      href: Odata-docs\posts\2016-08-29-07-17-6-0-beta.md
+    - name: 7.18 OData Web API 6.0.0
+      href: Odata-docs\posts\2016-09-14-07-18-6-0.md
+    - name: 7.19 OData Web API 5.10
+      href: Odata-docs\posts\2017-03-10-07-19-5-10.md
+    - name: 7.20 OData Web API 6.1
+      href: Odata-docs\posts\2017-03-10-07-20-6-1.md
+    - name: 7.21 OData Web API 5.11
+      href: Odata-docs\posts\2017-09-05-07-21-5.11.md
+  - name: 8. V1-3 specific features
+    items:
+    - name: 8.1 ConcurrencyMode and ETag
+      href: Odata-docs\posts\2015-04-21-08-01-concurrencymode-and-etag.md
+  - name: 9. Test
+    items:
+    - name: 9.1 Unit Test and E2E Test
+      href: Odata-docs\posts\2015-05-08-09-01-unittest-e2etest.md
+  - name: 10. Others
+    items:
+    - name: 10.1 How To Debug
+      href: Odata-docs\posts\2015-06-01-10-01-debug-webapi-source.md
+    - name: 10.2 Work around for SingleResult.Create an empty result
+      href: Odata-docs\posts\2015-07-24-10-02-work-around-for-singleresult-create.md
+  - name: 11. Tools
+    items:
+    - name: 11.1 OData V4 Web API Scaffolding
+      href: Odata-docs\posts\2015-06-03-11-01-OData-V4-Web-API-Scaffolding.md
+  - name: 12. Design
+    items:
+    - name: 12.1 Edm.Date and Edm.TimeOfDay with EF
+      href: Odata-docs\posts\2016-01-06-12-01-DateAndTimeOfDayWithEF.md
+    - name: 12.2 WebApi 7.0 Default Setting Updates
+      href: Odata-docs\posts\2018-06-18-12-02-WebApiV7newDefaultSettings.md
+    - name: 12.3 Use $skiptoken for server side paging
+      href: Odata-docs\posts\2018-10-15-12-2-Use-SkipToken-for-Server-Side-Paging.md
+  - name: 13. 6.x Features
+    items:
+    - name: 13.1 Model Bound Attributes
+      href: Odata-docs\posts\2016-08-05-13-01-modelbound-attribute.md
+    - name: 13.2 Complex Type with Navigation Property
+      href: Odata-docs\posts\2016-08-30-13-02-ComplexTypeWithNavigationProperty.md
+    - name: 13.3 Multiple Navigation property binding path
+      href: Odata-docs\posts\2016-08-30-13-03-NavigationPropertyBindingWithComplexType.md
+    - name: 13.4 Dependency Injection Support
+      href: Odata-docs\posts\2016-08-30-13-04-DependencyInjection.md
+    - name: 13.5 Use ODL path classes
+      href: Odata-docs\posts\2016-09-01-13-05-PathSegmentChange.md
+    - name: 13.6 Key value binding
+      href: Odata-docs\posts\2016-09-01-13-06-KeyValueBinding.md
+    - name: 13.7 Merge complex & entity value serialize/deserialize
+      href: Odata-docs\posts\2016-09-01-13-07-MergeComplexAndEntityReadWriter.md
+  - name: 14. 7.x Features
+    items:
+    - name: 14.1 7.0 Beta1 & Beta2 &amp; Beta4
+      href: Odata-docs\posts\2017-12-21-14-01-netcore-beta1.md
+    - name: 14.2 Simplified optional-$-prefix for OData query option for WebAPI query parsing
+      href: Odata-docs\posts\2018-02-05-14-02-enableNoDollarQueryOptions.md
+    - name: "14.3 WebApi URI parser default setting updates: case-insensitive names and unqualified functions &amp; actions"
+      href: Odata-docs\posts\2018-02-05-14-03-caseInsensitiveAndQualifiedFunctions.md
+    - name: 14.4 OData Web API 7.0 (.NET Core and .NET Classic)
+      href: Odata-docs\posts\2018-06-29-14-04-netcore-7-0.md
+    - name: 14.5 OData Web API 7.0.1 (.NET Core and .NET Classic)
+      href: Odata-docs\posts\2018-07-18-14-05-netcore-7-0-1.md
+    - name: 14.6 OData Web API 7.1.0 (.NET Core and .NET Classic)
+      href: Odata-docs\posts\2018-11-19-14-06-webapi-7-1-0.md
