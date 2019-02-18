@@ -44,19 +44,19 @@ So, the controller convention is:  **[entityset name] + "Controller"**, derived 
 
 **Querying Entities**
 
-![]({{site.baseurl}}/img/03-02-queryEntitiesConvention.png)
+![](../assets/03-02-queryEntitiesConvention.png)
 
 **Creating, Updating, and Deleting Entities**
 
-![]({{site.baseurl}}/img/03-02-updateDeleteEntitiesConvention.png)
+![](../assets/03-02-updateDeleteEntitiesConvention.png)
 
 **Operation on Navigation Property**
 
-![]({{site.baseurl}}/img/03-02-navigationRoutingConvention.png)
+![](../assets/03-02-navigationRoutingConvention.png)
 
 **Querying, Creating and Deleting Links**
 
-![]({{site.baseurl}}/img/03-02-navigationlinkeConvention.png)
+![](../assets/03-02-navigationlinkeConvention.png)
 
 **Properties**
 
@@ -69,13 +69,13 @@ GET /entityset(key)/cast/property | /Products(1)/Models.Book/Author | GetPropert
 
 **Action** only supports the **POST** request method, and the parameters are sent using the request body. In controller, each action is using an `ODataActionParameters` to accept the parameters' value:
 
-![]({{site.baseurl}}/img/03-02-actionConvention.png)
+![](../assets/03-02-actionConvention.png)
 
 **Functions**
 
 **Functions** only supports the **GET** request method.
 
-![]({{site.baseurl}}/img/03-02-functionConvention.png)
+![](../assets/03-02-functionConvention.png)
 
 
 
