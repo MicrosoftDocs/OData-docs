@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "6.5 Customize unsupported types"
 description: ""
 category: "6. Customization"

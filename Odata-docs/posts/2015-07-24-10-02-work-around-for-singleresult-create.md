@@ -1,6 +1,6 @@
 ---
 title : "10.2 Work around for SingleResult.Create an empty result"
-layout: post
+
 category: "10. Others"
 ---
 

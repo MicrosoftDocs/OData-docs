@@ -1,6 +1,6 @@
 ---
 title : "6.1 Custom URL parsing"
-layout: post
+
 category: "6. Customization"
 permalink: "/case-insensitive"
 ---

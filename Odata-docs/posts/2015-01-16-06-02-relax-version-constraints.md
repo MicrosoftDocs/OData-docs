@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "6.2 Relax version constraints"
 description: ""
 category: "6. Customization"

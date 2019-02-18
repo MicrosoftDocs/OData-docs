@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title : "13.1 Model Bound Attributes"
 description: "Model bound attributes"
 category: "13. 6.x Features "

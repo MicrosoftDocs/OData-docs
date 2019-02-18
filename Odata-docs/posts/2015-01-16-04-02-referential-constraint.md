@@ -1,6 +1,6 @@
 ---
 title : "4.2 Referential constraint"
-layout: post
+
 category: "4. OData features"
 permalink: "/referential-constraint"
 ---

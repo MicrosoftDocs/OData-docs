@@ -1,6 +1,6 @@
 ---
 title : "4.8 Operation paramters in untyped scenarios"
-layout: post
+
 category: "4. OData features"
 ---
 

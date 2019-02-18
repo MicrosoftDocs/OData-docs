@@ -1,6 +1,6 @@
 ---
 title : "4.14 Capabilities vocabulary support"
-layout: post
+
 category: "4. OData features"
 ---
 

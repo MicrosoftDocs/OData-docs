@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "4.20 Prefer odata.continue-on-error"
 description: ""
 category: "4. OData features"

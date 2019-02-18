@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "4.21 Set namespace for operations in model builder"
 description: ""
 category: "4. OData features"

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "4.16 Ignore query option"
 description: ""
 category: "4. OData features"

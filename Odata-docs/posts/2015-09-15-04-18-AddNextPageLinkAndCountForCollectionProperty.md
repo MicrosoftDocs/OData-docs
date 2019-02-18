@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "4.18 Add NextPageLink and $count for collection property"
 description: ""
 category: "4. OData features"

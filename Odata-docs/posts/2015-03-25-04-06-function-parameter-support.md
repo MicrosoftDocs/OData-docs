@@ -1,6 +1,6 @@
 ---
 title : "4.6 Function parameter support"
-layout: post
+
 category: "4. OData features"
 ---
 

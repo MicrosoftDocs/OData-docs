@@ -1,6 +1,6 @@
 ---
 title : "4.25 Bind Custom UriFunctions to CLR Methods"
-layout: post
+
 category: "4. OData features"
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "9.1 Unit Test and E2E Test"
 description: ""
 category: "9. Test"

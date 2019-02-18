@@ -1,6 +1,6 @@
 ---
 title : "4.10 Open type in untyped scenarios"
-layout: post
+
 category: "4. OData features"
 ---
 

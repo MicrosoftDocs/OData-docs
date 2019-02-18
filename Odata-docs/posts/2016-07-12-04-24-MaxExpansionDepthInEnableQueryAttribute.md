@@ -1,6 +1,6 @@
 ---
 title : "4.24 MaxExpansionDepth in EnableQueryAttribute"
-layout: post
+
 category: "4. OData features"
 ---
 

@@ -1,6 +1,6 @@
 ---
 title : "4.9 Query by dynamic properties"
-layout: post
+
 category: "4. OData features"
 ---
 

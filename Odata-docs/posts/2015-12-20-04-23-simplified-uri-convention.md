@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "4.23 OData Simplified Uri convention"
 description: ""
 category: "4. OData features"

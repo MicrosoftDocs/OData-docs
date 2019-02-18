@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "3.2 Built-in routing conventions"
 description: "Routing Conventions"
 category: "3. Routing"

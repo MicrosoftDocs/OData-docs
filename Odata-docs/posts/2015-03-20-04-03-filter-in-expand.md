@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "4.3 Nested $filter in $expand"
 description: ""
 category: "4. OData features"

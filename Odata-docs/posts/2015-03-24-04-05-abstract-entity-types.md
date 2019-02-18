@@ -1,6 +1,6 @@
 ---
 title : "4.5 Abstract entity types"
-layout: post
+
 category: "4. OData features"
 ---
 

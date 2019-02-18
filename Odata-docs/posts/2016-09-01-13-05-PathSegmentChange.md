@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title : "13.5 Use ODL path classes "
 description: "Path change"
 category: "13. 6.x Features "

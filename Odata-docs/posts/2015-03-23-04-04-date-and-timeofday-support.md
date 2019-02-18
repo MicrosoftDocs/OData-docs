@@ -1,6 +1,6 @@
 ---
 title : "4.4 Edm.Date and Edm.TimeOfDay"
-layout: post
+
 category: "4. OData features"
 ---
 

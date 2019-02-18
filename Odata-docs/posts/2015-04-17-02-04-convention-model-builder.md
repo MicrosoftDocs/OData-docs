@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "2.4 Convention model builder"
 description: "convention model builder"
 category: "2. Defining the model"

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title : "14.2 Simplified optional-$-prefix for OData query option for WebAPI query parsing"
 description: "7.x WebAPI query parser use optional-$-prefix for OData query option"
 category: "14. 7.x Features "

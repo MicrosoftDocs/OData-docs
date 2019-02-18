@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "3.1 Introduction Routing"
 description: "Routing Conventions"
 category: "3. Routing"

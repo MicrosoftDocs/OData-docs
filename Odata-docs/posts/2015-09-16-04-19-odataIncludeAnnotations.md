@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "4.19 Prefer odata.include-annotations"
 description: ""
 category: "4. OData features"

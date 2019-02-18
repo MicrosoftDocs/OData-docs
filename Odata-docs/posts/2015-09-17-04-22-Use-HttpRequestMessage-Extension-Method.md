@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "4.22 Use HttpRequestMessage Extension Methods"
 description: ""
 category: "4. OData features"

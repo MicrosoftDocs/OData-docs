@@ -1,7 +1,7 @@
 ---
 title : "6.3 Customize OData Formatter"
 description: "Customize OData Formatter"
-layout: post
+
 category: [6. Customization]
 ---
 

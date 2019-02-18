@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "4.15 AutoExpand attribute"
 description: ""
 category: "4. OData features"

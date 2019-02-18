@@ -1,6 +1,6 @@
 ---
 title : "4.7 Action parameter support"
-layout: post
+
 category: "4. OData features"
 ---
 

@@ -1,6 +1,6 @@
 ---
 title : "4.13 Delta Feed Support"
-layout: post
+
 category: "4. OData features"
 permalink: "/DeltaFeed_support"
 ---

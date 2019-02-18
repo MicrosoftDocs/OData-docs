@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "13.2 Complex Type with Navigation Property"
 description: "Build Navigation Property on Complex Type"
 category: "13. 6.x Features "

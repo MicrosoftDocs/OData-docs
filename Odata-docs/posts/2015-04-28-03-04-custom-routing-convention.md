@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "3.4 Custom routing convention"
 description: "Routing Conventions"
 category: "3. Routing"

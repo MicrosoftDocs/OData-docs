@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title : "13.6 Key value binding "
 description: "Key value binding"
 category: "13. 6.x Features "

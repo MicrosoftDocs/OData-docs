@@ -1,6 +1,6 @@
 ---
 title : "4.1 DateTime support"
-layout: post
+
 category: "4. OData features"
 permalink: "/datetime-support"
 ---

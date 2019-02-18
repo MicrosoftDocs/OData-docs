@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "2.2 Build Edm Model Explicitly"
 description: "convention model builder"
 category: "2. Defining the model"
