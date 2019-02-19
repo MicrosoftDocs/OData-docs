@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "7.1 Parser Extension Design"
 description: "Design doc for uriparser, keyassegment"
 category: "7. Design"

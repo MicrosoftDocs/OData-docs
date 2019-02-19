@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Support untyped json in ODataLib and Client"
 description: ""
 category: "6. OData Features"

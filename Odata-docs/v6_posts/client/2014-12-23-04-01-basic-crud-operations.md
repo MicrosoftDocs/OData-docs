@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Basic CRUD Operations"
 description: ""
 category: "4. Client"

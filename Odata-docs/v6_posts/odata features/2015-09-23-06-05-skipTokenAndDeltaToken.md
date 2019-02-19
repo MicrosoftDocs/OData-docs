@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "$skiptoken & $deltatoken"
 description: ""
 category: "6. OData Features"

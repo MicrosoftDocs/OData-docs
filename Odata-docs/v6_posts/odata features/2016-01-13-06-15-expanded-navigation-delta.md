@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Expanded Navigation Property Support in Delta Response"
 description: ""
 category: "6. OData Features"

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Allow serialization of additional properties"
 description: ""
 category: "6. OData Features"

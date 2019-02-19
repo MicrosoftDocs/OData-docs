@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Client Hooks in OData Client"
 description: "How to use client hooks to compose higher level functionality"
 category: "4. Client"

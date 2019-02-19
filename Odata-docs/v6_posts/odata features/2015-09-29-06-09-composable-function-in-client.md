@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Composable function in Client"
 description: ""
 category: "6. OData Features"

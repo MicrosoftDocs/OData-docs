@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Get Response Content for Data Modification Requests"
 description: ""
 category: "4. Client"

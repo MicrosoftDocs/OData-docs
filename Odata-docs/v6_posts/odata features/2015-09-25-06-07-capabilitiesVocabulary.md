@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Capabilities vocabulary support"
 description: ""
 category: "6. OData Features"

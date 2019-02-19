@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Asynchronous operations"
 description: ""
 category: "4. Client"

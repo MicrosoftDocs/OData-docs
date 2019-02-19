@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Deal with server-driven paging"
 description: ""
 category: "4. Client"

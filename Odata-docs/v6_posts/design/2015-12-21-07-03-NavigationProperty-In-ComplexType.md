@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "7.3 Navigation Property in Complex Type Design"
 description: "Design doc for navigation property, complex type"
 category: "7. Design"

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Add vocabulary annotations to EdmEnumMember"
 description: ""
 category: "6. OData Features"

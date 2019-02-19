@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Abstract entity type support in .NET client"
 description: ""
 category: "6. OData Features"

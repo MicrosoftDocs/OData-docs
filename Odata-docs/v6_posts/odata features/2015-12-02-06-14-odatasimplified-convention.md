@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Use ODataSimplified Convention In ODataUriParser"
 description: ""
 category: "6. OData Features"

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Use HttpClient in OData Client"
 description: ""
 category: "4. Client"

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Disable instance annotation materialization in .NET client"
 description: ""
 category: "6. OData Features"

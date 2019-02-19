@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Add additional prefer header"
 description: ""
 category: "6. OData Features"

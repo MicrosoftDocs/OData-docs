@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Write NextPageLink/Count for collection"
 description: ""
 category: "6. OData Features"
