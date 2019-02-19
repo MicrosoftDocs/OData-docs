@@ -2,8 +2,8 @@
 title: "Client Annotation Support"
 description: "This tutorial describes how to get annotations on client side"
 category: "4. Client"
-author: apexprodleads
-ms.author: apexprodleads
+author: Khairunj
+ms.author: Khairunj
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple

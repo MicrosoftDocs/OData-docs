@@ -2,8 +2,8 @@
 title: "Basic Uri parser support for aggregations"
 description: ""
 category: "6. OData Features"
-author: apexprodleads
-ms.author: apexprodleads
+author: Khairunj
+ms.author: Khairunj
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple

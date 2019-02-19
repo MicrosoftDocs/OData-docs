@@ -2,8 +2,8 @@
 title: "7.3 Navigation Property in Complex Type Design"
 description: "Design doc for navigation property, complex type"
 category: "7. Design"
-author: apexprodleads
-ms.author: apexprodleads
+author: Khairunj
+ms.author: Khairunj
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple

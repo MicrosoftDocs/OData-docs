@@ -2,8 +2,8 @@
 title: "Write NextPageLink/Count for collection"
 description: ""
 category: "6. OData Features"
-author: apexprodleads
-ms.author: apexprodleads
+author: Khairunj
+ms.author: Khairunj
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple

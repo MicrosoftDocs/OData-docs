@@ -2,8 +2,8 @@
 title: "2.11 Define referential constraints"
 description: "Define referential constraints using EdmLib APIs"
 category: "2. EdmLib"
-author: apexprodleads
-ms.author: apexprodleads
+author: Khairunj
+ms.author: Khairunj
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple

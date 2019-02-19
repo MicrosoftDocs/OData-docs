@@ -2,8 +2,8 @@
 title: "2.2 Read and write models"
 description: "Read and write entity data models using EdmLib APIs"
 category: "2. EdmLib"
-author: apexprodleads
-ms.author: apexprodleads
+author: Khairunj
+ms.author: Khairunj
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
