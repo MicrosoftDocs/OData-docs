@@ -181,4 +181,4 @@ The `Sample.NS.MostValuable` function import is actually the `Sample.NS.MostExpe
 ### Run the Sample
 Build and run the sample. Then open the **csdl.xml** file under the **output directory**. The content of **csdl.xml** should look like the following:
 
-![image](../v6_posts/assets/2015-04-20-csdl.png)
+![image](../../assets/2015-04-20-csdl.png)

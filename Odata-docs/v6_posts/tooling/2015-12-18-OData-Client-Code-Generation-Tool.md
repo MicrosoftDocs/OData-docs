@@ -33,7 +33,7 @@ Expand **Online > Visual Studio Gallery > Tools > Connected Service**, and selec
 
 Click **Download**.
 
- ![image](../v6_posts/assets/tooling/odata-connected-service-install-extension.png)
+ ![image](../../assets/tooling/odata-connected-service-install-extension.png)
 
 Then it will pop up a **VSIX Installer** window, Click **Install**.
 
@@ -57,23 +57,23 @@ In the **Solution Explorer** pane, right click the "TrippinApp" project and sele
 
 In the **Add Connected Service** dialog, select **OData** and then click **Configure**.
 
- ![image](../v6_posts/assets/tooling/odata-connected-service-new.PNG)
+ ![image](../../assets/tooling/odata-connected-service-new.PNG)
 
 In the **Configure endpoint** dialog, input the service name and the OData service endpoint, then click **Next** button.
 
-![image](../v6_posts/assets/tooling/odata-connected-service-config-endpoint.PNG)
+![image](../../assets/tooling/odata-connected-service-config-endpoint.PNG)
  
 In the **Settings** dialog, enter the file name(without extension) of the proxy file and click **Finish**.
 
-![image](../v6_posts/assets/tooling/odata-connected-service-config-file-name.PNG)
+![image](../../assets/tooling/odata-connected-service-config-file-name.PNG)
 
 In the **Settings** dialog, You also can configure some other settings by click **AdvancedSettings** link. Then you can set the related code generation settings.
 
-![image](../v6_posts/assets/tooling/odata-connected-service-advanced-settings.PNG)
+![image](../../assets/tooling/odata-connected-service-advanced-settings.PNG)
 
 Once you finished all those settings, click **Finish**. This tool will begin to install the related NuGet packages and generate the client proxy file into your project.
 
-![image](../v6_posts/assets/tooling/odata-connected-service-generate.PNG)
+![image](../../assets/tooling/odata-connected-service-generate.PNG)
 
 ## Consume the OData service ##
 
@@ -97,7 +97,7 @@ Now, the developer can write client code to consume the OData Service.
 	}
 
 
-![image](../v6_posts/assets/tooling/odata-connected-service-consume.PNG)
+![image](../../assets/tooling/odata-connected-service-consume.PNG)
 
 # Summary #
 

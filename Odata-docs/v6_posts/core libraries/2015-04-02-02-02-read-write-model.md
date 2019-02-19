@@ -128,7 +128,7 @@ This code first reads the model from the CSDL document **csdl.xml** and then wri
 ### Run the Sample
 Build and run the sample. Then open both the **csdl.xml** file and the **csdl1.xml** file under the **output directory**. The content of **csdl1.xml** should look like the following:
 
-![image](../v6_posts/assets/2015-04-17-csdl1.png)
+![image](../../assets/2015-04-17-csdl1.png)
 
 You can see that the contents of **csdl.xml** and **csdl1.xml** are exactly the same except for **the order of the elements**. This is because EdmLib will reorder the elements when parsing a CSDL document.
 
