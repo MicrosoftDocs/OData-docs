@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "2.6 Define operations"
 description: "Define operations and operation imports using EdmLib APIs"
 category: "2. EdmLib"

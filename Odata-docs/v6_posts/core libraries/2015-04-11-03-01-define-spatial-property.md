@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "3.1 Define spatial properties"
 description: "Define spatial properties in entity data models"
 category: "3. Spatial"

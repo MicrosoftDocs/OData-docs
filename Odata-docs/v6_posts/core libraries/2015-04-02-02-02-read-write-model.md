@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "2.2 Read and write models"
 description: "Read and write entity data models using EdmLib APIs"
 category: "2. EdmLib"

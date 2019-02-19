@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "2.11 Define referential constraints"
 description: "Define referential constraints using EdmLib APIs"
 category: "2. EdmLib"
