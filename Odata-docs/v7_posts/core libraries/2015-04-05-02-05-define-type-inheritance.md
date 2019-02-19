@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "2.5 Define type inheritance"
 description: "Define type inheritance using EdmLib APIs"
 category: "2. EdmLib"

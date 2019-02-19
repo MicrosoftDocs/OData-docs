@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "6.2 Design doc for $expand in context-url for OData V4.01"
 description: "Design doc for $expand in context-url for OData V4.01"
 category: "6. Design"

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "2.4 Define singletons"
 description: "Define singleton using EdmLib APIs"
 category: "2. EdmLib"

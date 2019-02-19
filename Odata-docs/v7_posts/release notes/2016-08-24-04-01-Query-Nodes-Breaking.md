@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Breaking changes about Query Nodes"
 description: ""
 category: "4. Release Notes"

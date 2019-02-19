@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "2.9 Model references"
 description: "Model references"
 category: "2. EdmLib"

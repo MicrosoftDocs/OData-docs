@@ -1,5 +1,4 @@
----
-layout: post
+---s
 title: "Merge complex type and entity type"
 description: "Merge complex and entity for OData Serialization and Deserialization"
 category: "5. OData Features"

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Read and Write Untyped values in ODataLib"
 description: ""
 category: "5. OData Features"

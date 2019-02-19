@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Override type annotation in serialization"
 description: ""
 category: "5. OData Features"

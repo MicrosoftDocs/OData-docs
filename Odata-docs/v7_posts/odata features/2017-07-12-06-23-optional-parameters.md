@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Optional Parameters"
 description: ""
 category: "5. OData Features"

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Centralized control for OData Simplified Options"
 description: ""
 category: "5. OData Features"

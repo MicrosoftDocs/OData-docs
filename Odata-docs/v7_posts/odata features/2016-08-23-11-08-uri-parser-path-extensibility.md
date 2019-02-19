@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "OData Uri Path Parser Extensibility"
 description: "This feature enable developers to customize Uri path parser"
 category: "5. OData Features"

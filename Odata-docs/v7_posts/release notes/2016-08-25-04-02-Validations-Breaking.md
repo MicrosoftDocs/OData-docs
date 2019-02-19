@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Breaking changes about validation settings"
 description: ""
 category: "4. Release Notes"

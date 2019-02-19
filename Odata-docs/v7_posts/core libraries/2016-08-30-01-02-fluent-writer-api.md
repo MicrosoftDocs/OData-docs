@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "1.2 Fluent functional-style writer API"
 description: ""
 category: "1. Core"

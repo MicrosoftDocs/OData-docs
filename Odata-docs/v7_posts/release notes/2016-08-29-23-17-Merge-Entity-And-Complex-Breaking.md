@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Breaking changes about merge entity and complex"
 description: ""
 category: "4. Release Notes"

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Customizable type facets promotion in URI parsing"
 description: ""
 category: "5. OData Features"

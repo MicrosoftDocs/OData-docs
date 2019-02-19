@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Resource (Complex & Entity) Value"
 description: "OData Resource (Complex & Entity) Value"
 category: "5. OData Features"

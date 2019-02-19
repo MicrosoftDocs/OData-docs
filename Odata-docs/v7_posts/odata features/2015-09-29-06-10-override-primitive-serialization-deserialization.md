@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Override primitive serialization and deserialization of payload"
 description: ""
 category: "5. OData Features"

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "3.2 Create spatial instances"
 description: "Create spatial instances"
 category: "3. Spatial"

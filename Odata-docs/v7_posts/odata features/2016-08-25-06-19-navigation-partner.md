@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Navigation property partner"
 description: ""
 category: "5. OData Features"

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "2.1 Build a basic model"
 description: "Build a basic entity data model using EdmLib APIs"
 category: "2. EdmLib"

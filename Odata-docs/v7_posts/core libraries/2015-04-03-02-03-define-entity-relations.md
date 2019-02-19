@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "2.3 Define entity relations"
 description: "Define entity relations using EdmLib APIs"
 category: "2. EdmLib"

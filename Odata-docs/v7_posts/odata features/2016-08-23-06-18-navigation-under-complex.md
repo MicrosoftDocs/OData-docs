@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Navigation property under complex type"
 description: "Navigation property under complex type"
 category: "5. OData Features"

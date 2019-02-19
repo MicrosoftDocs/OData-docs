@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Basic Uri parser support for aggregations"
 description: ""
 category: "5. OData Features"

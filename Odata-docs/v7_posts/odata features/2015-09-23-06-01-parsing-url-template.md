@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Parsing uri path template"
 description: ""
 category: "5. OData Features"
