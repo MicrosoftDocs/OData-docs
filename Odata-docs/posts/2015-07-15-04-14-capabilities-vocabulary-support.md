@@ -1,7 +1,7 @@
 ---
 title : "4.14 Capabilities vocabulary support"
-
 category: "4. OData features"
+ms.date: 07/15/2015
 ---
 # 4.14 Capabilities vocabulary support
 

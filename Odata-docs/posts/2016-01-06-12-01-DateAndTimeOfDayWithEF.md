@@ -1,8 +1,8 @@
 ---
-
 title: "12.1 Edm.Date and Edm.TimeOfDay with EF"
 description: "How to Use Edm.Date and Edm.TimeOfDay with EntityFramework"
 category: "12. Design"
+ms.date: 01/06/2016
 ---
 # 12.1 Edm.Date and Edm.TimeOfDay with EF
 

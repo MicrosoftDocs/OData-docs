@@ -1,9 +1,9 @@
 ---
-
 title: "8.1 ConcurrencyMode and ETag"
 description: ""
 category: "8. V1-3 specific features"
 permalink: "/concurrency-and-etag"
+ms.date: 04/21/2015
 ---
 # 8.1 ConcurrencyMode and ETag
 

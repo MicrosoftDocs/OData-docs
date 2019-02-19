@@ -1,8 +1,8 @@
 ---
-
 title : "13.6 Key value binding "
 description: "Key value binding"
 category: "13. 6.x Features "
+ms.date: 09/01/2016
 ---
 # 13.6 Key value binding
 

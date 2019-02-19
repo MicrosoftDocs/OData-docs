@@ -1,7 +1,7 @@
 ---
 title : "4.6 Function parameter support"
-
 category: "4. OData features"
+ms.date: 03/25/2015
 ---
 # 4.6 Function parameter support
 

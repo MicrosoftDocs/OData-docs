@@ -2,6 +2,7 @@
 title : "6.1 Custom URL parsing"
 category: "6. Customization"
 permalink: "/case-insensitive"
+ms.date: 01/16/2015
 ---
 # 6.1 Custom URL parsing
 

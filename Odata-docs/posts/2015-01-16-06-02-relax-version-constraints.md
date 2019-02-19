@@ -1,9 +1,9 @@
 ---
-
 title: "6.2 Relax version constraints"
 description: ""
 category: "6. Customization"
 permalink: "/version-constraint-relax-flag"
+ms.date: 01/16/2015
 ---
 # 6.2 Relax version constraints
 

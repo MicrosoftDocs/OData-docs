@@ -2,6 +2,7 @@
 title : "4.1 DateTime support"
 category: "4. OData features"
 permalink: "/datetime-support"
+ms.date: 01/16/2015
 ---
 
 # 4.1 DateTime support

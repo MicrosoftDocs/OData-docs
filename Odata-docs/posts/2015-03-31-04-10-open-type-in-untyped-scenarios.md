@@ -1,7 +1,7 @@
 ---
 title : "4.10 Open type in untyped scenarios"
-
 category: "4. OData features"
+ms.date: 03/31/2015
 ---
 # 4.10 Open type in untyped scenarios
 

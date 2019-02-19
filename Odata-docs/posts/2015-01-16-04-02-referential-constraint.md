@@ -2,6 +2,7 @@
 title : "4.2 Referential constraint"
 category: "4. OData features"
 permalink: "/referential-constraint"
+ms.date: 01/16/2015
 ---
 # 4.2 Referential constraint
 

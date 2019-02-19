@@ -1,8 +1,8 @@
 ---
-
 title: "4.22 Use HttpRequestMessage Extension Methods"
 description: ""
 category: "4. OData features"
+ms.date: 09/17/2015
 ---
 # 4.22 Use HttpRequestMessage Extension Methods
 

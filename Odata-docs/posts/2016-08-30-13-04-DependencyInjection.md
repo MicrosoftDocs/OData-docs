@@ -1,8 +1,8 @@
 ---
-
 title : "13.4 Dependency Injection Support"
 description: "Dependency injection support"
 category: "13. 6.x Features "
+ms.date: 08/30/2016
 ---
 # 13.4 Dependency Injection Support
 

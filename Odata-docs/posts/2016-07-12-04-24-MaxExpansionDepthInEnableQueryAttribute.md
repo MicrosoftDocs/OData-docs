@@ -1,7 +1,7 @@
 ---
 title : "4.24 MaxExpansionDepth in EnableQueryAttribute"
-
 category: "4. OData features"
+ms.date: 07/12/2016
 ---
 # 4.24 MaxExpansionDepth in EnableQueryAttribute
 

@@ -1,7 +1,7 @@
 ---
 title : "10.2 Work around for SingleResult.Create an empty result"
-
 category: "10. Others"
+ms.date: 07/24/2015
 ---
 # 10.2 Work around for SingleResult.Create an empty result
 

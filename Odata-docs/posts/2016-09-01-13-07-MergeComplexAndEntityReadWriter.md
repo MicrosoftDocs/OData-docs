@@ -1,8 +1,8 @@
 ---
-
 title : "13.7 Merge complex & entity value serialize/deserialize"
 description: "Merge complex & entity"
 category: "13. 6.x Features "
+ms.date: 09/01/2016
 ---
 # 13.7 Merge complex & entity value serialize/deserialize
 

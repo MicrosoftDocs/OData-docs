@@ -1,8 +1,8 @@
 ---
-
 title: "2.2 Build Edm Model Explicitly"
 description: "convention model builder"
 category: "2. Defining the model"
+ms.date: 04/17/2015
 ---
 # 2.2 Build Edm Model Explicitly
 

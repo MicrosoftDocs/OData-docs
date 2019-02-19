@@ -1,7 +1,7 @@
 ---
-title : "4.8 Operation paramters in untyped scenarios"
-
+title : "4.8 Operation parameters in untyped scenarios"
 category: "4. OData features"
+ms.date: 03/30/2015
 ---
 # 4.8 Operation paramters in untyped scenarios
 

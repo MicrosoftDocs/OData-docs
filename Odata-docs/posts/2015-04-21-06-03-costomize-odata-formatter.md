@@ -1,8 +1,8 @@
 ---
 title : "6.3 Customize OData Formatter"
 description: "Customize OData Formatter"
-
 category: [6. Customization]
+ms.date: 04/21/2015
 ---
 # 6.3 Customize OData Formatter
 
