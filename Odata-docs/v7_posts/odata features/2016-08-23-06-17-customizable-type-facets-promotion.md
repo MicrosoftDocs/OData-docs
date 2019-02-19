@@ -8,13 +8,13 @@ Class `ODataUri` has two properties `Filter` and `OrderBy` that are tree data st
 
 In the library, the rules are customizable. The interface is formulated by the following class:
 
-{% highlight csharp %}
+```C#
 public class TypeFacetsPromotionRules
 {
     public virtual int? GetPromotedPrecision(int? left, int? right);
     public virtual int? GetPromotedScale(int? left, int? right);
 }
-{% endhighlight %}
+```
 
 The first method defines the rule to resolve two precision values `left` and `right` to a common one, while the second is for scale values. The class provides a default implementation for the methods, which works as the default conversion rules. To customize the rules, you subclass and override the relevant methods as necessary.
 

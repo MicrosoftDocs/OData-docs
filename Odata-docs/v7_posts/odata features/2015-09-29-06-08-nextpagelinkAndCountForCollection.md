@@ -8,7 +8,7 @@ From ODataLib 6.13.0, it supports to write the NextPageLink/Count instance annot
 
 When you want to serialize a collection instance, you should first create an object of `ODataCollectionStart`, in which you can set the next page link and the count value.
 
-{% highlight csharp %}
+```C#
 
 ODataMessageWriter messageWriter = new ODataMessageWriter(...);
 IEdmTypeReference elementType = ...;
@@ -30,11 +30,11 @@ if (collectionValue != null)
     }
 }
 writer.WriteEnd();
-{% endhighlight %}
+```
 
 The payload looks like:
 
-{% highlight csharp %}
+```C#
 {
   "@odata.context":".../$metadata#Collection(...)",
   "@odata.count":5,
@@ -43,4 +43,4 @@ The payload looks like:
     ...
   ]
 }
-{% endhighlight %}
+```

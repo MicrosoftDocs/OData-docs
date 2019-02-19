@@ -17,13 +17,13 @@ The most widely used parts are **Searching**, **Predicate**, and **Information**
 ### Exercise model utility APIs
 In the **Program.cs** file, add the `using` directive
 
-{% highlight csharp %}
+```C#
 using System.Linq;
-{% endhighlight %}
+```
 
 and insert the following code into the `Program` class:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     class Program
@@ -68,7 +68,7 @@ namespace EdmLibSample
         }
     }
 }
-{% endhighlight %}
+```
 
 ### Run the sample
 From the **DEBUG** menu, click **Start Without Debugging** to build and run the sample. The console window should **not** disappear after program exits.

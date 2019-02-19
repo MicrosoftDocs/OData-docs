@@ -6,9 +6,9 @@ category: "5. OData Features"
 
 From ODataLib 6.11.0, OData uri parser can parse uri path template. A path template is any identifier string enclosed with curly braces.
 For example: 
-{% highlight csharp %}
+```C#
 {dynamicProperty}
-{% endhighlight %}
+```
 
 # Uri templates
 
@@ -25,7 +25,7 @@ Be caution:
 
 # Example
 
-{% highlight csharp %}
+```C#
 var uriParser = new ODataUriParser(HardCodedTestModel.TestModel, new Uri("People({1})/{some}", UriKind.Relative))  
 {  
   EnableUriTemplateParsing = true  
@@ -37,5 +37,5 @@ var keySegment = paths[1].As<KeySegment>();
 var templateSegment = paths[2].As<PathTemplateSegment>();
 templateSegment.LiteralText.Should().Be("{some}"); 
 
-{% endhighlight %}
+```
 

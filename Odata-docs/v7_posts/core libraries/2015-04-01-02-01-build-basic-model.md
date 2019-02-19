@@ -24,9 +24,9 @@ Expand **Installed > Templates > Visual C# > Windows Desktop**, and select the *
 ### Install the EdmLib package
 From the **Tools** menu, select **NuGet Package Manager > Package Manager Console**. In the Package Manager Console window, type:
 
-{% highlight text %}
+```text
 Install-Package Microsoft.OData.Edm
-{% endhighlight %}
+```
 
 This command configures the solution to enable NuGet restore, and installs the latest EdmLib package.
 
@@ -39,13 +39,13 @@ In Solution Explorer, right-click the project **EdmLibSample**. From the context
 
 In the **SampleModelBuilder.cs** file, add the following `using` directives to introduce the EDM definitions:
 
-{% highlight csharp %}
+```C#
 using Microsoft.OData.Edm;
-{% endhighlight %}
+```
 
 Then replace the boilerplate code with the following:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     public class SampleModelBuilder
@@ -57,12 +57,12 @@ namespace EdmLibSample
         }
     }
 }
-{% endhighlight %}
+```
 
 ### Add complex Type *Address*
 In the **SampleModelBuilder.cs** file, add the following code into the `SampleModelBuilder` class:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     public class SampleModelBuilder
@@ -82,7 +82,7 @@ namespace EdmLibSample
         ...
     }
 }
-{% endhighlight %}
+```
 
 This code:
 
@@ -93,7 +93,7 @@ This code:
 ### Add an enumeration Type *Category*
 In the **SampleModelBuilder.cs** file, add the following code into the `SampleModelBuilder` class:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     public class SampleModelBuilder
@@ -113,7 +113,7 @@ namespace EdmLibSample
         ...
     }
 }
-{% endhighlight %}
+```
 
 This code:
 
@@ -125,7 +125,7 @@ This code:
 ### Add an entity type *Customer*
 In the **SampleModelBuilder.cs** file, add the following code into the `SampleModelBuilder` class:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     public class SampleModelBuilder
@@ -148,7 +148,7 @@ namespace EdmLibSample
         ...
     }
 }
-{% endhighlight %}
+```
 
 This code:
 
@@ -163,7 +163,7 @@ This code:
 ### Add the default entity container
 In the **SampleModelBuilder.cs** file, add the following code into the `SampleModelBuilder` class:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     public class SampleModelBuilder
@@ -180,7 +180,7 @@ namespace EdmLibSample
         ...
     }
 }
-{% endhighlight %}
+```
 
 This code:
 
@@ -192,7 +192,7 @@ Note that each model **MUST** define exactly one entity container (*aka*. the de
 ### Add an entity set *Customers*
 In the **SampleModelBuilder.cs** file, add the following code into the `SampleModelBuilder` class:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     public class SampleModelBuilder
@@ -208,14 +208,14 @@ namespace EdmLibSample
         ...
     }
 }
-{% endhighlight %}
+```
 
 This code directly adds a new entity set `Customers` to the default container.
 
 ### Using factory APIs for EdmModel
 In the above sections, to construct entity/complex types and entity containers, one has to first explicitly instantiate the corresponding CLR types, and then invoke `EdmModel.AddElement()` to add them to the model. In this version, a new set of factory APIs are introduced that combine the two steps into one, leading to more succinct and cleaner user code. These APIs are defined as extension methods to `EdmModel` as follows:
 
-{% highlight csharp %}
+```C#
 namespace Microsoft.OData.Edm
 {
     public static class ExtensionMethods
@@ -233,22 +233,22 @@ namespace Microsoft.OData.Edm
         public static EdmEntityContainer AddEntityContainer(this EdmModel model, string namespaceName, string name);
     }
 }
-{% endhighlight %}
+```
 
 So, for example, instead of
 
-{% highlight csharp %}
+```C#
 var entityType = new EdmEntityType("NS", "Entity");
 // Do something with entityType.
 model.AddElement(entityType);
-{% endhighlight %}
+```
 
 you could simply
 
-{% highlight csharp %}
+```C#
 var entityType = model.AddEntityType("NS", "Entity");
 // Do something with entityType.
-{% endhighlight %}
+```
 
 Besides being more convenient, these factory APIs are potentially more efficient as advanced techniques may have been employed in their implementations for optimized object creation and handling.
 
@@ -257,18 +257,18 @@ Congratulations! You now have a working entity data model! In order to show the 
 
 In the **Program.cs** file, add the following `using` directives:
 
-{% highlight csharp %}
+```C#
 using System.Collections.Generic;
 using System.IO;
 using System.Xml;
 using Microsoft.OData.Edm;
 using Microsoft.OData.Edm.Csdl;
 using Microsoft.OData.Edm.Validation;
-{% endhighlight %}
+```
 
 Then replace the boilerplate `Program` class with the following:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     class Program
@@ -295,7 +295,7 @@ namespace EdmLibSample
         }
     }
 }
-{% endhighlight %}
+```
 
 For now, there is no need to understand how the model is written to CSDL. The details will be explained in the following section.
 

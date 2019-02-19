@@ -9,13 +9,13 @@ This section shows how to create spatial instances using Spatial APIs and return
 ### Create *GeometryPoint* and *GeographyPoint* instances
 In order to use spatial types, please add the following `using` directive:
 
-{% highlight csharp %}
+```C#
 using Microsoft.Spatial;
-{% endhighlight %}
+```
 
 The following code shows how to create `GeometryPoint` and `GeographyPoint` instances:
 
-{% highlight csharp %}
+```C#
 // Create a 2D GeometryPoint.
 GeometryPoint point1 = GeometryPoint.Create(x: 12.34, y: 56.78);
 
@@ -33,7 +33,7 @@ GeographyPoint point5 = GeographyPoint.Create(latitude: 12.34, longitude: 56.78,
 
 // Create a 3D GeographyPoint (m is measures).
 GeographyPoint point6 = GeographyPoint.Create(latitude: 12.34, longitude: 56.78, z: 9.0, m: 321.0);
-{% endhighlight %}
+```
 
 Spatial instances can be directly put into `ODataPrimitiveValue` as property values. Using the `Address` type from the last section:
 
@@ -41,7 +41,7 @@ Spatial instances can be directly put into `ODataPrimitiveValue` as property val
 
 An `ODataResource` for the `Address` type could be constructed as follows:
 
-{% highlight csharp %}
+```C#
 var addressValue = new ODataResource
 {
     Properties = new ODataProperty[]
@@ -53,14 +53,14 @@ var addressValue = new ODataResource
         new ODataProperty { Name = "GeographyLoc", Value = new ODataPrimitiveValue(GeographyPoint.Create(12.34, 56.78)) },
     }
 };
-{% endhighlight %}
+```
 
 ### Construct more complex spatial instances
 Directly creating these instances using Spatial APIs would be a bit complicated. So we **highly** recommend that you download and add the [SpatialFactory.cs](https://github.com/OData/odata.net/blob/master/test/FunctionalTests/Microsoft.OData.TestCommon/SpatialFactory.cs) file to your project and use the `GeometryFactory` or the `GeographyFactory` class to construct more complex spatial instances.
 
 Here are some sample code of how to use the factory classes to create spatial instances:
 
-{% highlight csharp %}
+```C#
 // Create a GeographyMultiPoint.
 GeographyMultiPoint multiPoint = GeographyFactory.MultiPoint().Point(-90.0, 0.0).Point(0.0, 90.0).Build();
 
@@ -78,7 +78,7 @@ GeometryCollection collection = GeometryFactory.Collection()
     .LineString(0, 0).LineTo(0, 5)
     .Collection()
         .Point(5, 5);
-{% endhighlight %}
+```
 
 More samples could be found in the test cases of the `Microsoft.Spatial.Tests` project. Please find the source code [here](https://github.com/OData/odata.net/tree/master/test/FunctionalTests/Microsoft.Spatial.Tests).
 

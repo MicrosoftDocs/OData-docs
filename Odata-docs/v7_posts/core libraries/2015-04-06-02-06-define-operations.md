@@ -11,7 +11,7 @@ This section shows how to define operations and operation imports using EdmLib A
 ### Add bound action *Rate*
 In the **SampleModelBuilder.cs** file, add the following code into the `SampleModelBuilder` class:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     public class SampleModelBuilder
@@ -31,11 +31,11 @@ namespace EdmLibSample
         ...
     }
 }
-{% endhighlight %}
+```
 
 Then in the **Program.cs** file, insert the following code into the `Main()` method:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     class Program
@@ -55,7 +55,7 @@ namespace EdmLibSample
         }
     }
 }
-{% endhighlight %}
+```
 
 This code:
 
@@ -67,7 +67,7 @@ This code:
 ### Add an unbound function *MostExpensive*
 In the **SampleModelBuilder.cs** file, add the following code into the `SampleModelBuilder` class:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     public class SampleModelBuilder
@@ -85,11 +85,11 @@ namespace EdmLibSample
         ...
     }
 }
-{% endhighlight %}
+```
 
 Then in the **Program.cs** file, insert the following code into the `Main()` method:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     class Program
@@ -109,7 +109,7 @@ namespace EdmLibSample
         }
     }
 }
-{% endhighlight %}
+```
 
 This code:
 
@@ -119,7 +119,7 @@ This code:
 ### Add function import *MostValuable*
 In the **SampleModelBuilder.cs** file, add the following code into the `SampleModelBuilder` class:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     public class SampleModelBuilder
@@ -135,11 +135,11 @@ namespace EdmLibSample
         ...
     }
 }
-{% endhighlight %}
+```
 
 And in the **Program.cs** file, insert the following code into the `Main()` method:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     class Program
@@ -158,7 +158,7 @@ namespace EdmLibSample
         }
     }
 }
-{% endhighlight %}
+```
 
 This code:
 

@@ -11,7 +11,7 @@ This section shows how to define derived entity (complex) types using EdmLib API
 ### Add derived entity type *UrgentOrder*
 In the **SampleModelBuilder.cs** file, add the following code into the `SampleModelBuilder` class:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     public class SampleModelBuilder
@@ -29,11 +29,11 @@ namespace EdmLibSample
         ...
     }
 }
-{% endhighlight %}
+```
 
 Then in the **Program.cs** file, insert the following code into the `Main()` method:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     class Program
@@ -53,7 +53,7 @@ namespace EdmLibSample
         }
     }
 }
-{% endhighlight %}
+```
 
 This code:
 
@@ -64,7 +64,7 @@ This code:
 ### Add derived complex type *WorkAddress*
 In the **SampleModelBuilder.cs** file, add the following code into the `SampleModelBuilder` class:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     public class SampleModelBuilder
@@ -82,11 +82,11 @@ namespace EdmLibSample
         ...
     }
 }
-{% endhighlight %}
+```
 
 Then in the **Program.cs** file, insert the following code into the `Main()` method:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     class Program
@@ -105,7 +105,7 @@ namespace EdmLibSample
         }
     }
 }
-{% endhighlight %}
+```
 
 This code:
 

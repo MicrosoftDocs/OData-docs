@@ -10,9 +10,9 @@ From ODataLib 6.13.0, it supports the capabilities vocabulary. For detail inform
 
 If you build the Edm model from the following codes:
 
-{% highlight csharp %}
+```C#
 IEdmModel model = new EdmModel();
-{% endhighlight %}
+```
 
 The capabilities vocabulary is enabled as a reference model in the Edm Model.
 
@@ -20,13 +20,13 @@ The capabilities vocabulary is enabled as a reference model in the Edm Model.
 
 ODL doesn't provide a set of API to add capabilites, but it provoides an unified API to add all vocabularies:
  
-{% highlight csharp %}
+```C#
 SetVocabularyAnnotation
-{% endhighlight %}
+```
 
 Let's have an example to illustrate how to use capabilities vocabulary:
 
-{% highlight csharp %}
+```C#
 IEnumerable<IEdmProperty> requiredProperties = ...
 IEnumerable<IEdmProperty> nonFilterableProperties = ...
 requiredProperties = requiredProperties ?? EmptyStructuralProperties;  
@@ -50,13 +50,13 @@ if (term != null)
   annotation.SetSerializationLocation(model, EdmVocabularyAnnotationSerializationLocation.Inline);
   model.SetVocabularyAnnotation(annotation);
 }  
-{% endhighlight %}
+```
 
-# The related metata
+### The related metata
 
 The corresponding metadata can be as follows:
 
-{% highlight csharp %}
+```C#
 <EntitySet Name="Customers" EntityType="NS"> 
 <Annotation Term="Org.OData.Capabilities.V1.FilterRestrictions">
    <Record>  
@@ -75,4 +75,4 @@ The corresponding metadata can be as follows:
    </PropertyValue>
   </Record>
 </Annotation>
-{% endhighlight %}
+```

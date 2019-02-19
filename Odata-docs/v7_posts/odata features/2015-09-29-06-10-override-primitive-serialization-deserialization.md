@@ -10,14 +10,14 @@ Since ODataLib 6.12.0, it supports to customize the payload value converter to o
 
 The new class `ODataPayloadValueConverter` provides a default implementation for value conversion, and also allows developer to override by implemementing `ConvertFromPayloadValue` and `ConvertToPayloadValue`.
 
-{% highlight csharp %}
+```C#
 public class Microsoft.OData.ODataPayloadValueConverter {
 	public ODataPayloadValueConverter ()
 
 	public virtual object ConvertFromPayloadValue (object value, Microsoft.OData.Edm.IEdmTypeReference edmTypeReference)
 	public virtual object ConvertToPayloadValue (object value, Microsoft.OData.Edm.IEdmTypeReference edmTypeReference)
 }
-{% endhighlight %}
+```
 
 And in ODataLib 7.0, a custom converter is registered through [DI](http://odata.github.io/odata.net/v7/#01-04-di-support).
 
@@ -27,7 +27,7 @@ Here we are trying to override the default converter to support the "R" format o
 
 <strong>1. Define DataTimeOffset converter</strong>
 
-{% highlight csharp %}
+```C#
 internal class DateTimeOffsetCustomFormatPrimitivePayloadValueConverter : ODataPayloadValueConverter
 {
     public override object ConvertToPayloadValue(object value, IEdmTypeReference edmTypeReference)
@@ -50,14 +50,14 @@ internal class DateTimeOffsetCustomFormatPrimitivePayloadValueConverter : ODataP
         return base.ConvertFromPayloadValue(value, edmTypeReference);
     }
 }
-{% endhighlight %}
+```
 
 <strong>2. Register new converter to DI container</strong>
 
-{% highlight csharp %}
+```C#
 ContainerBuilderHelper.BuildContainer(
 	    builder => builder.AddService<ODataPayloadValueConverter, DateTimeOffsetCustomFormatPrimitivePayloadValueConverter>(ServiceLifetime.Singleton))
-{% endhighlight %}
+```
 
 Please refer [here](http://odata.github.io/odata.net/v7/#01-04-di-support) about DI details.
 

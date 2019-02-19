@@ -8,7 +8,7 @@ From ODataLib 6.11.0, it supports to add vocabulary annotations to EdmEnumMember
 
 # Create Model
 
-{% highlight csharp %}
+```C#
 EdmModel model = new EdmModel();
 
 EdmEntityContainer container = new EdmEntityContainer("DefaultNamespace", "Container");
@@ -39,9 +39,9 @@ var annotation = new EdmVocabularyAnnotation(
 carType.AddStructuralProperty("Color", new EdmEnumTypeReference(colorType, false));
 
 container.AddEntitySet("Cars", carType);
-{% endhighlight %}
+```
 
-# Output
+## Output
 
     <?xml version="1.0" encoding="utf-8"?>
       <edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">

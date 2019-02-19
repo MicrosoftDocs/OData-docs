@@ -11,14 +11,14 @@ This section shows how to define annotations using EdmLib APIs. We will use and 
 ### Add an annotation to entity set *Customers*
 In the **SampleModelBuilder.cs** file, add the following `using` directive:
 
-{% highlight csharp %}
+```C#
 using Microsoft.OData.Edm.Csdl;
 using Microsoft.OData.Edm.Vocabularies;
-{% endhighlight %}
+```
 
 Then add the following code into the `SampleModelBuilder` class:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     public class SampleModelBuilder
@@ -34,11 +34,11 @@ namespace EdmLibSample
         ...
     }
 }
-{% endhighlight %}
+```
 
 And in the **Program.cs** file, insert the following code into the `Main()` method:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     class Program
@@ -57,14 +57,14 @@ namespace EdmLibSample
         }
     }
 }
-{% endhighlight %}
+```
 
 This code adds an `Edm.Int32` annotation `Sample.NS.MaxCount` to the entity set `Customers`, which is put under the `Annotations` element.
 
 ### Add an inline Annotation to the Entity Type *Customer*
 In the **SampleModelBuilder.cs** file, insert the following code into the `SampleModelBuilder.BuildAnnotations()` method:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     public class SampleModelBuilder
@@ -85,14 +85,14 @@ namespace EdmLibSample
         ...
     }
 }
-{% endhighlight %}
+```
 
 This code adds an **inline** `Edm.String` annotation `Sample.NS.KeyName` targetting the entity type `Customer`.
 
 ### Add an inline annotation to the property *Customer.Name*
 In the **SampleModelBuilder.cs** file, insert the following code into the `SampleModelBuilder.BuildAnnotations()` method:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     public class SampleModelBuilder
@@ -113,7 +113,7 @@ namespace EdmLibSample
         ...
     }
 }
-{% endhighlight %}
+```
 
 This code adds an **inline** `Edm.Int32` annotation `Sample.NS.Width` to the property `Customer.Name`.
 

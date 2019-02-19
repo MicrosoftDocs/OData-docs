@@ -16,7 +16,7 @@ We followed the existing implementation of serializing/deserializing entity inst
 
 `ODataNestedResourceInfo` class is used for both navigation property and complex property. For complex property, this class will be used to store the name of the complex property and a Boolean to indicate whether this property is a single instance or a collection.
 
-For other Public APIs, you can refer to the [Breaking changes about Merge Entity and Complex](#23-17-Merge-Entity-And-Complex-Breaking).
+For other Public APIs, you can refer to the [Breaking changes about Merge Entity and Complex](../release notes/2016-08-29-23-17-Merge-Entity-And-Complex-Breaking)).
 
 
 # Model #
@@ -53,7 +53,7 @@ Suppose we have a model, in following sections, we will explain how to write/rea
 
 In order to write the complex property payload, we need to create an `ODataWriter` first. ODataLib provides `ODataMessageWriter.CreateODataResourceWriter`  to create the writer.
 
-{% highlight csharp %}
+```C#
 
     IODataResponseMessage message;
     IEdmStructuredType complexType;
@@ -65,11 +65,11 @@ In order to write the complex property payload, we need to create an `ODataWrite
     ODataMessageWriter messageWriter = new ODataMessageWriter(message, settings, model);
     var writer = messageWriter.CreateODataResourceWriter(null, complexType);
 
-{% endhighlight %}
+```
 
 Then, we can write a complex property just like writing an entity by using `WriteStart` and `WriteEnd`.
 
-{% highlight csharp %}
+```C#
 
     ODataResource complexResource = new ODataResource()
     {
@@ -83,11 +83,11 @@ Then, we can write a complex property just like writing an entity by using `Writ
     writer.WriteStart(complexResource);
     writer.WriteEnd();
 
-{% endhighlight %}
+```
 
 If we want to write a complex collection property, we can use `CreateODataResourceSetWriter` and write the complex collection property.
 
-{% highlight csharp %}
+```C#
 
     writer = messageWriter.CreateODataResourceSetWriter(null, complexType /* item type */);
     ODataResourceSet complexCollection = new ODataResourceSet()
@@ -105,7 +105,7 @@ If we want to write a complex collection property, we can use `CreateODataResour
     writer.WriteEnd(); // end the resource.
     writer.WriteEnd(); // end the resource set.
 
-{% endhighlight %}
+```
 
 # Write a complex property in an entity instance #
 To write an entity with a complex property, we can create the `ODataWriter` for the entity by calling `CreateODataResourceWriter`, and then write the entity. we write the complex property just as writing a navigation property.
@@ -115,7 +115,7 @@ To write an entity with a complex property, we can create the `ODataWriter` for 
 - `WriteEnd()` for each part.
 
 Sample:
-{% highlight csharp %}
+```C#
 
     // Init the entity instance.
     ODataResource entityResource = new ODataResource()
@@ -140,9 +140,9 @@ Sample:
     writer.WriteEnd(); // end the resource.
     writer.WriteEnd(); // end the nested resource info
 
-{% endhighlight %}
+```
 To write a complex collection property in an entity, we need to set `ODataNestedResourceInfo.IsCollection` is set to true, and then write the resource set.
-{% highlight csharp %}
+```C#
 
     // Init the entity instance.
     ODataResource entityResource = new ODataResource()
@@ -172,7 +172,7 @@ To write a complex collection property in an entity, we need to set `ODataNested
     writer.WriteEnd(); // end the nested resource info
     writer.WriteEnd(); // end the entity instance.
 
-{% endhighlight %}
+```
 
 Developers can  follow the same way to write a nested complex property in a complex instance. 
 
@@ -184,7 +184,7 @@ To write an entity (or a complex) instance or a collection of entity (or a colle
 
 To read a complex (or an entity) instance, ODataLib provides `ODataMessageReader.CreateODataResourceReader` to create the `ODataReader`. 
 
-{% highlight csharp %}
+```C#
 
     IODataResponseMessage message;
     IEdmStructuredType complexType;
@@ -195,11 +195,11 @@ To read a complex (or an entity) instance, ODataLib provides `ODataMessageReader
     ODataMessageReader messageReader = new ODataMessageReader(message, settings, model);
     var reader = messageReader.CreateODataResourceReader(null, complexType);
 
-{% endhighlight %}
+```
 
 Then, developers can read the complex (or entity) instance, nested complex ( or complex collection) properties or navigation properties. 
 
-{% highlight csharp %}
+```C#
 
     while (reader.Read())
     {
@@ -226,7 +226,7 @@ Then, developers can read the complex (or entity) instance, nested complex ( or 
                  break;
          }
     }
-{% endhighlight %}
+```
 
 if this reader is created for an entity type, the same code can be used to read an entity instance.
 
@@ -234,7 +234,7 @@ if this reader is created for an entity type, the same code can be used to read 
 
 To read a complex collection ( or an entity collection) , ODataLib provides `ODataMessageReader.CreateODataResourceSetReader` to create the `ODataReader`. 
 
-{% highlight csharp %}
+```C#
 
     var reader = messageReader.CreateODataResourceSetReader(null, complexType);
     while (reader.Read())
@@ -264,7 +264,7 @@ To read a complex collection ( or an entity collection) , ODataLib provides `ODa
                  break;
          }
     }
-{% endhighlight %}
+```
 
 if this reader is created for an entity collection, the same code can be used to read an entity collection.
 

@@ -8,7 +8,7 @@ We now support serializing additional properties which are not advertised in met
 
 Here is a full example which is trying to write an extra property `Prop1` in the entity. The implementation of `InMemoryMessage` used in this sample can be found [here](https://github.com/OData/odata.net/blob/ODataV4-7.x/test/FunctionalTests/Microsoft.OData.Core.Tests/InMemoryMessage.cs).
 
-{% highlight csharp %}
+```C#
 //Construct the model
 EdmModel model = new EdmModel();
 var entityType = new EdmEntityType("Namespace", "EntityType", null, false, true, false);
@@ -56,15 +56,15 @@ using (var messageWriter = new ODataMessageWriter(message, settings, model))
     Console.WriteLine(output);
     Console.ReadLine();
 }
-{% endhighlight %}
+```
 
 `Prop1` will appear in the payload:
 
-{% highlight json %}
+```JSON
 {
     "@odata.context":"http://example.org/odata.svc/$metadata#EntitySet/$entity",
     "ID":102,
     "Name":"Bob",
     "Prop1":"Var1"
 }
-{% endhighlight %}
+```

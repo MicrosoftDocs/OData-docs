@@ -11,7 +11,7 @@ This section shows how to define singletons using EdmLib APIs. We will use and e
 ### Add a singleton *VipCustomer*
 In the **SampleModelBuilder.cs** file, add the following code into the `SampleModelBuilder` class:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     public class SampleModelBuilder
@@ -27,13 +27,13 @@ namespace EdmLibSample
         ...
     }
 }
-{% endhighlight %}
+```
 
 This code directly adds a new singleton `VipCustomer` to the default container.
 
 In the **Program.cs** file, insert the following code into the `Main()` method:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     class Program
@@ -52,7 +52,7 @@ namespace EdmLibSample
         }
     }
 }
-{% endhighlight %}
+```
 
 ### Run the Sample
 Build and run the sample. Then open the file **csdl.xml** under the **output directory**. The content should look like the following:

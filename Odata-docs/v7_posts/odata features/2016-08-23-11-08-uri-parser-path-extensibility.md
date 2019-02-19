@@ -49,7 +49,7 @@ Given a model as following:
 
 `UriPathParser` provides a public virtual API `ParsePathIntoSegments(Uri fullUri, Uri serviceBaseUri)` to customize how to separate a Uri into segments in raw string.
 
-Developers can define their own `UriPathParser`, register this class by DI (Please refer to  [Dependency Injection support](#01-04-di-support)) and override the `ParsePathIntoSegments`. Then, ODataLib will use this API to separate the Uri into several segments.
+Developers can define their own `UriPathParser`, register this class by DI (Please refer to  [Dependency Injection support](../core libraries/2016-08-30-01-05-di-support)) and override the `ParsePathIntoSegments`. Then, ODataLib will use this API to separate the Uri into several segments.
 
     public class UriPathParser
     {

@@ -28,7 +28,7 @@ Any optional parameters must be come after all non-optional parameters for a fun
 
 When reading CSDL, optional values are returned as parameters that support `IEdmOptionalParameter`:
 
-{% highlight csharp %}    
+```C#    
 
        foreach (IEdmOperationParameter parameter in function)
        {
@@ -43,11 +43,11 @@ When reading CSDL, optional values are returned as parameters that support `IEdm
          Console.WriteLine();
        }
 
-{% endhighlight %}
+```
 
 When building a model, optional parameters may be specified using the new `EdmOptionalParameter` class:
 
-{% highlight csharp %}    
+```C#    
 
        var stringTypeReference = new EdmStringTypeReference(EdmCoreModel.Instance.GetPrimitiveType(EdmPrimitiveTypeKind.String), false);
        var function = new EdmFunction("test", "TestFunction", stringTypeReference);
@@ -58,4 +58,4 @@ When building a model, optional parameters may be specified using the new `EdmOp
        function.AddParameter(optionalParam);
        function.AddParameter(optionalParamWithDefault);
 
-{% endhighlight %}
+```

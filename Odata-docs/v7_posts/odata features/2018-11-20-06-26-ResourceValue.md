@@ -4,8 +4,8 @@ description: "OData Resource (Complex & Entity) Value"
 category: "5. OData Features"
 ---
 
-# 1. Introduction
-## Abstract
+## 1. Introduction
+### Abstract
 
 `ODataComplexValue` is widely used in OData libraries v5.x and v6.x. However, it’s removed in OData library v7.x because complex type should support the navigation property. We should treat the complex same as the entity. 
 
@@ -15,7 +15,7 @@ So, the main changes OData v7.x design are:
 - Rename ODataEntry as ODataResource, use that to represent the instance of entity and complex.
 - Rename ODataFeed as ODataResourceSet, use that to represent the instance of collection of entity or complex.
 
-## Problems
+### Problems
 
 Along with more and more customers upgrade from ODL v6.x to ODL v7.x, many customers find it’s hard to use the library without the `ODataComplexValue`.
 Because most of OData customers:
@@ -27,9 +27,9 @@ Because most of OData customers:
 *	Can’t write or read the top-level property with resource or collection of resource value
 *	Can’t read the parameter resource or collection of resource value directly
 
-# 2. Proposal
+## 2. Proposal
 
-## Current structure
+### Current structure
 
 Below is the main inheritance of the ODataValue vs ODataItem in ODL v6.x.
 
@@ -44,18 +44,18 @@ The main changes from 6.x to 7.x is:
 *	`ODataComplexValue` is removed.
 *	`ODataValue` is derived from `ODataItem`.
 
-## Proposal structure
+### Proposal structure
 
 We should introduce a new class named `ODataResourceValue` derived from `ODataValue`, same as:
 
 
 ## 3. Main Works
 
-### `ODataResourceValue` class
+#### `ODataResourceValue` class
 
 We will introduce a new class named `ODataResourceValue`, it should look like (Same as `ODataComplexValue`):
 
-{% highlight csharp %}
+```C#
 
 public sealed class ODataResourceValue : ODataValue
 {
@@ -64,24 +64,24 @@ public sealed class ODataResourceValue : ODataValue
   public ICollection<ODataInstanceAnnotation> InstanceAnnotations { get;set; }
 }
 
-{% endhighlight %}
+```
 
 Where:
   * **TypeName**: save the resource type name.
   *	**Properties**: save the all properties, include the property with resource value or collection of resource value.
   *	**InstanceAnnotations**: save the instance annotations for this resource value.
 
-### `ODataCollectionValue` class
+#### `ODataCollectionValue` class
 We don’t need to change anything for `ODataCollectionValue`, because it also supports to have `ODataResourceValue` as its element.
 
-### `ODataProperty` class
+#### `ODataProperty` class
 We don’t need to change anything for `ODataProperty`, because it also supports to create `ODataProperty` with `ODataResourceValue` or `ODataCollectionValue`.
 
-### `ODataResource` class
+#### `ODataResource` class
 
 We don’t need to change anything in `ODataResource` except to verify the properties don’t include any property whose value is an `ODataResourceValue` or Collection of ODataResourceValue.
 
-{% highlight csharp %}
+```C#
 
 public class ODataResource
 {
@@ -97,33 +97,33 @@ public class ODataResource
     } 
 }
 
-{% endhighlight %}
+```
 
-### `ODataResourceSet` class
+#### `ODataResourceSet` class
 
 We don’t need to change anything in `ODataResourceSet`.
 
-## Write `ODataResourceValue`
+### Write `ODataResourceValue`
 
-### Write in value writer
+#### Write in value writer
 
-#### Write `ODataResourceValue`
+##### Write `ODataResourceValue`
 
 We should add a new method named `WriteResourceValue(…)` to write an `ODataResourceValue` in *[ODataJsonLightValueSerializer](https://github.com/OData/odata.net/blob/master/src/Microsoft.OData.Core/JsonLight/ODataJsonLightValueSerializer.cs)*.
 
-{% highlight csharp %}
+```C#
 public void WriteResourceValue(ODataResourceValue resourceValue, …)
 {
     // TODO
 }
-{% endhighlight %}
+```
 This method is the key method in writing scenario.	
 
-#### Write `ODataCollectionValue` with `ODataResourceValue`
+##### Write `ODataCollectionValue` with `ODataResourceValue`
 
 We should update `WriteCollectionValue(...)` method to call above `WriteResourceValue(...)` if the item is an `ODataResourceValue`.
 
-{% highlight csharp %}
+```C#
 foreach (object item in items)
 {
      ODataResourceValue itemAsResourceValue = item as ODataResourceValue;
@@ -136,13 +136,13 @@ foreach (object item in items)
         …// primitive, enum
      }
 }
-{% endhighlight %}
+```
 
-### Write in property Writer
+#### Write in property Writer
 
 We should update *[ODataJsonLightPropertyWriter.cs](https://github.com/OData/odata.net/blob/master/src/Microsoft.OData.Core/JsonLight/ODataJsonLightPropertySerializer.cs)* to support writing the property with `ODataResourceValue` or collection of resource value.
 This change should in `WriteProperty(...)` method, it supports to write top-level property and non-top-level property (Nested Property).
-{% highlight csharp %}
+```C#
 private void WriteProperty(…)
 {
    ......
@@ -154,16 +154,16 @@ private void WriteProperty(…)
        return;
     }
 }
-{% endhighlight %}
+```
 We don’t need to change any codes for property with value as `ODataCollectionValue` which element is `ODataResourceValue`.
 
-### Write in instance annotation writer
+#### Write in instance annotation writer
 
 We should update *[JsonLightInstanceAnnotationWriter.cs](https://github.com/OData/odata.net/blob/master/src/Microsoft.OData.Core/Json/JsonLightInstanceAnnotationWriter.cs)* to support:
-#### Write the `ODataInstanceAnnotation` with value as `ODataResourceValue`
+##### Write the `ODataInstanceAnnotation` with value as `ODataResourceValue`
 
 We should add the below codes in `WriteInstanceAnnotation(...)` method by calling the `WriteResourceValue(...)` if the instance annotation value is an `ODataResourceValue`.
-{% highlight csharp %}
+```C#
 ODataResourceValue resourceValue = value as ODataResourceValue;
 if (resourceValue != null)
 {
@@ -171,16 +171,16 @@ if (resourceValue != null)
    this.valueSerializer.WriteResourceValue(resourceValue,…);
    return;
 }
-{% endhighlight %}
+```
 
-#### Write the `ODataInstanceAnnotation` with value as collection of `ODataResourceValue`.
+##### Write the `ODataInstanceAnnotation` with value as collection of `ODataResourceValue`.
 We don’t need to do anything. Because it supports to write the `ODataCollectionValue`, which in turns will call `WriteResourceValue()` for each `ODataResourceValue` elements.
 
-### Write in collection writer
+#### Write in collection writer
 
 We should update *[ODataJsonLightCollectionWriter.cs](https://github.com/OData/odata.net/blob/master/src/Microsoft.OData.Core/JsonLight/ODataJsonLightCollectionWriter.cs)* to support write collection with `ODataResourceValue` item.
 
-{% highlight csharp %}
+```C#
 protected override void WriteCollectionItem(object item, IEdmTypeReference expectedItemType)
 {
     ODataResourceValue resourceValue = item as ODataResourceValue;
@@ -190,12 +190,12 @@ protected override void WriteCollectionItem(object item, IEdmTypeReference expec
     }
 …
 }
-{% endhighlight %}
+```
 
-### Write in parameter writer
+#### Write in parameter writer
 We should update *[ODataJsonLightParameterWriter.cs](https://github.com/OData/odata.net/blob/master/src/Microsoft.OData.Core/JsonLight/ODataJsonLightParameterWriter.cs)* to support write resource or collection of resource value.
 
-{% highlight csharp %}
+```C#
 protected override void WriteValueParameter(string parameterName, object parameterValue, IEdmTypeReference expectedTypeReference)
 {
     ......
@@ -205,11 +205,11 @@ protected override void WriteValueParameter(string parameterName, object paramet
         this.jsonLightValueSerializer.WriteResourceValue(resourceValue, ….);                      
     }
 }
-{% endhighlight %}
+```
 
 **TBD**: 
 Normally, if you want to write a Collection parameter, you should do:
-{% highlight csharp %}
+```C#
 var parameterWriter = new ODataJsonLightParameterWriter(outputContext, operation: null);
 parameterWriter.WriteStart();
 var collectionWriter = parameterWriter.CreateCollectionWriter("collection");
@@ -217,7 +217,7 @@ var collectionWriter = parameterWriter.CreateCollectionWriter("collection");
           collectionWriter.WriteItem("item1");
         collectionWriter.WriteEnd();
  parameterWriter.WriteEnd();
-{% endhighlight %}
+```
 However, i think we should support to write the collection value directly if customer call `WriteValueParameter()` method with the `ODataCollectionValue`.  
 
 Basically, we don’t need to change any codes for the “Collection parameter value” writer. Customer still can use “CreateCollectionWriter” to write the collection with more information.
@@ -226,11 +226,11 @@ Besides, We don’t need to change any codes for Resource or ResourceSet paramet
 *	CreateFormatResourceWriter
 *	CreateFormatResourceSetWriter
 
-### Convert `ODataResourceValue` to Uri literal
+#### Convert `ODataResourceValue` to Uri literal
 
 We should support to convert `ODataResourceValue` and collection of it to Uri literal when customer call `ConvertToUriLiteral(...)` in *[ODataUriUitl.cs](https://github.com/OData/odata.net/blob/master/src/Microsoft.OData.Core/Uri/ODataUriUtils.cs#L109)*.
 
-{% highlight csharp %}
+```C#
 public static string ConvertToUriLiteral(object value, ODataVersion version, IEdmModel model)
 {
    ......
@@ -242,13 +242,13 @@ public static string ConvertToUriLiteral(object value, ODataVersion version, IEd
 
    ......
 }
-{% endhighlight %}
+```
 
-## Read `ODataResourceValue`
-### Read ODataResourceValue in value reader
+### Read `ODataResourceValue`
+#### Read ODataResourceValue in value reader
 
 We should update *[ODataJsonLightPropertyAndValueDeserialier.cs](https://github.com/OData/odata.net/blob/master/src/Microsoft.OData.Core/JsonLight/ODataJsonLightPropertyAndValueDeserializer.cs)* to read the resource value.
-{% highlight csharp %}
+```C#
 private ODataResourceValue ReadResourceValue(
             bool insideJsonObjectValue,
             bool insideComplexValue,
@@ -257,14 +257,14 @@ private ODataResourceValue ReadResourceValue(
             string payloadTypeName,
             PropertyAndAnnotationCollector propertyAndAnnotationCollector)
 {…}
-{% endhighlight %}
+```
 This method is the key method in reading scenario, it should support to:
 * Read its own instance annotation
 * Read all properties value, include nested resource value.
 
 The above method is called from:
 
-{% highlight csharp %}
+```C#
 private object ReadNonEntityValueImplementation(…)
 {
     ......
@@ -275,31 +275,31 @@ private object ReadNonEntityValueImplementation(…)
 	 result = ReadResourceValue(......);
 	 break;
 }
-{% endhighlight %}
+```
 
 For the collection of resource, owing that `ReadCollectionValue()` will call `ReadNonEntityValueImplemenation(…)` to read its elements, so, if the item is `entity or complex`, it will return `DataResourceValue`. We don’t need to change any codes.
 
-### Read ODataResourceValue in instance annotation reader
+#### Read ODataResourceValue in instance annotation reader
 
 *[ODataJsonLightPropertyAndValueDeserialier.cs](https://github.com/OData/odata.net/blob/master/src/Microsoft.OData.Core/JsonLight/ODataJsonLightPropertyAndValueDeserializer.cs)* has the following method to read instance annotation value:
-{% highlight csharp %}
+```C#
 internal object ReadCustomInstanceAnnotationValue (PropertyAndAnnotationCollector propertyAndAnnotationCollector, string name)
 {
 object customInstanceAnnotationValue = this.ReadNonEntityValueImplementation(…);
 }
-{% endhighlight %}
+```
 So, we don’t need to change any codes for it.
 
-### Read ODataResourceValue in collection reader
+#### Read ODataResourceValue in collection reader
 *[ODataJsonLightCollectionDeserializer.cs](https://github.com/OData/odata.net/blob/master/src/Microsoft.OData.Core/JsonLight/ODataJsonLightCollectionDeserializer.cs)* will call `ReadNonEntityValueImplementation`. We don’t need change any code.
 
 However, there’s some validation codes that need to change.
 
-### Read ODataResourceValue as OData error value
+#### Read ODataResourceValue as OData error value
 
 *[ODataJsonLightErrorDeserializer.cs](https://github.com/OData/odata.net/blob/master/src/Microsoft.OData.Core/JsonLight/ODataJsonLightErrorDeserializer.cs)* will call `ReadNonEntityValueImplementation`. We don’t need change any code.
 
-### Read in Resource deserializer
+#### Read in Resource deserializer
 
 *[ODataJsonLightResourceDeserializer.cs](https://github.com/OData/odata.net/blob/master/src/Microsoft.OData.Core/JsonLight/ODataJsonLightResourceDeserializer.cs)* will call `ReadNonEntityValueImplementation` to read the value of its property.
 However, 
@@ -308,7 +308,7 @@ However,
 * It’s ONLY used it to read the primitive, enum and collection of them.
 And, for the “complex and collection of complex”, we still create nested resource info. So, we don’t need to change anything.
 
-### Read resource in parameter
+#### Read resource in parameter
 
 *[ODataJsonLightParameterDeserialzer.cs](https://github.com/OData/odata.net/blob/master/src/Microsoft.OData.Core/JsonLight/ODataJsonLightParameterDeserializer.cs)* is used to read parameter value. So far, for the entity, complex, it only returns a parameter state as “Resource”, for the collection of them, return a parameter state of “ResourceSet” as below:
 
@@ -322,21 +322,21 @@ And, for the “complex and collection of complex”, we still create nested res
   * If element is complex, entity, read nothing, just return “ReaderState.ResourceSet”.
 So, we should have a configuration enable customer to change the logic.
 For example: On ODataMessageReader, we can enable customer to create a parameter reader which can read all parameter as value.
-{% highlight csharp %}
+```C#
 public ODataParameterReader CreateODataParameterReader(IEdmOperation operation, bool readAllAsValue)
 {
   ......
 }
-{% endhighlight %}
+```
 So, if customer call the above method using *true* for `readAllAsValue`, he can get:
 * Complex, Entity, read as “ODataResourceValue”
 * Collection, read as “ODataCollectionValue”.
 
-### Read Top-Level Property
+#### Read Top-Level Property
 
 *[ODataJsonLightPropertyAndValueDeserializer.cs](https://github.com/OData/odata.net/blob/master/src/Microsoft.OData.Core/JsonLight/ODataJsonLightPropertyAndValueDeserializer.cs)* can read the top-level property into a ODataProperty. So, we can read a top-level complex, entity, or collection or complex, entity property.
 
-### Convert ODatResourceValue from Url literal 
+#### Convert ODatResourceValue from Url literal 
 We should convert the `ODataResourceValue` from JSON Uri literal in `ConvertFromUriLiteral(...)` in *[ODataUriUtils.cs](https://github.com/OData/odata.net/blob/master/src/Microsoft.OData.Core/Uri/ODataUriUtils.cs#L44)*.
 
 
@@ -344,16 +344,16 @@ We should convert the `ODataResourceValue` from JSON Uri literal in `ConvertFrom
 
 ### What’s the string output if convert a null “ODataCollectionValue”?
 So far, if you create:
-{% highlight csharp %}
+```C#
 ODataCollectionValue value = null;
 String str = ConvertToUriLiteral(value, ODataVersion.V4, model);
 Assert.Equal("null", str); // true?
-{% endhighlight %}
+```
 However, it should be "[]" ? 
 
-### Do we write the instance annotation if call `ConvertToUriLiteral`?
+#### Do we write the instance annotation if call `ConvertToUriLiteral`?
 In the 6.x version, if a complex value has instance annotations, those instance annotations will not write out when we call like:
-{% highlight csharp %}
+```C#
 ODataComplexValue  value = new ODataComplexValue()
 {
        TypeName = "TestModel.Address",
@@ -368,6 +368,6 @@ ODataComplexValue  value = new ODataComplexValue()
            }
 
 string str = ODataUriUtils.ConvertToUriLiteral(value, ODataVersion.40, model);
-{% endhighlight %}
+```
 
 Where, `str` doesn’t include the instance annotation? But, we should include the instance annotation.

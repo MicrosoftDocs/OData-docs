@@ -11,7 +11,7 @@ The page will include the usage of navigation under complex in EDM, Uri parser, 
 ## 1. EDM ##
 
 ### Define navigation property to complex type ###
-{% highlight csharp %}
+```C#
 EdmModel model = new EdmModel();
 
 EdmEntityType city = new EdmEntityType("Sample", "City");
@@ -30,7 +30,7 @@ EdmNavigationProperty navUnderComplex = complex.AddUnidirectionalNavigation(
 
 model.AddElement(city);
 model.AddElement(complex);
-{% endhighlight %}
+```
 
 Please note that only unidirectional navigation is supported, since navigation property must be entity type, so bidirectional navigation property does not make sense to navigation under complex type.
 
@@ -40,7 +40,7 @@ When entity type has complex as property, its corresponding entity set can bind 
 A valid binding path for navigation under complex is: `[ qualifiedEntityTypeName "/" ] *( ( complexProperty / complexColProperty ) "/" [ qualifiedComplexTypeName "/" ] ) navigationProperty`
 
 For example:
-{% highlight csharp %}
+```C#
 EdmEntityType person = new EdmEntityType("Sample", "Person");
 EdmStructuralProperty entityId = person.AddStructuralProperty("UserName", EdmCoreModel.Instance.GetString(false));
 person.AddKeys(entityId);
@@ -61,7 +61,7 @@ people.AddNavigationTarget(navUnderComplex, cities2, new EdmPathExpression("Addr
 entityContainer.AddElement(people);
 entityContainer.AddElement(cities1);
 entityContainer.AddElement(cities2);
-{% endhighlight %}
+```
 
 The navigation property `navUnderComplex` is binded to cities1 and cities2 with path `"Address/City"` and `"Addresses/City"` respectively.
 
@@ -103,9 +103,9 @@ Here we do not include type cast sample to keep the scenario simple.
 ### Find navigation target for navigation property under complex ###
 Since a navigation property can be binded to different paths, the exact binding path must be specified for finding the navigation target. 
 For example: 
-{% highlight csharp %}
+```C#
 IEdmNavigationSource navigationTarget = people.FindNavigationTarget(navUnderComplex, new EdmPathExpression("Address/City"));
-{% endhighlight %}
+```
 `Cities1` will be returned for this case.
 
 
@@ -146,15 +146,15 @@ Different with path, navigation under collection of complex can be accessed dire
 ### Uri parser ###
 There is nothing special if using `ODataUriParser`. For `ODataQueryOptionParser`, if we need resolve the navigation property under complex to its navigation target in the query option, navigation source that the complex belongs to and the binding path are both needed. If the navigation source or part of binding path is in the path, we need it passed to the constructor of `ODataQueryOptionParser`. So there are 2 overloaded constructor added to accept `ODataPath` as parameter. 
 
-{% highlight csharp %}
+```C#
 public ODataQueryOptionParser(IEdmModel model, ODataPath odataPath, IDictionary<string, string> queryOptions)
 public ODataQueryOptionParser(IEdmModel model, ODataPath odataPath, IDictionary<string, string> queryOptions, IServiceProvider container)
-{% endhighlight %}
+```
 Note: Parameter IServiceProvider is related to [Dependency Injection](http://odata.github.io/odata.net/v7/#01-04-di-support).
 
 Actually we do not recommend to use `ODataQueryOptionParser` in this case, `ODataUriParser` would be more convenient. Here we still give an example just in case:
 
-{% highlight csharp %}
+```C#
 // http://host/People('abc')/Address?$expand=City
 ODataUriParser uriParser = new ODataUriParser(Model, ServiceRoot, new Uri("http://host/People('abc')/Address"));
 ODataPath odataPath = uriParser.ParsePath();
@@ -164,7 +164,7 @@ SelectExpandClause clause = optionParser.ParseSelectAndExpand();
 // This can achieve same result.
 uriParser = new ODataUriParser(Model, ServiceRoot, new Uri("http://host/People('abc')/Address?$expand=City"));
 clause = uriParser.ParseSelectAndExpand();
-{% endhighlight %}
+```
 
 ## 3. Serializer (Writer) ##
 Basically, the writing process is same with writing navigation under entity.
@@ -172,7 +172,7 @@ Let's say we are writing an response of query `http://host/People('abc')?$expand
 
 Sample code:
 
-{% highlight csharp %}
+```C#
 var uriParser = new ODataUriParser(Model, ServiceRoot, new Uri("http://host/People('abc')?$expand=Address/City"));
 var odataUri = uriParser.ParseUri();
 settings.ODataUri = odataUri;// Specify the odataUri to ODataMessageWriterSettings, which will be reflected in the context url.
@@ -195,7 +195,7 @@ writer.WriteEnd();   // End of City nested info
 writer.WriteEnd();// End of complex
 writer.WriteEnd();// End of complex info
 writer.WriteEnd();// End of entity
-{% endhighlight %}
+```
 
 Payload:
 

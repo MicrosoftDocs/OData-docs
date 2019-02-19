@@ -9,27 +9,27 @@ Referential constraints ensure that entities being referenced (principal entitie
 ### Sample
 Create an entity type `Test.Customer` with a key property `id` of type `Edm.String`.
 
-{% highlight csharp %}
+```C#
 var model = new EdmModel();
 var customer = new EdmEntityType("Test", "Customer", null, false, true);
 var customerId = customer.AddStructuralProperty("id", EdmPrimitiveTypeKind.String, false);
 customer.AddKeys(customerId);
 model.AddElement(customer);
-{% endhighlight %}
+```
 
 Create an entity type `Test.Order` with a composite key consisting of two key properties `customerId` and `orderId` both of type `Edm.String`.
 
-{% highlight csharp %}
+```C#
 var order = new EdmEntityType("Test", "Order", null, false, true);
 var orderCustomerId = order.AddStructuralProperty("customerId", EdmPrimitiveTypeKind.String, false);
 var orderOrderId = order.AddStructuralProperty("orderId", EdmPrimitiveTypeKind.String, false);
 order.AddKeys(orderCustomerId, orderOrderId);
 model.AddElement(order);
-{% endhighlight %}
+```
 
 `Customer.id` is the principal property while `Order.customerId` is the dependent property. Create a navigation property `orders` on the principal entity type `Customer`.
 
-{% highlight csharp %}
+```C#
 var customerOrders = customer.AddUnidirectionalNavigation(new EdmNavigationPropertyInfo
 {
     ContainsTarget = true,
@@ -37,11 +37,11 @@ var customerOrders = customer.AddUnidirectionalNavigation(new EdmNavigationPrope
     Target = order,
     TargetMultiplicity = EdmMultiplicity.Many
 });
-{% endhighlight %}
+```
 
 Then, create its corresponding partner navigation property on the dependent entity type `Order` with referential constraint.
 
-{% highlight csharp %}
+```C#
 var orderCustomer = order.AddUnidirectionalNavigation(new EdmNavigationPropertyInfo
 {
     ContainsTarget = false,
@@ -51,23 +51,23 @@ var orderCustomer = order.AddUnidirectionalNavigation(new EdmNavigationPropertyI
     DependentProperties = new[] { orderCustomerId },
     PrincipalProperties = new[] { customerId }
 });
-{% endhighlight %}
+```
 
 Create an entity type `Test.Detail` with a composite key consisting of three key properties `customerId` of type `Edm.String`, `orderId` of type `Edm.String`, and `id` of type `Edm.Int32`.
 
-{% highlight csharp %}
+```C#
 var detail = new EdmEntityType("Test", "Detail");
 var detailCustomerId = detail.AddStructuralProperty("customerId", EdmPrimitiveTypeKind.String, false);
 var detailOrderId = detail.AddStructuralProperty("orderId", EdmPrimitiveTypeKind.String, false);
 detail.AddKeys(detailCustomerId, detailOrderId, detail.AddStructuralProperty("id", EdmPrimitiveTypeKind.Int32, false));
 model.AddElement(detail);
-{% endhighlight %}
+```
 
 Create an entity type `Test.DetailedOrder` which is a derived type of `Test.Order`. We will use this type to illustrate type casting in between multiple navigation properties.
 
-{% highlight csharp %}
+```C#
 var detailedOrder = new EdmEntityType("Test", "DetailedOrder", order);
-{% endhighlight %}
+```
 
 Come back to the type `Test.Detail`. There are two referential constraints here:
 
@@ -76,7 +76,7 @@ Come back to the type `Test.Detail`. There are two referential constraints here:
 
 Create a navigation property `details`.
 
-{% highlight csharp %}
+```C#
 var detailedOrderDetails = detailedOrder.AddUnidirectionalNavigation(
     new EdmNavigationPropertyInfo
     {
@@ -86,11 +86,11 @@ var detailedOrderDetails = detailedOrder.AddUnidirectionalNavigation(
         TargetMultiplicity = EdmMultiplicity.Many
     });
 model.AddElement(detailedOrder);
-{% endhighlight %}
+```
 
 Then, create its corresponding partner navigation property on the dependent entity type `Detail` with referential constraint.
 
-{% highlight csharp %}
+```C#
 var detailDetailedOrder = detail.AddUnidirectionalNavigation(
     new EdmNavigationPropertyInfo
     {
@@ -101,7 +101,7 @@ var detailDetailedOrder = detail.AddUnidirectionalNavigation(
         DependentProperties = new[] { detailOrderId, detailCustomerId },
         PrincipalProperties = new[] { orderOrderId, orderCustomerId }
     });
-{% endhighlight %}
+```
 
 Please note that you should **NOT** specify `Customer.id` as the principal property because the association (represented by the navigation property `details`) is from `DetailedOrder` to `Detail` rather than from `Customer` to `Detail`. And those properties must be specified **in the order shown**.
 

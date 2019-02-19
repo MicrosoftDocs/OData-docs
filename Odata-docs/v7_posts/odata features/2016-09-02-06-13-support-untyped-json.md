@@ -20,7 +20,7 @@ For compatiblity with ODataLib 7.0, untyped values are read by default as a raw 
 
 Given the following model:
 
-{% highlight csharp %}    
+```C#   
 
     EdmModel model = new EdmModel();
     var entityType = new EdmEntityType("Server.NS", "ServerEntityType", null, false, false, false);
@@ -31,11 +31,11 @@ Given the following model:
     var entitySet = container.AddEntitySet("EntitySet", entityType);
     model.AddElement(container);
 
-{% endhighlight %}
+```
 
 and the following payload, in which the second property (*UndeclaredAddress1*) has a type (*Server.NS.UndefinedAddress*) that is not defined in metadata:
 
-{% highlight csharp %}    
+```C#   
 
     InMemoryMessage message = new InMemoryMessage();
     const string payload = @"
@@ -59,11 +59,11 @@ and the following payload, in which the second property (*UndeclaredAddress1*) h
         BaseUri = new Uri("http://www.sampletest.com/")
     };
 
-{% endhighlight %}
+```
 
 the following code will read the content of the second property as a raw string.
 
-{% highlight csharp %}    
+```C#   
 
     ODataResource entry = null;
     using (var msgReader = new ODataMessageReader((IODataResponseMessage)message, readerSettings, model))
@@ -82,11 +82,11 @@ the following code will read the content of the second property as a raw string.
     Console.WriteLine((entry.Properties.Last().Value as ODataUntypedValue).RawValue); 
     // @"{""@odata.type"":""Server.NS.UndefinedAddress"",""Street"":""No.999,Zixing Rd Minhang"",""UndeclaredStreet"":""No.10000000999,Zixing Rd Minhang""}"
     
-{% endhighlight %}
+```
 
 By setting `ReadUntypedAsString` to `false`, the same content can be read as a structure value:
 
-{% highlight csharp %}    
+```C#   
 
     readerSettings.ReadUntypedAsString = false;
 
@@ -116,7 +116,7 @@ By setting `ReadUntypedAsString` to `false`, the same content can be read as a s
     Console.WriteLine(address.TypeAnnotation.TypeName); //"Server.NS.UndefinedAddress" 
     Console.WriteLine(address.Properties.Last().Value); //"No.10000000999,Zixing Rd Minhang" 
 
-{% endhighlight %}
+```
 
 Note that a new reader state, `ODataReaderState.Primitive`, is added in ODataLib 7.4 in order to support reading primitive values within an untyped collection. Null values within an untyped collection continue to be read as null resources.  
 
@@ -124,7 +124,7 @@ By default, untyped primitive values are returned as boolean if the JSON value i
 
 For example, the following custom primitive type resolver will recognize strings that look like date, time of day, datetimeoffset, duration, and guid values, will differentiate between integer and decimal values, and will resolve "Male" or "Female" as an enum value from the `Server.NS.Gender` enum type. 
 
-{% highlight csharp %}
+```C#
 
 	readerSettings.PrimitiveTypeResolver = CustomTypeResolver;
 
@@ -170,11 +170,11 @@ For example, the following custom primitive type resolver will recognize strings
      return null;
     }
 
-{% endhighlight %}
+```
 
 To write a raw string into the payload, create an `ODataUntypedValue` and set the `RawValue` to the value to be written. Note that there is no validation of the contents of the string written to the payload and it will break clients if it is malformed or if it does not match the expected content-type of the payload.
 
-{% highlight csharp %}
+```C#
 
         new ODataProperty
         {
@@ -185,13 +185,13 @@ To write a raw string into the payload, create an `ODataUntypedValue` and set th
             }
         }    
 
-{% endhighlight %}
+```
 
 As of ODataLib 7.3, it is possible to write primitive, structured, and collection values to an untyped property, or within an untyped collection. A new `WritePrimitive()` method is added to the `ODataWriter` for writing an `ODataPrimitiveValue` within an untyped collection.
 
 For example, the following writes an untyped collection containing a null, followed by a structured value with a single property, followed by a nested collection containing two primitive values:
 
-{% highlight csharp %}
+```C#
 
             writer.WriteStart(new ODataResourceSet
             {
@@ -215,5 +215,5 @@ For example, the following writes an untyped collection containing a null, follo
             writer.WriteEnd(); // nested resource set
             writer.WriteEnd(); // outer resource set
 
-{% endhighlight %}
+```
 

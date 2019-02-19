@@ -8,7 +8,7 @@ In previous OData library, the control of writing/reading/parsing key-as-segment
 
 The following API can be used in ODataSimplifiedOptions:
 
-{% highlight csharp %}
+```C#
 public class ODataSimplifiedOptions
 {
     ...
@@ -19,6 +19,6 @@ public class ODataSimplifiedOptions
     public bool EnableWritingODataAnnotationWithoutPrefix { get; set; }
     ...
 }
-{% endhighlight %}
+```
 
-ODataSimplifiedOptions is registered by DI with singleton ServiceLifetime (Please refer to  [Dependency Injection support](#01-04-di-support)).
+ODataSimplifiedOptions is registered by DI with singleton ServiceLifetime (Please refer to  [Dependency Injection support](../core libraries/2016-08-30-01-05-di-support)).

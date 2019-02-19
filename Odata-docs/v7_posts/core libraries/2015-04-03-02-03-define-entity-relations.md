@@ -11,7 +11,7 @@ This section shows how to define navigation properties using EdmLib APIs. We wil
 ### Add a navigation property *Friends*
 In the **SampleModelBuilder.cs** file, insert the following code into the `SampleModelBuilder` class:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     public class SampleModelBuilder
@@ -48,7 +48,7 @@ namespace EdmLibSample
         ...
     }
 }
-{% endhighlight %}
+```
 
 This code:
 
@@ -61,7 +61,7 @@ Just as how we added the entity set `Customers`, we first add an entity type `Or
 
 In the **SampleModelBuilder.cs** file, insert the following code into the `SampleModelBuilder` class:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     public class SampleModelBuilder
@@ -88,11 +88,11 @@ namespace EdmLibSample
         ...
     }
 }
-{% endhighlight %}
+```
 
 In the **Program.cs** file, insert the following code into the `Main()` method:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     class Program
@@ -117,12 +117,12 @@ namespace EdmLibSample
         }
     }
 }
-{% endhighlight %}
+```
 
 ### Add navigation properties *Purchases* and *Intentions*
 In the **SampleModelBuilder.cs** file, insert the following code into the `SampleModelBuilder` class:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     public class SampleModelBuilder
@@ -169,7 +169,7 @@ namespace EdmLibSample
         }
     }
 }
-{% endhighlight %}
+```
 
 This code:
 

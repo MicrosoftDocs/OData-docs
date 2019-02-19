@@ -11,7 +11,7 @@ This section covers a scenario where we have one main model and two sub-models. 
 ### Define model references by code
 Let's begin by defining the **first sub-model** `subModel1`. The model contains a complex type `NS1.Complex1` which contains a structural property of another complex type defined in another model. We also add a model reference to `subModel1` pointing to the second model located at `http://model2`. The URL should be the **service metadata location**. The namespace to include is `NS2` and the model alias is `Alias2`.
 
-{% highlight csharp %}
+```C#
 var subModel1 = new EdmModel();
 
 var complex1 = new EdmComplexType("NS1", "Complex1");
@@ -22,11 +22,11 @@ reference1.AddInclude(new EdmInclude("Alias2", "NS2"));
 
 var references1 = new List<IEdmReference> {reference1};
 subModel1.SetEdmReferences(references1);
-{% endhighlight %}
+```
 
 Then we do the same thing for the **second sub-model** `subModel2`. This model contains a complex type `NS2.Complex2` and references the first model located at `http://model1`.
 
-{% highlight csharp %}
+```C#
 var subModel2 = new EdmModel();
 
 var complex2 = new EdmComplexType("NS2", "Complex2");
@@ -37,18 +37,18 @@ reference2.AddInclude(new EdmInclude("Alias1", "NS1"));
 
 var references2 = new List<IEdmReference> {reference2};
 subModel2.SetEdmReferences(references2);
-{% endhighlight %}
+```
 
 Now we will add one structural property to the two complex types `NS1.Complex1` and `NS2.Complex2`, respectively. The **key point** is that the property type is defined in the other model.
 
-{% highlight csharp %}
+```C#
 complex1.AddStructuralProperty("Prop", new EdmComplexTypeReference(complex2, true));
 complex2.AddStructuralProperty("Prop", new EdmComplexTypeReference(complex1, true));
-{% endhighlight %}
+```
 
 After defining the two sub-models, we now define the main model that contains a complex type `NS.Complex3` and references the two sub-models. This complex type contains two structural properties of type `NS1.Complex1` and `NS2.Complex2`, respectively.
 
-{% highlight csharp %}
+```C#
 var mainModel = new EdmModel();
 
 var complex3 = new EdmComplexType("NS", "Complex3");
@@ -58,12 +58,12 @@ mainModel.AddElement(complex3);
 
 var references3 = new List<IEdmReference> { reference1, reference2 };
 mainModel.SetEdmReferences(references3);
-{% endhighlight %}
+```
 
 ### Define model references by CSDL
 As an example, we store the CSDL of the three models in three string constants and create three `StringReader`s as if we are reading the model contents from remote locations.
 
-{% highlight csharp %}
+```C#
 const string mainEdmx =
 @"<?xml version=""1.0"" encoding=""utf-16""?>
 <edmx:Edmx Version=""4.0"" xmlns:edmx=""http://docs.oasis-open.org/odata/ns/edmx"">
@@ -132,6 +132,6 @@ if (!CsdlReader.TryParse(XmlReader.Create(new StringReader(mainEdmx)), (uri) =>
 {
     throw new Exception("bad model");
 }
-{% endhighlight %}
+```
 
 The model constructed in either way should be the same.

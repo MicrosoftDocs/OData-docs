@@ -11,7 +11,7 @@ This section shows how to read and write entity data models using EdmLib APIs. W
 ### Using the CsdlWriter APIs
 We have already used one of the `CsdlWriter` APIs to write the model to a CSDL document in the previous section.
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     class Program
@@ -27,11 +27,11 @@ namespace EdmLibSample
         }
     }
 }
-{% endhighlight %}
+```
 
 The `CsdlWriter.TryWriteCsdl()` method is prototyped as:
 
-{% highlight csharp %}
+```C#
 namespace Microsoft.OData.Edm.Csdl
 {
     public class CsdlWriter
@@ -45,14 +45,14 @@ namespace Microsoft.OData.Edm.Csdl
         ...
     }
 }
-{% endhighlight %}
+```
 
 The **second parameter** `writer` requires an `XmlWriter` which can be created through the overloaded `XmlWriter.Create()` methods. Remember to either apply a `using` statement on an `XmlWriter` instance or explicitly call `XmlWriter.Flush()` (or `XmlWriter.Close()`) to **flush the buffer to its underlying stream**. The **third parameter** `target` specifies the target implementation of the CSDL being generated, which can be either `CsdlTarget.EntityFramework` or `CsdlTarget.OData`. The **4th parameter** `errors` is used to pass out the errors encountered in writing the model. If the method **returns** `true` (indicate success), the `errors` should be an empty `Enumerable`; otherwise it contains all the errors encountered.
 
 ### Using the CsdlReader APIs
 The simplest `CsdlReader` API is prototyped as:
 
-{% highlight csharp %}
+```C#
 namespace Microsoft.OData.Edm.Csdl
 {
     public class CsdlReader
@@ -60,14 +60,14 @@ namespace Microsoft.OData.Edm.Csdl
         public static bool TryParse(XmlReader reader, out IEdmModel model, out IEnumerable<EdmError> errors);
     }
 }
-{% endhighlight %}
+```
 
 The **first parameter** `reader` takes an `XmlReader` that reads a CSDL document. The **second parameter** `model` passes out the parsed model. The **third parameter** `errors` passes out the errors encountered in parsing the CSDL document. If the **return value** of this method is `true` (indicate success), the `errors` should be an empty `Enumerable`; otherwise it will contain all the errors encountered.
 
 ### Roundtrip the model
 In the **Program.cs** file, insert the following code to the `Program` class:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     class Program
@@ -97,7 +97,7 @@ namespace EdmLibSample
         }
     }
 }
-{% endhighlight %}
+```
 
 This code first reads the model from the CSDL document **csdl.xml**, and then writes the model to another CSDL document **csdl1.xml**.
 

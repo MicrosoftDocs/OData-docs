@@ -10,30 +10,30 @@ From ODataLib 6.12.0, it supports to parse $skiptoken & $deltatoken in query opt
 
 Let's have an example:
 
-{% highlight csharp %}
+```C#
 ~/Customers?$skiptoken=abc
-{% endhighlight %}
+```
 
 We can do as follows to parse:
 
-{% highlight csharp %}
+```C#
 var uriParser = new ODataUriParser(...);
 string token = parser.ParseSkipToken();
 Assert.Equal("abc", token);
-{% endhighlight %}
+```
 
 # $deltatoken
 
 Let's have an example:
 
-{% highlight csharp %}
+```C#
 ~/Customers?$deltaToken=def
-{% endhighlight %}
+```
 
 We can do as follows to parse:
 
-{% highlight csharp %}
+```C#
 var uriParser = new ODataUriParser(...);
 string token = parser.ParseDeltaToken();
 Assert.Equal("def", token);
-{% endhighlight %}
+```

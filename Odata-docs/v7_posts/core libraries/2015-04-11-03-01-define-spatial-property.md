@@ -15,7 +15,7 @@ This section shows how to define spatial properties in entity data models using 
 ### Add properties *GeometryLoc* and *GeographyLoc*
 In the **SampleModelBuilder.cs** file, insert the following code into the `SampleModelBuilder.BuildAddressType()` method:
 
-{% highlight csharp %}
+```C#
 namespace EdmLibSample
 {
     public class SampleModelBuilder
@@ -34,7 +34,7 @@ namespace EdmLibSample
         }
     }
 }
-{% endhighlight %}
+```
 
 This code:
 

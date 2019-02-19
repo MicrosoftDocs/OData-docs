@@ -30,7 +30,7 @@ Those flags are all removed, and an enum type would represent all the settings i
 ## New API ##
 
 A flag enum type ValidationKinds to represent all validation kinds in reader and writer:
-{% highlight csharp %}
+```C#
 /// <summary>
 /// Validation kinds used in ODataMessageReaderSettings and ODataMessageWriterSettings.
 /// </summary>
@@ -64,10 +64,10 @@ public enum ValidationKinds
     /// </summary>
     All = ~0
 }
-{% endhighlight %}
+```
 
 Writer: Add member Validations which accepts all the combinations of ValidationKinds
-{% highlight csharp %}
+```C#
 /// <summary>
 /// Configuration settings for OData message writers.
 /// </summary>
@@ -80,10 +80,10 @@ public sealed class ODataMessageWriterSettings
 public ValidationKinds Validations { get; set; }
 
 }
-{% endhighlight %}
+```
 
 Reader: Add member Validations which accepts all the combinations of ValidationKinds
-{% highlight csharp %}
+```C#
 /// <summary>
 /// Configuration settings for OData message readers.
 /// </summary>
@@ -96,7 +96,7 @@ public sealed class ODataMessageReaderSettings
 public ValidationKinds Validations { get; set; }
 
 }
-{% endhighlight %}
+```
 
 ## Sample Usage ##
 `writerSettings.Validations = ValidationKinds.All`<br />

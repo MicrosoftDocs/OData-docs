@@ -8,12 +8,12 @@ category: "5. OData Features"
 
 # Create request message with prefer header
 
-{% highlight csharp %}
+```C#
 var requestMessage = new HttpWebRequestMessage(new Uri("http://example.com", UriKind.Absolute));
 requestMessage.PreferHeader().ContinueOnError = true;
 requestMessage.PreferHeader().MaxPageSize = 1024;
 requestMessage.PreferHeader().TrackChanges = true;
-{% endhighlight %}
+```
 
 Then in the http request header, we will have:
 `Prefer: odata.continue-on-error,odata.maxpagesize=1024,odata.track-changes`
