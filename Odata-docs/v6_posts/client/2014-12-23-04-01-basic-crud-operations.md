@@ -2,9 +2,14 @@
 title: "Basic CRUD Operations"
 description: ""
 category: "4. Client"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
-# Request an entity set
+## Request an entity set
 
 {% highlight csharp %}
 var context = new DefaultContainer(new Uri("http://services.odata.org/v4/(S(lqbvtwide0ngdev54adgc0lu))/TripPinServiceRW/"));
@@ -14,7 +19,7 @@ var people = context.People.Execute();
 
 The `Execute()` API call will return an `IEnumerable<Person>`.
 
-# Request an individual entity
+## Request an individual entity
 
 Either use the `Where()` API call:
 
@@ -40,7 +45,7 @@ var person = context.People.ByKey(new Dictionary<string, object>() {{"UserName",
 
 The `person` object returned are all of the type `Person`.
 
-# Update an entity
+## Update an entity
 
 {% highlight csharp %}
 var context = new DefaultContainer(new Uri("http://services.odata.org/v4/(S(lqbvtwide0ngdev54adgc0lu))/TripPinServiceRW/"));
@@ -56,7 +61,7 @@ Please be noted that the request is not sent until you call the `SaveChanges()` 
 
 The sample above will send a `PATCH` request to the service in which the body is the whole `Person` containing properties that are unchanged. There is also a way to track the changes on the property level to only send changed properties in an update request. It will be introduced in later posts.
 
-# Delete an entity
+## Delete an entity
 
 {% highlight csharp %}
 var context = new DefaultContainer(new Uri("http://services.odata.org/v4/(S(lqbvtwide0ngdev54adgc0lu))/TripPinServiceRW/"));

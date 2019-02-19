@@ -2,6 +2,11 @@
 title: "Client Hooks in OData Client"
 description: "How to use client hooks to compose higher level functionality"
 category: "4. Client"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 OData Client provides several ways to allow developers to hook into the client request and response. It gives developers the opportunity to inspect, adjust or replace some request or response.
@@ -9,11 +14,11 @@ OData Client provides several ways to allow developers to hook into the client r
 This doc will give you several real world examples to explain all these kinds of methods in OData Client.
 
 
-# Event Handler #
+## Event Handler 
 
 `DataServiceContext` provided three events to let developers to hook up to.
  
-## BuildingRequest ##
+### BuildingRequest 
 
 `public event EventHandler<BuildingRequestEventArgs> BuildingRequest;`
 
@@ -35,7 +40,7 @@ Developers can also change the HttpMethod of the request.
         eventArgs.Method = "PUT";
     }; 
 
-## ReceivingResponse ##
+### ReceivingResponse 
 
 `public event EventHandler<ReceivingResponseEventArgs> ReceivingResponse;`
 
@@ -86,7 +91,7 @@ But for a batch request for changes. `ReceivingResponse` will be fired for both 
     dataServiceContext.UpdateObject(p2);
     dataServiceContext.SaveChanges(Microsoft.OData.Client.SaveChangesOptions.BatchWithSingleChangeset);
 
-## SendingRequest2 ##
+### SendingRequest2
 
 `public event EventHandler<SendingRequest2EventArgs> SendingRequest2;`
 
@@ -112,7 +117,7 @@ You can also use this event to check other information in the request message.
 
 `DataServiceContext` defines a `Configurations` property of `DataServiceClientConfigurations` which contains a `RequestPipeline` and `ResponsePipeline`. These two pipelines provide several hooks to developers to hook into the client request or response. 
 
-## OnMessageCreating ##
+### OnMessageCreating 
 
 `OnMessageCreating` is a property of the `RequestPipeline`.
  
@@ -120,7 +125,7 @@ You can also use this event to check other information in the request message.
 
 Developers can use this function to customize the request message.
 
-### Customize request message ###
+#### Customize request message 
 Following code provides a sample which overrides the `GetResponse()` method in user-defined request message which fakes a response message. We define a client request message which inherits `HttpWebRequestMessage`. `HttpWebRequestMessage` is a sub class of `DataServiceClientRequestMessage`
 
     public class CustomizedRequestMessage : HttpWebRequestMessage
@@ -153,7 +158,7 @@ Following code provides a sample which overrides the `GetResponse()` method in u
         }
     }
 
-### Set `OnMessageCreating` ###
+#### Set `OnMessageCreating`
 
 Then, Developers can replace the default client message with `CustomizedClientRequestMessage` by using following code. Then if the client sends a request after this setting, it will automatically return the fake response message.
 
@@ -174,7 +179,7 @@ Then, Developers can replace the default client message with `CustomizedClientRe
     };
     dataServiceContext.PeoplePlus.ByKey("Jason").GetValue();
 
-## OnEntryStarting ##
+### OnEntryStarting 
 
 `OnEntryStarting` is a method of the `RequestPipeline`.
 
@@ -182,7 +187,7 @@ Then, Developers can replace the default client message with `CustomizedClientRe
 
 Developer can use this function to control the information of an `ODataEntry` to be serialized.
 
-### Modify ODataEntry properties ###
+#### Modify ODataEntry properties 
 
 Following code provides a sample to add properties to an `ODataEntry`.
 
@@ -198,7 +203,7 @@ Following code provides a sample to add properties to an `ODataEntry`.
         entry.Properties = odataProps;
     }
 
-### Set `OnEntryStarting` ###
+#### Set `OnEntryStarting` 
 
 Then, to add new properties in the `OdataEntry`, developers can call `AddProperties` in `OnEntryStarting`.
 
@@ -218,7 +223,7 @@ Then, to add new properties in the `OdataEntry`, developers can call `AddPropert
     dataServiceContext.UpdateObject(person);
     dataServiceContext.SaveChanges();
 
-## More client hooks in RequestPipeline && ResponsePipeline ##
+### More client hooks in RequestPipeline && ResponsePipeline 
 
 These two configurations provide more other client hooks in request pipeline and response pipeline.
 

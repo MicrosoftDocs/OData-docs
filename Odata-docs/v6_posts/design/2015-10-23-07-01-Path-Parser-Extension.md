@@ -2,13 +2,18 @@
 title: "7.1 Parser Extension Design"
 description: "Design doc for uriparser, keyassegment"
 category: "7. Design"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 This doc discuss about the design of extension of Path parser part of UriParser.
 
-# 1 Path Parser Overview
+## 1 Path Parser Overview
 
-## 1.1 Current path parsing logic
+### 1.1 Current path parsing logic
 
 - Linear parsing, one segment is determined, then next one;
 - Syntax and semantic passes are combined together, as we need type information from model to validate the identifiers (Web API );
@@ -70,7 +75,7 @@ private void CreateNextSegment(string text)
 }
 {% endhighlight %}
 
-## 1.2 KeyAsSegment Rule
+### 1.2 KeyAsSegment Rule
 
 Key as segment means user could choose to place a key in the path, instead of in brackets, which is OData convention.
 Currently the ODataLib supports KeyAsSegment by providing an ODataUrlConventions setting on ODataUriparser. But the introducing of KeyAsSegment does bring conflicts, in order to solve those conflicts, ODataLib also introduced the ‘$’ escape sign. Here are some words taken from source code:
@@ -99,14 +104,14 @@ In this case for the following 2 Urls would have different parsing results:
 
 As the quote says, for now we still do not have document to describe the detailed behavior of ‘$’, so it would be nice if we can have some pre-defined parsing rules to resolve the confliction while not relying on ‘$’. Also it is supposed to be the default Url convention for OData simplified. Detailed design would be discussed in later part.
 
-## 1.3 Design goal
+### 1.3 Design goal
 
 - Do not throw exception until segment cannot be handled eventually, customer extensions may define new syntax rules.
 - Modularize single segment parser, we easily integrate community contributed parser extensions. (We’d provide an extension framework, instead of hard-coded extensions.)
 
-# 2 Design Detail
+## 2 Design Detail
 
-## 2.1 New parser context class
+### 2.1 New parser context class
 
 Add the following class:
 {% highlight csharp %}
@@ -125,7 +130,7 @@ public class ODataUriParserContext
 {% endhighlight %}
 
 
-## 2.2 Update Parser configuration
+### 2.2 Update Parser configuration
 
 Modify the following class:
 {% highlight csharp %}
@@ -151,7 +156,7 @@ For this case the expected behavior is: when the parser reaches ‘Orders’, it
 The current behavior doesn’t look like an idea model for path parsing, while a non-backtracking parser would be more intuitive both for the parsing flow and the extension providers. 
 If we are going to change this, we may have a simplified parser context and parsing flow.
 
-## 2.3 New Convention for KeyAsSegment
+### 2.3 New Convention for KeyAsSegment
 
 {% highlight csharp %}
 public sealed class ODataUrlConventions{

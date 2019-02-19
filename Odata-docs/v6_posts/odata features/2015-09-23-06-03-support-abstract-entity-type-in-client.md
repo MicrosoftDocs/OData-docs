@@ -2,11 +2,16 @@
 title: "Abstract entity type support in .NET client"
 description: ""
 category: "6. OData Features"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 OData Client for .NET supports abstract entity type without key from ODataLib 6.11.0.
 
-# Create model with abstract entity type
+## Create model with abstract entity type
 
 {% highlight csharp %}
 var abstractType = new EdmEntityType("DefaultNS", "AbstractEntity", null, true, false);
@@ -19,7 +24,7 @@ orderType.AddKeys(orderIdProperty);
 model.AddElement(orderType);
 {% endhighlight %}
 
-# Output model
+## Output model
 
     <EntityType Name="AbstractEntity" Abstract="true" />
     <EntityType Name="Order" BaseType="DefaultNS.AbstractEntity">
@@ -28,7 +33,7 @@ model.AddElement(orderType);
       </Key>
     </EntityType>
       
-# Client generated proxy file
+## Client generated proxy file
 T4 would auto-generate code for abstract entity type like:
 
 {% highlight csharp %}

@@ -2,11 +2,16 @@
 title: "Override primitive serialization and deserialization of payload"
 description: ""
 category: "6. OData Features"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 Since ODataLib 6.12.0, it supports to customize the payload value converter to override the primitive serialization and deserialization of payload.
 
-### New public API
+## New public API
 
 The new class `ODataPayloadValueConverter` provides a default implementation for value conversion, and also allows developer to override by implemementing `ConvertFromPayloadValue` and `ConvertToPayloadValue`.
 
@@ -27,7 +32,7 @@ New helper functions to set converter to model so the new converter can be appli
 }
 {% endhighlight %}
 
-### Sample
+## Sample
 
 Here we are trying to override the default converter to support the "R" format of date and time. It is quite simple. 
 

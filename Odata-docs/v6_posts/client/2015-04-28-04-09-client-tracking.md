@@ -2,11 +2,16 @@
 title: "Client Tracking"
 description: ""
 category: "4. Client"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
  
 OData Client for .NET supports two levels tracking : entity tracking and property tracking(only top level properties). Entity tracking enables you to track an entity in `DataServiceContext`. You can enable property tracking by aid of `DataServiceCollectionOfT`.
 
-# Entity Tracking #
+## Entity Tracking 
 
 `DataServiceContext` provides several ways to track an entity.
 
@@ -48,6 +53,6 @@ One sample to use `AttachTo` and `DeleteLink`.
 
 {% endhighlight %}
 
-# Property Tracking #
+## Property Tracking 
 
 Please refer to [client property tracking for patch](http://blogs.msdn.com/b/odatateam/archive/2014/04/10/client-property-tracking-for-patch.aspx) for detail.

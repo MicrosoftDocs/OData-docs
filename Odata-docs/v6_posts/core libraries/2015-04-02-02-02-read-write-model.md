@@ -2,6 +2,11 @@
 title: "2.2 Read and write models"
 description: "Read and write entity data models using EdmLib APIs"
 category: "2. EdmLib"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 Models built with EdmLib APIs are in **object representation** while CSDL documents are in **XML representation**. The conversion from models to CSDL is accomplished by the `CsdlWriter` APIs which are mostly used by OData services to **expose metadata documents** (CSDL). In contrast, the conversion from CSDL to models is done by the `CsdlReader` APIs which are usually used by OData clients to **read metadata documents** from services.

@@ -2,12 +2,17 @@
 title: "7.3 Navigation Property in Complex Type Design"
 description: "Design doc for navigation property, complex type"
 category: "7. Design"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 ~_Inital draft, Improve frequently_~
 
-# 1 Design Summary
+## 1 Design Summary
 
-## 1.1 Overview
+### 1.1 Overview
 
 This doc describes the design about supporting the navigation property in complex type. It is related to the following components/libraries:
 
@@ -16,7 +21,7 @@ This doc describes the design about supporting the navigation property in comple
 * OData Client
 * Web API
 
-## 1.2 Goals/Scopes
+### 1.2 Goals/Scopes
 
 * Edm
   - Construct and validate navigation property in complex type from EdmModel.
@@ -36,17 +41,17 @@ This doc describes the design about supporting the navigation property in comple
   - Provide the routing logic for navigation property in complex type.
   - Serialization/ Deserialization navigation property in complex type in payload
 
-## 1.3 Non-Goals
+### 1.3 Non-Goals
 
 * Containment navigation property in complex type.
 *	Dynamic navigation property in open type
 *	Update navigation property in Collection complex property
 
-# 2 Design Details
+## 2 Design Details
 
-## 2.1	CSDL and EDM
+### 2.1	CSDL and EDM
 
-### 2.1.1 Construct navigation property in complex type
+#### 2.1.1 Construct navigation property in complex type
 
 From [OData Spec](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html#_Toc406398201):
 
@@ -123,7 +128,7 @@ public static IEnumerable<IEdmNavigationProperty> DeclaredNavigationProperties(t
 public static IEdmNavigationProperty FindNavigationProperty(this IEdmComplexTypeReference type, string name)
 {% endhighlight %}
 
-### 2.1.2 Write navigation property in complex type in CSDL
+#### 2.1.2 Write navigation property in complex type in CSDL
 
 There is a logic to write the complex type and its declared properties. We can add the navigation properties writing logic after writing declared properties.  So, We should change the function **ProcessComplexType()** in _EdmModelCsdlSerializationVisitor_ class as follows to write navigation properties in complex type:
 {% highlight csharp %}
@@ -147,7 +152,7 @@ Then, the complex type in metadata document may have navigation property. Let’
   </ComplexType>
 {% endhighlight %}
 
-### 2.1.3 Read navigation property in complex type in CSDL
+#### 2.1.3 Read navigation property in complex type in CSDL
 
 Reading/Parse the navigation property in complex type is a lit bit complex. We can analysis the entity type and complex type class inheritance in CSDL. Below picture shows the class relationship between CSDL complex type and CSDL entity type. Both are derived from _CsdlNamedStructuredType_, then derived from _CsdlStructuredType_:
 
@@ -181,7 +186,7 @@ CsdlElement<CsdlNamedElement>(CsdlConstants.Element_NavigationProperty, this.OnN
 
 *	Override the ComputeDeclaredProperties() function in CsdlSemanticsComplexTypeDefinition
 
-### 2.1.4 Construct navigation property binding in complex type
+#### 2.1.4 Construct navigation property binding in complex type
 
 OData spec says:
 {% highlight csharp %}
@@ -266,7 +271,7 @@ customers.AddNavigationTarget(addressNavProp, cities, new[] { location });
     </EntitySet>
   </EntityContainer>
 {% endhighlight %}
-### 2.1.5 Validation rules for navigation property in complex type
+#### 2.1.5 Validation rules for navigation property in complex type
 
 There’re a lot of validation rules related to navigation property, entity type and complex type. So, we should:
 
@@ -276,9 +281,9 @@ There’re a lot of validation rules related to navigation property, entity type
   -	ContainsTarget is not true for navigation property of complex type, since we are not going to enable it now.
 
 
-## 2.2	OData Core
+### 2.2	OData Core
 
-### 2.2.1 Uri Parser
+#### 2.2.1 Uri Parser
 The navigation property in complex type can be in path/segment or query option. We have to support all of these. Let’s see some Uri templates for navigation property in complex type:
 
 *	Navigation property segment of complex type:
@@ -980,7 +985,7 @@ For example, when customer call context.LoadProperty(address, "City"), client ne
   Similar to Entity, add/set/delete bindings of entitytracker, and get source/target descriptor to generate request.
 
 
-### 2.3.5 Serialization
+#### 2.3.5 Serialization
 
 When we try to add or update an entity from client, we need call ODataWriter to serialize the object to payload. So in class Serializer:
 1.	WriteEntry
@@ -1004,7 +1009,7 @@ e)	Write ODataEntry, and for ODataExpandableProperty, call WriteStart(ODataExpan
 2.	WriteEntityReferenceLink
 When AddLink/SetLink is called on complex type, this function will be called to write the payload. So the function need update the logic from EntityDescriptor to ResourceDescriptor. 
 
-### 2.3.6 CodeGen
+#### 2.3.6 CodeGen
 In order to support .Expand on complex type, we need generate DataServiceQuery for Complex Type.
 For scenario Locations->Address->City, Address is complex type, City is the navigation property of Address:
  
@@ -1084,9 +1089,9 @@ Then we can support:
   var location = context.Location.ByKey(1).Addresses.Expand(a=>a.City);
 {% endhighlight %}
 
-## 2.4 Web API OData 
+### 2.4 Web API OData 
 
-### 2.4.1 Model builder
+#### 2.4.1 Model builder
 
 Similar with the entity type and complex type structure, Web API OData has the same configuration class structure. Below picture shows the relationship between complex type configuration, entity type configuration and structural type configuration.
 
@@ -1159,7 +1164,7 @@ address.Property(a => a.Street);
 address.HasRequired(a => a.Region);
 {% endhighlight %}
 
-### 2.4.2 Convention model builder and conventions
+#### 2.4.2 Convention model builder and conventions
 
 In convention model builder, it is assumed that complex type can’t have navigation property. As a result, the properties type belong to complex type is built as complex type if it’s not enum type or primitive type. 
 As navigation property is allowed in complex type, we should change the flow to assume the structural type of property in complex type as entity type. Once all types are buil, we should re-use the re-discover logic to change the assumed type.
@@ -1219,7 +1224,7 @@ Change the SelectExpandBinder to support expanding the navigation property in co
   - ~…?&expand=property/navigation
 
 
-### 2.4.5 Serialization navigation property in complex type
+#### 2.4.5 Serialization navigation property in complex type
 
 #### 2.4.5.1 Expand complex property in Entry
 
@@ -1290,7 +1295,7 @@ if (entry != null)
 {% endhighlight %}
 
 
-### 2.4.5.2 Top level expanded complex property
+#### 2.4.5.2 Top level expanded complex property
 
 We can modify ODataComplexTypeSerializer to support expanded complex property. For example:
 {% highlight csharp %}
@@ -1325,7 +1330,7 @@ private static void WriteExpandableProperty(ODataExpandableProperty property, En
 For top level collection of expandable property, we can use the above same logic but create an _ODataCollectionExpandablePropertyWriter_ to write.
 
 
-### 2.4.6 Deserialization navigation property in complex type
+#### 2.4.6 Deserialization navigation property in complex type
 
 #### 2.4.6.1 Expand complex property in Entry
 

@@ -2,6 +2,11 @@
 title: "2.7 Define annotations"
 description: "Define annotations using EdmLib APIs"
 category: "2. EdmLib"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 EdmLib supports adding annotations on various model elements, including entity sets, entity types, properties and so on. Annotations can be put under **the `Annotations` element** in the schema as well as **the targetted model elements** (**inline** annotations). Users can specify the **serialization location** using EdmLib API.

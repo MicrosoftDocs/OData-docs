@@ -2,13 +2,18 @@
 title: "Batch Operations"
 description: ""
 category: "4. Client"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
  
 OData Client for .NET supports batch processing of requests to an OData service. This ensures that all operations in the batch are sent to the data service in a single HTTP request, enables the server to process the operations atomically, and reduces the number of round trips to the service.
 
 OData Client for .NET doesn't support sending both query and change in one batch request.
  
-# Batch Query #
+## Batch Query 
 
 To execute multiple queries in a single batch, you must create each query in the batch as a separate instance of the `DataServiceRequest<TElement>` class. The batched query requests are sent to the data service when the `ExecuteBatch` method is called. It contains the query request objects. 
 
@@ -75,7 +80,7 @@ The payload of the request is as following:
 	
 	--batch_d3bcb804-ee77-4921-9a45-761f98d32029--
 
-# Batch Modification #
+## Batch Modification 
 
 In order to batch a set of changes to the server, `ODataServiceContext` provides `SaveChangesOptions.BatchWithSingleChangeset` and `SaveChangesOptions.BatchWithIndependentOperations` when `SaveChanges`.
 

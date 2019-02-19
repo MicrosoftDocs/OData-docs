@@ -2,6 +2,11 @@
 title: "Asynchronous operations"
 description: ""
 category: "4. Client"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
  
 *All samples in this doc are based on the Trippin Service. You can follow "[How to use OData Client Code Generator to generate client-side proxy class](http://blogs.msdn.com/b/odatateam/archive/2014/03/11/how-to-use-odata-client-code-generator-to-generate-client-side-proxy-class.aspx)" to generate the client proxy file.*
@@ -10,9 +15,9 @@ OData Client for .NET provides a serial of Begin/End methods to support asynchro
 
 OData Client for .NET (from 6.4.0) also provides another set of asynchronous APIs in .NET 4.0 format, like `ExecuteAsync`;
  
-#Asynchronous Query #
+## Asynchronous Query 
 
-## Query an Entity Set ##
+### Query an Entity Set 
 
 `DataServiceQuery<TElement>` provides `BeginExecute` and `EndExecute` methods to support query a collection of entities
 
@@ -56,7 +61,7 @@ You also can use `DataServiceQuery<TElement>.ExecuteAsync` to query an entity se
         }
     }
  
-## Query an Entity Set with Paging ##
+### Query an Entity Set with Paging 
 
 `DataServiceContext` provides `BeginExecute` method which could take a `DataServiceQueryContinuation<TElement>` parameter to get the next page of data in a paged query result.  
 
@@ -135,7 +140,7 @@ You also can use `DataServiceContext.ExecuteAsync` to get the next page of an en
         }
     }
 
-## Query a Single Entity ##
+### Query a Single Entity 
 
 `DataServiceContext` provides `BeginGetValue` and `EndGetValue` methods to support querying a single entity
 
@@ -166,7 +171,7 @@ Or, you can use `DataServiceContext.GetValueAsync` to support such query.
         Console.WriteLine(russell.UserName);
     }
 
-## Query Navigation property ##
+### Query Navigation property 
 
 `Expand` method of `DataServiceQuery<TElement>` provides a way to query related entities. But if you want to query the navigation property separately, `DataServiceContext` provides LoadProperty method to support it. `BeginLoadProperty` and `EndLoadProperty` methods are the related asynchronous APIs.
 
@@ -209,7 +214,7 @@ You can also use `DataServiceContext.LoadPropertyAsync` to query the related pro
         }
     }
 
-## Query a Batch ##
+### Query a Batch 
 
 `DataServiceContext` provides `BeginExecuteBatch` to put several query in a batch. The queries are specified as `DataServiceRequest<TElement>` instances. The `EndExecuteBatch` returns a `DataServiceResponse` that represents the response of the batch request as a whole. Individual query responses are represented as `DataServiceResponse` objects that can be accessed by enumerating the `DataServiceResponse` instance.
 
@@ -285,13 +290,13 @@ Or, you can use `ExecuteBatchAsync` to do the same thing.
         }
     }
 
-# Create/Update/Delete an Entity or a relationship #
+## Create/Update/Delete an Entity or a relationship 
 
 `DataServiceContext` provides `BeginSaveChanges` and `EndSavechanges` methods to asynchronously submits the pending changes to the data service. Changes are added to the `DataServiceContext` by calling AddObject, UpdateObject, DeleteObject, AddLink, DeleteLink SetLink, SetSaveStream, etc.  
 
 You can use the `SaveChangesOption` to control whether you need to send a batch request. 
 
-##Create an entity##
+### Create an entity
 
     DefaultContainer dsc = new DefaultContainer(new Uri("http://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
 
@@ -320,7 +325,7 @@ You can use the `SaveChangesOption` to control whether you need to send a batch 
         }
     }
 
-## Update an entity ##
+### Update an entity 
 
     public void AsyncUpdatePerson()
     {
@@ -339,15 +344,15 @@ You can use the `SaveChangesOption` to control whether you need to send a batch 
         System.Threading.Thread.Sleep(10000);
     }
 
-## Delete an entity ##
+### Delete an entity 
 
 The code is almost the same with that in Update an entity part, you only need to change the update part to `dsc.DeleteObject(person);`
 
-## Modify Link ##
+### Modify Link 
 
 `DataServiceContext.BeginSaveChanges` can submit the pending changes of relationships modification to service. The code is almost same as before.
 
-## Use Async APIs to modify a entity
+### Use Async APIs to modify a entity
 
 `DataServiceContext` provides `SaveChangesAsync` to support all the modification operation. 
 
@@ -371,7 +376,7 @@ The code is almost the same with that in Update an entity part, you only need to
         await dsc.SaveChangesAsync();
     }
 
-#Read Stream#
+## Read Stream
 
 `DataServiceContext` provides `BeginGetReadStream` and `EndGetReadStream` to support asynchronously requesting the binary data stream that belongs to the requested entity.
 

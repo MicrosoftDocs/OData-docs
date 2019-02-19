@@ -2,6 +2,11 @@
 title: "2.4 Define singleton"
 description: "Define singleton using EdmLib APIs"
 category: "2. EdmLib"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 Defining a singleton in the entity container shares the same simple way as defining an entity set.

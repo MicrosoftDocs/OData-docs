@@ -2,11 +2,16 @@
 title: "Add vocabulary annotations to EdmEnumMember"
 description: ""
 category: "6. OData Features"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 From ODataLib 6.11.0, it supports to add vocabulary annotations to EdmEnumMember.
 
-# Create Model
+## Create Model
 
 {% highlight csharp %}
 EdmModel model = new EdmModel();
@@ -41,7 +46,7 @@ carType.AddStructuralProperty("Color", new EdmEnumTypeReference(colorType, false
 container.AddEntitySet("Cars", carType);
 {% endhighlight %}
 
-# Output
+## Output
 
     <?xml version="1.0" encoding="utf-8"?>
       <edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">

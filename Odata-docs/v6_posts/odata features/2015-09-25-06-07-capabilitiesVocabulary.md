@@ -2,11 +2,16 @@
 title: "Capabilities vocabulary support"
 description: ""
 category: "6. OData Features"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 From ODataLib 6.13.0, it supports the capabilities vocabulary. For detail information about capabiliites vocabulary, please refer to [here](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/vocabularies/Org.OData.Capabilities.V1.xml).
 
-# Enable capabilities vocabulary
+## Enable capabilities vocabulary
 
 If you build the Edm model from the following codes:
 
@@ -16,7 +21,7 @@ IEdmModel model = new EdmModel();
 
 The capabilities vocabulary is enabled as a reference model in the Edm Model.
 
-## How to use capabilities vocabulary
+### How to use capabilities vocabulary
 
 ODL doesn't provide a set of API to add capabilites, but it provoides an unified API to add all vocabularies:
  
@@ -52,7 +57,7 @@ if (term != null)
 }  
 {% endhighlight %}
 
-# The related metata
+## The related metata
 
 The corresponding metadata can be as follows:
 

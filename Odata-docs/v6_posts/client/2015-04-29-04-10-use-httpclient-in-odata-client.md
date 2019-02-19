@@ -2,6 +2,11 @@
 title: "Use HttpClient in OData Client"
 description: ""
 category: "4. Client"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 In this session, we will dive into how to use HttpClient in OData client request. We will use the hook mechanism in OData client which has been introduced in [Client Hooks in OData Client](http://odata.github.io/odata.net/#04-06-use-client-hooks-in-odata-client).   

@@ -2,11 +2,16 @@
 title: "$skiptoken & $deltatoken"
 description: ""
 category: "6. OData Features"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 From ODataLib 6.12.0, it supports to parse $skiptoken & $deltatoken in query options.
 
-# $skiptoken
+## $skiptoken
 
 Let's have an example:
 
@@ -22,7 +27,7 @@ string token = parser.ParseSkipToken();
 Assert.Equal("abc", token);
 {% endhighlight %}
 
-# $deltatoken
+## $deltatoken
 
 Let's have an example:
 

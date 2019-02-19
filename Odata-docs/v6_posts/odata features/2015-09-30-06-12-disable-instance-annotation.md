@@ -2,6 +2,11 @@
 title: "Disable instance annotation materialization in .NET client"
 description: ""
 category: "6. OData Features"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 From 6.12.0, OData .Net client is able to disable instance annotation materialization by turning on the flag `DisableInstanceAnnotationMaterialization` in `DataServiceContext`.

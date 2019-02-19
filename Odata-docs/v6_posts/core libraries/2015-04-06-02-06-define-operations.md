@@ -2,6 +2,11 @@
 title: "2.6 Define operations"
 description: "Define operations and operation imports using EdmLib APIs"
 category: "2. EdmLib"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 EdmLib supports defining all types of operations (**actions** or **functions**) and operation imports (**action imports** or **function imports**). Besides the conceptual difference between actions and functions, the way to define them could actually be shared among actions and functions.

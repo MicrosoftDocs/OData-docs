@@ -2,6 +2,11 @@
 title: "OData Client Code Generation Tool"
 description: "How to generate client proxy file for an OData service"
 category: "8. Tooling"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 OData provide two tools to generate client proxy file for an OData Service.
@@ -22,7 +27,7 @@ OData provide two tools to generate client proxy file for an OData Service.
 The following part will mainly focus on how to use the OData Connected Service to generate client proxy file.  
 	
 	
-# Install OData Connected Service Extension #
+# Install OData Connected Service Extension
 
 You can install this extension by [this link](https://visualstudiogallery.msdn.microsoft.com/b343d0eb-6493-44c2-b558-13a0408d013f/file/163980/4/Microsoft.OData.ConnectedService.vsix) from vs gallery. Or, you can install it in Visual Studio 2015.
 
@@ -40,9 +45,9 @@ Click **Close** once the installation finishes.
 
 You need to restart the visual studio in order for the installation to take effect.
 
-# Generate Client Proxy#
+## Generate Client Proxy
 
-## Create a new project ##
+### Create a new project
 
 Create your project. Here, we take "Console Application" project as an example.
 
@@ -74,7 +79,7 @@ Once you finished all those settings, click **Finish**. This tool will begin to 
 
 ![image](../../assets/tooling/odata-connected-service-generate.PNG)
 
-## Consume the OData service ##
+### Consume the OData service
 
 Now, the developer can write client code to consume the OData Service.
 
@@ -98,6 +103,6 @@ Now, the developer can write client code to consume the OData Service.
 
 ![image](../../assets/tooling/odata-connected-service-consume.PNG)
 
-# Summary #
+## Summary 
 
 Now you have the OData Connected Service at your disposal to generate your client proxy for any OData service. To leave us feedback, please open github issues at [OData Lab GitHub](https://github.com/OData/lab/issues).

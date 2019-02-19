@@ -2,6 +2,11 @@
 title: "Allow serialization of additional properties"
 description: ""
 category: "6. OData Features"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 We are now supporting to serialize addtional properties which are not advertised in Metadata from ODataLib 6.13.0. To achieve this, it is just needed to turn off full validation when creating the `ODataMessageWriterSettings`.

@@ -2,6 +2,11 @@
 title: "2.8 Using model utilities"
 description: "Using model utility APIs"
 category: "2. EdmLib"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 The model utilities are made up of many useful **extension methods** to various EDM classes and interfaces (e.g., IEdmModel, IEdmType, ...). The extension methods are intended to implement some **commonly reusable** logic to simplify the code handling the entity data models. These methods can be roughly classified into five categories:

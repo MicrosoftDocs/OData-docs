@@ -2,11 +2,16 @@
 title: "Support untyped json in ODataLib and Client"
 description: ""
 category: "6. OData Features"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 Starting from ODataV3 5.7.0, undeclared property is better supported by ODataLib and OData Client. ODataMessageReader is extended to be capabale of reading arbitrary JSON as raw string from the payload.
 
-#### In ODataLib
+## In ODataLib
 
 The MessageReaderSettings used to accept ODataUndeclaredPropertyBehaviorKinds.IgnoreUndeclaredValueProperty/.None as settings for reading undeclared value properties in payload, now it can accept a new setting value called ODataUndeclaredPropertyBehaviorKinds.SupportUndeclaredValueProperty. They correspond to the below behaviors:
 
@@ -37,7 +42,7 @@ ODataUntypedValue undeclaredComplex1Value= entry.Properties.Single(s => string.E
 	
 {% endhighlight %}
 
-#### In OData Client
+## In OData Client
 
 DataServiceContext now has a new setting called UndeclaredPropertyBehavior.
 

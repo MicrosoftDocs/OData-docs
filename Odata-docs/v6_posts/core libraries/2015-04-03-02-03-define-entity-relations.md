@@ -2,6 +2,11 @@
 title: "2.3 Define entity relations"
 description: "Define entity relations using EdmLib APIs"
 category: "2. EdmLib"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 Entity relations are defined by **navigation properties** in entity data models. Adding a navigation property to an entity type using EdmLib APIs is as simple as adding a structural property shown in the previous sections. EdmLib APIs support adding navigation properties targetting some entity set in the entity container as well as **contained** entity set belonging to some specific navigation property.

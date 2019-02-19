@@ -2,6 +2,11 @@
 title: "2.1 Build a basic model"
 description: "Build a basic entity data model using EdmLib APIs"
 category: "2. EdmLib"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 The *EDM* (Entity Data Model) library (*abbr*. EdmLib) primarily contains APIs to **build** an entity data model that conforms to *CSDL* (Common Schema Definition Language) as well as APIs to **read** (or **write**) an entity data model **from** (or **to**) a CSDL document.

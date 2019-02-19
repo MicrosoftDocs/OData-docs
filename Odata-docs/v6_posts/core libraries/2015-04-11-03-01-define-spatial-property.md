@@ -2,6 +2,11 @@
 title: "3.1 Define spatial properties"
 description: "Define spatial properties in entity data models"
 category: "3. Spatial"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 Using Spatial in OData services involves two parts of work:

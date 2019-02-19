@@ -2,6 +2,11 @@
 title: "2.9 Model references"
 description: "Model references"
 category: "2. EdmLib"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 Model referencing is an advanced OData feature. When you want to use some types defined in another model, you can reference that model in your own model. Typically when we talking about model referencing, we have a **main model** and one or more **sub models**. The main model references the sub models. But that is not an absolute role because a main model can also be referenced by another model. That is to say models can have **mutual references**.

@@ -2,6 +2,11 @@
 title: "3.2 Create spatial instances"
 description: "Create spatial instances"
 category: "3. Spatial"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 This section shows how to create spatial instances using Spatial APIs and return them as property values of OData entries.

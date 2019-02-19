@@ -2,11 +2,16 @@
 title: "Composable function in Client"
 description: ""
 category: "6. OData Features"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 Composable function (function import) can have additional path segments and query options as appropriate for the returned type.
 
-### Unbound composable function
+## Unbound composable function
 For example, we have model:
 
 {% highlight csharp %}
@@ -52,7 +57,7 @@ var discdProducts = getAllProductsFunction.DiscountPlus(50).Execute();   // Call
 var filteredProducts = getAllProductsFunction.Where(p => p.SkinColorPlus == ColorPlus.RedPlus).Execute();   //Add query option 
 {% endhighlight %}
 
-### Bound composable function
+## Bound composable function
 
 Bound composable function has similiar usage, except that it is tied to a resource.
 

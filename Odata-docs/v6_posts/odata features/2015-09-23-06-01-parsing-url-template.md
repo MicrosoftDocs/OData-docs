@@ -2,6 +2,11 @@
 title: "Parsing URI path template"
 description: ""
 category: "6. OData Features"
+author: apexprodleads
+ms.author: apexprodleads
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 From ODataLib 6.11.0, it supports to parse Uri path template. A path template is any identifier string enclosed with curly brackets.
@@ -10,7 +15,7 @@ For example:
 {dynamicProperty}
 {% endhighlight %}
 
-# Uri templates
+## Uri templates
 
 There are three kind of Uri template:
 
@@ -23,7 +28,7 @@ Be caution:
 1. please EnableUriTemplateParsing = true for UriParser.
 2. Path template can't be the first segment.
 
-# Example
+## Example
 
 {% highlight csharp %}
 var uriParser = new ODataUriParser(HardCodedTestModel.TestModel, new Uri("People({1})/{some}", UriKind.Relative))  
