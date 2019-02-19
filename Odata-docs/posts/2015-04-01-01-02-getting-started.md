@@ -12,11 +12,11 @@ Let's get started by creating a simple OData V4 service. It has one entity set `
 
 In Visual Studio, create a new C# project from the **ASP.NET Web Application** template. Name the project "ODataService".
 
-![](http://i1.asp.net/media/4929282/odata01.PNG?cdn_id=2015-02-04-001)
+![](https://i1.asp.net/media/4929282/odata01.PNG?cdn_id=2015-02-04-001)
 
 In the **New Project** dialog, select the **Empty** template. Under "Add folders and core references...", click **Web API**. Click **OK**.
 
-![](http://i3.asp.net/media/4929288/odata02.PNG?cdn_id=2015-02-04-001)
+![](https://i3.asp.net/media/4929288/odata02.PNG?cdn_id=2015-02-04-001)
 
 ### b. Install the OData packages
 
@@ -84,4 +84,4 @@ public static void Register(HttpConfiguration config)
 
 ### f. Start the OData service
 
-Start the OData service by running the project and open a browser to consume it. You should be able to get access to the service document at `http://host/service/` in which `http://host/service/` is the root path of your service. The metadata document can be accessed at `GET http://host/service/$metadata` and the products at `GET http://host/service/Products`.
+Start the OData service by running the project and open a browser to consume it. You should be able to get access to the service document at `https://host/service/` in which `https://host/service/` is the root path of your service. The metadata document can be accessed at `GET https://host/service/$metadata` and the products at `GET https://host/service/Products`.

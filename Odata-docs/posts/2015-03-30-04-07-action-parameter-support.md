@@ -5,7 +5,7 @@ category: "4. OData features"
 ---
 # 4.7 Action parameter support
 
-Since [Web API OData V5.5-beta](http://www.nuget.org/packages/Microsoft.AspNet.OData/5.5.0-beta), it supports the following types as action parameter:
+Since [Web API OData V5.5-beta](https://www.nuget.org/packages/Microsoft.AspNet.OData/5.5.0-beta), it supports the following types as action parameter:
 
 1. Primitive
 2. Enum
@@ -17,11 +17,11 @@ Let's see how to build and use the above types in action.
 
 ### CLR Model
 
-Re-use the CLR models in [function sample](http://odata.github.io/WebApi/Complex-Entity-As-Function-Parameter/).
+Re-use the CLR models in [function sample](https://odata.github.io/WebApi/Complex-Entity-As-Function-Parameter/).
 
 ### Build Edm Model
 
-Same as build Edm Model in [function sample](http://odata.github.io/WebApi/Complex-Entity-As-Function-Parameter/), but change the helper function as *BuildAction()*.
+Same as build Edm Model in [function sample](https://odata.github.io/WebApi/Complex-Entity-As-Function-Parameter/), but change the helper function as *BuildAction()*.
 
 ### Primitive and Collection of Primitive parameter
 
@@ -161,5 +161,5 @@ If you invoke an action with a 'null' action parameter value, please don't add t
 
 Thanks.
 
-For un-typed scenario, please refer to [untyped page](http://odata.github.io/WebApi/Function-Action-Parameter-In-Untyped-Scenario/).
+For un-typed scenario, please refer to [untyped page](https://odata.github.io/WebApi/Function-Action-Parameter-In-Untyped-Scenario/).
 

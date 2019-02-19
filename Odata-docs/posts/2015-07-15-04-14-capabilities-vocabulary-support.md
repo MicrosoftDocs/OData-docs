@@ -65,9 +65,9 @@ Now, you can query the metadata document for capabilites vocabulary annotation a
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+<edmx:Edmx Version="4.0" xmlns:edmx="https://docs.oasis-open.org/odata/ns/edmx">
   <edmx:DataServices>
-    <Schema Namespace="CapabilitiesVocabulary" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <Schema Namespace="CapabilitiesVocabulary" xmlns="https://docs.oasis-open.org/odata/ns/edm">
       <EntityType Name="Customer">
         <Key>
           <PropertyRef Name="CustomerId" />
@@ -100,7 +100,7 @@ Now, you can query the metadata document for capabilites vocabulary annotation a
         <Member Name="Purple" Value="5" />
       </EnumType>
     </Schema>
-    <Schema Namespace="Default" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <Schema Namespace="Default" xmlns="https://docs.oasis-open.org/odata/ns/edm">
       <EntityContainer Name="Container">
         <EntitySet Name="Customers" EntityType="CapabilitiesVocabulary.Customer">
           <NavigationPropertyBinding Path="Orders" Target="Orders" />

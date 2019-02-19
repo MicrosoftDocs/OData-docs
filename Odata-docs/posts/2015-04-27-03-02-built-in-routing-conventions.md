@@ -18,9 +18,9 @@ Before describe the OData routing conventions in Web API, it’s helpful to unde
 * The odata path
 * Query options
 
-For example: `http://example.com/odata/Products(1)/Supplier?$top=2 `
+For example: `https://example.com/odata/Products(1)/Supplier?$top=2 `
 
-* *The service root* : http://example.com/odata
+* *The service root* : https://example.com/odata
 * *The odata path* : Products(1)/Supplier
 * *Query options* : ?$top=2  
 
@@ -153,4 +153,4 @@ public class ProductsController : ODataController
     
 ```
 
-Update form [Routing Conventions in OData V3.0](http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/odata-routing-conventions)
+Update form [Routing Conventions in OData V3.0](https://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/odata-routing-conventions)

@@ -8,11 +8,9 @@ category: "12. Design"
 # WebApi Default Enable Unqualified Operations and Case-insensitive Uri #
 
 
-Overview
-========
+## Overview
 
-OData Layer
------------
+## OData Layer
 
 OData libraries 7.4.4+ contains updates to improve
 usability & compatibility of the library by virtue of exposing options
@@ -24,7 +22,7 @@ available when URI parser is configured properly:
     token conflicts in multiple schema component of the model, therefore
     namespace is required up to OData v4. To improve flexibility, with
     notion of [Default
-    Namespaces](http://docs.oasis-open.org/odata/odata/v4.01/cs01/part1-protocol/odata-v4.01-cs01-part1-protocol.html#sec_DefaultNamespaces)
+    Namespaces](https://docs.oasis-open.org/odata/odata/v4.01/cs01/part1-protocol/odata-v4.01-cs01-part1-protocol.html#sec_DefaultNamespaces)
     introduced in OData v4.01, namespace qualifier is optional for
     function or action identifier in request Uri. When corresponding
     option in ODL Uri parser enabled:
@@ -54,11 +52,11 @@ available when URI parser is configured properly:
 
 -   In OData v4.01, case-insensitive name resolution is supported for
     [system query
-    options](http://docs.oasis-open.org/odata/odata/v4.01/cs01/part1-protocol/odata-v4.01-cs01-part1-protocol.html#sec_SystemQueryOptions),
+    options](https://docs.oasis-open.org/odata/odata/v4.01/cs01/part1-protocol/odata-v4.01-cs01-part1-protocol.html#sec_SystemQueryOptions),
     [built-in
-    function](http://docs.oasis-open.org/odata/odata/v4.01/cs01/part1-protocol/odata-v4.01-cs01-part1-protocol.html#sec_BuiltinQueryFunctions)
+    function](https://docs.oasis-open.org/odata/odata/v4.01/cs01/part1-protocol/odata-v4.01-cs01-part1-protocol.html#sec_BuiltinQueryFunctions)
     and
-    [operator](http://docs.oasis-open.org/odata/odata/v4.01/cs01/part1-protocol/odata-v4.01-cs01-part1-protocol.html#sec_BuiltinFilterOperations)
+    [operator](https://docs.oasis-open.org/odata/odata/v4.01/cs01/part1-protocol/odata-v4.01-cs01-part1-protocol.html#sec_BuiltinFilterOperations)
     names, as well as type names, property names, enum values in form of
     strings. When corresponding option in ODL Uri parser is enabled, Uri
     parser first uses case-sensitive semantics as before and returns the
@@ -75,8 +73,8 @@ available when URI parser is configured properly:
 
     In ODL implementation, the primary support for the two options above is the default ODataUriResolver and its derived classes.
 
-WebApi Layer
-------------
+### WebApi Layer
+
 
 WebApi layer utilizes dependency injection to specify various services
 as options for URI parser. Dependencies can be specified in WebApi layer
@@ -88,11 +86,9 @@ existing cases should work as it used to be), and previous error cases
 due to required case-sensitive and namespace qualifier for function
 should become working cases, hence improving usability of OData stack.
 
-Scenarios
-=========
+## Scenarios
 
-Write Scenario Description
---------------------------
+### Write Scenario Description
 
 All scenarios are related to OData Uri parsing using default WebAPI
 settings. All sample scenarios assume no name collisions in EDM model,
@@ -156,11 +152,10 @@ only on collections."
      > GET /service/Customers(1)/Default. CalculateTotalOrders (month=1) : HTTP 200
      > GET /service/CuStOmErS(1)/CaLcUlAtEToTaLoRdErS (MONTH=1) : HTTP 200
 
-Design Strategy
-===============
+## Design Strategy
 
-Dependency Injection of ODataUriResolver
-----------------------------------------
+
+### Dependency Injection of ODataUriResolver
 
 ODL (Microsoft.OData.Core) library supports dependency injection of a
 collection of service types from client via the IServiceProvider
@@ -242,8 +237,7 @@ When WebApi parses the request Uri, instance of ODataDefaultPathHandler is creat
 
     public ODataUriParser(IEdmModel model, Uri relativeUri, IServiceProvider container)
 
-Enable Case-Insensitive for Custom Uri function
------------------------------------------------
+### Enable Case-Insensitive for Custom Uri function
 
 One issue is encountered when trying to bind function call token with
 case-insensitive enabled. The reason is that at the very beginning of
@@ -274,8 +268,7 @@ To implement with the correct behavior for enabled case-insensitive:
 
 -   When resolving best match function based on arguments for the invoked function, MatchSignatureToUriFunction will find the best match. Exception is still thrown in case of ambiguity or no matches found.
 
-Work Items
-==========
+## Work Items
 
 - WebApi PR
   - [Set default to allow Unqualified-function/action and case insensitiveness](https://github.com/OData/WebApi/pull/1409)

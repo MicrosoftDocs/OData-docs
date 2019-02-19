@@ -41,7 +41,7 @@ With support for unqualified function & action, the URI parser will do namespace
 
 Because of the precedence rules applied, scenarios supported in previous versions of WebAPI continue to be supported with the same semantics, while new scenarios that previously returned errors are also are now supported.
 
-Please note that, even though case-insensitive and unqualified function & action support is added as a usability improvement, services are strongly encouraged to use names that are unique regardless of case, and to [avoid naming bound functions, actions, or derived types with the same name as a property of the bound type](http://docs.oasis-open.org/odata/odata/v4.01/cs01/part1-protocol/odata-v4.01-cs01-part1-protocol.html#_Toc505771104). For example, a property and unqualified function with same name would resolve to a property name when the unqualified function may have been expected.
+Please note that, even though case-insensitive and unqualified function & action support is added as a usability improvement, services are strongly encouraged to use names that are unique regardless of case, and to [avoid naming bound functions, actions, or derived types with the same name as a property of the bound type](https://docs.oasis-open.org/odata/odata/v4.01/cs01/part1-protocol/odata-v4.01-cs01-part1-protocol.html#_Toc505771104). For example, a property and unqualified function with same name would resolve to a property name when the unqualified function may have been expected.
 
 
 ### Restoring the original behavior

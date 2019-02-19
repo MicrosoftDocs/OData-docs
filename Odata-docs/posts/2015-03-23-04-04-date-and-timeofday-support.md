@@ -8,7 +8,7 @@ category: "4. OData features"
 This sample introduces how to use the `Edm.Date` & `Edm.TimeOfDay` supported in Web API OData V5.5.
 
 ### Build Edm Model
-[ODL V6.8](http://www.nuget.org/packages/Microsoft.OData.Core/6.8.0) introduces two new primitive types. One is `Edm.Date`, the other is `Edm.TimeOfDay`. Besides, it also introduces two new **struct** types to represent the CLR types of Edm.Date and Edm.TimeOfDay.
+[ODL V6.8](https://www.nuget.org/packages/Microsoft.OData.Core/6.8.0) introduces two new primitive types. One is `Edm.Date`, the other is `Edm.TimeOfDay`. Besides, it also introduces two new **struct** types to represent the CLR types of Edm.Date and Edm.TimeOfDay.
  So, developers can use the new CLR struct types to define their CLR model.
 For example, if user defines a model as:
 

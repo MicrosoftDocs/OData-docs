@@ -189,7 +189,7 @@ pet.HasManyPath((Horse h) => h.HorseAddresses).HasRequiredBinding(c => c.SubCity
 So, we can get the following target binding:
 
 ```xml
-<Schema Namespace="Default" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+<Schema Namespace="Default" xmlns="https://docs.oasis-open.org/odata/ns/edm">
   <EntityContainer Name="Container">
     <EntitySet Name="Customers" EntityType="System.Web.OData.Builder.Cusomter">
       <NavigationPropertyBinding Path="Pet/System.Web.OData.Builder.Human/HumanAddress/SubCity" Target="HumanCities" />

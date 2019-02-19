@@ -5,7 +5,7 @@ category: "4. OData features"
 ---
 # 4.8 Operation paramters in untyped scenarios
 
-In this page, we introduce the Function/Action parameter in untyped scenario. For CLR typed scenarios, please refer to [Function page](http://odata.github.io/WebApi/04-06-function-parameter-support/) and [Action page](http://odata.github.io/WebApi/04-07-action-parameter-support/).
+In this page, we introduce the Function/Action parameter in untyped scenario. For CLR typed scenarios, please refer to [Function page](https://odata.github.io/WebApi/04-06-function-parameter-support/) and [Action page](https://odata.github.io/WebApi/04-07-action-parameter-support/).
 
 ### Build Edm Model
 
@@ -96,9 +96,9 @@ Here's the metadata document for this Edm Model:
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+<edmx:Edmx Version="4.0" xmlns:edmx="https://docs.oasis-open.org/odata/ns/edmx">
   <edmx:DataServices>
-    <Schema Namespace="NS" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <Schema Namespace="NS" xmlns="https://docs.oasis-open.org/odata/ns/edm">
       <EnumType Name="Color">
         <Member Name="Red" Value="0" />
         <Member Name="Blue" Value="1" />
@@ -248,7 +248,7 @@ Also, We can invoke the action by issuing a Post on `~/odata/Customers(1)/NS.Ent
 }
 ```
 
-For other request samples, please refer to [Function page](http://odata.github.io/WebApi/04-06-function-parameter-support/) and [Action page](http://odata.github.io/WebApi/04-07-action-parameter-support/).
+For other request samples, please refer to [Function page](https://odata.github.io/WebApi/04-06-function-parameter-support/) and [Action page](https://odata.github.io/WebApi/04-07-action-parameter-support/).
 
 ### Unbound function/action
 

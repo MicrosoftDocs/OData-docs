@@ -90,9 +90,9 @@ As result, We can get the following result:
 
 ```xml
 
-<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+<edmx:Edmx Version="4.0" xmlns:edmx="https://docs.oasis-open.org/odata/ns/edmx">
   <edmx:DataServices>
-    <Schema Namespace="ModelLibrary" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <Schema Namespace="ModelLibrary" xmlns="https://docs.oasis-open.org/odata/ns/edm">
       <ComplexType Name="Address">
         <NavigationProperty Name="CityInfo" Type="ModelLibrary.City" />
         <NavigationProperty Name="Cities" Type="Collection(ModelLibrary.City)" />
@@ -104,7 +104,7 @@ As result, We can get the following result:
         <Property Name="Id" Type="Edm.Int32" Nullable="false" />
       </EntityType>
     </Schema>
-    <Schema Namespace="Default" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <Schema Namespace="Default" xmlns="https://docs.oasis-open.org/odata/ns/edm">
       <EntityContainer Name="Container" />
     </Schema>
   </edmx:DataServices>

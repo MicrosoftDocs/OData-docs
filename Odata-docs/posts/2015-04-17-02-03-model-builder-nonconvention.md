@@ -207,7 +207,7 @@ builder.EntitySet<Order>("Orders");
 
 It will generate the below metadata document:
 ```XML
-<Schema Namespace="Default" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+<Schema Namespace="Default" xmlns="https://docs.oasis-open.org/odata/ns/edm">
     <EntityContainer Name="Container">
         <EntitySet Name="Customers" EntityType="WebApiDocNS.Customer">
           <NavigationPropertyBinding Path="Orders" Target="Orders" />
@@ -349,9 +349,9 @@ public static IEdmModel GetEdmModel()
 And the final XML will be:
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+<edmx:Edmx Version="4.0" xmlns:edmx="https://docs.oasis-open.org/odata/ns/edmx">
   <edmx:DataServices>
-    <Schema Namespace="WebApiDocNS" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <Schema Namespace="WebApiDocNS" xmlns="https://docs.oasis-open.org/odata/ns/edm">
       <ComplexType Name="Address">
         <Property Name="Country" Type="Edm.String" />
         <Property Name="City" Type="Edm.String" />
@@ -380,7 +380,7 @@ And the final XML will be:
         <Member Name="Green" Value="2" />
       </EnumType>
     </Schema>
-    <Schema Namespace="Default" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <Schema Namespace="Default" xmlns="https://docs.oasis-open.org/odata/ns/edm">
       <Function Name="BoundFunction" IsBound="true">
         <Parameter Name="bindingParameter" Type="WebApiDocNS.Customer" />
         <Parameter Name="value" Type="Edm.Int32" Nullable="false" />

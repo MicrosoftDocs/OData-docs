@@ -5,7 +5,7 @@ category: "4. OData features"
 ---
 # 4.6 Function parameter support
 
-Since [Web API OData V5.5-beta](http://www.nuget.org/packages/Microsoft.AspNet.OData/5.5.0-beta), it supports the following types as function parameter:
+Since [Web API OData V5.5-beta](https://www.nuget.org/packages/Microsoft.AspNet.OData/5.5.0-beta), it supports the following types as function parameter:
 
 1. Primitive
 2. Enum
@@ -196,4 +196,4 @@ In fact, we can't build a function with entity reference as parameter. However, 
 
 Thanks.
 
-For un-typed scenario, please refer to [untyped page](http://odata.github.io/WebApi/Function-Action-Parameter-In-Untyped-Scenario/).
+For un-typed scenario, please refer to [untyped page](https://odata.github.io/WebApi/Function-Action-Parameter-In-Untyped-Scenario/).

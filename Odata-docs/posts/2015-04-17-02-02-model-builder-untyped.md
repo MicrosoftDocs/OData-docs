@@ -377,9 +377,9 @@ public static IEdmModel GetEdmModel()
 And the final XML will be:
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+<edmx:Edmx Version="4.0" xmlns:edmx="https://docs.oasis-open.org/odata/ns/edmx">
   <edmx:DataServices>
-    <Schema Namespace="WebApiDocNS" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <Schema Namespace="WebApiDocNS" xmlns="https://docs.oasis-open.org/odata/ns/edm">
       <ComplexType Name="Address">
         <Property Name="Country" Type="Edm.String" />
         <Property Name="City" Type="Edm.String" />

@@ -35,9 +35,9 @@ public static IEdmModel GetConventionModel()
 It will generate the below metadata document:
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+<edmx:Edmx Version="4.0" xmlns:edmx="https://docs.oasis-open.org/odata/ns/edmx">
   <edmx:DataServices>
-    <Schema Namespace="WebApiDocNS" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <Schema Namespace="WebApiDocNS" xmlns="https://docs.oasis-open.org/odata/ns/edm">
       <EntityType Name="Customer" OpenType="true">
         <Key>
           <PropertyRef Name="CustomerId" />
@@ -69,7 +69,7 @@ It will generate the below metadata document:
         <Member Name="Green" Value="2" />
       </EnumType>
     </Schema>
-    <Schema Namespace="Default" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <Schema Namespace="Default" xmlns="https://docs.oasis-open.org/odata/ns/edm">
       <EntityContainer Name="Container">
         <EntitySet Name="Customers" EntityType="WebApiDocNS.Customer">
           <NavigationPropertyBinding Path="Orders" Target="Orders" />
