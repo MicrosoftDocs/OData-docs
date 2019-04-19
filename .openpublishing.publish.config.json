@@ -45,7 +45,7 @@
   }],
   "JoinTOCPlugin": [{
     "ConceptualTOC": "odata-docs/toc.yml",
-    "ReferenceTOCUrl": "/dotnet/api/overview/odata-dotnet/toc.json"
+    "ReferenceTOCUrl": "/dotnet/api/odata-dotnet/toc.json"
   }],
   "branch_target_mapping": {},
   "need_generate_pdf_url_template": false,
