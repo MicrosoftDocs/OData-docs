@@ -11,7 +11,7 @@ ms.service: multiple
 
 There are several kinds of OData payload, includes service document, model metadata, feed, entry, entity references(s), complex value(s), primitive value(s). OData Core library is designed to write and read all these payloads.
 
-We'll go through each kind of payload here. But first, we'll set up the neccessary code that is common to all kind of payload.
+We'll go through each kind of payload here. But first, we'll set up the necessary code that is common to all kind of payload.
 
 Class ODataMessageWriter is the entrance class to write the OData Payload.
 
@@ -19,7 +19,7 @@ To construct an ODataMessageWriter instance, you'll need to provide an IODataRes
 
 OData Core library provides no implementation of these two interfaces, because it is different in different scenario.
 
-In this tutoria, we'll use the [InMemoryMessage.cs](https://github.com/OData/odata.net/blob/master/test/FunctionalTests/Microsoft.OData.Core.Tests/InMemoryMessage.cs).
+In this tutorial, we'll use the [InMemoryMessage.cs](https://github.com/OData/odata.net/blob/master/test/FunctionalTests/Microsoft.OData.Core.Tests/InMemoryMessage.cs).
 
 We'll use the model set up in the EDMLIB section.
 
@@ -34,22 +34,26 @@ IEdmModel model = builder
 ```
 
 Then set up the message to write the payload.
+
 ``` csharp
 MemoryStream stream = new MemoryStream();
 InMemoryMessage message = new InMemoryMessage() {Stream = stream};
 ```
 
 Create the settings:
+
 ``` csharp
 ODataMessageWriterSettings settings = new ODataMessageWriterSettings();
 ```
 
 Now we are ready to create the ODataMessageWriter instance:
+
 ``` csharp
 ODataMessageWriter writer = new ODataMessageWriter((IODataResponseMessage) message, settings, model);
 ```
 
 After we write the payload, we can inspect into the memory stream wrapped in InMemoryMessage to check what is written.
+
 ``` csharp
 string output =Encoding.UTF8.GetString(stream.ToArray());
             Console.WriteLine(output);
@@ -57,6 +61,7 @@ string output =Encoding.UTF8.GetString(stream.ToArray());
 ```
 
 Here is the whole program that use SampleModelBuilder and InMemoryMessage to write metadata payload:
+
 ``` csharp
 IEdmModel model = builder
                 .BuildAddressType()
@@ -166,7 +171,6 @@ ODataMessageWriterSettings settings = new ODataMessageWriterSettings();
 
             ODataMessageWriter writer = new ODataMessageWriter((IODataResponseMessage) message, settings);
 writer.WriteServiceDocument(serviceDocument);
-            
 ```
 
 As you can see, you don't need to provide model to write service document.
@@ -191,18 +195,18 @@ await writer.WriteServiceDocumentAsync(serviceDocument);
 
 A lot of API in writer and reader provides async version of API, they all work as a async complement of the API that without Async suffix.
 
-
 ### Write Feed
 Collection of entities is called feed in OData Core Library.
 Unlike metadata or service document, you must create another writer on ODatMessageWriter to write the feed. The library is designed to write feed in an streaming way, which means the entry is written one by one. 
 
 Feed is represented by ODataFeed class. To write a feed, following information are needed:
+
 1. The service root, which is defined by ODataUri.
 2. The model, as construct parameter of ODataMessageWriter.
 3. Entity set and entity type information.
 
-
 Here is how to write an empty feed.
+
 ``` csharp
 ODataMessageWriterSettings settings = new ODataMessageWriterSettings();
             settings.ODataUri = new ODataUri()
@@ -223,11 +227,12 @@ ODataMessageWriterSettings settings = new ODataMessageWriterSettings();
 Line 4 give the service root, line 6 give the model, and line 10 give the entity set and entity type information.
 
 The output of it looks like this.
-{% ``` csharp json %}
+
+``` json
 {"@odata.context":"http://services.odata.org/V4/OData/OData.svc/$metadata#Customers","value":[]}
 ```
 
-The output contains a context url in the output, which is based on the service root you provided in ODataUri, and the entity set name. There is also a value which is an empty collection, where will hold the entities if there is any.
+The output contains a context URL in the output, which is based on the service root you provided in ODataUri, and the entity set name. There is also a value which is an empty collection, where will hold the entities if there is any.
 
 There is another way to provide the entity set and entity type information, through ODataFeedAndEntrySerializationInfo, and in this no model is needed.
 
@@ -243,7 +248,6 @@ ODataMessageWriterSettings settings = new ODataMessageWriterSettings();
             ODataWriter odataWriter = writer.CreateODataFeedWriter();
 
             ODataFeed feed = new ODataFeed();
-            
             feed.SetSerializationInfo(new ODataFeedAndEntrySerializationInfo()
             {
                 NavigationSourceName = "Customers",
@@ -253,7 +257,7 @@ ODataMessageWriterSettings settings = new ODataMessageWriterSettings();
             odataWriter.WriteEnd();
 ```
 
-When writting feed, you can provide a next page, which is used in server driven paging. 
+When writing feed, you can provide a next page, which is used in server driven paging. 
 ``` csharp
 ODataFeed feed = new ODataFeed();
             feed.NextPageLink = new Uri("Customers?next", UriKind.Relative);
@@ -263,7 +267,7 @@ ODataFeed feed = new ODataFeed();
 
 The output will contains a next link before the value collection.
 
-{% ``` csharp json %}
+```json
 {"@odata.context":"http://services.odata.org/V4/OData/OData.svc/$metadata#Customers","@odata.nextLink":"Customers?next","value":[]}
 ```
 
@@ -276,7 +280,7 @@ ODataFeed feed = new ODataFeed();
             odataWriter.WriteEnd();
 ```
 
-{% ``` csharp json %}
+```json
 {"@odata.context":"http://services.odata.org/V4/OData/OData.svc/$metadata#Customers","value":[],"@odata.nextLink":"Customers?next"}
 ```
 
@@ -310,14 +314,16 @@ ODataFeed feed = new ODataFeed();
             odataWriter.WriteEnd();
 ```
 
-{% ``` csharp json %}
+```json
 {"@odata.context":"http://services.odata.org/V4/OData/OData.svc/$metadata#Customers","value":[{"Id":1,"Name":"Tom"}]}
 ```
 
-We'll introduce more details on writting entry in next section.
+We'll introduce more details on witting entry in next section.
 
 ### Write Entry
+
 Entry can be written in several places:
+
 1. As the top level entry.
 2. As the entry in a feed.
 3. As the entry expanded an other entry.
@@ -351,7 +357,7 @@ ODataMessageWriter writer = new ODataMessageWriter((IODataResponseMessage)messag
             odataWriter.WriteEnd();
 ```
 
-{% ``` csharp json %}
+```json
 {"@odata.context":"http://services.odata.org/V4/OData/OData.svc/$metadata#Customers/$entity","Id":1,"Name":"Tom"}
 ```
 
@@ -412,8 +418,7 @@ ODataMessageWriter writer = new ODataMessageWriter((IODataResponseMessage)messag
 ```
 
 The output will contains order entity inside the customer entity.
-{% ``` csharp json %}
+
+```json
 {"@odata.context":"http://services.odata.org/V4/OData/OData.svc/$metadata#Customers/$entity","Id":1,"Name":"Tom","Purchases":[{"Id":1,"Price":3.14}]}
 ```
-
-

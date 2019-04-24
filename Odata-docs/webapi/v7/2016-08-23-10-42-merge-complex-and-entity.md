@@ -23,7 +23,7 @@ For other Public APIs, you can refer to the [Breaking changes about Merge Entity
 
 Suppose we have a model, in following sections, we will explain how to write/read a complex property or a collection complex property.
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
   <edmx:DataServices>
