@@ -38,7 +38,17 @@
     "globalMetadata": {
       "breadcrumb_path": "/odata/breadcrumb/toc.json",
       "extendBreadcrumb": true,
-      "feedback_system": "None"
+      "feedback_system": "None", 
+      "ms.author":"madansr7",
+      "ms.description":"OData docs",
+      "md.prod": "OData .NET",
+      "ms.topic": "conceptual",
+      "titleSuffix": {
+        "odataclient/**/*.md": "OData Client",
+        "odatalib/**/*.md": "OData Core library",
+        "webapi/**/*.md": "OData AspNet WebAPI",
+        "spatial/**/*.md": "Microsoft Spatial",
+      }
     },
     "fileMetadata": {},
     "template": [],
