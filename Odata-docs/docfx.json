@@ -47,7 +47,7 @@
         "odataclient/**/*.md": "OData Client",
         "odatalib/**/*.md": "OData Core library",
         "webapi/**/*.md": "OData AspNet WebAPI",
-        "spatial/**/*.md": "Microsoft Spatial",
+        "spatial/**/*.md": "Microsoft Spatial"
       }
     },
     "fileMetadata": {},
