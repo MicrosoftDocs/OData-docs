@@ -21,7 +21,7 @@ ms.service: multiple
 
 [[Issue #391](https://github.com/OData/odata.net/issues/391)] [[PR #448](https://github.com/OData/odata.net/pull/448) by [Yogev]( https://github.com/YogiBear52)]  Support Customizing Uri literals.
 
-[[PR #413](https://github.com/OData/odata.net/pull/413) by [kosinsky](https://github.com/kosinsky)] Add basic Uri parser support for [aggregations spec](http://docs.oasis-open.org/odata/odata-data-aggregation-ext/v4.0/odata-data-aggregation-ext-v4.0.html)
+[[PR #413](https://github.com/OData/odata.net/pull/413) by [kosinsky](https://github.com/kosinsky)] Add basic Uri parser support for [aggregations spec](https://docs.oasis-open.org/odata/odata-data-aggregation-ext/v4.0/odata-data-aggregation-ext-v4.0.html)
 
 [[Issue #435]( https://github.com/OData/odata.net/issues/435)] [[PR #472]( https://github.com/OData/odata.net/pull/472) by [brjohnstmsft](https://github.com/brjohnstmsft)] Support Profile 111 (portable-net45+win+wpa81).
 

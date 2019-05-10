@@ -167,37 +167,37 @@ Let's have some request Uri samples to test:
 
 a)
 ```C#
-GET http://localhost/odata/Customers(2)/Name
+GET https://localhost/odata/Customers(2)/Name
 ```
 
 The result is:
 
 ```C#
 {
-  "@odata.context":"http://localhost/odata/$metadata#Customers(2)/Name","value": "Mike"
+  "@odata.context":"https://localhost/odata/$metadata#Customers(2)/Name","value": "Mike"
 }
 ```
 
 b) 
 ```C#
-GET http://localhost/odata/Customers(2)/Location
+GET https://localhost/odata/Customers(2)/Location
 ```
 
 The result is:
 ```C#
 {
-  "@odata.context":"http://localhost/odata/$metadata#Customers(2)/Salary","value ":2000.0
+  "@odata.context":"https://localhost/odata/$metadata#Customers(2)/Salary","value ":2000.0
 }
 ```
 
 c)
 ```C#
-GET http://localhost/odata/Customers(2)/Location
+GET https://localhost/odata/Customers(2)/Location
 ```
 
 The result is:
 ```C#
 {
-  "@odata.context":"http://localhost/odata/$metadata#Customers(2)/Location","Country":"The United States","City":"Redmond"
+  "@odata.context":"https://localhost/odata/$metadata#Customers(2)/Location","Country":"The United States","City":"Redmond"
 }
 ```

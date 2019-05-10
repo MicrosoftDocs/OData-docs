@@ -14,8 +14,8 @@ The *EDM* (Entity Data Model) library (*abbr*. EdmLib) primarily contains APIs t
 This section shows how to build a basic entity data model using EdmLib APIs.
 
 ### Software Versions Used in the Tutorial
- - [Visual Studio 2013 Update 4](http://go.microsoft.com/fwlink/?LinkId=517284)
- - [Microsoft.OData.Edm 6.11.0](http://www.nuget.org/packages/Microsoft.OData.Edm)
+ - [Visual Studio 2013 Update 4](https://go.microsoft.com/fwlink/?LinkId=517284)
+ - [Microsoft.OData.Edm 6.11.0](https://www.nuget.org/packages/Microsoft.OData.Edm)
  - .NET 4.5
  <br />
  
@@ -281,4 +281,4 @@ Open the **csdl.xml** file under the **output directory** with Internet Explorer
 As you can see, the document contains all the elements we have built so far.
 
 ### References
-[[Tutorial & Sample] Use Enumeration types in OData](http://blogs.msdn.com/b/odatateam/archive/2014/03/18/use-enumeration-types-in-odata.aspx).
+[[Tutorial & Sample] Use Enumeration types in OData](https://blogs.msdn.com/b/odatateam/archive/2014/03/18/use-enumeration-types-in-odata.aspx).

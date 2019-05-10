@@ -16,7 +16,7 @@ Let's have an example to demonstrate:
 The response payload for the example is:
 
     {
-     "@odata.context":"http://localhost/$metadata#People/$entity",
+     "@odata.context":"https://localhost/$metadata#People/$entity",
      "PersonID":1,
      "FirstName":"Bob",
      "LastName":"Cat",

@@ -23,14 +23,14 @@ public IHttpActionResult GetColors(int key)
 
 ### Sample Requests & Response
 
-Request: <strong>GET</strong> http://localhost/Customers(5)/Colors?$count=true
+Request: <strong>GET</strong> https://localhost/Customers(5)/Colors?$count=true
 
 Response content:
 ```C#
 {  
-  "@odata.context":"http://localhost/$metadata#Collection(NS.Color)",
+  "@odata.context":"https://localhost/$metadata#Collection(NS.Color)",
   "@odata.count": 3,  
-  "@odata.nextLink":"http://localhost/Customers(5)/Colors?$count=true&$skip=2",
+  "@odata.nextLink":"https://localhost/Customers(5)/Colors?$count=true&$skip=2",
   "value": [  
     ""Blue",  
     ""Green"  

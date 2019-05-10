@@ -42,12 +42,12 @@ var products = Context.CreateFunctionQuery<ProductPlus>("", "GetAllProducts", tr
 ```
 The actual query would be:
 ``` csharp
-GET http://localhost/GetAllProducts()?$select=Name
+GET https://localhost/GetAllProducts()?$select=Name
 ```
 
 <strong>2. With codegen</strong>
 
-With [OData client generator](http://blogs.msdn.com/b/odatateam/archive/2014/03/12/how-to-use-odata-client-code-generator-to-generate-client-side-proxy-class.aspx), proxy class for function and action would be auto generated.
+With [OData client generator](https://blogs.msdn.com/b/odatateam/archive/2014/03/12/how-to-use-odata-client-code-generator-to-generate-client-side-proxy-class.aspx), proxy class for function and action would be auto generated.
 For example:
 
 ``` csharp

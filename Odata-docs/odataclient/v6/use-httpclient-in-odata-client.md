@@ -9,7 +9,7 @@ ms.topic: article
 ms.service: multiple
 ---
 
-In this session, we will dive into how to use HttpClient in OData client request. We will use the hook mechanism in OData client which has been introduced in [Client Hooks in OData Client](http://odata.github.io/odata.net/#04-06-use-client-hooks-in-odata-client).   
+In this session, we will dive into how to use HttpClient in OData client request. We will use the hook mechanism in OData client which has been introduced in [Client Hooks in OData Client](https://odata.github.io/odata.net/#04-06-use-client-hooks-in-odata-client).   
 
 OData client enables developers to customize request message, and use it in `DataServiceContext.Configurations.RequestPipeline.OnMessageCreating`. This function will be triggered when creating request message. It will return an `IODataRequestMessage`.
 
@@ -19,7 +19,7 @@ Following is the code how to use `OnMessageCreating`.
 
 	public void UseHttpClientTest()
     {
-        DefaultContainer dsc = new DefaultContainer(new Uri("http://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
+        DefaultContainer dsc = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
 
         dsc.Configurations.RequestPipeline.OnMessageCreating = (args) =>
             {

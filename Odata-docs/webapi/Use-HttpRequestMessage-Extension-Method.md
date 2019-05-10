@@ -55,12 +55,12 @@ IEdmModel model = this.Request.GetModel();
 
 ## GetNextPageLink
 Create a link for the next page of results, can be used as the value of `@odata.nextLink`.
-For example, the request Url is `http://localhost/Customers/?$select=Name`.
+For example, the request Url is `https://localhost/Customers/?$select=Name`.
 ```C#
 Uri nextlink = this.Request.GetNextPageLink(pageSize:10);
 this.Request.ODataProperties().NextLink = nextlink;
 ```
-Then the nextlink generated is `http://localhost/Customers/?$select=Name&$skip=10`.
+Then the nextlink generated is `https://localhost/Customers/?$select=Name&$skip=10`.
 
 ## GetETag
 Get the etag for the given request.

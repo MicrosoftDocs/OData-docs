@@ -4,7 +4,7 @@ description: ""
 category: "5. OData Features"
 ---
 
-From ODataLib 6.13.0, it supports the capabilities vocabulary. For detail information about capabiliites vocabulary, please refer to [here](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/vocabularies/Org.OData.Capabilities.V1.xml).
+From ODataLib 6.13.0, it supports the capabilities vocabulary. For detail information about capabiliites vocabulary, please refer to [here](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/vocabularies/Org.OData.Capabilities.V1.xml).
 
 # Enable capabilities vocabulary
 

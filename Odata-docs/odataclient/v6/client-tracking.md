@@ -32,7 +32,7 @@ One sample to use `AttachTo` and `DeleteLink`.
 
 ``` csharp
 
-	DefaultContainer dsc = new DefaultContainer(new Uri("http://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
+	DefaultContainer dsc = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
 
     public void ClientEntityTracking()
     {
@@ -55,4 +55,4 @@ One sample to use `AttachTo` and `DeleteLink`.
 
 ## Property Tracking 
 
-Please refer to [client property tracking for patch](http://blogs.msdn.com/b/odatateam/archive/2014/04/10/client-property-tracking-for-patch.aspx) for detail.
+Please refer to [client property tracking for patch](https://blogs.msdn.com/b/odatateam/archive/2014/04/10/client-property-tracking-for-patch.aspx) for detail.

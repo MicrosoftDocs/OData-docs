@@ -12,7 +12,7 @@ ms.service: multiple
 ## Request an entity set
 
 ```csharp
-var context = new DefaultContainer(new Uri("http://services.odata.org/v4/(S(lqbvtwide0ngdev54adgc0lu))/TripPinServiceRW/"));
+var context = new DefaultContainer(new Uri("https://services.odata.org/v4/(S(lqbvtwide0ngdev54adgc0lu))/TripPinServiceRW/"));
 
 var people = context.People.Execute();
 ```
@@ -48,7 +48,7 @@ The `person` object returned are all of the type `Person`.
 ## Update an entity
 
 ``` csharp
-var context = new DefaultContainer(new Uri("http://services.odata.org/v4/(S(lqbvtwide0ngdev54adgc0lu))/TripPinServiceRW/"));
+var context = new DefaultContainer(new Uri("https://services.odata.org/v4/(S(lqbvtwide0ngdev54adgc0lu))/TripPinServiceRW/"));
 
 var person = context.People.ByKey(userName: "russellwhyte").GetValue(); // get an entity
 person.FirstName = "Ross"; // change its property
@@ -64,7 +64,7 @@ The sample above will send a `PATCH` request to the service in which the body is
 ## Delete an entity
 
 ``` csharp
-var context = new DefaultContainer(new Uri("http://services.odata.org/v4/(S(lqbvtwide0ngdev54adgc0lu))/TripPinServiceRW/"));
+var context = new DefaultContainer(new Uri("https://services.odata.org/v4/(S(lqbvtwide0ngdev54adgc0lu))/TripPinServiceRW/"));
 
 var person = context.People.ByKey(userName: "russellwhyte").GetValue(); // get an entity
 context.DeleteObject(person); // create a delete request

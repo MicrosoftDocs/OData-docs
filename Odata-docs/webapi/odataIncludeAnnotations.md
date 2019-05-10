@@ -33,8 +33,8 @@ The response will have all annotations:
 
 ```C#
 {  
-  "@odata.context":"http://localhost:8081/$metadata#People/$entity",
-  "@odata.id":"http://localhost:8081/People(2)",
+  "@odata.context":"https://localhost:8081/$metadata#People/$entity",
+  "@odata.id":"https://localhost:8081/People(2)",
   "Entry.GuidAnnotation@odata.type":"#Guid",
   "@Entry.GuidAnnotation":"a6e07eac-ad49-4bf7-a06e-203ff4d4b0d8",
   "@Hello.World":"Hello World.",
@@ -66,8 +66,8 @@ The response will only have annotations in "Entry" namespace:
 
 ```C#
 {  
-  "@odata.context":"http://localhost:8081/$metadata#People/$entity",
-  "@odata.id":"http://localhost:8081/People(2)",
+  "@odata.context":"https://localhost:8081/$metadata#People/$entity",
+  "@odata.id":"https://localhost:8081/People(2)",
   "Entry.GuidAnnotation@odata.type":"#Guid",
   "@Entry.GuidAnnotation":"a6e07eac-ad49-4bf7-a06e-203ff4d4b0d8",
   "PerId":2,

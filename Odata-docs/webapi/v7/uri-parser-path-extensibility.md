@@ -9,7 +9,7 @@ In order to support more comprehensive OData Uri path, from ODataLib 7.0, we sup
 -   Allow developers to customize how to separate a Uri into segments in string.
 -   Allow developers to customize how to bind those raw string segments unrecognized by `ODataUriParser` to the model and create `ODataPathSegments`.
 
-For example, we have a Uri http://localhost/odata/drives('C')/root:/OData/Docs/Features/Uri%20Parser%20Path%20Extensibility.doc:/size which is used to get the size of a local file "C:\OData\Docs\Features\Uri Parser Path Extensible.doc". But `ODataUriParser.ParsePath()` doesn't know how to bind this path to the EDM model. So we want to provide a way to let developers define how to parse it.
+For example, we have a Uri https://localhost/odata/drives('C')/root:/OData/Docs/Features/Uri%20Parser%20Path%20Extensibility.doc:/size which is used to get the size of a local file "C:\OData\Docs\Features\Uri Parser Path Extensible.doc". But `ODataUriParser.ParsePath()` doesn't know how to bind this path to the EDM model. So we want to provide a way to let developers define how to parse it.
 
 Following sections will provide some sample codes to support this feature.
 
@@ -19,9 +19,9 @@ Given a model as following:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+<edmx:Edmx Version="4.0" xmlns:edmx="https://docs.oasis-open.org/odata/ns/edmx">
   <edmx:DataServices>
-    <Schema Namespace="SampleService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <Schema Namespace="SampleService" xmlns="https://docs.oasis-open.org/odata/ns/edm">
       <EntityType Name="drive">
         <Key>
           <PropertyRef Name="id" />

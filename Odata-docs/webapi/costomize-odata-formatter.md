@@ -143,7 +143,7 @@ Annotation is supported in newest night build, 5.6.0-beta1.
 
 ```C#
 {
-    "@odata.context":"http://localhost:9000/odata/$metadata#Documents","value":
+    "@odata.context":"https://localhost:9000/odata/$metadata#Documents","value":
     [
         {
             "@org.northwind.search.score":1.0,"ID":1,"Name":"Another.txt","Content":"test"

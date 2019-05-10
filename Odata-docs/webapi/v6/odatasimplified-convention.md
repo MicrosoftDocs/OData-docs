@@ -15,7 +15,7 @@ Because when user use key-as-segment convention, url like `/Me/Messages/Microsof
 
 Turn on ODataSimplified is the same way with key-as-segment:
 ``` csharp
-var parser = new ODataUriParser(model, new Uri("http://www.potato.com/"), new Uri("http://www.potato.com/Schools/1/Student/Microsoft.Test.Taupo.OData.WCFService.Customer")) { UrlConventions = ODataUrlConventions.ODataSimplified };
+var parser = new ODataUriParser(model, new Uri("https://www.potato.com/"), new Uri("https://www.potato.com/Schools/1/Student/Microsoft.Test.Taupo.OData.WCFService.Customer")) { UrlConventions = ODataUrlConventions.ODataSimplified };
 var result = parser.ParsePath();
 ```
 

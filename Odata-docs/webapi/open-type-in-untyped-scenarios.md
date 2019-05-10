@@ -87,7 +87,7 @@ Payload:
 
 ```C#
 const string Payload = "{" + 
-              "\"@odata.context\":\"http://localhost/odata/$metadata#UntypedSimpleOpenCustomer/$entity\"," +
+              "\"@odata.context\":\"https://localhost/odata/$metadata#UntypedSimpleOpenCustomer/$entity\"," +
               "\"CustomerId\":6,\"Name\":\"FirstName 6\"," +
               "\"Address\":{" +
                 "\"@odata.type\":\"#NS.Address\",\"Street\":\"Street 6\",\"City\":\"City 6\"" +

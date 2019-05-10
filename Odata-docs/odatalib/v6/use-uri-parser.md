@@ -13,8 +13,8 @@ This post is intended to guide you through the UriParser for OData V4, which is 
 
 You may have already read the following posts about OData UriParser in ODataLib V5.x:
 
-- [Parsing $filter and $orderby using the ODataUriParser](http://blogs.msdn.com/b/alexj/archive/2012/12/06/parsing-filter-and-orderby-using-the-odatauriparser.aspx)
-- [Parsing OData Paths, $select and $expand using the ODataUriParser](http://blogs.msdn.com/b/alexj/archive/2013/05/10/parsing-odata-paths-select-and-expand-using-the-odatauriparser.aspx)
+- [Parsing $filter and $orderby using the ODataUriParser](https://blogs.msdn.com/b/alexj/archive/2012/12/06/parsing-filter-and-orderby-using-the-odatauriparser.aspx)
+- [Parsing OData Paths, $select and $expand using the ODataUriParser](https://blogs.msdn.com/b/alexj/archive/2013/05/10/parsing-odata-paths-select-and-expand-using-the-odatauriparser.aspx)
 Some parts of the articles still apply to V4 UriParser, such as introduction for ODataPath and QueryNode hierarchy. In this post, we will deal with API changes and features newly introduced.
 
 ### UriParser Overview
@@ -45,9 +45,9 @@ fullUri is the full request Uri including query options. When it is an absolute 
 In the following demo we will use the model from OData V4 demo service , and create an ODataUriParser instance.
 
 ``` csharp
-Uri serviceRoot = new Uri("http://services.odata.org/V4/OData/OData.svc");
+Uri serviceRoot = new Uri("https://services.odata.org/V4/OData/OData.svc");
 IEdmModel model = EdmxReader.Parse(XmlReader.Create(serviceRoot + "/$metadata"));
-Uri fullUri = new Uri("http://services.odata.org/V4/OData/OData.svc/Products");
+Uri fullUri = new Uri("https://services.odata.org/V4/OData/OData.svc/Products");
 ODataUriParser parser = new ODataUriParser(model, serviceRoot, fullUri);
 ```
 
@@ -55,7 +55,7 @@ ODataUriParser parser = new ODataUriParser(model, serviceRoot, fullUri);
 You can use the following API to parse resource path:
 
 ``` csharp
-Uri fullUri = new Uri("http://services.odata.org/V4/OData/OData.svc/Products(1)");
+Uri fullUri = new Uri("https://services.odata.org/V4/OData/OData.svc/Products(1)");
 ODataUriParser parser = new ODataUriParser(model, serviceRoot, fullUri);
 ODataPath path = parser.ParsePath();
 ```

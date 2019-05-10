@@ -48,7 +48,7 @@ public enum ServiceLifetime
 }
 ```
 
-Once you have determined a specific DI framework to use in your application, you need implement a container builder from `IContainerBuilder` based on the DI framework you choose. In this tutorial, we will use the [Microsoft DI Framework](http://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection/) (the default DI implementation for ASP.NET Core) as an example. The implementation of the container builder should more or less look like below:
+Once you have determined a specific DI framework to use in your application, you need implement a container builder from `IContainerBuilder` based on the DI framework you choose. In this tutorial, we will use the [Microsoft DI Framework](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection/) (the default DI implementation for ASP.NET Core) as an example. The implementation of the container builder should more or less look like below:
 
 ```C#
 using System;

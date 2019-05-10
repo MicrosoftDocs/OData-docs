@@ -8,13 +8,13 @@ This post is intended to guide you through the URI parser for OData V4, which is
 
 You may have already read the following posts about OData URI parser in ODataLib V5.x:
 
-- [Parsing $filter and $orderby using the ODataUriParser](http://blogs.msdn.com/b/alexj/archive/2012/12/06/parsing-filter-and-orderby-using-the-odatauriparser.aspx)
-- [Parsing OData Paths, $select and $expand using the ODataUriParser](http://blogs.msdn.com/b/alexj/archive/2013/05/10/parsing-odata-paths-select-and-expand-using-the-odatauriparser.aspx)
+- [Parsing $filter and $orderby using the ODataUriParser](https://blogs.msdn.com/b/alexj/archive/2012/12/06/parsing-filter-and-orderby-using-the-odatauriparser.aspx)
+- [Parsing OData Paths, $select and $expand using the ODataUriParser](https://blogs.msdn.com/b/alexj/archive/2013/05/10/parsing-odata-paths-select-and-expand-using-the-odatauriparser.aspx)
 
 Parts of those articles, e.g., introductions to `ODataPath` and `QueryNode` hierarchy, still apply to the V4 URI parser. In this post, we will deal with API changes and newly-added features.
 
 ### Overview
-The main reference document for using URI parser is the [URL Conventions specification](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part2-url-conventions.html). The `ODataUriParser` class is the main part of its implementation in ODataLib.
+The main reference document for using URI parser is the [URL Conventions specification](https://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part2-url-conventions.html). The `ODataUriParser` class is the main part of its implementation in ODataLib.
 
 The responsibility of `ODataUriParser` is two-fold:
 
@@ -37,9 +37,9 @@ Parameters:
 `model` is the data model the parser will refer to; `serviceRoot` is the base URI for the service, which is constant for a particular service. Note that `serviceRoot` must be an absolute URI; `uri` is the request URI to be parsed, including any query options. When it is an absolute URI, it must be based on `serviceRoot`, or it can be a relative URI. In the following example, we use the model from OData V4 demo service, and create an `ODataUriParser` instance based on it.
 
 ```C#
-Uri serviceRoot = new Uri("http://services.odata.org/V4/OData/OData.svc");
+Uri serviceRoot = new Uri("https://services.odata.org/V4/OData/OData.svc");
 IEdmModel model = CsdlReader.Parse(XmlReader.Create(serviceRoot + "/$metadata"));
-Uri requestUri = new Uri("http://services.odata.org/V4/OData/OData.svc/Products");
+Uri requestUri = new Uri("https://services.odata.org/V4/OData/OData.svc/Products");
 ODataUriParser parser = new ODataUriParser(model, serviceRoot, requestUri);
 ```
 
@@ -47,7 +47,7 @@ ODataUriParser parser = new ODataUriParser(model, serviceRoot, requestUri);
 You can use the following API to parse resource path:
 
 ```C#
-Uri requestUri = new Uri("http://services.odata.org/V4/OData/OData.svc/Products(1)");
+Uri requestUri = new Uri("https://services.odata.org/V4/OData/OData.svc/Products(1)");
 ODataUriParser parser = new ODataUriParser(model, serviceRoot, requestUri);
 ODataPath path = parser.ParsePath();
 ```
@@ -84,7 +84,7 @@ bool? count = parser.ParseCount();                         // parse $count
  
 The data structures for `SelectExpandClause`, `FilterClause`, `OrdeyByClause` have already been presented in two previous articles mentioned in the beginning of this post. Here I’d like to talk about the newly-added `SearchClause`.
 
-`SearchClause` contains a tree representation of the `$search` query. The detailed rules of `$search` query option can be found [here](http://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part2-url-conventions/odata-v4.0-errata03-os-part2-url-conventions-complete.html#_Toc453752364). In general, the search query string can contain search terms combined with logic operators: AND, OR and NOT.
+`SearchClause` contains a tree representation of the `$search` query. The detailed rules of `$search` query option can be found [here](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part2-url-conventions/odata-v4.0-errata03-os-part2-url-conventions-complete.html#_Toc453752364). In general, the search query string can contain search terms combined with logic operators: AND, OR and NOT.
 
 All search terms are represented by `SearchTermNode` which is derived from `SingleValueNode`. `SearchTermNode` has a `Text` property containing the original word or phrase.
 

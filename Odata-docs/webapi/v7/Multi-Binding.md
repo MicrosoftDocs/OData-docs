@@ -13,7 +13,7 @@ The valid format of a binding path is:
                     navigationProperty
 ```
 
-For example, we have containment in [Trippin service](http://services.odata.org/V4/(S(qqntzoewadope25a3bh2d5bi))/TripPinServiceRW/$metadata)：
+For example, we have containment in [Trippin service](https://services.odata.org/V4/(S(qqntzoewadope25a3bh2d5bi))/TripPinServiceRW/$metadata)：
 
 Person <br />
 &nbsp;&nbsp;|---- Trips (containment) <br />
@@ -54,7 +54,7 @@ Find navigation property with its binding path.
 ### ODL ###
 `public ODataQueryOptionParser (IEdmModel model, ODataPath odataPath, String queryOptions)` <br />
 `public ODataQueryOptionParser(IEdmModel model, ODataPath odataPath, IDictionary<string, string> queryOptions, IServiceProvider container)` <br />
-Possibly need ODataPath to resolve navigation target of segments in query option if the navigation property binding path is included in both path and query option. Refer: [Navigation property under complex type](http://luoyan0517.github.io/odata.net/v7/#06-18-navigation-under-complex).
+Possibly need ODataPath to resolve navigation target of segments in query option if the navigation property binding path is included in both path and query option. Refer: [Navigation property under complex type](https://luoyan0517.github.io/odata.net/v7/#06-18-navigation-under-complex).
 
 Take the above complex scenario for example. For generating this kind of model, we need use the new AddNavigationTarget API, and different navigation target can be specified:
 ```C#

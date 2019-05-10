@@ -75,12 +75,12 @@ public class CustomersController : ODataController
 ```
 
 Request:
-`http://localhost:port_number/orest/Customers?$expand=Orders($filter=Id eq 10)`
+`https://localhost:port_number/orest/Customers?$expand=Orders($filter=Id eq 10)`
 
 Response:
 ```JSON
 {
-    "@odata.context": "http://localhost:52953/orest/$metadata#Customers",
+    "@odata.context": "https://localhost:52953/orest/$metadata#Customers",
     "value": [
         {
             "Id": 0,

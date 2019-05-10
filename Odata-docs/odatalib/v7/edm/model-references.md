@@ -9,7 +9,7 @@ Model referencing is an advanced OData feature. When you want to use types defin
 This section covers a scenario where we have one main model and two sub-models. The main model references the two sub-models, while the two sub-models references each other. We will introduce two ways to define model references: **by code** and **by CSDL**. If you would like to create the model by writing code, you can take a look at the first part of this section. If you want to create your model by reading a CSDL document, please refer to the second part.
 
 ### Define model references by code
-Let's begin by defining the **first sub-model** `subModel1`. The model contains a complex type `NS1.Complex1` which contains a structural property of another complex type defined in another model. We also add a model reference to `subModel1` pointing to the second model located at `http://model2`. The URL should be the **service metadata location**. The namespace to include is `NS2` and the model alias is `Alias2`.
+Let's begin by defining the **first sub-model** `subModel1`. The model contains a complex type `NS1.Complex1` which contains a structural property of another complex type defined in another model. We also add a model reference to `subModel1` pointing to the second model located at `https://model2`. The URL should be the **service metadata location**. The namespace to include is `NS2` and the model alias is `Alias2`.
 
 ```C#
 var subModel1 = new EdmModel();
@@ -17,14 +17,14 @@ var subModel1 = new EdmModel();
 var complex1 = new EdmComplexType("NS1", "Complex1");
 subModel1.AddElement(complex1);
 
-var reference1 = new EdmReference(new Uri("http://model2"));
+var reference1 = new EdmReference(new Uri("https://model2"));
 reference1.AddInclude(new EdmInclude("Alias2", "NS2"));
 
 var references1 = new List<IEdmReference> {reference1};
 subModel1.SetEdmReferences(references1);
 ```
 
-Then we do the same thing for the **second sub-model** `subModel2`. This model contains a complex type `NS2.Complex2` and references the first model located at `http://model1`.
+Then we do the same thing for the **second sub-model** `subModel2`. This model contains a complex type `NS2.Complex2` and references the first model located at `https://model1`.
 
 ```C#
 var subModel2 = new EdmModel();
@@ -32,7 +32,7 @@ var subModel2 = new EdmModel();
 var complex2 = new EdmComplexType("NS2", "Complex2");
 subModel2.AddElement(complex2);
 
-var reference2 = new EdmReference(new Uri("http://model1"));
+var reference2 = new EdmReference(new Uri("https://model1"));
 reference2.AddInclude(new EdmInclude("Alias1", "NS1"));
 
 var references2 = new List<IEdmReference> {reference2};
@@ -66,15 +66,15 @@ As an example, we store the CSDL of the three models in three string constants a
 ```C#
 const string mainEdmx =
 @"<?xml version=""1.0"" encoding=""utf-16""?>
-<edmx:Edmx Version=""4.0"" xmlns:edmx=""http://docs.oasis-open.org/odata/ns/edmx"">
-  <edmx:Reference Uri=""http://model2"">
+<edmx:Edmx Version=""4.0"" xmlns:edmx=""https://docs.oasis-open.org/odata/ns/edmx"">
+  <edmx:Reference Uri=""https://model2"">
     <edmx:Include Namespace=""NS2"" Alias=""Alias2"" />
   </edmx:Reference>
-  <edmx:Reference Uri=""http://model1"">
+  <edmx:Reference Uri=""https://model1"">
     <edmx:Include Namespace=""NS1"" Alias=""Alias1"" />
   </edmx:Reference>
   <edmx:DataServices>
-    <Schema Namespace=""NS"" xmlns=""http://docs.oasis-open.org/odata/ns/edm"">
+    <Schema Namespace=""NS"" xmlns=""https://docs.oasis-open.org/odata/ns/edm"">
       <ComplexType Name=""Complex3"">
         <Property Name=""Prop1"" Type=""NS1.Complex1"" />
         <Property Name=""Prop2"" Type=""NS2.Complex2"" />
@@ -85,12 +85,12 @@ const string mainEdmx =
 
 const string edmx1 =
 @"<?xml version=""1.0"" encoding=""utf-16""?>
-<edmx:Edmx Version=""4.0"" xmlns:edmx=""http://docs.oasis-open.org/odata/ns/edmx"">
-  <edmx:Reference Uri=""http://model2"">
+<edmx:Edmx Version=""4.0"" xmlns:edmx=""https://docs.oasis-open.org/odata/ns/edmx"">
+  <edmx:Reference Uri=""https://model2"">
     <edmx:Include Namespace=""NS2"" Alias=""Alias2"" />
   </edmx:Reference>
   <edmx:DataServices>
-    <Schema Namespace=""NS1"" xmlns=""http://docs.oasis-open.org/odata/ns/edm"">
+    <Schema Namespace=""NS1"" xmlns=""https://docs.oasis-open.org/odata/ns/edm"">
       <ComplexType Name=""Complex1"">
         <Property Name=""Prop"" Type=""NS2.Complex2"" />
       </ComplexType>
@@ -100,12 +100,12 @@ const string edmx1 =
 
 const string edmx2 =
 @"<?xml version=""1.0"" encoding=""utf-16""?>
-<edmx:Edmx Version=""4.0"" xmlns:edmx=""http://docs.oasis-open.org/odata/ns/edmx"">
-  <edmx:Reference Uri=""http://model1"">
+<edmx:Edmx Version=""4.0"" xmlns:edmx=""https://docs.oasis-open.org/odata/ns/edmx"">
+  <edmx:Reference Uri=""https://model1"">
     <edmx:Include Namespace=""NS1"" Alias=""Alias1"" />
   </edmx:Reference>
   <edmx:DataServices>
-    <Schema Namespace=""NS2"" xmlns=""http://docs.oasis-open.org/odata/ns/edm"">
+    <Schema Namespace=""NS2"" xmlns=""https://docs.oasis-open.org/odata/ns/edm"">
       <ComplexType Name=""Complex2"">
         <Property Name=""Prop"" Type=""NS1.Complex1"" />
       </ComplexType>
@@ -117,12 +117,12 @@ IEdmModel model;
 IEnumerable<EdmError> errors;
 if (!CsdlReader.TryParse(XmlReader.Create(new StringReader(mainEdmx)), (uri) =>
 {
-    if (string.Equals(uri.AbsoluteUri, "http://model1/"))
+    if (string.Equals(uri.AbsoluteUri, "https://model1/"))
     {
         return XmlReader.Create(new StringReader(edmx1));
     }
 
-    if (string.Equals(uri.AbsoluteUri, "http://model2/"))
+    if (string.Equals(uri.AbsoluteUri, "https://model2/"))
     {
         return XmlReader.Create(new StringReader(edmx2));
     }

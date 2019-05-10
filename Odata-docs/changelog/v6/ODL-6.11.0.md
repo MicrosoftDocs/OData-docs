@@ -11,13 +11,13 @@ ms.service: multiple
 
 ## New Features: 
 
-[[GitHub issue #23](https://github.com/OData/odata.net/issues/23)] [ODataLib now supports parsing URI path template](http://odata.github.io/odata.net/#06-01-parsing-url-template).
+[[GitHub issue #23](https://github.com/OData/odata.net/issues/23)] [ODataLib now supports parsing URI path template](https://odata.github.io/odata.net/#06-01-parsing-url-template).
 
-[[GitHub issue #71](https://github.com/OData/odata.net/issues/71)] [EdmLib now supports adding vocabulary annotations to EdmEnumMember](http://odata.github.io/odata.net/#06-02-add-annotations-to-enummember).
+[[GitHub issue #71](https://github.com/OData/odata.net/issues/71)] [EdmLib now supports adding vocabulary annotations to EdmEnumMember](https://odata.github.io/odata.net/#06-02-add-annotations-to-enummember).
 
-[[GitHub issue #80](https://github.com/OData/odata.net/issues/80)] [OData client for .NET now supports abstract entity type without key](http://odata.github.io/odata.net/#06-03-support-abstract-entity-type-in-client).
+[[GitHub issue #80](https://github.com/OData/odata.net/issues/80)] [OData client for .NET now supports abstract entity type without key](https://odata.github.io/odata.net/#06-03-support-abstract-entity-type-in-client).
 
-[[GitHub issue #85](https://github.com/OData/odata.net/issues/85)] [ODataLib now supports additional preference headers: odata.track-changes, odata.maxpagesize and odata.continue-on-error](http://odata.github.io/odata.net/#06-04-additional-prefer-header).
+[[GitHub issue #85](https://github.com/OData/odata.net/issues/85)] [ODataLib now supports additional preference headers: odata.track-changes, odata.maxpagesize and odata.continue-on-error](https://odata.github.io/odata.net/#06-04-additional-prefer-header).
 
 [[GitHub issue #87](https://github.com/OData/odata.net/issues/87)] ODataLib now supports setting filter query option in ExpandedNavigationSelectItem.
 

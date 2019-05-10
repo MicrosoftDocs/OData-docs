@@ -11,7 +11,7 @@ ms.service: multiple
 
 ## Background 
 
-Before ODataLib 6.10.0, OData core lib has supported metadata annotations for metadata element in model and instance annotations for a particular instance in payload. But on client side, there isn’t a good way to get these  annotations. So In ODataLib 6.10.0, we provided several APIs to enable user to get annotations on client side. Basically, OData client follows the rules defined in [OData V4.0 protocol](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html) (see [6.4 Vocabulary Extensibility](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html#_Toc406398214)) to get instance annotations or metadata annotations.
+Before ODataLib 6.10.0, OData core lib has supported metadata annotations for metadata element in model and instance annotations for a particular instance in payload. But on client side, there isn’t a good way to get these  annotations. So In ODataLib 6.10.0, we provided several APIs to enable user to get annotations on client side. Basically, OData client follows the rules defined in [OData V4.0 protocol](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html) (see [6.4 Vocabulary Extensibility](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html#_Toc406398214)) to get instance annotations or metadata annotations.
 
 ## How to get annotations on client side 
 
@@ -37,14 +37,14 @@ To get instance annotations, we need to set odata.include-annotations preference
 
     public static void Main(string[] args)
     {
-        DefaultContainer dsc = new DefaultContainer(new Uri("http://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
+        DefaultContainer dsc = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
         dsc.SendingRequest2 += (sender, eventArgs) =>
         {
             eventArgs.RequestMessage.SetHeader("Prefer", "odata.include-annotations=\"*\"");
         };
     }
 
-Please refer to [8.2.8.4 Preference odata.include-annotations](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html#_Toc406398237) for the rules of this preference.
+Please refer to [8.2.8.4 Preference odata.include-annotations](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html#_Toc406398237) for the rules of this preference.
 
 ### Get annotations Code Sample 
 

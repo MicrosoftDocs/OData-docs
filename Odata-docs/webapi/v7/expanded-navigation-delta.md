@@ -41,16 +41,16 @@ writer.Flush();
 
 string payloadLooksLike =
     "{" +
-        "\"@odata.context\":\"http://host/service/$metadata#Customers/$delta\"," +
+        "\"@odata.context\":\"https://host/service/$metadata#Customers/$delta\"," +
         "\"value\":" +
         "[" + // deltaResourceSet
             "{" + // customerResource
-                "\"@odata.id\":\"http://host/service/Customers('BOTTM')\"," +
+                "\"@odata.id\":\"https://host/service/Customers('BOTTM')\"," +
                 "\"ContactName\":\"Susan Halvenstern\"," +
                 "\"Orders\":" + // ordersNestedResourceInfo
                 "[" + // ordersResourceSet
                     "{" + // orderResource
-                        "\"@odata.id\":\"http://host/service/Orders(10643)\"," +
+                        "\"@odata.id\":\"https://host/service/Orders(10643)\"," +
                         "\"Id\":10643," +
                         "\"ShippingAddress\":" +
                         "{" +
@@ -88,15 +88,15 @@ writer.Flush();
 
 string payloadLooksLike =
     "{" +
-        "\"@odata.context\":\"http://host/service/$metadata#Customers/$delta\"," +
+        "\"@odata.context\":\"https://host/service/$metadata#Customers/$delta\"," +
         "\"value\":" +
         "[" +
             "{" +
-                "\"@odata.id\":\"http://host/service/Customers('BOTTM')\"," +
+                "\"@odata.id\":\"https://host/service/Customers('BOTTM')\"," +
                 "\"ContactName\":\"Susan Halvenstern\"," +
                 "\"ProductBeingViewed\":" +
                 "{" +
-                    "\"@odata.id\":\"http://host/service/Product(1)\"," +
+                    "\"@odata.id\":\"https://host/service/Product(1)\"," +
                     "\"Id\":1," +
                     "\"Name\":\"Car\"," +
                     "\"Details\":" +

@@ -37,15 +37,15 @@ You can take a look at [a basic sample service](https://github.com/OData/WebApi/
 
 Now the sample service can support (but not limit to) the following requests:
 
- - Metadata. `GET http://localhost:9091/odata/$metadata`
- - EntitySet. `GET http://localhost:9091/odata/Products`
- - Entity. `GET http://localhost:9091/odata/Products(1)`
- - Structural property. `GET http://localhost:9091/odata/Customers(1)/FirstName`
- - Navigation property. `GET http://localhost:9091/odata/Customers(1)/Products`
- - $filter. `GET http://localhost:9091/odata/Products?$filter=ProductId%20gt%201`
- - Create. `POST http://localhost:9091/odata/Products`
- - Delete. `DELETE http://localhost:9091/odata/Products(2)`
- - Full update. `PUT http://localhost:9091/odata/Products(2)`
+ - Metadata. `GET https://localhost:9091/odata/$metadata`
+ - EntitySet. `GET https://localhost:9091/odata/Products`
+ - Entity. `GET https://localhost:9091/odata/Products(1)`
+ - Structural property. `GET https://localhost:9091/odata/Customers(1)/FirstName`
+ - Navigation property. `GET https://localhost:9091/odata/Customers(1)/Products`
+ - $filter. `GET https://localhost:9091/odata/Products?$filter=ProductId%20gt%201`
+ - Create. `POST https://localhost:9091/odata/Products`
+ - Delete. `DELETE https://localhost:9091/odata/Products(2)`
+ - Full update. `PUT https://localhost:9091/odata/Products(2)`
 
 ### Where's the source code?
 You can view the source code of this library at our [OData Web API repository](https://github.com/OData/WebApi/tree/v6.0.0-alpha1/vNext). We warmly welcome any feedback, proposition and contribution from you!

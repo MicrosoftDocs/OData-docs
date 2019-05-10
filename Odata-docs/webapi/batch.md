@@ -26,7 +26,7 @@ As above, we only need to create a new batch handler and pass it when mapping ro
 
 For testing, we can POST a request with batch body to the baseurl/$batch: 
 
-    POST http://localhost:14409/odata/$batch HTTP/1.1
+    POST https://localhost:14409/odata/$batch HTTP/1.1
     User-Agent: Fiddler
     Host: localhost:14409
     Content-Length: 1244
@@ -36,7 +36,7 @@ For testing, we can POST a request with batch body to the baseurl/$batch:
     Content-Type: application/http
     Content-Transfer-Encoding: binary
     
-    GET http://localhost:14409/odata/Products(0)  HTTP/1.1
+    GET https://localhost:14409/odata/Products(0)  HTTP/1.1
     OData-Version: 4.0
     OData-MaxVersion: 4.0
     Accept: application/json;odata.metadata=minimal
@@ -51,7 +51,7 @@ For testing, we can POST a request with batch body to the baseurl/$batch:
     Content-Transfer-Encoding: binary 
     Content-ID: 1
     
-    DELETE http://localhost:14409/odata/Products(0) HTTP/1.1
+    DELETE https://localhost:14409/odata/Products(0) HTTP/1.1
     OData-Version: 4.0
     OData-MaxVersion: 4.0
     Accept: application/json;odata.metadata=minimal
@@ -63,7 +63,7 @@ For testing, we can POST a request with batch body to the baseurl/$batch:
     Content-Type: application/http
     Content-Transfer-Encoding: binary
     
-    GET http://localhost:14409/odata/Products  HTTP/1.1
+    GET https://localhost:14409/odata/Products  HTTP/1.1
     OData-Version: 4.0
     OData-MaxVersion: 4.0
     Accept: application/json;odata.metadata=minimal
@@ -96,7 +96,7 @@ And the response should be:
     OData-Version: 4.0
     
     {
-      "@odata.context":"http://localhost:14409/odata/$metadata#Products/$entity","ID":0,"Name":"0Name"
+      "@odata.context":"https://localhost:14409/odata/$metadata#Products/$entity","ID":0,"Name":"0Name"
     }
     --batchresponse_5667121d-ca2f-458d-9bae-172f04cdd411
     Content-Type: multipart/mixed; boundary=changesetresponse_e2f20275-a425-404a-8f01-c9818aa63610
@@ -119,7 +119,7 @@ And the response should be:
     OData-Version: 4.0
     
     {
-      "@odata.context":"http://localhost:14409/odata/$metadata#Products","value":[
+      "@odata.context":"https://localhost:14409/odata/$metadata#Products","value":[
         {
           "ID":1,"Name":"1Name"
         },{
@@ -166,7 +166,7 @@ To enable `odata.continue-on-error`, please refer to section [4.20 Prefer odata.
 
 For testing, we can POST a batch request without Preference `odata.continue-on-error`:
 
-	POST http://localhost:9001/DefaultBatch/$batch HTTP/1.1
+	POST https://localhost:9001/DefaultBatch/$batch HTTP/1.1
 	Accept: multipart/mixed
 	Content-Type: multipart/mixed; boundary=batch_abbe2e6f-e45b-4458-9555-5fc70e3aebe0
 	Host: localhost:9001
@@ -178,19 +178,19 @@ For testing, we can POST a batch request without Preference `odata.continue-on-e
 	Content-Type: application/http
 	Content-Transfer-Encoding: binary
 
-	GET http://localhost:9001/DefaultBatch/DefaultBatchCustomer(0) HTTP/1.1
+	GET https://localhost:9001/DefaultBatch/DefaultBatchCustomer(0) HTTP/1.1
 
 	--batch_abbe2e6f-e45b-4458-9555-5fc70e3aebe0
 	Content-Type: application/http
 	Content-Transfer-Encoding: binary
 
-	GET http://localhost:9001/DefaultBatch/DefaultBatchCustomerfoo HTTP/1.1
+	GET https://localhost:9001/DefaultBatch/DefaultBatchCustomerfoo HTTP/1.1
 
 	--batch_abbe2e6f-e45b-4458-9555-5fc70e3aebe0
 	Content-Type: application/http
 	Content-Transfer-Encoding: binary
 
-	GET http://localhost:9001/DefaultBatch/DefaultBatchCustomer(1) HTTP/1.1
+	GET https://localhost:9001/DefaultBatch/DefaultBatchCustomer(1) HTTP/1.1
 
 	--batch_abbe2e6f-e45b-4458-9555-5fc70e3aebe0--
 
@@ -212,7 +212,7 @@ The response should be:
 	OData-Version: 4.0
 
 	{
-	  "@odata.context":"http://localhost:9001/DefaultBatch/$metadata#DefaultBatchCustomer/$entity","Id":0,"Name":"Name 0"
+	  "@odata.context":"https://localhost:9001/DefaultBatch/$metadata#DefaultBatchCustomer/$entity","Id":0,"Name":"Name 0"
 	}
 	--batchresponse_b49114d7-62f7-450a-8064-e27ef9562eda
 	Content-Type: application/http
@@ -221,7 +221,7 @@ The response should be:
 	HTTP/1.1 404 Not Found
 	Content-Type: application/json; charset=utf-8
 
-	{"Message":"No HTTP resource was found that matches the request URI 'http://localhost:9001/DefaultBatch/DefaultBatchCustomerfoo'.","MessageDetail":"No route data was found for this request."}
+	{"Message":"No HTTP resource was found that matches the request URI 'https://localhost:9001/DefaultBatch/DefaultBatchCustomerfoo'.","MessageDetail":"No route data was found for this request."}
 	--batchresponse_b49114d7-62f7-450a-8064-e27ef9562eda--
 
 Service returned error and stop processing.
@@ -230,7 +230,7 @@ Service returned error and stop processing.
 
 Now POST a batch request with Preference `odata.continue-on-error`:
 
-	POST http://localhost:9001/DefaultBatch/$batch HTTP/1.1
+	POST https://localhost:9001/DefaultBatch/$batch HTTP/1.1
 	Accept: multipart/mixed
 	prefer: odata.continue-on-error
 	Content-Type: multipart/mixed; boundary=batch_abbe2e6f-e45b-4458-9555-5fc70e3aebe0
@@ -243,19 +243,19 @@ Now POST a batch request with Preference `odata.continue-on-error`:
 	Content-Type: application/http
 	Content-Transfer-Encoding: binary
 
-	GET http://localhost:9001/DefaultBatch/DefaultBatchCustomer(0) HTTP/1.1
+	GET https://localhost:9001/DefaultBatch/DefaultBatchCustomer(0) HTTP/1.1
 
 	--batch_abbe2e6f-e45b-4458-9555-5fc70e3aebe0
 	Content-Type: application/http
 	Content-Transfer-Encoding: binary
 
-	GET http://localhost:9001/DefaultBatch/DefaultBatchCustomerfoo HTTP/1.1
+	GET https://localhost:9001/DefaultBatch/DefaultBatchCustomerfoo HTTP/1.1
 
 	--batch_abbe2e6f-e45b-4458-9555-5fc70e3aebe0
 	Content-Type: application/http
 	Content-Transfer-Encoding: binary
 
-	GET http://localhost:9001/DefaultBatch/DefaultBatchCustomer(1) HTTP/1.1
+	GET https://localhost:9001/DefaultBatch/DefaultBatchCustomer(1) HTTP/1.1
 
 	--batch_abbe2e6f-e45b-4458-9555-5fc70e3aebe0--
 
@@ -277,7 +277,7 @@ Service returns the error for that request and continue processing additional re
 	OData-Version: 4.0
 
 	{
-	  "@odata.context":"http://localhost:9001/DefaultBatch/$metadata#DefaultBatchCustomer/$entity","Id":0,"Name":"Name 0"
+	  "@odata.context":"https://localhost:9001/DefaultBatch/$metadata#DefaultBatchCustomer/$entity","Id":0,"Name":"Name 0"
 	}
 	--batchresponse_60fec4c2-3ce7-4900-a05a-93f180629a11
 	Content-Type: application/http
@@ -286,7 +286,7 @@ Service returns the error for that request and continue processing additional re
 	HTTP/1.1 404 Not Found
 	Content-Type: application/json; charset=utf-8
 
-	{"Message":"No HTTP resource was found that matches the request URI 'http://localhost:9001/DefaultBatch/DefaultBatchCustomerfoo'.","MessageDetail":"No route data was found for this request."}
+	{"Message":"No HTTP resource was found that matches the request URI 'https://localhost:9001/DefaultBatch/DefaultBatchCustomerfoo'.","MessageDetail":"No route data was found for this request."}
 	--batchresponse_60fec4c2-3ce7-4900-a05a-93f180629a11
 	Content-Type: application/http
 	Content-Transfer-Encoding: binary
@@ -296,6 +296,6 @@ Service returns the error for that request and continue processing additional re
 	OData-Version: 4.0
 
 	{
-	  "@odata.context":"http://localhost:9001/DefaultBatch/$metadata#DefaultBatchCustomer/$entity","Id":1,"Name":"Name 1"
+	  "@odata.context":"https://localhost:9001/DefaultBatch/$metadata#DefaultBatchCustomer/$entity","Id":1,"Name":"Name 1"
 	}
 	--batchresponse_60fec4c2-3ce7-4900-a05a-93f180629a11--

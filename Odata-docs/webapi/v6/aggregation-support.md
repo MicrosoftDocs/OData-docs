@@ -9,7 +9,7 @@ ms.topic: article
 ms.service: multiple
 ---
 
-From ODataLib 6.15.0, we introduced the `basic` Uri parser support for aggregations, this is first step for us to support aggregations,  Issues and PR to make this support better is very welcome, details about aggregation in spec can be found [here](http://docs.oasis-open.org/odata/odata-data-aggregation-ext/v4.0/odata-data-aggregation-ext-v4.0.html).
+From ODataLib 6.15.0, we introduced the `basic` Uri parser support for aggregations, this is first step for us to support aggregations,  Issues and PR to make this support better is very welcome, details about aggregation in spec can be found [here](https://docs.oasis-open.org/odata/odata-data-aggregation-ext/v4.0/odata-data-aggregation-ext-v4.0.html).
 
 ## Aggregate
 The aggregate transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set.

@@ -26,10 +26,10 @@ This event is fired before a request message object is built, giving the handler
 
 
 
-    DefaultContainer dataServiceContext = new DefaultContainer(new Uri("http://services.odata.org/V4/TripPinServiceRW/"));
+    DefaultContainer dataServiceContext = new DefaultContainer(new Uri("https://services.odata.org/V4/TripPinServiceRW/"));
     dataServiceContext.BuildingRequest += (sender, eventArgs)=>
     {
-        eventArgs.RequestUri = new Uri("http://services.odata.org/V4/(S(ghojd5jj5d33cwotkyfwn431))/TripPinServiceRW/People");
+        eventArgs.RequestUri = new Uri("https://services.odata.org/V4/(S(ghojd5jj5d33cwotkyfwn431))/TripPinServiceRW/People");
     };
     dataServiceContext.People.Execute();
 
@@ -48,7 +48,7 @@ This event is fired when a response is received by the client. It is fired for b
 
 For a non-batch response:
 
-	DefaultContainer dataServiceContext = new DefaultContainer(new Uri("http://services.odata.org/V4/TripPinServiceRW/"));
+	DefaultContainer dataServiceContext = new DefaultContainer(new Uri("https://services.odata.org/V4/TripPinServiceRW/"));
     dataServiceContext.ReceivingResponse += (sender, eventArgs) =>
     {
         Console.WriteLine(eventArgs.ResponseMessage.GetHeader("OData-Version"));
@@ -57,7 +57,7 @@ For a non-batch response:
 
 For a batch request for query, the `ReceivingResponse` will firstly be fired when the client receives the top level response. Then, the event will be fired when the client enumerates the inner `QueryOperationResponse`. `ReceivingResponse` is fired as many times as the responses are enumerated. So about the following code, before the client executes `foreach`, the code will only print the `Content-Type` for the top-level request. The last several lines of following code enumerates each of the `QueryOperationResponse`. `RecivingResponse` will be fired accordingly. 
 
-	DefaultContainer dataServiceContext = new DefaultContainer(new Uri("http://services.odata.org/V4/(S(irl1k2jt4e4bscxuk30bpgji))/TripPinServiceRW/"));
+	DefaultContainer dataServiceContext = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(irl1k2jt4e4bscxuk30bpgji))/TripPinServiceRW/"));
     dataServiceContext.ReceivingResponse += (sender, eventArgs) =>
     {
         Console.WriteLine(eventArgs.ResponseMessage.GetHeader("Content-Type"));
@@ -78,7 +78,7 @@ But for a batch request for changes. `ReceivingResponse` will be fired for both 
 
 200 is the response status code of the top level message. the other two 204 status codes are of the inner responses. 
 
-	DefaultContainer dataServiceContext = new DefaultContainer(new Uri("http://services.odata.org/V4/(S(irl1k2jt4e4bscxuk30bpgji))/TripPinServiceRW/"));
+	DefaultContainer dataServiceContext = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(irl1k2jt4e4bscxuk30bpgji))/TripPinServiceRW/"));
     var p1 = dataServiceContext.People.First();
     var p2 = dataServiceContext.People.Skip(1).First();
     dataServiceContext.ReceivingResponse += (sender, eventArgs) =>
@@ -101,7 +101,7 @@ The most common use of this event is to set the headers of the request. You can 
 
 The code below will add the `odata.include-annotations` preference in request header to enable getting instance annotations.
     
-    DefaultContainer dataServiceContext = new DefaultContainer(new Uri("http://services.odata.org/V4/(S(ghojd5jj5d33cwotkyfwn431))/TripPinServiceRW/"));
+    DefaultContainer dataServiceContext = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(ghojd5jj5d33cwotkyfwn431))/TripPinServiceRW/"));
 
     dataServiceContext.SendingRequest2 += (sender, eventArgs) =>
     {
@@ -162,7 +162,7 @@ Following code provides a sample which overrides the `GetResponse()` method in u
 
 Then, Developers can replace the default client message with `CustomizedClientRequestMessage` by using following code. Then if the client sends a request after this setting, it will automatically return the fake response message.
 
-    DefaultContainer dataServiceContext = new DefaultContainer(new Uri("http://services.odata.org/V4/(S(irl1k2jt4e4bscxuk30bpgji))/TripPinServiceRW/"));
+    DefaultContainer dataServiceContext = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(irl1k2jt4e4bscxuk30bpgji))/TripPinServiceRW/"));
 
     string response = "..." //set the response
     dataServiceContext.Configurations.RequestPipeline.OnMessageCreating = 
@@ -207,7 +207,7 @@ Following code provides a sample to add properties to an `ODataEntry`.
 
 Then, to add new properties in the `OdataEntry`, developers can call `AddProperties` in `OnEntryStarting`.
 
-    DefaultContainer dataServiceContext = new DefaultContainer(new Uri("http://services.odata.org/v4/(S(ghojd5jj5d33cwotkyfwn431))/TripPinServiceRW/"));
+    DefaultContainer dataServiceContext = new DefaultContainer(new Uri("https://services.odata.org/v4/(S(ghojd5jj5d33cwotkyfwn431))/TripPinServiceRW/"));
 
     dataServiceContext.Configurations.RequestPipeline.OnEntryStarting(
         arg =>
@@ -227,4 +227,4 @@ Then, to add new properties in the `OdataEntry`, developers can call `AddPropert
 
 These two configurations provide more other client hooks in request pipeline and response pipeline.
 
-Please refer to this [link](http://blogs.msdn.com/b/odatateam/archive/2013/07/26/using-the-new-client-hooks-in-wcf-data-services-client.aspx) for details.
+Please refer to this [link](https://blogs.msdn.com/b/odatateam/archive/2013/07/26/using-the-new-client-hooks-in-wcf-data-services-client.aspx) for details.

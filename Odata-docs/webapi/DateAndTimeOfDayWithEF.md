@@ -312,7 +312,7 @@ __GET ~/Customers__
 
 ```JSON
 {
-  "@odata.context": "http://localhost/odata/$metadata#Customers",
+  "@odata.context": "https://localhost/odata/$metadata#Customers",
   "value": [
     {
       "Id": 1,
@@ -330,7 +330,7 @@ We can do filter:
 __~/Customers?$filter=Birthday eq 2017-12-31__
 ```JSON
 {
-  "@odata.context": "http://localhost/odata/$metadata#Customers",
+  "@odata.context": "https://localhost/odata/$metadata#Customers",
   "value": [
     {
       "Id": 2,

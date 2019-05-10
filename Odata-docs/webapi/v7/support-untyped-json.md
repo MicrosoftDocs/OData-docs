@@ -40,7 +40,7 @@ and the following payload, in which the second property (*UndeclaredAddress1*) h
     InMemoryMessage message = new InMemoryMessage();
     const string payload = @"
     {
-        ""@odata.context"":""http://www.sampletest.com/$metadata#EntitySet/$entity"",
+        ""@odata.context"":""https://www.sampletest.com/$metadata#EntitySet/$entity"",
         ""Id"":61880128,
         ""UndeclaredAddress1"":
         {
@@ -56,7 +56,7 @@ and the following payload, in which the second property (*UndeclaredAddress1*) h
     ODataMessageReaderSettings readerSettings = new ODataMessageReaderSettings
     {
         Validations = ~ValidationKinds.ThrowOnUndeclaredPropertyForNonOpenType,
-        BaseUri = new Uri("http://www.sampletest.com/")
+        BaseUri = new Uri("https://www.sampletest.com/")
     };
 
 ```

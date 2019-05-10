@@ -6,7 +6,7 @@ category: "5. OData Features"
 
 # Overview
 
-The IN operator is a [new feature](http://docs.oasis-open.org/odata/new-in-odata/v4.01/cn01/new-in-odata-v4.01-cn01.html#_Toc485385090 "new feature") in OData 4.01 that enables a shorthand way of writing multiple EQ expressions joined by OR. For example,
+The IN operator is a [new feature](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn01/new-in-odata-v4.01-cn01.html#_Toc485385090 "new feature") in OData 4.01 that enables a shorthand way of writing multiple EQ expressions joined by OR. For example,
 
 `GET /service/Products?$filter=Name eq 'Milk' or Name eq 'Cheese' or Name eq 'Donut'`
 

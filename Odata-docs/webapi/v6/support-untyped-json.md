@@ -31,10 +31,10 @@ The below messageWriterSettings will enable reading undeclared / untyped propert
 ODataMessageWriterSettings messageWriterSettings = new ODataMessageWriterSettings
 	    {
 	        Version = ODataVersion.V3,
-	        BaseUri = new Uri("http://example.com/"),
+	        BaseUri = new Uri("https://example.com/"),
 	        UndeclaredPropertyBehaviorKinds = ODataUndeclaredPropertyBehaviorKinds.SupportUndeclaredValueProperty
 	    };
-const string payload = @"{""odata.metadata"":""http://www.example.com/#Server.NS.container1.serverEntitySet/@Element"",""Id"":123,"
+const string payload = @"{""odata.metadata"":""https://www.example.com/#Server.NS.container1.serverEntitySet/@Element"",""Id"":123,"
           ""undeclaredComplex1"":{""property1"":""aa"",""property2"":""bb""}}";
 ODataEntry entry = ...; // read with messageWriterSettings
 ODataUntypedValue undeclaredComplex1Value= entry.Properties.Single(s => string.Equals(s.Name, "undeclaredComplex1"))
@@ -54,7 +54,7 @@ The below code demostrates UndeclaredPropertyBehavior.Support:
 
 ``` csharp
 
-var context = new DefaultContainer(new Uri("http://services.odata.org/v4/(S(lqbvtwide0ngdev54adgc0lu))/TripPinServiceRW/"));
+var context = new DefaultContainer(new Uri("https://services.odata.org/v4/(S(lqbvtwide0ngdev54adgc0lu))/TripPinServiceRW/"));
 context.Format.UseJson();
 context.UndeclaredPropertyBehavior = UndeclaredPropertyBehavior.Support;
 context.Configurations.ResponsePipeline.OnEntryEnded += (ReadingEntryArgs e) =>

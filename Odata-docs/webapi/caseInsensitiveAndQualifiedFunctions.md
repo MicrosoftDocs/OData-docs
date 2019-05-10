@@ -1,6 +1,6 @@
 ---
 title : "14.3 WebApi URI parser default setting updates: case-insensitive names and unqualified functions & actions"
-description: "7.x WebApi URI parser using case-insensitve names and unqualified functions & actions"
+description: "7.x WebApi URI parser using case-insensitive names and unqualified functions & actions"
 category: "14. 7.x Features "
 ms.date: 02/05/2018
 ---
@@ -8,7 +8,7 @@ ms.date: 02/05/2018
 
 **OData Core Library** v7.x has introduced the following two usability improvement:
 
-* Uri parsing with case-insensitive name, and 
+* Uri parsing with case-insensitive name, and
 
 * Unqualified functions & actions, which are not required to have namespace prefix.
 

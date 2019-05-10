@@ -114,31 +114,31 @@ public class CustomersController : ODataController
 Now, user can issue a <strong>GET</strong> request as:
 
 ```C#
-http://localhost/odata/Customers?$expand=Orders&$deltatoken=abc
+https://localhost/odata/Customers?$expand=Orders&$deltatoken=abc
 ```
 
 The corresponding payload will has the following contents:
 ```JSON
 {
-  "@odata.context":"http://localhost/odata/$metadata#Customers",
+  "@odata.context":"https://localhost/odata/$metadata#Customers",
   "value": [
     {
       "Id":123,
       "Name":"Added Customer"
     },
     {
-      "@odata.context":"http://localhost/odata/$metadata#Customers/$deletedEntity",
+      "@odata.context":"https://localhost/odata/$metadata#Customers/$deletedEntity",
       "Id": 124
       "Reason":"Deleted"
     },
     {
-      "@odata.context":"http://localhost/odata/$metadata#Customers/$link",
+      "@odata.context":"https://localhost/odata/$metadata#Customers/$link",
       "source":"Customers(123)",
       "relationship":"Orders",
       "target":"Orders(10)"
     },
     {
-     	"@odata.context":"http://localhost/odata/$metadata#Customers/$deletedLink",
+     	"@odata.context":"https://localhost/odata/$metadata#Customers/$deletedLink",
      	"source":"Customers(123)",
      	"relationship":"Orders",
      	"target":"Orders(11)"

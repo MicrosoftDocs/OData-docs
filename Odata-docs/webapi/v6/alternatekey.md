@@ -178,7 +178,7 @@ The following is the related metadata:
 Enable the alternate keys parser extension via the Uri resolver `AlternateKeysODataUriResolver`.
 
 ``` csharp
-var parser = new ODataUriParser(model, new Uri("http://host"), new Uri("http://host/People(SocialSN = \'1\')"))
+var parser = new ODataUriParser(model, new Uri("https://host"), new Uri("https://host/People(SocialSN = \'1\')"))
 {
     Resolver = new AlternateKeysODataUriResolver(model)
 };

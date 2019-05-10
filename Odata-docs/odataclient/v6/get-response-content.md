@@ -14,7 +14,7 @@ When the service doesn't respond with `204 No Content` to data modification requ
 ``` csharp
 static void Main(string[] args)
 {
-    var context = new DefaultContainer(new Uri("http://services.odata.org/v4/(S(b0vguruqwzqbmfoanwq1guxc))/TripPinServiceRW/"));
+    var context = new DefaultContainer(new Uri("https://services.odata.org/v4/(S(b0vguruqwzqbmfoanwq1guxc))/TripPinServiceRW/"));
 
     var person = Person.CreatePerson("russell", "Russell", "Whyte", new long());
 

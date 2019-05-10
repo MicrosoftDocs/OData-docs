@@ -123,13 +123,13 @@ public class ProductsController : ODataController
 
 We run the project to test it. When run for the first time, you’ll be asked to create a self-signed certificate. Follow the instruction to create the certificate and proceed. 
 
-In the above steps, we’ve secured the OData API by allowing only HTTPS connections to the Products and responding with data only to requests that has a correct Authorization header value (the base64-encoded value of “Parry:123456”: UGFycnk6MTIzNDU2). Our HTTP service endpoint is `http://localhost:53277/` and our HTTPS endpoint is `http://localhost:43300/`. 
+In the above steps, we’ve secured the OData API by allowing only HTTPS connections to the Products and responding with data only to requests that has a correct Authorization header value (the base64-encoded value of “Parry:123456”: UGFycnk6MTIzNDU2). Our HTTP service endpoint is `https://localhost:53277/` and our HTTPS endpoint is `https://localhost:43300/`. 
 
-First of all, we send a `GET` request to `http://localhost:53277/Products`, and the service responds with an empty payload and the status code `403 HTTPS Required`.
+First of all, we send a `GET` request to `https://localhost:53277/Products`, and the service responds with an empty payload and the status code `403 HTTPS Required`.
 
 ![](../assets/05-01-demo-1.png)
  
-Then we send the request over HTTPS to `http://localhost:43300/Products`. Since the basic authentication info needs to be provided. The service responds with an empty payload and the status code `401 Unauthorized`.
+Then we send the request over HTTPS to `https://localhost:43300/Products`. Since the basic authentication info needs to be provided. The service responds with an empty payload and the status code `401 Unauthorized`.
 
 ![](../assets/05-01-demo-2.png)
  

@@ -1,4 +1,4 @@
----s
+---
 title: "Merge complex type and entity type"
 description: "Merge complex and entity for OData Serialization and Deserialization"
 category: "5. OData Features"
@@ -18,16 +18,15 @@ We followed the existing implementation of serializing/deserializing entity inst
 
 For other Public APIs, you can refer to the [Breaking changes about Merge Entity and Complex](../release notes/2016-08-29-23-17-Merge-Entity-And-Complex-Breaking)).
 
-
 # Model #
 
 Suppose we have a model, in following sections, we will explain how to write/read a complex property or a collection complex property.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+<edmx:Edmx Version="4.0" xmlns:edmx="https://docs.oasis-open.org/odata/ns/edmx">
   <edmx:DataServices>
-    <Schema Namespace="SampleService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <Schema Namespace="SampleService" xmlns="https://docs.oasis-open.org/odata/ns/edm">
       <ComplexType Name="Location" OpenType="true">
         <Property Name="Address" Type="Edm.String" Nullable="false" />
         <Property Name="City" Type="Edm.String" Nullable="false" />
@@ -61,7 +60,7 @@ In order to write the complex property payload, we need to create an `ODataWrite
     // message = ...;
     // complexType = ...;
     var settings = new ODataMessageWriterSettings { Version = ODataVersion.V4 };
-    settings.ODataUri = http://localhost/odata/;
+    settings.ODataUri = https://localhost/odata/;
     ODataMessageWriter messageWriter = new ODataMessageWriter(message, settings, model);
     var writer = messageWriter.CreateODataResourceWriter(null, complexType);
 
@@ -115,15 +114,14 @@ To write an entity with a complex property, we can create the `ODataWriter` for 
 - `WriteEnd()` for each part.
 
 Sample:
-```C#
 
+```C#
     // Init the entity instance.
     ODataResource entityResource = new ODataResource()
     {
-	Properties = new ODataProperty[]
+    Properties = new ODataProperty[]
         {...}
     }
-    
     // Create the ODataNestedResourceInfo for the HomeAddress property.
     ODataNestedResourceInfo homeAddressInfo = new ODataNestedResourceInfo() { Name = "HomeAddress", IsCollection = false };
     ODataResource complexResource = new ODataResource()
@@ -141,7 +139,9 @@ Sample:
     writer.WriteEnd(); // end the nested resource info
 
 ```
+
 To write a complex collection property in an entity, we need to set `ODataNestedResourceInfo.IsCollection` is set to true, and then write the resource set.
+
 ```C#
 
     // Init the entity instance.

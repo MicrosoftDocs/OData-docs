@@ -16,7 +16,7 @@ ODataCollectionWriter writer = messageWriter.CreateODataCollectionWriter(element
 
 ODataCollectionStart collectionStart = new ODataCollectionStart();
 
-collectionStart.NextPageLink = new Uri("http://any");
+collectionStart.NextPageLink = new Uri("https://any");
 collectionStart.Count = 5;
 
 writer.WriteStart(collectionStart);
@@ -38,7 +38,7 @@ The payload looks like:
 {
   "@odata.context":".../$metadata#Collection(...)",
   "@odata.count":5,
-  "@odata.nextLink":"http://any",
+  "@odata.nextLink":"https://any",
   "value":[
     ...
   ]

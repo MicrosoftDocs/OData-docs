@@ -9,7 +9,7 @@ ms.topic: article
 ms.service: multiple
 ---
 
-Referential constraints ensure that entities being referenced (principal entities) always exist. In OData, having one or more referential constraints defined for a partner navigation property on a dependent entity type also enables users to address the related dependent entities from principal entities using shortened key predicates (see [[OData-URL]](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part2-url-conventions/odata-v4.0-errata02-os-part2-url-conventions-complete.html#_Toc406398079)). A referential constraint in OData consists of one **principal property** (the ID property of the entity being referenced) and one **dependent property** (the ID property to reference another entity). This section shows how to define referential constraints on a partner navigation property.
+Referential constraints ensure that entities being referenced (principal entities) always exist. In OData, having one or more referential constraints defined for a partner navigation property on a dependent entity type also enables users to address the related dependent entities from principal entities using shortened key predicates (see [[OData-URL]](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part2-url-conventions/odata-v4.0-errata02-os-part2-url-conventions-complete.html#_Toc406398079)). A referential constraint in OData consists of one **principal property** (the ID property of the entity being referenced) and one **dependent property** (the ID property to reference another entity). This section shows how to define referential constraints on a partner navigation property.
 
 ### Sample
 Create an entity type `Test.Customer` with a key property `id` of `Edm.String`.
@@ -114,17 +114,17 @@ Please note that you should **NOT** specify `Customer.id` as the principal prope
 Then you can query the `details` either by a full key predicate
 
 ```
-http://host/customers('customerId')/orders(customerId='customerId',orderId='orderId')/Test.DetailedOrder/details(customerId='customerId',orderId='orderId',id=1)
+https://host/customers('customerId')/orders(customerId='customerId',orderId='orderId')/Test.DetailedOrder/details(customerId='customerId',orderId='orderId',id=1)
 ```
 
 or a shortened key predicate.
 
 ```
-http://host/customers('customerId')/orders('orderId')/Test.DetailedOrder/details(1)
+https://host/customers('customerId')/orders('orderId')/Test.DetailedOrder/details(1)
 ```
 
 Key-as-segment convention is also supported.
 
 ```
-http://host/customers/customerId/orders/orderId/Test.DetailedOrder/details/1
+https://host/customers/customerId/orders/orderId/Test.DetailedOrder/details/1
 ```

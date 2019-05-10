@@ -21,7 +21,7 @@ This method accepts an array of `DataServiceRequest` as parameters. It returns a
 
 ``` csharp
 
-    DefaultContainer dsc = new DefaultContainer(new Uri("http://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
+    DefaultContainer dsc = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
     public void BatchQuery()
     {
         var peopleQuery = dsc.People;
@@ -52,7 +52,7 @@ This method accepts an array of `DataServiceRequest` as parameters. It returns a
 
 ```
 
-`ExecuteBatch` will send a "POST" request to `http://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/$batch`. Each internal request contains its own http method "GET".
+`ExecuteBatch` will send a "POST" request to `https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/$batch`. Each internal request contains its own http method "GET".
 
 The payload of the request is as following:
 
@@ -60,7 +60,7 @@ The payload of the request is as following:
 	Content-Type: application/http
 	Content-Transfer-Encoding: binary
 	
-	GET http://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/People HTTP/1.1
+	GET https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/People HTTP/1.1
 	OData-Version: 4.0
 	OData-MaxVersion: 4.0
 	Accept: application/json;odata.metadata=minimal
@@ -71,7 +71,7 @@ The payload of the request is as following:
 	Content-Type: application/http
 	Content-Transfer-Encoding: binary
 	
-	GET http://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/Airlines HTTP/1.1
+	GET https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/Airlines HTTP/1.1
 	OData-Version: 4.0
 	OData-MaxVersion: 4.0
 	Accept: application/json;odata.metadata=minimal
@@ -88,12 +88,12 @@ In order to batch a set of changes to the server, `ODataServiceContext` provides
 
 `SaveChangesOptions.BatchWithIndependentOperations` will save each change independently in a batch request. 
 
-You can refer to [odata v4.0 protocol 11.7](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html#_Toc406398359) to get more details about batch request and whether requests should be contained in one change set or not.
+You can refer to [odata v4.0 protocol 11.7](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html#_Toc406398359) to get more details about batch request and whether requests should be contained in one change set or not.
  
 
 ``` csharp
 
-    DefaultContainer dsc = new DefaultContainer(new Uri("http://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
+    DefaultContainer dsc = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
     public void BatchModify()
     {
         dsc.MergeOption = MergeOption.PreserveChanges;
@@ -115,7 +115,7 @@ You can refer to [odata v4.0 protocol 11.7](http://docs.oasis-open.org/odata/oda
 
 The payload for all requests in one change set is like following
 
-This will send request with URL http://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/$batch.
+This will send request with URL https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/$batch.
 
 The request headers contain following two headers:
 
@@ -132,7 +132,7 @@ The request Payload is as following:
 	Content-Transfer-Encoding: binary
 	Content-ID: 3
 	
-	PATCH http://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/Me HTTP/1.1
+	PATCH https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/Me HTTP/1.1
 	OData-Version: 4.0
 	OData-MaxVersion: 4.0
 	Content-Type: application/json;odata.metadata=minimal
@@ -147,7 +147,7 @@ The request Payload is as following:
 	Content-Transfer-Encoding: binary
 	Content-ID: 4
 	
-	PATCH http://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/Me/Trips(1001) HTTP/1.1
+	PATCH https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/Me/Trips(1001) HTTP/1.1
 	OData-Version: 4.0
 	OData-MaxVersion: 4.0
 	Content-Type: application/json;odata.metadata=minimal

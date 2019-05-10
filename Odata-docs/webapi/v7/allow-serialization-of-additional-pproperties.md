@@ -26,7 +26,7 @@ IODataResponseMessage message = new InMemoryMessage { Stream = outputStream };
 message.SetHeader("Content-Type", "application/json;odata.metadata=minimal");
 ODataUri odataUri = new ODataUri
 {
-    ServiceRoot = new Uri("http://example.org/odata.svc")
+    ServiceRoot = new Uri("https://example.org/odata.svc")
 };
 ODataMessageWriterSettings settings = new ODataMessageWriterSettings
 {
@@ -62,7 +62,7 @@ using (var messageWriter = new ODataMessageWriter(message, settings, model))
 
 ```JSON
 {
-    "@odata.context":"http://example.org/odata.svc/$metadata#EntitySet/$entity",
+    "@odata.context":"https://example.org/odata.svc/$metadata#EntitySet/$entity",
     "ID":102,
     "Name":"Bob",
     "Prop1":"Var1"

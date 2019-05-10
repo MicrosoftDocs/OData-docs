@@ -166,7 +166,7 @@ This service root informaiton is provided in ODataUri.ServiceRoot, as this code 
 ODataMessageWriterSettings settings = new ODataMessageWriterSettings();
             settings.ODataUri = new ODataUri()
             {
-                ServiceRoot = new Uri("http://services.odata.org/V4/OData/OData.svc/")
+                ServiceRoot = new Uri("https://services.odata.org/V4/OData/OData.svc/")
             };
 
             ODataMessageWriter writer = new ODataMessageWriter((IODataResponseMessage) message, settings);
@@ -211,7 +211,7 @@ Here is how to write an empty feed.
 ODataMessageWriterSettings settings = new ODataMessageWriterSettings();
             settings.ODataUri = new ODataUri()
             {
-                ServiceRoot = new Uri("http://services.odata.org/V4/OData/OData.svc/")
+                ServiceRoot = new Uri("https://services.odata.org/V4/OData/OData.svc/")
             };
 
             ODataMessageWriter writer = new ODataMessageWriter((IODataResponseMessage)message, settings, model);
@@ -229,7 +229,7 @@ Line 4 give the service root, line 6 give the model, and line 10 give the entity
 The output of it looks like this.
 
 ``` json
-{"@odata.context":"http://services.odata.org/V4/OData/OData.svc/$metadata#Customers","value":[]}
+{"@odata.context":"https://services.odata.org/V4/OData/OData.svc/$metadata#Customers","value":[]}
 ```
 
 The output contains a context URL in the output, which is based on the service root you provided in ODataUri, and the entity set name. There is also a value which is an empty collection, where will hold the entities if there is any.
@@ -240,7 +240,7 @@ There is another way to provide the entity set and entity type information, thro
 ODataMessageWriterSettings settings = new ODataMessageWriterSettings();
             settings.ODataUri = new ODataUri()
             {
-                ServiceRoot = new Uri("http://services.odata.org/V4/OData/OData.svc/")
+                ServiceRoot = new Uri("https://services.odata.org/V4/OData/OData.svc/")
             };
 
             ODataMessageWriter writer = new ODataMessageWriter((IODataResponseMessage)message, settings);
@@ -268,7 +268,7 @@ ODataFeed feed = new ODataFeed();
 The output will contains a next link before the value collection.
 
 ```json
-{"@odata.context":"http://services.odata.org/V4/OData/OData.svc/$metadata#Customers","@odata.nextLink":"Customers?next","value":[]}
+{"@odata.context":"https://services.odata.org/V4/OData/OData.svc/$metadata#Customers","@odata.nextLink":"Customers?next","value":[]}
 ```
 
 If you want the next link to be appear after the value collection, you can set the next link after the WriteStart call, before the WriteEnd call.
@@ -281,7 +281,7 @@ ODataFeed feed = new ODataFeed();
 ```
 
 ```json
-{"@odata.context":"http://services.odata.org/V4/OData/OData.svc/$metadata#Customers","value":[],"@odata.nextLink":"Customers?next"}
+{"@odata.context":"https://services.odata.org/V4/OData/OData.svc/$metadata#Customers","value":[],"@odata.nextLink":"Customers?next"}
 ```
 
 There is no rule on next link, as long as it is a valid url.
@@ -315,7 +315,7 @@ ODataFeed feed = new ODataFeed();
 ```
 
 ```json
-{"@odata.context":"http://services.odata.org/V4/OData/OData.svc/$metadata#Customers","value":[{"Id":1,"Name":"Tom"}]}
+{"@odata.context":"https://services.odata.org/V4/OData/OData.svc/$metadata#Customers","value":[{"Id":1,"Name":"Tom"}]}
 ```
 
 We'll introduce more details on witting entry in next section.
@@ -358,7 +358,7 @@ ODataMessageWriter writer = new ODataMessageWriter((IODataResponseMessage)messag
 ```
 
 ```json
-{"@odata.context":"http://services.odata.org/V4/OData/OData.svc/$metadata#Customers/$entity","Id":1,"Name":"Tom"}
+{"@odata.context":"https://services.odata.org/V4/OData/OData.svc/$metadata#Customers/$entity","Id":1,"Name":"Tom"}
 ```
 
 We've already introduced how to write entry in a feed in last section, now we'll look at how to write entry expanded in another entry.
@@ -420,5 +420,5 @@ ODataMessageWriter writer = new ODataMessageWriter((IODataResponseMessage)messag
 The output will contains order entity inside the customer entity.
 
 ```json
-{"@odata.context":"http://services.odata.org/V4/OData/OData.svc/$metadata#Customers/$entity","Id":1,"Name":"Tom","Purchases":[{"Id":1,"Price":3.14}]}
+{"@odata.context":"https://services.odata.org/V4/OData/OData.svc/$metadata#Customers/$entity","Id":1,"Name":"Tom","Purchases":[{"Id":1,"Price":3.14}]}
 ```

@@ -44,9 +44,9 @@ container.AddEntitySet("Cars", carType);
 ## Output
 
     <?xml version="1.0" encoding="utf-8"?>
-      <edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+      <edmx:Edmx Version="4.0" xmlns:edmx="https://docs.oasis-open.org/odata/ns/edmx">
         <edmx:DataServices>
-          <Schema Namespace="DefaultNamespace" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+          <Schema Namespace="DefaultNamespace" xmlns="https://docs.oasis-open.org/odata/ns/edm">
             <EnumType Name="Color" IsFlags="true">
               <Member Name="Cyan" Value="1" />
               <Member Name="Blue" Value="2" />

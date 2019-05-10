@@ -187,7 +187,7 @@ However, only parameter alias is supported for entity.
 ### Entity Reference and collection of Entity Reference parameter
 In fact, we can't build a function with entity reference as parameter. However, we can call the function with entity parameter using entity reference value. So, without any change for the `EntityFunction`, we can call as:
 ```C#
-~/odata/Customers/Default.EntityFunction(a1=@x,a2=@y)?@x={\"@odata.id\":\"http://localhost/odata/Customers(2)\"}&@y={\"value\":[{\"@odata.id\":\"http://localhost/odata/Customers(2)\"},{\"@odata.id\":\"http://localhost/odata/Customers(3)\"}]}
+~/odata/Customers/Default.EntityFunction(a1=@x,a2=@y)?@x={\"@odata.id\":\"https://localhost/odata/Customers(2)\"}&@y={\"value\":[{\"@odata.id\":\"https://localhost/odata/Customers(2)\"},{\"@odata.id\":\"https://localhost/odata/Customers(3)\"}]}
 ```
 
 ### FromODataUri

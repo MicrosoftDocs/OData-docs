@@ -59,17 +59,17 @@ Now we support the following services to be replaced by users:
 
 [[Issue #613](https://github.com/OData/odata.net/issues/613)] Support type facets when referencing `TypeDefinition` types.
 
-[[Issue #622](https://github.com/OData/odata.net/issues/622)] [Support navigation property on complex types.](http://odata.github.io/odata.net/v7/#06-18-navigation-under-complex)
+[[Issue #622](https://github.com/OData/odata.net/issues/622)] [Support navigation property on complex types.](https://odata.github.io/odata.net/v7/#06-18-navigation-under-complex)
 
 - EdmLib supports adding navigation property on complex type in model.
 - ODataUriParser support parsing related Uri path or query expressions.
 - ODataLib support reading and writing navigation properties on complex type.
 
-[[Issue #629](https://github.com/OData/odata.net/issues/629)] [Support multi-NavigationPropertyBindings for a single navigation property by using different paths](http://odata.github.io/odata.net/v7/#06-21-Multi-Binding)
+[[Issue #629](https://github.com/OData/odata.net/issues/629)] [Support multi-NavigationPropertyBindings for a single navigation property by using different paths](https://odata.github.io/odata.net/v7/#06-21-Multi-Binding)
 
 - Navigation property used in multi bindings with different path is supported for navigation under containment and complex.
 
-[[Issue #631](https://github.com/OData/odata.net/issues/631)] Support [fluent writer API](http://odata.github.io/odata.net/v7/#01-02-fluent-writer-api).
+[[Issue #631](https://github.com/OData/odata.net/issues/631)] Support [fluent writer API](https://odata.github.io/odata.net/v7/#01-02-fluent-writer-api).
 
 - In previous version, paired `WriteStart` and `WriteEnd` calls are used in writing payloads. This syntax is error-prone, and soon gets unmanageable with complex and deeply nested payloads. In this new release, you can instead write payloads using the neat fluent syntax.
 
@@ -167,7 +167,7 @@ Support duplicate custom instance annotations.
 
 [[Issue #491](https://github.com/OData/odata.net/issues/491)] Simplified namespaces.
 
-[[Issue #517](https://github.com/OData/odata.net/issues/517)] Centralized reader/writer validation. [[Breaking Changes](http://odata.github.io/odata.net/v7/#04-02-Validations-Breaking)]
+[[Issue #517](https://github.com/OData/odata.net/issues/517)] Centralized reader/writer validation. [[Breaking Changes](https://odata.github.io/odata.net/v7/#04-02-Validations-Breaking)]
 
 - Add an enum `ValidationKinds` to represent all validation kinds in reader and writer.
 - Add Validations property in `ODataMessageWriterSettings`/`ODataMessageReaderSettings` to control validations.
@@ -201,7 +201,7 @@ Support duplicate custom instance annotations.
  
 [[Issue #640](https://github.com/OData/odata.net/issues/640)] More sensible type, namely IEnumerable<object>, for ODataCollectionValue.Items.
 
-[[Issue #643](https://github.com/OData/odata.net/issues/643)] Adjust query node kinds in Uri Parser in order to support navigation under complex. [[Breaking Changes](http://odata.github.io/odata.net/v7/#04-01-Query-Nodes-Breaking)]
+[[Issue #643](https://github.com/OData/odata.net/issues/643)] Adjust query node kinds in Uri Parser in order to support navigation under complex. [[Breaking Changes](https://odata.github.io/odata.net/v7/#04-01-Query-Nodes-Breaking)]
  
 Improved standard-compliance by forbidding duplicate property names.
 
@@ -218,7 +218,7 @@ Writer throws more accurate and descriptive exceptions.
 
 [[Issue #632](https://github.com/OData/odata.net/issues/632)] Rename CsdlXXX to SchemaXXX, and EdmxXXX to CsdlXXX.
 
-The original naming is confusing. According to the [CSDL spec](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part3-csdl/odata-v4.0-errata02-os-part3-csdl-complete.html#_Toc406397921):
+The original naming is confusing. According to the [CSDL spec](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part3-csdl/odata-v4.0-errata02-os-part3-csdl-complete.html#_Toc406397921):
 
 > An XML document using these namespaces and having an edmx:Edmx root element will be called a CSDL document.
 

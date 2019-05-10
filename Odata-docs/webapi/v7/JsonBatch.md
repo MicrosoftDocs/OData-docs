@@ -11,9 +11,9 @@ Similar to Windows batch command, OData supports grouping multiple requests toge
 
 The batch format supported by OData core libraries is multipart/mime for OData protocol up to v4.0. To accommodate the need for a more developer-friendly format, the new JSON format batching support is added to the latest version of OData protocol v4.01. The JSON format batching format also brings another major benefit of allowing requests inside a batch to be executed in specified orders.
 
-The OData v4.01 protocol specification can be found on OASIS site. The most current version is: http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#_Toc499805328.
+The OData v4.01 protocol specification can be found on OASIS site. The most current version is: https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#_Toc499805328.
 
-Details of the JSON Batch format can be found in the OData JSON Format v4.01 specification on the OASIS site..  The most current version is: http://docs.oasis-open.org/odata/odata-json-format/v4.01/odata-json-format-v4.01.html#_Toc499716905
+Details of the JSON Batch format can be found in the OData JSON Format v4.01 specification on the OASIS site..  The most current version is: https://docs.oasis-open.org/odata/odata-json-format/v4.01/odata-json-format-v4.01.html#_Toc499716905
 
 ## Sample Batch Request in JSON Format
 Here is one sample batch request in JSON format (unnecessary details are omitted for sake of brevity):

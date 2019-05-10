@@ -67,7 +67,7 @@ The navigation property `navUnderComplex` is binded to cities1 and cities2 with 
 
 Then the csdl of the model would be like:
 
-    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Sample">
+    <Schema xmlns="https://docs.oasis-open.org/odata/ns/edm" Namespace="Sample">
         <EntityType Name="City">
             <Key>
                 <PropertyRef Name="Name"/>
@@ -117,31 +117,31 @@ Here lists some sample valid query Uris to access navigation property under comp
 
 #### Path ####
 
-`http://host/People('abc')/Address/City`
+`https://host/People('abc')/Address/City`
 
-Accessing navigation property under collection of complex is not valid, since item in complex collection does not have a canonical Url. That is to say, `http://host/People('abc')/Addresses/City` is not valid, `City` under `Addresses` can only be accessed through `$expand`.
+Accessing navigation property under collection of complex is not valid, since item in complex collection does not have a canonical Url. That is to say, `https://host/People('abc')/Addresses/City` is not valid, `City` under `Addresses` can only be accessed through `$expand`.
 
 #### Query option ####
 
-Different with path, navigation under collection of complex can be accessed directly in expressions of $select and $expand, which means `Addresses/City` is supported. Refer [ABNF](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/abnf/odata-abnf-construction-rules.txt) for more details.
+Different with path, navigation under collection of complex can be accessed directly in expressions of $select and $expand, which means `Addresses/City` is supported. Refer [ABNF](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/abnf/odata-abnf-construction-rules.txt) for more details.
 
 	$select:  
-	http://host/People('abc')/Address?$select=City
-	http://host/People?$select=Address/City
-	http://host/People?$select=Addresses/City
+	https://host/People('abc')/Address?$select=City
+	https://host/People?$select=Address/City
+	https://host/People?$select=Addresses/City
 	
 	$expand: 
-	http://host/People('abc')/Address?$expand=City
-	http://host/People?$expand=Address/City
-	http://host/People?$expand=Addresses/City
+	https://host/People('abc')/Address?$expand=City
+	https://host/People?$expand=Address/City
+	https://host/People?$expand=Addresses/City
 	
 	$filter:
-	http://host/People?$filter=Address/City/Name eq 'Shanghai'
-	http://host/People('abc')/Addresses?$filter=City/Name eq 'Shanghai'
-	http://host/People?$filter=Addresses/any(a:a/City/Name eq 'Shanghai')
+	https://host/People?$filter=Address/City/Name eq 'Shanghai'
+	https://host/People('abc')/Addresses?$filter=City/Name eq 'Shanghai'
+	https://host/People?$filter=Addresses/any(a:a/City/Name eq 'Shanghai')
 	
 	$orderby:
-	http://host/People?$order=Address/City/Name
+	https://host/People?$order=Address/City/Name
 
 ### Uri parser ###
 There is nothing special if using `ODataUriParser`. For `ODataQueryOptionParser`, if we need resolve the navigation property under complex to its navigation target in the query option, navigation source that the complex belongs to and the binding path are both needed. If the navigation source or part of binding path is in the path, we need it passed to the constructor of `ODataQueryOptionParser`. So there are 2 overloaded constructor added to accept `ODataPath` as parameter. 
@@ -150,30 +150,30 @@ There is nothing special if using `ODataUriParser`. For `ODataQueryOptionParser`
 public ODataQueryOptionParser(IEdmModel model, ODataPath odataPath, IDictionary<string, string> queryOptions)
 public ODataQueryOptionParser(IEdmModel model, ODataPath odataPath, IDictionary<string, string> queryOptions, IServiceProvider container)
 ```
-Note: Parameter IServiceProvider is related to [Dependency Injection](http://odata.github.io/odata.net/v7/#01-04-di-support).
+Note: Parameter IServiceProvider is related to [Dependency Injection](https://odata.github.io/odata.net/v7/#01-04-di-support).
 
 Actually we do not recommend to use `ODataQueryOptionParser` in this case, `ODataUriParser` would be more convenient. Here we still give an example just in case:
 
 ```C#
-// http://host/People('abc')/Address?$expand=City
-ODataUriParser uriParser = new ODataUriParser(Model, ServiceRoot, new Uri("http://host/People('abc')/Address"));
+// https://host/People('abc')/Address?$expand=City
+ODataUriParser uriParser = new ODataUriParser(Model, ServiceRoot, new Uri("https://host/People('abc')/Address"));
 ODataPath odataPath = uriParser.ParsePath();
 ODataQueryOptionParser optionParser = new ODataQueryOptionParser(Model, odataPath, new Dictionary<string, string> { { "$expand", "City" } });
 SelectExpandClause clause = optionParser.ParseSelectAndExpand();
 
 // This can achieve same result.
-uriParser = new ODataUriParser(Model, ServiceRoot, new Uri("http://host/People('abc')/Address?$expand=City"));
+uriParser = new ODataUriParser(Model, ServiceRoot, new Uri("https://host/People('abc')/Address?$expand=City"));
 clause = uriParser.ParseSelectAndExpand();
 ```
 
 ## 3. Serializer (Writer) ##
 Basically, the writing process is same with writing navigation under entity.
-Let's say we are writing an response of query `http://host/People('abc')?$expand=Address/City`.
+Let's say we are writing an response of query `https://host/People('abc')?$expand=Address/City`.
 
 Sample code:
 
 ```C#
-var uriParser = new ODataUriParser(Model, ServiceRoot, new Uri("http://host/People('abc')?$expand=Address/City"));
+var uriParser = new ODataUriParser(Model, ServiceRoot, new Uri("https://host/People('abc')?$expand=Address/City"));
 var odataUri = uriParser.ParseUri();
 settings.ODataUri = odataUri;// Specify the odataUri to ODataMessageWriterSettings, which will be reflected in the context url.
 
@@ -200,7 +200,7 @@ writer.WriteEnd();// End of entity
 Payload:
 
     {
-    "@odata.context": "http://host/$metadata#People/$entity",
+    "@odata.context": "https://host/$metadata#People/$entity",
     "UserName":"abc",
     "Address":
     {
@@ -213,4 +213,4 @@ Payload:
     }
 
 ## 4. Deserializer (Reader) ##
-Reading process is same with reading an navigation property under entity. For navigation property `City` under `Address`, it will be read as an `ODataNestedResourceInfo` which has navigation url `http://host/People('abc')/Complex/City` and an `ODataResource` which has Id `http://host/Cities1('Shanghai')`. 
+Reading process is same with reading an navigation property under entity. For navigation property `City` under `Address`, it will be read as an `ODataNestedResourceInfo` which has navigation url `https://host/People('abc')/Complex/City` and an `ODataResource` which has Id `https://host/Cities1('Shanghai')`. 

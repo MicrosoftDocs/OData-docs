@@ -11,26 +11,26 @@ ms.service: multiple
 
 ## $filter
 
-For `GET http://host/service/EntitySet?$filter=Prop eq value`:
+For `GET https://host/service/EntitySet?$filter=Prop eq value`:
 
 ``` csharp
 var people = context.People.Where(c => c.FirstName == "Peter");
 ```
 
-For `GET http://host/service/EntitySet?$filter=endswith(Prop, value)`:
+For `GET https://host/service/EntitySet?$filter=endswith(Prop, value)`:
 
 ``` csharp
 var people = context.People.Where(c => c.FirstName.EndsWith("Peter"));
 ```
 
-For `GET http://host/service/EntitySet?$filter=PropCol/$count eq value`:
+For `GET https://host/service/EntitySet?$filter=PropCol/$count eq value`:
 
 ``` csharp
 var people = context.People.Where(c => c.Trips.Count == 2);
 ```
 
 
-For `GET http://host/service/EntitySet?$filter=PropCol/any(d:d/Prop gt value)`:
+For `GET https://host/service/EntitySet?$filter=PropCol/any(d:d/Prop gt value)`:
 
 ``` csharp
 var people = context.People.Where(c => c.Trips.Any(d => d.Budget > 6000));
@@ -39,13 +39,13 @@ var people = context.People.Where(c => c.Trips.Any(d => d.Budget > 6000));
 
 # $count
 
-For `GET http://host/service/EntitySet/$count`:
+For `GET https://host/service/EntitySet/$count`:
 
 ``` csharp
 var count = context.People.Count();
 ```
 
-For `GET http://host/service/EntitySet?$count=true`:
+For `GET https://host/service/EntitySet?$count=true`:
 
 ``` csharp
 var people = context.People.IncludeTotalCount();
@@ -53,19 +53,19 @@ var people = context.People.IncludeTotalCount();
 
 ## $orderby
 
-For `GET http://host/service/EntitySet?$orderby=Prop`:
+For `GET https://host/service/EntitySet?$orderby=Prop`:
 
 ``` csharp
 var people = context.People.OrderBy(c => c.FirstName);
 ```
 
-For `GET http://host/service/EntitySet?$orderby=Prop desc`:
+For `GET https://host/service/EntitySet?$orderby=Prop desc`:
 
 ``` csharp
 var people = context.People.OrderByDescending(c => c.FirstName);
 ```
 
-For `GET http://host/service/EntitySet?$orderby=PropCol/$count`:
+For `GET https://host/service/EntitySet?$orderby=PropCol/$count`:
 
 ``` csharp
 var people = context.People.OrderBy(c => c.Trips.Count);

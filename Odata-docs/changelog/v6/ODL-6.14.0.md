@@ -17,7 +17,7 @@ ms.service: multiple
 
 [[Issue #347](https://github.com/OData/odata.net/issues/347)] [PR [#351](https://github.com/OData/odata.net/pull/351) by [Luke Dean](https://github.com/SageLukeDean)] Support Edm.Date as Key.
 
-[[Issue #349](https://github.com/OData/odata.net/issues/349)] [PR [#350](https://github.com/OData/odata.net/pull/350) by [Lee Taylor](https://github.com/sleetaylor)] Fix Parser conflict between UrlConventions KeyAsSegment and last segment == TypeSegment and introduce [ODataSimplified convention](http://odata.github.io/odata.net/06-14-odatasimplified-convention/).
+[[Issue #349](https://github.com/OData/odata.net/issues/349)] [PR [#350](https://github.com/OData/odata.net/pull/350) by [Lee Taylor](https://github.com/sleetaylor)] Fix Parser conflict between UrlConventions KeyAsSegment and last segment == TypeSegment and introduce [ODataSimplified convention](https://odata.github.io/odata.net/06-14-odatasimplified-convention/).
 
 [[Issue #369](https://github.com/OData/odata.net/issues/369)] Support built-in annotation names without "odata."
 

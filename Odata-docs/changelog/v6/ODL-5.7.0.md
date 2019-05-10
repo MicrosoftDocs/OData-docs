@@ -10,7 +10,7 @@ ms.service: multiple
 ---
 
 ## New Features: 
-[[GitHub issue #257](https://github.com/OData/odata.net/issues/257)] [To support reading & writing undeclared properties in complex/entity type, OData client for .NET adds a new enum UndeclaredPropertyBehavior, and ODataLib addes ODataUndeclaredPropertyBehaviorKinds.SupportUndeclaredValueProperty](http://odata.github.io/odata.net/#06-13-support-untyped-json).
+[[GitHub issue #257](https://github.com/OData/odata.net/issues/257)] [To support reading & writing undeclared properties in complex/entity type, OData client for .NET adds a new enum UndeclaredPropertyBehavior, and ODataLib addes ODataUndeclaredPropertyBehaviorKinds.SupportUndeclaredValueProperty](https://odata.github.io/odata.net/#06-13-support-untyped-json).
 
 ## Bug Fixes: 
 [[GitHub issue #192](https://github.com/OData/odata.net/issues/192)] [By Soumyarupa De] Fix a global lock issue in RequestUriProcessor

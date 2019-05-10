@@ -19,7 +19,7 @@ public class Microsoft.OData.ODataPayloadValueConverter {
 }
 ```
 
-And in ODataLib 7.0, a custom converter is registered through [DI](http://odata.github.io/odata.net/v7/#01-04-di-support).
+And in ODataLib 7.0, a custom converter is registered through [DI](https://odata.github.io/odata.net/v7/#01-04-di-support).
 
 ### Sample
 
@@ -59,6 +59,6 @@ ContainerBuilderHelper.BuildContainer(
 	    builder => builder.AddService<ODataPayloadValueConverter, DateTimeOffsetCustomFormatPrimitivePayloadValueConverter>(ServiceLifetime.Singleton))
 ```
 
-Please refer [here](http://odata.github.io/odata.net/v7/#01-04-di-support) about DI details.
+Please refer [here](https://odata.github.io/odata.net/v7/#01-04-di-support) about DI details.
 
 Then `DateTimeOffset` can be serialized to `Thu, 12 Apr 2012 18:43:10 GMT`, and payload like `Thu, 12 Apr 2012 18:43:10 GMT` can be deserialized back to `DateTimeOffset`.

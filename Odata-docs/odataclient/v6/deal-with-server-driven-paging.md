@@ -14,7 +14,7 @@ The OData Client for .NET deals with server-driven paging with the help of `Data
 Example:
 
 ``` csharp
-var context = new DefaultContainer(new Uri("http://services.odata.org/v4/TripPinServiceRW/"));
+var context = new DefaultContainer(new Uri("https://services.odata.org/v4/TripPinServiceRW/"));
 
 // DataServiceQueryContinuation<T> contains the next link
 DataServiceQueryContinuation<Person> token = null;

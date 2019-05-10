@@ -187,4 +187,4 @@ Build and run the sample. Then open the **csdl.xml** file under the **output dir
 ![image](../../assets/2015-04-18-csdl.png)
 
 ### References
-[[Tutorial & Sample] Containment is Coming with OData V4](http://blogs.msdn.com/b/odatateam/archive/2014/03/13/containment-is-coming-with-odata-v4.aspx).
+[[Tutorial & Sample] Containment is Coming with OData V4](https://blogs.msdn.com/b/odatateam/archive/2014/03/13/containment-is-coming-with-odata-v4.aspx).
