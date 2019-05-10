@@ -1,0 +1,31 @@
+---
+title: "Deal with server-driven paging"
+description: ""
+category: "4. Client"
+author: Khairunj
+ms.author: Khairunj
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
+---
+
+The OData Client for .NET deals with server-driven paging with the help of `DataServiceQueryContinuation` and `DataServiceQueryContinuation<T>`. They are classes that contain the next link of the partial set of items.
+
+Example:
+
+``` csharp
+var context = new DefaultContainer(new Uri("https://services.odata.org/v4/TripPinServiceRW/"));
+
+// DataServiceQueryContinuation<T> contains the next link
+DataServiceQueryContinuation<Person> token = null;
+
+// Get the first page
+var response = context.People.Execute() as QueryOperationResponse<Person>;
+
+// Loop if there is a next link
+while ((token = response.GetContinuation()) != null)
+{
+    // Get the next page
+    response = context.Execute<Person>(token);
+}
+```
