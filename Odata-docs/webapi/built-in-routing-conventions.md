@@ -1,7 +1,7 @@
 ---
-title: "3.2 Built-in routing conventions"
+title: " Built-in routing conventions"
 description: "Routing Conventions"
-category: "3. Routing"
+
 ms.date: 04/27/2015
 ---
 # 3.2 Built-in routing conventions

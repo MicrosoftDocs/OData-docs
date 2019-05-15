@@ -1,7 +1,7 @@
 ---
-title: "3.1 Introduction Routing"
+title: " Introduction Routing"
 description: "Routing Conventions"
-category: "3. Routing"
+
 ms.date: 04/27/2015
 ---
 # 3.1 Introduction Routing

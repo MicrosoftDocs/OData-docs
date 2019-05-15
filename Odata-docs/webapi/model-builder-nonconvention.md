@@ -1,7 +1,7 @@
 ---
-title: "2.3 Non-convention model builder"
+title: " Non-convention model builder"
 description: "convention model builder"
-category: "2. Defining the model"
+
 ms.date: 04/17/2015
 ---
 # 2.3 Non-convention model builder

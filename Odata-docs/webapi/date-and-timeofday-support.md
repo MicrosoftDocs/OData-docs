@@ -1,6 +1,6 @@
 ---
 title : "4.4 Edm.Date and Edm.TimeOfDay"
-category: "4. OData features"
+
 ms.date: 03/23/2015
 ---
 # 4.4 Edm.Date and Edm.TimeOfDay

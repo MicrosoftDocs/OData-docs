@@ -1,7 +1,7 @@
 ---
-title: "3.2 Create spatial instances"
+title: " Create spatial instances"
 description: "Create spatial instances"
-category: "3. Spatial"
+
 author: Khairunj
 ms.author: Khairunj
 ms.date: 02/19/2019

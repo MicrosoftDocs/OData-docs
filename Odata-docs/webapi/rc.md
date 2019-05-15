@@ -1,9 +1,9 @@
 ---
 
-title: "7.2 OData Web API 5.4 RC"
+title: " OData Web API 5.4 RC"
 description: ""
-category: "7. Release notes"
-permalink: "/5.4-rc"
+
+
 ms.date: 01/30/2015
 ---
 # 7.2 OData Web API 5.4 RC

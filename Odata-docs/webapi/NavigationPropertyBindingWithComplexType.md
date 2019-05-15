@@ -1,7 +1,7 @@
 ---
 title : "13.3 Multiple Navigation property binding path"
 description: "Navigation property binding with complex and containment"
-category: "13. 6.x Features "
+
 ms.date: 08/30/2016
 ---
 # 13.3 Multiple Navigation property binding path

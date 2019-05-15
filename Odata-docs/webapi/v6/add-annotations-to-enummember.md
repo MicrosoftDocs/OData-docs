@@ -1,7 +1,7 @@
 ---
 title: "Add vocabulary annotations to EdmEnumMember"
 description: ""
-category: "6. OData Features"
+
 author: Khairunj
 ms.author: Khairunj
 ms.date: 02/19/2019

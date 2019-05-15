@@ -1,7 +1,7 @@
 ---
 title: "Expanded Navigation Property Support in Delta Response"
 description: ""
-category: "6. OData Features"
+
 author: Khairunj
 ms.author: Khairunj
 ms.date: 02/19/2019

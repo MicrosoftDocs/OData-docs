@@ -1,6 +1,6 @@
 ---
 title : "4.26 IN Operator"
-category: "4. OData features"
+
 ms.date: 07/03/2018
 ---
 

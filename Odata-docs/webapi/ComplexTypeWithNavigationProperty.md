@@ -1,7 +1,7 @@
 ---
-title: "13.2 Complex Type with Navigation Property"
+title: " Complex Type with Navigation Property"
 description: "Build Navigation Property on Complex Type"
-category: "13. 6.x Features "
+
 ms.date: 08/30/2016
 ---
 # 13.2 Complex Type with Navigation Property

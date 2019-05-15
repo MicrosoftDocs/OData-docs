@@ -1,7 +1,7 @@
 ---
-title: "2.5 Define type inheritance"
+title: " Define type inheritance"
 description: "Define type inheritance using EdmLib APIs"
-category: "2. EdmLib"
+
 author: Khairunj
 ms.author: Khairunj
 ms.date: 02/19/2019

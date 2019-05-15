@@ -1,7 +1,7 @@
 ---
-title: "1.3 Use ODataUriParser"
+title: " Use ODataUriParser"
 description: "Parse odata uri using OData Core APIs"
-category: "1. Core"
+
 author: Khairunj
 ms.author: Khairunj
 ms.date: 02/19/2019

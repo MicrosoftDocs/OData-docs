@@ -1,7 +1,7 @@
 ---
 title:  "1.2 Write a simple OData V4 service"
 date:   2015-03-30 16:54:10
-category: "1. Introduction"
+
 ms.date: 04/01/2015
 ---
 # 1.2 Write a simple OData V4 service

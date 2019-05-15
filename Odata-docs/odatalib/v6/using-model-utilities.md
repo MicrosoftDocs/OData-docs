@@ -1,7 +1,7 @@
 ---
-title: "2.8 Using model utilities"
+title: " Using model utilities"
 description: "Using model utility APIs"
-category: "2. EdmLib"
+
 author: Khairunj
 ms.author: Khairunj
 ms.date: 02/19/2019

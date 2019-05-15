@@ -1,7 +1,7 @@
 ---
-title: "2.5 Define type inheritance"
+title: " Define type inheritance"
 description: "Define type inheritance using EdmLib APIs"
-category: "2. EdmLib"
+
 ---
 
 Type inheritance means defining a type by **deriving from another type**. EdmLib supports defining both **derived entity types** and **derived complex types**. Adding a derived entity (complex) type is almost identical to adding a normal entity (complex) type except that an additional **base type** needs to be specified.

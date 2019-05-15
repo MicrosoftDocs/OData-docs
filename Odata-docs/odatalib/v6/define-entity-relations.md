@@ -1,7 +1,7 @@
 ---
-title: "2.3 Define entity relations"
+title: " Define entity relations"
 description: "Define entity relations using EdmLib APIs"
-category: "2. EdmLib"
+
 author: Khairunj
 ms.author: Khairunj
 ms.date: 02/19/2019

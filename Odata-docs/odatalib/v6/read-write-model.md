@@ -1,7 +1,7 @@
 ---
-title: "2.2 Read and write models"
+title: " Read and write models"
 description: "Read and write entity data models using EdmLib APIs"
-category: "2. EdmLib"
+
 author: Khairunj
 ms.author: Khairunj
 ms.date: 02/19/2019

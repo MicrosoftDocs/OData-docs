@@ -1,6 +1,6 @@
 ---
 title : "5.1 Basic authentication over HTTPS"
-category: "5. Security"
+
 ms.date: 04/17/2015
 ---
 # 5.1 Basic authentication over HTTPS

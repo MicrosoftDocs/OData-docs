@@ -1,7 +1,7 @@
 ---
 title : "4.13 Delta Feed Support"
-category: "4. OData features"
-permalink: "/DeltaFeed_support"
+
+
 ms.date: 05/19/2015
 ---
 # 4.13 Delta Feed Support

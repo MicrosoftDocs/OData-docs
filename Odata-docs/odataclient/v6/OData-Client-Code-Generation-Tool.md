@@ -1,7 +1,7 @@
 ---
 title: "OData Client Code Generation Tool"
 description: "How to generate client proxy file for an OData service"
-category: "8. Tooling"
+
 author: Khairunj
 ms.author: Khairunj
 ms.date: 02/19/2019

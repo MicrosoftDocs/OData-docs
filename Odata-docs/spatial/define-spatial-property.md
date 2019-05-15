@@ -1,7 +1,7 @@
 ---
-title: "3.1 Define spatial properties"
+title: " Define spatial properties"
 description: "Define spatial properties in entity data models"
-category: "3. Spatial"
+
 ---
 
 Using Spatial in OData services involves two parts of work:

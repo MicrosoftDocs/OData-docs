@@ -1,7 +1,7 @@
 ---
-title: "3.2 Create spatial instances"
+title: " Create spatial instances"
 description: "Create spatial instances"
-category: "3. Spatial"
+
 ---
 
 This section shows how to create spatial instances using Spatial APIs and return them as property values of OData entries.

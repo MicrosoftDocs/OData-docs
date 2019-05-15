@@ -1,7 +1,7 @@
 ---
-title: "2.4 Define singleton"
+title: " Define singleton"
 description: "Define singleton using EdmLib APIs"
-category: "2. EdmLib"
+
 author: Khairunj
 ms.author: Khairunj
 ms.date: 02/19/2019

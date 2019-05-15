@@ -1,7 +1,7 @@
 ---
-title: "11.1 OData V4 Web API Scaffolding"
+title: " OData V4 Web API Scaffolding"
 description: "How to Use OData V4 Web API Scaffolding"
-category: "11. Tools"
+
 ms.date: 06/03/2015
 ---
 # 11.1 OData V4 Web API Scaffolding
