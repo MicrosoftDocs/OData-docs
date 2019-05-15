@@ -1,4 +1,4 @@
-# Welcome to OData!
+# Welcome to OData
 
 The .NET Foundation is happy to announce that OData is joining the .NET Foundation!
 

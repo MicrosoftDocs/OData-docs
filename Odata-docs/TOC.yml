@@ -4,17 +4,17 @@
   items:
   - name: What is OData?
     href: overview.md
-  - name: Basics
-    expanded: true
-    items:
-    - name: Data Model
-      href: data-model.md
-    - name: Url components
-      href: url-components.md
-    - name: Service metadata
-      href: metadata.md
-    - name: Payload
-      href: payload-formats.md
+- name: Basics
+  expanded: false
+  items:
+  - name: Data Model
+    href: data-model.md
+  - name: Url components
+    href: url-components.md
+  - name: Service metadata
+    href: metadata.md
+  - name: Payload
+    href: payload-formats.md
 - name: Getting Data
   items:
   - name: Get Data
@@ -29,24 +29,10 @@
     href: delete-data.md
 - name: Query options
   items:
-  - name: Filter
-    href: queryoptions/filtering.md
-  - name: Select
-    href: queryoptions/select.md
-  - name: Count
-    href: queryoptions/Count.md
-  - name: Skip
-    href: queryoptions/skip.md
-  - name: Top
-    href: queryoptions/top.md
-  - name: Order By
-    href: queryoptions/orderby.md
-  - name: Search
-    href: queryoptions/search.md
-  - name: Format
-    href: queryoptions/format.md
-  - name: Expand
-    href: queryoptions/expand.md
+  - name: Query options overview
+    href: concepts/queryoptions-overview.md
+  - name: Query options usage
+    href: concepts/queryoptions-usage.md
 - name: Advanced
   items:
   - name: CSDL 
@@ -82,199 +68,198 @@
       - name: Routing
         items:
         - name: Routing overview
-          href: /odata-docs/webapi/routing-abstract.md
+          href: odata-docs/webapi/routing-abstract.md
         - name: Built-in routing conventions
-          href: /odata-docs/webapi/built-in-routing-conventions.md
+          href: odata-docs/webapi/built-in-routing-conventions.md
         - name: Attribute Routing
-          href: /odata-docs/webapi/attrribute-routing.md
+          href: odata-docs/webapi/attrribute-routing.md
         - name: Custom routing convention
-          href: /odata-docs/webapi/custom-routing-convention.md
+          href: odata-docs/webapi/custom-routing-convention.md
       - name: Feature implementations
         items:
           - name: DateTime support
-            href: /odata-docs/webapi/datetime-support.md
+            href: odata-docs/webapi/datetime-support.md
           - name: Referential constraint
-            href: /odata-docs/webapi/referential-constraint.md
+            href: odata-docs/webapi/referential-constraint.md
           - name: Nested $filter in $expand
-            href: /odata-docs/webapi/filter-in-expand.md
+            href: odata-docs/webapi/filter-in-expand.md
           - name: Edm.Date and Edm.TimeOfDay
-            href: /odata-docs/webapi/date-and-timeofday-support.md
+            href: odata-docs/webapi/date-and-timeofday-support.md
           - name: Abstract entity types
-            href: /odata-docs/webapi/abstract-entity-types.md
+            href: odata-docs/webapi/abstract-entity-types.md
           - name: Function parameter support
-            href: /odata-docs/webapi/function-parameter-support.md
+            href: odata-docs/webapi/function-parameter-support.md
           - name: Action parameter support
-            href: /odata-docs/webapi/action-parameter-support.md
+            href: odata-docs/webapi/action-parameter-support.md
           - name: Operation parameters in untyped scenarios
-            href: /odata-docs/webapi/operation-parameters-in-untyped-scenarios.md
+            href: odata-docs/webapi/operation-parameters-in-untyped-scenarios.md
           - name: Query by dynamic properties
-            href: /odata-docs/webapi/query-by-dynamic-properties.md
+            href: odata-docs/webapi/query-by-dynamic-properties.md
           - name: Open type in untyped scenarios
-            href: /odata-docs/webapi/open-type-in-untyped-scenarios.md
+            href: odata-docs/webapi/open-type-in-untyped-scenarios.md
           - name: Query Options
-            href: /odata-docs/webapi/query-option.md
+            href: odata-docs/webapi/query-option.md
           - name: Delta Feed Support
-            href: /odata-docs/webapi/DeltaFeed_support.md
+            href: odata-docs/webapi/DeltaFeed_support.md
           - name: Capabilities vocabulary support
-            href: /odata-docs/webapi/capabilities-vocabulary-support.md
+            href: odata-docs/webapi/capabilities-vocabulary-support.md
           - name: AutoExpand attribute
-            href: /odata-docs/webapi/autoexpand-attribute.md
+            href: odata-docs/webapi/autoexpand-attribute.md
           - name: Ignore query option
-            href: /odata-docs/webapi/ignore-query-option.md
+            href: odata-docs/webapi/ignore-query-option.md
           - name: Alternate keys
-            href: /odata-docs/webapi/Alternate-Key.md
+            href: odata-docs/webapi/Alternate-Key.md
           - name: Add NextPageLink and $count for collection property
-            href: /odata-docs/webapi/AddNextPageLinkAndCountForCollectionProperty.md
+            href: odata-docs/webapi/AddNextPageLinkAndCountForCollectionProperty.md
           - name: Prefer odata.include-annotations
-            href: /odata-docs/webapi/odataIncludeAnnotations.md
+            href: odata-docs/webapi/odataIncludeAnnotations.md
           - name: Prefer odata.continue-on-error
-            href: /odata-docs/webapi/ContinueOnError.md
+            href: odata-docs/webapi/ContinueOnError.md
           - name: Set namespace for operations in model builder
-            href: /odata-docs/webapi/Set-namespaces-for-operations.md
+            href: odata-docs/webapi/Set-namespaces-for-operations.md
           - name: Use HttpRequestMessage Extension Methods
-            href: /odata-docs/webapi/Use-HttpRequestMessage-Extension-Method.md
+            href: odata-docs/webapi/Use-HttpRequestMessage-Extension-Method.md
           - name: OData Simplified Uri convention
-            href: /odata-docs/webapi/simplified-uri-convention.md
+            href: odata-docs/webapi/simplified-uri-convention.md
           - name: MaxExpansionDepth in EnableQueryAttribute
-            href: /odata-docs/webapi/MaxExpansionDepthInEnableQueryAttribute.md
+            href: odata-docs/webapi/MaxExpansionDepthInEnableQueryAttribute.md
           - name: Bind Custom UriFunctions to CLR Methods
-            href: /odata-docs/webapi/bind-custom-urifunctions-to-clr-methods.md
+            href: odata-docs/webapi/bind-custom-urifunctions-to-clr-methods.md
           - name: IN Operator
-            href: /odata-docs/webapi/InOperator.md
+            href: odata-docs/webapi/InOperator.md
           - name: Case-insensitive names and unqualified functions & actions
-            href: /odata-docs/webapi/caseInsensitiveAndQualifiedFunctions.md
+            href: odata-docs/webapi/caseInsensitiveAndQualifiedFunctions.md
           - name: Simplified optional-$-prefix for OData query option for WebAPI query parsing
-            href: /odata-docs/webapi/enableNoDollarQueryOptions.md
+            href: odata-docs/webapi/enableNoDollarQueryOptions.md
       - name: Extending OData WebAPI
         items:
         - name: Custom URL parsing
-          href: /odata-docs/webapi/custom-url-parsing.md
+          href: odata-docs/webapi/custom-url-parsing.md
         - name: Relax version constraints
-          href: /odata-docs/webapi/relax-version-constraints.md
+          href: odata-docs/webapi/relax-version-constraints.md
         - name: Customize OData Formatter
-          href: /odata-docs/webapi/customize-odata-formatter.md
+          href: odata-docs/webapi/customize-odata-formatter.md
         - name: Custom Stream Entity
-          href: /odata-docs/webapi/streamEntity.md
+          href: odata-docs/webapi/streamEntity.md
         - name: Customize unsupported types
-          href: /odata-docs/webapi/UnsupportedTypeUsage.md
+          href: odata-docs/webapi/UnsupportedTypeUsage.md
   - name: WebAPI .Net Core
     items:
     - name: Getting started
-      href: /odata-docs/webapi/netcore-beta1.md
+      href: odata-docs/webapi/netcore-beta1.md
     - name: OData Web API 7.0 (.NET Core and .NET Classic)
-      href: /odata-docs/webapi/netcore-0.md
+      href: odata-docs/webapi/netcore-0.md
     - name: OData Web API 7.0.1 (.NET Core and .NET Classic)
-      href: /odata-docs/webapi/netcore-1.md
+      href: odata-docs/webapi/netcore-1.md
     - name: OData Web API 7.1.0 (.NET Core and .NET Classic)
-      href: /odata-docs/webapi/webapi-0.md
+      href: odata-docs/webapi/webapi-0.md
   - name: OData Lib
     items:
     - name: Core lib
       items:
         - name: Write OData payload
-          href: /Odata-docs/odatalib/v7/write-payload.md
+          href: Odata-docs/odatalib/v7/write-payload.md
         - name: Fluent functional-style writer API
-          href: /odata-docs/odatalib/v7/fluent-writer-api.md
+          href: odata-docs/odatalib/v7/fluent-writer-api.md
         - name: Read OData payload
-          href: /odata-docs/odatalib/v7/read-payload.md
+          href: odata-docs/odatalib/v7/read-payload.md
         - name: Use ODataUriParser
-          href: /odata-docs/odatalib/v7/use-uri-parser.md
+          href: odata-docs/odatalib/v7/use-uri-parser.md
         - name: Dependency Injection Support
-          href: /odata-docs/odatalib/v7/di-support.md
+          href: odata-docs/odatalib/v7/di-support.md
         - name: Parsing uri path template
-          href: /odata-docs/odatalib/v7/parsing-url-template.md
+          href: odata-docs/odatalib/v7/parsing-url-template.md
         - name: Add additional prefer header
-          href: /odata-docs/odatalib/v7/additional-prefer-header.md
+          href: odata-docs/odatalib/v7/additional-prefer-header.md
         - name: $skiptoken & $deltatoken
-          href: /odata-docs/odatalib/v7/skipTokenAndDeltaToken.md
+          href: odata-docs/odatalib/v7/skipTokenAndDeltaToken.md
         - name: Write NextPageLink/Count for collection
-          href: /odata-docs/odatalib/v7/nextpagelinkAndCountForCollection.md
+          href: odata-docs/odatalib/v7/nextpagelinkAndCountForCollection.md
         - name: Override primitive serialization and deserialization of payload
-          href: /odata-docs/odatalib/v7/override-primitive-serialization-deserialization.md
+          href: odata-docs/odatalib/v7/override-primitive-serialization-deserialization.md
         - name: Navigation property under complex type
-          href: /odata-docs/odatalib/v7/navigation-under-complex.md
+          href: odata-docs/odatalib/v7/navigation-under-complex.md
         - name: Allow serialization of additional properties
-          href: /odata-docs/odatalib/v7/allow-serialization-of-additional-properties.md
+          href: odata-docs/odatalib/v7/allow-serialization-of-additional-properties.md
         - name: Expanded Navigation Property Support in Delta Response
-          href: /odata-docs/odatalib/v7/expanded-navigation-delta.md
+          href: odata-docs/odatalib/v7/expanded-navigation-delta.md
         - name: Basic Uri parser support for aggregations
-          href: /odata-docs/odatalib/v7/aggregation-support.md
+          href: odata-docs/odatalib/v7/aggregation-support.md
         - name: Customizable type facets promotion in URI parsing
-          href: /odata-docs/odatalib/v7/customizable-type-facets-promotion.md
+          href: odata-docs/odatalib/v7/customizable-type-facets-promotion.md
         - name: Merge complex type and entity type
-          href: /odata-docs/odatalib/v7/merge-complex-and-entity.md
+          href: odata-docs/odatalib/v7/merge-complex-and-entity.md
         - name: OData Uri Path Parser Extensibility
-          href: /odata-docs/odatalib/v7/uri-parser-path-extensibility.md
+          href: odata-docs/odatalib/v7/uri-parser-path-extensibility.md
         - name: Override type annotation in serialization
-          href: /odata-docs/odatalib/v7/type-annotation.md
+          href: odata-docs/odatalib/v7/type-annotation.md
         - name: Centralized control for OData Simplified Options
-          href: /odata-docs/odatalib/v7/ODataSimplifiedOptions.md
+          href: odata-docs/odatalib/v7/ODataSimplifiedOptions.md
         - name: Read and Write Untyped values in ODataLib
-          href: /odata-docs/odatalib/v7/support-untyped-json.md
+          href: odata-docs/odatalib/v7/support-untyped-json.md
         - name: IN Operator
-          href: /odata-docs/odatalib/v7/INOperator.md
+          href: odata-docs/odatalib/v7/INOperator.md
         - name: Resource (Complex & Entity) Value
-          href: /odata-docs/odatalib/v7/ResourceValue.md
-    - name: Building and Parsing URL
+          href: odata-docs/odatalib/v7/ResourceValue.md
     - name: Entity Data Model (EDM)
       items:
       # - name: Model Building
-      #   href: /odata-docs/odatalib/v7/edm/model-building.md
+      #   href: odata-docs/odatalib/v7/edm/model-building.md
       # - name: Serializing/DeSe model
-      #   href: /odata-docs/odatalib/v7/edm/model-serialization.md
+      #   href: odata-docs/odatalib/v7/edm/model-serialization.md
       - name: Build a basic model
-        href: /odata-docs/odatalib/v7/edm/build-basic-model.md
+        href: odata-docs/odatalib/v7/edm/build-basic-model.md
       - name: Read and write models
-        href: /odata-docs/odatalib/v7/edm/read-write-model.md
+        href: odata-docs/odatalib/v7/edm/read-write-model.md
       - name: Define entity relations
-        href: /odata-docs/odatalib/v7/edm/define-entity-relations.md
+        href: odata-docs/odatalib/v7/edm/define-entity-relations.md
       - name: Define singletons
-        href: /odata-docs/odatalib/v7/edm/define-singleton.md
+        href: odata-docs/odatalib/v7/edm/define-singleton.md
       - name: Define type inheritance
-        href: /odata-docs/odatalib/v7/edm/define-type-inheritance.md
+        href: odata-docs/odatalib/v7/edm/define-type-inheritance.md
       - name: Define operations
-        href: /odata-docs/odatalib/v7/edm/define-operations.md
+        href: odata-docs/odatalib/v7/edm/define-operations.md
       - name: Define annotations
-        href: /odata-docs/odatalib/v7/edm/define-annotations.md
+        href: odata-docs/odatalib/v7/edm/define-annotations.md
       - name: Using model utilities
-        href: /odata-docs/odatalib/v7/edm/using-model-utilities.md
+        href: odata-docs/odatalib/v7/edm/using-model-utilities.md
       - name: Model references
-        href: /odata-docs/odatalib/v7/edm/model-references.md
+        href: odata-docs/odatalib/v7/edm/model-references.md
       - name: Define referential constraints
-        href: /odata-docs/odatalib/v7/edm/define-referential-constraints.md
+        href: odata-docs/odatalib/v7/edm/define-referential-constraints.md
       - name: Specify type facets for type definitions
-        href: /odata-docs/odatalib/v7/edm/type-facets.md
+        href: odata-docs/odatalib/v7/edm/type-facets.md
       - name: Other topics
-        href: /odata-docs/odatalib/v7/edm/other-topics.md
+        href: odata-docs/odatalib/v7/edm/other-topics.md
       - name: Add vocabulary annotations to EdmEnumMember
-        href: /odata-docs/odatalib/v7/edm/add-annotations-to-enummember.md
+        href: odata-docs/odatalib/v7/edm/add-annotations-to-enummember.md
       - name: Alternate Key
-        href: /odata-docs/odatalib/v7/edm/alternatekey.md
+        href: odata-docs/odatalib/v7/edm/alternatekey.md
       - name: Capabilities vocabulary support
-        href: /odata-docs/odatalib/v7/edm/capabilitiesVocabulary.md
+        href: odata-docs/odatalib/v7/edm/capabilitiesVocabulary.md
       - name: Support multi-NavigationPropertyBindings for a single navigation property
-        href: /odata-docs/odatalib/v7/edm/Multi-Binding.md
+        href: odata-docs/odatalib/v7/edm/Multi-Binding.md
       - name: Navigation property partner
-        href: /odata-docs/odatalib/v7/edm/navigation-partner.md
+        href: odata-docs/odatalib/v7/edm/navigation-partner.md
       - name: Optional Parameters
-        href: /odata-docs/odatalib/v7/edm/optional-parameters.md
+        href: odata-docs/odatalib/v7/edm/optional-parameters.md
     - name: Batching
       items:
         - name: Batch payloads
           href: batching.md
         - name: Batching in ODataLib
-          href: /odata-docs/odatalib/v7/JsonBatch.md
+          href: odata-docs/odatalib/v7/JsonBatch.md
         - name: Batching in WebAPI
-          href: /odata-docs/webapi/batch.md
+          href: odata-docs/webapi/batch.md
   - name: How to debug
-    href: /odata-docs/webapi/debug-webapi-source.md
+    href: odata-docs/webapi/debug-webapi-source.md
   - name: Securing your API
-    href: /odata-docs/webapi/basic-auth.md
+    href: odata-docs/webapi/basic-auth.md
   - name: Spatial lib
     items:
       - name: Define spatial properties
-        href: /odata-docs/spatial/define-spatial-property.md
+        href: odata-docs/spatial/define-spatial-property.md
       - name: Create spatial instances
-        href: /odata-docs/spatial/create-spatial-instances.md
+        href: odata-docs/spatial/create-spatial-instances.md
 # - name: 10.2 Work around for SingleResult.Create an empty result
 #   href: posts\work-around-for-singleresult-create.md
