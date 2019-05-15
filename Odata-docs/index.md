@@ -1,7 +1,5 @@
 # Welcome to OData
 
-The .NET Foundation is happy to announce that OData is joining the .NET Foundation!
-
 OData (Open Data Protocol) is an ISO/IEC approved, OASIS standard that defines a set of best practices for building and consuming REST APIs.
 OData enables creation of REST-based services which allow resources identified using Uniform Resource Locators (URLs) and defined in a data model, to be published and edited by Web clients using simple HTTP messages.
 
