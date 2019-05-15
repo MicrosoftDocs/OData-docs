@@ -43,6 +43,9 @@
       "ms.description":"OData docs",
       "ms.prod": "OData",
       "ms.topic": "conceptual",
+      "titleSuffix": "OData"
+    },
+    "fileMetadata": {
       "titleSuffix": {
         "odataclient/**/*.md": "OData Client",
         "odatalib/**/*.md": "OData Core library",
@@ -50,7 +53,6 @@
         "spatial/**/*.md": "Microsoft Spatial"
       }
     },
-    "fileMetadata": {},
     "template": [],
     "dest": "OData-conceptual",
     "markdownEngineName": "markdig"
