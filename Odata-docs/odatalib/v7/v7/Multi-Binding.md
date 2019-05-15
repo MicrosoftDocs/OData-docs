@@ -22,15 +22,18 @@ Person <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---- Airline (navigation property) <br />
 
 Now we bind entityset `Airlines` to the property `Airline`. Since for navigation property binding, we need start from non-containment entityset, then route to navigation property with binding path. So we should have binding:
+
 ```C#
 <EntitySet Name="People" EntityType="NS.Person">
     <NavigationPropertyBinding Path="Trips/PlanItems/NS.Flight/Airline" Target="Airlines"/>
 </EntitySet>
 ```
+
 If we have `InternationalTrips` under `Person` which has type `Trip` as well, we can have binding `<NavigationPropertyBinding Path="InternationalTrips/PlanItems/NS.Flight/Airline" Target="Airlines"/>` under `People` as well.
 Please note that current Trippin implementation for this part does not have strict compliance with spec due to prohibition of breaking changes.
 
 Let's have another example of complex which have multi bindings. `City` is a navigation property of complex type `Address`, and `Person` has `HomeAddress`, `CompanyAddress` which are both `Address` type. Then we can have binding:
+
 ```C#
 <EntitySet Name="People" EntityType="Sample.Person">
     <NavigationPropertyBinding Path="HomeAddress/City" Target="Cities1" />
@@ -50,13 +53,14 @@ Add a navigation property binding and specify the whole binding path.
 
 `public virtual Microsoft.OData.Edm.IEdmNavigationSource FindNavigationTarget (IEdmNavigationProperty navigationProperty, IEdmPathExpression bindingPath)` <br />
 Find navigation property with its binding path.
-	
+
 ### ODL ###
 `public ODataQueryOptionParser (IEdmModel model, ODataPath odataPath, String queryOptions)` <br />
 `public ODataQueryOptionParser(IEdmModel model, ODataPath odataPath, IDictionary<string, string> queryOptions, IServiceProvider container)` <br />
 Possibly need ODataPath to resolve navigation target of segments in query option if the navigation property binding path is included in both path and query option. Refer: [Navigation property under complex type](https://luoyan0517.github.io/odata.net/v7/#06-18-navigation-under-complex).
 
 Take the above complex scenario for example. For generating this kind of model, we need use the new AddNavigationTarget API, and different navigation target can be specified:
+
 ```C#
 people.AddNavigationTarget(cityOfAddress, cities1, new EdmPathExpression("HomeAddress/City"));
 people.AddNavigationTarget(cityOfAddress, cities2, new EdmPathExpression("Addresses/City"));
@@ -64,6 +68,7 @@ people.AddNavigationTarget(cityOfAddress, cities2, new EdmPathExpression("Addres
 `cityOfAddress` is the variable to present navigation property `City` under `Address`, and `cities1` and `cities2` are different entityset based on entity type `City`.
 
 To achieve the navigation target, the new FindNavigationTarget API can be used:
+
 ```C#
 IEdmNavigationSource navigationTarget = people.FindNavigationTarget(cityOfAddress, new EdmPathExpression("HomeAddress/City"));
 ```

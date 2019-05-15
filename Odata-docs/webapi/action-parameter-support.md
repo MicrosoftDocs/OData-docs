@@ -3,7 +3,7 @@ title : "4.7 Action parameter support"
 
 ms.date: 03/30/2015
 ---
-# 4.7 Action parameter support
+# Action parameter support
 
 Since [Web API OData V5.5-beta](https://www.nuget.org/packages/Microsoft.AspNet.OData/5.5.0-beta), it supports the following types as action parameter:
 
@@ -36,6 +36,7 @@ action.CollectionParameter<int>("p3");
 
 #### Routing
 In the `CustomersController`, add the following method:
+
 ```C#
 [HttpPost]
 public IHttpActionResult PrimitiveAction(ODataActionParameters parameters)

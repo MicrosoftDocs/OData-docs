@@ -4,7 +4,7 @@ description: "7.x WebAPI query parser use optional-$-prefix for OData query opti
 
 ms.date: 02/05/2018
 ---
-# 14.2 Simplified optional-$-prefix for OData query option for WebAPI query parsing
+# Simplified optional-$-prefix for OData query option for WebAPI query parsing
 
 Since ODL-6.x, **OData Core Library** supports query option with optional-$-prefix as described in [this docs](https://odata.github.io/odata.net/v7/#01-05-di-support).
 
@@ -28,7 +28,7 @@ A public boolean attribute EnableNoDollarQueryOptions is added to ODataUriResolv
 
 ### WebAPI optional-$-prefix Setting using Dependency Injection
 WebAPI service injects the setting using the ODataUriResolver during service initialization:
-Builder of service provider container sets the instantiated ODataUriResover config using dependency injection.
+Builder of service provider container sets the instantiated ODataUriResolver config using dependency injection.
 ~~~csharp
             ODataUriResolver resolver = new ODataUriResolver
             {

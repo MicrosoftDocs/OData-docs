@@ -4,7 +4,7 @@ description: "Customize OData Formatter"
 category: [6. Customization]
 ms.date: 04/21/2015
 ---
-# 6.3 Customize OData Formatter
+# Customize OData Formatter
 
 This page illustrates how to use sensibility points in the ODataFormatter and plugin custom OData serializers/deserializers, gives a sample extends the ODataFormatter to add support of OData instance annotations.
 

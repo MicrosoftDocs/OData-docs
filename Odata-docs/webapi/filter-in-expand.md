@@ -5,7 +5,7 @@ description: ""
 
 ms.date: 03/20/2015
 ---
-# 4.3 Nested $filter in $expand
+# Nested $filter in $expand
 
 [OData Web API](https://github.com/OData/WebApi) v[5.5](https://www.nuget.org/packages/Microsoft.AspNet.OData/5.5.0-beta) supports nested $filter in $expand, e.g.:
 `.../Customers?$expand=Orders($filter=Id eq 10)`

@@ -4,7 +4,7 @@ description: ""
 
 ms.date: 09/16/2015
 ---
-# 4.19 Prefer odata.include-annotations
+# Prefer odata.include-annotations
 
 Since OData WebApi V5.6, it supports <strong>[odata.include-annotations](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html#_Toc406398237)</strong>.
 

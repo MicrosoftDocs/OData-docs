@@ -43,10 +43,13 @@ Since we have merged complex type and entity type in OData Core lib, complex hav
 2. SingleNavigationNode and CollectionNavigationNode accepts SingleResourceNode as parent node and also accepts bindingpath in the constructor.The parameter order is also adjusted.
 
     Take SingleNavigationNode for example:
+
 ```C#
 public SingleNavigationNode(IEdmNavigationProperty navigationProperty, SingleEntityNode source)
 ```
-Changed to: 
+
+Changed to:
+
 ```C#
 public SingleNavigationNode(SingleResourceNode source, IEdmNavigationProperty navigationProperty, IEdmPathExpression bindingPath)
 ```

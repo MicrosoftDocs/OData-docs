@@ -4,7 +4,7 @@ description: "convention model builder"
 
 ms.date: 04/17/2015
 ---
-# 2.4 Convention model builder
+# Convention model builder
 
 In the previous two sections, we walk you through the required aspects to build an Edm model by directly using **[ODatalib](https://www.nuget.org/packages/Microsoft.OData.Core/)** or leveraging `ODataModelBuilder` fluent API in WebApi OData. 
 
@@ -87,6 +87,7 @@ It will generate the below metadata document:
 
 Wow, how the convention model builder do that! Actually, convention model builder uses a set of **pre-defined** rules (called *conventions*) to achieve this. 
 If you open the source code for [`ODataConventionModelBuilder`](https://github.com/OData/WebApi/blob/master/OData/src/System.Web.OData/OData/Builder/ODataConventionModelBuilder.cs), You can find the following codes at the beginning of the `ODataConventionModelBuilder` class:
+
 ```C#
 private static readonly List<IConvention> _conventions = new List<IConvention>
 {
@@ -120,6 +121,7 @@ private static readonly List<IConvention> _conventions = new List<IConvention>
 	new FunctionLinkGenerationConvention(),
 };
 ```
+
 Where lists the conventions wrapped in convention model builder. However, in `ODataConventionModelBuilder`, there are some conventions which can't be clearly listed. Let's walk you through these conventions one by one with some relevant attributes & annotations to illustrate the convention model builder.
 
 #### Type Inheritance Identify Convention
@@ -127,6 +129,7 @@ Where lists the conventions wrapped in convention model builder. However, in `OD
 Rule: Only derived types can be walked.
 
 For example:
+
 ```C#
 public class Base
 {
@@ -139,6 +142,7 @@ public class Derived : Base
 ```
 
 By using convention builder:
+
 ```C#
 public static IEdmModel GetEdmModel()
 {
@@ -147,7 +151,9 @@ public static IEdmModel GetEdmModel()
     return builder.GetEdmModel()
 }
 ```
+
 It will generate the below entity type in the resulted EDM document:
+
 ```XML
 <EntityType Name="Base">
   <Key>
@@ -168,7 +174,9 @@ public static IEdmModel GetEdmModel()
     return builder.GetEdmModel()
 }
 ```
+
 It will generate the below entity type in the resulted EDM document:
+
 ```XML
 <EntityType Name="Derived">
   <Key>
@@ -177,6 +185,7 @@ It will generate the below entity type in the resulted EDM document:
   <Property Name="Id" Type="Edm.Int32" Nullable="false" />
 </EntityType>
 ```
+
 There is no `Base` entity type existed.
 
 #### Abstract type convention
@@ -213,6 +222,7 @@ public abstract class Base
 ```
 
 The result is:
+
 ```XML
 <EntityType Name="Base" Abstract="true">
   <Key>
@@ -230,12 +240,14 @@ Rule: The [`KeyAttribute`] specifies key property, it forces a property without 
 public class Trip
 {
     [Key]
-    public int TripNum { get; set; }	
+    public int TripNum { get; set; }
     public int Id { get; set; }
+
 }
 ```
 
 The result is:
+
 ```XML
 <EntityType Name="Trip">
   <Key>

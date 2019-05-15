@@ -4,7 +4,7 @@ title : "6.4 Custom Stream Entity"
 
 ms.date: 09/16/2015
 ---
-# 6.4 Custom Stream Entity
+# Custom Stream Entity
 
 Since Web API OData V5.7, it supports to customize entity as stream.
 
@@ -34,5 +34,5 @@ public class Vehicle
 
 var builder = new ODataConventionModelBuilder();
 builder.EntityType<Vehicle>();
-IEdmModel modle = builder.GetEdmModel();
+IEdmModel model = builder.GetEdmModel();
 ```

@@ -4,7 +4,7 @@ description: ""
 
 ms.date: 09/16/2015
 ---
-# 4.21 Set namespace for operations in model builder
+# Set namespace for operations in model builder
 
 Since OData Web API V5.7, it allows to <strong>set a custom namespace for individual function and action in model builder</strong>.
 

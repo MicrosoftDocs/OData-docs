@@ -5,9 +5,9 @@ description: ""
 
 ms.date: 06/05/2015
 ---
-# 7.8 OData Web API 6.0.0 alpha1
+# OData Web API 6.0.0 alpha1
 
-The NuGet packages for OData Web API v6.0.0 alpha1 are now available on the [myget](https://www.myget.org/F/odatavnext/api/v2).
+The NuGet packages for OData Web API v6.0.0 alpha1 are now available on the [MyGet](https://www.myget.org/F/odatavnext/api/v2).
 
 ### Configure package source
 You can configure the NuGet package source for OData Web API v6.0.0 preview releases in the [Package Manager Settings](https://docs.nuget.org/Consume/Package-Manager-Dialog):

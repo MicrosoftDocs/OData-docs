@@ -4,7 +4,7 @@ description: ""
 
 ms.date: 09/16/2015
 ---
-# 4.20 Prefer odata.continue-on-error
+# Prefer odata.continue-on-error
 
 Since OData Web API V5.7, it supports <strong>[odata.continue-on-error](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html#_Toc406398236)</strong>.
 

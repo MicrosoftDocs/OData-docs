@@ -4,13 +4,14 @@ description: "Navigation property under complex type"
 
 ---
 
-Since OData V7.0, it supports to add navigation property under complex type. Basically navigation under complex are same with navigation under entity for usage, the only differences are: **1.** Navigation under complex can have multiple bindings with different path. **2.** Complex type does not have id, so the navigation link and association link of navigation under complex need contain the entity id which the complex belongs to. 
+Since OData V7.0, it supports to add navigation property under complex type. Basically navigation under complex are same with navigation under entity for usage, the only differences are: **1.** Navigation under complex can have multiple bindings with different path. **2.** Complex type does not have id, so the navigation link and association link of navigation under complex need contain the entity id which the complex belongs to.
 
 The page will include the usage of navigation under complex in EDM, Uri parser, and serializer and deserializer.
 
 ## 1. EDM ##
 
 ### Define navigation property to complex type ###
+
 ```C#
 EdmModel model = new EdmModel();
 
@@ -40,6 +41,7 @@ When entity type has complex as property, its corresponding entity set can bind 
 A valid binding path for navigation under complex is: `[ qualifiedEntityTypeName "/" ] *( ( complexProperty / complexColProperty ) "/" [ qualifiedComplexTypeName "/" ] ) navigationProperty`
 
 For example:
+
 ```C#
 EdmEntityType person = new EdmEntityType("Sample", "Person");
 EdmStructuralProperty entityId = person.AddStructuralProperty("UserName", EdmCoreModel.Instance.GetString(false));
@@ -102,12 +104,13 @@ Here we do not include type cast sample to keep the scenario simple.
 
 ### Find navigation target for navigation property under complex ###
 Since a navigation property can be binded to different paths, the exact binding path must be specified for finding the navigation target. 
-For example: 
+For example:
+
 ```C#
 IEdmNavigationSource navigationTarget = people.FindNavigationTarget(navUnderComplex, new EdmPathExpression("Address/City"));
 ```
-`Cities1` will be returned for this case.
 
+`Cities1` will be returned for this case.
 
 ## 2. Uri ##
 

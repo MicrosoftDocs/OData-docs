@@ -4,7 +4,7 @@ description: "Dependency injection support"
 
 ms.date: 08/30/2016
 ---
-# 13.4 Dependency Injection Support
+# Dependency Injection Support
 
 Since [Web API OData V6.0.0 beta](https://www.nuget.org/packages/Microsoft.AspNet.OData/6.0.0-beta2), we have integrated with the popular dependency injection (DI) framework [Microsoft.Extensions.DependencyInjection](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection/). By means of DI, we can significantly improve the extensibility of Web API OData as well as simplify the APIs exposed to the developers. Meanwhile, we have incorporated DI support throughout the whole OData stack (including ODataLib, Web API OData and RESTier) thus the three layers can consistently share services and custom implementations via the unified DI container in an OData service. For example, if you register an `ODataPayloadValueConverter` in a RESTier API class, the low-level ODataLib will be aware of that and use it automatically because they share the same DI container.
 
@@ -149,5 +149,5 @@ Currently services Available in Web API OData include:
  - `IAssembliesResolver` whose implementation type is the default one from ASP.NET Web API.
  - `FilterBinder` whose implementation type is `Transient` because each `EnableQueryAttribute` instance will create its own `FilterBinder`. Override it if you want to customize the process of binding a $filter syntax tree.
  
-#### Services Avaliable in OData Lib
+#### Services Available in OData Lib
 [Services in OData Lib also can be injected through Web API OData](https://odata.github.io/odata.net/v7/#01-05-di-support).

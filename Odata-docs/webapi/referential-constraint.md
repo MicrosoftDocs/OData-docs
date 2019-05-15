@@ -4,7 +4,7 @@ title : "4.2 Referential constraint"
 
 ms.date: 01/16/2015
 ---
-# 4.2 Referential constraint
+# Referential constraint
 
 The following sample codes can be used for Web API OData V3 & V4 with a little bit function name changing.
 
@@ -149,6 +149,7 @@ builder.EntityType<Order>()
 Currently, it doesn't suppport to define nullable referential constraint from attribute and convention method. However, you can do it by Programmatically by calling `HasOptional()` method:
 
 For example:
+
 ```C#
 
 public class Product

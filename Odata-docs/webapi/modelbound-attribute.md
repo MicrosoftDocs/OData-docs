@@ -4,7 +4,7 @@ description: "Model bound attributes"
 
 ms.date: 08/05/2016
 ---
-# 13.1 Model Bound Attributes
+# Model Bound Attributes
 
 Since [Web API OData V6.0.0](https://www.nuget.org/packages/Microsoft.AspNet.OData/6.0.0) which depends on [OData Lib 7.0.0](https://www.nuget.org/packages/Microsoft.OData.Core/7.0.0), we add a new feature named ModelBoundAttribute, use this feature, we can control the query setting through those attributes to make our service more secure and even control the query result by set page size, automatic select, automatic expand.
 
@@ -156,7 +156,7 @@ We can see that the we can have multiple OrderBy attributes, how are they merged
 
 #### OrderBy Attribute on EntityType and ComplexType
 
-Let's go through those attributes to understand the settings, the first attribute means we can specify the single navigation property `AutoExpandOrder` and single complex property `Address` when we query Customer type, like query `localhost\odata\Customers?$orderby=Address/xxx` or `localhost\odata\Customers?$orderby=AutoExpandOrder/xxx`. And how do we control which property under AutoExandOrder is sort-able?
+Let's go through those attributes to understand the settings, the first attribute means we can specify the single navigation property `AutoExpandOrder` and single complex property `Address` when we query Customer type, like query `localhost\odata\Customers?$orderby=Address/xxx` or `localhost\odata\Customers?$orderby=AutoExpandOrder/xxx`. And how do we control which property under AutoExpandOrder is sort-able?
 
 For the AutoExpandOrder property, we add OrderBy Attribute on Order type, the first attribute means `Name` is not sort-able, the second attribute means all the property is sort-able, so for the Order type, properties except `Name` are sort-able.
 
@@ -212,7 +212,7 @@ The first attribute means all the property will be automatic select when there i
 
 ##### Automatic Select on Derived Type
 
-If the target type of our request have some derived types which have automatic select property, then these property will show in the response if there is no `$select` query option, for example, request `localhost\odata\Users` will have the same response with `localhost\odata\Users?$select=Id,Name,SpecialUser/SpecialName` if the SpecinalName property in automatic select.
+If the target type of our request have some derived types which have automatic select property, then these property will show in the response if there is no `$select` query option, for example, request `localhost\odata\Users` will have the same response with `localhost\odata\Users?$select=Id,Name,SpecialUser/SpecialName` if the SpecialName property in automatic select.
 
 #### Select Attribute on Navigation Property
 
@@ -237,7 +237,7 @@ We can specify which property can be expanded, which property is automatic expan
 
 #### Automatic Expand
 
-Automatic expand mean it will always expand that navigation property, it's like automatic select, we will add a $expand in the query, so it will expand even if there is a `$select` which does not contain automatic epxand property.
+Automatic expand mean it will always expand that navigation property, it's like automatic select, we will add a $expand in the query, so it will expand even if there is a `$select` which does not contain automatic expand property.
 
 ### Model Bound Fluent APIs
 

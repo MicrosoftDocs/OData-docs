@@ -4,7 +4,7 @@ description: "7.0 release notes"
 
 ms.date: 06/29/2018
 ---
-# 14.4 OData Web API 7.0 (.NET Core and .NET Classic)
+# OData Web API 7.0 (.NET Core and .NET Classic)
 
 We're happy to announce the release of ASP.NET Web API OData 7.0 on the [NuGet gallery](https://www.nuget.org/)!
 
@@ -47,7 +47,7 @@ PM> Install-Package Microsoft.AspNet.OData
  
  * [ [PR #1497](https://github.com/OData/WebApi/issues/1497) ] Support `In` operator.
   
- * [ [PR #1409](https://github.com/OData/WebApi/pull/1409) ] Set default to Unqualified-function/acition call and case insensitive.
+ * [ [PR #1409](https://github.com/OData/WebApi/pull/1409) ] Set default to Unqualified-function/action call and case insensitive.
 
  * [ [PR #1393](https://github.com/OData/WebApi/pull/1393) ] Set default to enable KeyAsSegment.
  
@@ -89,7 +89,7 @@ PM> Install-Package Microsoft.AspNet.OData
 
  * [ [Issue #1313](https://github.com/OData/WebApi/issues/1313) ] Batch requests are incorrectly routed when ASP.NET Core OData web application has any BasePath.
 
- * [ [Issue #1263](https://github.com/OData/WebApi/issues/1263) ] Patch nested strucutural resources.
+ * [ [Issue #1263](https://github.com/OData/WebApi/issues/1263) ] Patch nested structural resources.
  
  * [ [Issue #1247](https://github.com/OData/WebApi/issues/1247) ] Fix Spatial post/update problem.
  

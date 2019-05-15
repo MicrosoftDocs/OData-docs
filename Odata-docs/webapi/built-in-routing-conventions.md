@@ -4,7 +4,7 @@ description: "Routing Conventions"
 
 ms.date: 04/27/2015
 ---
-# 3.2 Built-in routing conventions
+# Built-in routing conventions
 
 When Web API gets an OData request, it maps the request to a controller name and an action name. The mapping is based on the HTTP method and the URI. For example, `GET /odata/Products(1)` maps to `ProductsController.GetProduct`.
 

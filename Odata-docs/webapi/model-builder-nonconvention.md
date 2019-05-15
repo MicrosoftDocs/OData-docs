@@ -4,10 +4,10 @@ description: "convention model builder"
 
 ms.date: 04/17/2015
 ---
-# 2.3 Non-convention model builder
+# Non-convention model builder
 
-To build an Edm model using non-convention model builder is to create an `IEdmModel` object by directly call fluent APIs of `ODataModelBuilder`. The developer should take all responsibility to add all Edm types, operations, associations, etc into the data model one by one.
-Let's see how to build the Ccustomer-Order* business model by `ODataModelBuilder`.
+To build an Edm model using non-convention model builder is to create an `IEdmModel` object by directly call fluent APIs of `ODataModelBuilder`. The developer should take all responsibility to add all Edm types, operations, associations, etc. into the data model one by one.
+Let's see how to build the Customer-Order* business model by `ODataModelBuilder`.
 
 ### CLR Models
 
@@ -24,6 +24,7 @@ color.Member(Color.Green);
 ```
 
 It will generate the below metadata document:
+
 ```XML
 <EnumType Name="Color">
    <Member Name="Red" Value="0" />

@@ -3,7 +3,7 @@ title : "4.4 Edm.Date and Edm.TimeOfDay"
 
 ms.date: 03/23/2015
 ---
-# 4.4 Edm.Date and Edm.TimeOfDay
+# Edm.Date and Edm.TimeOfDay
 
 This sample introduces how to use the `Edm.Date` & `Edm.TimeOfDay` supported in Web API OData V5.5.
 

@@ -4,7 +4,7 @@ description: ""
 
 ms.date: 08/11/2015
 ---
-# 4.17 Alternate keys
+# Alternate keys
 
 Alternate keys is supported in Web API OData V5.7. For detail information about alternate keys, please refer to [here](https://github.com/OData/vocabularies/blob/master/OData.Community.Keys.V1.md)
 
@@ -37,11 +37,11 @@ So, SSN is an alternate key.
 
 ### Routing for alternate key
 
-In OData controller, Users can use the attribute routing to route the alternate key. The Uri template is similiar to function parameter. For example:
+In OData controller, Users can use the attribute routing to route the alternate key. The Uri template is similar to function parameter. For example:
 ```C#
 [HttpGet] 
 [ODataRoute("Customers(SSN={ssn})")] 
-public IHttpActionResult GetCustomerBySSN([FromODataUri]string ssn) 
+public IHttpActionResult GetCustomerBySSN([FromODataUri]string ssn)
 {
    ...
 }

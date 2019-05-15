@@ -3,7 +3,7 @@ title : "5.1 Basic authentication over HTTPS"
 
 ms.date: 04/17/2015
 ---
-# 5.1 Basic authentication over HTTPS
+# Basic authentication over HTTPS
 
 We’re often asked by people if OData APIs can be secured. The name “Open Data Protocol” and the way we evangelize it (by focusing on how open a protocol it is and how it provides interoperability) may give people the impression that OData APIs doesn’t work with authentication and authorization. 
 

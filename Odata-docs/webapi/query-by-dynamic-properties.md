@@ -3,7 +3,7 @@ title : "4.9 Query by dynamic properties"
 
 ms.date: 03/31/2015
 ---
-# 4.9 Query by dynamic properties
+# Query by dynamic properties
 
 Since Web API OData V5.5, it supports filter, select and orderby on dynamic properties.
 
@@ -38,7 +38,7 @@ private static IEdmModel GetEdmModel()
 }
 ```
 
-### Use filter, orferby, select on dynamic property
+### Use filter, orderby, select on dynamic property
 
 #### Routing
 In the `SimpleOpenCustomersController`, add the following method:
