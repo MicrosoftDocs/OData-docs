@@ -5,14 +5,16 @@
 - name: Learn
   expanded: false
   items:
-  - name: Data Model
-    href: /odata/concepts/data-model
-  - name: Url components
-    href: /odata/concepts/url-components
-  - name: Service metadata
-    href: /odata/concepts/metadata
-  - name: Payload
-    href: /odata/concepts/payload-formats
+  - name: Basics
+    items:
+    - name: Data Model
+      href: /odata/concepts/data-model
+    - name: Url components
+      href: /odata/concepts/url-components
+    - name: Service metadata
+      href: /odata/concepts/metadata
+    - name: Payload
+      href: /odata/concepts/payload-formats
   - name: Getting Data
     items:
     - name: Get Data
@@ -33,7 +35,7 @@
       href: /odata/concepts/queryoptions-usage
   - name: Advanced
     items:
-    - name: CSDL 
+    - name: Common Schema Description Language (CSDL) 
       href: /odata/concepts/advanced/metadata-detail
     - name: Reference 2
       href: /odata/concepts/advanced/reference/reference-2
@@ -48,6 +50,7 @@
     - name: Annotations
       href: /odata/concepts/advanced/annotations
 - name: Develop
+  expanded: true
   items:
   - name: OData WebAPI
     items:
@@ -70,10 +73,10 @@
         - name: Built-in routing conventions
           href: /odata/webapi/built-in-routing-conventions
         - name: Attribute Routing
-          href: /odata/webapi/attrribute-routing
+          href: /odata/webapi/attribute-routing
         - name: Custom routing convention
           href: /odata/webapi/custom-routing-convention
-      - name: Feature implementations
+      - name: How-To
         items:
           - name: DateTime support
             href: /odata/webapi/datetime-support
@@ -145,12 +148,6 @@
     items:
     - name: Getting started
       href: /odata/webapi/netcore-beta1
-    - name: OData Web API 7.0 (.NET Core and .NET Classic)
-      href: /odata/webapi/netcore-0
-    - name: OData Web API 7.0.1 (.NET Core and .NET Classic)
-      href: /odata/webapi/netcore-1
-    - name: OData Web API 7.1.0 (.NET Core and .NET Classic)
-      href: /odata/webapi/webapi-0
   - name: OData Lib
     items:
     - name: Core lib
