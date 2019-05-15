@@ -5,7 +5,7 @@ title : "4.1 DateTime support"
 ms.date: 01/16/2015
 ---
 
-# 4.1 DateTime support
+# DateTime support
 
 This sample will introduce how to support *DateTime* type in Web API OData V4.
 

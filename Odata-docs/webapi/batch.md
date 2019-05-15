@@ -3,7 +3,7 @@ title : "4.12 Batch Support"
 
 ms.date: 05/12/2015
 ---
-# 4.12 Batch Support
+# Batch Support
 
 Batch requests allow grouping multiple operations into a single HTTP request payload and the service will return a single HTTP response with the response to all operations in the requests. This way, the client can optimize calls to the server and improve the scalability of its service.
 
@@ -230,6 +230,7 @@ Service returned error and stop processing.
 
 Now POST a batch request with Preference `odata.continue-on-error`:
 
+```html
 	POST https://localhost:9001/DefaultBatch/$batch HTTP/1.1
 	Accept: multipart/mixed
 	prefer: odata.continue-on-error
@@ -299,3 +300,4 @@ Service returns the error for that request and continue processing additional re
 	  "@odata.context":"https://localhost:9001/DefaultBatch/$metadata#DefaultBatchCustomer/$entity","Id":1,"Name":"Name 1"
 	}
 	--batchresponse_60fec4c2-3ce7-4900-a05a-93f180629a11--
+```

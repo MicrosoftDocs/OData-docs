@@ -180,9 +180,9 @@ public static class ContainerBuilderExtensions
 
 For the usage of the `AddService` overloads, please see the comments for examples. For `AddServicePrototype`, we currently only support the following service types: `ODataMessageReaderSettings`, `ODataMessageWriterSettings` and `ODataSimplifiedOptions`. This design follows the [Prototype Pattern](https://en.wikipedia.org/wiki/Prototype_pattern) where you can register a globally singleton instance (as the prototype) for each service type then you will get an individual clone per scope/request. Modifying that clone will not affect the singleton instance as well as the subsequent clones. That is to say now you don't need to clone a writer setting before editing it with the request-related information just feel safe to modify it for any specific request. 
 
-The `AddDefaultODataServices` method registers a set of service types with default implementations that come from ODataLib. Typically you MUST call this metod first on your container builder before registering any custom service. Please note that the order of registration matters! ODataLib will always use the last service implementation registered for a specific service type.
+The `AddDefaultODataServices` method registers a set of service types with default implementations that come from ODataLib. Typically you MUST call this method first on your container builder before registering any custom service. Please note that the order of registration matters! ODataLib will always use the last service implementation registered for a specific service type.
 
-Currently the default services provided by ODataLib and expected to be overrided by users are:
+Currently the default services provided by ODataLib and expected to be overridden by users are:
 
 |Service|Default Implementation|Lifetime|Prototype?|
 |-------|---------------------|--------|----------|
@@ -241,7 +241,7 @@ public sealed class ODataUriParser
 }
 ```
 
-Then the container will be stored in `ODataUriParserConfiguration` and used in URI parsers. Currently `ODataUriResolver`, `UriPathParser` and `ODataSimplifiedOptions` can be overrided and will affect the behavior of URI parsers.
+Then the container will be stored in `ODataUriParserConfiguration` and used in URI parsers. Currently `ODataUriResolver`, `UriPathParser` and `ODataSimplifiedOptions` can be overridden and will affect the behavior of URI parsers.
 
 ### Design ODataLib Features for DI
 In the future, we may encounter the need in ODataLib to either move existing classes into DI container, or design new classes that work with DI. Based on the past experience about incorporating DI into ODataLib, here are some tips:
@@ -255,4 +255,4 @@ In the future, we may encounter the need in ODataLib to either move existing cla
 <br/>
 
 ### Adapt to Breaking Changes for DI
-After upgrading to ODataLib v7.x, you might find that some parameters or properties in public APIs are missing. Don't panic! Mostly you will find it in the list (see above) of the services registered in the container. And you will also find the request container in the context. Then it's very easy to access the missing objects by calling `IServiceProvider.GetService`. Sometimes retrieving a service every time from the container might look like a performance concern though the actual cost of the DI framework is typically very low (for example, the MS DI Framework uses compiled lambda to optimize for performance). In this case, you might want to cache it in some place but please be cautious that inproper caching may break the lifetime policy of the services.
+After upgrading to ODataLib v7.x, you might find that some parameters or properties in public APIs are missing. Don't panic! Mostly you will find it in the list (see above) of the services registered in the container. And you will also find the request container in the context. Then it's very easy to access the missing objects by calling `IServiceProvider.GetService`. Sometimes retrieving a service every time from the container might look like a performance concern though the actual cost of the DI framework is typically very low (for example, the MS DI Framework uses compiled lambda to optimize for performance). In this case, you might want to cache it in some place but please be cautious that improper caching may break the lifetime policy of the services.

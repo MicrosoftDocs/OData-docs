@@ -47,10 +47,11 @@
     },
     "fileMetadata": {
       "titleSuffix": {
-        "odataclient/**/*.md": "OData Client",
-        "odatalib/**/*.md": "OData Core library",
-        "webapi/**/*.md": "OData AspNet WebAPI",
-        "spatial/**/*.md": "Microsoft Spatial"
+        "/odata/odataclient/**/*.md": "OData Client",
+        "/odata/odatalib/**/*.md": "OData Core library",
+        "/odata/webapi/**/*.md": "OData AspNet WebAPI",
+        "/odata/spatial/**/*.md": "Microsoft Spatial",
+        "/odata/concepts/**/*.md": "OData .NET"
       }
     },
     "template": [],

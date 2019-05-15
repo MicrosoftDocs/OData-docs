@@ -30,6 +30,7 @@ Those flags are all removed, and an enum type would represent all the settings i
 ## New API ##
 
 A flag enum type ValidationKinds to represent all validation kinds in reader and writer:
+
 ```C#
 /// <summary>
 /// Validation kinds used in ODataMessageReaderSettings and ODataMessageWriterSettings.

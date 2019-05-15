@@ -4,7 +4,7 @@ description: "convention model builder"
 
 ms.date: 04/17/2015
 ---
-# 2.1 Introduction to the model builders
+# Introduction to the model builders
 
 The data model is the basis of an OData service. OData service uses an abstract data model called **Entity Data Model** (*EDM*) to describe the exposed data in the service. OData client can issue a *GET* request to the root URL of the OData service with `$metadata` to get an XML representation of the service's data model. 
 In Microsoft ASP.NET Web API 2.2 for OData v4.0, to build a data model for OData service is to create an `IEdmModel` object. There are three ways to build an EDM model in Web API OData:
@@ -13,7 +13,7 @@ In Microsoft ASP.NET Web API 2.2 for OData v4.0, to build a data model for OData
 2. Implicit, non-convention model builder or fluent API
 3. Implicit, convention model builder.
 
-### 2.1.1 Build Edm Model
+###.1 Build Edm Model
 Let’s see the difference between them.
 
 #### Explicit model builder
@@ -52,7 +52,7 @@ public static IEdmModel GetEdmModel()
 
 Basically, it’s recommended to use convention model builder to build Edm model for its simplicity and convenience. However, if user wants to make more control on the model building, or he doesn’t have the corresponding CLR classes, the non-convention model builder and the explicitly method are also very useful.
 
-### 2.1.2 Edm Model Sample 
+###.2 Edm Model Sample 
 We’ll build an Edm model using the above three methods in the following sections respectively. Each section is designed to walk you through every required aspect to build such Edm model. First of all, let’s have a brief view about the Edm model we will build.
 This is a *Customer-Order* business model, in which three entity types, two complex types and one enum type are included. Here’s the detail information about each types:
 
@@ -98,6 +98,7 @@ public class SubAddress : Address
 ```
 
 • **Color** is served as an Enum Type.
+
 ```C#
 public enum Color
 {
@@ -107,8 +108,6 @@ public enum Color
 }
 ```
 
-Here's the class heritance:
+Here's the class inheritance:
 
 ![](../assets/02-01-customer-order.png)
-
-

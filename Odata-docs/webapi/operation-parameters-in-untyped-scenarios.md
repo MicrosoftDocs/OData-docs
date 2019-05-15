@@ -3,7 +3,7 @@ title : "4.8 Operation parameters in untyped scenarios"
 
 ms.date: 03/30/2015
 ---
-# 4.8 Operation paramters in untyped scenarios
+# Operation paramters in untyped scenarios
 
 In this page, we introduce the Function/Action parameter in untyped scenario. For CLR typed scenarios, please refer to [Function page](https://odata.github.io/WebApi/04-06-function-parameter-support/) and [Action page](https://odata.github.io/WebApi/04-07-action-parameter-support/).
 
@@ -238,6 +238,7 @@ Now, We can invoke the function with the entity and collection of entity paramet
 ```
 
 Also, We can invoke the action by issuing a Post on `~/odata/Customers(1)/NS.EntityAction` with the following request body:
+
 ```C#
 {
   "customer":{\"@odata.type\":\"#NS.Customer\",\"Id\":1,\"Name\":\"John\"},
@@ -253,7 +254,3 @@ For other request samples, please refer to [Function page](https://odata.github.
 ### Unbound function/action
 
 Unbound function and action are similiar with bound function and action in the request format. But only attribute routing can be used for unbound function/action routing.
-
-Thanks.
-
-

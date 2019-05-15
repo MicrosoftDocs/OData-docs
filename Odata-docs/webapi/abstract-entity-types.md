@@ -3,7 +3,7 @@ title : "4.5 Abstract entity types"
 
 ms.date: 03/24/2015
 ---
-# 4.5 Abstract entity types
+# Abstract entity types
 
 Since [Web API OData V5.5-beta](https://www.nuget.org/packages/Microsoft.AspNet.OData/5.5.0-beta), it is allowed to:
 
@@ -33,6 +33,7 @@ public class Pig : Animal
 ```
 
 We can use the following codes to build Edm Model:
+
 ```C#
   var builder = new ODataConventionModelBuilder();
   builder.EntityType<Animal>();
@@ -42,6 +43,7 @@ We can use the following codes to build Edm Model:
 ```
 
 Then, we can get the metadata document for *Animal* as:
+
 ```XML
 <EntityType Name="Animal" Abstract="true" />
 <EntityType Name="Dog" BaseType="NS.Animal">
@@ -69,6 +71,7 @@ builder.EntitySet<Animal>("Animals");
 ```
 
 you will get the following exception:
+
 ```C#
 System.InvalidOperationException: The entity set or singlet on 'Animals' is based on type 'NS.Animal' that has no keys defined.
 ```

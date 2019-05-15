@@ -5,7 +5,7 @@ date:   2015-03-30 16:54:10
 
 ms.date: 03/30/2015
 ---
-# 1.1 Preface
+# Preface
 
 ### About
 
@@ -15,7 +15,7 @@ This document aims to provide organized content about how to build a OData V4 se
 
 This is the first version of this document written in April, 2015.
 
-### Targetted audience
+### Targeted audience
 
 This document fits best the readers who has a relative good knowledge of OData (e.g. knowing the OData primitive and structured types, knowing the basic OData URL conventions, knowing the basic OData features such as operations, queries and so on) and would like to explore how some advanced scenarios can be implemented using Web API for OData. 
 

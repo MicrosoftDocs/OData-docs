@@ -4,7 +4,7 @@ description: "Routing Conventions"
 
 ms.date: 04/28/2015
 ---
-# 3.4 Custom routing convention
+# Custom routing convention
 
 It's easy to custom your own routing convention to override the default Web API OData routing convention. Let's see how to target it.
 

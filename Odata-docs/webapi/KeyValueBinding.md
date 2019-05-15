@@ -4,7 +4,7 @@ description: "Key value binding"
 
 ms.date: 09/01/2016
 ---
-# 13.6 Key value binding
+# Key value binding
 
 Since [Web API OData V6.0.0 beta](https://www.nuget.org/packages/Microsoft.AspNet.OData/6.0.0-beta2), Web API OData supports the composite key convention binding.
 
@@ -24,7 +24,7 @@ public class Customer
 ```
 
 Where, **Customer** is an entity type with three properties.
-We will make all these trhee properties as the composite keys for **Customer** entity type.
+We will make all these three properties as the composite keys for **Customer** entity type.
 
 So, we can do:
 
@@ -52,7 +52,7 @@ In Web API OData V6.x, we use the following convention for the composite key par
 
 Therefore, for **StringProp** key property, the action parameter name should be **keyStringProp**.
 
-Let's see how the contoller action looks like:
+Let's see how the controller action looks like:
 
 ```C#
 
@@ -83,4 +83,4 @@ The result is:
 
 ```
 
-**Be noted**, this rule also applys to the navigation property key convention binding.
+**Be noted**, this rule also applies to the navigation property key convention binding.

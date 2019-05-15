@@ -4,7 +4,7 @@ description: "Routing Conventions"
 
 ms.date: 04/27/2015
 ---
-# 3.1 Introduction Routing
+# Introduction Routing
 
 In Web API, **Routing** is how it matches a request URI to an action in a controller. The **Routing** of Web API OData is derived from Web API **Routing** and do more extensions.
 In Web API OData, an *OData controller* (not *API controller*) is severed as the request handler to handle HTTP requests, while the public methods (called action methods) in the controller are invoked to execute the business logic.

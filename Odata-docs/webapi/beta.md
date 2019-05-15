@@ -6,7 +6,7 @@ description: ""
 
 ms.date: 01/16/2015
 ---
-# 7.1 OData Web API 5.4 Beta
+# OData Web API 5.4 Beta
 
 The NuGet packages for OData Web API 5.4 beta are now available on the [NuGet gallery](https://www.nuget.org/).
 

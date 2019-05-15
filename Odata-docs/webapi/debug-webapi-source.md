@@ -4,7 +4,7 @@ description: "how to debug odata webapi source"
 
 ms.date: 06/01/2015
 ---
-# 10.1 How To Debug
+# How To Debug
 
 If you want to debug **OData Lib, WebAPI, Restier** source, open `DEBUG` -> `Options and Settings` in VS, configure below things in `General` tab:
 

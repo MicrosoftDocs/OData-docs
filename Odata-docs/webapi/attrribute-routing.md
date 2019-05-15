@@ -4,7 +4,7 @@ description: "Routing Conventions"
 
 ms.date: 04/28/2015
 ---
-# 3.3 Attribute Routing
+# Attribute Routing
 
 Same as Web API, Web API OData supports a new type of routing called **attribute routing**. It uses two *Attributes* to find **controller** and **action**. One is `ODataPrefixAttribute`, the other is `ODataRouteAttribute`.
 
@@ -38,6 +38,7 @@ public static ODataRoute MapODataServiceRoute(this HttpConfiguration configurati
 ```
 
 However, you can call other version of `MapODataServiceRoute` to custom your own routing conventions. For example:
+
 ```C#
 public static ODataRoute MapODataServiceRoute(this HttpConfiguration configuration, string routeName, string routePrefix, IEdmModel model, IODataPathHandler pathHandler, IEnumerable<IODataRoutingConvention> routingConventions)
 ```

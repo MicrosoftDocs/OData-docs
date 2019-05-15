@@ -3,7 +3,7 @@ title : "4.10 Open type in untyped scenarios"
 
 ms.date: 03/31/2015
 ---
-# 4.10 Open type in untyped scenarios
+# Open type in untyped scenarios
 
 Since Web API OData V5.5, it supports open type and dynamic property on un-type scenario, dynamic properties can be:
 
@@ -106,7 +106,7 @@ const string Payload = "{" +
             "}";
 ```
 
-Url:
+URL:
 
 ```C#
 ~/odata/UntypedSimpleOpenCustomers

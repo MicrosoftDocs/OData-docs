@@ -4,7 +4,7 @@ description: "7.1.0 release notes"
 
 ms.date: 11/19/2018
 ---
-# 14.6 OData Web API 7.1.0 (.NET Core and .NET Classic)
+# OData Web API 7.1.0 (.NET Core and .NET Classic)
 
 The NuGet packages for ASP.NET Web API OData v7.1.0 are available on the [NuGet gallery](https://www.nuget.org/).
 

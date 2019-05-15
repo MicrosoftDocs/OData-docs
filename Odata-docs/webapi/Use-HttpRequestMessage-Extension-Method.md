@@ -4,7 +4,7 @@ description: ""
 
 ms.date: 09/17/2015
 ---
-# 4.22 Use HttpRequestMessage Extension Methods
+# Use HttpRequestMessage Extension Methods
 
 In Microsoft.AspNet.OData, set of HttpRequestMessage extension methods are provided through HttpRequestMessageExtensions. For services that don't use LINQ or ODataQueryOptions.ApplyTo(), those extension methods can offer lots of help.
 

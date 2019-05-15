@@ -6,7 +6,7 @@ description: ""
 
 ms.date: 01/30/2015
 ---
-# 7.2 OData Web API 5.4 RC
+# OData Web API 5.4 RC
 
 The NuGet packages for OData Web API 5.4 RC are now available on the [NuGet gallery](https://www.nuget.org/).
 
