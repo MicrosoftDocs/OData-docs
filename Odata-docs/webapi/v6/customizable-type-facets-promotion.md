@@ -1,7 +1,7 @@
 ---
 title: "Customizable type facets promotion in URI parsing"
 description: ""
-category: "6. OData Features"
+
 author: Khairunj
 ms.author: Khairunj
 ms.date: 02/19/2019

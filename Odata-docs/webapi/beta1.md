@@ -1,8 +1,8 @@
 ---
-title: "7.6 OData Web API 5.6 beta1"
+title: " OData Web API 5.6 beta1"
 description: ""
-category: "7. Release notes"
-permalink: "/5.6 beta1"
+
+
 ms.date: 04/30/2015
 ---
 # 7.6 OData Web API 5.6 beta1

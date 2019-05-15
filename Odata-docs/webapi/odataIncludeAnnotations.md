@@ -1,7 +1,7 @@
 ---
 title: "4.19 Prefer odata.include-annotations"
 description: ""
-category: "4. OData features"
+
 ms.date: 09/16/2015
 ---
 # 4.19 Prefer odata.include-annotations

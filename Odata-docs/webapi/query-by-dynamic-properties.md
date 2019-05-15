@@ -1,6 +1,6 @@
 ---
 title : "4.9 Query by dynamic properties"
-category: "4. OData features"
+
 ms.date: 03/31/2015
 ---
 # 4.9 Query by dynamic properties

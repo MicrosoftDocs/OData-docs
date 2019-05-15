@@ -1,7 +1,7 @@
 ---
-title: "2.6 Define operations"
+title: " Define operations"
 description: "Define operations and operation imports using EdmLib APIs"
-category: "2. EdmLib"
+
 author: Khairunj
 ms.author: Khairunj
 ms.date: 02/19/2019

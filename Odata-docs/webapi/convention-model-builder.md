@@ -1,7 +1,7 @@
 ---
-title: "2.4 Convention model builder"
+title: " Convention model builder"
 description: "convention model builder"
-category: "2. Defining the model"
+
 ms.date: 04/17/2015
 ---
 # 2.4 Convention model builder

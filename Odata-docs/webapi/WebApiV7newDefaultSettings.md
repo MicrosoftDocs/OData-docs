@@ -1,7 +1,7 @@
 ---
-title: "12.2 WebApi 7.0 Default Setting Updates"
+title: " WebApi 7.0 Default Setting Updates"
 description: "Design document for updated default settings for WebApi 7.0"
-category: "12. Design"
+
 ms.date: 06/18/2018
 ---
 

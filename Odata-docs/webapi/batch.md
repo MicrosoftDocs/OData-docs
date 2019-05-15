@@ -1,6 +1,6 @@
 ---
 title : "4.12 Batch Support"
-category: "4. OData features"
+
 ms.date: 05/12/2015
 ---
 # 4.12 Batch Support

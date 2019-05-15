@@ -1,7 +1,7 @@
 ---
-title: "1.2 Read OData Payload"
+title: " Read OData Payload"
 description: "Read OData payload using OData Core APIs"
-category: "1. Core"
+
 author: Khairunj
 ms.author: Khairunj
 ms.date: 02/19/2019

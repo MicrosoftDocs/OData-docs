@@ -1,7 +1,7 @@
 ---
 title : "6.4 Custom Stream Entity"
-category: "6. Customization"
-permalink: "/case-insensitive"
+
+
 ms.date: 09/16/2015
 ---
 # 6.4 Custom Stream Entity

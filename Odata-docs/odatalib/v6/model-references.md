@@ -1,7 +1,7 @@
 ---
-title: "2.9 Model references"
+title: " Model references"
 description: "Model references"
-category: "2. EdmLib"
+
 author: Khairunj
 ms.author: Khairunj
 ms.date: 02/19/2019

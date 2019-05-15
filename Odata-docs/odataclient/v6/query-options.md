@@ -1,7 +1,7 @@
 ---
 title: "Basic Queries Options"
 description: ""
-category: "4. Client"
+
 author: Khairunj
 ms.author: Khairunj
 ms.date: 02/19/2019

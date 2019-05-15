@@ -1,7 +1,7 @@
 ---
 title: "4.17 Alternate keys"
 description: ""
-category: "4. OData features"
+
 ms.date: 08/11/2015
 ---
 # 4.17 Alternate keys

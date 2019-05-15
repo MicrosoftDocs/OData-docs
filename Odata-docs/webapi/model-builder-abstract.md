@@ -1,7 +1,7 @@
 ---
-title: "2.1 Introduction to the model builders"
+title: " Introduction to the model builders"
 description: "convention model builder"
-category: "2. Defining the model"
+
 ms.date: 04/17/2015
 ---
 # 2.1 Introduction to the model builders

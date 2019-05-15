@@ -1,8 +1,8 @@
 ---
-title: "7.8 OData Web API 6.0.0 alpha1"
+title: " OData Web API 6.0.0 alpha1"
 description: ""
-category: "7. Release notes"
-permalink: "/6.0.0 alpha1"
+
+
 ms.date: 06/05/2015
 ---
 # 7.8 OData Web API 6.0.0 alpha1

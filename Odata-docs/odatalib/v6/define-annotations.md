@@ -1,7 +1,7 @@
 ---
-title: "2.7 Define annotations"
+title: " Define annotations"
 description: "Define annotations using EdmLib APIs"
-category: "2. EdmLib"
+
 author: Khairunj
 ms.author: Khairunj
 ms.date: 02/19/2019

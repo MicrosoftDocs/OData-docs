@@ -1,7 +1,7 @@
 ---
-title: "1.1 Write OData Payload"
+title: " Write OData Payload"
 description: "Write OData payload using OData Core APIs"
-category: "1. Core"
+
 author: Khairunj
 ms.author: Khairunj
 ms.date: 02/19/2019

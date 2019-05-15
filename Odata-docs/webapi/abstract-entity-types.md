@@ -1,6 +1,6 @@
 ---
 title : "4.5 Abstract entity types"
-category: "4. OData features"
+
 ms.date: 03/24/2015
 ---
 # 4.5 Abstract entity types

@@ -1,7 +1,7 @@
 ---
 title : "14.6 OData Web API 7.1.0 (.NET Core and .NET Classic)"
 description: "7.1.0 release notes"
-category: "14. 7.x Features "
+
 ms.date: 11/19/2018
 ---
 # 14.6 OData Web API 7.1.0 (.NET Core and .NET Classic)

@@ -1,7 +1,7 @@
 ---
 title : "4.11 Query Options"
 description: "Query Options"
-category: "4. OData features"
+
 ms.date: 05/06/2015
 ---
 # 4.11 Query Options

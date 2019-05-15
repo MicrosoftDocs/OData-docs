@@ -1,9 +1,9 @@
 ---
 
-title: "7.1 OData Web API 5.4 Beta"
+title: " OData Web API 5.4 Beta"
 description: ""
-category: "7. Release notes"
-permalink: "/5.4-beta"
+
+
 ms.date: 01/16/2015
 ---
 # 7.1 OData Web API 5.4 Beta

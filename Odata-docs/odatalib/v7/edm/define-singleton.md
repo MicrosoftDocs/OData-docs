@@ -1,7 +1,7 @@
 ---
-title: "2.4 Define singletons"
+title: " Define singletons"
 description: "Define singleton using EdmLib APIs"
-category: "2. EdmLib"
+
 ---
 
 Defining a singleton in the entity container shares the same simple way as defining an entity set.

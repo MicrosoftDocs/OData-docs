@@ -1,7 +1,7 @@
 ---
-title: "6.5 Customize unsupported types"
+title: " Customize unsupported types"
 description: ""
-category: "6. Customization"
+
 ms.date: 09/11/2017
 ---
 # 6.5 Customize unsupported types

@@ -1,7 +1,7 @@
 ---
 title: "Allow serialization of additional properties"
 description: ""
-category: "6. OData Features"
+
 author: Khairunj
 ms.author: Khairunj
 ms.date: 02/19/2019

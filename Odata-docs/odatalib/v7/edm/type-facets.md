@@ -1,7 +1,7 @@
 ---
 title: "2.11 Specify type facets for type definitions"
 description: "Specify type facets for type definitions"
-category: "2. EdmLib"
+
 ---
 
 Users can specify various type facets for references to type definitions. The only constraint is that the type facets specified should be applicable to the underlying type definition.

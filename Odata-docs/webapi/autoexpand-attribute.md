@@ -1,7 +1,7 @@
 ---
 title: "4.15 AutoExpand attribute"
 description: ""
-category: "4. OData features"
+
 ms.date: 08/11/2015
 ---
 # 4.15 AutoExpand attribute

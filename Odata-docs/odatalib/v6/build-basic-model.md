@@ -1,7 +1,7 @@
 ---
-title: "2.1 Build a basic model"
+title: " Build a basic model"
 description: "Build a basic entity data model using EdmLib APIs"
-category: "2. EdmLib"
+
 author: Khairunj
 ms.author: Khairunj
 ms.date: 02/19/2019

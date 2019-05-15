@@ -1,8 +1,8 @@
 ---
 
-title: "4.3 Nested $filter in $expand"
+title: " Nested $filter in $expand"
 description: ""
-category: "4. OData features"
+
 ms.date: 03/20/2015
 ---
 # 4.3 Nested $filter in $expand

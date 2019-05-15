@@ -1,7 +1,7 @@
 ---
 title: "4.20 Prefer odata.continue-on-error"
 description: ""
-category: "4. OData features"
+
 ms.date: 09/16/2015
 ---
 # 4.20 Prefer odata.continue-on-error

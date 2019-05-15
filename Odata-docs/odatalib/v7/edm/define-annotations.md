@@ -1,7 +1,7 @@
 ---
-title: "2.7 Define annotations"
+title: " Define annotations"
 description: "Define annotations using EdmLib APIs"
-category: "2. EdmLib"
+
 ---
 
 EdmLib supports adding annotations on various model elements, including entity sets, entity types, properties, and so on. Annotations can be put under **the `Annotations` XML element**, or under **the annotated target model elements** (**inline** annotations). Users can specify the **serialization location** using the EdmLib API.

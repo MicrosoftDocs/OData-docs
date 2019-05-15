@@ -1,7 +1,7 @@
 ---
 title: "2.12 Other topics"
 description: "Some other topics that will temporarily not be covered in this tutorial"
-category: "2. EdmLib"
+
 ---
 
 ### References

@@ -1,7 +1,7 @@
 ---
-title: "12.3 Use $skiptoken for server side paging "
+title: " Use $skiptoken for server side paging "
 description: "WebAPI to use $skiptoken for server side paging"
-category: "12. Design"
+
 ms.date: 10/15/2018
 ---
 # Use $skiptoken for server-driven paging

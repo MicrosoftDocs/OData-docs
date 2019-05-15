@@ -1,7 +1,7 @@
 ---
 title: "2.10 Other topics"
 description: "Some other topics that will temporarily not be covered in this tutorial"
-category: "2. EdmLib"
+
 author: Khairunj
 ms.author: Khairunj
 ms.date: 02/19/2019

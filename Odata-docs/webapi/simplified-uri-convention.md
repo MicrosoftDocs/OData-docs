@@ -1,7 +1,7 @@
 ---
 title: "4.23 OData Simplified Uri convention"
 description: ""
-category: "4. OData features"
+
 ms.date: 12/20/2015
 ---
 # 4.23 OData Simplified Uri convention
