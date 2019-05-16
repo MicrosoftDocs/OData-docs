@@ -4,7 +4,7 @@ description: "7.0 Beta for ASP.NET and ASP.NET Core"
 
 ms.date: 12/21/2017
 ---
-# 7.0 Beta1 & Beta2 & Beta4
+# WebAPI 7.0
 
 **Web API OData Beta1, Beta2 & Beta4** includes a new package for [WebApi OData V7.0.0 for ASP.NET Core 2.x](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/).
 The nightly version of this package is available from this [nightly url](https://www.myget.org/F/webapinetcore/api/v3/index.json).

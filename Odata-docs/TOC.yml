@@ -37,8 +37,6 @@
     items:
     - name: Common Schema Description Language (CSDL) 
       href: /odata/concepts/advanced/metadata-detail
-    - name: Reference 2
-      href: /odata/concepts/advanced/reference/reference-2
     - name: Derived types
       href: /odata/concepts/advanced/derived-types
     - name: Containment

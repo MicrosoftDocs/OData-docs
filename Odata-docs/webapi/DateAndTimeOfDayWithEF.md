@@ -17,7 +17,7 @@ So, this doc describes the solution about how to support __Edm.Date__ type with 
 
 It should support to map the type between __date__ type in Database and __Edm.Date__ type through the CLR `System.DateTime` type. The map is shown in the following figure:
 
-![](../assets/12-01-DateTypeMapping.png)
+![](../odata/assets/12-01-DateTypeMapping.png)
 
 So, it should provide the below functionalities for the developer:
 
@@ -36,7 +36,7 @@ Most important, EF doesn’t support the primitive collection. So, Collection of
 
 Below is the date & time type mapping between DB and .NET:
 
-![](../assets/12-01-mapping3.png) 
+![](../odata/assets/12-01-mapping3.png) 
 
 
 So, From .NET view, only `System.DateTime` is used to represent the _date_ value, meanwhile only `System.TimeSpan` is used to represent the __time__ value.
@@ -104,11 +104,11 @@ Where, __Edm.TimeOfDay__ is the corresponding primitive type Kind.
 
 __By default__, Web API has the following mapping between CLR types and Edm types:
 
-![](../assets/12-01-mapping1.png) 
+![](../odata/assets/12-01-mapping1.png) 
 
 We should provide a methodology to map `System.DateTime` to __Edm.Date__ type, and `System.TimeSpan` to __Edm.TimeOfDay__ type as follows:
 
-![](../assets/12-01-mapping2.png)
+![](../odata/assets/12-01-mapping2.png)
 
 #### Extension methods
 
@@ -155,7 +155,7 @@ In this class, it will identify the __Column__ attribute applied to `System.Date
 
 After insert the instance of ColumnAttributeEdmPropertyConvention into the conventions in the convention model builder:
 
-![](../assets/12-01-conventions.png)
+![](../odata/assets/12-01-conventions.png)
 
 For example, the developer can do as follows to build the Edm model:
 ```C#

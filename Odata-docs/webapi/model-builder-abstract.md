@@ -110,4 +110,4 @@ public enum Color
 
 Here's the class inheritance:
 
-![](../assets/02-01-customer-order.png)
+![](../odata/assets/02-01-customer-order.png)

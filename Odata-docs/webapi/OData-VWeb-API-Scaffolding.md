@@ -15,39 +15,39 @@ The scaffolding is used to generate controller code for model class. Two kinds o
 #### Scaffolder for model without entity framework:
 Before using scaffolding, you need to create a web api project and add model classes, the following is a sample:
 
-![](../assets/11-01-ProjAndClass.PNG)
+![](../odata/assets/11-01-ProjAndClass.PNG)
 
 Then, you can right click "Controller" folder in solution explorer, select "Add" -> "Controller". "Microsoft OData v4 Web API Controller" will be in the scaffolder list, as following:
 
-![](../assets/11-01-SelectController.PNG)
+![](../odata/assets/11-01-SelectController.PNG)
 
 Select scaffold item, then choose a model class you want to generate the controller. You can also select the "Using Async" if your data need to be got in Async call.
 
-![](../assets/11-01-SelectModelClass.PNG)
+![](../odata/assets/11-01-SelectModelClass.PNG)
 
 After click "Add", the controller will be generated and added into your project. Meanwhile, all reference needed, including OData Lib and OData Web API, will be added into the project, too.
 
-![](../assets/11-01-Complete.PNG)
+![](../odata/assets/11-01-Complete.PNG)
 
 #### Scaffolder for model using entity framework:
 If want to use entity framework as provider in service, no matter whether derived class of DbContext contained in project, when right click "Controller" folder in solution explorer, select "Add" -> "Controller" -> "Microsoft OData v4 Web API Controller Using Entity Framework" as scaffolder:
 
-![](../assets/11-01-SelectScaffolderWithContext.PNG)
+![](../odata/assets/11-01-SelectScaffolderWithContext.PNG)
 
 Then you will see as following:
 
-![](../assets/11-01-SelectModelWithoutContext.PNG)
+![](../odata/assets/11-01-SelectModelWithoutContext.PNG)
 
 Please select the existing Model (need build before scaffolding). You can select the existing data context class or add a new one:
 
-![](../assets/11-01-AddNewDataContext.PNG)
+![](../odata/assets/11-01-AddNewDataContext.PNG)
 
 After click "Add", the controller will be generated and added into your project, new data context class will be added if needed. Meanwhile, all reference needed, including OData Lib and OData Web API, will be added into the project, too.
 
 ### Change WebApiConfig.cs File
 After generating the controller code, you may need to add some code in WebApiConfig.cs to generate model. Actually the code needed are in the comment of generated controller:
 
-![](../assets/11-01-ChangeWebApiConfig.PNG)
+![](../odata/assets/11-01-ChangeWebApiConfig.PNG)
 
 Just need to copy/paste the code to WebApiConfig.cs.
 

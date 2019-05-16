@@ -8,6 +8,7 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
+# OData Uri Parser
 
 This post is intended to guide you through the UriParser for OData V4, which is released within ODataLib V6.0 and later.
 
@@ -17,7 +18,7 @@ You may have already read the following posts about OData UriParser in ODataLib 
 - [Parsing OData Paths, $select and $expand using the ODataUriParser](https://blogs.msdn.com/b/alexj/archive/2013/05/10/parsing-odata-paths-select-and-expand-using-the-odatauriparser.aspx)
 Some parts of the articles still apply to V4 UriParser, such as introduction for ODataPath and QueryNode hierarchy. In this post, we will deal with API changes and features newly introduced.
 
-### UriParser Overview
+## UriParser Overview
 The main reference document for UriParser is the URL Conventions specification. The ODataUriParser class is its main implementation in ODataLib.
 
 The ODataUriParser class has two main functionalities:
@@ -28,7 +29,7 @@ The ODataUriParser class has two main functionalities:
 
 We’ve also introduced the new ODataQueryOptionParser class in ODataLib 6.2+, in case you do not have the full resource path and only want to parse the query options only. The ODataQueryOptionParser shares the same API signature for parsing query options, you can find more information below.
 
-### Using ODataUriParser
+## Using ODataUriParser
 The use of ODataUriParser class is easy and straightforward, as we mentioned, we do not support static methods now, we will begin from creating an ODataUriParser instance.
 
 ODataUriParser has only one constructor:
@@ -51,7 +52,7 @@ Uri fullUri = new Uri("https://services.odata.org/V4/OData/OData.svc/Products");
 ODataUriParser parser = new ODataUriParser(model, serviceRoot, fullUri);
 ```
 
-### Parsing Resource Path
+## Parsing Resource Path
 You can use the following API to parse resource path:
 
 ``` csharp
@@ -65,7 +66,7 @@ The ODataPath holds the enumeration of path segments for resource path. All path
 
 In our demo, the resource Path in the full Uri is Products(1), then the result ODataPath would contain two segments: one EntitySetSegment for EntitySet named Products, and the other KeySegment for key with integer value “1” .
 
-### Parsing Query Options
+## Parsing Query Options
 ODataUriParser supports parsing following query options: $select, $expand, $filter, $orderby, $search, $top, $skip, and $count.
 
 For the first five, the parsing result is an instance of class XXXClause, which represents the query option as an Abstract Syntax Tree (with semantic information bound). Note that $select and $expand query options are merged together in one SelectExpandClause class. The latter three all have primitive type value, and the parsing result is the corresponding primitive type wrapped by Nullable class.
@@ -109,7 +110,7 @@ SearchQueryOption
                                     Text = b
 ```
 
-### Using ODataQueryOption Parser
+## Using ODataQueryOption Parser
 There may be some cases that you already know the query context information but does not have the full request Uri. The ODataUriParser does not seems to be available as it will always require the full Uri, then the user would have to fake one.
 
 In ODataLib 6.2 we shipped a new Uri parser that targets at query options only, it requires the model and type information be provided through its constructor, then it could be used for query options parsing as same as ODataUriParser.
@@ -156,4 +157,3 @@ long? skip = parser.ParseSkip();                // parse $skip (null)
 bool? count = parser.ParseCount();              // parse $count
 
 ```
-
