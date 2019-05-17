@@ -1,6 +1,6 @@
 ---
 title: " Use ODataUriParser"
-description: "Parse odata uri using OData Core APIs"
+description: "Parse OData uri using OData Core APIs"
 
 ---
 

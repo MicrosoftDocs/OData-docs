@@ -8,6 +8,8 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
+# Query options
+[!INCLUDE[appliesto-odataclient](/odata/includes/appliesto-odataclient-v6)]
 
 ## $filter
 

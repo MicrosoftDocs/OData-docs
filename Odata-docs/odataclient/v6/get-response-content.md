@@ -8,6 +8,8 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
+# Data modification response
+[!INCLUDE[appliesto-odataclient](/odata/includes/appliesto-odataclient-v6)]
 
 When the service doesn't respond with `204 No Content` to data modification requests, the response contains a non-empty body. The code below helps to retrieve the body content:
 

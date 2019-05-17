@@ -164,5 +164,3 @@ Now, you can query the metadata document for capabilites vocabulary annotation a
   </edmx:DataServices>
 </edmx:Edmx>
 ```
-
-Thanks.

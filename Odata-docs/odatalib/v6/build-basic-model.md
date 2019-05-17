@@ -17,7 +17,8 @@ This section shows how to build a basic entity data model using EdmLib APIs.
  - [Visual Studio 2013 Update 4](https://go.microsoft.com/fwlink/?LinkId=517284)
  - [Microsoft.OData.Edm 6.11.0](https://www.nuget.org/packages/Microsoft.OData.Edm)
  - .NET 4.5
- <br />
+
+
  
 ### Create the Visual Studio Project
 In Visual Studio, from the **File** menu, select **New > Project**.
@@ -95,7 +96,8 @@ This code:
  - Defines a **keyless** complex type `Address` within the namespace `Sample.NS`;
  - Adds three structural properties `Street`, `City` and `PostalCode`;
  - Adds the `Sample.NS.Address` type to the model.
- <br />
+
+
 
 ### Add an Enumeration Type *Category*
 In the **SampleModelBuilder.cs** file, add the following code into the `SampleModelBuilder` class:
@@ -128,7 +130,8 @@ This code:
  - Sets the attribute `IsFlags` to `true` so multiple members can be selected simultaneously;
  - Adds three enumeration members `Books`, `Dresses` and `Sports`;
  - Adds the `Sample.NS.Category` type to the model.
- <br />
+
+
 
 ### Add an Entity Type *Customer*
 In the **SampleModelBuilder.cs** file, add the following code into the `SampleModelBuilder` class:
@@ -167,7 +170,8 @@ This code:
  - Adds a **nullable** property `Interests` of the type `Sample.NS.Category`;
  - Adds a **non-nullable** property `Address` of the type `Sample.NS.Address`;
  - Adds the `Sample.NS.Customer` type to the model.
- <br />
+
+
  
 ### Add the Default Entity Container
 In the **SampleModelBuilder.cs** file, add the following code into the `SampleModelBuilder` class:
@@ -195,7 +199,8 @@ This code:
 
  - Defines an entity container `DefaultContainer` of the namespace `Sample.NS`;
  - Adds the container to the model.
- <br />
+
+
  
 Note that each model **MUST** define exactly one entity container (*aka*. the `DefaultContainer`) which can be referenced later by the `_model.EntityContainer` property.
 

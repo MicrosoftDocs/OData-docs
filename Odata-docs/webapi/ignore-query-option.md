@@ -6,7 +6,7 @@ ms.date: 08/11/2015
 ---
 # Ignore query option
 
-In OData WebApi 5.7, we can ignore some query options when calling `ODataQueryOption` `ApplyTo` method, this is helpful when your odata service is integrate with other service that may already applied those query options. 
+In OData WebApi 5.7, we can ignore some query options when calling `ODataQueryOption` `ApplyTo` method, this is helpful when your OData service is integrate with other service that may already applied those query options. 
 
 ### Customize 
 

@@ -81,4 +81,3 @@ Let's show some query request examples:
   - ~/odata/Customers?$filter=date(Birthday) lt 2015-03-23
   - ~/odata/Customers?$filter=time(Birthday) eq 03:04:05.90100
 
-Thanks.

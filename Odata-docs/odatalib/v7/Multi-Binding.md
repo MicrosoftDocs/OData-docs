@@ -15,11 +15,14 @@ The valid format of a binding path is:
 
 For example, we have containment in [Trippin service](https://services.odata.org/V4/(S(qqntzoewadope25a3bh2d5bi))/TripPinServiceRW/$metadata)：
 
-Person <br />
-&nbsp;&nbsp;|---- Trips (containment) <br />
-&nbsp;&nbsp;&nbsp;&nbsp;|---- PlanItems (containment) <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---- NS.Flight (derived type of PlanItem) <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---- Airline (navigation property) <br />
+Person
+
+```html
+|---- Trips (containment)
+    |---- PlanItems (containment)
+        |---- NS.Flight (derived type of PlanItem)
+            |---- Airline (navigation property)
+```
 
 Now we bind entityset `Airlines` to the property `Airline`. Since for navigation property binding, we need start from non-containment entityset, then route to navigation property with binding path. So we should have binding:
 
@@ -41,22 +44,27 @@ Let's have another example of complex which have multi bindings. `City` is a nav
 </EntitySet>
 ```
 
-For single binding, binding path is just the navigation property name or type cast appending navigation property name. But for multiple bindings, binding path becames an essential info to create a binding.
+For single binding, binding path is just the navigation property name or type cast appending navigation property name. But for multiple bindings, binding path becomes an essential info to create a binding.
 As a result, following APIs are added:
 
 ### EDM ###
-`public EdmNavigationPropertyBinding (IEdmNavigationProperty navigationProperty, IEdmNavigationSource target, IEdmPathExpression bindingPath)` <br />
+`public EdmNavigationPropertyBinding (IEdmNavigationProperty navigationProperty, IEdmNavigationSource target, IEdmPathExpression bindingPath)`
+
 Use this API to create EdmNavigationPropertyBinding instance if the bindingpath is not navigation property name.
 
- `public void AddNavigationTarget (IEdmNavigationProperty navigationProperty, IEdmNavigationSource target, IEdmPathExpression bindingPath)` <br />
+ `public void AddNavigationTarget (IEdmNavigationProperty navigationProperty, IEdmNavigationSource target, IEdmPathExpression bindingPath)`
+
 Add a navigation property binding and specify the whole binding path.
 
-`public virtual Microsoft.OData.Edm.IEdmNavigationSource FindNavigationTarget (IEdmNavigationProperty navigationProperty, IEdmPathExpression bindingPath)` <br />
+`public virtual Microsoft.OData.Edm.IEdmNavigationSource FindNavigationTarget (IEdmNavigationProperty navigationProperty, IEdmPathExpression bindingPath)`
+
 Find navigation property with its binding path.
 
 ### ODL ###
-`public ODataQueryOptionParser (IEdmModel model, ODataPath odataPath, String queryOptions)` <br />
-`public ODataQueryOptionParser(IEdmModel model, ODataPath odataPath, IDictionary<string, string> queryOptions, IServiceProvider container)` <br />
+`public ODataQueryOptionParser (IEdmModel model, ODataPath odataPath, String queryOptions)`
+
+`public ODataQueryOptionParser(IEdmModel model, ODataPath odataPath, IDictionary<string, string> queryOptions, IServiceProvider container)`
+
 Possibly need ODataPath to resolve navigation target of segments in query option if the navigation property binding path is included in both path and query option. Refer: [Navigation property under complex type](https://luoyan0517.github.io/odata.net/v7/#06-18-navigation-under-complex).
 
 Take the above complex scenario for example. For generating this kind of model, we need use the new AddNavigationTarget API, and different navigation target can be specified:
@@ -65,6 +73,7 @@ Take the above complex scenario for example. For generating this kind of model, 
 people.AddNavigationTarget(cityOfAddress, cities1, new EdmPathExpression("HomeAddress/City"));
 people.AddNavigationTarget(cityOfAddress, cities2, new EdmPathExpression("Addresses/City"));
 ```
+
 `cityOfAddress` is the variable to present navigation property `City` under `Address`, and `cities1` and `cities2` are different entityset based on entity type `City`.
 
 To achieve the navigation target, the new FindNavigationTarget API can be used:

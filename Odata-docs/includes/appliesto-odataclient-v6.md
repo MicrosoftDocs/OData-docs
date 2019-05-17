@@ -1,0 +1,1 @@
+**Applies To**: ![yes](/odata/assets/doc-assets/yes.png) OData Client V6

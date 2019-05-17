@@ -339,6 +339,4 @@ __~/Customers?$filter=Birthday eq 2017-12-31__
     }
   ]
 }
-``` 
-
-Thanks.
+```

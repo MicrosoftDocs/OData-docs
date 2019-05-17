@@ -192,5 +192,3 @@ Then you can get the following result:
 ```
 
 Where, `CategoryId` is nullable while navigation property `Supplier` is nullable too.
-
-Thanks.

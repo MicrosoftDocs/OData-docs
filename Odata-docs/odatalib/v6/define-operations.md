@@ -68,7 +68,8 @@ This code:
  - Adds a **binding parameter** `customer` of type `Sample.NS.Customer`;
  - Adds a parameter `rating` of type `Edm.Int32`;
  - Adds the `Sample.NS.Rate` action to the model.
- <br />
+
+
 
 ### Add an Unbound Function *MostExpensive*
 In the **SampleModelBuilder.cs** file, add the following code into the `SampleModelBuilder` class:
@@ -122,7 +123,8 @@ This code:
  - Defines an **unbound composable function** `MostExpensive` within the namespace `Sample.NS`;
  - Has **no parameter**;
  - Adds the `Sample.NS.MostExpensive` action to the model.
- <br />
+
+
 
 ### Add a Function Import *MostValuable*
 In the **SampleModelBuilder.cs** file, add the following `using` clause:
@@ -178,7 +180,8 @@ This code:
 
  - Directly adds a **function import** `MostValuable` into the default container;
  - Lets the function import return a `Sample.NS.Order` from and **limited to** the entity set `Orders`;
- <br />
+
+
  
 The `Sample.NS.MostValuable` function import is actually the `Sample.NS.MostExpensive` function exposed in the entity container with a **different name** (could be **arbitrary valid name**).
 

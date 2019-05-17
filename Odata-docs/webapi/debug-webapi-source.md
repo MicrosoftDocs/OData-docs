@@ -1,6 +1,6 @@
 ---
 title: " How To Debug"
-description: "how to debug odata webapi source"
+description: "how to debug OData webapi source"
 
 ms.date: 06/01/2015
 ---

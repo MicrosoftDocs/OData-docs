@@ -73,7 +73,7 @@ PM> Install-Package Microsoft.AspNet.OData
 
  * [ [Issue #1510](https://github.com/OData/WebApi/issues/1510) ] move $top & $skip execute as late as possible.
  
- * [ [Issue #1489](https://github.com/OData/WebApi/issues/1489) ] Return Task<> from method of controller doesn't pick up odata output formatter (Core).
+ * [ [Issue #1489](https://github.com/OData/WebApi/issues/1489) ] Return Task<> from method of controller doesn't pick up OData output formatter (Core).
  
  * [ [Issue #1407](https://github.com/OData/WebApi/issues/1407) ] Fix the BaseAddressFactory in ODataMediaTypeFormatter .
   

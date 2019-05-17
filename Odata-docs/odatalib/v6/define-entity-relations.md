@@ -60,7 +60,8 @@ This code:
  - Adds a navigation property `Friends` to the entity type `Customer`;
  - Sets the `ContainsTarget` property to `false` since this property has **no contained entities** and targets one or more `Customer` entites in the entity set `Customers`;
  - Sets the `TargetMultiplicity` property to `EdmMultiplicity.Many` indicating that one customer can have **many** orders. Other possible values are `ZeroOrOne` and `One`;
- <br />
+
+
  
 ### Add an Entity Type *Order* and an Entity Set *Orders*
 Just as how we added the entity set `Customers`, we first add an entity type `Order` and then the entity set `Orders`.
@@ -179,7 +180,8 @@ This code:
 
  - Adds a `Purchases` property targetting one or more **settled orders** in the entity set `Orders`;
  - Adds a `Intentions` property targetting a **contained entity set** of **unsettled orders** that should not be listed in the entity set `Orders`.
- <br />
+
+
 
 ### Run the Sample
 Build and run the sample. Then open the **csdl.xml** file under the **output directory**. The content of **csdl.xml** should look like the following:

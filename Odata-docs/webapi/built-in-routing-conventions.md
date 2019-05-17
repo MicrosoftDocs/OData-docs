@@ -10,19 +10,18 @@ When Web API gets an OData request, it maps the request to a controller name and
 
 This article describe the built-in OData routing conventions. These conventions are designed specifically for OData endpoints, and they replace the default Web API routing system. (The replacement happens when you call MapODataRoute.)
 
-
 ### Built-in Routing Conventions
 Before describe the OData routing conventions in Web API, it’s helpful to understand OData URIs. An OData URI consists of:
 
 * The service root
-* The odata path
+* The OData path
 * Query options
 
 For example: `https://example.com/odata/Products(1)/Supplier?$top=2 `
 
 * *The service root* : https://example.com/odata
-* *The odata path* : Products(1)/Supplier
-* *Query options* : ?$top=2  
+* *The OData path* : Products(1)/Supplier
+* *Que OData ons* : ?$top=2  
 
 
 For OData routing, the important part is the OData path. The OData path is divided into segments, each segments are seperated with '/'.

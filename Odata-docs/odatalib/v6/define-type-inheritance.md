@@ -65,7 +65,8 @@ This code:
  - Defines a **derived entity type** `UrgentOrder` within the namespace `Sample.NS` whose base type is `Sample.NS.Order`;
  - Adds a structural property `Deadline` of type `Edm.Date`;
  - Adds the `Sample.NS.UrgentOrder` type to the entity data model.
- <br />
+
+
 
 ### Add a Derived Complex Type *WorkAddress*
 In the **SampleModelBuilder.cs** file, add the following code into the `SampleModelBuilder` class:
@@ -118,7 +119,8 @@ This code:
  - Defines a **derived complex type** `WorkAddress` within the namespace `Sample.NS` whose base type is `Sample.NS.Address`;
  - Adds a structural property `Company` of type `Edm.String`;
  - Adds the `Sample.NS.WorkAddress` type to the entity data model.
- <br />
+
+
 
 ### Run the Sample
 Build and run the sample. Then open the **csdl.xml** file under the **output directory**. The content of **csdl.xml** should look like the following:

@@ -5,17 +5,21 @@ ms.date: 03/24/2015
 ---
 # Abstract entity types
 
+[!INCLUDE[appliesto-webapi](/odata/includes/appliesto-webapi-v7)]
+[!INCLUDE[appliesto-webapi](/odata/includes/appliesto-webapi-v6)]
+
 Since [Web API OData V5.5-beta](https://www.nuget.org/packages/Microsoft.AspNet.OData/5.5.0-beta), it is allowed to:
 
-1. define abstract entity types without keys. 
+1. define abstract entity types without keys.
 2. define abstract type (entity & complex) without any properties.
 3. define derived entity types with their own keys.
 
 Let's see some examples:
 
-#### Entity type example:
+## Entity type example
 
 The CLR model is shown as below:
+
 ```C#
 public abstract class Animal
 {
@@ -61,11 +65,13 @@ Then, we can get the metadata document for *Animal* as:
 ```
 
 Note:
+
 1. *Animal* is an abstract entity type without any keys and any properties
 2. *Dog* & *Pig* are two sub entity types derived from *Animal* with own keys. 
 
 However, it's obvious that abstract entity type without keys can't be used to define any navigation sources (entity set or singleton). 
 So, if you try to:
+
 ```C#
 builder.EntitySet<Animal>("Animals");
 ```
@@ -76,7 +82,7 @@ you will get the following exception:
 System.InvalidOperationException: The entity set or singlet on 'Animals' is based on type 'NS.Animal' that has no keys defined.
 ```
 
-#### Complex type example
+## Complex type example
 
 Let's see a complex example. The CLR model is shown as below:
 
@@ -95,7 +101,9 @@ public class Line : Graph
   public IList<Point> Vertexes { get; set; }
 }
 ```    
+
 We can use the following codes to build Edm Model:
+
 ```C#
   var builder = new ODataConventionModelBuilder();
   builder.ComplexType<Graph>();
@@ -103,6 +111,7 @@ We can use the following codes to build Edm Model:
 ```
 
 Then, we can get the metadata document for *Graph* as:
+
 ```XML
 <ComplexType Name="Graph" Abstract="true" />
 <ComplexType Name="Point" BaseType="NS.Graph">
@@ -114,6 +123,5 @@ Then, we can get the metadata document for *Graph* as:
 </ComplexType>
 ```
 
-Where, *Graph* is an abstract complex type without any properties.      
+Where, *Graph* is an abstract complex type without any properties.
 
-Thanks.

@@ -8,7 +8,9 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
- 
+# Client tracking
+[!INCLUDE[appliesto-odataclient](/odata/includes/appliesto-odataclient-v6)]
+
 OData Client for .NET supports two levels tracking : entity tracking and property tracking(only top level properties). Entity tracking enables you to track an entity in `DataServiceContext`. You can enable property tracking by aid of `DataServiceCollectionOfT`.
 
 ## Entity Tracking 
