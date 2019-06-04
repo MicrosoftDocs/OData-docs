@@ -22,11 +22,6 @@
           "**/*.md",
           "**/*.yml"
         ],
-        "exclude": [
-          "**/obj/**",
-          "**/includes/**",
-          "**/_themes/**"
-        ],
         "src": "v6",
         "dest": "."
       },
@@ -34,11 +29,6 @@
         "files": [
           "**/*.md",
           "**/*.yml"
-        ],
-        "exclude": [
-          "**/obj/**",
-          "**/includes/**",
-          "**/_themes/**"
         ],
         "src": "v7",
         "dest": "."
@@ -57,6 +47,22 @@
           "_themes/**",
           "_themes.pdf/**"
         ]
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "v6",
+        "dest": "."
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "v7",
+        "dest": "."
       }
     ],
     "overwrite": [],
