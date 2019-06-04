@@ -1,12 +1,18 @@
 ---
 title: " Dependency Injection Support"
 description: ""
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+
+# Dependency injection
 
 From ODataLib v7.0, we introduced [Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection) (or "DI" in short) support to dramatically increase the extensibility of the library where users can plug in their custom implementations and policies in an elegant way. Introduction of DI can also simplify the API and implementation of ODataLib by eliminating redundant function parameters and class properties. Since ODataLib is a reusable library, we don't take direct dependency on any existing DI framework. Instead we build and rely on an abstraction layer including several simple interfaces that decouples ODataLib from any concrete DI implementation. Users of ODataLib will be free to choose whatever DI framework they like to work with ODataLib.
 
-### Introduction to DI
+## Introduction to DI
 For a complete understanding of the concept of DI and how it works in a typical ASP.NET Web application, please refer to the [introduction](https://docs.asp.net/en/latest/fundamentals/dependency-injection.html) from ASP.NET Core.
 
 To make DI work properly with ODataLib, basically there are several things you have to do within your application:
@@ -15,9 +21,7 @@ To make DI work properly with ODataLib, basically there are several things you h
  - Register the required services from both ODataLib and your application.
  - Build and use the container (to retrieve the services) in ODataLib.
 
-<br/>
-
-### Implement Your Container Builder
+## Implement Your Container Builder
 Since ODataLib is based on .NET, we use the interface `IServiceProvider` from .NET Framework as the abstraction of "container". The container itself is read-only (as you can see, `IServiceProvider` only has a `GetService` method) so we designed another interface `IContainerBuilder` in ODataLib to build the container. Below is the [source](https://github.com/OData/odata.net/blob/ODataV4-7.x/src/Microsoft.OData.Core/IContainerBuilder.cs) of `IContainerBuilder`:
 
 ```C#

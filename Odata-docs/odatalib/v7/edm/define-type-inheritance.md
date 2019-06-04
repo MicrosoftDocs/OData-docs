@@ -1,8 +1,13 @@
 ---
 title: " Define type inheritance"
 description: "Define type inheritance using EdmLib APIs"
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Define type inheritance
 
 Type inheritance means defining a type by **deriving from another type**. EdmLib supports defining both **derived entity types** and **derived complex types**. Adding a derived entity (complex) type is almost identical to adding a normal entity (complex) type except that an additional **base type** needs to be specified.
 
@@ -116,4 +121,4 @@ This code:
 ### Run the sample
 Build and run the sample. Then open the file **csdl.xml** under the **output directory**. The content should look like the following:
 
-![](../../assets/2015-04-19-csdl.png)
+![](/odata/assets/2015-04-19-csdl.png)

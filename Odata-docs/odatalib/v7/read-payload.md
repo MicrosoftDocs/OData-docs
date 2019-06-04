@@ -1,8 +1,13 @@
 ---
 title: " Read OData payload"
 description: "Read OData payload using OData Core APIs"
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Reading a payload
 
 The reader API is similar to the writer API, and you can expect symmetry here.
 

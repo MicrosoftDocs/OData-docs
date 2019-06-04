@@ -9,7 +9,8 @@ ms.topic: article
 ms.service: multiple
 ---
 
-## Background 
+# Client Annotation Support
+[INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v6.md)]
 
 Before ODataLib 6.10.0, OData core lib has supported metadata annotations for metadata element in model and instance annotations for a particular instance in payload. But on client side, there isn’t a good way to get these  annotations. So In ODataLib 6.10.0, we provided several APIs to enable user to get annotations on client side. Basically, OData client follows the rules defined in [OData V4.0 protocol](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html) (see [6.4 Vocabulary Extensibility](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html#_Toc406398214)) to get instance annotations or metadata annotations.
 

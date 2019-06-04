@@ -37,7 +37,7 @@ After registering the Web OData routes, we define an OData route template in the
 ~/odata/~
 ```
 
-Now, the Web API OData framework can handle the HTTP request. It tries to match the request Uri against one of the route templates in the routing table. Basically, the following URIs match the odata route:
+Now, the Web API OData framework can handle the HTTP request. It tries to match the request Uri against one of the route templates in the routing table. Basically, the following URIs match the OData route:
 
 ```C#
 ~/odata/Customers
@@ -47,14 +47,14 @@ Now, the Web API OData framework can handle the HTTP request. It tries to match 
 
 Where, **Customers** is the entity set names.
 
-However, the following URI does not match the odata route, because it doesn't match "odata"  prefix segment:
+However, the following URI does not match the OData route, because it doesn't match "odata"  prefix segment:
 ```C#
 ~/myodata/Customers(1)
 ```
 
 ### Routing Convention
 
-Once the odata route is found, Web API OData will parse the request Uri to get the path segments. Web API OData first uses the **[ODatalib](https://www.nuget.org/packages/Microsoft.OData.Core/)** to parse the request Uri to get the ODL path segments, then convert the ODL path segments to Web API OData path segments.
+Once the OData route is found, Web API OData will parse the request Uri to get the path segments. Web API OData first uses the **[ODatalib](https://www.nuget.org/packages/Microsoft.OData.Core/)** to parse the request Uri to get the ODL path segments, then convert the ODL path segments to Web API OData path segments.
 Once the Uri Parse is finished, Web API OData will try to find the corresponding OData controller and action. The process to find controller and action are the main part of **Routing Convention**.
 Basically, there are two parts of **Routing Convention**:
 

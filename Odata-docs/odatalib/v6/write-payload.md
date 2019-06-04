@@ -9,13 +9,15 @@ ms.topic: article
 ms.service: multiple
 ---
 
+# Write OData payload
+
 There are several kinds of OData payload, includes service document, model metadata, feed, entry, entity references(s), complex value(s), primitive value(s). OData Core library is designed to write and read all these payloads.
 
 We'll go through each kind of payload here. But first, we'll set up the necessary code that is common to all kind of payload.
 
 Class ODataMessageWriter is the entrance class to write the OData Payload.
 
-To construct an ODataMessageWriter instance, you'll need to provide an IODataResponseMessage, or IODataRequestMessage, depends on if you are writing a response or a request. 
+To construct an ODataMessageWriter instance, you'll need to provide an IODataResponseMessage, or IODataRequestMessage, depends on if you are writing a response or a request.
 
 OData Core library provides no implementation of these two interfaces, because it is different in different scenario.
 
@@ -85,7 +87,8 @@ IEdmModel model = builder
 
 Now we'll go through on each kind of payload.
 
-### Write metadata
+## Write metadata
+
 Write metadata is simple, just use WriteMetadataDocument method in ODataMessageWriter.
 
 ``` csharp
@@ -93,7 +96,7 @@ Write metadata is simple, just use WriteMetadataDocument method in ODataMessageW
 ```
 
 Please be noticed that this API only works when:
-1. Writting response message, that means when constructing the ODataMessageWriter, you mut supply IODataRequestMessage.
+1. Writing response message, that means when constructing the ODataMessageWriter, you must supply IODataRequestMessage.
 2. A model is supplied when constructing ODataMessageWriter.
 
 So the following two examples won't work.
@@ -108,8 +111,9 @@ ODataMessageWriter writer = new ODataMessageWriter((IODataResponseMessage) messa
             writer.WriteMetadataDocument();
 ```
 
-### Write service document
-To write a service document, first create a ODataServiceDocument instance, which will contains all the neccessary information in a service document, that include, entity set, singleton and function import.
+## Write service document
+
+To write a service document, first create a ODataServiceDocument instance, which will contains all the necessary information in a service document, that include, entity set, singleton and function import.
 
 In this example, we create a service document that contains two entity sets, one singleton and one function import.
 
@@ -158,9 +162,9 @@ Then let's call WriteServiceDocument method to write it.
 writer.WriteServiceDocument(serviceDocument);
 ```
 
-However, this would not work. An ODataException will threw up said that "The ServiceRoot property in ODataMessageWriterSettings.ODataUri must be set when writing a payload." This is because a valid service document will contains a context url reference to the metadata url, which need to be told in ODataMessageWriterSettings. 
+However, this would not work. An ODataException will threw up said that "The ServiceRoot property in ODataMessageWriterSettings.ODataUri must be set when writing a payload." This is because a valid service document will contains a context URL reference to the metadata URL, which need to be told in ODataMessageWriterSettings.
 
-This service root informaiton is provided in ODataUri.ServiceRoot, as this code shows.
+This service root information is provided in ODataUri.ServiceRoot, as this code shows.
 
 ``` csharp
 ODataMessageWriterSettings settings = new ODataMessageWriterSettings();
@@ -195,7 +199,7 @@ await writer.WriteServiceDocumentAsync(serviceDocument);
 
 A lot of API in writer and reader provides async version of API, they all work as a async complement of the API that without Async suffix.
 
-### Write Feed
+## Write Feed
 Collection of entities is called feed in OData Core Library.
 Unlike metadata or service document, you must create another writer on ODatMessageWriter to write the feed. The library is designed to write feed in an streaming way, which means the entry is written one by one. 
 
@@ -257,7 +261,8 @@ ODataMessageWriterSettings settings = new ODataMessageWriterSettings();
             odataWriter.WriteEnd();
 ```
 
-When writing feed, you can provide a next page, which is used in server driven paging. 
+When writing feed, you can provide a next page, which is used in server driven paging.
+
 ``` csharp
 ODataFeed feed = new ODataFeed();
             feed.NextPageLink = new Uri("Customers?next", UriKind.Relative);
@@ -284,7 +289,7 @@ ODataFeed feed = new ODataFeed();
 {"@odata.context":"https://services.odata.org/V4/OData/OData.svc/$metadata#Customers","value":[],"@odata.nextLink":"Customers?next"}
 ```
 
-There is no rule on next link, as long as it is a valid url.
+There is no rule on next link, as long as it is a valid URL.
 
 To write entry in the feed, create the ODataEntry instance and call WriteStart and WriteEnd on it between the WriteStart and WriteEnd call of feed.
 
@@ -320,7 +325,7 @@ ODataFeed feed = new ODataFeed();
 
 We'll introduce more details on witting entry in next section.
 
-### Write Entry
+## Write Entry
 
 Entry can be written in several places:
 

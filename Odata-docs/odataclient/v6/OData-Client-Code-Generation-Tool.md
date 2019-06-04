@@ -8,6 +8,8 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
+# Client code gen tool
+[INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v6.md)]
 
 OData provide two tools to generate client proxy file for an OData Service.
 
@@ -18,7 +20,7 @@ OData provide two tools to generate client proxy file for an OData Service.
 	- Visual Studio 2013
 	- Visual Studio 2015
 
-	For full documentation, please refere to "[How to use odata client generator to generate client proxy file](https://blogs.msdn.com/b/odatateam/archive/2014/03/12/how-to-use-odata-client-code-generator-to-generate-client-side-proxy-class.aspx)".
+	For full documentation, please refere to "[How to use OData client generator to generate client proxy file](https://blogs.msdn.com/b/odatateam/archive/2014/03/12/how-to-use-odata-client-code-generator-to-generate-client-side-proxy-class.aspx)".
 
 - [OData Connected Service](https://visualstudiogallery.msdn.microsoft.com/b343d0eb-6493-44c2-b558-13a0408d013f) lets app developers connect their applications to OData Services (both V3 & V4) and generate the client proxy files for the services. It supports following Visual Studio:
 
@@ -37,7 +39,7 @@ Expand **Online > Visual Studio Gallery > Tools > Connected Service**, and selec
 
 Click **Download**.
 
- ![image](../../assets/tooling/odata-connected-service-install-extension.png)
+ ![image](/odata/assets/tooling/odata-connected-service-install-extension.png)
 
 Then it will pop up a **VSIX Installer** window, Click **Install**.
 
@@ -61,23 +63,23 @@ In the **Solution Explorer** pane, right click the "TrippinApp" project and sele
 
 In the **Add Connected Service** dialog, select **OData** and then click **Configure**.
 
- ![image](../../assets/tooling/odata-connected-service-new.PNG)
+ ![image](/odata/assets/tooling/odata-connected-service-new.PNG)
 
 In the **Configure endpoint** dialog, input the service name and the OData service endpoint, then click **Next** button.
 
-![image](../../assets/tooling/odata-connected-service-config-endpoint.PNG)
+![image](/odata/assets/tooling/odata-connected-service-config-endpoint.PNG)
  
 In the **Settings** dialog, enter the file name(without extension) of the proxy file and click **Finish**.
 
-![image](../../assets/tooling/odata-connected-service-config-file-name.PNG)
+![image](/odata/assets/tooling/odata-connected-service-config-file-name.PNG)
 
 In the **Settings** dialog, You also can configure some other settings by click **AdvancedSettings** link. Then you can set the related code generation settings.
 
-![image](../../assets/tooling/odata-connected-service-advanced-settings.PNG)
+![image](/odata/assets/tooling/odata-connected-service-advanced-settings.PNG)
 
 Once you finished all those settings, click **Finish**. This tool will begin to install the related NuGet packages and generate the client proxy file into your project.
 
-![image](../../assets/tooling/odata-connected-service-generate.PNG)
+![image](/odata/assets/tooling/odata-connected-service-generate.PNG)
 
 ### Consume the OData service
 
@@ -101,7 +103,7 @@ Now, the developer can write client code to consume the OData Service.
 	}
 
 
-![image](../../assets/tooling/odata-connected-service-consume.PNG)
+![image](/odata/assets/tooling/odata-connected-service-consume.PNG)
 
 ## Summary 
 

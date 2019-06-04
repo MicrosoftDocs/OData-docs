@@ -1,10 +1,14 @@
 ---
 title: "IN Operator"
 description: "IN Operator"
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
-# Overview
+# IN operator
 
 The IN operator is a [new feature](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn01/new-in-odata-v4.01-cn01.html#_Toc485385090 "new feature") in OData 4.01 that enables a shorthand way of writing multiple EQ expressions joined by OR. For example,
 
@@ -18,7 +22,7 @@ Of the binary expression invoking IN, the left operand must be a single value an
 
 # Usage
 
-The `IN` operator is used in expressions that resolve to a boolean. Common use would be with `$filter` and it can also be used for `$orderby`. See [test cases](https://github.com/OData/odata.net/blob/ed68ebd17a78a9d63ef0ff6d4d7e680d778d5728/test/FunctionalTests/Microsoft.OData.Core.Tests/ScenarioTests/UriParser/FilterAndOrderByFunctionalTests.cs#L1668) for examples of supported scenarios.
+The `IN` operator is used in expressions that resolve to a Boolean. Common use would be with `$filter` and it can also be used for `$orderby`. See [test cases](https://github.com/OData/odata.net/blob/ed68ebd17a78a9d63ef0ff6d4d7e680d778d5728/test/FunctionalTests/Microsoft.OData.Core.Tests/ScenarioTests/UriParser/FilterAndOrderByFunctionalTests.cs#L1668) for examples of supported scenarios.
 
 ## Remarks
 

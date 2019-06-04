@@ -62,5 +62,3 @@ Since Web API OData 5.6, it supports to orderby on DateTime type. For example:
 GET ~/Customers?$orderby=Birthday
 GET ~/Customers?$orderby=Birthday desc
 ```
-
-Thanks.

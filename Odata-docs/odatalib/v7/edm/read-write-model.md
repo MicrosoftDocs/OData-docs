@@ -1,8 +1,13 @@
 ---
 title: " Read and write models"
 description: "Read and write entity data models using EdmLib APIs"
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Read and write models
 
 Models built with EdmLib APIs are in **object representation**, while CSDL documents are in **XML representation**. The conversion from models to CSDL is accomplished by the `CsdlWriter` APIs which are mostly used by OData services to **expose metadata documents** (CSDL). In contrast, the conversion from CSDL to models is done by the `CsdlReader` APIs which are usually used by OData clients to **read metadata documents** from services.
 
@@ -104,7 +109,7 @@ This code first reads the model from the CSDL document **csdl.xml**, and then wr
 ### Run the sample
 Build and run the sample. Then open the file **csdl.xml** and the file **csdl1.xml** under the **output directory**. The content of **csdl1.xml** should look like the following:
 
-![](../../assets/2015-04-17-csdl1.png)
+![](/odata/assets/2015-04-17-csdl1.png)
 
 You can see that the contents of **csdl.xml** and **csdl1.xml** are exactly the same except for **the order of the elements**. This is because EdmLib will reorder the elements when parsing a CSDL document.
 

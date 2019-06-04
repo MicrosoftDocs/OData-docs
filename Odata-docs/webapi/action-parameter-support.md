@@ -160,7 +160,4 @@ We can invoke the action by issuing a Post on `~/odata/Customers/Default.EntityA
 
 If you invoke an action with a 'null' action parameter value, please don't add the parameter (for example, `"p1":null`) in the payload and leave it un-specified. However, for collection, you should always specify it even the collection is an empty collection (for example, `"p1":[]`).
 
-Thanks.
-
 For un-typed scenario, please refer to [untyped page](https://odata.github.io/WebApi/Function-Action-Parameter-In-Untyped-Scenario/).
-

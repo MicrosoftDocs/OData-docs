@@ -1,8 +1,13 @@
 ---
 title: "Merge complex type and entity type"
 description: "Merge complex and entity for OData Serialization and Deserialization"
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Merge complex types and entity types
 
 From ODataLib 7.0, we merged the public APIs for serializing/deserializing complex values and entities. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them. Since the only really fundamental differences between complex type and entity type at this point are the presence of a key and media link entries, we thought it was best to merge them and just deal with the differences. 
 

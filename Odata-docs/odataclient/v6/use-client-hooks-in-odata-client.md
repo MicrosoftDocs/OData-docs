@@ -8,6 +8,8 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
+# Client hooks in OData client
+[INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v6.md)]
 
 OData Client provides several ways to allow developers to hook into the client request and response. It gives developers the opportunity to inspect, adjust or replace some request or response.
 

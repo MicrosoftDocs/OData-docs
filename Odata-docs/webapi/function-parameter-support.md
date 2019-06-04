@@ -194,6 +194,5 @@ In fact, we can't build a function with entity reference as parameter. However, 
 
 '[FromODataUri]' is mandatory for complex, entity and all collection. However, it is optional for Primitive & Enum. But for string primitive type, the value will contain single quotes without '[FromODataUri]'.
 
-Thanks.
 
 For un-typed scenario, please refer to [untyped page](https://odata.github.io/WebApi/Function-Action-Parameter-In-Untyped-Scenario/).

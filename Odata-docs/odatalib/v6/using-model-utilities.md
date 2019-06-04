@@ -16,7 +16,8 @@ The model utilities are made up of many useful **extension methods** to various 
  - **Information**. The naming convention is `<InformationName>` (e.g., `IEdmNavigationSource.EntityType()`);
  - **Getter**. The naming convention is `Get<Name>` (e.g., `IEdmModel.GetTermValue<T>`);
  - **Setter**. The naming convention is `Set<Name>` (e.g., `IEdmModel.SetEdmVersion`).
- <br />
+
+
 
 The mostly used parts are **Searching**, **Predicate** and **Information**. The extension methods of the latter two parts are trivial because they work literally as their names imply. So this section will mainly cover **Searching**. We will continue to use and extend the sample from the previous sections.
 
@@ -73,8 +74,8 @@ namespace EdmLibSample
 ### Run the Sample
 From the **DEBUG** menu, click **Start Without Debugging** to build and run the sample. The console window should **not** disappear after program exits.
 
-![image](../../assets/2015-04-20-debug.png)
+![image](/odata/assets/2015-04-20-debug.png)
 
 The output of the console window should look like the following:
 
-![image](../../assets/2015-04-20-output.png)
+![image](/odata/assets/2015-04-20-output.png)

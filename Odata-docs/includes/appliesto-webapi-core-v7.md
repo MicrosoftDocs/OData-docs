@@ -1,0 +1,1 @@
+**Applies To**: ![yes](/odata/assets/doc-assets/yes.png) OData AspNetCore WebApi V7

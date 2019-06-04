@@ -1,8 +1,13 @@
 ---
 title: "Allow serialization of additional properties"
 description: ""
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Allow serialization of properties
 
 We now support serializing additional properties which are not advertised in metadata since ODataLib 6.13.0. To achieve this, users just need to turn off the `ThrowOnUndeclaredPropertyForNonOpenType` validation setting when constructing `ODataMessageWriterSettings`.
 

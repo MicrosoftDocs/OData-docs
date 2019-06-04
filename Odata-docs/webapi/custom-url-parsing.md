@@ -83,5 +83,3 @@ config.EnableEnumPrefixFree(enumPrefixFree: true);
 
 config.MapODataServiceRoute("odata", "odata", edmModel);
 ```
-
-Thanks.

@@ -1,8 +1,13 @@
 ---
 title: " Using model utilities"
 description: "Using model utility APIs"
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Using model utilities
 
 The model utilities include many useful **extension methods** to various EDM classes and interfaces (e.g., IEdmModel, IEdmType, ...). The extension methods are intended to implement some **commonly reusable** logic to simplify model manipulations. These methods can be roughly classified into five categories:
 
@@ -73,8 +78,8 @@ namespace EdmLibSample
 ### Run the sample
 From the **DEBUG** menu, click **Start Without Debugging** to build and run the sample. The console window should **not** disappear after program exits.
 
-![](../../assets/2015-04-20-debug.png)
+![](/odata/assets/2015-04-20-debug.png)
 
 The output on the console window should look like the following:
 
-![](../../assets/2015-04-20-output.png)
+![](/odata/assets/2015-04-20-output.png)

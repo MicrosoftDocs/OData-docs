@@ -1,8 +1,13 @@
 ---
 title: "Add vocabulary annotations to EdmEnumMember"
 description: ""
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Add vocabulary annotations
 
 From ODataLib 6.11.0, it supports to add vocabulary annotations to EdmEnumMember.
 
@@ -43,6 +48,7 @@ container.AddEntitySet("Cars", carType);
 
 ## Output
 
+```xml
     <?xml version="1.0" encoding="utf-8"?>
       <edmx:Edmx Version="4.0" xmlns:edmx="https://docs.oasis-open.org/odata/ns/edmx">
         <edmx:DataServices>
@@ -61,3 +67,4 @@ container.AddEntitySet("Cars", carType);
           </Schema>
         </edmx:DataServices>
       </edmx:Edmx>
+```

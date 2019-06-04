@@ -1,8 +1,13 @@
 ---
 title: " Build a basic model"
 description: "Build a basic entity data model using EdmLib APIs"
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Build a basic model
 
 The *EDM* (Entity Data Model) library (*abbr*. EdmLib) primarily contains APIs to **build** an entity data model that conforms to *CSDL* (Common Schema Definition Language), and to **read/write** an entity data model **from/to** a CSDL document.
 
@@ -19,7 +24,7 @@ In Visual Studio, from the **File** menu, select **New > Project**.
 
 Expand **Installed > Templates > Visual C# > Windows Desktop**, and select the **Console Application** template. Name the project **EdmLibSample**, and click **OK**.
 
-![](../../assets/2015-04-16-new-project.png)
+![](/odata/assets/2015-04-16-new-project.png)
 
 ### Install the EdmLib package
 From the **Tools** menu, select **NuGet Package Manager > Package Manager Console**. In the Package Manager Console window, type:
@@ -35,7 +40,7 @@ The `SampleModelBuilder` class is used to build and return an entity data model 
 
 In Solution Explorer, right-click the project **EdmLibSample**. From the context menu, select **Add > Class**. Name the class **SampleModelBuilder**.
 
-![](../../assets/2015-04-16-add-class.png)
+![](/odata/assets/2015-04-16-add-class.png)
 
 In the **SampleModelBuilder.cs** file, add the following `using` directives to introduce the EDM definitions:
 
@@ -302,11 +307,11 @@ For now, there is no need to understand how the model is written to CSDL. The de
 ### Run the sample
 From the **DEBUG** menu, click **Start Debugging** to build and run the sample. The console window should appear and then disappear in a flash.
 
-![](../../assets/2015-04-17-debug.png)
+![](/odata/assets/2015-04-17-debug.png)
 
 Open the **csdl.xml** file under the **output directory** with Internet Explorer (or any other XML viewer you prefer). The content should look similar to the following:
 
-![](../../assets/2015-04-17-csdl.png)
+![](/odata/assets/2015-04-17-csdl.png)
 
 As you can see, the document contains all the elements we have built so far.
 

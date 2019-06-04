@@ -1,8 +1,13 @@
 ---
 title: " Define entity relations"
 description: "Define entity relations using EdmLib APIs"
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Define entity relations
 
 Entity relations are defined by **navigation properties** in entity data models. Adding a navigation property to an entity type using EdmLib APIs is as simple as adding a structural property shown in previous sections. EdmLib supports adding navigation properties targeting an entity set in the entity container or a **contained** entity set belonging to a navigation property.
 
@@ -179,7 +184,7 @@ This code:
 ### Run the sample
 Build and run the sample. Then open the file **csdl.xml** under the **output directory**. The content of it should look like the following:
 
-![](../../assets/2015-04-18-csdl.png)
+![](/odata/assets/2015-04-18-csdl.png)
 
 ### References
 [[Tutorial & Sample] Containment is Coming with OData V4](https://blogs.msdn.com/b/odatateam/archive/2014/03/13/containment-is-coming-with-odata-v4.aspx).

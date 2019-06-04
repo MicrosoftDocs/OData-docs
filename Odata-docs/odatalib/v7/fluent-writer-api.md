@@ -1,8 +1,13 @@
 ---
 title: " Fluent functional-style writer API"
 description: ""
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Fluent functional style writer API
 
 In the previous section, paired `WriteStart()`/`WriteEnd()` calls have been made to write payloads. In this version, a new set of fluent functional-style API has been introduced as an improvement over the previous API which is rather primitive, requiring paired `WriteStart()`/`WriteEnd()` calls.
 
