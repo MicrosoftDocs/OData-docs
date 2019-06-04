@@ -1,10 +1,19 @@
 ---
 title: "Add additional prefer header"
 description: ""
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Add additional prefer header
 
-<strong>[odata.track-changes](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part1-protocol/odata-v4.0-errata03-os-part1-protocol-complete.html#_Preference_odata.track-changes)</strong>, <strong>[odata.maxpagesize](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part1-protocol/odata-v4.0-errata03-os-part1-protocol-complete.html#_The_odata.maxpagesize_Preference)</strong>, <strong>[odata.ContinueOnError](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part1-protocol/odata-v4.0-errata03-os-part1-protocol-complete.html#_Preference_odata.continue-on-error)</strong> are supported to add in prefer header since ODataLib 6.11.0.
+[odata.track-changes](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part1-protocol/odata-v4.0-errata03-os-part1-protocol-complete.html#_Preference_odata.track-changes),
+
+[odata.maxpagesize](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part1-protocol/odata-v4.0-errata03-os-part1-protocol-complete.html#_The_odata.maxpagesize_Preference),
+
+[odata.ContinueOnError](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part1-protocol/odata-v4.0-errata03-os-part1-protocol-complete.html#_Preference_odata.continue-on-error) are supported to add in prefer header since ODataLib 6.11.0.
 
 # Create request message with prefer header
 

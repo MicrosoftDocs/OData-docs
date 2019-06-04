@@ -1,8 +1,13 @@
 ---
 title: "2.11 Specify type facets for type definitions"
 description: "Specify type facets for type definitions"
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Type facets
 
 Users can specify various type facets for references to type definitions. The only constraint is that the type facets specified should be applicable to the underlying type definition.
 

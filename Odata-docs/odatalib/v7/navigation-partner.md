@@ -1,8 +1,13 @@
 ---
 title: "Navigation property partner"
 description: ""
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Navigation property partner
 
 The library supports setting and retrieving [partner](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752541) information of navigation properties.
 

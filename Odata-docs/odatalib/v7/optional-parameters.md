@@ -1,8 +1,13 @@
 ---
 title: "Optional Parameters"
 description: ""
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Optional parameters
 
 Starting with ODataLib 7.3, parameters can be marked as optional. Optional parameters may be omitted when invoking a custom function. 
 

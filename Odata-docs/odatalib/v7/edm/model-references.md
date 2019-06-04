@@ -1,8 +1,13 @@
 ---
 title: " Model references"
 description: "Model references"
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Define model references
 
 Model referencing is an advanced OData feature. When you want to use types defined in another model, you can reference that model in your own model. Typically when talking about model referencing, there is a **main model** and one or more **sub-models**. The main model references the sub-models. The role a particular model plays is not fixed, for a main model may also be referenced by another model. That is, models can be **mutually referenced**.
 

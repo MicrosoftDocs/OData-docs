@@ -1,12 +1,15 @@
 ---
 title: "$skiptoken & $deltatoken"
 description: ""
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Skiptoken and Delta token 
 
-From ODataLib 6.12.0, it supports to parse $skiptoken & $deltatoken in query options.
-
-# $skiptoken
+## $skiptoken
 
 Let's have an example:
 
@@ -22,7 +25,7 @@ string token = parser.ParseSkipToken();
 Assert.Equal("abc", token);
 ```
 
-# $deltatoken
+## $deltatoken
 
 Let's have an example:
 

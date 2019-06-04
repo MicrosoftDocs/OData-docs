@@ -1,7 +1,11 @@
 ---
 title: " Dependency Injection Support"
 description: ""
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
 # Dependency injection

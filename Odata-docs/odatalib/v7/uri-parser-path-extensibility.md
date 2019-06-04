@@ -1,9 +1,14 @@
 ---
 title: "OData Uri Path Parser Extensibility"
 description: "This feature enable developers to customize Uri path parser"
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
-
+# Uri parser extensibility 
+ 
 In order to support more comprehensive OData Uri path, from ODataLib 7.0, we support Uri path parser customization in two parts:
 
 -   Allow developers to customize how to separate a Uri into segments in string.

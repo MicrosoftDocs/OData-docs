@@ -1,8 +1,13 @@
 ---
 title: "Navigation property under complex type"
 description: "Navigation property under complex type"
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Navigation property in complex type
 
 Since OData V7.0, it supports to add navigation property under complex type. Basically navigation under complex are same with navigation under entity for usage, the only differences are: **1.** Navigation under complex can have multiple bindings with different path. **2.** Complex type does not have id, so the navigation link and association link of navigation under complex need contain the entity id which the complex belongs to.
 

@@ -1,8 +1,13 @@
 ---
 title: "Parsing uri path template"
 description: ""
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Parsing uri path template
 
 From ODataLib 6.11.0, OData uri parser can parse uri path template. A path template is any identifier string enclosed with curly braces.
 For example: 

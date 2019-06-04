@@ -1,9 +1,13 @@
 ---
 title: "Read and Write Untyped values in ODataLib"
 description: ""
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
-
+# Support untyped JSON
 Starting with ODataLib 7.0, `ODataMessageReader` & `ODataMessageWriter` are able to read & write untyped primitive, structured, and collection values.  
 
 Values read from a payload are considered untyped if:

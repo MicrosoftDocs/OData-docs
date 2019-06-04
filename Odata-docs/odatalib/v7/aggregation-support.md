@@ -1,8 +1,13 @@
 ---
 title: "Basic Uri parser support for aggregations"
 description: ""
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Basic Uri parser
 
 From ODataLib 6.15.0, we introduced the `basic` Uri parser support for aggregations, this is first step for us to support aggregations,  Issues and PR to make this support better is very welcome, details about aggregation in spec can be found [here](https://docs.oasis-open.org/odata/odata-data-aggregation-ext/v4.0/odata-data-aggregation-ext-v4.0.html).
 

@@ -1,10 +1,15 @@
 ---
 title: "Resource (Complex & Entity) Value"
 description: "OData Resource (Complex & Entity) Value"
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 
-## 1. Introduction
+# Resource values
+
 ### Abstract
 
 `ODataComplexValue` is widely used in OData libraries v5.x and v6.x. However, it’s removed in OData library v7.x because complex type should support the navigation property. We should treat the complex same as the entity. 

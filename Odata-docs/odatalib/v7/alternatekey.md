@@ -1,8 +1,13 @@
 ---
 title: "Alternate Key"
 description: ""
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Alternate key
 
 From ODataLib 6.13.0, it supports the alternate key. For detail information about alternate keys, please refer to [here](https://github.com/OData/vocabularies/blob/master/OData.Community.Keys.V1.md).
 

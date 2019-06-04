@@ -1,8 +1,13 @@
 ---
 title: " Define operations"
 description: "Define operations and operation imports using EdmLib APIs"
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Define operations
 
 EdmLib supports defining all types of operations (**actions** and **functions**) and operation imports (**action imports** or **function imports**). Putting aide the conceptual differences between actions and functions, the way to define them could actually be shared between actions and functions.
 

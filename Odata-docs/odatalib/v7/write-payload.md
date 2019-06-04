@@ -1,8 +1,13 @@
 ---
 title: " Write OData payload"
 description: "Write OData payload using OData Core APIs"
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Writing payload
 
 There are several kinds of OData payloads, including service document, model metadata, entity set, entity, entity reference(s), complex value(s), primitive value(s). OData Core library is designed to write and read all these payloads.
 

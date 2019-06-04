@@ -1,8 +1,13 @@
 ---
 title: "Centralized control for OData Simplified Options"
 description: ""
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Enable Simplified options
 
 In previous OData library, the control of writing/reading/parsing key-as-segment uri path is separated in ODataMessageWriterSettings/ODataMessageReaderSettings/ODataUriParser. The same as writing/reading OData annotation without prefix. From ODataV7.0, we add a centialized control class for them, which is ODataSimplifiedOptions.
 

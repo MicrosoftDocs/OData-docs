@@ -1,8 +1,13 @@
 ---
 title: " Use ODataUriParser"
 description: "Parse OData uri using OData Core APIs"
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
+# Using Uri Parser
 
 This post is intended to guide you through the URI parser for OData V4, which is released with ODataLib V6.0 and later.
 

@@ -1,7 +1,11 @@
 ---
 title: " Fluent functional-style writer API"
 description: ""
-
+author: saumadan
+ms.author: saumadan
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
 ---
 # Fluent functional style writer API
 
