@@ -16,8 +16,33 @@
           "LICENSE-CODE",
           "ThirdPartyNotices"
         ]
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**",
+          "**/_themes/**"
+        ],
+        "src": "v6",
+        "dest": "."
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**",
+          "**/_themes/**"
+        ],
+        "src": "v7",
+        "dest": "."
       }
-      
     ],
     "resource": [
       {
