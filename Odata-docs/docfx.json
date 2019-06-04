@@ -16,22 +16,6 @@
           "LICENSE-CODE",
           "ThirdPartyNotices"
         ]
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "src": "v6",
-        "dest": "."
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "src": "v7",
-        "dest": "."
       }
     ],
     "resource": [
@@ -47,22 +31,6 @@
           "_themes/**",
           "_themes.pdf/**"
         ]
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "src": "v6",
-        "dest": "."
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "src": "v7",
-        "dest": "."
       }
     ],
     "overwrite": [],
