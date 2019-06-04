@@ -124,4 +124,3 @@ Then, we can get the metadata document for *Graph* as:
 ```
 
 Where, *Graph* is an abstract complex type without any properties.
-

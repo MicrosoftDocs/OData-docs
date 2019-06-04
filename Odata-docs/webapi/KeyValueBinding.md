@@ -83,4 +83,4 @@ The result is:
 
 ```
 
-**Be noted**, this rule also applies to the navigation property key convention binding.
+**Note**, this rule also applies to the navigation property key convention binding.
