@@ -16,6 +16,22 @@
           "LICENSE-CODE",
           "ThirdPartyNotices"
         ]
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "v6",
+        "dest": "."
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "v7",
+        "dest": "."
       }
     ],
     "resource": [
