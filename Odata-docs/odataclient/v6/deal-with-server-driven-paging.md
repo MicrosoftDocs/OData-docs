@@ -9,7 +9,7 @@ ms.topic: article
 ms.service: multiple
 ---
 # Server driven paging
-[!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v6.md)]
+[INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v6.md)]
 
 The OData Client for .NET deals with server-driven paging with the help of `DataServiceQueryContinuation` and `DataServiceQueryContinuation<T>`. They are classes that contain the next link of the partial set of items.
 
