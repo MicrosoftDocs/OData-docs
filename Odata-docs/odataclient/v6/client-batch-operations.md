@@ -9,7 +9,7 @@ ms.topic: article
 ms.service: multiple
 ---
 # Batch operations
-[!INCLUDE[appliesto-odataclient](../../../includes/appliesto-odataclient-v6)]
+[!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v6.md)]
 
 OData Client for .NET supports batch processing of requests to an OData service. This ensures that all operations in the batch are sent to the data service in a single HTTP request, enables the server to process the operations atomically, and reduces the number of round trips to the service.
 
