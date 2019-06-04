@@ -1,7 +1,7 @@
 ---
 title: "Support multi-NavigationPropertyBindings for a single navigation property"
 description: ""
-author: saumadan
+author: madansr7
 ms.author: saumadan
 ms.date: 02/19/2019
 ms.topic: article

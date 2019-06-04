@@ -1,7 +1,7 @@
 ---
 title: "Merge complex type and entity type"
 description: "Merge complex and entity for OData Serialization and Deserialization"
-author: saumadan
+author: madansr7
 ms.author: saumadan
 ms.date: 02/19/2019
 ms.topic: article

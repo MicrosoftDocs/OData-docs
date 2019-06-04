@@ -1,7 +1,7 @@
 ---
 title: " Build a basic model"
 description: "Build a basic entity data model using EdmLib APIs"
-author: saumadan
+author: madansr7
 ms.author: saumadan
 ms.date: 02/19/2019
 ms.topic: article
