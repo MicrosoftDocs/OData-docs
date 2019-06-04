@@ -16,23 +16,6 @@
           "LICENSE-CODE",
           "ThirdPartyNotices"
         ]
-      },
-      {
-        "group": "odlclientv6",
-        "src": "./odataclient/v6",
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "dest": "./odataclient/",
-        "exclude": [
-          "**/includes/**",
-          "**/mref/**",
-          "**/obj/**",
-          "README.md",
-          "LICENSE",
-          "LICENSE-CODE"
-        ]
       }
       
     ],
