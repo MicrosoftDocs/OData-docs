@@ -1,7 +1,7 @@
 ---
 title: "Read and Write Untyped values in ODataLib"
 description: ""
-author: saumadan
+author: madansr7
 ms.author: saumadan
 ms.date: 02/19/2019
 ms.topic: article
@@ -220,4 +220,3 @@ For example, the following writes an untyped collection containing a null, follo
             writer.WriteEnd(); // outer resource set
 
 ```
-

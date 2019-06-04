@@ -9,7 +9,7 @@ ms.topic: article
 ms.service: multiple
 ---
 # Asynchronous operations
-[INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v6.md)]
+[!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v6.md)]
 
 *All samples in this doc are based on the Trippin Service. You can follow "[How to use OData Client Code Generator to generate client-side proxy class](https://blogs.msdn.com/b/odatateam/archive/2014/03/11/how-to-use-odata-client-code-generator-to-generate-client-side-proxy-class.aspx)" to generate the client proxy file.*
 

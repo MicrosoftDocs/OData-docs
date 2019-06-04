@@ -1,7 +1,7 @@
 ---
 title: "Parsing uri path template"
 description: ""
-author: saumadan
+author: madansr7
 ms.author: saumadan
 ms.date: 02/19/2019
 ms.topic: article
@@ -43,4 +43,3 @@ var templateSegment = paths[2].As<PathTemplateSegment>();
 templateSegment.LiteralText.Should().Be("{some}"); 
 
 ```
-

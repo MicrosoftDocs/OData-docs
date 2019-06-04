@@ -1,7 +1,7 @@
 ---
 title: "Json batch format in ODataLib"
 description: ""
-author: saumadan
+author: madansr7
 ms.author: saumadan
 ms.date: 02/19/2019
 ms.topic: article
@@ -309,4 +309,3 @@ The processing of JSON batch response is similar to that of Multipart/Mixed batc
 ~~~
 
  Note the using block for inner message reader, which helps disposal of the body content stream of the request created during the response reading. The creation of the response body content stream during response processing, similar to creation of the request body content stream during request processing, enables the parallel processing or dispatching of responses or requests of JSON batch.
- 
