@@ -15,7 +15,10 @@
           "LICENSE",
           "LICENSE-CODE",
           "ThirdPartyNotices"
-        ],
+        ]
+      },
+      {
+        "files": ["*.md"],
         "src": "v6",
         "dest": "."
       },
