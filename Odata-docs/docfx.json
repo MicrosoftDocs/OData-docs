@@ -19,15 +19,25 @@
       },
       {
         "files": ["*.md"],
-        "src": "v6",
-        "dest": "."
+        "src": "odataclient/v6",
+        "dest": "odataclient"
+      },
+      {
+        "files": ["*.md"],
+        "src": "odatalib/v6",
+        "dest": "odatalib"
+      },
+      {
+        "files": ["*.md"],
+        "src": "webapi/v6",
+        "dest": "webapi"
       },
       {
         "files": [
           "**/*.md"
         ],
-        "src": "v7",
-        "dest": "."
+        "src": "odatalib/v7",
+        "dest": "odatalib"
       }
     ],
     "resource": [
