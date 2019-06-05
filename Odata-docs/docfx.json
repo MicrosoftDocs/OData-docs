@@ -15,12 +15,6 @@
           "LICENSE",
           "LICENSE-CODE",
           "ThirdPartyNotices"
-        ]
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
         ],
         "src": "v6",
         "dest": "."
