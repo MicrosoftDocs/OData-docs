@@ -3,19 +3,10 @@
     "content": [
       {
         "files": [
-          "*.{md,yml}",
-          "!(odatalib)/**/*.{md,yml}"
+          "**/*.{md,yml}"
         ],
         "exclude": [
-          "**/obj/**",
-          "**/includes/**",
-          "**/assets/**",
-          "_themes/**",
-          "_themes.pdf/**",
-          "README.md",
-          "LICENSE",
-          "LICENSE-CODE",
-          "ThirdPartyNotices"
+          "odatalib/**/*"
         ]
       },
       {
