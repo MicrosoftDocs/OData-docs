@@ -2,21 +2,9 @@
   "build": {
     "content": [
       {
-        "files": ["*.md"],
-        "src": "v6",
-        "dest": "."
-      },
-      {
         "files": [
-          "**/*.md"
-        ],
-        "src": "v7",
-        "dest": "."
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
+          "*.{md,yml}",
+          "!(odatalib)/**/*.{md,yml}"
         ],
         "exclude": [
           "**/obj/**",
@@ -28,6 +16,20 @@
           "LICENSE-CODE",
           "ThirdPartyNotices"
         ]
+      },
+      {
+        "files": [
+          "**/*.{md,yml}"
+        ],
+        "src": "odatalib/v6",
+        "dest": "."
+      },
+      {
+        "files": [
+          "**/*.{md,yml}"
+        ],
+        "src": "odatalib/v7",
+        "dest": "."
       }
     ],
     "resource": [
