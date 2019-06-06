@@ -22,14 +22,14 @@
           "**/*.{md,yml}"
         ],
         "src": "odatalib/v6",
-        "dest": "."
+        "dest": "odatalib"
       },
       {
         "files": [
           "**/*.{md,yml}"
         ],
         "src": "odatalib/v7",
-        "dest": "."
+        "dest": "odatalib"
       }
     ],
     "resource": [
