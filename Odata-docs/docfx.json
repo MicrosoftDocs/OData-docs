@@ -3,7 +3,7 @@
     "content": [
       {
         "files": [
-          "**/*.{md,yml}",
+          "*.{md,yml}",
           "!(odatalib)/**/*.{md,yml}"
         ],
         "exclude": [
@@ -20,14 +20,14 @@
       },
       {
         "files": [
-          "**/*.{md,yml}"
+          "*.{md,yml}"
         ],
         "src": "odatalib/v6",
         "dest": "odatalib"
       },
       {
         "files": [
-          "**/*.{md,yml}"
+          "*.{md,yml}"
         ],
         "src": "odatalib/v7",
         "dest": "odatalib"
