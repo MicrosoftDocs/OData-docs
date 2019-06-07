@@ -4,21 +4,24 @@
       {
         "files": [
           "**/*.{md,yml}"
+        ],
+        "exclude": [
+          "odatalib/**/*"
         ]
       },
       {
         "files": [
           "*.{md,yml}"
         ],
-        "src": "v6",
-        "dest": "."
+        "src": "odatalib/v6",
+        "dest": "odatalib"
       },
       {
         "files": [
           "*.{md,yml}"
         ],
-        "src": "v7",
-        "dest": "."
+        "src": "odatalib/v7",
+        "dest": "odatalib"
       }
     ],
     "resource": [
