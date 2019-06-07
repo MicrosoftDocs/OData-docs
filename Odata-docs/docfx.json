@@ -3,35 +3,39 @@
     "content": [
       {
         "files": [
-          "**/*.md",
-          "**/*.yml"
+          "**/*.{md,yml}"
         ],
         "exclude": [
-          "**/obj/**",
-          "**/includes/**",
-          "_themes/**",
-          "_themes.pdf/**",
-          "README.md",
-          "LICENSE",
-          "LICENSE-CODE",
-          "ThirdPartyNotices"
+          "odatalib/**/*"
         ]
       },
       {
         "files": [
-          "**/*.md",
-          "**/*.yml"
+          "*.{md,yml}"
         ],
-        "src": "v6",
-        "dest": "."
+        "src": "odatalib/v6",
+        "dest": "odatalib"
       },
       {
         "files": [
-          "**/*.md",
-          "**/*.yml"
+          "*.{md,yml}"
         ],
-        "src": "v7",
-        "dest": "."
+        "src": "odatalib/v7",
+        "dest": "odatalib"
+      },
+      {
+        "files": [
+          "*.{md,yml}"
+        ],
+        "src": "odataclient/v6",
+        "dest": "odataclient"
+      },
+      {
+        "files": [
+          "*.{md,yml}"
+        ],
+        "src": "webapi/v6",
+        "dest": "webapi"
       }
     ],
     "resource": [
