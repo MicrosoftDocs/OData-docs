@@ -22,6 +22,20 @@
         ],
         "src": "odatalib/v7",
         "dest": "odatalib"
+      },
+      {
+        "files": [
+          "*.{md,yml}"
+        ],
+        "src": "odataclient/v6",
+        "dest": "odataclient"
+      },
+      {
+        "files": [
+          "*.{md,yml}"
+        ],
+        "src": "webapi/v6",
+        "dest": "webapi"
       }
     ],
     "resource": [
