@@ -1,7 +1,7 @@
 ---
 title: "Navigation property under complex type"
 description: "Navigation property under complex type"
-author: saumadan
+author: madansr7
 ms.author: saumadan
 ms.date: 02/19/2019
 ms.topic: article

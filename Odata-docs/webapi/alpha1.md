@@ -12,7 +12,7 @@ The NuGet packages for OData Web API v6.0.0 alpha1 are now available on the [MyG
 ### Configure package source
 You can configure the NuGet package source for OData Web API v6.0.0 preview releases in the [Package Manager Settings](https://docs.nuget.org/Consume/Package-Manager-Dialog):
 
-![](../odata/assets/07-06-package-src.png)
+![](/odata/assets/07-06-package-src.png)
 
 ### Download this release
 You can install or update the NuGet packages for OData Web API v6.0.0 alpha1 using the [Package Manager Console](https://docs.nuget.org/docs/start-here/using-the-package-manager-console):

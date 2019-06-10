@@ -9,7 +9,7 @@ ms.topic: article
 ms.service: multiple
 ---
 # Batch operations
-[INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v6.md)]
+[!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v6.md)]
 
 OData Client for .NET supports batch processing of requests to an OData service. This ensures that all operations in the batch are sent to the data service in a single HTTP request, enables the server to process the operations atomically, and reduces the number of round trips to the service.
 
@@ -160,4 +160,3 @@ The request Payload is as following:
 	{"@odata.type":"#Microsoft.OData.SampleService.Models.TripPin.Trip","Budget":3000,"Description":"Updated Trip","EndsAt":"2014-01-04T00:00:00Z","Name":"Trip in US","ShareId":"9d9b2fa0-efbf-490e-a5e3-bac8f7d47354","StartsAt":"2014-01-01T00:00:00Z","Tags@odata.type":"#Collection(String)","Tags":["Trip in New York","business","sightseeing"],"TripId":1001}
 	--changeset_b98a784d-af07-4723-9d5c-4722801f4c4d--
 	--batch_06d8a02a-854a-4a21-8e5c-f737bbd2dea8--
-
