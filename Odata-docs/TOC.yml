@@ -151,103 +151,127 @@
     - name: Core lib
       items:
         - name: Write OData payload
-          href: /Odata/odatalib/v7/write-payload
+          href: /Odata/odatalib/write-payload
         - name: Fluent functional-style writer API
-          href: /odata/odatalib/v7/fluent-writer-api
+          href: /odata/odatalib/fluent-writer-api
         - name: Read OData payload
-          href: /odata/odatalib/v7/read-payload
+          href: /odata/odatalib/read-payload
         - name: Use ODataUriParser
-          href: /odata/odatalib/v7/use-uri-parser
+          href: /odata/odatalib/use-uri-parser
         - name: Dependency Injection Support
-          href: /odata/odatalib/v7/di-support
+          href: /odata/odatalib/di-support
         - name: Parsing uri path template
-          href: /odata/odatalib/v7/parsing-url-template
+          href: /odata/odatalib/parsing-url-template
         - name: Add additional prefer header
-          href: /odata/odatalib/v7/additional-prefer-header
+          href: /odata/odatalib/additional-prefer-header
         - name: $skiptoken & $deltatoken
-          href: /odata/odatalib/v7/skipTokenAndDeltaToken
+          href: /odata/odatalib/skipTokenAndDeltaToken
         - name: Write NextPageLink/Count for collection
-          href: /odata/odatalib/v7/nextpagelinkAndCountForCollection
+          href: /odata/odatalib/nextpagelinkAndCountForCollection
         - name: Override primitive serialization and deserialization of payload
-          href: /odata/odatalib/v7/override-primitive-serialization-deserialization
+          href: /odata/odatalib/override-primitive-serialization-deserialization
         - name: Navigation property under complex type
-          href: /odata/odatalib/v7/navigation-under-complex
+          href: /odata/odatalib/navigation-under-complex
         - name: Allow serialization of additional properties
-          href: /odata/odatalib/v7/allow-serialization-of-additional-properties
+          href: /odata/odatalib/allow-serialization-of-additional-properties
         - name: Expanded Navigation Property Support in Delta Response
-          href: /odata/odatalib/v7/expanded-navigation-delta
+          href: /odata/odatalib/expanded-navigation-delta
         - name: Basic Uri parser support for aggregations
-          href: /odata/odatalib/v7/aggregation-support
+          href: /odata/odatalib/aggregation-support
         - name: Customizable type facets promotion in URI parsing
-          href: /odata/odatalib/v7/customizable-type-facets-promotion
+          href: /odata/odatalib/customizable-type-facets-promotion
         - name: Merge complex type and entity type
-          href: /odata/odatalib/v7/merge-complex-and-entity
+          href: /odata/odatalib/merge-complex-and-entity
         - name: OData Uri Path Parser Extensibility
-          href: /odata/odatalib/v7/uri-parser-path-extensibility
+          href: /odata/odatalib/uri-parser-path-extensibility
         - name: Override type annotation in serialization
-          href: /odata/odatalib/v7/type-annotation
+          href: /odata/odatalib/type-annotation
         - name: Centralized control for OData Simplified Options
-          href: /odata/odatalib/v7/ODataSimplifiedOptions
+          href: /odata/odatalib/ODataSimplifiedOptions
         - name: Read and Write Untyped values in ODataLib
-          href: /odata/odatalib/v7/support-untyped-json
+          href: /odata/odatalib/support-untyped-json
         - name: IN Operator
-          href: /odata/odatalib/v7/INOperator
+          href: /odata/odatalib/INOperator
         - name: Resource (Complex & Entity) Value
-          href: /odata/odatalib/v7/ResourceValue
+          href: /odata/odatalib/ResourceValue
     - name: Entity Data Model (EDM)
       items:
       # - name: Model Building
-      #   href: /odata/odatalib/v7/edm/model-building
+      #   href: /odata/odatalib/edm/model-building
       # - name: Serializing/DeSe model
-      #   href: /odata/odatalib/v7/edm/model-serialization
+      #   href: /odata/odatalib/edm/model-serialization
       - name: Build a basic model
-        href: /odata/odatalib/v7/edm/build-basic-model
+        href: /odata/odatalib/edm/build-basic-model
       - name: Read and write models
-        href: /odata/odatalib/v7/edm/read-write-model
+        href: /odata/odatalib/edm/read-write-model
       - name: Define entity relations
-        href: /odata/odatalib/v7/edm/define-entity-relations
+        href: /odata/odatalib/edm/define-entity-relations
       - name: Define singletons
-        href: /odata/odatalib/v7/edm/define-singleton
+        href: /odata/odatalib/edm/define-singleton
       - name: Define type inheritance
-        href: /odata/odatalib/v7/edm/define-type-inheritance
+        href: /odata/odatalib/edm/define-type-inheritance
       - name: Define operations
-        href: /odata/odatalib/v7/edm/define-operations
+        href: /odata/odatalib/edm/define-operations
       - name: Define annotations
-        href: /odata/odatalib/v7/edm/define-annotations
+        href: /odata/odatalib/edm/define-annotations
       - name: Using model utilities
-        href: /odata/odatalib/v7/edm/using-model-utilities
+        href: /odata/odatalib/edm/using-model-utilities
       - name: Model references
-        href: /odata/odatalib/v7/edm/model-references
+        href: /odata/odatalib/edm/model-references
       - name: Define referential constraints
-        href: /odata/odatalib/v7/edm/define-referential-constraints
+        href: /odata/odatalib/edm/define-referential-constraints
       - name: Specify type facets for type definitions
-        href: /odata/odatalib/v7/edm/type-facets
+        href: /odata/odatalib/edm/type-facets
       - name: Other topics
-        href: /odata/odatalib/v7/edm/other-topics
+        href: /odata/odatalib/edm/other-topics
       - name: Add vocabulary annotations to EdmEnumMember
-        href: /odata/odatalib/v7/edm/add-annotations-to-enummember
+        href: /odata/odatalib/edm/add-annotations-to-enummember
       - name: Alternate Key
-        href: /odata/odatalib/v7/edm/alternatekey
+        href: /odata/odatalib/edm/alternatekey
       - name: Capabilities vocabulary support
-        href: /odata/odatalib/v7/edm/capabilitiesVocabulary
+        href: /odata/odatalib/edm/capabilitiesVocabulary
       - name: Support multi-NavigationPropertyBindings for a single navigation property
-        href: /odata/odatalib/v7/edm/Multi-Binding
+        href: /odata/odatalib/edm/Multi-Binding
       - name: Navigation property partner
-        href: /odata/odatalib/v7/edm/navigation-partner
+        href: /odata/odatalib/edm/navigation-partner
       - name: Optional Parameters
-        href: /odata/odatalib/v7/edm/optional-parameters
+        href: /odata/odatalib/edm/optional-parameters
     - name: Batching
       items:
         - name: Batch payloads
           href: batching
         - name: Batching in ODataLib
-          href: /odata/odatalib/v7/JsonBatch
+          href: /odata/odatalib/JsonBatch
         - name: Batching in WebAPI
           href: /odata/webapi/batch
   - name: How to debug
     href: /odata/webapi/debug-webapi-source
   - name: Securing your API
     href: /odata/webapi/basic-auth
+  - name: OData Client
+    items:
+      - name: basic-crud-operations
+        href: /basic-crud-operations.md
+      - name: client-annotation-support
+        href: /client-annotation-support.md
+      - name: client-async-operations
+        href: /client-async-operations.md
+      - name: client-batch-operations
+        href: /client-batch-operations.md
+      - name: client-tracking
+        href: /client-tracking.md
+      - name: deal-with-server-driven-paging
+        href: /deal-with-server-driven-paging.md
+      - name: get-response-content
+        href: /get-response-content.md
+      - name: OData-Client-Code-Generation-Tool
+        href: /OData-Client-Code-Generation-Tool.md
+      - name: query-options
+        href: /query-options.md
+      - name: use-client-hooks-in-odata-client
+        href: /use-client-hooks-in-odata-client.md
+      - name: use-httpclient-in-odata-client
+        href: /use-httpclient-in-odata-client.md
   - name: Spatial lib
     items:
       - name: Define spatial properties
