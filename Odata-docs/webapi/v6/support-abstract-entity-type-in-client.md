@@ -9,7 +9,7 @@ ms.topic: article
 ms.service: multiple
 ---
 # Abstract entity type support in .NET client
-**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v6.md)]
 
 OData Client for .NET supports abstract entity type without key from ODataLib 6.11.0.
 

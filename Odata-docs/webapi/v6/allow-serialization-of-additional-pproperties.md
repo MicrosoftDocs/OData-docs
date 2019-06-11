@@ -9,7 +9,7 @@ ms.topic: article
 ms.service: multiple
 ---
 # Allow serialization of additional properties
-**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v6.md)]
 
 We are now supporting to serialize additional properties which are not advertised in Metadata from ODataLib 6.13.0. To achieve this, it is just needed to turn off full validation when creating the `ODataMessageWriterSettings`.
 

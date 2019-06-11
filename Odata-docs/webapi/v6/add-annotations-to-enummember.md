@@ -10,7 +10,7 @@ ms.service: multiple
 ---
 
 ## Create Model
-**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v6.md)]
 
 ODataLib version 6.11 added support to add vocabulary annotations to EdmEnumMember.
 

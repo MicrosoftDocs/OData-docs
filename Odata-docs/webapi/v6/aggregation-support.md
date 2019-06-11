@@ -9,7 +9,7 @@ ms.topic: article
 ms.service: multiple
 ---
 # Basic URI parser
-**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v6.md)]
 
 ODataLib 6.15, we introduced the `basic` Uri parser support for aggregations, this is first step for us to support aggregations,  Issues and PR to make this support better is very welcome, details about aggregation in spec can be found [here](https://docs.oasis-open.org/odata/odata-data-aggregation-ext/v4.0/odata-data-aggregation-ext-v4.0.html).
 

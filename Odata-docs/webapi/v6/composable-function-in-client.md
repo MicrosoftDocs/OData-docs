@@ -9,7 +9,7 @@ ms.topic: article
 ms.service: multiple
 ---
 # Composable function in client
-**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v6.md)]
 
 Composable function (function import) can have additional path segments and query options as appropriate for the returned type.
 
