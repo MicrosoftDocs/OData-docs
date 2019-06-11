@@ -2,8 +2,8 @@
 title: "Client Hooks in OData Client"
 description: "How to use client hooks to compose higher level functionality"
 
-author: Khairunj
-ms.author: Khairunj
+author: madansr7
+ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple

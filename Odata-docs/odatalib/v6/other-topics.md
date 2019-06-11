@@ -2,8 +2,8 @@
 title: "2.10 Other topics"
 description: "Some other topics that will temporarily not be covered in this tutorial"
 
-author: Khairunj
-ms.author: Khairunj
+author: madansr7
+ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple

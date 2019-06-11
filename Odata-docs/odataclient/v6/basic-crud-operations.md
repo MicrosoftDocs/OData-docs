@@ -2,13 +2,14 @@
 title: "Basic CRUD Operations"
 description: ""
 
-author: Khairunj
-ms.author: Khairunj
+author: madansr7
+ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
-#Basic CRUD operations
+# Basic CRUD operations
+
 [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v6.md)]
 
 ## Request an entity set
