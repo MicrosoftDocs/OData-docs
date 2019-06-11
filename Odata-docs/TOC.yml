@@ -244,35 +244,35 @@
           href: /odata/odatalib/JsonBatch
         - name: Batching in WebAPI
           href: /odata/webapi/batch
+  - name: OData Client
+    items:
+      - name: Basic crud operations
+        href: /odata/odataclient/basic-crud-operations
+      - name: Client annotation support
+        href: /odata/odataclient/client-annotation-support
+      - name: Client async operations
+        href: /odata/odataclient/client-async-operations
+      - name: Client batch operations
+        href: /odata/odataclient/client-batch-operations
+      - name: Client tracking
+        href: /odata/odataclient/client-tracking
+      - name: Server driven paging
+        href: /odata/odataclient/deal-with-server-driven-paging
+      - name: Get response content
+        href: /odata/odataclient/get-response-content
+      - name: OData Client Code Generation Tool
+        href: /odata/odataclient/OData-Client-Code-Generation-Tool
+      - name: Query options
+        href: /odata/odataclient/query-options
+      - name: Client hooks
+        href: /odata/odataclient/use-client-hooks-in-odata-client
+      - name: Using Httpclient 
+        href: /odata/odataclient/use-httpclient-in-odata-client
+  - name: Spatial lib
   - name: How to debug
     href: /odata/webapi/debug-webapi-source
   - name: Securing your API
     href: /odata/webapi/basic-auth
-  - name: OData Client
-    items:
-      - name: Basic crud operations
-        href: /odata/odataclient/basic-crud-operations.md
-      - name: Client annotation support
-        href: /odata/odataclient/client-annotation-support.md
-      - name: Client async operations
-        href: /odata/odataclient/client-async-operations.md
-      - name: Client batch operations
-        href: /odata/odataclient/client-batch-operations.md
-      - name: Client tracking
-        href: /odata/odataclient/client-tracking.md
-      - name: Server driven paging
-        href: /odata/odataclient/deal-with-server-driven-paging.md
-      - name: Get response content
-        href: /odata/odataclient/get-response-content.md
-      - name: OData Client Code Generation Tool
-        href: /odata/odataclient/OData-Client-Code-Generation-Tool.md
-      - name: Query options
-        href: /odata/odataclient/query-options.md
-      - name: Client hooks
-        href: /odata/odataclient/use-client-hooks-in-odata-client.md
-      - name: Using Httpclient 
-        href: /odata/odataclient/use-httpclient-in-odata-client.md
-  - name: Spatial lib
     items:
       - name: Define spatial properties
         href: /odata/spatial/define-spatial-property
