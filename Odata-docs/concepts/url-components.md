@@ -1,3 +1,13 @@
+---
+title: "URL components"
+description: "URL components basics"
+author: madansr7
+ms.author: madansr7
+ms.date: 02/19/2019
+ms.topic: article
+ms.service: multiple
+---
+
 # URL components
 
 URLs represent individual resources, collections of resources, or operations, and clients interact with those resources using standard GET, PUT, PATCH, POST and DELETE operations.
