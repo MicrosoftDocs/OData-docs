@@ -2,12 +2,13 @@
 title: "Optional Parameters"
 description: ""
 author: madansr7
-ms.author: saumadan
+ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
 # Optional parameters
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
 
 Starting with ODataLib 7.3, parameters can be marked as optional. Optional parameters may be omitted when invoking a custom function. 
 
@@ -15,12 +16,15 @@ Function resolution will first attempt to find an overload that exactly matches 
 
 Optional parameters are annotated in CSDL using the new `Org.OData.Core.V1.OptionalParameter` annotation term:
 
+```xml
     "<Parameter Name = "optionalParam" Type="Edm.String">"
        "<Annotation Term="Org.OData.Core.V1.OptionalParameter"/>"
     "</Parameter>"
+```
 
 An optional parameter may optionally specify a default value. The default value is purely informational, and conveys to the consumer the value that will be used if the parameter is not supplied:
 
+```xml
      "<Parameter Name = "optionalParamWithDefault" Type="Edm.String">"
         "<Annotation Term="Org.OData.Core.V1.OptionalParameter">"
           "<Record>"
@@ -28,12 +32,13 @@ An optional parameter may optionally specify a default value. The default value 
            "</Record>"
          "</Annotation>"
       "</Parameter>"
+```
 
-Any optional parameters must be come after all non-optional parameters for a function or action. 
+Any optional parameters must be come after all non-optional parameters for a function or action.
 
 When reading CSDL, optional values are returned as parameters that support `IEdmOptionalParameter`:
 
-```C#    
+```C#
 
        foreach (IEdmOperationParameter parameter in function)
        {
@@ -52,7 +57,7 @@ When reading CSDL, optional values are returned as parameters that support `IEdm
 
 When building a model, optional parameters may be specified using the new `EdmOptionalParameter` class:
 
-```C#    
+```C#
 
        var stringTypeReference = new EdmStringTypeReference(EdmCoreModel.Instance.GetPrimitiveType(EdmPrimitiveTypeKind.String), false);
        var function = new EdmFunction("test", "TestFunction", stringTypeReference);

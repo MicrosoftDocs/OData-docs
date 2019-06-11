@@ -8,6 +8,8 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
+# Define type inhertiance 
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v6.md)]
 
 Type inheritance means **defining derived types**. EdmLib supports defining both **derived entity types** and **derived complex types**. Adding a derived entity (complex) type is almost the same as adding an normal entity (complex) except that an additional **base type** needs to be provided.
 

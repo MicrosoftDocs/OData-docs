@@ -9,9 +9,10 @@ ms.topic: article
 ms.service: multiple
 ---
 
-From ODataLib 6.11.0, it supports to add vocabulary annotations to EdmEnumMember.
-
 ## Create Model
+**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+
+ODataLib version 6.11 added support to add vocabulary annotations to EdmEnumMember.
 
 ``` csharp
 EdmModel model = new EdmModel();

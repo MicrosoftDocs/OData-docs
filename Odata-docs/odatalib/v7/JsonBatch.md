@@ -2,13 +2,14 @@
 title: "Json batch format in ODataLib"
 description: ""
 author: madansr7
-ms.author: saumadan
+ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
 
 # JSON Batching 
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
 
 ## Overview
 Similar to Windows batch command, OData supports grouping multiple requests together, sending a single HTTP request to OData service, and grouping corresponding responses together before sending back as a single HTTP response. The major benefits for request batching are to reduce client/server round trips and to support atomic operation.

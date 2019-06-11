@@ -2,13 +2,14 @@
 title: "IN Operator"
 description: "IN Operator"
 author: madansr7
-ms.author: saumadan
+ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
 
 # IN operator
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
 
 The IN operator is a [new feature](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn01/new-in-odata-v4.01-cn01.html#_Toc485385090 "new feature") in OData 4.01 that enables a shorthand way of writing multiple EQ expressions joined by OR. For example,
 

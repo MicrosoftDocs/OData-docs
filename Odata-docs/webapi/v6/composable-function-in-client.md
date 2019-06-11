@@ -8,13 +8,16 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
+# Composable function in client
+**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 Composable function (function import) can have additional path segments and query options as appropriate for the returned type.
 
 ## Unbound composable function
 For example, we have model:
 
-``` csharp
+```C#
+
 <Function Name="GetAllProducts" IsComposable="true">
   <ReturnType Type="Collection(NS.Product)" Nullable="false" />
 </Function>
@@ -29,7 +32,7 @@ For example, we have model:
 
 `GetAllProducts` is a function import and it is composable. And since action `Discount` accepts what `GetAllProducts` returns, we can query `Discount` after `GetAllProducts`.
 
-<strong>1. Create function query</strong>
+1. Create function query
 
 ``` csharp
 var products = Context.CreateFunctionQuery<Product>("", "GetAllProducts", true).Execute();
@@ -45,7 +48,7 @@ The actual query would be:
 GET https://localhost/GetAllProducts()?$select=Name
 ```
 
-<strong>2. With codegen</strong>
+2. With codegen
 
 With [OData client generator](https://blogs.msdn.com/b/odatateam/archive/2014/03/12/how-to-use-odata-client-code-generator-to-generate-client-side-proxy-class.aspx), proxy class for function and action would be auto generated.
 For example:

@@ -2,16 +2,17 @@
 title: "Add vocabulary annotations to EdmEnumMember"
 description: ""
 author: madansr7
-ms.author: saumadan
+ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
 # Add vocabulary annotations
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
 
 From ODataLib 6.11.0, it supports to add vocabulary annotations to EdmEnumMember.
 
-# Create Model
+## Create Model
 
 ```C#
 EdmModel model = new EdmModel();

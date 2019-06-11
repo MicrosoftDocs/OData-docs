@@ -2,7 +2,7 @@
 title: " Define type inheritance"
 description: "Define type inheritance using EdmLib APIs"
 author: madansr7
-ms.author: saumadan
+ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple

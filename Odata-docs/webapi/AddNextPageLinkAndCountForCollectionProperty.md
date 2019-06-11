@@ -5,6 +5,8 @@ description: ""
 ms.date: 09/15/2015
 ---
 # Add NextPageLink and $count for collection property
+**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
+[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 In OData WebApi V5.7, it supports to add the NextPageLink and $count for collection property.
 
@@ -23,7 +25,7 @@ public IHttpActionResult GetColors(int key)
 
 ### Sample Requests & Response
 
-Request: <strong>GET</strong> https://localhost/Customers(5)/Colors?$count=true
+Request: ***GET*** https://localhost/Customers(5)/Colors?$count=true
 
 Response content:
 

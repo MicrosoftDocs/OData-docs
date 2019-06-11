@@ -2,13 +2,14 @@
 title: "Resource (Complex & Entity) Value"
 description: "OData Resource (Complex & Entity) Value"
 author: madansr7
-ms.author: saumadan
+ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
 
 # Resource values
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
 
 ### Abstract
 

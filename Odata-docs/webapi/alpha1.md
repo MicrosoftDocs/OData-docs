@@ -6,6 +6,8 @@ description: ""
 ms.date: 06/05/2015
 ---
 # OData Web API 6.0.0 alpha1
+**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
+[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 The NuGet packages for OData Web API v6.0.0 alpha1 are now available on the [MyGet](https://www.myget.org/F/odatavnext/api/v2).
 

@@ -5,6 +5,8 @@ category: [6. Customization]
 ms.date: 04/21/2015
 ---
 # Customize OData Formatter
+**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
+[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 This page illustrates how to use sensibility points in the ODataFormatter and plugin custom OData serializers/deserializers, gives a sample extends the ODataFormatter to add support of OData instance annotations.
 

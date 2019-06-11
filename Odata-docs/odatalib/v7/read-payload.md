@@ -2,12 +2,13 @@
 title: " Read OData payload"
 description: "Read OData payload using OData Core APIs"
 author: madansr7
-ms.author: saumadan
+ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
 # Reading a payload
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
 
 The reader API is similar to the writer API, and you can expect symmetry here.
 

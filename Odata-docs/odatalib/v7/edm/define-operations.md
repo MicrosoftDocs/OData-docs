@@ -1,8 +1,8 @@
 ---
-title: " Define operations"
+title: "Define operations"
 description: "Define operations and operation imports using EdmLib APIs"
 author: madansr7
-ms.author: saumadan
+ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple

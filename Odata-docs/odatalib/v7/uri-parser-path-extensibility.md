@@ -2,17 +2,18 @@
 title: "OData Uri Path Parser Extensibility"
 description: "This feature enable developers to customize Uri path parser"
 author: madansr7
-ms.author: saumadan
+ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
 # Uri parser extensibility 
- 
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
+
 In order to support more comprehensive OData Uri path, from ODataLib 7.0, we support Uri path parser customization in two parts:
 
--   Allow developers to customize how to separate a Uri into segments in string.
--   Allow developers to customize how to bind those raw string segments unrecognized by `ODataUriParser` to the model and create `ODataPathSegments`.
+-  Allow developers to customize how to separate a Uri into segments in string.
+-  Allow developers to customize how to bind those raw string segments unrecognized by `ODataUriParser` to the model and create `ODataPathSegments`.
 
 For example, we have a Uri https://localhost/odata/drives('C')/root:/OData/Docs/Features/Uri%20Parser%20Path%20Extensibility.doc:/size which is used to get the size of a local file "C:\OData\Docs\Features\Uri Parser Path Extensible.doc". But `ODataUriParser.ParsePath()` doesn't know how to bind this path to the EDM model. So we want to provide a way to let developers define how to parse it.
 

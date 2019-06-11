@@ -19,19 +19,19 @@ OData methods and properties can be GET/SET through:
 
 Each of them includes the followings:
 
-<strong>Path</strong>
+***Path***
 The ODataPath of the request.
 
-<strong>PathHandler</strong>
+***PathHandler***
 Return DefaultODataPathHandler by default.
 
-<strong>RouteName</strong>
+***RouteName***
 The Route name for generating OData links.
 
-<strong>SelectExpandClause</strong>
+***SelectExpandClause***
 The parsed the OData SelectExpandClause of the request.
 
-<strong>NextLink</strong> 
+***NextLink*** 
 Next page link of the results, can be set through GetNextPageLink.
 
 For example, we may need generate service root when querying ref link of a navigation property. 
