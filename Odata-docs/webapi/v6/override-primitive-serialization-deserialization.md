@@ -9,7 +9,7 @@ ms.topic: article
 ms.service: multiple
 ---
 # Override primitive serialization and deserialization of payload
-**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v6.md)]
 
 Since ODataLib 6.12.0, it supports to customize the payload value converter to override the primitive serialization and deserialization of payload.
 

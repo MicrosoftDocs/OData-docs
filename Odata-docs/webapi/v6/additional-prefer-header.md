@@ -10,7 +10,7 @@ ms.service: multiple
 ---
 
 # Create request message with prefer header
-**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v6.md)]
 
 ``` csharp
 var requestMessage = new HttpWebRequestMessage(new Uri("https://example.com", UriKind.Absolute));

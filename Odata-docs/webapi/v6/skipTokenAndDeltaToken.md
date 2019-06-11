@@ -9,7 +9,7 @@ ms.topic: article
 ms.service: multiple
 ---
 # Skiptoken and Deltatoken
-**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v6.md)]
 
 In ODataLib 6.12.0, we introduced support to parse $skiptoken & $deltatoken in query options.
 

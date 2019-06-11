@@ -9,7 +9,7 @@ ms.topic: article
 ms.service: multiple
 ---
 # Use OData simplified convention in UriParser
-**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v6.md)]
 
 In ODataLib 6.14.0, we introduce ODataSimplified convention to make `key-as-segment` and `default` convention work side by side. 
 

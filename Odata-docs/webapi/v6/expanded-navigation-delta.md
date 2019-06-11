@@ -9,7 +9,7 @@ ms.topic: article
 ms.service: multiple
 ---
 # Expand navigation property support in delta response
-**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v6.md)]
 
  In ODataLib 6.15.0, we introduced the support for reading and writing expanded navigation properties (either collection or single) in delta responses. This feature is not covered by the current OData spec yet but the official protocol support is already in progress. As far as the current design, expanded navigation properties can **ONLY** be written within any `$entity` part of a delta response. Every time an expanded navigation property is written, the full expanded feed or entity should be written instead of just the delta changes because in this way it's easier to manage the association among entities consistently. Inside the expanded feed or entity, there are **ONLY** normal feeds or entities. Multiple expanded navigation properties in a single `$entity` part is supported. Containment is also supported.
 

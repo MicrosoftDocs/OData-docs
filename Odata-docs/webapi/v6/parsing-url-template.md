@@ -9,7 +9,7 @@ ms.topic: article
 ms.service: multiple
 ---
 # Parsing URI path template
-**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v6.md)]
 
 In ODataLib 6.11 introduced support to parse Uri path template. A path template is any identifier string enclosed with curly brackets.
 For example:
