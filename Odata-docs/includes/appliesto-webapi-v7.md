@@ -1,1 +1,1 @@
-**Applies To**: ![yes](/odata/assets/doc-assets/yes.png) OData AspNet WebApi V7
+ ![yes](/odata/assets/doc-assets/yes.png) OData AspNet WebApi V7

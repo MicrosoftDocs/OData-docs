@@ -2,7 +2,7 @@
 title: " Using model utilities"
 description: "Using model utility APIs"
 author: madansr7
-ms.author: saumadan
+ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple

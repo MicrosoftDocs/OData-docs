@@ -2,14 +2,15 @@
 title: "Expanded Navigation Property Support in Delta Response"
 description: ""
 author: madansr7
-ms.author: saumadan
+ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
 # Expanded navigation properties
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
 
-From ODataLib 6.15.0, we introduced the support for reading and writing expanded navigation properties (either collection or single) in delta responses. This feature is not covered by the current OData spec yet but the official protocol support is already in progress. As far as the current design, expanded navigation properties can **ONLY** be written within any `$entity` part of a delta response. Every time an expanded navigation property is written, the full expanded resource set or resource should be written instead of just the delta changes because in this way it's easier to manage the association among resources consistently. Inside the expanded resource set or resource, there are **ONLY** normal resource sets or resources. Multiple expanded navigation properties in a single `$entity` part is supported. Containment is also supported.
+In ODataLib 6.15.0, we introduced the support for reading and writing expanded navigation properties (either collection or single) in delta responses. This feature is not covered by the current OData spec yet but the official protocol support is already in progress. As far as the current design, expanded navigation properties can **ONLY** be written within any `$entity` part of a delta response. Every time an expanded navigation property is written, the full expanded resource set or resource should be written instead of just the delta changes because in this way it's easier to manage the association among resources consistently. Inside the expanded resource set or resource, there are **ONLY** normal resource sets or resources. Multiple expanded navigation properties in a single `$entity` part is supported. Containment is also supported.
 
 Basically the new APIs introduced are highly consistent with the existing ones for reading and writing normal delta responses so there should not be much trouble implementing this feature in OData services. This section shows how to use the new APIs.
 

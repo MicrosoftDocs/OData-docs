@@ -2,7 +2,7 @@
 title: "2.11 Specify type facets for type definitions"
 description: "Specify type facets for type definitions"
 author: madansr7
-ms.author: saumadan
+ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple

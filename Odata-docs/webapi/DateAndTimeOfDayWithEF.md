@@ -5,6 +5,8 @@ description: "How to Use Edm.Date and Edm.TimeOfDay with EntityFramework"
 ms.date: 01/06/2016
 ---
 # Edm.Date and Edm.TimeOfDay with EF
+**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
+[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 ### Problem
 The Transact-SQL has __date (Format: YYYY-MM-DD)__ type, but there isn’t a CLR type representing date type. Entity Framework (EF) only supports to use `System.DateTime` CLR type to map the __date__ type. 
@@ -48,7 +50,7 @@ In EF Code First, the developer can use two methodologies to map `System.DateTim
 
 1 Data Annotation
 
-The users can use the <strong>_Column_</strong> Data Annotation to modify the data type of columns. For example:
+The users can use the ***_Column_*** Data Annotation to modify the data type of columns. For example:
 
 ```C#
   [Column(TypeName = "date")]

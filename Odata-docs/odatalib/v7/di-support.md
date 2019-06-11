@@ -2,15 +2,16 @@
 title: " Dependency Injection Support"
 description: ""
 author: madansr7
-ms.author: saumadan
+ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
 
 # Dependency injection
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
 
-From ODataLib v7.0, we introduced [Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection) (or "DI" in short) support to dramatically increase the extensibility of the library where users can plug in their custom implementations and policies in an elegant way. Introduction of DI can also simplify the API and implementation of ODataLib by eliminating redundant function parameters and class properties. Since ODataLib is a reusable library, we don't take direct dependency on any existing DI framework. Instead we build and rely on an abstraction layer including several simple interfaces that decouples ODataLib from any concrete DI implementation. Users of ODataLib will be free to choose whatever DI framework they like to work with ODataLib.
+In ODataLib v7.0, we introduced [Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection) (or "DI" in short) support to dramatically increase the extensibility of the library where users can plug in their custom implementations and policies in an elegant way. Introduction of DI can also simplify the API and implementation of ODataLib by eliminating redundant function parameters and class properties. Since ODataLib is a reusable library, we don't take direct dependency on any existing DI framework. Instead we build and rely on an abstraction layer including several simple interfaces that decouples ODataLib from any concrete DI implementation. Users of ODataLib will be free to choose whatever DI framework they like to work with ODataLib.
 
 ## Introduction to DI
 For a complete understanding of the concept of DI and how it works in a typical ASP.NET Web application, please refer to the [introduction](https://docs.asp.net/en/latest/fundamentals/dependency-injection.html) from ASP.NET Core.

@@ -8,12 +8,14 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
+# Override primitive serialization and deserialization of payload
+**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 Since ODataLib 6.12.0, it supports to customize the payload value converter to override the primitive serialization and deserialization of payload.
 
 ## New public API
 
-The new class `ODataPayloadValueConverter` provides a default implementation for value conversion, and also allows developer to override by implemementing `ConvertFromPayloadValue` and `ConvertToPayloadValue`.
+The new class `ODataPayloadValueConverter` provides a default implementation for value conversion, and also allows developer to override by implementing `ConvertFromPayloadValue` and `ConvertToPayloadValue`.
 
 ``` csharp
 public class Microsoft.OData.Core.ODataPayloadValueConverter {
@@ -36,7 +38,7 @@ New helper functions to set converter to model so the new converter can be appli
 
 Here we are trying to override the default converter to support the "R" format of date and time. It is quite simple. 
 
-<strong>1. Define DataTimeOffset converter</strong>
+***1. Define DataTimeOffset converter***
 
 ``` csharp
 internal class DateTimeOffsetCustomFormatPrimitivePayloadValueConverter : ODataPayloadValueConverter
@@ -63,7 +65,7 @@ internal class DateTimeOffsetCustomFormatPrimitivePayloadValueConverter : ODataP
 }
 ```
 
-<strong>2. Set converter to model</strong>
+***2. Set converter to model***
 
 ``` csharp
 model.SetPayloadValueConverter(new DateTimeOffsetCustomFormatPrimitivePayloadValueConverter());

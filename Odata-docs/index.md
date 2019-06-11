@@ -13,6 +13,4 @@ OData improves semantic interoperability between systems and follows these desig
 - Build incrementally. A very basic, compliant service should be easy to build, with additional work necessary only to support additional capabilities.
 - Extensibility is important. Services should be able to support extended functionality without breaking clients unaware of those extensions.
 
-Moving the OData .NET libraries to the .NET Foundation recognizes the significant continuing contributions from the community, reaffirms Microsoft’s commitment to those libraries, and makes it easier than ever for the community to engage in the ongoing support and evolution of those popular libraries.
-
-You can find more information on OData at [odata.org](https://odata.org)
+You can find more information on OData specification at [OData.org](https://odata.org)

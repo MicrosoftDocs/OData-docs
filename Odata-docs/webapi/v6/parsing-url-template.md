@@ -8,9 +8,12 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
+# Parsing URI path template
+**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
-From ODataLib 6.11.0, it supports to parse Uri path template. A path template is any identifier string enclosed with curly brackets.
-For example: 
+In ODataLib 6.11 introduced support to parse Uri path template. A path template is any identifier string enclosed with curly brackets.
+For example:
+
 ``` csharp
 {dynamicProperty}
 ```

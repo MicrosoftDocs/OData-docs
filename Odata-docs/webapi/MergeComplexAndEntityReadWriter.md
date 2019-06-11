@@ -5,6 +5,8 @@ description: "Merge complex & entity"
 ms.date: 09/01/2016
 ---
 # Merge complex & entity value serialize/deserialize
+**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
+[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 You can refer the detail in: [complex type and entity type](https://odata.github.io/odata.net/v7/#10-42-merge-complex-and-entity) in ODL 7.0 doc.
 

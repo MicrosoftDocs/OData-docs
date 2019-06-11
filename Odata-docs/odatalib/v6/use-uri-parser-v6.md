@@ -9,6 +9,8 @@ ms.topic: article
 ms.service: multiple
 ---
 # OData Uri Parser
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v6.md)]
+
 
 This post is intended to guide you through the UriParser for OData V4, which is released within ODataLib V6.0 and later.
 

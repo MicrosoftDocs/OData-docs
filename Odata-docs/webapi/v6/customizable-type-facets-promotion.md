@@ -8,6 +8,8 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
+# Customizable type facets
+**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 Class `ODataUri` has two properties `Filter` and `OrderBy` that are tree data structures representing part of the URI parsing result. [Precision](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752531) and [scale](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752532) are two [type facets](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752528) for certain primitive types. When an operation is applied to types with different facets, they will first be converted to a common type with identical facets. The common type is also the type for the result of the operation. This conversion will appear as one or more convert nodes in the resulting tree. The question is, what are the type facets conversion/promotion rules?
 

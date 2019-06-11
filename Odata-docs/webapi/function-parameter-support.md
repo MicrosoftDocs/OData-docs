@@ -4,6 +4,8 @@ title : "4.6 Function parameter support"
 ms.date: 03/25/2015
 ---
 # Function parameter support
+**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
+[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 Since [Web API OData V5.5-beta](https://www.nuget.org/packages/Microsoft.AspNet.OData/5.5.0-beta), it supports the following types as function parameter:
 

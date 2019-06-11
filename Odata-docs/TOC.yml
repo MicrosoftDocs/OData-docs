@@ -56,34 +56,34 @@
         href: /odata/webapi/getting-started
       - name: Model creation
         items:
-        - name: Model builders overview
+        - name: Model builder overview
           href: /odata/webapi/model-builder-abstract
-        - name: Build Edm Model Explicitly
+        - name: Build Edm model explicit
           href: /odata/webapi/model-builder-untyped
-        - name: Non-convention model builder
-          href: /odata/webapi/model-builder-nonconvention
         - name: Convention model builder
           href: /odata/webapi/convention-model-builder
+        - name: Non-convention model builder
+          href: /odata/webapi/model-builder-nonconvention
       - name: Routing
         items:
         - name: Routing overview
           href: /odata/webapi/routing-abstract
-        - name: Built-in routing conventions
+        - name: Routing conventions
           href: /odata/webapi/built-in-routing-conventions
         - name: Attribute Routing
           href: /odata/webapi/attribute-routing
-        - name: Custom routing convention
+        - name: Custom routing
           href: /odata/webapi/custom-routing-convention
       - name: How-To
         items:
           - name: DateTime support
             href: /odata/webapi/datetime-support
+          - name: Edm.Date and Edm.TimeOfDay
+            href: /odata/webapi/date-and-timeofday-support
           - name: Referential constraint
             href: /odata/webapi/referential-constraint
           - name: Nested $filter in $expand
             href: /odata/webapi/filter-in-expand
-          - name: Edm.Date and Edm.TimeOfDay
-            href: /odata/webapi/date-and-timeofday-support
           - name: Abstract entity types
             href: /odata/webapi/abstract-entity-types
           - name: Function parameter support
@@ -104,31 +104,31 @@
             href: /odata/webapi/capabilities-vocabulary-support
           - name: AutoExpand attribute
             href: /odata/webapi/autoexpand-attribute
-          - name: Ignore query option
+          - name: Ignoring query option
             href: /odata/webapi/ignore-query-option
           - name: Alternate keys
             href: /odata/webapi/Alternate-Key
-          - name: Add NextPageLink and $count for collection property
+          - name: NextPageLink and $count for collections
             href: /odata/webapi/AddNextPageLinkAndCountForCollectionProperty
-          - name: Prefer odata.include-annotations
+          - name: Prefer OData.include-annotations
             href: /odata/webapi/odataIncludeAnnotations
-          - name: Prefer odata.continue-on-error
+          - name: Prefer OData.continue-on-error
             href: /odata/webapi/ContinueOnError
-          - name: Set namespace for operations in model builder
+          - name: Namespace for operations in model builder
             href: /odata/webapi/Set-namespaces-for-operations
-          - name: Use HttpRequestMessage Extension Methods
+          - name: HttpRequestMessage extension methods
             href: /odata/webapi/Use-HttpRequestMessage-Extension-Method
-          - name: OData Simplified Uri convention
+          - name: OData Simplified Uri
             href: /odata/webapi/simplified-uri-convention
-          - name: MaxExpansionDepth in EnableQueryAttribute
+          - name: MaxExpansionDepth in EnableQuery
             href: /odata/webapi/MaxExpansionDepthInEnableQueryAttribute
-          - name: Bind Custom UriFunctions to CLR Methods
+          - name: Custom UriFunctions binding
             href: /odata/webapi/bind-custom-urifunctions-to-clr-methods
           - name: IN Operator
             href: /odata/webapi/InOperator
           - name: Case-insensitive names and unqualified functions & actions
             href: /odata/webapi/caseInsensitiveAndQualifiedFunctions
-          - name: Simplified optional-$-prefix for OData query option for WebAPI query parsing
+          - name: Simplified optional-$-prefix query option
             href: /odata/webapi/enableNoDollarQueryOptions
       - name: Extending OData WebAPI
         items:
@@ -230,7 +230,7 @@
         href: /odata/odatalib/edm/alternatekey
       - name: Capabilities vocabulary support
         href: /odata/odatalib/edm/capabilitiesVocabulary
-      - name: Support multi-NavigationPropertyBindings for a single navigation property
+      - name: Multi-NavigationPropertyBindings for single navigation property
         href: /odata/odatalib/edm/Multi-Binding
       - name: Navigation property partner
         href: /odata/odatalib/edm/navigation-partner
@@ -250,28 +250,28 @@
     href: /odata/webapi/basic-auth
   - name: OData Client
     items:
-      - name: basic-crud-operations
-        href: /basic-crud-operations.md
-      - name: client-annotation-support
-        href: /client-annotation-support.md
-      - name: client-async-operations
-        href: /client-async-operations.md
-      - name: client-batch-operations
-        href: /client-batch-operations.md
-      - name: client-tracking
-        href: /client-tracking.md
-      - name: deal-with-server-driven-paging
-        href: /deal-with-server-driven-paging.md
-      - name: get-response-content
-        href: /get-response-content.md
-      - name: OData-Client-Code-Generation-Tool
-        href: /OData-Client-Code-Generation-Tool.md
-      - name: query-options
-        href: /query-options.md
-      - name: use-client-hooks-in-odata-client
-        href: /use-client-hooks-in-odata-client.md
-      - name: use-httpclient-in-odata-client
-        href: /use-httpclient-in-odata-client.md
+      - name: Basic crud operations
+        href: /odata/odataclient/basic-crud-operations.md
+      - name: Client annotation support
+        href: /odata/odataclient/client-annotation-support.md
+      - name: Client async operations
+        href: /odata/odataclient/client-async-operations.md
+      - name: Client batch operations
+        href: /odata/odataclient/client-batch-operations.md
+      - name: Client tracking
+        href: /odata/odataclient/client-tracking.md
+      - name: Server driven paging
+        href: /odata/odataclient/deal-with-server-driven-paging.md
+      - name: Get response content
+        href: /odata/odataclient/get-response-content.md
+      - name: OData Client Code Generation Tool
+        href: /odata/odataclient/OData-Client-Code-Generation-Tool.md
+      - name: Query options
+        href: /odata/odataclient/query-options.md
+      - name: Client hooks
+        href: /odata/odataclient/use-client-hooks-in-odata-client.md
+      - name: Using Httpclient 
+        href: /odata/odataclient/use-httpclient-in-odata-client.md
   - name: Spatial lib
     items:
       - name: Define spatial properties

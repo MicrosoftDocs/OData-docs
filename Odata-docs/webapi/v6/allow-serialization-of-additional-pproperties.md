@@ -8,8 +8,10 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
+# Allow serialization of additional properties
+**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
-We are now supporting to serialize addtional properties which are not advertised in Metadata from ODataLib 6.13.0. To achieve this, it is just needed to turn off full validation when creating the `ODataMessageWriterSettings`.
+We are now supporting to serialize additional properties which are not advertised in Metadata from ODataLib 6.13.0. To achieve this, it is just needed to turn off full validation when creating the `ODataMessageWriterSettings`.
 
 Here is a full example which is trying to write an extra property `Prop1` in the Entry. The implementation of InMemoryMessage in this sample can be found [here](https://github.com/OData/odata.net/blob/ae0dd29c1cf430255a8ec9c4225b4745e25cad64/test/FunctionalTests/Tests/DataOData/Tests/OData.TDD.Tests/Common/InMemoryMessage.cs).
 

@@ -2,12 +2,14 @@
 title: "Read and Write Untyped values in ODataLib"
 description: ""
 author: madansr7
-ms.author: saumadan
+ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
 # Support untyped JSON
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
+
 Starting with ODataLib 7.0, `ODataMessageReader` & `ODataMessageWriter` are able to read & write untyped primitive, structured, and collection values.  
 
 Values read from a payload are considered untyped if:
@@ -20,7 +22,7 @@ The `ODataMessageReaderSettings` & `ODataMessageWriterSettings` `Validations
 
 Untyped values can be read and written as raw strings or, starting with ODataLib 7.3, can be read and written as structured values.
 
-For compatiblity with ODataLib 7.0, untyped values are read by default as a raw string representing the untyped content. To use the standard OData reader APIs to read untyped content in ODataLib 7.3, set the `ODataMessageReaderSettings.ReadUntypedAsString` property to `false`.
+For compatibility with ODataLib 7.0, untyped values are read by default as a raw string representing the untyped content. To use the standard OData reader APIs to read untyped content in ODataLib 7.3, set the `ODataMessageReaderSettings.ReadUntypedAsString` property to `false`.
 
 Given the following model:
 

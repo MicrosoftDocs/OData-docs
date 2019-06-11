@@ -2,12 +2,13 @@
 title: "Override primitive serialization and deserialization of payload"
 description: ""
 author: madansr7
-ms.author: saumadan
+ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
 # Override primitive serialization
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
 
 Since ODataLib 6.12.0, it supports to customize the payload value converter to override the primitive serialization and deserialization of payload.
 
@@ -30,7 +31,7 @@ And in ODataLib 7.0, a custom converter is registered through [DI](https://odata
 
 Here we are trying to override the default converter to support the "R" format of date and time.   
 
-<strong>1. Define DataTimeOffset converter</strong>
+***1. Define DataTimeOffset converter***
 
 ```C#
 internal class DateTimeOffsetCustomFormatPrimitivePayloadValueConverter : ODataPayloadValueConverter
@@ -57,7 +58,7 @@ internal class DateTimeOffsetCustomFormatPrimitivePayloadValueConverter : ODataP
 }
 ```
 
-<strong>2. Register new converter to DI container</strong>
+***2. Register new converter to DI container***
 
 ```C#
 ContainerBuilderHelper.BuildContainer(

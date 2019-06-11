@@ -9,6 +9,8 @@ ms.topic: article
 ms.service: multiple
 ---
 # Read OData payload
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v6.md)]
+
 
 The reader API is almost like the writer API, so you can expect the symmetry here.
 

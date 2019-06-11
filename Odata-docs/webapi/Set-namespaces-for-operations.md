@@ -6,7 +6,7 @@ ms.date: 09/16/2015
 ---
 # Set namespace for operations in model builder
 
-Since OData Web API V5.7, it allows to <strong>set a custom namespace for individual function and action in model builder</strong>.
+Since OData Web API V5.7, it allows to ***set a custom namespace for individual function and action in model builder***.
 
 ### Set namespace for function and action in model builder
 
@@ -20,4 +20,4 @@ FunctionConfiguration function = builder.Function("MyFunction");
 function.Namespace = "MyNamespace";
 ```
 
-The setting works for <strong>ODataConventionModelBuilder</strong> as well.
+The setting works for ***ODataConventionModelBuilder*** as well.

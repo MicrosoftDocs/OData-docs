@@ -5,11 +5,14 @@ title : "4.13 Delta Feed Support"
 ms.date: 05/19/2015
 ---
 # Delta Feed Support
+**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
+[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
-<h3>Serialization Support for Delta Feed</h3>
-This sample will introduce how to create a <strong>[Delta Feed](https://docs.oasis-open.org/odata/odata-json-format/v4.0/errata02/os/odata-json-format-v4.0-errata02-os-complete.html#_Toc403940644)</strong> which is serialized into a Delta Response in Web API OData V4.
+## Serialization Support for Delta Feed
 
-Similar to [`EdmEntityObjectCollection`](https://github.com/OData/WebApi/blob/master/OData/src/System.Web.OData/OData/EdmEntityCollectionObject.cs), [Web API OData V5.6](https://www.nuget.org/packages/Microsoft.AspNet.OData/5.6.0-beta1) now has an [`EdmChangedObjectCollection`](https://github.com/OData/WebApi/blob/master/OData/src/System.Web.OData/OData/EdmChangedObjectCollection.cs) to represent a collection of objects which can be a part of the <strong>Delta Feed</strong>.
+This sample will introduce how to create a [Delta Feed](https://docs.oasis-open.org/odata/odata-json-format/v4.0/errata02/os/odata-json-format-v4.0-errata02-os-complete.html#_Toc403940644) which is serialized into a Delta Response in Web API OData V4.
+
+Similar to [`EdmEntityObjectCollection`](https://github.com/OData/WebApi/blob/master/OData/src/System.Web.OData/OData/EdmEntityCollectionObject.cs), [Web API OData V5.6](https://www.nuget.org/packages/Microsoft.AspNet.OData/5.6.0-beta1) now has an [`EdmChangedObjectCollection`](https://github.com/OData/WebApi/blob/master/OData/src/System.Web.OData/OData/EdmChangedObjectCollection.cs) to represent a collection of objects which can be a part of the ***Delta Feed***.
 A delta response can contain <i>[new/changed entities](https://docs.oasis-open.org/odata/odata-json-format/v4.0/errata02/os/odata-json-format-v4.0-errata02-os-complete.html#_Toc403940645)</i>, <i>[deleted entities](https://docs.oasis-open.org/odata/odata-json-format/v4.0/errata02/os/odata-json-format-v4.0-errata02-os-complete.html#_Toc403940646)</i>, <i>[new links](https://docs.oasis-open.org/odata/odata-json-format/v4.0/errata02/os/odata-json-format-v4.0-errata02-os-complete.html#_Toc403940647)</i> or <i>[deleted links](https://docs.oasis-open.org/odata/odata-json-format/v4.0/errata02/os/odata-json-format-v4.0-errata02-os-complete.html#_Toc403940648)</i>.
 
 WebAPI OData V4 now has [`EdmDeltaEntityObject`](https://github.com/OData/WebApi/blob/master/OData/src/System.Web.OData/OData/EdmDeltaEntityObject.cs), [`EdmDeltaDeletedEntityObject`](https://github.com/OData/WebApi/blob/master/OData/src/System.Web.OData/OData/EdmDeltaDeletedEntityObject.cs), [`EdmDeltaLink`](https://github.com/OData/WebApi/blob/master/OData/src/System.Web.OData/OData/EdmDeltaLink.cs) and [`EdmDeltaDeletedLink`](https://github.com/OData/WebApi/blob/master/OData/src/System.Web.OData/OData/EdmDeltaDeletedLink.cs) respectively for the objects that can be a part of the Delta response.
@@ -111,7 +114,7 @@ public class CustomersController : ODataController
 }
 ```
 
-Now, user can issue a <strong>GET</strong> request as:
+Now, user can issue a ***GET*** request as:
 
 ```C#
 https://localhost/odata/Customers?$expand=Orders&$deltatoken=abc

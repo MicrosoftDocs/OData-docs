@@ -2,12 +2,14 @@
 title: "Support multi-NavigationPropertyBindings for a single navigation property"
 description: ""
 author: madansr7
-ms.author: saumadan
+ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
 # Multibinding support
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
+
 
 According to the spec, a navigation property can be used in multiple bindings with different path. It makes a lot of sense for navigation property under complex and containment. From ODataLib V7.0, we are able to support it.
 The valid format of a binding path is:

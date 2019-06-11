@@ -2,12 +2,13 @@
 title: " Fluent functional-style writer API"
 description: ""
 author: madansr7
-ms.author: saumadan
+ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
 # Fluent functional style writer API
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
 
 In the previous section, paired `WriteStart()`/`WriteEnd()` calls have been made to write payloads. In this version, a new set of fluent functional-style API has been introduced as an improvement over the previous API which is rather primitive, requiring paired `WriteStart()`/`WriteEnd()` calls.
 

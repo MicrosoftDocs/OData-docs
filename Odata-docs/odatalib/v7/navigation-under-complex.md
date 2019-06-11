@@ -2,14 +2,19 @@
 title: "Navigation property under complex type"
 description: "Navigation property under complex type"
 author: madansr7
-ms.author: saumadan
+ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
 # Navigation property in complex type
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
 
-Since OData V7.0, it supports to add navigation property under complex type. Basically navigation under complex are same with navigation under entity for usage, the only differences are: **1.** Navigation under complex can have multiple bindings with different path. **2.** Complex type does not have id, so the navigation link and association link of navigation under complex need contain the entity id which the complex belongs to.
+OData V7.0 started to support addition of navigation property under complex type. Basically navigation under complex are same with navigation under entity for usage, the only differences are: 
+
+**1.** Navigation under complex can have multiple bindings with different path. 
+
+**2.** Complex type does not have id, so the navigation link and association link of navigation under complex need contain the entity id which the complex belongs to.
 
 The page will include the usage of navigation under complex in EDM, Uri parser, and serializer and deserializer.
 
@@ -73,7 +78,7 @@ entityContainer.AddElement(cities2);
 The navigation property `navUnderComplex` is binded to cities1 and cities2 with path `"Address/City"` and `"Addresses/City"` respectively.
 
 Then the csdl of the model would be like:
-
+```xml
     <Schema xmlns="https://docs.oasis-open.org/odata/ns/edm" Namespace="Sample">
         <EntityType Name="City">
             <Key>
@@ -102,6 +107,7 @@ Then the csdl of the model would be like:
             <EntitySet Name="Cities2" EntityType="Sample.City"/>
         </EntityContainer>
     </Schema>
+```
 
 The binding path may need include type cast. For example, if there is a navigation property `City2` defined in a complex type `UsAddress` which is derived from `Address`. If add a binding to `City2`, it should be like this:
 `people.AddNavigationTarget(navUnderDerivedComplex, cities1, new EdmPathExpression("Address/Sample.UsAddress/City2"));`
@@ -133,6 +139,7 @@ Accessing navigation property under collection of complex is not valid, since it
 
 Different with path, navigation under collection of complex can be accessed directly in expressions of $select and $expand, which means `Addresses/City` is supported. Refer [ABNF](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/abnf/odata-abnf-construction-rules.txt) for more details.
 
+```html
 	$select:  
 	https://host/People('abc')/Address?$select=City
 	https://host/People?$select=Address/City
@@ -150,6 +157,7 @@ Different with path, navigation under collection of complex can be accessed dire
 	
 	$orderby:
 	https://host/People?$order=Address/City/Name
+```
 
 ### Uri parser ###
 There is nothing special if using `ODataUriParser`. For `ODataQueryOptionParser`, if we need resolve the navigation property under complex to its navigation target in the query option, navigation source that the complex belongs to and the binding path are both needed. If the navigation source or part of binding path is in the path, we need it passed to the constructor of `ODataQueryOptionParser`. So there are 2 overloaded constructor added to accept `ODataPath` as parameter. 
@@ -207,6 +215,7 @@ writer.WriteEnd();// End of entity
 
 Payload:
 
+```json
     {
     "@odata.context": "https://host/$metadata#People/$entity",
     "UserName":"abc",
@@ -219,6 +228,7 @@ Payload:
        }
     }
     }
+```
 
 ## 4. Deserializer (Reader) ##
-Reading process is same with reading an navigation property under entity. For navigation property `City` under `Address`, it will be read as an `ODataNestedResourceInfo` which has navigation url `https://host/People('abc')/Complex/City` and an `ODataResource` which has Id `https://host/Cities1('Shanghai')`. 
+Reading process is same with reading an navigation property under entity. For navigation property `City` under `Address`, it will be read as an `ODataNestedResourceInfo` which has navigation URL `https://host/People('abc')/Complex/City` and an `ODataResource` which has Id `https://host/Cities1('Shanghai')`. 

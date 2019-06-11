@@ -8,13 +8,14 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
+# Disable instance annotations
 
-From 6.12.0, OData .Net client is able to disable instance annotation materialization by turning on the flag `DisableInstanceAnnotationMaterialization` in `DataServiceContext`.
+ OData 6.12 .Net client is able to disable instance annotation materialization by turning on the flag `DisableInstanceAnnotationMaterialization` in `DataServiceContext`.
 
 Let's have an example to demonstrate:
 
 The response payload for the example is:
-
+```json
     {
      "@odata.context":"https://localhost/$metadata#People/$entity",
      "PersonID":1,
@@ -28,7 +29,7 @@ The response payload for the example is:
         "PostalCode":"98052"
         }
     }
-
+```
 Here we compare the effects by turning off and on the `DisableInstanceAnnotationMaterialization` flag.
 ``` csharp
 Context.SendingRequest2 += (sender, eventArgs) => ((HttpWebRequestMessage)eventArgs.RequestMessage).SetHeader("Prefer", "odata.include-annotations=*");

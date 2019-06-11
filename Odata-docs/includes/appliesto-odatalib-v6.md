@@ -1,1 +1,1 @@
-**Applies To**: ![yes](/odata/assets/doc-assets/yes.png) OData Core Lib V6
+ ![yes](/odata/assets/doc-assets/yes.png) OData Core Lib V6

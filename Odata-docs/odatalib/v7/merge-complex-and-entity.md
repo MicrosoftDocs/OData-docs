@@ -2,18 +2,19 @@
 title: "Merge complex type and entity type"
 description: "Merge complex and entity for OData Serialization and Deserialization"
 author: madansr7
-ms.author: saumadan
+ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
 ms.service: multiple
 ---
 # Merge complex types and entity types
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
 
-From ODataLib 7.0, we merged the public APIs for serializing/deserializing complex values and entities. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them. Since the only really fundamental differences between complex type and entity type at this point are the presence of a key and media link entries, we thought it was best to merge them and just deal with the differences. 
+In ODataLib 7.0, we merged the public APIs for serializing/deserializing complex values and entities. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them. Since the only really fundamental differences between complex type and entity type at this point are the presence of a key and media link entries, we thought it was best to merge them and just deal with the differences. 
 
 We followed the existing implementation of serializing/deserializing entity instances for both entity instances and complex instances, and the implementation of serializing/deserializing entity collections for both entity collections and complex collections.  This page will provide some simple sample code about how to write these kinds of payload.
 
-# Public APIs used to store complex/entity instances #
+## Public APIs used to store complex/entity instances
 
 `ODataResource` class is used to store information of an entity instance or a complex instance.
 
@@ -23,7 +24,7 @@ We followed the existing implementation of serializing/deserializing entity inst
 
 For other Public APIs, you can refer to the [Breaking changes about Merge Entity and Complex](../release notes/2016-08-29-23-17-Merge-Entity-And-Complex-Breaking)).
 
-# Model #
+## Model
 
 Suppose we have a model, in following sections, we will explain how to write/read a complex property or a collection complex property.
 
@@ -53,7 +54,7 @@ Suppose we have a model, in following sections, we will explain how to write/rea
 </edmx:Edmx>
 ```
 
-# Write a top level complex instance #
+## Write a top level complex instance
 
 In order to write the complex property payload, we need to create an `ODataWriter` first. ODataLib provides `ODataMessageWriter.CreateODataResourceWriter`  to create the writer.
 
@@ -111,7 +112,7 @@ If we want to write a complex collection property, we can use `CreateODataResour
 
 ```
 
-# Write a complex property in an entity instance #
+## Write a complex property in an entity instance
 To write an entity with a complex property, we can create the `ODataWriter` for the entity by calling `CreateODataResourceWriter`, and then write the entity. we write the complex property just as writing a navigation property.
 
 - Write the property name of the complex property by `WriteStart(ODataNestedResourceInfo nestedResourceInfo)`
@@ -181,11 +182,11 @@ To write a complex collection property in an entity, we need to set `ODataNested
 
 Developers can  follow the same way to write a nested complex property in a complex instance. 
 
-# Write complex or entity instances in Uri parameters #
+## Write complex or entity instances in Uri parameters
 
 To write an entity (or a complex) instance or a collection of entity (or a collection of complex) in Uri parameters, ODataLib provides `ODataMessageWriter.CreateODataUriParameterResourceWriter` and `ODataMessageWriter.CreateODataUriParameterResourceSetWriter` to create the `ODataWriter`. Then, you can follow the same sample code  in the above two sections to write the related parameters.
 
-# Read a  top level complex instance #
+## Read a top level complex instance
 
 To read a complex (or an entity) instance, ODataLib provides `ODataMessageReader.CreateODataResourceReader` to create the `ODataReader`. 
 
@@ -235,7 +236,7 @@ Then, developers can read the complex (or entity) instance, nested complex ( or 
 
 if this reader is created for an entity type, the same code can be used to read an entity instance.
 
-# Read a top level complex collection #
+## Read a top level complex collection
 
 To read a complex collection ( or an entity collection) , ODataLib provides `ODataMessageReader.CreateODataResourceSetReader` to create the `ODataReader`. 
 
@@ -273,6 +274,6 @@ To read a complex collection ( or an entity collection) , ODataLib provides `ODa
 
 if this reader is created for an entity collection, the same code can be used to read an entity collection.
 
-# Read complex or entity instances in Uri parameters #
+## Read complex or entity instances in Uri parameters
 
 To read an entity (or a complex) instance or a collection of entity (or a collection of complex) in Uri parameters, ODataLib provides `ODataMessageReader.CreateODataUriParameterResourceReader` and `ODataMessageReader.CreateODataUriParameterResourceSetReader` to create the `ODataReader`. Then, you can follow the same sample code in the above two sections to read the related parameters.
