@@ -41,5 +41,3 @@ http://host:port/path/SampleService.svc/Categories(1)/Products?$top=2&$orderby=N
 
     For e.g. the following url selects a product by color.
     `https://server/products?$filter=color eq 'red'`
-
-    The section [Querying](####-querying) explains the query options in detail.
