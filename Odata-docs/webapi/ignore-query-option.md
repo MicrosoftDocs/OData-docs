@@ -5,7 +5,8 @@ description: ""
 ms.date: 08/11/2015
 ---
 # Ignore query option
-**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
+**Applies To**:
+[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
 [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 In OData WebApi 5.7, we can ignore some query options when calling `ODataQueryOption` `ApplyTo` method, this is helpful when your OData service is integrate with other service that may already applied those query options. 

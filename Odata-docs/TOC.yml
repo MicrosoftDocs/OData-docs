@@ -76,7 +76,7 @@
           href: /odata/webapi/custom-routing-convention
       - name: How-To
         items:
-          - name: DateTime support
+          - name: DateTime operations
             href: /odata/webapi/datetime-support
           - name: Edm.Date and Edm.TimeOfDay
             href: /odata/webapi/date-and-timeofday-support
@@ -86,9 +86,9 @@
             href: /odata/webapi/filter-in-expand
           - name: Abstract entity types
             href: /odata/webapi/abstract-entity-types
-          - name: Function parameter support
+          - name: Function parameters
             href: /odata/webapi/function-parameter-support
-          - name: Action parameter support
+          - name: Action parameters
             href: /odata/webapi/action-parameter-support
           - name: Operation parameters in untyped scenarios
             href: /odata/webapi/operation-parameters-in-untyped-scenarios
@@ -98,9 +98,9 @@
             href: /odata/webapi/open-type-in-untyped-scenarios
           - name: Query Options
             href: /odata/webapi/query-option
-          - name: Delta Feed Support
+          - name: Delta Feed
             href: /odata/webapi/DeltaFeed_support
-          - name: Capabilities vocabulary support
+          - name: Capabilities vocabulary
             href: /odata/webapi/capabilities-vocabulary-support
           - name: AutoExpand attribute
             href: /odata/webapi/autoexpand-attribute
@@ -158,7 +158,7 @@
           href: /odata/odatalib/read-payload
         - name: Use ODataUriParser
           href: /odata/odatalib/use-uri-parser
-        - name: Dependency Injection Support
+        - name: Dependency Injection
           href: /odata/odatalib/di-support
         - name: Parsing uri path template
           href: /odata/odatalib/parsing-url-template
@@ -168,15 +168,15 @@
           href: /odata/odatalib/skipTokenAndDeltaToken
         - name: Write NextPageLink/Count for collection
           href: /odata/odatalib/nextpagelinkAndCountForCollection
-        - name: Override primitive serialization and deserialization of payload
+        - name: Override primitive payload serialization 
           href: /odata/odatalib/override-primitive-serialization-deserialization
         - name: Navigation property under complex type
           href: /odata/odatalib/navigation-under-complex
-        - name: Allow serialization of additional properties
+        - name: Serialization additional properties
           href: /odata/odatalib/allow-serialization-of-additional-properties
-        - name: Expanded Navigation Property Support in Delta Response
+        - name: Expanded Nav Property in Delta Response
           href: /odata/odatalib/expanded-navigation-delta
-        - name: Basic Uri parser support for aggregations
+        - name: Basic Uri parser for aggregations
           href: /odata/odatalib/aggregation-support
         - name: Customizable type facets promotion in URI parsing
           href: /odata/odatalib/customizable-type-facets-promotion
@@ -228,9 +228,9 @@
         href: /odata/odatalib/edm/add-annotations-to-enummember
       - name: Alternate Key
         href: /odata/odatalib/edm/alternatekey
-      - name: Capabilities vocabulary support
+      - name: Capabilities vocabulary
         href: /odata/odatalib/edm/capabilitiesVocabulary
-      - name: Multi-NavigationPropertyBindings for single navigation property
+      - name: Multi-NavigationPropertyBindings for navigation property
         href: /odata/odatalib/edm/Multi-Binding
       - name: Navigation property partner
         href: /odata/odatalib/edm/navigation-partner
@@ -248,7 +248,7 @@
     items:
       - name: Basic crud operations
         href: /odata/odataclient/basic-crud-operations
-      - name: Client annotation support
+      - name: Client annotations
         href: /odata/odataclient/client-annotation-support
       - name: Client async operations
         href: /odata/odataclient/client-async-operations

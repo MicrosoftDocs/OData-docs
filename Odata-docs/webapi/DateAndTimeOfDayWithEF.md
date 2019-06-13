@@ -5,7 +5,8 @@ description: "How to Use Edm.Date and Edm.TimeOfDay with EntityFramework"
 ms.date: 01/06/2016
 ---
 # Edm.Date and Edm.TimeOfDay with EF
-**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
+**Applies To**:
+[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
 [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 ### Problem

@@ -5,7 +5,8 @@ description: "7.x WebApi URI parser using case-insensitive names and unqualified
 ms.date: 02/05/2018
 ---
 # Case-insensitive names and unqualified functions and actions
-**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
+**Applies To**:
+[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
 [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 **OData Core Library** v7.x has introduced the following two usability improvement:

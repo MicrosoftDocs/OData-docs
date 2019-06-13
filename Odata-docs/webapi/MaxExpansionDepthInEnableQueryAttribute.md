@@ -4,7 +4,8 @@ title : "4.24 MaxExpansionDepth in EnableQueryAttribute"
 ms.date: 07/12/2016
 ---
 # MaxExpansionDepth in EnableQueryAttribute
-**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
+**Applies To**:
+[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
 [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 Since [Web API OData V5.9.1](https://www.nuget.org/packages/Microsoft.AspNet.OData/5.9.1), it corrected the behavior of MaxExpansionDepth of EnableQueryAttribute. MaxExpansionDepth means the max expansion depth for the $expand query option.

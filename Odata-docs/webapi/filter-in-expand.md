@@ -6,7 +6,8 @@ description: ""
 ms.date: 03/20/2015
 ---
 # Nested $filter in $expand
-**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
+**Applies To**:
+[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
 [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 [OData Web API](https://github.com/OData/WebApi) v[5.5](https://www.nuget.org/packages/Microsoft.AspNet.OData/5.5.0-beta) supports nested $filter in $expand, e.g.:

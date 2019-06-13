@@ -4,7 +4,8 @@ ms.date: 01/16/2015
 ---
 
 # DateTime support
-**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
+**Applies To**:
+[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
 [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 This sample will introduce how to support *DateTime* type in Web API OData V4.

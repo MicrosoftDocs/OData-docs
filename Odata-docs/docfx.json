@@ -62,8 +62,7 @@
       "extendBreadcrumb": true,
       "feedback_system": "None", 
       "ms.author":"madansr7",
-      "ms.description":"OData docs",
-      "ms.prod": "OData",
+      "ms.prod": "odata",
       "ms.topic": "conceptual",
       "titleSuffix": "OData"
     },

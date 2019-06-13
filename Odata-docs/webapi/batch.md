@@ -4,7 +4,8 @@ title : "4.12 Batch Support"
 ms.date: 05/12/2015
 ---
 # Batch Support
-**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
+**Applies To**:
+[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
 [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 Batch requests allow grouping multiple operations into a single HTTP request payload and the service will return a single HTTP response with the response to all operations in the requests. This way, the client can optimize calls to the server and improve the scalability of its service.
