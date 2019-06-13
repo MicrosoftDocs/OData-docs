@@ -36,17 +36,17 @@
   - name: Advanced
     items:
     - name: Common Schema Description Language (CSDL) 
-      href: /odata/concepts/advanced/metadata-detail
+      href: /odata/concepts/metadata-detail-adv
     - name: Derived types
-      href: /odata/concepts/advanced/derived-types
+      href: /odata/concepts/derived-types-adv
     - name: Containment
-      href: /odata/concepts/advanced/Containment
+      href: /odata/concepts/Containment-adv
     - name: Open Type
-      href: /odata/concepts/advanced/open-type
+      href: /odata/concepts/open-type-adv
     - name: Batching
-      href: /odata/concepts/advanced/batching
+      href: /odata/concepts/batching-adv
     - name: Annotations
-      href: /odata/concepts/advanced/annotations
+      href: /odata/concepts/annotations-adv
 - name: Develop
   expanded: true
   items:
@@ -130,6 +130,8 @@
             href: /odata/webapi/caseInsensitiveAndQualifiedFunctions
           - name: Simplified optional-$-prefix query option
             href: /odata/webapi/enableNoDollarQueryOptions
+          - name: Batch requests
+            href: /odata/webapi/batch
       - name: Extending OData WebAPI
         items:
         - name: Custom URL parsing
@@ -238,12 +240,8 @@
         href: /odata/odatalib/edm/optional-parameters
     - name: Batching
       items:
-        - name: Batch payloads
-          href: batching
-        - name: Batching in ODataLib
+        - name: Batching requests
           href: /odata/odatalib/JsonBatch
-        - name: Batching in WebAPI
-          href: /odata/webapi/batch
   - name: OData Client
     items:
       - name: Basic crud operations
