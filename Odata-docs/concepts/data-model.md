@@ -1,6 +1,6 @@
 ---
 title: "Data Model"
-description: "Data model basics"
+description: "Data model basics. Thi"
 author: madansr7
 ms.author: madansr7
 ms.date: 02/19/2019

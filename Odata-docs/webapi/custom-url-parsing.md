@@ -5,9 +5,7 @@ title : "6.1 Custom URL parsing"
 ms.date: 01/16/2015
 ---
 # Custom URL parsing
-**Applies To**:
-[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
-[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 Let's show how to extend the default OData Uri Parser behavior:
 

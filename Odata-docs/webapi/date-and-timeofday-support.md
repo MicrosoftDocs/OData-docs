@@ -4,9 +4,7 @@ title : "4.4 Edm.Date and Edm.TimeOfDay"
 ms.date: 03/23/2015
 ---
 # Edm.Date and Edm.TimeOfDay
-**Applies To**:
-[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
-[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 This sample introduces how to use the `Edm.Date` & `Edm.TimeOfDay` supported in Web API OData V5.5.
 

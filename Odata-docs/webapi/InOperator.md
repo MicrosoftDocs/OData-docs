@@ -5,9 +5,7 @@ ms.date: 07/03/2018
 ---
 
 # IN Operator
-**Applies To**:
-[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
-[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 Starting in WebAPI OData V7.0.0 [[ASP.NET](https://www.nuget.org/packages/Microsoft.AspNet.OData/7.0.0) | [ASP.NET Core](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/)], the IN operator is a [supported feature](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn01/new-in-odata-v4.01-cn01.html#_Toc485385090) that enables a shorthand way of writing multiple EQ expressions joined by OR. For example,
 

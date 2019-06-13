@@ -5,9 +5,7 @@ description: "Routing Conventions"
 ms.date: 04/28/2015
 ---
 # Custom routing convention
-**Applies To**:
-[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
-[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 It's easy to custom your own routing convention to override the default Web API OData routing convention. Let's see how to target it.
 

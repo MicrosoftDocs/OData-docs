@@ -5,9 +5,7 @@ date:   2015-03-30 16:54:10
 ms.date: 04/01/2015
 ---
 # Write a simple OData V4 service
-**Applies To**:
-[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
-[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 Let's get started by creating a simple OData V4 service. It has one entity set `Products`, one entity type `Product`. `Product` has two properties `ID` and `Name`, with `ID` being an integer and `Name` being a string. The service is read only. The only data clients can get besides the service document and metadata document, is the `Products` entity set.
 
