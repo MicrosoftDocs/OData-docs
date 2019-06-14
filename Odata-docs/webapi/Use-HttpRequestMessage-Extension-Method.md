@@ -5,6 +5,7 @@ description: ""
 ms.date: 09/17/2015
 ---
 # Use HttpRequestMessage Extension Methods
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 In Microsoft.AspNet.OData, set of HttpRequestMessage extension methods are provided through HttpRequestMessageExtensions. For services that don't use LINQ or ODataQueryOptions.ApplyTo(), those extension methods can offer lots of help.
 

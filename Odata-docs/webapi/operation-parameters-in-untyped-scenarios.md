@@ -231,6 +231,7 @@ public IHttpActionResult EntityAction(int key, ODataActionParameters parameters)
 }
 ```
 #### Request Samples
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 Now, We can invoke the function with the entity and collection of entity parameter as:
 ```C#

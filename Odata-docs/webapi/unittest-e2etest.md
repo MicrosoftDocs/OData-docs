@@ -4,6 +4,7 @@ description: ""
 ms.date: 05/08/2015
 ---
 # Unit Test and E2E Test
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 In OData WebApi, there are unit test, e2e test for V3 and V4, those [test cases](https://github.com/OData/WebApi/tree/master/OData/test) are to ensure the feature and bug fix, also to make sure not break old functionality.
 

@@ -5,6 +5,7 @@ description: "WebAPI to use $skiptoken for server side paging"
 ms.date: 10/15/2018
 ---
 # Use $skiptoken for server-driven paging
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 ### Background
 Loading large data can be slow. Services often rely on pagination to load the data incrementally to improve the response times and the user experience. Paging can be server-driven or client-driven:

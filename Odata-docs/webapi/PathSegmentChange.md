@@ -5,6 +5,7 @@ description: "Path change"
 ms.date: 09/01/2016
 ---
 # Use ODL path classes
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 Since [Web API OData V6.0.0 beta](https://www.nuget.org/packages/Microsoft.AspNet.OData/6.0.0-beta2), Web API OData uses the ODL path classes directly.
 

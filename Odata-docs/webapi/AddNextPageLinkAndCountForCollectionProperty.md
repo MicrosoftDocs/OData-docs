@@ -5,9 +5,7 @@ description: ""
 ms.date: 09/15/2015
 ---
 # Add NextPageLink and $count for collection property
-**Applies To**: 
-[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
-[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 In OData WebApi V5.7, it supports to add the NextPageLink and $count for collection property.
 

@@ -4,6 +4,7 @@ title : "10.2 Work around for SingleResult.Create an empty result"
 ms.date: 07/24/2015
 ---
 # Work around for SingleResult.Create an empty result
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 **Note: This work around is for https://github.com/OData/WebApi/issues/170, which is not applicable for Microsoft.AspNetCore.OData v7.x.**
 

@@ -4,6 +4,7 @@ title : "4.9 Query by dynamic properties"
 ms.date: 03/31/2015
 ---
 # Query by dynamic properties
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 Since Web API OData V5.5, it supports filter, select and orderby on dynamic properties.
 

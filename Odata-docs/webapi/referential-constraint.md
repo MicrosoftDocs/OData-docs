@@ -5,6 +5,7 @@ title : "4.2 Referential constraint"
 ms.date: 01/16/2015
 ---
 # Referential constraint
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 The following sample codes can be used for Web API OData V3 & V4 with a little bit function name changing.
 

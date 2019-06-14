@@ -4,6 +4,7 @@ title : "4.10 Open type in untyped scenarios"
 ms.date: 03/31/2015
 ---
 # Open type in untyped scenarios
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 Since Web API OData V5.5, it supports open type and dynamic property on un-type scenario, dynamic properties can be:
 

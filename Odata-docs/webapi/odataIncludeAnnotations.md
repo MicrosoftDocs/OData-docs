@@ -5,6 +5,7 @@ description: ""
 ms.date: 09/16/2015
 ---
 # Prefer odata.include-annotations
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 Since OData WebApi V5.6, it supports ***[odata.include-annotations](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html#_Toc406398237)***.
 

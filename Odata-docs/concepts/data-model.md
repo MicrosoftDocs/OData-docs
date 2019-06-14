@@ -15,7 +15,7 @@ The central concepts in the EDM are entities, relationships, entity sets, action
 
 ## Entities
 
-Entities** are instances of entity types (e.g. Customer, Employee, etc.).
+Entities are instances of entity types (e.g. Customer, Employee, etc.).
 
 ## Entity types
 
@@ -54,3 +54,5 @@ Operations allow the execution of custom logic on parts of a data model. Functio
 Singletons are named entities which can be accessed as direct children of the entity container. A singleton may also be a member of an entity set.
 
 An ***OData resource*** is anything in the model that can be addressed (an entity set, entity, property, or operation).
+
+
