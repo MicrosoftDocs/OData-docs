@@ -62,7 +62,7 @@ Then, we can get the metadata document for *Animal* as:
 </EntityType>
 ```
 
-Note:
+[!Note]:
 
 1. *Animal* is an abstract entity type without any keys and any properties
 2. *Dog* & *Pig* are two sub entity types derived from *Animal* with own keys. 

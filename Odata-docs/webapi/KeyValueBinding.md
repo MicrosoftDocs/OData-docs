@@ -84,4 +84,4 @@ The result is:
 
 ```
 
-**Note**, this rule also applies to the navigation property key convention binding.
+[!Note], this rule also applies to the navigation property key convention binding.

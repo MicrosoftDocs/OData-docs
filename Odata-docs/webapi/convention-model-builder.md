@@ -82,7 +82,7 @@ It will generate the below metadata document:
 </edmx:Edmx>
 ```
 
-**Note**: We omit the **function/action** building because it's same as non-convention model builder.
+[!Note]: We omit the **function/action** building because it's same as non-convention model builder.
 
 ### Conventions
 

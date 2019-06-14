@@ -8,10 +8,10 @@ OData Version 4.01 adds various new features and removes a few restrictions. The
 - Easier partial adoption of OData in existing REST APIs
 
 OData 4.01 is highly compatible, incremental release over OData 4.0. A compliant 4.01 OData Service fully supports OData 4.0 clients.
-
 New OData 4.01 query features and simplified syntax can be supported as compatible extensions to OData 4.0 syntax.
-
 Content negotiation is facilitated through the ODataVersion header to ensure OData 4.0 clients don't receive unexpected constructs in response payloads.
+
+The follow table represents the state of implementation of the above mentioned simplified options in the existing OData .NET stack.
 
 ## Protocol
 

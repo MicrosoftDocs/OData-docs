@@ -17,7 +17,7 @@ HttpConfiguration config = …
 config.EnableCaseInsensitive(caseInsensitive: true);
 config.MapODataServiceRoute("odata", "odata", edmModel);
 ```
-**Note**: Case insensitive flag enables both for metadata and key-words, not only on path segment, but also on query option.
+[!Note]: Case insensitive flag enables both for metadata and key-words, not only on path segment, but also on query option.
 
 For example:
 
