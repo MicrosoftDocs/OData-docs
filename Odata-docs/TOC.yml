@@ -132,6 +132,8 @@
             href: /odata/webapi/enableNoDollarQueryOptions
           - name: Batch requests
             href: /odata/webapi/batch
+          - name: Adding unit tests
+            href: /odata/webapi/unittest-e2etest
       - name: Extending OData WebAPI
         items:
         - name: Custom URL parsing
@@ -166,7 +168,7 @@
           href: /odata/odatalib/parsing-url-template
         - name: Add additional prefer header
           href: /odata/odatalib/additional-prefer-header
-        - name: $skiptoken & $deltatoken
+        - name: Skiptoken & Deltatoken
           href: /odata/odatalib/skipTokenAndDeltaToken
         - name: Write NextPageLink/Count for collection
           href: /odata/odatalib/nextpagelinkAndCountForCollection
@@ -276,5 +278,11 @@
         href: /odata/spatial/define-spatial-property
       - name: Create spatial instances
         href: /odata/spatial/create-spatial-instances
+  - name: Resources
+    items:
+      - name: Tools
+        href: /odata/resources/tools
+      - name: Support
+        href: /odata/resources/support
 # - name: 10.2 Work around for SingleResult.Create an empty result
 #   href: posts\work-around-for-singleresult-create

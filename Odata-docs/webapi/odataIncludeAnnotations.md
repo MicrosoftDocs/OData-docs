@@ -1,5 +1,5 @@
 ---
-title: "4.19 Prefer odata.include-annotations"
+title: "Prefer odata.include-annotations"
 description: ""
 
 ms.date: 09/16/2015

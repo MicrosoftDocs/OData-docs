@@ -57,6 +57,7 @@ Given a model as following:
 Developers can define their own `UriPathParser`, register this class by DI (Please refer to  [Dependency Injection support](../core libraries/2016-08-30-01-05-di-support)) and override the `ParsePathIntoSegments`. Then, ODataLib will use this API to separate the Uri into several segments.
 
 ```c#
+
     public class UriPathParser
     {
         public virtual ICollection<string> ParsePathIntoSegments(Uri fullUri, Uri serviceBaseUri)
@@ -129,6 +130,7 @@ For all unknown segments, ODataLib provides a `DynamicPathSegment` class to repr
 `ODataUriParser` also provides a Property `ParseDynamicPathSegmentFunc` for developers to bind those unknown raw-string segments to model.
 
 ```c#
+
     public delegate ICollection<ODataPathSegment> ParseDynamicPathSegment(ODataPathSegment previous, string identifier, string parenthesisExpression);
 
     public ParseDynamicPathSegment ParseDynamicPathSegmentFunc
@@ -143,6 +145,7 @@ By default, if developers do not set the `ParseDynamicPathSegmentFunc` , ODataLi
 1. Developers can set `ParseDynamicPathSegmentFunc` as following which parses the second segment into a `DynamicPathSegment` with `IEdmEntityType` "Item". Then `ODataUriParser` will parse the last segment "size" into a `PropertySegment`.
 
 ```c#
+
 	    uriParser.ParseDynamicPathSegmentFunc = (previous, identifier, parenthesisExpression) =>
 	    {
 	        switch (identifier)
@@ -167,6 +170,7 @@ Then, the `ODataPath` should be:
 2. Developers can also set `ParseDynamicPathSegmentFunc` as following which will translate the unknown string segment into a `NavigationPropertySegment` and `KeySegment`:
 
 ```c#
+
 	    uriParser.ParseDynamicPathSegmentFunc = (previous, identifier, parenthesisExpression) =>
 	    {
 	        switch (identifier)

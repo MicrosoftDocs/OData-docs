@@ -1,5 +1,5 @@
 ---
-title: "4.22 Use HttpRequestMessage Extension Methods"
+title: "Use HttpRequestMessage Extension Methods"
 description: ""
 
 ms.date: 09/17/2015
@@ -46,7 +46,7 @@ private string GetServiceRootUri()
   return serviceRootUri;
 }
 ```
-     
+
 ## GetModel
 For Microsoft.AspNet.OData only, get the EDM model associated with the request.
 ```C#

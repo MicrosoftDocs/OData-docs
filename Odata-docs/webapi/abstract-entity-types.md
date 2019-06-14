@@ -36,6 +36,7 @@ public class Pig : Animal
 We can use the following codes to build Edm Model:
 
 ```C#
+
   var builder = new ODataConventionModelBuilder();
   builder.EntityType<Animal>();
   builder.EntitySet<Dog>("Dogs");
@@ -102,6 +103,7 @@ public class Line : Graph
 We can use the following codes to build Edm Model:
 
 ```C#
+
   var builder = new ODataConventionModelBuilder();
   builder.ComplexType<Graph>();
   IEdmModel model = builder.GetEdmModel()

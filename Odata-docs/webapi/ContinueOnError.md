@@ -1,5 +1,5 @@
 ---
-title: "4.20 Prefer odata.continue-on-error"
+title: "Prefer odata.continue-on-error"
 description: ""
 
 ms.date: 09/16/2015
@@ -15,29 +15,32 @@ Users should call the following API to enable continue on error
 
 - For Microsoft.AspNet.OData (supporting classic ASP.NET Framework):
 
-    ```C#
+```C#
+
         var configuration = new HttpConfiguration();
         configuration.EnableContinueOnErrorHeader();
-    ```
+```
 
 - For Microsoft.AspNetCore.OData (supporting ASP.NET Core):
 
    It can be enabled in the service's HTTP request pipeline configuration method `Configure(IApplicationBuilder app, IHostingEnvironment env)` of the typical `Startup` class:
 
-    ```C#
+```C#
+
         app.UseMvc(routeBuilder =>
         {
            routeBuilder.Select().Expand().Filter().OrderBy().MaxTop(100).Count()
                         .EnableContinueOnErrorHeader();  // Additional configuration to enable continue on error.
            routeBuilder.MapODataServiceRoute("ODataRoute", "odata", builder.GetEdmModel());
        });
-    ```
+```
 
 #### Prefer odata.continue-on-error
 
 We can use the following codes to prefer continue on error
 
 ```C#
+
 HttpRequestMessage request = new HttpRequestMessage(...);
 request.Headers.Add("Prefer", "odata.continue-on-error");
 request.Content = new StringContent(...);

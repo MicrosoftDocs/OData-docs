@@ -98,6 +98,7 @@ Read metadata is simple, just use ReadMetadataDocument method in ODataMessageRea
 
 
 ```c#
+
  reader.ReadMetadataDocument();
 ```
 

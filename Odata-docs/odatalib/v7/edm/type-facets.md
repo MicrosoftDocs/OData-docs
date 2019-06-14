@@ -1,5 +1,5 @@
 ---
-title: "2.11 Specify type facets for type definitions"
+title: "Specify type facets for type definitions"
 description: "Specify type facets for type definitions"
 author: madansr7
 ms.author: madansr7

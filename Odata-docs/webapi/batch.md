@@ -1,20 +1,21 @@
 ---
-title : "4.12 Batch Support"
-
+title : "Batch Support"
 ms.date: 05/12/2015
 ---
 # Batch Support
+
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 Batch requests allow grouping multiple operations into a single HTTP request payload and the service will return a single HTTP response with the response to all operations in the requests. This way, the client can optimize calls to the server and improve the scalability of its service.
 
-Please refer to [OData Protocol](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html#_Toc406398359) for more detail about batch, and [Batch in ODL](https://odata.github.io/odata.net/#04-08-client-batch-operations) for batch in ODL client.
+Please refer to [OData Protocol](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html#_Toc406398359) for more detail about batch, and [Batch in ODL](/odata/odataclient/client-batch-operations) for batch in ODL client.
 
 ## Enable Batch in Web API OData Service
 
 It is very easy to enable batch in an OData service which is built by Web API OData.
 
 ### Add Batch Handler
+
 ```C#
 public static void Register(HttpConfiguration config)
 {
@@ -25,8 +26,9 @@ public static void Register(HttpConfiguration config)
 
 As above, we only need to create a new batch handler and pass it when mapping routing for OData service. Batch will be enabled. 
 
-For testing, we can POST a request with batch body to the baseurl/$batch: 
+For testing, we can POST a request with batch body to the baseurl/$batch:
 
+```html
     POST https://localhost:14409/odata/$batch HTTP/1.1
     User-Agent: Fiddler
     Host: localhost:14409
@@ -72,9 +74,11 @@ For testing, we can POST a request with batch body to the baseurl/$batch:
     User-Agent: Microsoft ADO.NET Data Services
     
     --batch_d3bcb804-ee77-4921-9a45-761f98d32029--
+```
 
 And the response should be:
 
+```html
     HTTP/1.1 200 OK
     Cache-Control: no-cache
     Pragma: no-cache
@@ -143,6 +147,7 @@ And the response should be:
       ]
     }
     --batchresponse_5667121d-ca2f-458d-9bae-172f04cdd411--
+```
 
 ### Setting Batch Quotas
 DefaultODataBatchHandler contains some configuration, which can be set by customers, to customize the handler. For example, the following code will only allow a maximum of 8 requests per batch and 5 operations per ChangeSet.
@@ -161,11 +166,13 @@ We can handle the behavior upon encountering a request within the batch that ret
 
 Preference `odata.continue-on-error` makes no sense by default, and service returns the error for that request and **continue processing additional requests within the batch as default behavior**.
 
-To enable `odata.continue-on-error`, please refer to section [4.20 Prefer odata.continue-on-error](https://odata.github.io/WebApi/#04-20-ContinueOnError) for details.
+To enable `odata.continue-on-error`, please refer to section [4.20 Prefer odata.continue-on-error](/odata/webapi/ContinueOnError) for details.
 
 ### Request Without Preference `odata.continue-on-error`
 
 For testing, we can POST a batch request without Preference `odata.continue-on-error`:
+
+```html
 
 	POST https://localhost:9001/DefaultBatch/$batch HTTP/1.1
 	Accept: multipart/mixed
@@ -224,7 +231,7 @@ The response should be:
 
 	{"Message":"No HTTP resource was found that matches the request URI 'https://localhost:9001/DefaultBatch/DefaultBatchCustomerfoo'.","MessageDetail":"No route data was found for this request."}
 	--batchresponse_b49114d7-62f7-450a-8064-e27ef9562eda--
-
+```
 Service returned error and stop processing.
 
 ### Request With Preference `odata.continue-on-error`
@@ -232,6 +239,7 @@ Service returned error and stop processing.
 Now POST a batch request with Preference `odata.continue-on-error`:
 
 ```html
+
 	POST https://localhost:9001/DefaultBatch/$batch HTTP/1.1
 	Accept: multipart/mixed
 	prefer: odata.continue-on-error

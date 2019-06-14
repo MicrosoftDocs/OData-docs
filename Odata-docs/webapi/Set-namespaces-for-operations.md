@@ -1,5 +1,5 @@
 ---
-title: "4.21 Set namespace for operations in model builder"
+title: "Set namespace for operations in model builder"
 description: ""
 
 ms.date: 09/16/2015

@@ -1,5 +1,5 @@
 ---
-title: "4.16 Ignore query option"
+title: "Ignore query option"
 description: ""
 
 ms.date: 08/11/2015

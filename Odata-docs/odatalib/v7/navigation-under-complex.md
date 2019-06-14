@@ -166,7 +166,7 @@ There is nothing special if using `ODataUriParser`. For `ODataQueryOptionParser`
 public ODataQueryOptionParser(IEdmModel model, ODataPath odataPath, IDictionary<string, string> queryOptions)
 public ODataQueryOptionParser(IEdmModel model, ODataPath odataPath, IDictionary<string, string> queryOptions, IServiceProvider container)
 ```
-Note: Parameter IServiceProvider is related to [Dependency Injection](https://odata.github.io/odata.net/v7/#01-04-di-support).
+Note: Parameter IServiceProvider is related to [Dependency Injection](/odata/odatalib/di-support).
 
 Actually we do not recommend to use `ODataQueryOptionParser` in this case, `ODataUriParser` would be more convenient. Here we still give an example just in case:
 

@@ -1,5 +1,5 @@
 ---
-title: "4.15 AutoExpand attribute"
+title: "AutoExpand attribute"
 description: ""
 
 ms.date: 08/11/2015
@@ -12,6 +12,7 @@ In OData WebApi 5.7, we can put `AutoExpand` attribute on navigation property to
 ### Model
 
 ```C#
+
 public class Product
 {
     public int Id { get; set; }

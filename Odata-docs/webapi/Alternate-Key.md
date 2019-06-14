@@ -1,7 +1,5 @@
 ---
-title: "4.17 Alternate keys"
-description: ""
-
+title: "Alternate keys"
 ms.date: 08/11/2015
 ---
 # Alternate keys

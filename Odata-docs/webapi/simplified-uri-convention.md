@@ -1,5 +1,5 @@
 ---
-title: "4.23 OData Simplified Uri convention"
+title: "OData Simplified Uri convention"
 description: ""
 
 ms.date: 12/20/2015

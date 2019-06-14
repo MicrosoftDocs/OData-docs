@@ -206,6 +206,7 @@ Or, you can use `DataServiceContext.GetValueAsync` to support such query.
 You can also use `DataServiceContext.LoadPropertyAsync` to query the related properties.
 
 ```c#
+
     public async Task AsyncAPIGetNavigation()
     {
         var me = await dsc.Me.GetValueAsync();
@@ -222,6 +223,7 @@ You can also use `DataServiceContext.LoadPropertyAsync` to query the related pro
 `DataServiceContext` provides `BeginExecuteBatch` to put several query in a batch. The queries are specified as `DataServiceRequest<TElement>` instances. The `EndExecuteBatch` returns a `DataServiceResponse` that represents the response of the batch request as a whole. Individual query responses are represented as `DataServiceResponse` objects that can be accessed by enumerating the `DataServiceResponse` instance.
 
 ```c#
+
     public void AsyncQueryBatch()
     {
         var requests = new DataServiceRequest[]
@@ -306,6 +308,7 @@ You can use the `SaveChangesOption` to control whether you need to send a batch 
 ### Create an entity
 
 ```c#
+
     DefaultContainer dsc = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
 
     public void AsyncCreatePerson()
@@ -337,6 +340,7 @@ You can use the `SaveChangesOption` to control whether you need to send a batch 
 ### Update an entity
 
 ```c#
+
     public void AsyncUpdatePerson()
     {
     // Get the single entity first.
@@ -368,6 +372,7 @@ The code is almost the same with that in Update an entity part, you only need to
 `DataServiceContext` provides `SaveChangesAsync` to support all the modification operation.
 
 ```c#
+
     public async Task AsyncModifyEntity()
     {
         var person = new Person()
@@ -394,6 +399,7 @@ The code is almost the same with that in Update an entity part, you only need to
 `DataServiceContext` provides `BeginGetReadStream` and `EndGetReadStream` to support asynchronously requesting the binary data stream that belongs to the requested entity.
 
 ```c#
+
     public void ReadingStream(IAsyncResult ar)
     {
         var dsc = ar.AsyncState as DataServiceContext;

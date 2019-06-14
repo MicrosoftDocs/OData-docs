@@ -180,6 +180,7 @@ Note that in JSON batch, `dependsOnIds` needs to include the request Id being re
 An `ODataBatchReader` can be instantiated to process the batch request as follows:
 
 ```C#
+
     ODataMessageReader odataMessageReader = new ODataMessageReader(odataRequestMessage, messageReaderSettings, model);
     ODataBatchReader odataBatchReader = odataMessageReader.CreateODataBatchReader();
 ```
