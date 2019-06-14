@@ -1,10 +1,11 @@
 ---
-title: "4.22 Use HttpRequestMessage Extension Methods"
+title: "Use HttpRequestMessage Extension Methods"
 description: ""
 
 ms.date: 09/17/2015
 ---
 # Use HttpRequestMessage Extension Methods
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 In Microsoft.AspNet.OData, set of HttpRequestMessage extension methods are provided through HttpRequestMessageExtensions. For services that don't use LINQ or ODataQueryOptions.ApplyTo(), those extension methods can offer lots of help.
 
@@ -46,7 +47,7 @@ private string GetServiceRootUri()
   return serviceRootUri;
 }
 ```
-     
+
 ## GetModel
 For Microsoft.AspNet.OData only, get the EDM model associated with the request.
 ```C#

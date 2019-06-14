@@ -6,7 +6,7 @@ author: madansr7
 ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
-ms.service: multiple
+ 
 ---
 # Expand navigation property support in delta response
 **Applies To**: [!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v6.md)]
@@ -124,7 +124,7 @@ string payloadLooksLike =
 Though there is only one `WriteStart(entry)`, `ODataJsonLightDeltaWriter` keeps track of an internal state machine thus can correctly differentiate between writing a delta entry and writing a normal entry. Actually during writing the expanded navigation properties, all calls to `WriteStart(entry)`, `WriteStart(feed)` and `WriteStart(navigationLink)` are delegated to an internal `ODataJsonLightWriter` which is responsible for writing normal payloads. And the control will return to `ODataJsonLightDeltaWriter` after the internal writer completes. The internal writer pretends to write a phony entry but will skip writing any structural property or instance annotation until it begins to write a navigation link (means we are going to write an expanded navigation property).
 
 ## Read expanded navigation property in delta response
-In the reader part, new APIs include a new state enum and a sub state property. All the other remains the same.
+In the reader part, new APIs include a new state Enum and a sub state property. All the other remains the same.
 
 ``` csharp
 public enum Microsoft.OData.Core.ODataDeltaReaderState
@@ -142,7 +142,9 @@ public abstract class Microsoft.OData.Core.ODataDeltaReader
 }
 ```
 
-Note that the sub state is `ODataReaderState` which is used for normal payloads. The sub state is a complement to the main state in `ODataDeltaReader` to specify the detailed reader state within expanded navigation properties. But the sub state is **ONLY** available and meaningful when the main state is `ODataDeltaReaderState.ExpandedNavigationProperty`. Users can still use the `Item` property to retrieve the current item being read out from an expanded payload.
+[!Note]:
+
+The sub state is `ODataReaderState` which is used for normal payloads. The sub state is a complement to the main state in `ODataDeltaReader` to specify the detailed reader state within expanded navigation properties. But the sub state is **ONLY** available and meaningful when the main state is `ODataDeltaReaderState.ExpandedNavigationProperty`. Users can still use the `Item` property to retrieve the current item being read out from an expanded payload.
 
 The following sample shows the scaffolding code to read the expanded feeds and entries in a delta payload.
 

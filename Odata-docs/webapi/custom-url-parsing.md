@@ -5,8 +5,7 @@ title : "6.1 Custom URL parsing"
 ms.date: 01/16/2015
 ---
 # Custom URL parsing
-**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
-[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 Let's show how to extend the default OData Uri Parser behavior:
 
@@ -18,7 +17,7 @@ HttpConfiguration config = …
 config.EnableCaseInsensitive(caseInsensitive: true);
 config.MapODataServiceRoute("odata", "odata", edmModel);
 ```
-**Note**: Case insensitive flag enables both for metadata and key-words, not only on path segment, but also on query option.
+[!Note]: Case insensitive flag enables both for metadata and key-words, not only on path segment, but also on query option.
 
 For example:
 

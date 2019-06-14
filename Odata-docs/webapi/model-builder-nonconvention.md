@@ -5,6 +5,7 @@ description: "convention model builder"
 ms.date: 04/17/2015
 ---
 # Non-convention model builder
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 To build an Edm model using non-convention model builder is to create an `IEdmModel` object by directly call fluent APIs of `ODataModelBuilder`. The developer should take all responsibility to add all Edm types, operations, associations, etc. into the data model one by one.
 Let's see how to build the Customer-Order* business model by `ODataModelBuilder`.

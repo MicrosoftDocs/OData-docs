@@ -3,8 +3,7 @@ title : "Abstract entity types"
 ms.date: 03/24/2015
 ---
 # Abstract entity types
-**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
-[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 Since [Web API OData V5.5-beta](https://www.nuget.org/packages/Microsoft.AspNet.OData/5.5.0-beta), it is allowed to:
 
@@ -37,6 +36,7 @@ public class Pig : Animal
 We can use the following codes to build Edm Model:
 
 ```C#
+
   var builder = new ODataConventionModelBuilder();
   builder.EntityType<Animal>();
   builder.EntitySet<Dog>("Dogs");
@@ -62,7 +62,7 @@ Then, we can get the metadata document for *Animal* as:
 </EntityType>
 ```
 
-Note:
+[!Note]:
 
 1. *Animal* is an abstract entity type without any keys and any properties
 2. *Dog* & *Pig* are two sub entity types derived from *Animal* with own keys. 
@@ -103,6 +103,7 @@ public class Line : Graph
 We can use the following codes to build Edm Model:
 
 ```C#
+
   var builder = new ODataConventionModelBuilder();
   builder.ComplexType<Graph>();
   IEdmModel model = builder.GetEdmModel()

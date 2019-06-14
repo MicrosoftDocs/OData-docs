@@ -36,17 +36,17 @@
   - name: Advanced
     items:
     - name: Common Schema Description Language (CSDL) 
-      href: /odata/concepts/advanced/metadata-detail
+      href: /odata/concepts/metadata-detail-adv
     - name: Derived types
-      href: /odata/concepts/advanced/derived-types
+      href: /odata/concepts/derived-types-adv
     - name: Containment
-      href: /odata/concepts/advanced/Containment
+      href: /odata/concepts/Containment-adv
     - name: Open Type
-      href: /odata/concepts/advanced/open-type
+      href: /odata/concepts/open-type-adv
     - name: Batching
-      href: /odata/concepts/advanced/batching
+      href: /odata/concepts/batching-adv
     - name: Annotations
-      href: /odata/concepts/advanced/annotations
+      href: /odata/concepts/annotations-adv
 - name: Develop
   expanded: true
   items:
@@ -76,7 +76,7 @@
           href: /odata/webapi/custom-routing-convention
       - name: How-To
         items:
-          - name: DateTime support
+          - name: DateTime operations
             href: /odata/webapi/datetime-support
           - name: Edm.Date and Edm.TimeOfDay
             href: /odata/webapi/date-and-timeofday-support
@@ -86,9 +86,9 @@
             href: /odata/webapi/filter-in-expand
           - name: Abstract entity types
             href: /odata/webapi/abstract-entity-types
-          - name: Function parameter support
+          - name: Function parameters
             href: /odata/webapi/function-parameter-support
-          - name: Action parameter support
+          - name: Action parameters
             href: /odata/webapi/action-parameter-support
           - name: Operation parameters in untyped scenarios
             href: /odata/webapi/operation-parameters-in-untyped-scenarios
@@ -98,9 +98,9 @@
             href: /odata/webapi/open-type-in-untyped-scenarios
           - name: Query Options
             href: /odata/webapi/query-option
-          - name: Delta Feed Support
+          - name: Delta Feed
             href: /odata/webapi/DeltaFeed_support
-          - name: Capabilities vocabulary support
+          - name: Capabilities vocabulary
             href: /odata/webapi/capabilities-vocabulary-support
           - name: AutoExpand attribute
             href: /odata/webapi/autoexpand-attribute
@@ -130,6 +130,10 @@
             href: /odata/webapi/caseInsensitiveAndQualifiedFunctions
           - name: Simplified optional-$-prefix query option
             href: /odata/webapi/enableNoDollarQueryOptions
+          - name: Batch requests
+            href: /odata/webapi/batch
+          - name: Adding unit tests
+            href: /odata/webapi/unittest-e2etest
       - name: Extending OData WebAPI
         items:
         - name: Custom URL parsing
@@ -158,25 +162,25 @@
           href: /odata/odatalib/read-payload
         - name: Use ODataUriParser
           href: /odata/odatalib/use-uri-parser
-        - name: Dependency Injection Support
+        - name: Dependency Injection
           href: /odata/odatalib/di-support
         - name: Parsing uri path template
           href: /odata/odatalib/parsing-url-template
         - name: Add additional prefer header
           href: /odata/odatalib/additional-prefer-header
-        - name: $skiptoken & $deltatoken
+        - name: Skiptoken & Deltatoken
           href: /odata/odatalib/skipTokenAndDeltaToken
         - name: Write NextPageLink/Count for collection
           href: /odata/odatalib/nextpagelinkAndCountForCollection
-        - name: Override primitive serialization and deserialization of payload
+        - name: Override primitive payload serialization 
           href: /odata/odatalib/override-primitive-serialization-deserialization
         - name: Navigation property under complex type
           href: /odata/odatalib/navigation-under-complex
-        - name: Allow serialization of additional properties
+        - name: Serialization additional properties
           href: /odata/odatalib/allow-serialization-of-additional-properties
-        - name: Expanded Navigation Property Support in Delta Response
+        - name: Expanded Nav Property in Delta Response
           href: /odata/odatalib/expanded-navigation-delta
-        - name: Basic Uri parser support for aggregations
+        - name: Basic Uri parser for aggregations
           href: /odata/odatalib/aggregation-support
         - name: Customizable type facets promotion in URI parsing
           href: /odata/odatalib/customizable-type-facets-promotion
@@ -228,9 +232,9 @@
         href: /odata/odatalib/edm/add-annotations-to-enummember
       - name: Alternate Key
         href: /odata/odatalib/edm/alternatekey
-      - name: Capabilities vocabulary support
+      - name: Capabilities vocabulary
         href: /odata/odatalib/edm/capabilitiesVocabulary
-      - name: Multi-NavigationPropertyBindings for single navigation property
+      - name: Multi-NavigationPropertyBindings for navigation property
         href: /odata/odatalib/edm/Multi-Binding
       - name: Navigation property partner
         href: /odata/odatalib/edm/navigation-partner
@@ -238,17 +242,13 @@
         href: /odata/odatalib/edm/optional-parameters
     - name: Batching
       items:
-        - name: Batch payloads
-          href: batching
-        - name: Batching in ODataLib
+        - name: Batching requests
           href: /odata/odatalib/JsonBatch
-        - name: Batching in WebAPI
-          href: /odata/webapi/batch
   - name: OData Client
     items:
       - name: Basic crud operations
         href: /odata/odataclient/basic-crud-operations
-      - name: Client annotation support
+      - name: Client annotations
         href: /odata/odataclient/client-annotation-support
       - name: Client async operations
         href: /odata/odataclient/client-async-operations
@@ -269,14 +269,24 @@
       - name: Using Httpclient 
         href: /odata/odataclient/use-httpclient-in-odata-client
   - name: Spatial lib
+    items:
+        - name: Define spatial properties
+          href: /odata/spatial/define-spatial-property
+        - name: Create spatial instances
+          href: /odata/spatial/create-spatial-instances
   - name: How to debug
     href: /odata/webapi/debug-webapi-source
   - name: Securing your API
-    href: /odata/webapi/basic-auth
     items:
-      - name: Define spatial properties
-        href: /odata/spatial/define-spatial-property
-      - name: Create spatial instances
-        href: /odata/spatial/create-spatial-instances
+      - name: Basic auth setup
+        href: /odata/webapi/basic-auth
+  - name: Resources
+    items:
+      - name: Tools
+        href: /odata/resources/tools
+      - name: Support
+        href: /odata/resources/support
+      - name: Library roadmap
+        href: /odata/resources/roadmap
 # - name: 10.2 Work around for SingleResult.Create an empty result
 #   href: posts\work-around-for-singleresult-create

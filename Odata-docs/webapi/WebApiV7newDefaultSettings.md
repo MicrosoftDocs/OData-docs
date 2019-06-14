@@ -6,7 +6,7 @@ ms.date: 06/18/2018
 ---
 
 # WebApi Default Enable Unqualified Operations and Case-insensitive Uri #
-
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 ## Overview
 
@@ -111,15 +111,15 @@ builder.EntityType\<Customer\>().Action(\"UpdateAddress\");
 
 -   Case-insensitive property name should become resolvable:
 
-    With model: public class InvalidQueryCustomer { public int <span style="color:red">Id</span> { get; set; } }
+    With model: public class InvalidQueryCustomer { public int Id { get; set; } }
 
-    > GET /service/InvalidQueryCustomers?\$filter=<span style="color:blue">id</span> eq 5 : HTTP 200
+    > GET /service/InvalidQueryCustomers?\$filter=id eq 5 : HTTP 200
 
-    > GET /service/InvalidQueryCustomers(5)?\$filter=<span style="color:blue">id</span> eq 5 : HTTP 400 "Query
+    > GET /service/InvalidQueryCustomers(5)?\$filter=`id eq 5 : HTTP 400 "Query
 options \$filter, \$orderby, \$count, \$skip, and \$top can be applied
 only on collections."
 
--   Case-insensitive customer uri function name should become
+-   Case-insensitive customer Uri function name should become
     resolvable:
 
     With model having entity type People defined and following customized Uri function:
@@ -134,10 +134,10 @@ only on collections."
       >
       > // Add a custom uri function
       >
-      > CustomUriFunctions.AddCustomUriFunction(<span style="color:red">\"myMixedCasestringfunction\"</span>, myFunc);
+      > CustomUriFunctions.AddCustomUriFunction(`\"myMixedCasestringfunction\", myFunc);
 
       This should work:
-      > GET /service/People?\$filter=<span style="color:blue">mYMixedCasesTrInGfUnCtIoN</span>(Name,\'BlaBla\') : HTTP 200
+      > GET /service/People?\$filter=`mYMixedCasesTrInGfUnCtIoN(Name,\'BlaBla\') : HTTP 200
 
 -   Combination of case-insensitive type & property name and unqualified
     function should become resolvable:

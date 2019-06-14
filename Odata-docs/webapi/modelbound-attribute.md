@@ -5,6 +5,7 @@ description: "Model bound attributes"
 ms.date: 08/05/2016
 ---
 # Model Bound Attributes
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 Since [Web API OData V6.0.0](https://www.nuget.org/packages/Microsoft.AspNet.OData/6.0.0) which depends on [OData Lib 7.0.0](https://www.nuget.org/packages/Microsoft.OData.Core/7.0.0), we add a new feature named ModelBoundAttribute, use this feature, we can control the query setting through those attributes to make our service more secure and even control the query result by set page size, automatic select, automatic expand.
 

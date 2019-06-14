@@ -5,7 +5,7 @@ author: madansr7
 ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
-ms.service: multiple
+ 
 ---
 # Writing payload
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
@@ -201,7 +201,7 @@ Entity set is represented by the `ODataResourceSet` class. To write an entity se
 2. The model, as provided when constructing the `ODataMessageWriter` instance.
 3. Entity set and entity type information.
 
-Here is how to write an empty entity set using the old `WriteStart()/WriteEnd()` API (for the new writer API, see [here](https://odata.github.io/odata.net/v7/#01-02-fluent-writer-api)).
+Here is how to write an empty entity set using the old `WriteStart()/WriteEnd()` API (for the new writer API, see [here](/odata/odatalib/fluent-writer-api)).
 
 ```C#
 ODataMessageWriterSettings settings = new ODataMessageWriterSettings();

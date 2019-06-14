@@ -6,7 +6,7 @@ author: madansr7
 ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
-ms.service: multiple
+ 
 ---
 # Read OData payload
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v6.md)]
@@ -98,6 +98,7 @@ Read metadata is simple, just use ReadMetadataDocument method in ODataMessageRea
 
 
 ```c#
+
  reader.ReadMetadataDocument();
 ```
 

@@ -5,9 +5,8 @@ author: madansr7
 ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
-ms.service: multiple
+ 
 ---
-
 # JSON Batching 
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
 
@@ -23,7 +22,7 @@ Details of the JSON Batch format can be found in the OData JSON Format v4.01 spe
 ## Sample Batch Request in JSON Format
 Here is one sample batch request in JSON format (unnecessary details are omitted for sake of brevity):
 
-~~~json    
+```json 
 	https://localhost:9000/$batch
 	User-Agent: Fiddler
 	Authorization: <authz token>
@@ -89,7 +88,7 @@ Here is one sample batch request in JSON format (unnecessary details are omitted
 		}
 	  ]
 	}
-~~~
+```
 
 Significant attributes for the JSON batch request are as follow:
 
@@ -112,7 +111,7 @@ In the example above, with JSON batch format, this request specifies the followi
 ## Typical JSON Batch Request Creation using OData-Core library
 With user-defined EDM model, user can use ODL-Core library to create JSON batch request directly, similar to Multipart/Mixed batch creation. For example:
 
-~~~csharp  
+```C#  
 		// The following code snippet generates JSON batch payload into a memory stream. 
 		MemoryStream stream = new MemoryStream();
 		IODataRequestMessage requestMessage = CreateRequestMessage(stream);
@@ -172,7 +171,7 @@ With user-defined EDM model, user can use ODL-Core library to create JSON batch 
 			batchWriter.WriteEndBatch();
 		}
 		// stream contains the JSON batch request payload.
-~~~
+```
 
 Note that in JSON batch, `dependsOnIds` needs to include the request Id being referenced in the request's URL, as required by the JSON batch semantics.
 
@@ -180,25 +179,26 @@ Note that in JSON batch, `dependsOnIds` needs to include the request Id being re
 
 An `ODataBatchReader` can be instantiated to process the batch request as follows:
 
-~~~csharp
+```C#
+
     ODataMessageReader odataMessageReader = new ODataMessageReader(odataRequestMessage, messageReaderSettings, model);
     ODataBatchReader odataBatchReader = odataMessageReader.CreateODataBatchReader();
-~~~
+```
 
 Note that batch format is detected during the instantiation of `ODataBatchReader` from the batch request header. For Content-Type of `application/json` with optional parameters, an instance of `ODataJsonLightBatchReader` is created, while an `ODataMultipartMixedBatchReader` object is created for `Multipart/Mixed` content type with optional parameters.
     
-~~~csharp    
+```C#    
     ODataMessageWriter batchResponseMessageWriter = new ODataMessageWriter(odataResponseMessage, odataMessageWriterSettings, model);
     ODataBatchWriter batchWriter = batchResponseMessageWriter.CreateODataBatchWriter();
-~~~    
+```    
 
 Similar to the request message writer, the response message writer above also sets up the proper `ODataPayloadKind` for Batch processing.
 
 Now, start the basic batch processing with request reading / response writing. For batch processing, the request processing (including reading, dispatching) and response writing (including processing responses for individual request, writing batch response) are interleaving and the whole process is driven by OData service using specific call patterns as described below (common for both formats).
 
-Typically odataBatchReader is started with initial state, so we can start with creating the response envelop, followed by readings & writings.
+Typically ODataBatchReader is started with initial state, so we can start with creating the response envelop, followed by readings & writings.
 
-~~~csharp
+```C#
     
         batchWriter.WriteStartBatch();
 
@@ -273,7 +273,7 @@ Typically odataBatchReader is started with initial state, so we can start with c
         }
         
         batchWriter.WriteEndBatch();
-~~~
+```
 
 With the introduction of JSON batch, the following public APIs / attributes are available:
 * `ODataBatchWriter`:
@@ -294,8 +294,7 @@ Notes:
 ## Typical JSON Batch Response Processing using OData-Core library
 The processing of JSON batch response is similar to that of Multipart/Mixed batch, as shown in the following code snippet:
 
-~~~csharp
-
+```C#
 		ODataBatchOperationResponseMessage operationMessage = batchReader.CreateOperationResponseMessage();
 		using (ODataMessageReader innerMessageReader = new ODataMessageReader(
 			operationMessage, new ODataMessageReaderSettings(), this.userModel))
@@ -307,6 +306,6 @@ The processing of JSON batch response is similar to that of Multipart/Mixed batc
 				// resource data processing here...
 			}
 		}
-~~~
+```
 
  Note the using block for inner message reader, which helps disposal of the body content stream of the request created during the response reading. The creation of the response body content stream during response processing, similar to creation of the request body content stream during request processing, enables the parallel processing or dispatching of responses or requests of JSON batch.

@@ -1,76 +1,30 @@
 ---
-title: "Query options"
-description: "Query options basics"
+title: "Query options overview"
+description: "Query options overview"
 author: madansr7
 ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
-ms.service: multiple
+ 
 ---
 # OData query options
 
-## What are query options?
-Lorem ipsum dolor sit amet consectetur adipiscing elit phasellus aliquam nunc mauris nam, rutrum varius ultricies sem pretium ligula mattis interdum potenti fames egestas class, sociis quisque tortor erat fusce quam aliquet cum nulla elementum consequat. Id condimentum magna feugiat ornare libero, metus venenatis dictum. Nisi scelerisque hac vehicula montes sed turpis vitae ut purus dictumst, mus sodales lacinia himenaeos non penatibus magna cursus volutpat, tortor ad quam blandit vel laoreet viverra ante suscipit.
+Querying entails two types of operations
 
-At nibh vestibulum elementum magnis convallis tincidunt ad cursus, non lectus penatibus iaculis ligula faucibus suscipit volutpat, et in mauris lacus commodo odio conubia. Curabitur magna conubia tristique facilisis phasellus dui nibh, mi pretium sociosqu primis aenean per sem enim, mattis ac potenti molestie justo nulla. Interdum lacinia morbi arcu feugiat imperdiet aliquet tristique sodales est, faucibus in pulvinar libero turpis aptent torquent magna porttitor auctor, tempus urna taciti scelerisque pellentesque etiam netus orci.
+1. Making a request using `GET` Http verb.
 
-## Order of execution
+    **Talk about examples in section 4.3 - 4.15 of URL conventions**
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit phasellus aliquam nunc mauris nam, rutrum varius ultricies sem pretium ligula mattis interdum potenti fames egestas class, sociis quisque tortor erat fusce quam aliquet cum nulla elementum consequat. Id condimentum magna feugiat ornare libero, metus venenatis dictum. Nisi scelerisque hac vehicula montes sed turpis vitae ut purus dictumst, mus sodales lacinia himenaeos non penatibus magna cursus volutpat, tortor ad quam blandit vel laoreet viverra ante suscipit.
+2. Manipulating response data using query options.
 
-At nibh vestibulum elementum magnis convallis tincidunt ad cursus, non lectus penatibus iaculis ligula faucibus suscipit volutpat, et in mauris lacus commodo odio conubia. Curabitur magna conubia tristique facilisis phasellus dui nibh, mi pretium sociosqu primis aenean per sem enim, mattis ac potenti molestie justo nulla. Interdum lacinia morbi arcu feugiat imperdiet aliquet tristique sodales est, faucibus in pulvinar libero turpis aptent torquent magna porttitor auctor, tempus urna taciti scelerisque pellentesque etiam netus orci.
+A query option is a set of query string parameters applied to a resource that can help control the amount of data being returned for the resource in the URL. A query option is basically requesting that a service perform a set of filtering or other transformations to its data, then return the results. A query option can be applied to every verb except `DELETE` operations.
 
-## Filter
+[!Note]
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit phasellus aliquam nunc mauris nam, rutrum varius ultricies sem pretium ligula mattis interdum potenti fames egestas class, sociis quisque tortor erat fusce quam aliquet cum nulla elementum consequat. Id condimentum magna feugiat ornare libero, metus venenatis dictum. Nisi scelerisque hac vehicula montes sed turpis vitae ut purus dictumst, mus sodales lacinia himenaeos non penatibus magna cursus volutpat, tortor ad quam blandit vel laoreet viverra ante suscipit.
+A request to a resource using Http verbs `GET`, `PATCH` or `PUT` follow these conventions:
 
-At nibh vestibulum elementum magnis convallis tincidunt ad cursus, non lectus penatibus iaculis ligula faucibus suscipit volutpat, et in mauris lacus commodo odio conubia. Curabitur magna conubia tristique facilisis phasellus dui nibh, mi pretium sociosqu primis aenean per sem enim, mattis ac potenti molestie justo nulla. Interdum lacinia morbi arcu feugiat imperdiet aliquet tristique sodales est, faucibus in pulvinar libero turpis aptent torquent magna porttitor auctor, tempus urna taciti scelerisque pellentesque etiam netus orci.
-
-## Select
-
-Lorem ipsum dolor sit amet consectetur adipiscing elit phasellus aliquam nunc mauris nam, rutrum varius ultricies sem pretium ligula mattis interdum potenti fames egestas class, sociis quisque tortor erat fusce quam aliquet cum nulla elementum consequat. Id condimentum magna feugiat ornare libero, metus venenatis dictum. Nisi scelerisque hac vehicula montes sed turpis vitae ut purus dictumst, mus sodales lacinia himenaeos non penatibus magna cursus volutpat, tortor ad quam blandit vel laoreet viverra ante suscipit.
-
-At nibh vestibulum elementum magnis convallis tincidunt ad cursus, non lectus penatibus iaculis ligula faucibus suscipit volutpat, et in mauris lacus commodo odio conubia. Curabitur magna conubia tristique facilisis phasellus dui nibh, mi pretium sociosqu primis aenean per sem enim, mattis ac potenti molestie justo nulla. Interdum lacinia morbi arcu feugiat imperdiet aliquet tristique sodales est, faucibus in pulvinar libero turpis aptent torquent magna porttitor auctor, tempus urna taciti scelerisque pellentesque etiam netus orci.
-
-## Count
-
-Lorem ipsum dolor sit amet consectetur adipiscing elit phasellus aliquam nunc mauris nam, rutrum varius ultricies sem pretium ligula mattis interdum potenti fames egestas class, sociis quisque tortor erat fusce quam aliquet cum nulla elementum consequat. Id condimentum magna feugiat ornare libero, metus venenatis dictum. Nisi scelerisque hac vehicula montes sed turpis vitae ut purus dictumst, mus sodales lacinia himenaeos non penatibus magna cursus volutpat, tortor ad quam blandit vel laoreet viverra ante suscipit.
-
-At nibh vestibulum elementum magnis convallis tincidunt ad cursus, non lectus penatibus iaculis ligula faucibus suscipit volutpat, et in mauris lacus commodo odio conubia. Curabitur magna conubia tristique facilisis phasellus dui nibh, mi pretium sociosqu primis aenean per sem enim, mattis ac potenti molestie justo nulla. Interdum lacinia morbi arcu feugiat imperdiet aliquet tristique sodales est, faucibus in pulvinar libero turpis aptent torquent magna porttitor auctor, tempus urna taciti scelerisque pellentesque etiam netus orci.
-
-## Skip
-
-Lorem ipsum dolor sit amet consectetur adipiscing elit phasellus aliquam nunc mauris nam, rutrum varius ultricies sem pretium ligula mattis interdum potenti fames egestas class, sociis quisque tortor erat fusce quam aliquet cum nulla elementum consequat. Id condimentum magna feugiat ornare libero, metus venenatis dictum. Nisi scelerisque hac vehicula montes sed turpis vitae ut purus dictumst, mus sodales lacinia himenaeos non penatibus magna cursus volutpat, tortor ad quam blandit vel laoreet viverra ante suscipit.
-
-At nibh vestibulum elementum magnis convallis tincidunt ad cursus, non lectus penatibus iaculis ligula faucibus suscipit volutpat, et in mauris lacus commodo odio conubia. Curabitur magna conubia tristique facilisis phasellus dui nibh, mi pretium sociosqu primis aenean per sem enim, mattis ac potenti molestie justo nulla. Interdum lacinia morbi arcu feugiat imperdiet aliquet tristique sodales est, faucibus in pulvinar libero turpis aptent torquent magna porttitor auctor, tempus urna taciti scelerisque pellentesque etiam netus orci.
-
-## Top
-
-Lorem ipsum dolor sit amet consectetur adipiscing elit phasellus aliquam nunc mauris nam, rutr
-um varius ultricies sem pretium ligula mattis interdum potenti fames egestas class, sociis quisque tortor erat fusce quam aliquet cum nulla elementum consequat. Id condimentum magna feugiat ornare libero, metus venenatis dictum. Nisi scelerisque hac vehicula montes sed turpis vitae ut purus dictumst, mus sodales lacinia himenaeos non penatibus magna cursus volutpat, tortor ad quam blandit vel laoreet viverra ante suscipit.
-
-At nibh vestibulum elementum magnis convallis tincidunt ad cursus, non lectus penatibus iaculis ligula faucibus suscipit volutpat, et in mauris lacus commodo odio conubia. Curabitur magna conubia tristique facilisis phasellus dui nibh, mi pretium sociosqu primis aenean per sem enim, mattis ac potenti molestie justo nulla. Interdum lacinia morbi arcu feugiat imperdiet aliquet tristique sodales est, faucibus in pulvinar libero turpis aptent torquent magna porttitor auctor, tempus urna taciti scelerisque pellentesque etiam netus orci.
-
-## Order By
-
-Lorem ipsum dolor sit amet consectetur adipiscing elit phasellus aliquam nunc mauris nam, rutrum varius ultricies sem pretium ligula mattis interdum potenti fames egestas class, sociis quisque tortor erat fusce quam aliquet cum nulla elementum consequat. Id condimentum magna feugiat ornare libero, metus venenatis dictum. Nisi scelerisque hac vehicula montes sed turpis vitae ut purus dictumst, mus sodales lacinia himenaeos non penatibus magna cursus volutpat, tortor ad quam blandit vel laoreet viverra ante suscipit.
-
-At nibh vestibulum elementum magnis convallis tincidunt ad cursus, non lectus penatibus iaculis ligula faucibus suscipit volutpat, et in mauris lacus commodo odio conubia. Curabitur magna conubia tristique facilisis phasellus dui nibh, mi pretium sociosqu primis aenean per sem enim, mattis ac potenti molestie justo nulla. Interdum lacinia morbi arcu feugiat imperdiet aliquet tristique sodales est, faucibus in pulvinar libero turpis aptent torquent magna porttitor auctor, tempus urna taciti scelerisque pellentesque etiam netus orci.
-
-## Search
-
-Lorem ipsum dolor sit amet consectetur adipiscing elit phasellus aliquam nunc mauris nam, rutrum varius ultricies sem pretium ligula mattis interdum potenti fames egestas class, sociis quisque tortor erat fusce quam aliquet cum nulla elementum consequat. Id condimentum magna feugiat ornare libero, metus venenatis dictum. Nisi scelerisque hac vehicula montes sed turpis vitae ut purus dictumst, mus sodales lacinia himenaeos non penatibus magna cursus volutpat, tortor ad quam blandit vel laoreet viverra ante suscipit.
-
-At nibh vestibulum elementum magnis convallis tincidunt ad cursus, non lectus penatibus iaculis ligula faucibus suscipit volutpat, et in mauris lacus commodo odio conubia. Curabitur magna conubia tristique facilisis phasellus dui nibh, mi pretium sociosqu primis aenean per sem enim, mattis ac potenti molestie justo nulla. Interdum lacinia morbi arcu feugiat imperdiet aliquet tristique sodales est, faucibus in pulvinar libero turpis aptent torquent magna porttitor auctor, tempus urna taciti scelerisque pellentesque etiam netus orci.
-
-## Format
-
-Lorem ipsum dolor sit amet consectetur adipiscing elit phasellus aliquam nunc mauris nam, rutrum varius ultricies sem pretium ligula mattis interdum potenti fames egestas class, sociis quisque tortor erat fusce quam aliquet cum nulla elementum consequat. Id condimentum magna feugiat ornare libero, metus venenatis dictum. Nisi scelerisque hac vehicula montes sed turpis vitae ut purus dictumst, mus sodales lacinia himenaeos non penatibus magna cursus volutpat, tortor ad quam blandit vel laoreet viverra ante suscipit.
-
-At nibh vestibulum elementum magnis convallis tincidunt ad cursus, non lectus penatibus iaculis ligula faucibus suscipit volutpat, et in mauris lacus commodo odio conubia. Curabitur magna conubia tristique facilisis phasellus dui nibh, mi pretium sociosqu primis aenean per sem enim, mattis ac potenti molestie justo nulla. Interdum lacinia morbi arcu feugiat imperdiet aliquet tristique sodales est, faucibus in pulvinar libero turpis aptent torquent magna porttitor auctor, tempus urna taciti scelerisque pellentesque etiam netus orci.
-
-## Expand
-
-Lorem ipsum dolor sit amet consectetur adipiscing elit phasellus aliquam nunc mauris nam, rutrum varius ultricies sem pretium ligula mattis interdum potenti fames egestas class, sociis quisque tortor erat fusce quam aliquet cum nulla elementum consequat. Id condimentum magna feugiat ornare libero, metus venenatis dictum. Nisi scelerisque hac vehicula montes sed turpis vitae ut purus dictumst, mus sodales lacinia himenaeos non penatibus magna cursus volutpat, tortor ad quam blandit vel laoreet viverra ante suscipit.
-
-At nibh vestibulum elementum magnis convallis tincidunt ad cursus, non lectus penatibus iaculis ligula faucibus suscipit volutpat, et in mauris lacus commodo odio conubia. Curabitur magna conubia tristique facilisis phasellus dui nibh, mi pretium sociosqu primis aenean per sem enim, mattis ac potenti molestie justo nulla. Interdum lacinia morbi arcu feugiat imperdiet aliquet tristique sodales est, faucibus in pulvinar libero turpis aptent torquent magna porttitor auctor, tempus urna taciti scelerisque pellentesque etiam netus orci.
+- Resource paths identifying a single entity, a complex type instance, a collection of entities, or a collection of complex type instances allow $compute, $expand and $select.
+- Resource paths identifying a collection allow $filter, $search, $count, $orderby, $skip, and $top.
+- Resource paths ending in /$count allow $filter and $search.
+- Resource paths not ending in /$count or /$batch allow $format.
+- Query options for a `POST` operations may differ due to the type of object being returned in the response. If a POST returns a single entity vs collection of entities, it will impact the query options that are applicable to the request.

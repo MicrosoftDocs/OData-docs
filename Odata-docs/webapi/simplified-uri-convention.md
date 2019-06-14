@@ -1,10 +1,11 @@
 ---
-title: "4.23 OData Simplified Uri convention"
+title: "OData Simplified Uri convention"
 description: ""
 
 ms.date: 12/20/2015
 ---
 # OData Simplified Uri convention
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 OData v4 Web API [5.8 RC](https://www.nuget.org/packages/Microsoft.AspNet.OData/5.8.0-rc) 
 introduces a new OData Simplified Uri convention that supports key-as-segment and default OData Uri convention side-by-side.

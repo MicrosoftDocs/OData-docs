@@ -5,6 +5,7 @@ title : "6.4 Custom Stream Entity"
 ms.date: 09/16/2015
 ---
 # Custom Stream Entity
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 Since Web API OData V5.7, it supports to customize entity as stream.
 

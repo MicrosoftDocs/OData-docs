@@ -1,12 +1,12 @@
 ---
-title: "2.11 Define referential constraints"
+title: "Define referential constraints"
 description: "Define referential constraints using EdmLib APIs"
 
 author: madansr7
 ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
-ms.service: multiple
+ 
 ---
 # Define referential constraints
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v6.md)]

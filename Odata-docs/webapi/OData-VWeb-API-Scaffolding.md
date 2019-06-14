@@ -5,6 +5,7 @@ description: "How to Use OData V4 Web API Scaffolding"
 ms.date: 06/03/2015
 ---
 # OData V4 Web API Scaffolding
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 ### Install Visual Studio Extension
 The installer of OData V4 Web API Scaffolding can be downloaded from Visual Studio Gallery: [Microsoft Web API OData V4 Scaffolding](https://visualstudiogallery.msdn.microsoft.com/db6b8857-06cc-4f40-95dd-a379f0494f45). Double click VSIX to install, the extension supports the VS2013 and VS2015, now.

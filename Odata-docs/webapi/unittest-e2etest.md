@@ -1,10 +1,10 @@
 ---
-title: " Unit Test and E2E Test"
+title: "Unit Test and E2E Test"
 description: ""
-
 ms.date: 05/08/2015
 ---
 # Unit Test and E2E Test
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 In OData WebApi, there are unit test, e2e test for V3 and V4, those [test cases](https://github.com/OData/WebApi/tree/master/OData/test) are to ensure the feature and bug fix, also to make sure not break old functionality.
 
@@ -18,7 +18,7 @@ You can find that the structural under `System.Web.OData` folder and `System.Web
 #### How To Add Unit Test
 * Try to avoid other dependency use moq.
 * Make sure you add/change the right class(V4 or V3 or both).
-* Can add functinal test for complicate scenario, but E2E test cases are better.
+* Can add functional test for complicate scenario, but E2E test cases are better.
 
 
 ### E2E Test
@@ -33,6 +33,7 @@ E2E test are complete test for user scenarios, always begin with client request 
 
 
 #### Test Sample
+
 ```C#
 [NuwaFramework]
 public class MyTest

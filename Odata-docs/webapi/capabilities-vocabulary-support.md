@@ -4,8 +4,7 @@ title : "4.14 Capabilities vocabulary support"
 ms.date: 07/15/2015
 ---
 # Capabilities vocabulary support
-**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
-[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 Web API OData supports some query limitations, for example:
 

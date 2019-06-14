@@ -5,7 +5,7 @@ author: madansr7
 ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
-ms.service: multiple
+ 
 ---
 # Build a basic model
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v6.md)]
@@ -201,7 +201,7 @@ This code:
 - Defines an entity container `DefaultContainer` of the namespace `Sample.NS`;
 - Adds the container to the model.
  
-**Note** that each model **MUST** define exactly one entity container (*aka*. the `DefaultContainer`) which can be referenced later by the `_model.EntityContainer` property.
+[!Note] that each model **MUST** define exactly one entity container (*aka*. the `DefaultContainer`) which can be referenced later by the `_model.EntityContainer` property.
 
 ## Add an Entity Set *Customers*
 

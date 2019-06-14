@@ -5,17 +5,16 @@ description: "Dependency injection support"
 ms.date: 08/30/2016
 ---
 # Dependency Injection Support
-**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
-[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 Since [Web API OData V6.0.0 beta](https://www.nuget.org/packages/Microsoft.AspNet.OData/6.0.0-beta2), we have integrated with the popular dependency injection (DI) framework [Microsoft.Extensions.DependencyInjection](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection/). By means of DI, we can significantly improve the extensibility of Web API OData as well as simplify the APIs exposed to the developers. Meanwhile, we have incorporated DI support throughout the whole OData stack (including ODataLib, Web API OData and RESTier) thus the three layers can consistently share services and custom implementations via the unified DI container in an OData service. For example, if you register an `ODataPayloadValueConverter` in a RESTier API class, the low-level ODataLib will be aware of that and use it automatically because they share the same DI container.
 
-For the fundamentals of DI support in OData stacks, please refer to [this docs](https://odata.github.io/odata.net/v7/#01-05-di-support) from ODataLib. After understanding that, we can now take a look at how Web API OData implements the container, takes use of it and injects it into ODataLib.
+For the fundamentals of DI support in OData stacks, please refer to [this docs](/odata/odatalib/di-support) from ODataLib. After understanding that, we can now take a look at how Web API OData implements the container, takes use of it and injects it into ODataLib.
 
 ### Implement the Container Builder
 By default, if you don't provide a custom container builder, Web API OData will use the `DefaultContainerBuilder` which implements `IContainerBuilder` from ODataLib. The default implementation is based on the Microsoft DI framework introduced above and what it does is just delegating the builder operations to the underlying `ServiceCollection`.
 
-But if you want to use a different DI framework (e.g., Autofac) or make some customizations to the default behavior, you will need to either implement your own container builder from `IContainerBuilder` or inherit from the `DefaultContainerBuilder`. For the former one, please refer to [the docs](https://odata.github.io/odata.net/v7/#01-05-di-support) from ODataLib. For the latter one, here is a simple example to illustrate how to customize the default container builder.
+But if you want to use a different DI framework (e.g., Autofac) or make some customizations to the default behavior, you will need to either implement your own container builder from `IContainerBuilder` or inherit from the `DefaultContainerBuilder`. For the former one, please refer to [the docs](/odata/odatalib/di-support) from ODataLib. For the latter one, here is a simple example to illustrate how to customize the default container builder.
 
 ```C#
 public class MyContainerBuilder : DefaultContainerBuilder
@@ -67,7 +66,7 @@ configuration.MapODataServiceRoute(...);
 ```
 
 ### Register the Required Services
-Basic APIs to register the services have already been [documented here](https://odata.github.io/odata.net/v7/#01-05-di-support). Here we mainly focus on the APIs from Web API OData that help to register the services into the container builder. The key API to register the required services for an OData service is an overload of `MapODataServiceRoute` which takes a `configureAction` to configure the container builder (i.e., register the services).
+Basic APIs to register the services have already been [documented here](/odata/odatalib/di-support). Here we mainly focus on the APIs from Web API OData that help to register the services into the container builder. The key API to register the required services for an OData service is an overload of `MapODataServiceRoute` which takes a `configureAction` to configure the container builder (i.e., register the services).
 
 ```C#
 public static class HttpConfigurationExtensions
@@ -152,4 +151,4 @@ Currently services Available in Web API OData include:
  - `FilterBinder` whose implementation type is `Transient` because each `EnableQueryAttribute` instance will create its own `FilterBinder`. Override it if you want to customize the process of binding a $filter syntax tree.
  
 #### Services Available in OData Lib
-[Services in OData Lib also can be injected through Web API OData](https://odata.github.io/odata.net/v7/#01-05-di-support).
+[Services in OData Lib also can be injected through Web API OData](/odata/odatalib/di-support).

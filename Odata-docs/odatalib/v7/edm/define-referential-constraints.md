@@ -1,11 +1,11 @@
 ---
-title: "2.10 Define referential constraints"
+title: "Define referential constraints"
 description: "Define referential constraints using EdmLib APIs"
 author: madansr7
 ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
-ms.service: multiple
+ 
 ---
 # Define referential constraints
 
