@@ -35,5 +35,3 @@ XOData is a tool that helps to explore an API by visualizing the schema  availab
 ## Trippin service
 
 This OData V4 sample service is built with [Restier](https://github.com/odata/restier) which is a turn-key library for building RESTful services, it covers most V4 features and its source code is located at this link.
-
-## Power BI
