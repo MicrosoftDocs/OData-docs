@@ -7,7 +7,7 @@ ms.date: 06/14/2019
 
 The following tools aid development of an OData REST api service or helps consume an existing OData capable endpoint.
 
-## OData client (marketplace)
+## OData client
 
 OData client is a LINQ-enabled client API for issuing OData queries and consuming OData JSON payloads. It supports OData v4 protocol and available for target frameworks .NET 4.5 and .NET Platform Standard 1.1. OData client is available as a [nuget package](https://www.nuget.org/packages/Microsoft.OData.Client/).
 

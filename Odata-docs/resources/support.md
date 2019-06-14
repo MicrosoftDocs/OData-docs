@@ -9,7 +9,7 @@ The following resources can be leveraged to get help with OData .net libraries, 
 
 ## Code issues
 
-Create issues on GitHub for the 
+Code related issues in the OData .NET libraries can be reported by creating GitHub issues in respective source code repository.
 
 ## Questions
 

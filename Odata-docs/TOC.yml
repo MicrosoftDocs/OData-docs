@@ -269,15 +269,17 @@
       - name: Using Httpclient 
         href: /odata/odataclient/use-httpclient-in-odata-client
   - name: Spatial lib
+    items:
+        - name: Define spatial properties
+          href: /odata/spatial/define-spatial-property
+        - name: Create spatial instances
+          href: /odata/spatial/create-spatial-instances
   - name: How to debug
     href: /odata/webapi/debug-webapi-source
   - name: Securing your API
-    href: /odata/webapi/basic-auth
     items:
-      - name: Define spatial properties
-        href: /odata/spatial/define-spatial-property
-      - name: Create spatial instances
-        href: /odata/spatial/create-spatial-instances
+      - name: Basic auth setup
+        href: /odata/webapi/basic-auth
   - name: Resources
     items:
       - name: Tools
