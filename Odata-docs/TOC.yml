@@ -33,20 +33,6 @@
       href: /odata/concepts/queryoptions-overview
     - name: Query options usage
       href: /odata/concepts/queryoptions-usage
-  - name: Advanced
-    items:
-    - name: Common Schema Description Language (CSDL) 
-      href: /odata/concepts/metadata-detail-adv
-    - name: Derived types
-      href: /odata/concepts/derived-types-adv
-    - name: Containment
-      href: /odata/concepts/Containment-adv
-    - name: Open Type
-      href: /odata/concepts/open-type-adv
-    - name: Batching
-      href: /odata/concepts/batching-adv
-    - name: Annotations
-      href: /odata/concepts/annotations-adv
 - name: Develop
   expanded: true
   items:
