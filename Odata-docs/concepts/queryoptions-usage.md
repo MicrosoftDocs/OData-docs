@@ -15,7 +15,7 @@ The `$filter` system query option allows clients to filter a collection of resou
 
 ### Basic predicates, built-in functions
 
-There are several kinds of basic predicates and built-in functions for `$filter`, including logical operators and arithmetic operators. For more detailed information, please refer to [OData V4 URL Conventions Document](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part2-url-conventions.html). The request below using `$filter` to get people with FirstName "Scott". `GET serviceRoot/People?$filter=FirstName eq 'Scott'`
+There are several kinds of basic predicates and built-in functions for `$filter`, including logical operators and arithmetic operators. For more detailed information, please refer to [OData V4 URL Conventions Document](https://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part2-url-conventions.html). The request below using `$filter` to get people with FirstName "Scott". `GET serviceRoot/People?$filter=FirstName eq 'Scott'`
 
 Response Payload
 

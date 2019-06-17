@@ -1,3 +1,7 @@
+---
+title : "OData roadmap"
+ms.date: 06/14/2019
+---
 # OData 4.01
 
 OData Version 4.01 adds various new features and removes a few restrictions. These changes can be categorized into:
@@ -19,21 +23,21 @@ The follow table represents the state of implementation of the above mentioned s
 |:---|:--:|:--:|
 ||||||||||||||||
 |**NEW**|
-| Default Namespaces. [Spec]("https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652484")                                                  |N|N|
-| Schema Versioning. [Spec]("https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652485")                                                   |N|N|
-| Headers EntityId and Isolation without OData- prefix. [Spec]("https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652486")                |N|N|
-| Preference omit-values. [Spec]("https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652487")                                              |Y|N|
-| Response Header AsyncResult. [Spec]("https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652488")                                         |N|N|
-| System Query Option $compute. [Spec]("https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652491")                                        |Y|N|
-| Indexing into Ordered Collections and Positional Insert. [Spec]("https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652536")             |N|N|
-| Deep Update. [Spec]("https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652537")                                                         |Y|N|
-| Set-Based Operations. [Spec]("https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652494")                                                |Y|Y|
-| $expand and $select with POST and PATCH. [Spec]("https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652495")                             |N/A|N|
-| Invoking Functions with Implicit Parameter Aliases. [Spec]("https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652496")                  |N|N|
-| Referencing an ETag in a Batch Request. [Spec]("https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652497")                              |N|N|
-| Referencing across Change Sets in a Batch Request. [Spec]("https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652498")                   |N|N|
-| Referencing Nested Inserted Entities. [Spec]("https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652499")                                |N|N|
-| Referencing Values in Response Bodies. [Spec]("https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652500")                               |N|N|
+| Default Namespaces. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652484)                                                  |N|N|
+| Schema Versioning. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652485)                                                   |N|N|
+| Headers EntityId and Isolation without OData- prefix. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652486)                |N|N|
+| Preference omit-values. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652487)                                              |Y|N|
+| Response Header AsyncResult. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652488)                                         |N|N|
+| System Query Option $compute. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652491)                                        |Y|N|
+| Indexing into Ordered Collections and Positional Insert. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652536)             |N|N|
+| Deep Update. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652537)                                                         |Y|N|
+| Set-Based Operations. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652494)                                                |Y|Y|
+| $expand and $select with POST and PATCH. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652495)                             |N/A|N|
+| Invoking Functions with Implicit Parameter Aliases. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652496)                  |N|N|
+| Referencing an ETag in a Batch Request. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652497)                              |N|N|
+| Referencing across Change Sets in a Batch Request. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652498)                   |N|N|
+| Referencing Nested Inserted Entities. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652499)                                |N|N|
+| Referencing Values in Response Bodies. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652500)                               |N|N|
 ||
 |**IMPROVED**|
 |Case-Insensitive System Query Options without $ prefix. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc)|Y|Y|

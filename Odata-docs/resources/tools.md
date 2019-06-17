@@ -17,7 +17,7 @@ OData Connected Service is a tool that generates code to facilitate consumption 
 
 ## OData code gen
 
-This extension contains a T4 item template which is used to generate C# and VB .NET client-side proxy classes for [OData protocol version 4.0](http://docs.oasis-open.org/odata/odata/v4.0/cs02/part1-protocol/odata-v4.0-cs02-part1-protocol.doc) services. The generated classes work with the rebranded []OData Client](http://www.nuget.org/packages/Microsoft.OData.Client) library for .NET.
+This extension contains a T4 item template which is used to generate C# and VB .NET client-side proxy classes for [OData protocol version 4.0](https://docs.oasis-open.org/odata/odata/v4.0/cs02/part1-protocol/odata-v4.0-cs02-part1-protocol.doc) services. The generated classes work with the rebranded []OData Client](https://www.nuget.org/packages/Microsoft.OData.Client) library for .NET.
 
 ## Postman tutorials
 
@@ -35,5 +35,3 @@ XOData is a tool that helps to explore an API by visualizing the schema  availab
 ## Trippin service
 
 This OData V4 sample service is built with [Restier](https://github.com/odata/restier) which is a turn-key library for building RESTful services, it covers most V4 features and its source code is located at this link.
-
-## Power BI
