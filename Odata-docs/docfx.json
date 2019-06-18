@@ -77,6 +77,7 @@
     },
     "template": [],
     "dest": "OData-conceptual",
-    "markdownEngineName": "markdig"
+    "markdownEngineName": "markdig",
+    "uhfHeaderId": "MSDocsHeader-OData"
   }
 }
