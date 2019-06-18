@@ -1,5 +1,5 @@
 ---
-title: "Add vocabulary annotations to EdmEnumMember"
+title: "Add vocabulary annotations to EdmEnumMember in webapi v6"
 description: ""
 
 author: madansr7

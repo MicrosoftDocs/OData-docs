@@ -21,7 +21,7 @@ can become
 
 Of the binary expression invoking IN, the left operand must be a single value and the right operand must be a comma-separated list of primitive values or a single expression that resolves to a collection; the expression returns true if the left operand is a member of the right operand.
 
-# Usage
+## Usage
 
 The `IN` operator is used in expressions that resolve to a Boolean. Common use would be with `$filter` and it can also be used for `$orderby`. See [test cases](https://github.com/OData/odata.net/blob/ed68ebd17a78a9d63ef0ff6d4d7e680d778d5728/test/FunctionalTests/Microsoft.OData.Core.Tests/ScenarioTests/UriParser/FilterAndOrderByFunctionalTests.cs#L1668) for examples of supported scenarios.
 

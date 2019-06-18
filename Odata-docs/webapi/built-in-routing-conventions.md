@@ -45,19 +45,19 @@ So, the controller convention is:  **[entityset name] + "Controller"**, derived 
 
 **Querying Entities**
 
-![](/odata/assets/03-02-queryEntitiesConvention.png)
+![queryEntitiesConvention](/odata/assets/03-02-queryEntitiesConvention.png)
 
 **Creating, Updating, and Deleting Entities**
 
-![](/odata/assets/03-02-updateDeleteEntitiesConvention.png)
+![updateDeleteEntitiesConvention](/odata/assets/03-02-updateDeleteEntitiesConvention.png)
 
 **Operation on Navigation Property**
 
-![](/odata/assets/03-02-navigationRoutingConvention.png)
+![navigationRoutingConvention](/odata/assets/03-02-navigationRoutingConvention.png)
 
 **Querying, Creating and Deleting Links**
 
-![](/odata/assets/03-02-navigationlinkeConvention.png)
+![navigationlinkeConvention](/odata/assets/03-02-navigationlinkeConvention.png)
 
 **Properties**
 
@@ -70,14 +70,13 @@ GET /entityset(key)/cast/property | /Products(1)/Models.Book/Author | GetPropert
 
 **Action** only supports the **POST** request method, and the parameters are sent using the request body. In controller, each action is using an `ODataActionParameters` to accept the parameters' value:
 
-![](/odata/assets/03-02-actionConvention.png)
+![actionConvention](/odata/assets/03-02-actionConvention.png)
 
 **Functions**
 
 **Functions** only supports the **GET** request method.
 
-![](/odata/assets/03-02-functionConvention.png)
-
+![functionConvention](/odata/assets/03-02-functionConvention.png)
 
 
 **Method Signatures**
@@ -150,7 +149,7 @@ public class ProductsController : ODataController
     // GET /odata/Products(1)/ODataRouting.Models.Book/Title/$value
     public HttpResponseMessage GetTitleFromBook(int key)
 }
-    
+
 ```
 
 Update form [Routing Conventions in OData V3.0](https://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/odata-routing-conventions)

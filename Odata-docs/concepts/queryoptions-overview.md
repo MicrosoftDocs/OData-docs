@@ -7,7 +7,7 @@ ms.date: 02/19/2019
 ms.topic: article
  
 ---
-# OData query options
+# OData query options overview
 
 Querying entails two types of operations
 

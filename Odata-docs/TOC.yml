@@ -1,7 +1,7 @@
 - name: Overview
   items:
   - name: What is OData?
-    href: index
+    href: /odata/index
 - name: Learn
   expanded: false
   items:
@@ -135,7 +135,7 @@
           - name: Adding unit tests
             href: /odata/webapi/unittest-e2etest
           - name: Expanded nav props in delta response
-            href: odata/webapi/expanded-navigation-delta
+            href: /odata/webapi/expanded-navigation-delta
       - name: Extending OData WebAPI
         items:
         - name: Custom URL parsing
@@ -282,13 +282,19 @@
     items:
       - name: Basic auth setup
         href: /odata/webapi/basic-auth
-  - name: Resources
-    items:
-      - name: Tools
-        href: /odata/resources/tools
-      - name: Support
-        href: /odata/resources/support
-      - name: Library roadmap
-        href: /odata/resources/roadmap
+- name: Resources
+  items:
+    - name: Tools
+      href: /odata/resources/tools
+    - name: Support
+      href: /odata/resources/support
+    - name: Roadmap
+      href: /odata/resources/roadmap
+    - name: Changelog
+      items:
+        - name: OData lib changes
+          href: /odata/changelog/odl/odl-7.x
+        - name: WebApi lib changes
+          href: /odata/changelog/webapi/webapi-7.x
 # - name: 10.2 Work around for SingleResult.Create an empty result
 #   href: posts\work-around-for-singleresult-create

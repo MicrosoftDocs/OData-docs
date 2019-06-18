@@ -1,5 +1,5 @@
 ---
-title: " Use ODataUriParser"
+title: "Use ODataUriParser in odatalib v7"
 description: "Parse OData uri using OData Core APIs"
 author: madansr7
 ms.author: madansr7

@@ -1,5 +1,5 @@
 ---
-title: "Allow serialization of additional properties"
+title: "Allow serialization of additional properties in odatalib"
 description: ""
 author: madansr7
 ms.author: madansr7

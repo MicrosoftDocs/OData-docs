@@ -1,3 +1,9 @@
+---
+title : "OData overview"
+description: "OData overview."
+ms.date: 06/17/2019
+---
+
 # Welcome to OData
 
 OData (Open Data Protocol) is an ISO/IEC approved, OASIS standard that defines a set of best practices for building and consuming REST APIs.
@@ -20,4 +26,4 @@ OData improves semantic interoperability between systems and follows these desig
 
 The OData Protocol is different from other REST-based web service approaches in that it provides a uniform way to describe both the data and the data model. This improves semantic interoperability between systems and allows an ecosystem to emerge. It follows these design principles:
 
-You can find more information on OData specification at [OData.org](https://odata.org).
+You can find more information on OData specification at [OData.org](https://www.odata.org/).

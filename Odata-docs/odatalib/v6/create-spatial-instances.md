@@ -1,12 +1,10 @@
 ---
-title: " Create spatial instances"
+title: "Create spatial instances in odatalib"
 description: "Create spatial instances"
-
 author: madansr7
 ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
- 
 ---
 # Create spatial instances
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v6.md)]

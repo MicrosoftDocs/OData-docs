@@ -21,7 +21,7 @@ To execute multiple queries in a single batch, you must create each query in the
 
 This method accepts an array of `DataServiceRequest` as parameters. It returns a `DataServiceResponse` object, which is a collection of `QueryOperationResponse<T>` objects that represent responses to individual queries in the batch, each of which contains either a collection of objects returned by the query or error information. When any single query operation in the batch fails, error information is returned in the `QueryOperationResponse<T>` object for the operation that failed and the remaining operations are still executed. 
 
-``` csharp
+```c#
 
     DefaultContainer dsc = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
     public void BatchQuery()
@@ -57,6 +57,7 @@ This method accepts an array of `DataServiceRequest` as parameters. It returns a
 `ExecuteBatch` will send a "POST" request to `https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/$batch`. Each internal request contains its own http method "GET".
 
 The payload of the request is as following:
+```html
 
 	--batch_d3bcb804-ee77-4921-9a45-761f98d32029
 	Content-Type: application/http
@@ -81,7 +82,7 @@ The payload of the request is as following:
 	User-Agent: Microsoft ADO.NET Data Services
 	
 	--batch_d3bcb804-ee77-4921-9a45-761f98d32029--
-
+```
 ## Batch Modification 
 
 In order to batch a set of changes to the server, `ODataServiceContext` provides `SaveChangesOptions.BatchWithSingleChangeset` and `SaveChangesOptions.BatchWithIndependentOperations` when `SaveChanges`.
@@ -91,9 +92,8 @@ In order to batch a set of changes to the server, `ODataServiceContext` provides
 `SaveChangesOptions.BatchWithIndependentOperations` will save each change independently in a batch request. 
 
 You can refer to [odata v4.0 protocol 11.7](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html#_Toc406398359) to get more details about batch request and whether requests should be contained in one change set or not.
- 
 
-``` csharp
+```c#
 
     DefaultContainer dsc = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
     public void BatchModify()
@@ -120,11 +120,14 @@ The payload for all requests in one change set is like following
 This will send request with URL https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/$batch.
 
 The request headers contain following two headers:
+```html
 
 	Content-Type: multipart/mixed; boundary=batch_06d8a02a-854a-4a21-8e5c-f737bbd2dea8
 	Accept: multipart/mixed
-
+```
 The request Payload is as following:
+
+```html
 
 	--batch_06d8a02a-854a-4a21-8e5c-f737bbd2dea8
 	Content-Type: multipart/mixed; boundary=changeset_b98a784d-af07-4723-9d5c-4722801f4c4d
@@ -160,3 +163,4 @@ The request Payload is as following:
 	{"@odata.type":"#Microsoft.OData.SampleService.Models.TripPin.Trip","Budget":3000,"Description":"Updated Trip","EndsAt":"2014-01-04T00:00:00Z","Name":"Trip in US","ShareId":"9d9b2fa0-efbf-490e-a5e3-bac8f7d47354","StartsAt":"2014-01-01T00:00:00Z","Tags@odata.type":"#Collection(String)","Tags":["Trip in New York","business","sightseeing"],"TripId":1001}
 	--changeset_b98a784d-af07-4723-9d5c-4722801f4c4d--
 	--batch_06d8a02a-854a-4a21-8e5c-f737bbd2dea8--
+```

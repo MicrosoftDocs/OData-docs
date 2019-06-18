@@ -112,4 +112,4 @@ The follow table represents the state of implementation of the above mentioned s
 |@type for Built-In Primitive Types. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652546) |Y|N|
 |Representation of Deleted Entities.[Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652548) |Y|N|
 |Representation of Deleted Links. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652549) |Y|Y|
-|Invoke Parameterless Actions with Empty Request Body.[Spec](https://docs.oasis-open.org/odaclta/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652552) |N|N|
+|Invoke Parameterless Actions with Empty Request Body.[Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652552) |N|N|

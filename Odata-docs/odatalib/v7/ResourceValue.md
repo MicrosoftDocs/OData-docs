@@ -39,11 +39,11 @@ Because most of OData customers:
 
 Below is the main inheritance of the ODataValue vs ODataItem in ODL v6.x.
 
-![](/odata/assets/2018-11-20-ODLv6xInheritance.png)
+![ODLv6xInheritance](/odata/assets/2018-11-20-ODLv6xInheritance.png)
 
 Below is the main inheritance of the ODataValue vs ODataItem in ODL v7.x.
 
-![](/odata/assets/2018-11-20-ODLv7xInheritance1Class.png)
+![ODLv7xInheritance](/odata/assets/2018-11-20-ODLv7xInheritance1Class.png)
 
 The main changes from 6.x to 7.x is:
 
@@ -213,9 +213,10 @@ protected override void WriteValueParameter(string parameterName, object paramet
 }
 ```
 
-**TBD**: 
 Normally, if you want to write a Collection parameter, you should do:
+
 ```C#
+
 var parameterWriter = new ODataJsonLightParameterWriter(outputContext, operation: null);
 parameterWriter.WriteStart();
 var collectionWriter = parameterWriter.CreateCollectionWriter("collection");
@@ -224,6 +225,7 @@ var collectionWriter = parameterWriter.CreateCollectionWriter("collection");
         collectionWriter.WriteEnd();
  parameterWriter.WriteEnd();
 ```
+
 However, i think we should support to write the collection value directly if customer call `WriteValueParameter()` method with the `ODataCollectionValue`.  
 
 Basically, we don’t need to change any codes for the “Collection parameter value” writer. Customer still can use “CreateCollectionWriter” to write the collection with more information.

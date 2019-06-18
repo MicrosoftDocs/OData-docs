@@ -1,5 +1,5 @@
 ---
-title: "Alternate Key"
+title: "Alternate Key in odatalib"
 description: ""
 author: madansr7
 ms.author: madansr7
@@ -14,9 +14,9 @@ From ODataLib 6.13.0, it supports the alternate key. For detail information abou
 
 The related Web API sample codes can be found [here](https://github.com/OData/ODataSamples/tree/master/WebApi/v4/ODataAlternateKeySamples).
 
-# Single alternate key
+## Single alternate key
 
-## Edm Model builder
+### Edm Model builder
 The following codes can be used to build the single alternate key:
 
 ```C#
@@ -31,7 +31,7 @@ model.AddAlternateKeyAnnotation(customer, new Dictionary<string, IEdmProperty>
 model.AddElement(customer);
 ```
 
-## Related Metadata
+### Related Metadata
 
 The following is the related metadata:
 
@@ -59,9 +59,9 @@ The following is the related metadata:
 </EntityType>
 ```
 
-# Multiple alternate keys
+## Multiple alternate keys
 
-## Edm Model builder
+### Edm Model builder
 The following codes can be used to build the multiple alternate keys:
 
 ```C#
@@ -83,7 +83,7 @@ model.AddAlternateKeyAnnotation(order, new Dictionary<string, IEdmProperty>
 model.AddElement(order);
 ```
 
-## Related Metadata
+### Related Metadata
 
 The following is the related metadata:
 
@@ -123,9 +123,9 @@ The following is the related metadata:
 </EntityType>
 ```
 
-# Composed alternate keys
+## Composed alternate keys
 
-## Edm Model builder
+### Edm Model builder
 The following codes can be used to build the multiple alternate keys:
 
 ```C#
@@ -141,11 +141,11 @@ model.AddAlternateKeyAnnotation(person, new Dictionary<string, IEdmProperty>
 model.AddElement(person);
 ```
 
-## Related Metadata
+### Related Metadata
 
 The following is the related metadata:
 
-```C#
+```xml
 <EntityType Name="Person">
 <Key>
   <PropertyRef Name="ID" />
@@ -174,7 +174,7 @@ The following is the related metadata:
 </EntityType>
 ```
 
-# Uri parser
+## Uri parser
 
 Enable the alternate keys parser extension via the Uri resolver `AlternateKeysODataUriResolver`.
 

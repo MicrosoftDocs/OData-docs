@@ -126,8 +126,6 @@ This code:
  - Has **no parameter**;
  - Adds the `Sample.NS.MostExpensive` action to the model.
 
-
-
 ### Add a Function Import *MostValuable*
 In the **SampleModelBuilder.cs** file, add the following `using` clause:
 
@@ -180,11 +178,9 @@ namespace EdmLibSample
 
 This code:
 
- - Directly adds a **function import** `MostValuable` into the default container;
- - Lets the function import return a `Sample.NS.Order` from and **limited to** the entity set `Orders`;
+- Directly adds a **function import** `MostValuable` into the default container;
+- Lets the function import return a `Sample.NS.Order` from and **limited to** the entity set `Orders`
 
-
- 
 The `Sample.NS.MostValuable` function import is actually the `Sample.NS.MostExpensive` function exposed in the entity container with a **different name** (could be **arbitrary valid name**).
 
 ### Run the Sample

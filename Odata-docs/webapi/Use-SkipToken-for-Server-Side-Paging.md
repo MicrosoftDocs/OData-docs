@@ -24,13 +24,15 @@ After all the query options have been applied, we determine if the results need 
 
 #### Format of the nextlink
 The nextlink may contain $skiptoken if the result needs to be paginated. In WebAPI the $skiptoken value will be a list of pairs, where the pair consists of a property name and property value separated by a delimiter(:). The orderby property and value pairs will be followed by key property and value pairs in the value for $skiptoken. Each property and value pair will be comma separated.
-```
+```html
+
 ~/Products?$skiptoken=Id:27
 ~/Books?$skiptoken=ISBN:978-2-121-87758-1,CopyNumber:11
 ~/Products?$skiptoken=Id:25&$top=40
 ~/Products?$orderby=Name&$skiptoken=Name:'KitKat',Id:25&$top=40
 ~/Cars(id)/Colors?$skip=4
 ```
+
 We will not use $skiptoken if the requested resource is not an entity type. Rather, normal skip will be used. 
 
 This is the default format but services can define their own format for the $skiptoken as well but in that case, they will have to parse and generate the skiptoken value themselves.
@@ -54,12 +56,13 @@ New classes will be created for ___SkipTokenQueryOption___ and __SkipTokenQueryV
 `GET ~/EntitySet?$orderby=Prop1,Prop2&$skiptoken=Prop1:value1,Prop2:value2,Id1:idVal1,Id2:idVal2`
 
 The following where clause will be added to the predicate:
-```
+```html
 WHERE Prop1>value1
 Or (Prop1=value1 AND Prop2>value2)
 Or (Prop1=value1 AND Prop2=value2 AND Id1>Val)
 Or (Prop1=value1 AND Prop2=value2 AND Id1=idVal1 AND Id2>idVal2)
 ```
+
 Note that the greater than operator will be swapped for less than operator if the order is descending. 
 #### Generating the $skiptoken
 The ___SkipTokenQueryOption___ class will be utilized by ___ODataQueryOption___ to pass the token value to the nextlink generator helper methods.
@@ -73,11 +76,11 @@ Moreover, we will ensure stable sorting if the query is configured for using $sk
 #### 1.	How would a developer implement paging without using EnableQuery attribute? What about stable ordering in that case?
 a.	 The new SkipTokenQueryOption class will provide 2 methods-
 
-      i.	GenerateSkipTokenValue – requires the EDM model, the results as IQuerable and OrderbyQueryOption.
+i.	GenerateSkipTokenValue – requires the EDM model, the results as IQuerable and OrderbyQueryOption.
 
-      ii.	ApplyTo -  applies the LINQ expression for $skiptoken.
+ii.	ApplyTo -  applies the LINQ expression for $skiptoken.
       
-      iii.  ParseSkipTokenValue - Populates the dictionary of property-value pairs on the class 
+iii.  ParseSkipTokenValue - Populates the dictionary of property-value pairs on the class 
    
  For developers having non-linq data sources, they can generate the skiptoken value using the new class and use this class in their own implementation of the filtering that ApplyTo does. 
 
@@ -93,5 +96,4 @@ Instead, we will expose methods on ODataQueryOption that will enable developers 
 #### 3. Parameterizing the nextlink instead of using skiptoken?
 Currently, the developers not using the enable query attribute generate the next link by using GetNextPageLink extension method on the request. Considering that the data source can even be linq incompatible, this will be a significant deviation from the current implementation for such developers.
 Moreover, the need to filter the results based on a certain value fits more into the QueryOption paradigm and makes it more suitable for customers supporting linq.  
-
 

@@ -29,7 +29,7 @@ OData provide two tools to generate client proxy file for an OData Service.
 The following part will mainly focus on how to use the OData Connected Service to generate client proxy file.  
 	
 	
-# Install OData Connected Service Extension
+## Install OData Connected Service Extension
 
 You can install this extension by [this link](https://visualstudiogallery.msdn.microsoft.com/b343d0eb-6493-44c2-b558-13a0408d013f/file/163980/4/Microsoft.OData.ConnectedService.vsix) from vs gallery. Or, you can install it in Visual Studio 2015.
 
@@ -85,6 +85,7 @@ Once you finished all those settings, click **Finish**. This tool will begin to 
 
 Now, the developer can write client code to consume the OData Service.
 
+```c#
     using System;
 	using Microsoft.OData.SampleService.Models.TripPin;
 	
@@ -101,10 +102,10 @@ Now, the developer can write client code to consume the OData Service.
 	        }
 	    }
 	}
-
+```
 
 ![image](/odata/assets/tooling/odata-connected-service-consume.PNG)
 
-## Summary 
+## Summary
 
-Now you have the OData Connected Service at your disposal to generate your client proxy for any OData service. To leave us feedback, please open github issues at [OData Lab GitHub](https://github.com/OData/lab/issues).
+Now you have the OData Connected Service at your disposal to generate your client proxy for any OData service. To leave us feedback, please open github issues at [OData Lab GitHub](https://github.com/OData/lab/issues)

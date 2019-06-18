@@ -90,6 +90,7 @@ public HttpResponseMessage Post()
 ```
 
 Then payload would be like:
+```json
 
     {
       "error":{
@@ -101,3 +102,4 @@ Then payload would be like:
         "stacktrace":""
       }
     }
+```

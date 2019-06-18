@@ -1,5 +1,5 @@
 ---
-title: "Add vocabulary annotations to EdmEnumMember"
+title: "Add vocabulary annotations to EdmEnumMember in odatalib v7"
 description: ""
 author: madansr7
 ms.author: madansr7

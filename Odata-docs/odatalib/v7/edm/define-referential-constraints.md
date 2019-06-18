@@ -112,18 +112,18 @@ Please note that you should **NOT** specify `Customer.id` as the principal prope
 
 Then you can query the `details` using either full key predicate
 
-```
+```html
 https://host/customers('customerId')/orders(customerId='customerId',orderId='orderId')/Test.DetailedOrder/details(customerId='customerId',orderId='orderId',id=1)
 ```
 
 or shortened key predicate
 
-```
+```html
 https://host/customers('customerId')/orders('orderId')/Test.DetailedOrder/details(1)
 ```
 
 Key-as-segment convention is also supported
 
-```
+```html
 https://host/customers/customerId/orders/orderId/Test.DetailedOrder/details/1
 ```

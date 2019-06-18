@@ -9,6 +9,7 @@ ms.topic: article
  
 ---
 # Asynchronous operations
+
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v6.md)]
 
 *All samples in this doc are based on the Trippin Service. You can follow "[How to use OData Client Code Generator to generate client-side proxy class](https://blogs.msdn.com/b/odatateam/archive/2014/03/11/how-to-use-odata-client-code-generator-to-generate-client-side-proxy-class.aspx)" to generate the client proxy file.*
@@ -22,6 +23,8 @@ OData Client for .NET (from 6.4.0) also provides another set of asynchronous API
 ### Query an Entity Set
 
 `DataServiceQuery<TElement>` provides `BeginExecute` and `EndExecute` methods to support query a collection of entities
+
+```c#
 
     DefaultContainer dsc = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
 
@@ -49,10 +52,13 @@ OData Client for .NET (from 6.4.0) also provides another set of asynchronous API
             }
         }
     }
+```
 
 The `EndExecute` API returns an `IEnumerable<Person>`.
 
 You also can use `DataServiceQuery<TElement>.ExecuteAsync` to query an entity set.
+
+```c#
 
     public async Task AsyncAPIGetEntitySet()
     {
@@ -62,10 +68,11 @@ You also can use `DataServiceQuery<TElement>.ExecuteAsync` to query an entity se
             Console.WriteLine(p.UserName);
         }
     }
-
+```
 ### Query an Entity Set with Paging
 
 `DataServiceContext` provides `BeginExecute` method which could take a `DataServiceQueryContinuation<TElement>` parameter to get the next page of data in a paged query result.  
+```c#
 
     public void AsyncQueryAnEntitySetWithPaging()
     {
@@ -97,6 +104,9 @@ You also can use `DataServiceQuery<TElement>.ExecuteAsync` to query an entity se
             }
         }
     }
+```
+
+```c#
 
     public void ReadingContinuation(IAsyncResult ar)
     {
@@ -119,8 +129,11 @@ You also can use `DataServiceQuery<TElement>.ExecuteAsync` to query an entity se
             }
         }
     }
+```
 
 You also can use `DataServiceContext.ExecuteAsync` to get the next page of an entity set.
+
+```c#
 
     public async Task AsyncAPIPaging()
     {
@@ -141,10 +154,13 @@ You also can use `DataServiceContext.ExecuteAsync` to get the next page of an en
             continuation = response.GetContinuation();
         }
     }
+```
 
 ### Query a Single Entity
 
 `DataServiceContext` provides `BeginGetValue` and `EndGetValue` methods to support querying a single entity
+
+```c#
 
     public void AsyncQueryAnEntitySet()
     {
@@ -164,18 +180,24 @@ You also can use `DataServiceContext.ExecuteAsync` to get the next page of an en
             Console.WriteLine(person.UserName);
         }
     }
+```
 
 Or, you can use `DataServiceContext.GetValueAsync` to support such query.
+
+```c#
 
     public async Task AsyncAPIGetSingleEntity()
     {
         var russell = await dsc.People.ByKey("russellwhyte").GetValueAsync();
         Console.WriteLine(russell.UserName);
     }
+```
 
 ### Query Navigation property
 
 `Expand` method of `DataServiceQuery<TElement>` provides a way to query related entities. But if you want to query the navigation property separately, `DataServiceContext` provides LoadProperty method to support it. `BeginLoadProperty` and `EndLoadProperty` methods are the related asynchronous APIs.
+
+```c#
 
     public void AsyncQueryNavigationProperty()
     {
@@ -202,6 +224,7 @@ Or, you can use `DataServiceContext.GetValueAsync` to support such query.
             }
         }
     }
+```
 
 You can also use `DataServiceContext.LoadPropertyAsync` to query the related properties.
 

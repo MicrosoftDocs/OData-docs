@@ -1,5 +1,5 @@
 ---
-title: "Capabilities vocabulary support"
+title: "Capabilities vocabulary support in webapi 6x"
 description: ""
 
 author: madansr7
@@ -8,10 +8,10 @@ ms.date: 02/19/2019
 ms.topic: article
  
 ---
-# Capability vocabulary support
+# Capability vocabulary support in WebApi
 **Applies To**: [!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v6.md)]
 
- ODataLib 6.13.0, it supports the capabilities vocabulary. For detail information about capabiliites vocabulary, please refer to [here](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/vocabularies/Org.OData.Capabilities.V1.xml).
+ ODataLib 6.13.0, it supports the capabilities vocabulary. For detail information about capabilities vocabulary, please refer to [here](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/vocabularies/Org.OData.Capabilities.V1.xml).
 
 ## Enable capabilities vocabulary
 
@@ -59,11 +59,11 @@ if (term != null)
 }  
 ```
 
-## The related metata
+## The related metadata
 
 The corresponding metadata can be as follows:
 
-``` csharp
+``` xml
 <EntitySet Name="Customers" EntityType="NS"> 
 <Annotation Term="Org.OData.Capabilities.V1.FilterRestrictions">
    <Record>  
