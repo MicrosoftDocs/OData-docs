@@ -293,8 +293,8 @@
     - name: Changelog
       items:
         - name: OData lib changes
-          href: /odata/changelog/odl/odl-7.x
+          href: /odata/changelog/odl/odl-7x
         - name: WebApi lib changes
-          href: /odata/changelog/webapi/webapi-7.x
+          href: /odata/changelog/webapi/webapi-7x
 # - name: 10.2 Work around for SingleResult.Create an empty result
 #   href: posts\work-around-for-singleresult-create
