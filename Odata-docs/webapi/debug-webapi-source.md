@@ -18,10 +18,10 @@ Setup your symbol source in `Symbols` tab:
 
 1. Check `Microsoft Symbol Servers`.
     * For versions of OData below 6.x, use the following
-        * Add location: https://srv.symbolsource.org/pdb/Public (For preview/public releases in nuget.org).
-        * Add location: https://srv.symbolsource.org/pdb/MyGet (For nightly build, and preview releases in myget.org).
+        * Add location: `https://srv.symbolsource.org/pdb/Public` (For preview/public releases in nuget.org).
+        * Add location: `https://srv.symbolsource.org/pdb/MyGet` (For nightly build, and preview releases in myget.org).
     * For versions of OData 6.x and above, use the following
-        * Add location: https://nuget.smbsrc.net/
+        * Add location: `https://nuget.smbsrc.net/`
         * To check for the existence of the symbols for your particular version, you can run the following command using [NuGet.exe](https://www.nuget.org/downloads): `nuget.exe list <namespace> -AllVersion -source https://nuget.smbsrc.net/`. (Example: `nuget.exe list Microsoft.AspNet.OData -AllVersion -source https://nuget.smbsrc.net/`)
 2. Set the cache symbols directory in your, the path should be as short as it can be.
 

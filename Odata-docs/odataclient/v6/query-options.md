@@ -39,7 +39,7 @@ var people = context.People.Where(c => c.Trips.Any(d => d.Budget > 6000));
 ```
 
 
-# $count
+## $count
 
 For `GET https://host/service/EntitySet/$count`:
 

@@ -1,5 +1,5 @@
 ---
-title: "Allow serialization of additional properties"
+title: "Allow serialization of additional properties in webapi"
 description: ""
 
 author: madansr7
@@ -15,7 +15,7 @@ We are now supporting to serialize additional properties which are not advertise
 
 Here is a full example which is trying to write an extra property `Prop1` in the Entry. The implementation of InMemoryMessage in this sample can be found [here](https://github.com/OData/odata.net/blob/ae0dd29c1cf430255a8ec9c4225b4745e25cad64/test/FunctionalTests/Tests/DataOData/Tests/OData.TDD.Tests/Common/InMemoryMessage.cs).
 
-``` csharp
+```c#
 //Construct the model
 EdmModel model = new EdmModel();
 var entityType = new EdmEntityType("Namespace", "EntityType", null, false, false, false);
@@ -70,8 +70,11 @@ using (var messageWriter = new ODataMessageWriter(message, settings, model))
 
 Then `Prop1` can be shown in the payload:
 
+```c#
+
     {"@odata.context":"https://example.org/odata.svc/$metadata#EntitySet/$entity",
         "ID":102,
         "Name":"Bob",
         "Prop1":"Var1"
     }
+```

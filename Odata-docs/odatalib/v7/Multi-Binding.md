@@ -1,6 +1,6 @@
 ---
-title: "Support multi-NavigationPropertyBindings for a single navigation property"
-description: ""
+title: "Multi-Nav Prop Bindings for single nav property"
+description: "Support multi-NavigationPropertyBindings for a single navigation property"
 author: madansr7
 ms.author: madansr7
 ms.date: 02/19/2019
@@ -72,7 +72,7 @@ Find navigation property with its binding path.
 
 `public ODataQueryOptionParser(IEdmModel model, ODataPath odataPath, IDictionary<string, string> queryOptions, IServiceProvider container)`
 
-Possibly need ODataPath to resolve navigation target of segments in query option if the navigation property binding path is included in both path and query option. Refer: [Navigation property under complex type](https://luoyan0517.github.io/odata.net/v7/#06-18-navigation-under-complex).
+Possibly need ODataPath to resolve navigation target of segments in query option if the navigation property binding path is included in both path and query option. Refer: [Navigation property under complex type](/odata/odatalib/navigation-under-complex).
 
 Take the above complex scenario for example. For generating this kind of model, we need use the new AddNavigationTarget API, and different navigation target can be specified:
 

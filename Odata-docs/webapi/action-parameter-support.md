@@ -18,11 +18,11 @@ Let's see how to build and use the above types in action.
 
 ### CLR Model
 
-Re-use the CLR models in [function sample](https://odata.github.io/WebApi/Complex-Entity-As-Function-Parameter/).
+Re-use the CLR models in [function sample](/odata/webapi/function-parameter-support).
 
 ### Build Edm Model
 
-Same as build Edm Model in [function sample](https://odata.github.io/WebApi/Complex-Entity-As-Function-Parameter/), but change the helper function as *BuildAction()*.
+Same as build Edm Model in [function sample](/odata/webapi/function-parameter-support), but change the helper function as *BuildAction()*.
 
 ### Primitive and Collection of Primitive parameter
 
@@ -161,4 +161,4 @@ We can invoke the action by issuing a Post on `~/odata/Customers/Default.EntityA
 
 If you invoke an action with a 'null' action parameter value, please don't add the parameter (for example, `"p1":null`) in the payload and leave it un-specified. However, for collection, you should always specify it even the collection is an empty collection (for example, `"p1":[]`).
 
-For un-typed scenario, please refer to [untyped page](https://odata.github.io/WebApi/Function-Action-Parameter-In-Untyped-Scenario/).
+For un-typed scenario, please refer to [untyped page](/odata/webapi/operation-parameters-in-untyped-scenarios).

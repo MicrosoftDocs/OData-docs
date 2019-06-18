@@ -21,7 +21,7 @@ OData Client provided following APIs for getting annotations in `DataServiceCont
 
 OData Client provided following APIs for getting annotations in `DataServiceContext` class.
 
-```csharp
+```c#
     public bool TryGetAnnotation<TResult>(object source, string term, string qualifier, out TResult annotation) 
     public bool TryGetAnnotation<TResult>(object source, string term, out TResult annotation)
     public bool TryGetAnnotation<TFunc, TResult>(Expression<TFunc> expression, string term, string qualifier, out TResult annotation)
@@ -38,6 +38,7 @@ In following part, we will give some examples for what we have supported in ODat
 
 To get instance annotations, we need to set odata.include-annotations preference in request to specify the set of annotations the client requests to be included.
 
+```c#
     public static void Main(string[] args)
     {
         DefaultContainer dsc = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
@@ -46,16 +47,18 @@ To get instance annotations, we need to set odata.include-annotations preference
             eventArgs.RequestMessage.SetHeader("Prefer", "odata.include-annotations=\"*\"");
         };
     }
-
+```
 Please refer to [8.2.8.4 Preference odata.include-annotations](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html#_Toc406398237) for the rules of this preference.
 
 ### Get annotations Code Sample 
 
 #### Get an instance annotation for a feed 
 
+```c#
     var personQueryResponse = dsc.People.Execute();
     personQueryResponse.ToList();
     dsc.TryGetAnnotation(personQueryResponse, fullQualifiedTermName, null /*qualifier*/, out annotation);
+```
 
 Please note the first parameter should be an `QueryOperationResponse<Person\>`.
 
@@ -66,15 +69,18 @@ Currently, qualifier is not supported for instance annotation. So we pass in nul
 
 Please note, if you want to get a metadata annotation for an entity set, you should use the last two APIs, which will be mentioned later.
  
-#### Get an annotation for an entity 
+#### Get an annotation for an entity
 
+```c#
     var person = dsc.People.ByKey("russellwhyte").GetValue();
     bool result = dsc.TryGetAnnotation(person, fullQualifiedTermName, qualifier, out annotation);
+```
 
 Please note the first parameter should be the Clr object. This API will firstly try to get the instance annotation of the `fullQualifiedTermName` and `qualifier`. If the instance annotation doesn't exist, it will try to get the metadata annotation of the `fullQualifiedTermName` and `qualifier`. 
 
 #### Get an annotation for a property in an entity or a navigation property
 
+```c#
     var person = dsc.People.ByKey("russellwhyte").GetValue();
 
     // Try to get an annotation for a property
@@ -82,14 +88,16 @@ Please note the first parameter should be the Clr object. This API will firstly 
 
     // Try to get an annotation for a navigation property
     dsc.TryGetAnnotation<Func<Photo>, string>(() => person.Photo, fullQualifiedTermName, qualifier, out annotation);
+```
 
 The first parameter is the closure lambda expression which is to access the property. The API will firstly try to get the instance annotation, if it doesn't exist, it will try to get the metadata annotation for the property.
 
 #### Get annotation for a complex value 
 
+```c#
     var address = dsc.People.ByKey("russellwhyte").Select(p => p.AddressInfo).GetValue();
     dsc.TryGetAnnotation(address, fullQualifiedTermName, qualifier, out annotation);
-
+```
 
 The first parameter is the Clr instance of a complex type. This API will firstly try to get the instance annotation of this complex value, if it doesn't exit, it will try to get the metadata annotation for the complex type of the instance.
 
@@ -97,6 +105,7 @@ The first parameter is the Clr instance of a complex type. This API will firstly
 
 In section "Get an instance annotation for a feed", we know that to get metadata annotation for an entity set, we should use the last two APIs. This rule is also apply to singleton, function, function import, action and action import.
 
+```c#
     // Try to get a metadata annotation for an entity set
     dsc.TryGetAnnotation<Func<DataServiceQuery<Person>>, string>(() => dsc.People, fullQualifiedTermName, qualifier, out annotation);
  
@@ -115,3 +124,4 @@ In section "Get an instance annotation for a feed", we know that to get metadata
 
     // Try to get a metadata annotation for an action import
     dsc.TryGetAnnotation<Func<DataServiceActionQuery>, string>(() => dsc.ResetDataSource(), fullQualifiedTermName, qualifier, out annotation);
+```

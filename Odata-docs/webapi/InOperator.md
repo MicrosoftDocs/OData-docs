@@ -1,5 +1,5 @@
 ---
-title : "4.26 IN Operator"
+title : "OData IN Operator filter function"
 
 ms.date: 07/03/2018
 ---
@@ -21,7 +21,7 @@ Of the binary expression invoking IN, the left operand must be a single value an
 
 IN operator is supported only for $filter at the moment and hardcoded collections are supported with parentheses. See examples below.
 
-```
+```html
 ~/Products?$filter=Name in ('Milk', 'Cheese')
 ~/Products?$filter=Name in RelevantProductNames
 ~/Products?$filter=ShipToAddress/CountryCode in MyShippers/Regions

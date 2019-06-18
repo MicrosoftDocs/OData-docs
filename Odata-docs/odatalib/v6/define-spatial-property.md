@@ -1,5 +1,5 @@
 ---
-title: " Define spatial properties"
+title: "Define spatial properties in odatalib"
 description: "Define spatial properties in entity data models"
 author: madansr7
 ms.author: madansr7

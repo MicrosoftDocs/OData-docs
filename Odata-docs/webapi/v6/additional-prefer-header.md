@@ -1,5 +1,5 @@
 ---
-title: "Add additional prefer header"
+title: "Add additional prefer header webapi v6"
 description: ""
 
 author: madansr7
@@ -9,7 +9,7 @@ ms.topic: article
  
 ---
 
-# Create request message with prefer header
+# Create request message with prefer header in WebApi
 **Applies To**: [!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v6.md)]
 
 ``` csharp

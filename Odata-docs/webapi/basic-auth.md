@@ -80,7 +80,7 @@ public class ProductsController : ODataController
 #### 3.	Enable HTTPS
 In the project properties window, enable the SSL and remember the SSL URL:
 
-![](/odata/assets/05-01-ssl-config.png)
+![sslconfig](/odata/assets/05-01-ssl-config.png)
  
 #### 4.	Create a custom `AuthorizationFilterAttribute` for HTTPS
 Add a class to your project as follows:
@@ -128,15 +128,15 @@ In the above steps, we’ve secured the OData API by allowing only HTTPS connect
 
 First of all, we send a `GET` request to `https://localhost:53277/Products`, and the service responds with an empty payload and the status code `403 HTTPS Required`.
 
-![](/odata/assets/05-01-demo-1.png)
+![demo1](/odata/assets/05-01-demo-1.png)
  
 Then we send the request over HTTPS to `https://localhost:43300/Products`. Since the basic authentication info needs to be provided. The service responds with an empty payload and the status code `401 Unauthorized`.
 
-![](/odata/assets/05-01-demo-2.png)
+![demo2](/odata/assets/05-01-demo-2.png)
  
 Finally, we set the value of the `Authorization` header to “Basic UGFycnk6MTIzNDU2” and send it over HTTPS to the same address again. The service now responds with the correct data.
 
-![](/odata/assets/05-01-demo-3.png)
+![demo3](/odata/assets/05-01-demo-3.png)
 
 ### Summary
 

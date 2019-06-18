@@ -1,7 +1,7 @@
 ---
-title: " Define spatial properties"
+title: "Define spatial properties"
 description: "Define spatial properties in entity data models"
-
+ms.date: 06/17/2019
 ---
 
 Using Spatial in OData services involves two parts of work:
@@ -47,4 +47,4 @@ This code:
 ### Run the sample
 Build and run the sample. Then open the **csdl.xml** file under the **output directory**. The content of **csdl.xml** should look like the following:
 
-![](/odata/assets/2015-04-21-csdl.png)
+![csdl](/odata/assets/2015-04-21-csdl.png)

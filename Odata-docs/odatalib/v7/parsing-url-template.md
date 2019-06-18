@@ -16,7 +16,7 @@ For example:
 {dynamicProperty}
 ```
 
-# Uri templates
+## Uri templates
 
 There are three kinds of template:
 
@@ -29,7 +29,7 @@ Be caution:
 1. In UriParser instance, please set EnableUriTemplateParsing = true.
 2. Path template can't be the first segment.
 
-# Example
+## Example
 
 ```C#
 var uriParser = new ODataUriParser(HardCodedTestModel.TestModel, new Uri("People({1})/{some}", UriKind.Relative))  

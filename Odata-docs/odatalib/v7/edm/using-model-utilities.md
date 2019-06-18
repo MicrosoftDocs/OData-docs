@@ -78,8 +78,8 @@ namespace EdmLibSample
 ### Run the sample
 From the **DEBUG** menu, click **Start Without Debugging** to build and run the sample. The console window should **not** disappear after program exits.
 
-![](/odata/assets/2015-04-20-debug.png)
+![debug](/odata/assets/2015-04-20-debug.png)
 
 The output on the console window should look like the following:
 
-![](/odata/assets/2015-04-20-output.png)
+![output](/odata/assets/2015-04-20-output.png)

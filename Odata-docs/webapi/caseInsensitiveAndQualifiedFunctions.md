@@ -1,5 +1,5 @@
 ---
-title : "14.3 WebApi URI parser default setting updates: case-insensitive names and unqualified functions & actions"
+title : "WebApi URI parser case-insensitive names and unqualified functions/actions"
 description: "7.x WebApi URI parser using case-insensitive names and unqualified functions & actions"
 
 ms.date: 02/05/2018
@@ -14,7 +14,7 @@ ms.date: 02/05/2018
 * Unqualified functions & actions, which are not required to have namespace prefix.
 
 Starting with WebAPI OData v7.0, these two behaviors are supported by default.
- 
+
 ### Examples
 **Prior to WebApi v7.0**, for example, the following Uris are supported:
 

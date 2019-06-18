@@ -1,8 +1,9 @@
 ---
 title: " Create spatial instances"
 description: "Create spatial instances"
-
+ms.date: 06/17/2019
 ---
+# Create spatial instances
 
 This section shows how to create spatial instances using Spatial APIs and return them as property values of OData entries.
 
@@ -37,7 +38,7 @@ GeographyPoint point6 = GeographyPoint.Create(latitude: 12.34, longitude: 56.78,
 
 Spatial instances can be directly put into `ODataPrimitiveValue` as property values. Using the `Address` type from the last section:
 
-![](/odata/assets/2015-04-21-csdl.png)
+![csdl](/odata/assets/2015-04-21-csdl.png)
 
 An `ODataResource` for the `Address` type could be constructed as follows:
 

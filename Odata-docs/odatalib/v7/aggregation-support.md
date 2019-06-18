@@ -1,5 +1,5 @@
 ---
-title: "Basic Uri parser support for aggregations"
+title: "Basic Uri parser support for aggregations in odatalib"
 description: ""
 author: madansr7
 ms.author: madansr7

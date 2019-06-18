@@ -1,5 +1,5 @@
 ---
-title: " Use ODataUriParser"
+title: "Use ODataUriParser in odatalib v6"
 description: "Parse OData uri using OData Core APIs"
 
 author: madansr7
@@ -10,7 +10,6 @@ ms.topic: article
 ---
 # OData Uri Parser
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v6.md)]
-
 
 This post is intended to guide you through the UriParser for OData V4, which is released within ODataLib V6.0 and later.
 
@@ -36,7 +35,7 @@ The use of ODataUriParser class is easy and straightforward, as we mentioned, we
 
 ODataUriParser has only one constructor:
 
-``` csharp
+```c#
 public ODataUriParser(IEdmModel model, Uri serviceRoot, Uri fullUri);
 ```
 
@@ -47,7 +46,7 @@ serviceRoot is the base Uri for the service, which could be a constant for certa
 fullUri is the full request Uri including query options. When it is an absolute Uri, it must be based on the serviceRoot, or it can be a relative Uri.
 In the following demo we will use the model from OData V4 demo service , and create an ODataUriParser instance.
 
-``` csharp
+```c#
 Uri serviceRoot = new Uri("https://services.odata.org/V4/OData/OData.svc");
 IEdmModel model = EdmxReader.Parse(XmlReader.Create(serviceRoot + "/$metadata"));
 Uri fullUri = new Uri("https://services.odata.org/V4/OData/OData.svc/Products");
@@ -57,11 +56,12 @@ ODataUriParser parser = new ODataUriParser(model, serviceRoot, fullUri);
 ## Parsing Resource Path
 You can use the following API to parse resource path:
 
-``` csharp
+```c#
 Uri fullUri = new Uri("https://services.odata.org/V4/OData/OData.svc/Products(1)");
 ODataUriParser parser = new ODataUriParser(model, serviceRoot, fullUri);
 ODataPath path = parser.ParsePath();
 ```
+
 You don’t need to pass in resource path as parameter here, because the constructor has taken the full Uri.
 
 The ODataPath holds the enumeration of path segments for resource path. All path segments are represented by classes derived from ODataPathSegment.
@@ -77,7 +77,7 @@ For all query option parsing results, the Null value indicates the corresponding
 
 Here is a demo for parsing the Uri with all kinds of query options (please notice that value of skip would be null as it is not specified in the request Uri) :
 
-``` csharp
+```c#
 Uri fullUri = new Uri("Products?$select=ID&$expand=ProductDetail" +
     "&$filter=Categories/any(d:d/ID%20gt%201)&$orderby=ID%20desc" +
     "&$top=1&$count=true&$search=tom", UriKind.Relative);
@@ -102,7 +102,7 @@ SearchClause’s Expression property holds the tree structure for $search. If th
 
 For example, if the query option $search has the value “a AND b”, the result expression (syntax tree) would have the following structure:
 
-{% ``` csharp csharp%}
+```c#
 SearchQueryOption
     Expression = BinaryOperatorNode
                    OperationKind = BinaryOperatorKind.And
@@ -119,7 +119,7 @@ In ODataLib 6.2 we shipped a new Uri parser that targets at query options only, 
 
 The constructor looks like this:
 
-``` csharp
+```c#
 public ODataQueryOptionParser(IEdmModel model, IEdmType targetEdmType, IEdmNavigationSource targetNavigationSource, IDictionary<string, string> queryOptions);
 ```
 
@@ -133,7 +133,7 @@ queryOptions is the dictionary containing the key-value pairs for query options.
 
 Here is the demo for its usage, it is almost the same as the ODataUriParser:
 
-``` csharp
+```c#
 Dictionary<string, string> options = new Dictionary<string, string>()
 {
     {"$select"  , "ID"                          },
