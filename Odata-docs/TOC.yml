@@ -1,7 +1,7 @@
 - name: Overview
   items:
   - name: What is OData?
-    href: index
+    href: /odata/index
 - name: Learn
   expanded: false
   items:
@@ -135,7 +135,7 @@
           - name: Adding unit tests
             href: /odata/webapi/unittest-e2etest
           - name: Expanded nav props in delta response
-            href: odata/webapi/expanded-navigation-delta
+            href: /odata/webapi/expanded-navigation-delta
       - name: Extending OData WebAPI
         items:
         - name: Custom URL parsing

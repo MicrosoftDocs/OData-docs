@@ -69,7 +69,7 @@ We also support prototype services. For each prototype service, you can specify 
 
 [Issue #613](https://github.com/OData/odata.net/issues/613) Support type facets when referencing `TypeDefinition` types.
 
-[Issue #622](https://github.com/OData/odata.net/issues/622) [Support navigation property on complex types.](odata/odatalib/navigation-under-complex)
+[Issue #622](https://github.com/OData/odata.net/issues/622) [Support navigation property on complex types.](/odata/odatalib/navigation-under-complex)
 
 - EdmLib supports adding navigation property on complex type in model.
 - ODataUriParser support parsing related Uri path or query expressions.
