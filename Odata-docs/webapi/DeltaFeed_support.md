@@ -79,7 +79,7 @@ CustomerOrderDeletedLink.Target = new Uri(ServiceBaseUri, "Orders(10)");
 changedCollection.Add(CustomerOrderDeletedLink);
 ```
 
-<h4>Sample for Delta Feed</h4>
+### Sample for Delta Feed
 Let's create a controller to return a Delta Feed:
 ```C#
 public class CustomersController : ODataController
@@ -115,7 +115,7 @@ public class CustomersController : ODataController
 
 Now, user can issue a ***GET*** request as:
 
-```C#
+```html
 https://localhost/odata/Customers?$expand=Orders&$deltatoken=abc
 ```
 

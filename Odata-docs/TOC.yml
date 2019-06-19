@@ -136,6 +136,8 @@
             href: /odata/webapi/unittest-e2etest
           - name: Expanded nav props in delta response
             href: /odata/webapi/expanded-navigation-delta
+          - name: Scaffolding
+            href: /odata/webapi/scaffolding
       - name: Extending OData WebAPI
         items:
         - name: Custom URL parsing
@@ -143,7 +145,7 @@
         - name: Relax version constraints
           href: /odata/webapi/relax-version-constraints
         - name: Customize OData Formatter
-          href: /odata/webapi/customize-odata-formatter
+          href: /odata/webapi/customize-formatter
         - name: Custom Stream Entity
           href: /odata/webapi/streamEntity
         - name: Customize unsupported types
@@ -249,35 +251,35 @@
   - name: OData Client
     items:
       - name: Basic crud operations
-        href: /odata/odataclient/basic-crud-operations
+        href: /odata/client/basic-crud-operations
       - name: Client annotations
-        href: /odata/odataclient/client-annotation-support
+        href: /odata/client/client-annotation-support
       - name: Client async operations
-        href: /odata/odataclient/client-async-operations
+        href: /odata/client/client-async-operations
       - name: Client batch operations
-        href: /odata/odataclient/client-batch-operations
+        href: /odata/client/client-batch-operations
       - name: Client tracking
-        href: /odata/odataclient/client-tracking
+        href: /odata/client/client-tracking
       - name: Server driven paging
-        href: /odata/odataclient/deal-with-server-driven-paging
+        href: /odata/client/deal-with-server-driven-paging
       - name: Get response content
-        href: /odata/odataclient/get-response-content
+        href: /odata/client/get-response-content
       - name: OData Client Code Generation Tool
-        href: /odata/odataclient/OData-Client-Code-Generation-Tool
+        href: /odata/client/code-generation-tool
       - name: Query options
-        href: /odata/odataclient/query-options
+        href: /odata/client/query-options
       - name: Client hooks
-        href: /odata/odataclient/use-client-hooks-in-odata-client
+        href: /odata/client/using-hooks
       - name: Using Httpclient 
-        href: /odata/odataclient/use-httpclient-in-odata-client
+        href: /odata/client/using-httpclient
   - name: Spatial lib
     items:
         - name: Define spatial properties
-          href: /odata/spatial/define-spatial-property
+          href: /odata/spatial/define-property
         - name: Create spatial instances
-          href: /odata/spatial/create-spatial-instances
+          href: /odata/spatial/create-instances
   - name: How to debug
-    href: /odata/webapi/debug-webapi-source
+    href: /odata/webapi/debugging
   - name: Securing your API
     items:
       - name: Basic auth setup

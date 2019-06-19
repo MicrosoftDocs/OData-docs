@@ -8,12 +8,15 @@ ms.date: 06/03/2015
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 ### Install Visual Studio Extension
+
 The installer of OData V4 Web API Scaffolding can be downloaded from Visual Studio Gallery: [Microsoft Web API OData V4 Scaffolding](https://visualstudiogallery.msdn.microsoft.com/db6b8857-06cc-4f40-95dd-a379f0494f45). Double click VSIX to install, the extension supports the VS2013 and VS2015, now.
 
 ### Generate Controller Code With Scaffolding
+
 The scaffolding is used to generate controller code for model class. Two kinds of scaffolders are provided: for model without entity framework(Microsoft OData v4 Web API Controller) and model using entity framework(Microsoft OData v4 Web API Controller Using Entity Framework). 
 
 #### Scaffolder for model without entity framework:
+
 Before using scaffolding, you need to create a web api project and add model classes, the following is a sample:
 
 ![ProjAndClass](/odata/assets/11-01-ProjAndClass.PNG)
@@ -64,6 +67,6 @@ private static List<Product> products = new List<Product>()
 ```
 
 #### Add in GetProducts Method:
-```
+```c#
 return Ok(products);
 ```
