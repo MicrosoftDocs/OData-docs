@@ -2,7 +2,7 @@
 title: "Alternate keys in webapi v7"
 ms.date: 08/11/2015
 ---
-# Alternate keys
+# Alternate key in WebApi
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 Alternate keys is supported in Web API OData V5.7. For detail information about alternate keys, please refer to [here](https://github.com/OData/vocabularies/blob/master/OData.Community.Keys.V1.md)

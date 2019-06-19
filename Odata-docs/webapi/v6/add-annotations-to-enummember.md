@@ -48,7 +48,7 @@ container.AddEntitySet("Cars", carType);
 ```
 
 ## Output
-
+```xml
     <?xml version="1.0" encoding="utf-8"?>
       <edmx:Edmx Version="4.0" xmlns:edmx="https://docs.oasis-open.org/odata/ns/edmx">
         <edmx:DataServices>
@@ -67,3 +67,4 @@ container.AddEntitySet("Cars", carType);
           </Schema>
         </edmx:DataServices>
       </edmx:Edmx>
+```

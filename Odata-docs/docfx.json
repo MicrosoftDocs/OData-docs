@@ -8,7 +8,7 @@
         "exclude": [
           "odatalib/**/*",
           "webapi/v6/*",
-          "odataclient/v6/*"
+          "client/v6/*"
         ]
       },
       {
@@ -29,8 +29,8 @@
         "files": [
           "*.{md,yml}"
         ],
-        "src": "odataclient/v6",
-        "dest": "odataclient"
+        "src": "client/v6",
+        "dest": "client"
       },
       {
         "files": [
@@ -69,7 +69,7 @@
     },
     "fileMetadata": {
       "titleSuffix": {
-        "/odata/odataclient/**/*.md": "OData Client",
+        "/odata/client/**/*.md": "OData Client",
         "/odata/odatalib/**/*.md": "OData Core library",
         "/odata/webapi/**/*.md": "OData AspNet WebAPI",
         "/odata/spatial/**/*.md": "Microsoft Spatial",

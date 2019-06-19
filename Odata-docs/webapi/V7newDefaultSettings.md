@@ -202,40 +202,34 @@ ODataUriResolver as follows:
         the container builder with WebApi's new default for
         *UnqualifiedODataUriResover with EnableCaseInsensitive=true*.
 
-        > protected IContainerBuilder CreateContainerBuilderWithCoreServices()
-        >
-        > {
-        > 
-        >     //......
-        >
-        >     builder.AddDefaultODataServices();
-        >
-        >     // Set Uri resolver to by default enabling unqualified functions/actions and case insensitive match.
-        >
-        >     builder.AddService(
-        >
-        >         ServiceLifetime.Singleton,
-        >
-        >         typeof(ODataUriResolver),
-        >
-        >         sp =\> new UnqualifiedODataUriResolver {EnableCaseInsensitive = true});
-        >
-        >     return builder;
-        >
-        > }
+```c#
+         protected IContainerBuilder CreateContainerBuilderWithCoreServices()
+         {
+             //......
+             builder.AddDefaultODataServices();
+             // Set Uri resolver to by default enabling unqualified functions/actions and case insensitive match.
+             builder.AddService(
+                 ServiceLifetime.Singleton,
+                 typeof(ODataUriResolver),
+                 sp =\> new UnqualifiedODataUriResolver {EnableCaseInsensitive = true});
+             return builder;
+         }
+```
 
-    -   WebAPI client (per service) can further inject other dependencies
+-   WebAPI client (per service) can further inject other dependencies
     (for example, typically, adding the EDM model) through
     the'configureAction' argument of the following method from
     HttpConfigurationExtensions:
 
-        > internal static IServiceProvider CreateODataRootContainer(this HttpConfiguration configuration, string routeName, Action\<IContainerBuilder\> configureAction)
+> internal static IServiceProvider CreateODataRootContainer(this HttpConfiguration configuration, string routeName, Action\<IContainerBuilder\> configureAction)
 
 ###  ODataUriParser configuration with injected ODataUriResolver dependency
 
 When WebApi parses the request Uri, instance of ODataDefaultPathHandler is created with associated service provider container, which is further used to create ODataUriParser with injected dependency of ODataUriResolver.
 
+```c#
     public ODataUriParser(IEdmModel model, Uri relativeUri, IServiceProvider container)
+```
 
 ### Enable Case-Insensitive for Custom Uri function
 
@@ -246,21 +240,16 @@ is enabled, is coerced to lower case (as shown below), which is valid for
 build-in function (such as 'startswith' and 'geo.distance', etc), but
 might not be valid for custom uri functions.
 
-> private QueryNode BindAsUriFunction(FunctionCallToken functionCallToken, List\<QueryNode\> argumentNodes)
->
-> {
->
->     if (functionCallToken.Source != null)
->
->     {
->
->         // the parent must be null for a Uri function.
->
->         throw new ODataException(ODataErrorStrings.FunctionCallBinder\_UriFunctionMustHaveHaveNullParent(functionCallToken.Name));
->
->     }
->
->     string functionCallTokenName = this.state.Configuration.EnableCaseInsensitiveUriFunctionIdentifier ? functionCallToken.Name.ToLowerInvariant() : functionCallToken.Name;
+```c#
+ private QueryNode BindAsUriFunction(FunctionCallToken functionCallToken, List\<QueryNode\> argumentNodes)
+ {
+     if (functionCallToken.Source != null)
+     {
+         // the parent must be null for a Uri function.
+         throw new ODataException(ODataErrorStrings.FunctionCallBinder\_UriFunctionMustHaveHaveNullParent(functionCallToken.Name));
+     }
+     string functionCallTokenName = this.state.Configuration.EnableCaseInsensitiveUriFunctionIdentifier ? functionCallToken.Name.ToLowerInvariant() : functionCallToken.Name;
+```
 
 To implement with the correct behavior for enabled case-insensitive:
 

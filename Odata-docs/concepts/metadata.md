@@ -1,5 +1,5 @@
 ---
-title: "Metadata"
+title: "Metadata (CSDL) overview"
 description: "Metadata basics"
 author: madansr7
 ms.author: madansr7
