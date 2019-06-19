@@ -541,7 +541,9 @@ This release delivers OData core libraries including ODataLib, EdmLib, Spatial a
 ### Fixed Bugs
 
 [Issue #1121](https://github.com/OData/odata.net/issues/1121) Incorrect path calculated for contained entity sets.
+
 [Issue #1086](https://github.com/OData/odata.net/issues/1086) Enable writing type annotations for collections in full metadata.
+
 ---
 
 This release delivers OData core libraries including ODataLib, EdmLib, Spatial and Client.
@@ -643,7 +645,7 @@ This release delivers OData core libraries including ODataLib, EdmLib, Spatial a
 > [!NOTE]
 > ODataLib 7.5.2 includes the following new features, bug fixes and improvements:
 
-## Changes
+### Features
 
 [#1272](https://github.com/OData/odata.net/issues/1272) Support $index query option
 
