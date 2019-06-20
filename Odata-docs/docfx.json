@@ -29,6 +29,13 @@
         "files": [
           "*.{md,yml}"
         ],
+        "src": "odatalib/v7/edm",
+        "dest": "odatalib/edm"
+      },
+      {
+        "files": [
+          "*.{md,yml}"
+        ],
         "src": "client/v6",
         "dest": "client"
       },
