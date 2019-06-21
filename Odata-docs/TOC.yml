@@ -50,7 +50,7 @@
 - name: Develop
   expanded: true
   items:
-  - name: OData WebAPI
+  - name: ASP.NET WebAPI
     items:
       - name: Getting started
         href: /odata/webapi/getting-started
@@ -150,7 +150,7 @@
           href: /odata/webapi/streamEntity
         - name: Customize unsupported types
           href: /odata/webapi/UnsupportedTypeUsage
-  - name: WebAPI .Net Core
+  - name: ASP.NET Core
     items:
     - name: Getting started
       href: /odata/webapi/netcore-beta1
