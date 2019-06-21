@@ -1,5 +1,5 @@
 ---
-title : "WebApi URI parser case-insensitive names and unqualified functions/actions"
+title : "URI parser case-insensitive names and unqualified functions/actions"
 description: "7.x WebApi URI parser using case-insensitive names and unqualified functions & actions"
 
 ms.date: 02/05/2018
