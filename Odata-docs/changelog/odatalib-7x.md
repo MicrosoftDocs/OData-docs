@@ -4,33 +4,33 @@ description: "ODataLib 7.x"
 author: madansr7
 ms.author: madansr7
 ms.date: 02/19/2019
-ms.topic: article
+ms.topic: article# OData lib changelog
 ---
-# What's new in OData lib
+## Change terminology
 
-To briefly summarize the breaking changes, most of them fall into one of four categories:
+Breaking changes it the library fall into one of four categories:
 
-**Improved Performance**
+- Improved Performance
 
-We will get better writer performance across the board. 
+We will get better writer performance across the board.
 
-**Introducing Dependency Injection**
+- Introducing Dependency Injection
 
-This feature will substantially increase extensibility, like allowing customers to replace entire components such as the `UriPathParser` with their own implementation. Introducing DI make it much easier to use the same reader/writer settings across the board. 
+This feature will substantially increase extensibility, like allowing customers to replace entire components such as the `UriPathParser` with their own implementation. Introducing DI make it much easier to use the same reader/writer settings across the board.
 
-**Removed Legacy Code**
+- Removed Legacy Code
 
-There was a lot of vestigial code left around from the OData v1-3 days that we’ve removed. 
+There was a lot of vestigial code left around from the OData v1-3 days that we’ve removed.
 
-**Improved API Design**
+- Improved API Design
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
-RSS feed: Get notified when this page is updated by copying and pasting the following URL into your feed reader: https://docs.microsoft.com/api/search/rss?search=%22What%27s+new+in+odata+lib&locale=en-us
+RSS feed: Get notified when this page is updated by copying and pasting the following URL into your feed reader: [https://docs.microsoft.com/api/search/rss?search=%22What%27s+new+in+odata+lib&locale=en-us](https://docs.microsoft.com/api/search/rss?search=%22What%27s+new+in+odata+lib&locale=en-us)
 
-## Changes in ODataLib 7.0 Release
+## ODataLib 7.0 Release
 
-### Features
+***Features***
 
 [Issue #245](https://github.com/OData/odata.net/issues/245) Support duplicate non-OData query options.
 
@@ -93,7 +93,7 @@ Add `ODataSimplifiedOptions` class for simplified reader, writer, URL parsing op
 
 Support duplicate custom instance annotations. 
 
-### Fixed Bugs
+***Fixed Bugs***
 
 [Issue #104](https://github.com/OData/odata.net/issues/104) Function imports with parameters are included in service document.
 
@@ -113,8 +113,6 @@ Support duplicate custom instance annotations.
 
 [Issue #658](https://github.com/OData/odata.net/issues/658) `ODataValueUtils.ToODataValue` doesn’t work with `System.Enum` objects.
 
-### Improvements
-
 ### Legacy Code Clean-up
 
 [Issue #385](https://github.com/OData/odata.net/issues/385) Remove junk code to improve stability and reduce assembly size.
@@ -127,12 +125,12 @@ Support duplicate custom instance annotations.
 [Issue #500](https://github.com/OData/odata.net/issues/500) Remove deprecated NuGet profiles
 
 - Removed support for:
-	- Desktop and Profile328 for .NET 4.0
-	- Profile259 for .NET 4.5
-	- dnxcore50 and dnx451 for ASP.NET 5.0 (deprecated)
+  - Desktop and Profile328 for .NET 4.0
+  - Profile259 for .NET 4.5
+  - dnxcore50 and dnx451 for ASP.NET 5.0 (deprecated)
 - What we have now:
-	- Profile111 for .NET 4.5 which is compatible with most .NET 4.5+ applications, UWP, Xamarin/Mono, etc.
-	- .NET 3.5 for Office (will not be publicly available)
+  - Profile111 for .NET 4.5 which is compatible with most .NET 4.5+ applications, UWP, Xamarin/Mono, etc.
+  - .NET 3.5 for Office (will not be publicly available)
 
 [Issue #510](https://github.com/OData/odata.net/issues/510) Remove Atom support
 
@@ -169,10 +167,10 @@ Support duplicate custom instance annotations.
 [Issue #504](https://github.com/OData/odata.net/issues/504) [Unify entity and complex (collection) type serialization/deserialization API](../odata features/2016-08-23-10-42-merge-complex-and-entity).
 
 - Merge the reading/writing behavior for complex and entity, collection of complex and collection of entity.
-	- Change `ODataEntry` to `ODataResource` and remove `ODataComplexValue` to support complex and entity.
-	- Change `ODataFeed` to `ODataResourceSet` to support feed and complex collection.
-	- Change `ODataNavigationLink` to `ODataNestedResourceInfo` to support navigation property and complex property or complex collection property.
-	- Change reader/writer APIs to support `IEdmStructuredType`.
+  - Change `ODataEntry` to `ODataResource` and remove `ODataComplexValue` to support complex and entity.
+  - Change `ODataFeed` to `ODataResourceSet` to support feed and complex collection.
+  - Change `ODataNavigationLink` to `ODataNestedResourceInfo` to support navigation property and complex property or complex collection property.
+  - Change reader/writer APIs to support `IEdmStructuredType`.
 - We don’t merge entity type/complex type in EdmLib since they are OData concepts.
 
 [Issue #491](https://github.com/OData/odata.net/issues/491) Simplified namespaces.
@@ -217,7 +215,7 @@ Improved standard-compliance by forbidding duplicate property names.
 
 Writer throws more accurate and descriptive exceptions.
 
-### Other Improvements
+***Improvements***
 
 [Issue #493](https://github.com/OData/odata.net/issues/493) Replace `ThrowOnUndeclaredProperty` with the more accurate `ThrowOnUndeclaredPropertyForNonOpenType`.
 
@@ -242,8 +240,7 @@ So, Edmx is only part of a valid CSDL document. In previous version, `CsdlReader
 > [!NOTE]
 > This release delivers OData core libraries including ODataLib, EdmLib and Spatial. OData Client for .NET is not  published in this release.
 
-
-## Changes in ODataLib 7.1.0 Release
+## ODataLib 7.1.0 Release
 
 ### Migration to .NET Standard 1.1
 
@@ -255,7 +252,7 @@ Creating a new solution file for .NET Standard projects. Adding .NET
 Standard versions of Microsoft.Spatial, Microsoft.OData.Edm,
 Microsoft.OData.Core, and Microsoft.OData.Client. MSBuild doesn't
 pre-process the dependency graph provided by the csproj files, so
-explicitly spoonfeeding the chain in the Microsoft.Test.OData.DotNetStandard.sln
+explicitly spoon feeding the chain in the Microsoft.Test.OData.DotNetStandard.sln
 file.
 
 Update build script to default to VS 2015 for .NET Standard,
@@ -269,7 +266,7 @@ Change version to 7.1.0
 [!Note]: "nuget restore" needs to be run manually on the new project
 files for them to compile.
 
-### Features
+***Features***
 
 [Commit c0c6006a5a8683507c38623144a145de128851c6](https://github.com/OData/odata.net/commit/c0c6006a5a8683507c38623144a145de128851c6) Adding support and tests for virtual property count.
 
@@ -277,7 +274,7 @@ files for them to compile.
 
 [Commit 8e965e9f89951dbfea510e67cbbe89e4f75fa69b](https://github.com/OData/odata.net/commit/8e965e9f89951dbfea510e67cbbe89e4f75fa69b) Add support for operations with no bindings.
 
-### Fixed Bugs
+***Fixed Bugs***
 
 [Issue #525](https://github.com/OData/odata.net/issues/525) Support for AnnotationPath.
 
@@ -297,7 +294,7 @@ files for them to compile.
 
 [Issue #778](https://github.com/OData/odata.net/issues/778) Fix tests and code for reading nested results from operations.
 
-### Improvements
+***Improvements***
 
 [Commit 6e2dee52b37e620926cd0535f40d5537ba839c05](https://github.com/OData/odata.net/commit/6e2dee52b37e620926cd0535f40d5537ba839c05) Add Test solutions for WP WindowsStore Portable.
 
@@ -322,26 +319,26 @@ files for them to compile.
 > [!NOTE]
 > This release delivers OData core libraries including ODataLib, EdmLib and Spatial. OData Client for .NET is not published in this release.
 
-## Changes in ODataLib 7.1.1 Release
+## ODataLib 7.1.1 Release
 
 > [!NOTE]
 > 7.1.1 is a re-release of 7.1.0 without the NetStandard version of ODataLib, EdmLib and Spatial due to an issue found in the NetStandard versions of those  binaries. The PCL versions of those binaries are unaffected.
 > This release delivers OData core libraries including ODataLib, EdmLib and Spatial. OData Client for .NET is not published in this release.
 
-## Changes in ODataLib 7.2.0 Release
+## ODataLib 7.2.0 Release
 
 > [!NOTE]
 > 7.2.0 re-introduces .NET Standard 1.1 libraries of ODataLib (OData.Core, OData.Edm, and Microsoft.Spatial). The PCL versions remain in the packages and are shipped alongside the new .NET Standard libraries. Bug fixes and additional test validations are also included in this release.
 
-### Features
+***Features***
 
 [Commit 0b54111ee7909e71263b83fc60268de0de817986](https://github.com/OData/odata.net/commit/0b54111ee7909e71263b83fc60268de0de817986) Expose UriQueryExpressionParser.ParseFilter as a public API [#805](https://github.com/OData/odata.net/issues/805)
 
-### Fixed Bugs
+***Fixed Bugs***
 
 [Issue #789](https://github.com/OData/odata.net/issues/789) BUG? Exception when create EdmModel V7.1.0
 
-### Improvements
+***Improvements***
 
 [Commit 072f6f7c9bc4c739e553f7fa0996618c621a6589](https://github.com/OData/odata.net/commit/072f6f7c9bc4c739e553f7fa0996618c621a6589) Adding FxCop exclusion for CA3053:UseXmlSecureResolver in code that compiles under .Net portable framework.
 
@@ -353,12 +350,12 @@ files for them to compile.
 
 This release delivers OData core libraries including ODataLib, EdmLib and Spatial. OData Client for .NET is not published in this release.
 
-## Changes in ODataLib 7.3.0 Release
+## ODataLib 7.3.0 Release
 
 > [!NOTE]
 > ODataLib 7.3.0 adds support key features including optional function parameters, parser support for the $compute clause, primitive type casts, and the ability to read and write untyped data as structured values. 
 
-### Features
+***Features***
 
 [[#760](https://github.com/OData/odata.net/issues/760) Aggregation not supported for dynamic properties
 
@@ -370,7 +367,7 @@ This release delivers OData core libraries including ODataLib, EdmLib and Spatia
 
 [#801](https://github.com/OData/odata.net/issues/801) Supporting Primitive Type Casts
 
-### Fixed Bugs
+***Fixed Bugs***
 
 [Issue #747](https://github.com/OData/odata.net/issues/747) Cannot select dynamic property of a dynamic property 
 
@@ -378,31 +375,27 @@ This release delivers OData core libraries including ODataLib, EdmLib and Spatia
 
 [Issue #856](https://github.com/OData/odata.net/issues/856) Raw Value serializer output json string for Spatial type
 
-
 This release delivers OData core libraries including ODataLib, EdmLib and Spatial. OData Client for .NET is not published in this release.
 
-
-## Changes in ODataLib 7.3.1 Release
+## ODataLib 7.3.1 Release
 
 > [!NOTE]
 > ODataLib 7.3.1 addresses an issue where $compute parsing was not triggered by a global call to ParseUri. 
 
-### Fixed Bugs
+***Fixed Bugs***
 
 [Issue #927](https://github.com/OData/odata.net/issues/927) Add Compute to ParseUri.
 
-
 This release delivers OData core libraries including ODataLib, EdmLib and Spatial. OData Client for .NET is not published in this release.
 
-
-## Changes in ODataLib 7.4.0 Release
+## ODataLib 7.4.0 Release
 
 > [!NOTE]
 > ODataLib 7.4.0 has the following beta releases:
 
 ### ODataLib 7.4.0.b
 
-### Features
+***Features***
 
 [Issue #103](https://github.com/OData/odata.net/issues/103) OData v4: Deserialize client unknown properties into OData Object Model.
 
@@ -410,7 +403,7 @@ This release delivers OData core libraries including ODataLib, EdmLib and Spatia
 
 [Issue #988](https://github.com/OData/odata.net/issues/988) Add support for 4.01 Delta Format
 
-### Fixed Bugs
+***Fixed Bugs***
 
 [Issue #698](https://github.com/OData/odata.net/issues/698) DataServiceQuerySingle<T>.GetValueAsync inconsistent with GetValue in support for GET returning 404.
 
@@ -422,33 +415,31 @@ This release delivers OData core libraries including ODataLib, EdmLib and Spatia
 
 [Issue #965](https://github.com/OData/odata.net/issues/965) Parsing encoded character with special meaning in ODataJsonLightContextUriParser.
 
+### ODataLib 7.4.0.beta
 
-### ODataLib 7.4.0.be
-
-### Features
+***Features***
 
 [Issue #226](https://github.com/OData/odata.net/issues/226) Support a json serialization for $batch.
 
 [Issue #866](https://github.com/OData/odata.net/issues/866) "Microsoft.OData.Client" support for ,NET Core.
 
-### Fixed Bugs
+***Fixed Bugs***
 
-[PR #980](https://github.com/OData/odata.net/pull/980) Support Enum to string comparision.
+[PR #980](https://github.com/OData/odata.net/pull/980) Support Enum to string comparison.
 
-[PR #995](https://github.com/OData/odata.net/pull/995) Use ConcurrentDictionary in all platforms to make client edm model thread safe.
+[PR #995](https://github.com/OData/odata.net/pull/995) Use ConcurrentDictionary in all platforms to make client EDM model thread safe.
 
 [Issue #1008](https://github.com/OData/odata.net/issues/1008) & [Issue #1009](https://github.com/OData/odata.net/issues/1009) Fix property validation issue.
 
 [Issue #1101](https://github.com/OData/odata.net/pull/1011) Microsoft.OData.Client 7.0+ needs to support GetValue like the older OData Client.
 
-
 ### ODataLib 7.4.0.be
 
-### Features
+***Features***
 
 [PR #1020](https://github.com/OData/odata.net/pull/1020) DependsOn Ids for Multipart/Mixed Batch
 
-### Fixed Bugs
+***Fixed Bugs***
 
 [Issue #1022](https://github.com/OData/odata.net/issues/1022) Calculate correct context URI with Operation path segment.
 
@@ -456,23 +447,20 @@ This release delivers OData core libraries including ODataLib, EdmLib and Spatia
 
 [Issue #1028](https://github.com/OData/odata.net/issues/1028) Add the Enum member expression into validation and don't return the error message.
 
-
 ### ODataLib 7.4.0
 
-### Features
+***Features***
 
 [Issue #1037](https://github.com/OData/odata.net/issues/1037) Support reading/writing OData 4.01 compatible JSON payloads.
 
----
-
 This release delivers OData core libraries including ODataLib, EdmLib, Spatial and Client.
 
-## Changes in ODataLib 7.4.1 Release
+## ODataLib 7.4.1 Release
 
 > [!NOTE]
 > ODataLib 7.4.1 includes the following items: a new OData Client Code Gen extension for VS2017 using the latest version of the libraries, built-in abstract types for Edm models, KeyAsSegmentSupported Boolean to the capabilities vocabulary, added validation rules to abstract types, support for AnnotationSegment, NuGet package testing, and various bug fixes.
 
-### Features
+***Features***
 
 [[#987](https://github.com/OData/odata.net/pull/987) Adding new OData Client Code Gen for VS2017
 
@@ -490,9 +478,9 @@ This release delivers OData core libraries including ODataLib, EdmLib, Spatial a
 
 [[#1080](https://github.com/OData/odata.net/pull/1080) Add nuget package testing.
 
-### Fixed Bugs
+***Fixed Bugs***
 
-[Issue #530](https://github.com/OData/odata.net/issues/530) LINQ query generation with Date functions produces weird urls
+[Issue #530](https://github.com/OData/odata.net/issues/530) LINQ query generation with Date functions produces weird URLs
 
 [Issue #1027](https://github.com/OData/odata.net/issues/1027) Edm.NavigationPropertyPath not supported
 
@@ -500,24 +488,22 @@ This release delivers OData core libraries including ODataLib, EdmLib, Spatial a
 
 [Issue #1046](https://github.com/OData/odata.net/issues/1046) OData Edm lib issue with vocabulary
 
----
-
 This release delivers OData core libraries including ODataLib, EdmLib, Spatial and Client.
 
-## Changes in ODataLib 7.4.2 Release
+## ODataLib 7.4.2 Release
 
 > [!NOTE]
 > ODataLib 7.4.2 includes the following items: support for "Authorization" vocabularies to align with the Open API specification, enabling support for containment paths in navigation property bindings by addressing a bug, and various other fixes.
 
-### Features
+***Features***
 
-[#1070](https://github.com/OData/odata.net/pull/1070) Add the Authorization vocabularies annotation into core edm model
+[#1070](https://github.com/OData/odata.net/pull/1070) Add the Authorization vocabularies annotation into core Edm model
 
 [#1109](https://github.com/OData/odata.net/pull/1109) Fix support for containment paths in nav prop bindings
 
 [#1112](https://github.com/OData/odata.net/pull/1112) Bug fix: Throw exception for an invalid Enum value
 
-### Fixed Bugs
+***Fixed Bugs***
 
 [Issue #645](https://github.com/OData/odata.net/issues/645) Enable updating top-level properties to null.
 
@@ -529,54 +515,47 @@ This release delivers OData core libraries including ODataLib, EdmLib, Spatial a
 
 [Issue #1092](https://github.com/OData/odata.net/issues/1092) Address StyleCop warnings
 
----
-
 This release delivers OData core libraries including ODataLib, EdmLib, Spatial and Client.
 
-## Changes in ODataLib 7.4.3 Release
+## ODataLib 7.4.3 Release
 
 > [!NOTE]
 > ODataLib 7.4.3 fixes a minor bug introduced in 7.4.2 in which the path for a contained entity set was computed incorrectly.
 
-### Fixed Bugs
+***Fixed Bugs***
 
 [Issue #1121](https://github.com/OData/odata.net/issues/1121) Incorrect path calculated for contained entity sets.
 
 [Issue #1086](https://github.com/OData/odata.net/issues/1086) Enable writing type annotations for collections in full metadata.
 
----
-
 This release delivers OData core libraries including ODataLib, EdmLib, Spatial and Client.
 
-## Changes in ODataLib 7.4.4 Release
+## ODataLib 7.4.4 Release
 
 > [!NOTE]
-
+>
 > ODataLib 7.4.4 fixes a potential concurrency issue with an internal dictionary used for tracking navigation property mappings and adds code to make sure that navigation property bindings are never written for containment navigation properties.
 
-### Fixed Bugs
+***Fixed Bugs***
 
 [Issue #137](https://github.com/OData/odata.net/issues/1137) Possible contention issues in navigationPropertyMappings dictionary.
 [Issue #138](https://github.com/OData/odata.net/issues/1138) Containment navigation properties shouldn't define NavigationPropertyBindings to non-containment sets
 
----
-
 This release delivers OData core libraries including ODataLib, EdmLib, Spatial and Client.
 
-
-## Changes in ODataLib 7.5.0 Release
+## ODataLib 7.5.0 Release
 
 > [!NOTE]
 > ODataLib 7.5.0 includes the following items: IN operator, Entity set aggregation, various bug fixes, and performance improvement.
 
-### Features
+***Features***
 
 [#757](https://github.com/OData/odata.net/pull/757) Entity set aggregations
 
 [#1165](https://github.com/OData/odata.net/pull/1165) [Feature] IN operator
 
 
-### Fixed Bugs
+***Fixed Bugs***
 
 [#513](https://github.com/OData/odata.net/issues/513) $select with complexCol/prop should be supported
 
@@ -596,7 +575,7 @@ This release delivers OData core libraries including ODataLib, EdmLib, Spatial a
 
 [#1142](https://github.com/OData/odata.net/pull/1142) fix write document metadata properties for apply ComputeTransformationNode
 
-[#1143](https://github.com/OData/odata.net/pull/1143) fix build uri from groupby navigation property with many child structural properties
+[#1143](https://github.com/OData/odata.net/pull/1143) fix build Uri from groupby navigation property with many child structural properties
 
 [#1145](https://github.com/OData/odata.net/issues/1145) Memory Leak in Library?
 
@@ -614,17 +593,14 @@ This release delivers OData core libraries including ODataLib, EdmLib, Spatial a
 
 [#1191](https://github.com/OData/odata.net/issues/1191) Avoid String allocations when writing strings that require special character handling
 
----
-
 This release delivers OData core libraries including ODataLib, EdmLib, Spatial and Client.
 
-
-## Changes in ODataLib 7.5.1 Release
+## ODataLib 7.5.1 Release
 
 > [!NOTE]
 > ODataLib 7.5.1 includes the following bug fixes:
 
-### Fixed Bugs
+***Fixed Bugs***
 
 [#1181](https://github.com/OData/odata.net/issues/1181) Refactor the JSON string escape in JSON writer
 
@@ -636,16 +612,14 @@ This release delivers OData core libraries including ODataLib, EdmLib, Spatial a
 
 [#1232](https://github.com/OData/odata.net/issues/1232) Fix lexer bug that breaks functions named 'in'
 
----
-
 This release delivers OData core libraries including ODataLib, EdmLib, Spatial and Client.
 
-## Changes in ODataLib 7.5.2 Release
+## ODataLib 7.5.2 Release
 
 > [!NOTE]
 > ODataLib 7.5.2 includes the following new features, bug fixes and improvements:
 
-### Features
+***Features***
 
 [#1272](https://github.com/OData/odata.net/issues/1272) Support $index query option
 
@@ -683,18 +657,14 @@ This release delivers OData core libraries including ODataLib, EdmLib, Spatial a
 
 [#1307](https://github.com/OData/odata.net/pull/1307) Add annotation term for Org.OData.Community.UrlEscape.V1.UrlEscapeFunction
 
-
----
-
 This release delivers OData core libraries including ODataLib, EdmLib, Spatial and Client.
 
-
-## Changes in ODataLib 7.5.3 Release
+## ODataLib 7.5.3 Release
 
 > [!NOTE]
 > ODataLib 7.5.3 includes the following new features, bug fixes and improvements:
 
-### Features
+***Features***
 
 [#1295](https://github.com/OData/odata.net/pull/1295) Enable derived type validation in Uri parsing
 
@@ -706,29 +676,26 @@ This release delivers OData core libraries including ODataLib, EdmLib, Spatial a
 
 [#1358](https://github.com/OData/odata.net/pull/1358) Enable derived type validation in writing
 
-### Fixed Bugs
+***Fixed Bugs***
 
 [#1323](https://github.com/OData/odata.net/issues/1323) Fix the escaped single-quote and Guid literals for **IN** operator
 
 [#1359](https://github.com/OData/odata.net/pull/1359) Fix SelectExpandNode for navigation properties on derived/complex types
 
-### Improvements
+***Improvements***
 
 [#1349](https://github.com/OData/odata.net/issues/1349) Remove locks from Uri parser
 
-[#1357](https://github.com/OData/odata.net/pull/1357) Use **TryParse** API instead of **Parse** for date to avoiding throwing exceptions 
-
----
+[#1357](https://github.com/OData/odata.net/pull/1357) Use **TryParse** API instead of **Parse** for date to avoiding throwing exceptions
 
 This release delivers OData core libraries including ODataLib, EdmLib, Spatial and Client.
 
-
-## Changes in ODataLib 7.5.4 Release
+## ODataLib 7.5.4 Release
 
 > [!NOTE]
 > ODataLib 7.5.4 includes the following new features, bug fixes and improvements:
 
-### Features
+***Features***
 
 [#1376](https://github.com/OData/odata.net/pull/1376) Enable reading validation for derived type constraint annotation.
 
@@ -736,7 +703,7 @@ This release delivers OData core libraries including ODataLib, EdmLib, Spatial a
 
 [#1404](https://github.com/OData/odata.net/pull/1404) Support reading/writing delta request payload.
 
-### Fixed Bugs
+***Fixed Bugs***
 
 [#1368](https://github.com/OData/odata.net/issues/1368) Make aliases created in compute() transformation visible for following transforms/query options.
 
@@ -748,10 +715,8 @@ This release delivers OData core libraries including ODataLib, EdmLib, Spatial a
 
 [#1391](https://github.com/OData/odata.net/pull/1391) Fix build Uri problem with filter by Enum.
 
-### Improvements
+***Improvements***
 
 [#1024](https://github.com/OData/odata.net/issues/1024) Improve the JSON reader buffer.
-
----
 
 This release delivers OData core libraries including ODataLib, EdmLib, Spatial and Client.
