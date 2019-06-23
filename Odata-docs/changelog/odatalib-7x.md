@@ -266,7 +266,7 @@ Remove duplicate file: IEdmReferentialConstraint.cs.
 
 Change version to 7.1.0
 
-Note: "nuget restore" needs to be run manually on the new project
+[!Note]: "nuget restore" needs to be run manually on the new project
 files for them to compile.
 
 ### Features

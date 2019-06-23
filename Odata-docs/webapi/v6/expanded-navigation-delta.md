@@ -1,7 +1,5 @@
 ---
-title: "Expanded Navigation Property Support in Delta Response"
-description: ""
-
+title: "Expanded Nav Prop in WebApi Delta Response"
 author: madansr7
 ms.author: madansr7
 ms.date: 02/19/2019

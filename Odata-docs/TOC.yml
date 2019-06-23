@@ -150,7 +150,7 @@
           href: /odata/webapi/streamEntity
         - name: Customize unsupported types
           href: /odata/webapi/UnsupportedTypeUsage
-  - name: ASP.NET Core
+  - name: WebApi .NET Core
     items:
     - name: Getting started
       href: /odata/webapi/netcore-beta1
@@ -251,13 +251,13 @@
       - name: Basic CRUD operations
         href: /odata/client/basic-crud-operations
       - name: Annotations
-        href: /odata/client/client-annotation-support
+        href: /odata/client/annotation-support
       - name: Async operations
-        href: /odata/client/client-async-operations
+        href: /odata/client/async-operations
       - name: Batch operations
-        href: /odata/client/client-batch-operations
+        href: /odata/client/batch-operations
       - name: Client tracking
-        href: /odata/client/client-tracking
+        href: /odata/client/tracking
       - name: Server driven paging
         href: /odata/client/deal-with-server-driven-paging
       - name: Get response content
@@ -293,8 +293,8 @@
 - name: Changelog
   items:
     - name: OData lib changes
-      href: /odata/changelog/odl/odl-7x
+      href: /odata/changelog/odatalib-7x
     - name: WebApi lib changes
-      href: /odata/changelog/webapi/webapi-7x
+      href: /odata/changelog/webapi-7x
 # - name: 10.2 Work around for SingleResult.Create an empty result
 #   href: posts\work-around-for-singleresult-create

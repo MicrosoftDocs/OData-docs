@@ -1,5 +1,5 @@
 ---
-title: "Override primitive serialization and deserialization of payload in odatalib"
+title: "Override payload serialization and deserialization in odatalib"
 description: ""
 author: madansr7
 ms.author: madansr7
