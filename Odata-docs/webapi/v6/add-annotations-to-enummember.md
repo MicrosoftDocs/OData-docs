@@ -8,11 +8,12 @@ ms.date: 02/19/2019
 ms.topic: article
  
 ---
+# Add vocabulary annotations to Enum Member
+
+ODataLib version 6.11 added support to add vocabulary annotations to EdmEnumMember.
 
 ## Create Model
 **Applies To**: [!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v6.md)]
-
-ODataLib version 6.11 added support to add vocabulary annotations to EdmEnumMember.
 
 ``` csharp
 EdmModel model = new EdmModel();
@@ -48,6 +49,7 @@ container.AddEntitySet("Cars", carType);
 ```
 
 ## Output
+
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
       <edmx:Edmx Version="4.0" xmlns:edmx="https://docs.oasis-open.org/odata/ns/edmx">

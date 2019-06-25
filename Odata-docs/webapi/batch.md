@@ -8,7 +8,7 @@ ms.date: 05/12/2015
 
 Batch requests allow grouping multiple operations into a single HTTP request payload and the service will return a single HTTP response with the response to all operations in the requests. This way, the client can optimize calls to the server and improve the scalability of its service.
 
-Please refer to [OData Protocol](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html#_Toc406398359) for more detail about batch, and [Batch in ODL](/odata/client/client-batch-operations) for batch in ODL client.
+Please refer to [OData Protocol](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html#_Toc406398359) for more detail about batch, and [Batch in ODL](/odata/client/batch-operations) for batch in ODL client.
 
 ## Enable Batch in Web API OData Service
 

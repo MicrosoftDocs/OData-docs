@@ -7,7 +7,7 @@ ms.date: 02/19/2019
 ms.topic: article
  
 ---
-# OData query options usage
+# Query options usage
 
 ## Filter
 

@@ -126,7 +126,7 @@
             href: /odata/webapi/bind-custom-urifunctions-to-clr-methods
           - name: IN Operator
             href: /odata/webapi/InOperator
-          - name: Case-insensitive names and unqualified functions & actions
+          - name: Case-insensitive names and unqualified functions/actions
             href: /odata/webapi/caseInsensitiveAndQualifiedFunctions
           - name: Simplified optional-$-prefix query option
             href: /odata/webapi/enableNoDollarQueryOptions
@@ -138,7 +138,7 @@
             href: /odata/webapi/expanded-navigation-delta
           - name: Scaffolding
             href: /odata/webapi/scaffolding
-      - name: Extending OData WebAPI
+      - name: Extending WebAPI
         items:
         - name: Custom URL parsing
           href: /odata/webapi/custom-url-parsing
@@ -150,10 +150,10 @@
           href: /odata/webapi/streamEntity
         - name: Customize unsupported types
           href: /odata/webapi/UnsupportedTypeUsage
-  - name: ASP.NET Core
+  - name: WebApi .NET Core
     items:
     - name: Getting started
-      href: /odata/webapi/netcore-beta1
+      href: /odata/webapi/netcore
   - name: OData Lib
     items:
     - name: Core lib
@@ -230,41 +230,39 @@
         href: /odata/odatalib/edm/define-referential-constraints
       - name: Specify type facets for type definitions
         href: /odata/odatalib/edm/type-facets
-      - name: Other topics
-        href: /odata/odatalib/edm/other-topics
-      - name: Add vocabulary annotations to EdmEnumMember
-        href: /odata/odatalib/edm/add-annotations-to-enummember
+      - name: Add annotations to Enum Member
+        href: /odata/odatalib/add-annotations-to-enummember
       - name: Alternate Key
-        href: /odata/odatalib/edm/alternatekey
+        href: /odata/odatalib/alternatekey
       - name: Capabilities vocabulary
-        href: /odata/odatalib/edm/capabilitiesVocabulary
-      - name: Multi-NavigationPropertyBindings for navigation property
-        href: /odata/odatalib/edm/Multi-Binding
+        href: /odata/odatalib/capabilitiesVocabulary
+      - name: Multi-Navigation Property Bindings
+        href: /odata/odatalib/Multi-Binding
       - name: Navigation property partner
-        href: /odata/odatalib/edm/navigation-partner
+        href: /odata/odatalib/navigation-partner
       - name: Optional Parameters
-        href: /odata/odatalib/edm/optional-parameters
+        href: /odata/odatalib/optional-parameters
     - name: Batching
       items:
         - name: Batching requests
           href: /odata/odatalib/JsonBatch
   - name: OData Client
     items:
-      - name: Basic crud operations
+      - name: Basic CRUD operations
         href: /odata/client/basic-crud-operations
-      - name: Client annotations
-        href: /odata/client/client-annotation-support
-      - name: Client async operations
-        href: /odata/client/client-async-operations
-      - name: Client batch operations
-        href: /odata/client/client-batch-operations
+      - name: Annotations
+        href: /odata/client/annotation-support
+      - name: Async operations
+        href: /odata/client/async-operations
+      - name: Batch operations
+        href: /odata/client/batch-operations
       - name: Client tracking
-        href: /odata/client/client-tracking
+        href: /odata/client/tracking
       - name: Server driven paging
         href: /odata/client/deal-with-server-driven-paging
       - name: Get response content
         href: /odata/client/get-response-content
-      - name: OData Client Code Generation Tool
+      - name: Client Code Generation Tool
         href: /odata/client/code-generation-tool
       - name: Query options
         href: /odata/client/query-options
@@ -292,11 +290,11 @@
       href: /odata/resources/support
     - name: Roadmap
       href: /odata/resources/roadmap
-    - name: Changelog
-      items:
-        - name: OData lib changes
-          href: /odata/changelog/odl/odl-7x
-        - name: WebApi lib changes
-          href: /odata/changelog/webapi/webapi-7x
+- name: Changelog
+  items:
+    - name: OData lib changes
+      href: /odata/changelog/odatalib-7x
+    - name: WebApi lib changes
+      href: /odata/changelog/webapi-7x
 # - name: 10.2 Work around for SingleResult.Create an empty result
 #   href: posts\work-around-for-singleresult-create

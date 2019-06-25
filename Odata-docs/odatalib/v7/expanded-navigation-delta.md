@@ -1,6 +1,5 @@
 ---
-title: "Expanded Navigation Property Support in Delta Response"
-description: ""
+title: "Expanded Navigation Property in ODL Delta Response"
 author: madansr7
 ms.author: madansr7
 ms.date: 02/19/2019

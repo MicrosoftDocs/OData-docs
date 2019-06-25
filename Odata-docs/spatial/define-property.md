@@ -3,17 +3,16 @@ title: "Define spatial properties"
 description: "Define spatial properties in entity data models"
 ms.date: 06/17/2019
 ---
+# Define spatial properties
 
 Using Spatial in OData services involves two parts of work:
 
  - Define **structural properties** of spatial type in entity data models;
  - Create and return spatial instances as **property values** in services.
 
-
-
 This section shows how to define spatial properties in entity data models using EdmLib APIs. We will continue to use and extend the sample from the **EdmLib sections**.
 
-### Add properties *GeometryLoc* and *GeographyLoc*
+## Add properties *GeometryLoc* and *GeographyLoc*
 In the **SampleModelBuilder.cs** file, insert the following code into the `SampleModelBuilder.BuildAddressType()` method:
 
 ```C#

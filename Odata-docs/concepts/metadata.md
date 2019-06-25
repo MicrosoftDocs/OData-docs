@@ -11,3 +11,25 @@ ms.topic: article
 # Metadata basics
 
 Metadata basics
+
+## XML Representation
+
+## Entity Model
+
+## XML Document
+
+## Schema
+
+## Entity Type
+
+## Structural Property
+
+## Navigation property
+
+## Complex type
+
+## Enumeration Type
+
+## Action and Function
+
+## Entity Container
