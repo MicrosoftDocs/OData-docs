@@ -6,7 +6,7 @@ ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article# OData lib changelog
 ---
-## Change terminology
+# Change terminology
 
 Breaking changes it the library fall into one of four categories:
 
@@ -210,7 +210,7 @@ Support duplicate custom instance annotations.
 [Issue #640](https://github.com/OData/odata.net/issues/640) More sensible type, namely IEnumerable<object>, for ODataCollectionValue.Items.
 
 [Issue #643](https://github.com/OData/odata.net/issues/643) Adjust query node kinds in Uri Parser in order to support navigation under complex. [Breaking Changes](https://odata.github.io/odata.net/v7/#04-01-Query-Nodes-Breaking)
- 
+
 Improved standard-compliance by forbidding duplicate property names.
 
 Writer throws more accurate and descriptive exceptions.
@@ -373,7 +373,7 @@ This release delivers OData core libraries including ODataLib, EdmLib and Spatia
 
 [Issue #814](https://github.com/OData/odata.net/issues/814) Support writing Enum-valued Annotations
 
-[Issue #856](https://github.com/OData/odata.net/issues/856) Raw Value serializer output json string for Spatial type
+[Issue #856](https://github.com/OData/odata.net/issues/856) Raw Value serializer output JSON string for Spatial type
 
 This release delivers OData core libraries including ODataLib, EdmLib and Spatial. OData Client for .NET is not published in this release.
 
@@ -419,7 +419,7 @@ This release delivers OData core libraries including ODataLib, EdmLib and Spatia
 
 ***Features***
 
-[Issue #226](https://github.com/OData/odata.net/issues/226) Support a json serialization for $batch.
+[Issue #226](https://github.com/OData/odata.net/issues/226) Support a JSON serialization for $batch.
 
 [Issue #866](https://github.com/OData/odata.net/issues/866) "Microsoft.OData.Client" support for ,NET Core.
 
@@ -553,7 +553,6 @@ This release delivers OData core libraries including ODataLib, EdmLib, Spatial a
 [#757](https://github.com/OData/odata.net/pull/757) Entity set aggregations
 
 [#1165](https://github.com/OData/odata.net/pull/1165) [Feature] IN operator
-
 
 ***Fixed Bugs***
 
