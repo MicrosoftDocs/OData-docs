@@ -629,7 +629,7 @@ This release delivers OData core libraries including ODataLib, EdmLib, Spatial a
 
 [#1262](https://github.com/OData/odata.net/issues/1262) OutOfLine Annotation for EnumMember throw exception when write to CSDL
 
-[#1276](https://github.com/OData/odata.net/issues/1276) OData nuget package description should change to reflect the latest status
+[#1276](https://github.com/OData/odata.net/issues/1276) OData NuGet package description should change to reflect the latest status
 
 [#1287](https://github.com/OData/odata.net/issues/1287) Add Validation vocabulary annotation
 
@@ -637,7 +637,7 @@ This release delivers OData core libraries including ODataLib, EdmLib, Spatial a
 
 [#1293](https://github.com/OData/odata.net/pull/1293) Update the Core vocabulary xml
 
-[#1286](https://github.com/OData/odata.net/pull/1286) Context url for expand
+[#1286](https://github.com/OData/odata.net/pull/1286) Context URL for expand
 
 [#1299](https://github.com/OData/odata.net/issues/1299) Enable write navigation property binding for containment target
 
@@ -655,7 +655,7 @@ This release delivers OData core libraries including ODataLib, EdmLib, Spatial a
 
 [#1296](https://github.com/OData/odata.net/issues/1296) Remove Contentions from Microsoft.OData.Edm
 
-[#1307](https://github.com/OData/odata.net/pull/1307) Add annotation term for Org.OData.Community.UrlEscape.V1.UrlEscapeFunction
+[#1307](https://github.com/OData/odata.net/pull/1307) Add annotation term for Org.OData.Community.URLEscape.V1.URLEscapeFunction
 
 This release delivers OData core libraries including ODataLib, EdmLib, Spatial and Client.
 

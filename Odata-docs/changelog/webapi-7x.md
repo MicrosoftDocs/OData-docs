@@ -316,7 +316,7 @@ PM> Install-Package Microsoft.AspNet.OData -Version 7.0.1
 
 * [ [Web API issue #1529](https://github.com/OData/WebApi/issues/1529) ] Fix ETag missing on derived Entity Set
 
-* [ [Web API issue #1532](https://github.com/OData/WebApi/issues/1532) ] Fix JSON batch repsonse content type
+* [ [Web API issue #1532](https://github.com/OData/WebApi/issues/1532) ] Fix JSON batch response content type
 
 ---
 
