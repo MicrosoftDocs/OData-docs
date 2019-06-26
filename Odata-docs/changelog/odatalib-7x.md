@@ -207,7 +207,7 @@ Support duplicate custom instance annotations.
 
 [Issue #621](https://github.com/OData/odata.net/issues/621) Make reader able to read contained entity/entityset without context URL.
  
-[Issue #640](https://github.com/OData/odata.net/issues/640) More sensible type, namely IEnumerable<object>, for ODataCollectionValue.Items.
+[Issue #640](https://github.com/OData/odata.net/issues/640) More sensible type, namely `IEnumerable<object>`, for ODataCollectionValue.Items.
 
 [Issue #643](https://github.com/OData/odata.net/issues/643) Adjust query node kinds in Uri Parser in order to support navigation under complex. [Breaking Changes](https://odata.github.io/odata.net/v7/#04-01-Query-Nodes-Breaking)
  
