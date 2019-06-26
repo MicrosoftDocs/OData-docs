@@ -12,10 +12,10 @@
       href: /odata/concepts/data-model
     - name: Url components
       href: /odata/concepts/url-components
-    - name: Service metadata
-      href: /odata/concepts/metadata
-    - name: Payload
-      href: /odata/concepts/payload-formats
+    # - name: Service metadata
+      # href: /odata/concepts/metadata
+    # - name: Payload
+    #   href: /odata/concepts/payload-formats
   - name: Getting Data
     items:
     - name: Get Data
