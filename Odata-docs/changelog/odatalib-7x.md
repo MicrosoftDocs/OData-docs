@@ -6,7 +6,7 @@ ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article# OData lib changelog
 ---
-## Change terminology
+# Change terminology
 
 Breaking changes it the library fall into one of four categories:
 
