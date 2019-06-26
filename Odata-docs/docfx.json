@@ -29,6 +29,13 @@
         "files": [
           "*.{md,yml}"
         ],
+        "src": "odatalib/v7/edm",
+        "dest": "odatalib/edm"
+      },
+      {
+        "files": [
+          "*.{md,yml}"
+        ],
         "src": "client/v6",
         "dest": "client"
       },
@@ -64,6 +71,7 @@
       "ms.author":"madansr7",
       "ms.prod": "odata",
       "ms.topic": "conceptual",
+      "uhfHeaderId": "MSDocsHeader-OData",
       "titleSuffix": "OData"
     },
     "fileMetadata": {

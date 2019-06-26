@@ -1,7 +1,8 @@
-- name: Overview
+- name: OData documentation
+  href: /odata/index
   items:
   - name: What is OData?
-    href: /odata/index
+    href: /odata/overview
 - name: Learn
   expanded: false
   items:
