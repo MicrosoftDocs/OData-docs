@@ -1,8 +1,8 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: OData overview
+title: OData documentation
 metadata:
-  title: OData overview
+  title: OData documentation
   meta.description: from-team
   author: madansr7
   layout: LandingPage
@@ -14,41 +14,41 @@ sections:
 - items:
   - type: list
     style: cards
-    className: cardsC
+    className: cardsM
     columns: 3
     items:
     - href: /odata/overview
       html: <p>Learn how OData helps create rich REST APIs.</p>
       image:
-        src: https://docs.microsoft.com/media/illustrations/biztalk-developer-documentation-1.svg
+        src: https://docs.microsoft.com/media/common/i_overview.svg
       title: What is OData?
-    - href: /odata/changelog/odl/odl-7x
+    - href: /odata/changelog/odatalib-7x
       html: <p>See what's new in OData.</p>
       image:
-        src: https://docs.microsoft.com/media/illustrations/teams-fast-track.svg
+        src: https://docs.microsoft.com/media/common/i_whats-new.svg
       title: What's new?
     - href: /odata/resources/support
       html: <p>Get support for your questions and issues.</p>
       image:
-        src: https://docs.microsoft.com/media/illustrations/virtualization-hperv-server-community.svg
+        src: https://docs.microsoft.com/media/common/i_support.svg
       title: Get support
     - href: /odata/webapi/netcore
       html: <p>Create your first REST API using OData.</p>
       image:
-        src: https://docs.microsoft.com/media/illustrations/sql-get-started-understand.svg
+        src: https://docs.microsoft.com/media/common/i_get-started.svg
       title: Get started
     - href: https://devblogs.microsoft.com/odata
       html: <p>Read the blog to get latest news about new APIs, breaking changes and more.</p>
       image:
-        src: https://docs.microsoft.com/media/illustrations/ms365enterprise-partner-news-2.svg
+        src: https://docs.microsoft.com/media/common/i_blog.svg
       title: OData blogs
     - href: https://www.odata.org
       html: <p>Learn more about the OData specification.</p>
       image:
-        src: https://docs.microsoft.com/media/illustrations/bcs-partner-policies-view-policies-2.svg
+        src: https://docs.microsoft.com/media/common/i_policy.svg
       title: OData specification
     - href: https://docs.microsoft.com/en-us/dotnet/api/overview/odata-dotnet/odata-dotnet
       html: <p>Find technical documentation on OData APIs</p>
       image:
-        src: https://docs.microsoft.com/media/illustrations/nuget-tools-reference_2.svg
+        src: https://docs.microsoft.com/media/common/i_reference.svg
       title: OData technical reference
