@@ -65,7 +65,7 @@ We also support prototype services. For each prototype service, you can specify 
 [Issue #502](https://github.com/OData/odata.net/issues/502) [Support URI path syntax customization](../odata features/2016-08-23-11-08-uri-parser-path-extensibility).
 
 - Expose `UriPathParser.ParsePathIntoSegments` to support customizing how to separate a Uri into segments
-- Provide` ParseDynamicPathSegmentFunc` for customizing how to parse a dynamic path segment.
+- Provide`ParseDynamicPathSegmentFunc` for customizing how to parse a dynamic path segment.
 
 [Issue #613](https://github.com/OData/odata.net/issues/613) Support type facets when referencing `TypeDefinition` types.
 
@@ -91,7 +91,7 @@ We also support prototype services. For each prototype service, you can specify 
 
 Add `ODataSimplifiedOptions` class for simplified reader, writer, URL parsing options.
 
-Support duplicate custom instance annotations. 
+Support duplicate custom instance annotations.
 
 ***Fixed Bugs***
 
@@ -203,14 +203,14 @@ Support duplicate custom instance annotations.
 
 [Issue #544](https://github.com/OData/odata.net/issues/544) Change Enum member value type from `IEdmPrimitiveValue` to a more specific type.
 
-- Add interface `IEdmEnumMemberValue` and class `EdmEnumMemberValue` to represent Enum member value specifically. `AddMember()` under `EnumType` now accepts `IEdmEnumMemberValue` instead of `IEdmPrimitiveValue` as member value. 
+- Add interface `IEdmEnumMemberValue` and class `EdmEnumMemberValue` to represent Enum member value specifically. `AddMember()` under `EnumType` now accepts `IEdmEnumMemberValue` instead of `IEdmPrimitiveValue` as member value.
 
 [Issue #621](https://github.com/OData/odata.net/issues/621) Make reader able to read contained entity/entityset without context URL.
- 
+
 [Issue #640](https://github.com/OData/odata.net/issues/640) More sensible type, namely `IEnumerable<object>`, for ODataCollectionValue.Items.
 
 [Issue #643](https://github.com/OData/odata.net/issues/643) Adjust query node kinds in Uri Parser in order to support navigation under complex. [Breaking Changes](https://odata.github.io/odata.net/v7/#04-01-Query-Nodes-Breaking)
- 
+
 Improved standard-compliance by forbidding duplicate property names.
 
 Writer throws more accurate and descriptive exceptions.
@@ -221,7 +221,7 @@ Writer throws more accurate and descriptive exceptions.
 
 [Issue #551](https://github.com/OData/odata.net/issues/551) Change the type of `EdmReference.Uri` to `System.Uri`.
 
-[Issue #558](https://github.com/OData/odata.net/issues/558), 
+[Issue #558](https://github.com/OData/odata.net/issues/558),
 [Issue #611](https://github.com/OData/odata.net/issues/611) Improve writer performance. Up to 25% improvements compared to ODL 6.15 are achieved depending on scenario.
 
 [Issue #632](https://github.com/OData/odata.net/issues/632) Rename CsdlXXX to SchemaXXX, and EdmxXXX to CsdlXXX.
@@ -353,7 +353,7 @@ This release delivers OData core libraries including ODataLib, EdmLib and Spatia
 ## ODataLib 7.3.0 Release
 
 > [!NOTE]
-> ODataLib 7.3.0 adds support key features including optional function parameters, parser support for the $compute clause, primitive type casts, and the ability to read and write untyped data as structured values. 
+> ODataLib 7.3.0 adds support key features including optional function parameters, parser support for the $compute clause, primitive type casts, and the ability to read and write untyped data as structured values.
 
 ***Features***
 
@@ -369,18 +369,18 @@ This release delivers OData core libraries including ODataLib, EdmLib and Spatia
 
 ***Fixed Bugs***
 
-[Issue #747](https://github.com/OData/odata.net/issues/747) Cannot select dynamic property of a dynamic property 
+[Issue #747](https://github.com/OData/odata.net/issues/747) Cannot select dynamic property of a dynamic property
 
 [Issue #814](https://github.com/OData/odata.net/issues/814) Support writing Enum-valued Annotations
 
-[Issue #856](https://github.com/OData/odata.net/issues/856) Raw Value serializer output json string for Spatial type
+[Issue #856](https://github.com/OData/odata.net/issues/856) Raw Value serializer output JSON string for Spatial type
 
 This release delivers OData core libraries including ODataLib, EdmLib and Spatial. OData Client for .NET is not published in this release.
 
 ## ODataLib 7.3.1 Release
 
 > [!NOTE]
-> ODataLib 7.3.1 addresses an issue where $compute parsing was not triggered by a global call to ParseUri. 
+> ODataLib 7.3.1 addresses an issue where $compute parsing was not triggered by a global call to ParseUri.
 
 ***Fixed Bugs***
 
@@ -419,7 +419,7 @@ This release delivers OData core libraries including ODataLib, EdmLib and Spatia
 
 ***Features***
 
-[Issue #226](https://github.com/OData/odata.net/issues/226) Support a json serialization for $batch.
+[Issue #226](https://github.com/OData/odata.net/issues/226) Support a JSON serialization for $batch.
 
 [Issue #866](https://github.com/OData/odata.net/issues/866) "Microsoft.OData.Client" support for ,NET Core.
 
@@ -476,7 +476,7 @@ This release delivers OData core libraries including ODataLib, EdmLib, Spatial a
 
 [[#1075](https://github.com/OData/odata.net/pull/1075) Add support for AnnotationSegment to PathSegmentHandler.
 
-[[#1080](https://github.com/OData/odata.net/pull/1080) Add nuget package testing.
+[[#1080](https://github.com/OData/odata.net/pull/1080) Add NuGet package testing.
 
 ***Fixed Bugs***
 
@@ -553,7 +553,6 @@ This release delivers OData core libraries including ODataLib, EdmLib, Spatial a
 [#757](https://github.com/OData/odata.net/pull/757) Entity set aggregations
 
 [#1165](https://github.com/OData/odata.net/pull/1165) [Feature] IN operator
-
 
 ***Fixed Bugs***
 
