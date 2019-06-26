@@ -9,7 +9,7 @@ metadata:
   ms.date: 06/25/2019
 abstract:
   description: OData (Open Data Protocol) is an ISO/IEC approved, OASIS standard that defines a set of best practices for building and consuming REST APIs.
-    It enables creation of REST-based services which allow resources identified using Uniform Resource Locators (URLs) and defined in a data model, to be published and edited by Web clients using simple HTTP messages.<br /><br />OData helps applications to focus on business logic without worrying about the various API approaches to define request and response headers, status codes, HTTP methods, URL conventions, media types, payload formats, query options, etc. It provides guidance for tracking changes, defining functions/actions for reusable procedures, and sending asynchronous/batch requests.
+    It enables creation of REST-based services which allow resources identified using Uniform Resource Locators (URLs) and defined in a data model, to be published and edited by Web clients using simple HTTP messages.
 sections:
 - items:
   - type: list
@@ -52,3 +52,5 @@ sections:
       image:
         src: https://docs.microsoft.com/media/common/i_reference.svg
       title: OData technical reference
+  - type: paragraph
+    text: OData helps applications to focus on business logic without worrying about the various API approaches to define request and response headers, status codes, HTTP methods, URL conventions, media types, payload formats, query options, etc. It provides guidance for tracking changes, defining functions/actions for reusable procedures, and sending asynchronous/batch requests.
