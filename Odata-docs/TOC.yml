@@ -19,7 +19,7 @@
   - name: Getting Data
     items:
     - name: Get Data
-      href: /odata/concepts/getting-data
+      href: /odata/concepts/get-data
   - name: Modifying Data
     items:
     - name: Post data
