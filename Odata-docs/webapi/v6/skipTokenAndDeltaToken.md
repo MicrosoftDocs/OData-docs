@@ -1,6 +1,6 @@
 ---
-title: "$skiptoken & $deltatoken"
-description: ""
+title: "$skiptoken & $deltatoken-ODL v6"
+description: "$skiptoken & $deltatoken-ODL v6"
 
 author: madansr7
 ms.author: madansr7

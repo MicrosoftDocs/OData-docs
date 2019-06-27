@@ -8,7 +8,7 @@ ms.date: 02/19/2019
 ms.topic: article
  
 ---
-# Define singleton
+# Define singleton(ODL V6.x)
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v6.md)]
 
 Defining a singleton in the entity container shares the same simple way as defining an entity set.

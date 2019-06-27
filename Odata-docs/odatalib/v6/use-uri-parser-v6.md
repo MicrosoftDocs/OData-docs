@@ -8,7 +8,7 @@ ms.date: 02/19/2019
 ms.topic: article
  
 ---
-# OData Uri Parser
+# OData Uri Parser(ODL V6.x)
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v6.md)]
 
 This post is intended to guide you through the UriParser for OData V4, which is released within ODataLib V6.0 and later.

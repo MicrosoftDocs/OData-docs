@@ -1,13 +1,13 @@
 ---
-title: " Build a basic model"
-description: "Build a basic entity data model using EdmLib APIs"
+title: " Build a basic model ODL V6"
+description: "Build a basic entity data model using EdmLib APIs - ODL.v6"
 author: madansr7
 ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
  
 ---
-# Build a basic model
+# Build a basic model (ODL V6.x)
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v6.md)]
 
 The *EDM* (Entity Data Model) library (*abbr*. EdmLib) primarily contains APIs to **build** an entity data model that conforms to *CSDL* (Common Schema Definition Language) as well as APIs to **read** (or **write**) an entity data model **from** (or **to**) a CSDL document.

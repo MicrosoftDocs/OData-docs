@@ -1,6 +1,6 @@
 ---
-title: " Define annotations"
-description: "Define annotations using EdmLib APIs"
+title: " Define annotations-ODL V6"
+description: "Define annotations using EdmLib APIs-ODL V6"
 
 author: madansr7
 ms.author: madansr7
@@ -8,7 +8,7 @@ ms.date: 02/19/2019
 ms.topic: article
  
 ---
-# Define annotations
+# Define annotations(ODL V6.x)
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v6.md)]
 
 EdmLib supports adding annotations on various model elements, including entity sets, entity types, properties and so on. Annotations can be put under **the `Annotations` element** in the schema as well as **the targetted model elements** (**inline** annotations). Users can specify the **serialization location** using EdmLib API.

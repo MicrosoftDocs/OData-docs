@@ -1,6 +1,6 @@
 ---
-title: " Using model utilities"
-description: "Using model utility APIs"
+title: " Using model utilities-ODL V7"
+description: "Using model utility APIs-ODL V7"
 author: madansr7
 ms.author: madansr7
 ms.date: 02/19/2019
@@ -8,6 +8,7 @@ ms.topic: article
  
 ---
 # Using model utilities
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
 
 The model utilities include many useful **extension methods** to various EDM classes and interfaces (e.g., IEdmModel, IEdmType, ...). The extension methods are intended to implement some **commonly reusable** logic to simplify model manipulations. These methods can be roughly classified into five categories:
 

@@ -1,6 +1,6 @@
 ---
-title: "Define operations"
-description: "Define operations and operation imports using EdmLib APIs"
+title: "Define operations-ODL V7"
+description: "Define operations and operation imports using EdmLib APIs-ODL V7"
 author: madansr7
 ms.author: madansr7
 ms.date: 02/19/2019
@@ -8,6 +8,7 @@ ms.topic: article
  
 ---
 # Define operations
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
 
 EdmLib supports defining all types of operations (**actions** and **functions**) and operation imports (**action imports** or **function imports**). Putting aide the conceptual differences between actions and functions, the way to define them could actually be shared between actions and functions.
 
