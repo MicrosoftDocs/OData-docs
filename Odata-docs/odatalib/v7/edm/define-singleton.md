@@ -8,7 +8,7 @@ ms.topic: article
  
 ---
 # Define singleton
-**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../../includes/appliesto-odatalib-v7.md)]
 
 Defining a singleton in the entity container shares the same simple way as defining an entity set.
 

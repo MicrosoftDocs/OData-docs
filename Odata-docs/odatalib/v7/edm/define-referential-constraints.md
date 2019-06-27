@@ -8,7 +8,7 @@ ms.topic: article
  
 ---
 # Define referential constraints
-**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../../includes/appliesto-odatalib-v7.md)]
 
 Referential constraints ensure that entities being referenced (principal entities) always exist. In OData, having one or more referential constraints defined for a partner navigation property on a dependent entity type also enables users to address the related dependent entities from principal entities using shortened key predicates (see [[OData-URL]](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part2-url-conventions/odata-v4.0-errata02-os-part2-url-conventions-complete.html#_Toc406398079)). A referential constraint in OData consists of one **principal property** (the ID property of the entity being referenced) and one **dependent property** (the ID property to reference another entity). This section shows how to define referential constraints on a partner navigation property.
 

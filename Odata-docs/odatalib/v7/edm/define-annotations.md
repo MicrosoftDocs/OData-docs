@@ -8,7 +8,7 @@ ms.topic: article
  
 ---
 # Define annotations
-**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../../includes/appliesto-odatalib-v7.md)]
 
 EdmLib supports adding annotations on various model elements, including entity sets, entity types, properties, and so on. Annotations can be put under **the `Annotations` XML element**, or under **the annotated target model elements** (**inline** annotations). Users can specify the **serialization location** using the EdmLib API.
 

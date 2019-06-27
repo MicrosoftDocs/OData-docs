@@ -8,7 +8,7 @@ ms.topic: article
  
 ---
 # Build a basic entity data model (EDM)
-**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../../includes/appliesto-odatalib-v7.md)]
 
 The *EDM* (Entity Data Model) library (*abbr*. EdmLib) primarily contains APIs to **build** an entity data model that conforms to *CSDL* (Common Schema Definition Language), and to **read/write** an entity data model **from/to** a CSDL document.
 

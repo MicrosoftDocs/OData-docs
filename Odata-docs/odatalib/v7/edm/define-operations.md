@@ -8,7 +8,7 @@ ms.topic: article
  
 ---
 # Define operations
-**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../../includes/appliesto-odatalib-v7.md)]
 
 EdmLib supports defining all types of operations (**actions** and **functions**) and operation imports (**action imports** or **function imports**). Putting aide the conceptual differences between actions and functions, the way to define them could actually be shared between actions and functions.
 
