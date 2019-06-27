@@ -1,14 +1,12 @@
 ---
-title: " Model references"
-description: "Model references"
-
+title: " Model references-ODL v6"
+description: "Model references-ODL v6"
 author: madansr7
 ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
- 
 ---
-# Define model references
+# Define model references(ODL V6.x)
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v6.md)]
 
 Model referencing is an advanced OData feature. When you want to use some types defined in another model, you can reference that model in your own model. Typically when we talking about model referencing, we have a **main model** and one or more **sub models**. The main model references the sub models. But that is not an absolute role because a main model can also be referenced by another model. That is to say models can have **mutual references**.

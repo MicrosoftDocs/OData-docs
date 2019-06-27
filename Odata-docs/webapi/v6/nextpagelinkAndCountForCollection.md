@@ -1,12 +1,9 @@
 ---
-title: "Write NextPageLink/Count for collection"
-description: ""
-
+title: "Write NextPageLink/Count for collection - webapi"
 author: madansr7
 ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
- 
 ---
 # Write nextpage link
 **Applies To**: [!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v6.md)]
@@ -15,8 +12,7 @@ In ODataLib 6.13.0, it supports to write the NextPageLink/Count instance annotat
 
 When you want to serialize a collection instance, you should first create an object of `ODataCollectionStart`, in which you can set the next page link and the count value.
 
-``` csharp
-
+```c#
 ODataMessageWriter messageWriter = new ODataMessageWriter(...);
 IEdmTypeReference elementType = ...;
 ODataCollectionWriter writer = messageWriter.CreateODataCollectionWriter(elementType);
@@ -41,7 +37,7 @@ writer.WriteEnd();
 
 The payload looks like:
 
-``` csharp
+```json
 {
   "@odata.context":".../$metadata#Collection(...)",
   "@odata.count":5,

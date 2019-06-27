@@ -8,6 +8,7 @@ ms.topic: article
  
 ---
 # Type facets
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
 
 Users can specify various type facets for references to type definitions. The only constraint is that the type facets specified should be applicable to the underlying type definition.
 

@@ -1,6 +1,6 @@
 ---
-title: " Define entity relations"
-description: "Define entity relations using EdmLib APIs"
+title: " Define entity relations -ODL V7"
+description: "Define entity relations using EdmLib APIs - ODL V7"
 author: madansr7
 ms.author: madansr7
 ms.date: 02/19/2019
@@ -8,6 +8,7 @@ ms.topic: article
  
 ---
 # Define entity relations
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
 
 Entity relations are defined by **navigation properties** in entity data models. Adding a navigation property to an entity type using EdmLib APIs is as simple as adding a structural property shown in previous sections. EdmLib supports adding navigation properties targeting an entity set in the entity container or a **contained** entity set belonging to a navigation property.
 

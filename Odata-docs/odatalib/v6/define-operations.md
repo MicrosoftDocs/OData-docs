@@ -1,21 +1,21 @@
 ---
-title: " Define operations"
-description: "Define operations and operation imports using EdmLib APIs"
-
+title: " Define operations-ODL V6"
+description: "Define operations and operation imports using EdmLib APIs-ODL V6"
 author: madansr7
 ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
  
 ---
-# Define operations
+# Define operations(ODL V6.x)
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v6.md)]
 
 EdmLib supports defining all types of operations (**actions** or **functions**) and operation imports (**action imports** or **function imports**). Besides the conceptual difference between actions and functions, the way to define them could actually be shared among actions and functions.
 
 This section shows how to define operations and operation imports using EdmLib APIs. We will continue to use and extend the sample from the previous sections.
 
-### Add a Bound Action *Rate*
+## Add a Bound Action *Rate*
+
 In the **SampleModelBuilder.cs** file, add the following code into the `SampleModelBuilder` class:
 
 ``` csharp
@@ -66,14 +66,13 @@ namespace EdmLibSample
 
 This code:
 
- - Defines a **bound action** `Rate` within the namespace `Sample.NS` with **no return type**;
- - Adds a **binding parameter** `customer` of type `Sample.NS.Customer`;
- - Adds a parameter `rating` of type `Edm.Int32`;
- - Adds the `Sample.NS.Rate` action to the model.
+- Defines a **bound action** `Rate` within the namespace `Sample.NS` with **no return type**;
+- Adds a **binding parameter** `customer` of type `Sample.NS.Customer`;
+- Adds a parameter `rating` of type `Edm.Int32`;
+- Adds the `Sample.NS.Rate` action to the model.
 
+## Add an Unbound Function *MostExpensive*
 
-
-### Add an Unbound Function *MostExpensive*
 In the **SampleModelBuilder.cs** file, add the following code into the `SampleModelBuilder` class:
 
 ``` csharp
@@ -122,11 +121,12 @@ namespace EdmLibSample
 
 This code:
 
- - Defines an **unbound composable function** `MostExpensive` within the namespace `Sample.NS`;
- - Has **no parameter**;
- - Adds the `Sample.NS.MostExpensive` action to the model.
+- Defines an **unbound composable function** `MostExpensive` within the namespace `Sample.NS`;
+- Has **no parameter**;
+- Adds the `Sample.NS.MostExpensive` action to the model.
 
-### Add a Function Import *MostValuable*
+## Add a Function Import *MostValuable*
+
 In the **SampleModelBuilder.cs** file, add the following `using` clause:
 
 ``` csharp
@@ -183,7 +183,8 @@ This code:
 
 The `Sample.NS.MostValuable` function import is actually the `Sample.NS.MostExpensive` function exposed in the entity container with a **different name** (could be **arbitrary valid name**).
 
-### Run the Sample
+## Run the Sample
+
 Build and run the sample. Then open the **csdl.xml** file under the **output directory**. The content of **csdl.xml** should look like the following:
 
 ![image](/odata/assets/2015-04-20-csdl.png)

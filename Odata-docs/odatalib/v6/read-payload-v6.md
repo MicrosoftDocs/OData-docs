@@ -8,7 +8,7 @@ ms.date: 02/19/2019
 ms.topic: article
  
 ---
-# Read OData payload
+# Read OData payload(ODL V6.x)
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v6.md)]
 
 

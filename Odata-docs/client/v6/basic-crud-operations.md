@@ -26,7 +26,7 @@ The `Execute()` API call will return an `IEnumerable<Person>`.
 
 Either use the `Where()` API call:
 
-``` csharp
+```c#
 var people = context.People.Where(c => c.UserName == "russellwhyte");
 foreach (var person in people)
 {
@@ -36,13 +36,13 @@ foreach (var person in people)
 
 or use the `ByKey()` API:
 
-``` csharp
+```C#
 var person = context.People.ByKey(userName: "russellwhyte").GetValue();
 ```
 
 or
 
-``` csharp
+```C#
 var person = context.People.ByKey(new Dictionary<string, object>() {{"UserName", "russellwhyte"}}).GetValue();
 ```
 

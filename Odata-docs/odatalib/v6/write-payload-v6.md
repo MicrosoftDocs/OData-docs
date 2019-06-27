@@ -9,7 +9,7 @@ ms.topic: article
  
 ---
 
-# Write OData payload
+# Write OData payload(ODL V6.x)
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v6.md)]
 
 There are several kinds of OData payload, includes service document, model metadata, feed, entry, entity references(s), complex value(s), primitive value(s). OData Core library is designed to write and read all these payloads.

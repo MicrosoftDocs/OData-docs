@@ -7,9 +7,206 @@ ms.date: 02/19/2019
 ms.topic: article
 ---
 
-# What's new in WebApi lib
+# OData WebApi changelog
+
+## WebAPI 7.1.0
+
+The NuGet packages for ASP.NET Web API OData v7.1.0 are available on the [NuGet gallery](https://www.nuget.org/).
+
+You can install or update the NuGet packages for OData Web API v7.1.0 using the [Package Manager Console](https://docs.nuget.org/docs/start-here/using-the-package-manager-console):
+
+```PowerShell
+
+PM> Install-Package Microsoft.AspNetCore.OData -Version 7.1.0 
+```
+
+or
+
+```PowerShell
+
+PM> Install-Package Microsoft.AspNet.OData -Version 7.1.0
+
+```
+
+>[!Notes]:
+>[issue #1591](https://github.com/OData/WebApi/issues/1591) fixes an issue where types created by the ODataModelBuilder did not respect the namespace of the >ModelBuilder and instead used the namespace of the CLR type. With [PR #1592](https://github.com/OData/WebApi/pull/1592), OData WebAPI 7.1.0 now correctly uses the namespace on the ModelBuilder, if it has been explicitly set. In order to retain the old behavior of using the namespace of the CLR type, do not set the namespace on the ModelBuilder, or set the namespace on the ModelBuilder to null or to the desired namespace of the CLR type.
+
+
+### New Features:
+
+* [ [#1631](https://github.com/OData/WebApi/issues/1631) ] Don't require keys for singleton instances
+
+* [ [#1628](https://github.com/OData/WebApi/pull/1628) ] Allow adding new members to a collection through a POST request
+
+* [ [#1591](https://github.com/OData/WebApi/issues/1591) ] Support namespaces in OData ModelBuilder
+
+* [ [#1656](https://github.com/OData/WebApi/issues/1656) ] Allowing the definition of partner relationships
+
+
+### Improvements and fixes:
+
+* [ [#1543](https://github.com/OData/WebApi/issues/1543) ] Json batch response body if 404
+
+* [ [#1555](https://github.com/OData/WebApi/issues/1555) ] aspnetcore ETagMessageHandler throws then ClrType property name and EdmModel property name differs
+
+* [ [#1559](https://github.com/OData/WebApi/issues/1559) ] Don't assume port 80 for nextLink when request was HTTPS
+
+* [ [#1579](https://github.com/OData/WebApi/issues/1579) ] Star select ( $select= * ) not returning dynamic properties
+
+* [ [#1588](https://github.com/OData/WebApi/pull/1588) ] Null check on ODataQueryParameterBindingAttribute for Net Core
+
+* [ [#736](https://github.com/OData/WebApi/issues/736) ] EDMX returned from $metadata endpoint has incorrect "Unicode" attributes
+
+* [ [#850](https://github.com/OData/WebApi/issues/850) ] ODataConventionModelBuilder takes into account [EnumMember] on enum members, but ODataPrimitiveSerializer (?) does not, causing mismatch in the payload.
+
+* [ [#1612](https://github.com/OData/WebApi/pull/1612) ] Add the iconUrl to the nuget spec
+
+* [ [#1615](https://github.com/OData/WebApi/pull/1615) ] fix compile error in sample project
+
+* [ [#1421](https://github.com/OData/WebApi/issues/1421) ] Improve error message when structured type is received and properties are in incorrect case
+
+* [ [#1658](https://github.com/OData/WebApi/pull/1658) ] Fix the security vulnerabilities in project dependencies
+
+* [ [#1637](https://github.com/OData/WebApi/issues/1637) ] Change Request: Remove null check on 'ODataFeature().TotalCount' property
+
+* [ [#1673](https://github.com/OData/WebApi/pull/1673) ] Respect preference header for paging
+
+* [ [#1600](https://github.com/OData/WebApi/issues/1600) ] ActionDescriptorExtensions is not thread safe
+
+* [ [#1617](https://github.com/OData/WebApi/issues/1617) ] Take and Top query use wrong Provider.CreateQuery Method
+
+* [ [#1659](https://github.com/OData/WebApi/issues/1659) ] OData V4 group by with Top and skip not working
+
+* [ [#1679](https://github.com/OData/WebApi/issues/1679) ] Fix typo: routePrerix updated to routePrefix
+
+---
+
+## WebAPI 7.0.1
+
+The NuGet packages for ASP.NET Web API OData v7.0.1 are available on the [NuGet gallery](https://www.nuget.org/).
+
+You can install or update the NuGet packages for OData Web API v7.0.1 using the [Package Manager Console](https://docs.nuget.org/docs/start-here/using-the-package-manager-console):
+
+```powershell
+PM> Install-Package Microsoft.AspNetCore.OData -Version 7.0.1 
+```
+
+or
+
+```powershell
+PM> Install-Package Microsoft.AspNet.OData -Version 7.0.1
+```
+
+
+### New Features:
+
+* [ [Web API issue #1488](https://github.com/OData/WebApi/issues/1488) ] Support optional parameters
+
+* [ [Web API PR #1527](https://github.com/OData/WebApi/pull/1527) ] Add UseOData() extension methods
+
+### Improvements and fixes:
+
+* [ [Web API issue #1518](https://github.com/OData/WebApi/issues/1518) ] Fix the Newtonsoft.Json dependency problem in classic version
+
+* [ [Web API issue #1529](https://github.com/OData/WebApi/issues/1529) ] Fix ETag missing on derived Entity Set
+
+* [ [Web API issue #1532](https://github.com/OData/WebApi/issues/1532) ] Fix JSON batch response content type
+
+---
 
 ## WebAPI 7.0
+
+We're happy to announce the release of ASP.NET Web API OData 7.0 on the [NuGet gallery](https://www.nuget.org/)!
+
+ASP.NET Web API OData 7.0 is available in two packages:
+
+1. [Microsoft.AspNetCore.OData](https://www.nuget.org/packages/Microsoft.AspNetCore.OData) is based on ASP.NET Core 2.0.
+2. [Microsoft.AspNet.OData](https://www.nuget.org/packages/Microsoft.AspNet.OData) is based on ASP.NET Web API.
+
+[Get started](https://github.com/OData/ODataSamples/tree/master/WebApi/v7.x) with ASP.NET Web API OData 7.0 today!
+
+### Download this release
+
+You can install or update the NuGet packages for OData Web API v7.0.0 using the [Package Manager Console](https://docs.nuget.org/docs/start-here/using-the-package-manager-console):
+
+```powershell
+PM> Install-Package Microsoft.AspNetCore.OData
+```
+or
+```powershell
+PM> Install-Package Microsoft.AspNet.OData
+```
+
+
+### ASP.NET Core 2.0 support
+
+ See main issues from:
+
+ * [ [Web API issue #939](https://github.com/OData/WebApi/issues/939) ] .NET Core Support.
+  
+ * [ [Web API issue #772](https://github.com/OData/WebApi/issues/772) ] Roadmap for OData WebAPI run on ASP.NET Core.
+  
+ * [ [Web API issue #229](https://github.com/OData/WebApi/issues/229) ] Port ASP.NET Web API OData to ASP.NET 5/MVC 6.
+  
+ Getting started ASP.NET Core OData from [here](https://github.com/OData/WebApi/blob/gh-pages/_posts/2017-12-21-14-01-netcore-beta1.md), get samples from [here](https://github.com/OData/ODataSamples/tree/master/WebApi/v7.x).
+
+### New features
+ 
+ * [ [PR #1497](https://github.com/OData/WebApi/issues/1497) ] Support `In` operator.
+  
+ * [ [PR #1409](https://github.com/OData/WebApi/pull/1409) ] Set default to Unqualified-function/action call and case insensitive.
+
+ * [ [PR #1393](https://github.com/OData/WebApi/pull/1393) ] Set default to enable KeyAsSegment.
+ 
+ * [ [Issue #1503](https://github.com/OData/WebApi/issues/1503) ] Enable support for Json Batch.
+ 
+ * [ [Issue #1386](https://github.com/OData/WebApi/issues/1386) ] Use TemplateMatcher for ODataBatchPathMapping.
+  
+ * [ [Issue #1248](https://github.com/OData/WebApi/issues/1248) ] Allow recursive complex types in OData model builder.
+ 
+ * [ [Issue #1225](https://github.com/OData/WebApi/issues/1225) ] Support optional dollar sign.
+ 
+ * [ [Issue #893](https://github.com/OData/WebApi/issues/893) ] Support aggregation of Entity Set.
+
+### Breaking changes
+ 
+ * Both [Microsoft.AspNetCore.OData](https://www.nuget.org/packages/Microsoft.AspNetCore.OData) and [Microsoft.AspNet.OData](https://www.nuget.org/packages/Microsoft.AspNet.OData) are using "**Microsoft.AspNet.OData**" namespace.
+ 
+ * [ [PR #1489](https://github.com/OData/WebApi/pull/1489) ] Change the OptionalReturn to ReturnNullable in OperationConfiguration.
+  
+ * [ [PR #1353](https://github.com/OData/WebApi/pull/1353) ] Change OptionalParameter as Nullable .
+
+### Improvements & Fixes
+
+* [ [Issue #1510](https://github.com/OData/WebApi/issues/1510) ] move $top & $skip execute as late as possible.
+ 
+* [ [Issue #1489](https://github.com/OData/WebApi/issues/1489) ] Return Task<> from method of controller doesn't pick up OData output formatter (Core).
+ 
+* [ [Issue #1407](https://github.com/OData/WebApi/issues/1407) ] Fix the BaseAddressFactory in ODataMediaTypeFormatter .
+  
+* [ [Issue #1471](https://github.com/OData/WebApi/issues/1471) ] Issue in non-odata routing with DataContact & DataMember.
+ 
+* [ [Issue #1434](https://github.com/OData/WebApi/issues/1434) ] Add OData-Version into the No-Content response header.
+
+* [ [Issue #1398](https://github.com/OData/WebApi/issues/1398) ] Expose underlying semantic OData path.
+
+* [ [Issue #1388](https://github.com/OData/WebApi/issues/1388) ] Make Match as virtual in ODataPathRouteConstraint.
+ 
+* [ [Issue #1387](https://github.com/OData/WebApi/issues/1387) ] Move Instance to select all.
+
+* [ [Issue #1313](https://github.com/OData/WebApi/issues/1313) ] Batch requests are incorrectly routed when ASP.NET Core OData web application has any BasePath.
+
+* [ [Issue #1263](https://github.com/OData/WebApi/issues/1263) ] Patch nested structural resources.
+ 
+* [ [Issue #1247](https://github.com/OData/WebApi/issues/1247) ] Fix Spatial post/update problem.
+ 
+* [ [Issue #1113](https://github.com/OData/WebApi/issues/1113) ] ODataResourceDeserializer no longer supports null ComplexType values.
+ 
+* [ [Issue #822](https://github.com/OData/WebApi/issues/822) ] Fix for memory leak in EdmLibHelpers.
+ 
+---
+
+## WebAPI 7.0 beta
 
 **Web API OData Beta1, Beta2 & Beta4** includes a new package for [WebApi OData V7.0.0 for ASP.NET Core 2.x](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/).
 The nightly version of this package is available from this [nightly url](https://www.myget.org/F/webapinetcore/api/v3/index.json).
@@ -195,199 +392,3 @@ namespace Microsoft.AspNet.OData.Routing.Conventions
 ```
 
 Specific routing convention, e.g. MetadataRoutingConvention, typically implements the package-specific interface, provides package-specific implementation, and shares common logic for both platform in the `Microsoft.AspNet.OData.Shared` shared project.
-## WebAPI 7.0 (.NET Core and .NET Classic)
-
-We're happy to announce the release of ASP.NET Web API OData 7.0 on the [NuGet gallery](https://www.nuget.org/)!
-
-ASP.NET Web API OData 7.0 is available in two packages:
-
-1. [Microsoft.AspNetCore.OData](https://www.nuget.org/packages/Microsoft.AspNetCore.OData) is based on ASP.NET Core 2.0.
-2. [Microsoft.AspNet.OData](https://www.nuget.org/packages/Microsoft.AspNet.OData) is based on ASP.NET Web API.
-
-[Get started](https://github.com/OData/ODataSamples/tree/master/WebApi/v7.x) with ASP.NET Web API OData 7.0 today!
-
-### Download this release
-
-You can install or update the NuGet packages for OData Web API v7.0.0 using the [Package Manager Console](https://docs.nuget.org/docs/start-here/using-the-package-manager-console):
-
-```powershell
-PM> Install-Package Microsoft.AspNetCore.OData
-```
-or
-```powershell
-PM> Install-Package Microsoft.AspNet.OData
-```
-
-
-### ASP.NET Core 2.0 support
-
- See main issues from:
-
- * [ [Web API issue #939](https://github.com/OData/WebApi/issues/939) ] .NET Core Support.
-  
- * [ [Web API issue #772](https://github.com/OData/WebApi/issues/772) ] Roadmap for OData WebAPI run on ASP.NET Core.
-  
- * [ [Web API issue #229](https://github.com/OData/WebApi/issues/229) ] Port ASP.NET Web API OData to ASP.NET 5/MVC 6.
-  
- Getting started ASP.NET Core OData from [here](https://github.com/OData/WebApi/blob/gh-pages/_posts/2017-12-21-14-01-netcore-beta1.md), get samples from [here](https://github.com/OData/ODataSamples/tree/master/WebApi/v7.x).
-
-### New features
- 
- * [ [PR #1497](https://github.com/OData/WebApi/issues/1497) ] Support `In` operator.
-  
- * [ [PR #1409](https://github.com/OData/WebApi/pull/1409) ] Set default to Unqualified-function/action call and case insensitive.
-
- * [ [PR #1393](https://github.com/OData/WebApi/pull/1393) ] Set default to enable KeyAsSegment.
- 
- * [ [Issue #1503](https://github.com/OData/WebApi/issues/1503) ] Enable support for Json Batch.
- 
- * [ [Issue #1386](https://github.com/OData/WebApi/issues/1386) ] Use TemplateMatcher for ODataBatchPathMapping.
-  
- * [ [Issue #1248](https://github.com/OData/WebApi/issues/1248) ] Allow recursive complex types in OData model builder.
- 
- * [ [Issue #1225](https://github.com/OData/WebApi/issues/1225) ] Support optional dollar sign.
- 
- * [ [Issue #893](https://github.com/OData/WebApi/issues/893) ] Support aggregation of Entity Set.
-
-### Breaking changes
- 
- * Both [Microsoft.AspNetCore.OData](https://www.nuget.org/packages/Microsoft.AspNetCore.OData) and [Microsoft.AspNet.OData](https://www.nuget.org/packages/Microsoft.AspNet.OData) are using "**Microsoft.AspNet.OData**" namespace.
- 
- * [ [PR #1489](https://github.com/OData/WebApi/pull/1489) ] Change the OptionalReturn to ReturnNullable in OperationConfiguration.
-  
- * [ [PR #1353](https://github.com/OData/WebApi/pull/1353) ] Change OptionalParameter as Nullable .
-
-### Improvements & Fixes
-
-* [ [Issue #1510](https://github.com/OData/WebApi/issues/1510) ] move $top & $skip execute as late as possible.
- 
-* [ [Issue #1489](https://github.com/OData/WebApi/issues/1489) ] Return Task<> from method of controller doesn't pick up OData output formatter (Core).
- 
-* [ [Issue #1407](https://github.com/OData/WebApi/issues/1407) ] Fix the BaseAddressFactory in ODataMediaTypeFormatter .
-  
-* [ [Issue #1471](https://github.com/OData/WebApi/issues/1471) ] Issue in non-odata routing with DataContact & DataMember.
- 
-* [ [Issue #1434](https://github.com/OData/WebApi/issues/1434) ] Add OData-Version into the No-Content response header.
-
-* [ [Issue #1398](https://github.com/OData/WebApi/issues/1398) ] Expose underlying semantic OData path.
-
-* [ [Issue #1388](https://github.com/OData/WebApi/issues/1388) ] Make Match as virtual in ODataPathRouteConstraint.
- 
-* [ [Issue #1387](https://github.com/OData/WebApi/issues/1387) ] Move Instance to select all.
-
-* [ [Issue #1313](https://github.com/OData/WebApi/issues/1313) ] Batch requests are incorrectly routed when ASP.NET Core OData web application has any BasePath.
-
-* [ [Issue #1263](https://github.com/OData/WebApi/issues/1263) ] Patch nested structural resources.
- 
-* [ [Issue #1247](https://github.com/OData/WebApi/issues/1247) ] Fix Spatial post/update problem.
- 
-* [ [Issue #1113](https://github.com/OData/WebApi/issues/1113) ] ODataResourceDeserializer no longer supports null ComplexType values.
- 
-* [ [Issue #822](https://github.com/OData/WebApi/issues/822) ] Fix for memory leak in EdmLibHelpers.
- 
----
-
-## WebAPI 7.0.1 (.NET Core and .NET Classic)
-
-The NuGet packages for ASP.NET Web API OData v7.0.1 are available on the [NuGet gallery](https://www.nuget.org/).
-
-You can install or update the NuGet packages for OData Web API v7.0.1 using the [Package Manager Console](https://docs.nuget.org/docs/start-here/using-the-package-manager-console):
-
-```powershell
-PM> Install-Package Microsoft.AspNetCore.OData -Version 7.0.1 
-```
-
-or
-
-```powershell
-PM> Install-Package Microsoft.AspNet.OData -Version 7.0.1
-```
-
-
-### New Features:
-
-* [ [Web API issue #1488](https://github.com/OData/WebApi/issues/1488) ] Support optional parameters
-
-* [ [Web API PR #1527](https://github.com/OData/WebApi/pull/1527) ] Add UseOData() extension methods
-
-### Improvements and fixes:
-
-* [ [Web API issue #1518](https://github.com/OData/WebApi/issues/1518) ] Fix the Newtonsoft.Json dependency problem in classic version
-
-* [ [Web API issue #1529](https://github.com/OData/WebApi/issues/1529) ] Fix ETag missing on derived Entity Set
-
-* [ [Web API issue #1532](https://github.com/OData/WebApi/issues/1532) ] Fix JSON batch response content type
-
----
-
-## WebAPI 7.1.0 (.NET Core and .NET Classic)
-
-The NuGet packages for ASP.NET Web API OData v7.1.0 are available on the [NuGet gallery](https://www.nuget.org/).
-
-You can install or update the NuGet packages for OData Web API v7.1.0 using the [Package Manager Console](https://docs.nuget.org/docs/start-here/using-the-package-manager-console):
-
-```PowerShell
-
-PM> Install-Package Microsoft.AspNetCore.OData -Version 7.1.0 
-```
-
-or
-
-```PowerShell
-
-PM> Install-Package Microsoft.AspNet.OData -Version 7.1.0
-
-```
-
->[!Notes]:
->[issue #1591](https://github.com/OData/WebApi/issues/1591) fixes an issue where types created by the ODataModelBuilder did not respect the namespace of the >ModelBuilder and instead used the namespace of the CLR type. With [PR #1592](https://github.com/OData/WebApi/pull/1592), OData WebAPI 7.1.0 now correctly uses the namespace on the ModelBuilder, if it has been explicitly set. In order to retain the old behavior of using the namespace of the CLR type, do not set the namespace on the ModelBuilder, or set the namespace on the ModelBuilder to null or to the desired namespace of the CLR type.
-
-
-### New Features:
-
-* [ [#1631](https://github.com/OData/WebApi/issues/1631) ] Don't require keys for singleton instances
-
-* [ [#1628](https://github.com/OData/WebApi/pull/1628) ] Allow adding new members to a collection through a POST request
-
-* [ [#1591](https://github.com/OData/WebApi/issues/1591) ] Support namespaces in OData ModelBuilder
-
-* [ [#1656](https://github.com/OData/WebApi/issues/1656) ] Allowing the definition of partner relationships
-
-
-### Improvements and fixes:
-
-* [ [#1543](https://github.com/OData/WebApi/issues/1543) ] Json batch response body if 404
-
-* [ [#1555](https://github.com/OData/WebApi/issues/1555) ] aspnetcore ETagMessageHandler throws then ClrType property name and EdmModel property name differs
-
-* [ [#1559](https://github.com/OData/WebApi/issues/1559) ] Don't assume port 80 for nextLink when request was HTTPS
-
-* [ [#1579](https://github.com/OData/WebApi/issues/1579) ] Star select ( $select= * ) not returning dynamic properties
-
-* [ [#1588](https://github.com/OData/WebApi/pull/1588) ] Null check on ODataQueryParameterBindingAttribute for Net Core
-
-* [ [#736](https://github.com/OData/WebApi/issues/736) ] EDMX returned from $metadata endpoint has incorrect "Unicode" attributes
-
-* [ [#850](https://github.com/OData/WebApi/issues/850) ] ODataConventionModelBuilder takes into account [EnumMember] on enum members, but ODataPrimitiveSerializer (?) does not, causing mismatch in the payload.
-
-* [ [#1612](https://github.com/OData/WebApi/pull/1612) ] Add the iconUrl to the nuget spec
-
-* [ [#1615](https://github.com/OData/WebApi/pull/1615) ] fix compile error in sample project
-
-* [ [#1421](https://github.com/OData/WebApi/issues/1421) ] Improve error message when structured type is received and properties are in incorrect case
-
-* [ [#1658](https://github.com/OData/WebApi/pull/1658) ] Fix the security vulnerabilities in project dependencies
-
-* [ [#1637](https://github.com/OData/WebApi/issues/1637) ] Change Request: Remove null check on 'ODataFeature().TotalCount' property
-
-* [ [#1673](https://github.com/OData/WebApi/pull/1673) ] Respect preference header for paging
-
-* [ [#1600](https://github.com/OData/WebApi/issues/1600) ] ActionDescriptorExtensions is not thread safe
-
-* [ [#1617](https://github.com/OData/WebApi/issues/1617) ] Take and Top query use wrong Provider.CreateQuery Method
-
-* [ [#1659](https://github.com/OData/WebApi/issues/1659) ] Odata V4 group by with Top and skip not working
-
-* [ [#1679](https://github.com/OData/WebApi/issues/1679) ] Fix typo routePrerix
-
----

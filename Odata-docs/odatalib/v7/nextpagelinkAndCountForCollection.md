@@ -1,5 +1,5 @@
 ---
-title: "Write NextPageLink/Count for collection"
+title: "Write NextPageLink/Count for collection - odatalib"
 description: ""
 author: madansr7
 ms.author: madansr7

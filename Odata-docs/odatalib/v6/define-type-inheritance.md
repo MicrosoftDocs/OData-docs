@@ -1,24 +1,23 @@
 ---
-title: " Define type inheritance"
-description: "Define type inheritance using EdmLib APIs"
-
+title: " Define type inheritance-ODL V6"
+description: "Define type inheritance using EdmLib APIs-ODL V6"
 author: madansr7
 ms.author: madansr7
 ms.date: 02/19/2019
 ms.topic: article
- 
 ---
-# Define type inhertiance 
+# Define type inhertiance(ODL V6.x)
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v6.md)]
 
 Type inheritance means **defining derived types**. EdmLib supports defining both **derived entity types** and **derived complex types**. Adding a derived entity (complex) type is almost the same as adding an normal entity (complex) except that an additional **base type** needs to be provided.
 
 This section shows how to define entity (complex) type inheritance using EdmLib APIs. We will continue to use and extend the sample from the previous sections.
 
-### Add a Derived Entity Type *UrgentOrder*
+## Add a Derived Entity Type *UrgentOrder*
+
 In the **SampleModelBuilder.cs** file, add the following code into the `SampleModelBuilder` class:
 
-``` csharp
+```c#
 namespace EdmLibSample
 {
     public class SampleModelBuilder
@@ -40,7 +39,7 @@ namespace EdmLibSample
 
 Then in the **Program.cs** file, insert the following code into the `Main` method:
 
-``` csharp
+```c#
 namespace EdmLibSample
 {
     class Program
@@ -64,16 +63,15 @@ namespace EdmLibSample
 
 This code:
 
- - Defines a **derived entity type** `UrgentOrder` within the namespace `Sample.NS` whose base type is `Sample.NS.Order`;
- - Adds a structural property `Deadline` of type `Edm.Date`;
- - Adds the `Sample.NS.UrgentOrder` type to the entity data model.
+- Defines a **derived entity type** `UrgentOrder` within the namespace `Sample.NS` whose base type is `Sample.NS.Order`;
+- Adds a structural property `Deadline` of type `Edm.Date`;
+- Adds the `Sample.NS.UrgentOrder` type to the entity data model.
 
+## Add a Derived Complex Type *WorkAddress*
 
-
-### Add a Derived Complex Type *WorkAddress*
 In the **SampleModelBuilder.cs** file, add the following code into the `SampleModelBuilder` class:
 
-``` csharp
+```c#
 namespace EdmLibSample
 {
     public class SampleModelBuilder
@@ -95,7 +93,7 @@ namespace EdmLibSample
 
 Then in the **Program.cs** file, insert the following code into the `Main` method:
 
-``` csharp
+```c#
 namespace EdmLibSample
 {
     class Program
@@ -118,13 +116,12 @@ namespace EdmLibSample
 
 This code:
 
- - Defines a **derived complex type** `WorkAddress` within the namespace `Sample.NS` whose base type is `Sample.NS.Address`;
- - Adds a structural property `Company` of type `Edm.String`;
- - Adds the `Sample.NS.WorkAddress` type to the entity data model.
+- Defines a **derived complex type** `WorkAddress` within the namespace `Sample.NS` whose base type is `Sample.NS.Address`;
+- Adds a structural property `Company` of type `Edm.String`;
+- Adds the `Sample.NS.WorkAddress` type to the entity data model.
 
+## Run the Sample
 
-
-### Run the Sample
 Build and run the sample. Then open the **csdl.xml** file under the **output directory**. The content of **csdl.xml** should look like the following:
 
 ![image](/odata/assets/2015-04-19-csdl.png)

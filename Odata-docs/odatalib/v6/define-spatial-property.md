@@ -7,7 +7,7 @@ ms.date: 02/19/2019
 ms.topic: article
  
 ---
-# Define spaital properties
+# Define spaital properties(ODL V6.x)
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v6.md)]
 
 Using Spatial in OData services involves two parts of work:
