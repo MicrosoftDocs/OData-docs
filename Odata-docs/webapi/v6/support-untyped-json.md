@@ -11,7 +11,7 @@ ms.topic: article
 # Support untyped json in ODataLib and Client
 **Applies To**: [!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v6.md)]
 
-Starting from ODataV3 5.7.0, undeclared property is better supported by ODataLib and OData Client. ODataMessageReader is extended to be capabale of reading arbitrary JSON as raw string from the payload.
+Starting from ODataV3 5.7.0, undeclared property is better supported by ODataLib and OData Client. ODataMessageReader is extended to be capable of reading arbitrary JSON as raw string from the payload.
 
 ## In ODataLib
 
@@ -27,7 +27,7 @@ What the undeclared property means are:
 
 2. In normal entity or complex: a property whose name isn't defined in the model.
 
-The below messageWriterSettings will enable reading undeclared / untyped property. It reads an undeclared and untype JSON as ODataUntypedValue whose .Raw Json has the raw JSON string.
+The below messageWriterSettings will enable reading undeclared / untyped property. It reads an undeclared and untype JSON as ODataUntypedValue whose .Raw JSON has the raw JSON string.
 ``` C#
 
 ODataMessageWriterSettings messageWriterSettings = new ODataMessageWriterSettings
@@ -41,7 +41,7 @@ const string payload = @"{""odata.metadata"":""https://www.example.com/#Server.N
 ODataEntry entry = ...; // read with messageWriterSettings
 ODataUntypedValue undeclaredComplex1Value= entry.Properties.Single(s => string.Equals(s.Name, "undeclaredComplex1"))
         .Value as ODataUntypedValue; // here undeclaredComplex1Value.RawJson is string "{\"property1\":\"aa\",\"property2\":\"bb\"}"
-	
+
 ```
 
 ## In OData Client
@@ -52,7 +52,7 @@ DataServiceContext now has a new setting called UndeclaredPropertyBehavior.
 * UndeclaredPropertyBehavior.Ignore: it overwrites DataServiceContext's old IgnoreMissingProperty boolean, means always skipping undeclared property.
 * UndeclaredPropertyBehavior.Support: it overwrites DataServiceContext's old IgnoreMissingProperty boolean, means always reading undeclared property as either an OData valid value instance or ODataUntyped instance.
 
-The below code demostrates UndeclaredPropertyBehavior.Support:
+The below code demonstrates UndeclaredPropertyBehavior.Support:
 
 ``` C#
 
