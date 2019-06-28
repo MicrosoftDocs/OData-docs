@@ -27,8 +27,8 @@ What the undeclared property means are:
 
 2. In normal entity or complex: a property whose name isn't defined in the model.
 
-The below messageWriterSettings will enable reading undeclared / untyped property. It reads an undeclared and untype JSON as ODataUntypedValue whose .RawJson has the raw JSON string.
-``` csharp
+The below messageWriterSettings will enable reading undeclared / untyped property. It reads an undeclared and untype JSON as ODataUntypedValue whose .Raw Json has the raw JSON string.
+``` C#
 
 ODataMessageWriterSettings messageWriterSettings = new ODataMessageWriterSettings
 	    {
@@ -54,7 +54,7 @@ DataServiceContext now has a new setting called UndeclaredPropertyBehavior.
 
 The below code demostrates UndeclaredPropertyBehavior.Support:
 
-``` csharp
+``` C#
 
 var context = new DefaultContainer(new Uri("https://services.odata.org/v4/(S(lqbvtwide0ngdev54adgc0lu))/TripPinServiceRW/"));
 context.Format.UseJson();

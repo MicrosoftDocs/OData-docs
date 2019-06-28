@@ -81,6 +81,8 @@
             href: /odata/webapi/datetime-support
           - name: Edm.Date and Edm.TimeOfDay
             href: /odata/webapi/date-and-timeofday-support
+          - name: Date/TimeOfDay with Entity Framework
+            href: /odata/webapi/date-timeofday-with-entity-framework
           - name: Referential constraint
             href: /odata/webapi/referential-constraint
           - name: Nested $filter in $expand
@@ -108,29 +110,29 @@
           - name: Ignoring query option
             href: /odata/webapi/ignore-query-option
           - name: Alternate keys
-            href: /odata/webapi/Alternate-Key
+            href: /odata/webapi/alternate-key
           - name: NextPageLink and $count for collections
-            href: /odata/webapi/AddNextPageLinkAndCountForCollectionProperty
+            href: /odata/webapi/add-nextpage-link-and-count-for-collection-property
           - name: Prefer OData.include-annotations
-            href: /odata/webapi/odataIncludeAnnotations
+            href: /odata/webapi/include-annotations
           - name: Prefer OData.continue-on-error
-            href: /odata/webapi/ContinueOnError
+            href: /odata/webapi/continue-on-error
           - name: Namespace for operations in model builder
-            href: /odata/webapi/Set-namespaces-for-operations
+            href: /odata/webapi/set-namespaces-for-operations
           - name: HttpRequestMessage extension methods
-            href: /odata/webapi/Use-HttpRequestMessage-Extension-Method
+            href: /odata/webapi/httpRequest-message-extension-method
           - name: OData Simplified Uri
             href: /odata/webapi/simplified-uri-convention
           - name: MaxExpansionDepth in EnableQuery
-            href: /odata/webapi/MaxExpansionDepthInEnableQueryAttribute
+            href: /odata/webapi/max-expansion-depth-in-enable-query-attribute
           - name: Custom UriFunctions binding
             href: /odata/webapi/bind-custom-urifunctions-to-clr-methods
           - name: IN Operator
-            href: /odata/webapi/InOperator
+            href: /odata/webapi/in-operator
           - name: Case-insensitive names and unqualified functions/actions
             href: /odata/webapi/caseInsensitiveAndQualifiedFunctions
           - name: Simplified optional-$-prefix query option
-            href: /odata/webapi/enableNoDollarQueryOptions
+            href: /odata/webapi/enable-no-dollar-queryoptions
           - name: Batch requests
             href: /odata/webapi/batch
           - name: Adding unit tests
@@ -139,6 +141,16 @@
             href: /odata/webapi/expanded-navigation-delta
           - name: Scaffolding
             href: /odata/webapi/scaffolding
+          - name: Navigation Property Binding with Complex types
+            href: /odata/webapi/navigation-property-binding-with-complex-type
+          - name: SkipToken & Deltatoken
+            href: /odata/webapi/skipToken-for-server-side-paging
+          - name: Default settings
+            href: /odata/webapi/new-default-settings-v7
+          - name: Key-Value Binding
+            href: /odata/webapi/key-value-binding
+          - name: Merge complex type and entity type
+            href: /odata/webapi/merge-complex-and-entity
       - name: Extending WebAPI
         items:
         - name: Custom URL parsing
@@ -148,9 +160,9 @@
         - name: Customize OData Formatter
           href: /odata/webapi/customize-formatter
         - name: Custom Stream Entity
-          href: /odata/webapi/streamEntity
+          href: /odata/webapi/stream-entity
         - name: Customize unsupported types
-          href: /odata/webapi/UnsupportedTypeUsage
+          href: /odata/webapi/unsupported-type-usage
   - name: WebApi .NET Core
     items:
     - name: Getting started
@@ -174,9 +186,9 @@
         - name: Add additional prefer header
           href: /odata/odatalib/additional-prefer-header
         - name: Skiptoken & Deltatoken
-          href: /odata/odatalib/skipTokenAndDeltaToken
+          href: /odata/odatalib/skipToken-and-deltaToken
         - name: Write NextPageLink/Count for collection
-          href: /odata/odatalib/nextpagelinkAndCountForCollection
+          href: /odata/odatalib/nextpage-link-and-count-for-collection
         - name: Override primitive payload serialization 
           href: /odata/odatalib/override-primitive-serialization-deserialization
         - name: Navigation property under complex type
@@ -196,13 +208,13 @@
         - name: Override type annotation in serialization
           href: /odata/odatalib/type-annotation
         - name: Centralized control for OData Simplified Options
-          href: /odata/odatalib/ODataSimplifiedOptions
+          href: /odata/odatalib/odata-simplified-options
         - name: Read and Write Untyped values in ODataLib
           href: /odata/odatalib/support-untyped-json
         - name: IN Operator
-          href: /odata/odatalib/INOperator
+          href: /odata/odatalib/in-operator
         - name: Resource (Complex & Entity) Value
-          href: /odata/odatalib/ResourceValue
+          href: /odata/odatalib/resource-value
     - name: Entity Data Model (EDM)
       items:
       # - name: Model Building
@@ -234,11 +246,11 @@
       - name: Add annotations to Enum Member
         href: /odata/odatalib/add-annotations-to-enummember
       - name: Alternate Key
-        href: /odata/odatalib/alternatekey
+        href: /odata/odatalib/alternate-key
       - name: Capabilities vocabulary
-        href: /odata/odatalib/capabilitiesVocabulary
+        href: /odata/odatalib/capabilities-vocabulary
       - name: Multi-Navigation Property Bindings
-        href: /odata/odatalib/Multi-Binding
+        href: /odata/odatalib/multi-binding
       - name: Navigation property partner
         href: /odata/odatalib/navigation-partner
       - name: Optional Parameters
@@ -246,7 +258,7 @@
     - name: Batching
       items:
         - name: Batching requests
-          href: /odata/odatalib/JsonBatch
+          href: /odata/odatalib/json-batch
   - name: OData Client
     items:
       - name: Basic CRUD operations

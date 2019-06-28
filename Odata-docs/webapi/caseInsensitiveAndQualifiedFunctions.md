@@ -47,9 +47,9 @@ Please note that, even though case-insensitive and unqualified function & action
 
 ### Restoring the original behavior
 Even though the new behavior is backward compatible for most scenarios, customers can configure WebAPI to enforce case sensitivity and namespace qualification, as in 6.x, using dependency injection:
-~~~csharp
+```C#
     // HttpConfiguration configuration
     IServiceProvider rootContainer = configuration.CreateODataRootContainer(routeName, 
         builder => builder.AddService<ODataUriResolver>(ServiceLifetime.Singleton, sp => new ODataUriResolver());
-~~~
+```
 The above code replaces the ODataUriResolver service that supports case-insensitivity and unqualified names with a default instance of ODataUriResolver that does not.

@@ -510,6 +510,244 @@ files for them to compile.
 > [!NOTE]
 > This release delivers OData core libraries including ODataLib, EdmLib and Spatial. OData Client for .NET is not published in this release.
 
+## Breaking changes - Validation settings
+
+We used to have lots of validation related members/flags in `ODataMessageReaderSettings` and `ODataMessageWriterSettings`. In OData 7.0, we cleaned up the out-dated flags and put the remained flags together and keep them be considered in a consistent way.
+
+### Removed APIs
+
+| ODataMessageWriterSettings            | ODataMessageReaderSettings            |
+|---------------------------------------|---------------------------------------|
+| EnableFullValidation                  | EnableFullValidation                  |
+| EnableDefaultBehavior()               | EnableDefaultBehavior()               |
+| EnableODataServerBehavior()           | EnableODataServerBehavior()           |
+| EnableWcfDataServicesClientBehavior() | EnableWcfDataServicesClientBehavior() |
+|                                       | UndeclaredPropertyBehaviorKinds       |
+|                                       | DisablePrimitiveTypeConversion        |
+|                                       | DisableStrictMetadataValidation       |
+
+The EnablexxxBehavior() in writer and reader settings actually wrapped few flags.
+
+| ODataWriterBehavior                         | ODataReaderBehavior         |
+|---------------------------------------------|-----------------------------|
+| AllowDuplicatePropertyNames                 | AllowDuplicatePropertyNames |
+| AllowNullValuesForNonNullablePrimitiveTypes |                             |
+
+Those flags are all removed, and an Enum type would represent all the settings instead.
+
+### New API
+
+A flag Enum type ValidationKinds to represent all validation kinds in reader and writer:
+
+```C#
+/// <summary>
+/// Validation kinds used in ODataMessageReaderSettings and ODataMessageWriterSettings.
+/// </summary>
+[Flags]
+public enum ValidationKinds
+{
+    /// <summary>
+    /// No validations.
+    /// </summary>
+    None = 0,
+
+    /// <summary>
+    /// Disallow duplicate properties in ODataResource (i.e., properties with the same name).
+    /// If no duplication can be guaranteed, this flag can be turned off for better performance.
+    /// </summary>
+    ThrowOnDuplicatePropertyNames = 1,
+
+    /// <summary>
+    /// Do not support for undeclared property for non open type.
+    /// </summary>
+    ThrowOnUndeclaredPropertyForNonOpenType = 2,
+
+    /// <summary>
+    /// Validates that the type in input must exactly match the model.
+    /// If the input can be guaranteed to be valid, this flag can be turned off for better performance.
+    /// </summary>
+    ThrowIfTypeConflictsWithMetadata = 4,
+
+    /// <summary>
+    /// Enable all validations.
+    /// </summary>
+    All = ~0
+}
+```
+
+Writer: Add member Validations which accepts all the combinations of ValidationKinds
+
+```C#
+/// <summary>
+/// Configuration settings for OData message writers.
+/// </summary>
+public sealed class ODataMessageWriterSettings
+{
+
+/// <summary>
+/// Gets or sets Validations in writer.
+/// </summary>
+public ValidationKinds Validations { get; set; }
+
+}
+```
+
+Reader: Add member Validations which accepts all the combinations of ValidationKinds
+
+```C#
+
+/// <summary>
+/// Configuration settings for OData message readers.
+/// </summary>
+public sealed class ODataMessageReaderSettings
+{
+
+/// <summary>
+/// Gets or sets Validations in reader.
+/// </summary>
+public ValidationKinds Validations { get; set; }
+
+}
+```
+
+### Sample Usage
+
+`writerSettings.Validations = ValidationKinds.All`
+Equal to:
+`writerSettings.EnableFullValidation = true`
+
+`readerSettings.Validations |= ValidationKinds.ThrowIfTypeConflictsWithMetadata`
+Equal to:
+`readerSettings.DisableStrictMetadataValidation = false`
+
+Same applies for the reader settings.
+
+## Breaking change - Change in Query Nodes
+
+The expression of `$filter` and `$orderby` will be parsed to multiple query nodes. Each node has particular representation, for example, a navigation property access will be interpreted as `SingleNavigationNode` and collection of navigation property access will be interpreted as `CollectionNavigationNode`.
+
+Since we have merged complex type and entity type in OData Core lib, complex have more similarity with entity other than primitive property. Also in order to support navigation property under complex, the query nodes' type and hierarchy are changed and adjusted to make it more reasonable.
+
+### Nodes Change
+
+- None
+
+### Nodes Added
+
+- SingleComplexNode
+- CollectionComplexNode
+
+### Nodes Renamed
+
+| Old                                 | New                                   |
+|-------------------------------------|---------------------------------------|
+| NonentityRangeVariable              | NonResourceRangeVariable              |
+| EntityRangeVariable                 | ResourceRangeVariable                 |
+| NonentityRangeVariableReferenceNode | NonResourceRangeVariableReferenceNode |
+| EntityRangeVariableReferenceNode    | ResourceRangeVariableReferenceNode    |
+| EntityCollectionCastNode            | CollectionResourceCastNode            |
+| EntityCollectionFunctionCallNode    | CollectionResourceFunctionCallNode    |
+| SingleEntityCastNode                | SingleResourceCastNode                |
+| SingleEntityFunctionCallNode        | SingleResourceFunctionCallNode        |
+
+### Nodes Removed
+
+- CollectionPropertyCast
+- SingleValueCast
+
+### API Change
+
+1. Add SingleResourceNode as the  base class of SingleEntityNode and SingleComplexNode
+
+2. SingleNavigationNode and CollectionNavigationNode accepts SingleResourceNode as parent node and also accepts bindingpath in the constructor.The parameter order is also adjusted.
+
+    Take SingleNavigationNode for example:
+
+```C#
+public SingleNavigationNode(IEdmNavigationProperty navigationProperty, SingleEntityNode source)
+```
+
+Changed to:
+
+```C#
+public SingleNavigationNode(SingleResourceNode source, IEdmNavigationProperty navigationProperty, IEdmPathExpression bindingPath)
+```
+
+### Behavior Change for complex type nodes
+
+Complex property used to share nodes with primitive property, now it shares most nodes with entity.
+Here lists the nodes that complex used before and now.
+
+| Before                          | Now                                |
+|---------------------------------|------------------------------------|
+| NonentityRangeVariable          | ResourceRangeVariable              |
+| NonentityRangeVariableReference | ResourceRangeVariableReference     |
+| SingleValuePropertyAccessNode   | SingleComplexNode                  |
+| SingleValueCastNode             | SingleResourceCastNode             |
+| SingleValueFunctionCallNode     | SingleResourceFunctionCallNode     |
+| CollectionPropertyAccessNode    | CollectionComplexNode              |
+| CollectionPropertyCastNode      | CollectionResourceCastNode         |
+| CollectionFunctionCallNode      | CollectionResourceFunctionCallNode |
+
+## Breaking change - Merged entity & complex types
+
+This page will describes the Public API changes for "Merge entity and complex". The basic idea is that we named both an entity and a complex instance as an `ODataResource`, and named a collection of entity or a collection of complex as an `ODataResourceSet`.
+
+### API Changes
+
+Following is difference of public APIs between ODataLib 7.0 and ODataLib 6.15.
+
+||ODataLib 6.15|ODataLib 7.0|
+|---|---|---|
+||ODataEntry|ODataResource|
+||ODataComplexValue|ODataResource|
+||ODataFeed|ODataResourceSet|
+||ODataCollectionValue for Complex|ODataResourceSet|
+||ODataNavigationLink|ODataNestedResourceInfo|
+||||
+|ODataPayloadKind|Entry|Resource|
+||Feed|ResourceSet|
+||||
+|ODataReaderState|EntryStart|ResourceStart|
+||EntryEnd|ResourceEnd
+||FeedStart|ResourceSetStart|
+||FeedEnd|ResourceSetEnd|
+||NavigationLinkStart|NestedResourceInfoStart|
+||NavigationLinkEnd|NestedResourceInfoEnd|
+||||
+|ODataParameterReaderState  |Entry|Resource|
+||Feed|ResourceSet|
+||||
+|ODataInputContext|ODataReader CreateEntryReader (IEdmNavigationSource navigationSource, IEdmEntityType expectedEntityType)|ODataReader CreateResourceReader(IEdmNavigationSource navigationSource, IEdmStructuredType expectedResourceType)|
+||ODataReader CreateFeedReader (IEdmEntitySetBase entitySet, IEdmEntityType expectedBaseEntityType)|ODataReader CreateResourceSetReader(IEdmEntitySetBase entitySet, IEdmStructuredType expectedResourceType)|
+||||
+|ODataOutputContext|ODataWriter CreateODataEntryWriter (IEdmNavigationSource navigationSource, IEdmEntityType entityType)|ODataWriter CreateODataResourceWriter(IEdmNavigationSource navigationSource, IEdmStructuredType resourceType)|
+||ODataWriter CreateODataFeedWriter (IEdmEntitySetBase entitySet, IEdmEntityType entityType)|ODataWriter CreateODataResourceSetWriter(IEdmEntitySetBase entitySet, IEdmStructuredType resourceType)|
+||||
+|ODataParameterReader|ODataReader CreateEntryReader ()|ODataReader CreateResourceReader ()|
+||ODataReader CreateFeedReader ()|ODataReader CreateResourceSetReader ()|
+||||
+|ODataParameterWriter|ODataWriter CreateEntryWriter (string parameterName)|ODataWriter CreateResourceWriter (string parameterName)|
+||ODataWriter CreateFeedWriter (string parameterName)|ODataWriter CreateResourceSetWriter (string parameterName)|
+||||
+|ODataMessageReader|public Microsoft.OData.Core.ODataReader CreateODataEntryReader ()|public Microsoft.OData.ODataReader CreateODataResourceReader ()|
+||public Microsoft.OData.Core.ODataReader CreateODataEntryReader (IEdmEntityType entityType)|public Microsoft.OData.ODataReader CreateODataResourceReader (IEdmStructuredType resourceType)|
+||public Microsoft.OData.Core.ODataReader CreateODataEntryReader (IEdmNavigationSource navigationSource, IEdmEntityType entityType)|public Microsoft.OData.ODataReader CreateODataResourceReader (IEdmNavigationSource navigationSource, IEdmStructuredType resourceType)|
+||public Microsoft.OData.Core.ODataReader CreateODataFeedReader ()|public Microsoft.OData.ODataReader CreateODataResourceSetReader ()|
+||public Microsoft.OData.Core.ODataReader CreateODataFeedReader (IEdmEntityType expectedBaseEntityType)|public Microsoft.OData.ODataReader CreateODataResourceSetReader (IEdmStructuredType expectedResourceType)|
+||public Microsoft.OData.Core.ODataReader CreateODataFeedReader (IEdmEntitySetBase entitySet, IEdmEntityType expectedBaseEntityType|public Microsoft.OData.ODataReader CreateODataResourceSetReader (IEdmEntitySetBase entitySet, IEdmStructuredType expectedResourceType)|
+|||public ODataReader CreateODataUriParameterResourceSetReader(IEdmEntitySetBase entitySet, IEdmStructuredType expectedResourceType)|
+|||public ODataReader CreateODataUriParameterResourceReader(IEdmNavigationSource navigationSource, IEdmStructuredType expectedResourceType)|
+||||
+|ODataMessageWriter|public Microsoft.OData.Core.ODataWriter CreateODataEntryWriter ()|public Microsoft.OData.ODataWriter CreateODataResourceSetWriter ()|
+||public Microsoft.OData.Core.ODataWriter CreateODataEntryWriter (IEdmNavigationSource navigationSource)|public Microsoft.OData.ODataWriter CreateODataResourceSetWriter (IEdmEntitySetBase entitySet)|
+||public Microsoft.OData.Core.ODataWriter CreateODataEntryWriter (IEdmNavigationSource navigationSource, IEdmEntityType entityType)|public Microsoft.OData.ODataWriter CreateODataResourceSetWriter (IEdmEntitySetBase entitySet, IEdmStructuredType resourceType)|
+||public Microsoft.OData.Core.ODataWriter CreateODataFeedWriter ()|public Microsoft.OData.ODataWriter CreateODataResourceWriter ()|
+||public Microsoft.OData.Core.ODataWriter CreateODataFeedWriter (IEdmEntitySetBase entitySet)|public Microsoft.OData.ODataWriter CreateODataResourceWriter (IEdmNavigationSource navigationSource)|
+||public Microsoft.OData.Core.ODataWriter CreateODataFeedWriter (IEdmEntitySetBase entitySet, IEdmEntityType entityType)|public Microsoft.OData.ODataWriter CreateODataResourceWriter (IEdmNavigationSource navigationSource, IEdmStructuredType resourceType)|
+|||public ODataWriter CreateODataUriParameterResourceWriter(IEdmNavigationSource navigationSource, IEdmStructuredType resourceType)|
+|||public ODataWriter CreateODataUriParameterResourceSetWriter(IEdmEntitySetBase entitySetBase, IEdmStructuredType resourceType)|
+
 ## ODataLib 7.0 Release
 
 ***Features***
@@ -557,11 +795,11 @@ We also support prototype services. For each prototype service, you can specify 
 - ODataUriParser support parsing related Uri path or query expressions.
 - ODataLib support reading and writing navigation properties on complex type.
 
-[Issue #629](https://github.com/OData/odata.net/issues/629) [Support multi-NavigationPropertyBindings for a single navigation property by using different paths](https://odata.github.io/odata.net/v7/#06-21-Multi-Binding)
+[Issue #629](https://github.com/OData/odata.net/issues/629) [Support multi-NavigationPropertyBindings for a single navigation property by using different paths](/odata/odatalib/multi-binding)
 
 - Navigation property used in multi bindings with different path is supported for navigation under containment and complex.
 
-[Issue #631](https://github.com/OData/odata.net/issues/631) Support [fluent writer API](https://odata.github.io/odata.net/v7/#01-02-fluent-writer-api).
+[Issue #631](https://github.com/OData/odata.net/issues/631) Support [fluent writer API](/odata/webapi/fluent-writer-api).
 
 - In previous version, paired `WriteStart` and `WriteEnd` calls are used in writing payloads. This syntax is error-prone, and soon gets unmanageable with complex and deeply nested payloads. In this new release, you can instead write payloads using the neat fluent syntax.
 
@@ -657,7 +895,7 @@ Support duplicate custom instance annotations.
 
 [Issue #491](https://github.com/OData/odata.net/issues/491) Simplified namespaces.
 
-[Issue #517](https://github.com/OData/odata.net/issues/517) Centralized reader/writer validation. [Breaking Changes](https://odata.github.io/odata.net/v7/#04-02-Validations-Breaking)
+[Issue #517](https://github.com/OData/odata.net/issues/517) Centralized reader/writer validation. [Breaking Changes](#Breaking-changes---Validation-settings)
 
 - Add an Enum `ValidationKinds` to represent all validation kinds in reader and writer.
 - Add Validations property in `ODataMessageWriterSettings`/`ODataMessageReaderSettings` to control validations.
@@ -691,7 +929,7 @@ Support duplicate custom instance annotations.
 
 [Issue #640](https://github.com/OData/odata.net/issues/640) More sensible type, namely `IEnumerable<object>`, for ODataCollectionValue.Items.
 
-[Issue #643](https://github.com/OData/odata.net/issues/643) Adjust query node kinds in Uri Parser in order to support navigation under complex. [Breaking Changes](https://odata.github.io/odata.net/v7/#04-01-Query-Nodes-Breaking)
+[Issue #643](https://github.com/OData/odata.net/issues/643) Adjust query node kinds in Uri Parser in order to support navigation under complex. [Breaking Changes](#Breaking-change---Change-in-Query-Nodes)
 
 Improved standard-compliance by forbidding duplicate property names.
 
@@ -721,3 +959,4 @@ So, Edmx is only part of a valid CSDL document. In previous version, `CsdlReader
 
 > [!NOTE]
 > This release delivers OData core libraries including ODataLib, EdmLib and Spatial. OData Client for .NET is not  published in this release.
+
