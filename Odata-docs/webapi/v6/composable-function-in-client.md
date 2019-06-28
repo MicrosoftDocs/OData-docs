@@ -14,6 +14,7 @@ ms.topic: article
 Composable function (function import) can have additional path segments and query options as appropriate for the returned type.
 
 ## Unbound composable function
+
 For example, we have model:
 
 ```C#
@@ -34,17 +35,19 @@ For example, we have model:
 
 1. Create function query
 
-``` csharp
+``` c#
 var products = Context.CreateFunctionQuery<Product>("", "GetAllProducts", true).Execute();
 ```
 
 And we can append query option to the function. For example:
 
-``` csharp
+``` c#
 var products = Context.CreateFunctionQuery<ProductPlus>("", "GetAllProducts", true).AddQueryOption("$select", "Name").Execute();
 ```
+
 The actual query would be:
-``` csharp
+```html
+
 GET https://localhost/GetAllProducts()?$select=Name
 ```
 
@@ -53,7 +56,7 @@ GET https://localhost/GetAllProducts()?$select=Name
 With [OData client generator](https://blogs.msdn.com/b/odatateam/archive/2014/03/12/how-to-use-odata-client-code-generator-to-generate-client-side-proxy-class.aspx), proxy class for function and action would be auto generated.
 For example:
 
-``` csharp
+``` c#
 var getAllProductsFunction = Context.GetAllProductsPlus();
 var products = getAllProductsFunction.Execute();   // Get products 
 var discdProducts = getAllProductsFunction.DiscountPlus(50).Execute();   // Call action on function
@@ -65,7 +68,8 @@ var filteredProducts = getAllProductsFunction.Where(p => p.SkinColorPlus == Colo
 Bound composable function has similiar usage, except that it is tied to a resource.
 
 For example, we have model:
-``` csharp
+``` c#
+
 <Function Name="GetSeniorEmployees" IsBound="true" EntitySetPath="People" IsComposable="true">
     <Parameter Name="employees" Type="Collection(NS.Employee)" Nullable="false" />
     <ReturnType Type="NS.Employee" />
@@ -76,8 +80,8 @@ For example, we have model:
 </Function>
 ```
 
-Person is the base type of Employee. 
+Person is the base type of Employee.
 Then a sample query is:
-``` csharp
+``` c#
 (Context.People.OfType<Employee>() as DataServiceQuery<Employee>).GetSeniorEmployees().GetHomeAddress().GetValue();
 ```

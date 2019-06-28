@@ -1,11 +1,11 @@
 ---
-title : "4.8 Operation parameters in untyped scenarios"
+title : "Operation parameters in untyped scenarios"
 
 ms.date: 03/30/2015
 ---
 # Operation paramters in untyped scenarios
 
-In this page, we introduce the Function/Action parameter in untyped scenario. For CLR typed scenarios, please refer to [Function page](https://odata.github.io/WebApi/04-06-function-parameter-support/) and [Action page](https://odata.github.io/WebApi/04-07-action-parameter-support/).
+In this page, we introduce the Function/Action parameter in untyped scenario. For CLR typed scenarios, please refer to [Function page](/odata/webapi/function-parameter-support/) and [Action page](/odata/webapi/action-parameter-support).
 
 ### Build Edm Model
 
@@ -230,12 +230,16 @@ public IHttpActionResult EntityAction(int key, ODataActionParameters parameters)
     ......
 }
 ```
+
 #### Request Samples
+
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 Now, We can invoke the function with the entity and collection of entity parameter as:
-```C#
-~odata/Customers(1)/NS.EntityFunction(customer=@x,customerList=@y)?@x={\"@odata.type\":\"%23NS.Customer\",\"Id\":1,\"Name\":\"John\"}&@y={\"value\":[{\"@odata.type\":\"%23NS.Customer\",\"Id\":2, \"Name\":\"Mike\"},{\"@odata.type\":\"%23NS.SubCustomer\",\"Id\":3,\"Name\":\"Tony\", \"Price\":9.9}]}"
+
+```json
+
+/odata/Customers(1)/NS.EntityFunction(customer=@x,customerList=@y)?@x={\"@odata.type\":\"%23NS.Customer\",\"Id\":1,\"Name\":\"John\"}&@y={\"value\":[{\"@odata.type\":\"%23NS.Customer\",\"Id\":2, \"Name\":\"Mike\"},{\"@odata.type\":\"%23NS.SubCustomer\",\"Id\":3,\"Name\":\"Tony\", \"Price\":9.9}]}"
 ```
 
 Also, We can invoke the action by issuing a Post on `~/odata/Customers(1)/NS.EntityAction` with the following request body:
@@ -250,8 +254,8 @@ Also, We can invoke the action by issuing a Post on `~/odata/Customers(1)/NS.Ent
 }
 ```
 
-For other request samples, please refer to [Function page](https://odata.github.io/WebApi/04-06-function-parameter-support/) and [Action page](https://odata.github.io/WebApi/04-07-action-parameter-support/).
+For other request samples, please refer to [Function page](/odata/webapi/function-parameter-support) and [Action page](/odata/webapi/action-parameter-support).
 
 ### Unbound function/action
 
-Unbound function and action are similiar with bound function and action in the request format. But only attribute routing can be used for unbound function/action routing.
+Unbound function and action are similar with bound function and action in the request format. But only attribute routing can be used for unbound function/action routing.

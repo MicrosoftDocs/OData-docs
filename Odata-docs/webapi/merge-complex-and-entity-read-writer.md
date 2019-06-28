@@ -1,7 +1,6 @@
 ---
-title : "13.7 Merge complex & entity value serialize/deserialize"
+title : "Merge complex & entity value serialize/deserialize"
 description: "Merge complex & entity"
-
 ms.date: 09/01/2016
 ---
 # Merge complex & entity value serialize/deserialize
@@ -25,4 +24,3 @@ In Web API OData 6.x, we do the following to support the merge of complex type a
 
 So, for any complex value, it will use **ODataResourceSerializer** and **ODataResourceDeserializer** to read and write.
 for any complex collection value, it will use **ODataResourceSetSerializer** and **ODataResourceSetDeserializer** to read and write.
-

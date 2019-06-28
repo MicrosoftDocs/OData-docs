@@ -1,7 +1,6 @@
 ---
-title : "13.6 Key value binding "
+title : "Key value binding - WebAPI "
 description: "Key value binding"
-
 ms.date: 09/01/2016
 ---
 # Key value binding
@@ -9,16 +8,14 @@ ms.date: 09/01/2016
 
 Since [Web API OData V6.0.0 beta](https://www.nuget.org/packages/Microsoft.AspNet.OData/6.0.0-beta2), Web API OData supports the composite key convention binding.
 
-Let's have an example:
+## Example
 
 ```C#
 
 public class Customer
 {
     public string StringProp { get; set; }
-	
     public Date DateProp { get; set; }
-
     public Guid GuidProp { get; set; }
 }
 
@@ -39,7 +36,7 @@ private static IEdmModel GetEdmModel()
 	return builder.GetEdmModel();
 }
 
-```	
+```
 
 Before Web API OData V6.x, key segment convention routing only supports the single key convention binding, just use the **key** as the parameter name.
 
@@ -49,7 +46,7 @@ In Web API OData V6.x, we use the following convention for the composite key par
 
 "key" + {CompositeKeyPropertyName}
 
-```		
+```
 
 Therefore, for **StringProp** key property, the action parameter name should be **keyStringProp**.
 
@@ -64,19 +61,19 @@ public class CustomersController : ODataController
     }
 }
 
-```		
+```
 
 Now, you can issue a request:
 
-```C#
+```html
 
 GET https://~/odata/Customers(StringKey='my',DateKey=2016-05-11,GuidKey=46538EC2-E497-4DFE-A039-1C22F0999D6C)
 
-```		
+```
 
 The result is:
 
-```C#
+```c#
 
 1. keyStringProp == "my";
 2. keyDataProp == new Date(2016, 5, 11);
