@@ -799,7 +799,7 @@ We also support prototype services. For each prototype service, you can specify 
 
 - Navigation property used in multi bindings with different path is supported for navigation under containment and complex.
 
-[Issue #631](https://github.com/OData/odata.net/issues/631) Support [fluent writer API](/odata/webapi/fluent-writer-api).
+[Issue #631](https://github.com/OData/odata.net/issues/631) Support [fluent writer API](/odata/odatalib/fluent-writer-api).
 
 - In previous version, paired `WriteStart` and `WriteEnd` calls are used in writing payloads. This syntax is error-prone, and soon gets unmanageable with complex and deeply nested payloads. In this new release, you can instead write payloads using the neat fluent syntax.
 
@@ -895,7 +895,7 @@ Support duplicate custom instance annotations.
 
 [Issue #491](https://github.com/OData/odata.net/issues/491) Simplified namespaces.
 
-[Issue #517](https://github.com/OData/odata.net/issues/517) Centralized reader/writer validation. [Breaking Changes](#Breaking-changes-Validation-settings)
+[Issue #517](https://github.com/OData/odata.net/issues/517) Centralized reader/writer validation. [Breaking Changes](#breaking-changes-validation-settings)
 
 - Add an Enum `ValidationKinds` to represent all validation kinds in reader and writer.
 - Add Validations property in `ODataMessageWriterSettings`/`ODataMessageReaderSettings` to control validations.
@@ -929,7 +929,7 @@ Support duplicate custom instance annotations.
 
 [Issue #640](https://github.com/OData/odata.net/issues/640) More sensible type, namely `IEnumerable<object>`, for ODataCollectionValue.Items.
 
-[Issue #643](https://github.com/OData/odata.net/issues/643) Adjust query node kinds in Uri Parser in order to support navigation under complex. [Breaking Changes](#Breaking-change-Change-in-Query-Nodes)
+[Issue #643](https://github.com/OData/odata.net/issues/643) Adjust query node kinds in Uri Parser in order to support navigation under complex. [Breaking Changes](#breaking-change-change-in-query-nodes)
 
 Improved standard-compliance by forbidding duplicate property names.
 
