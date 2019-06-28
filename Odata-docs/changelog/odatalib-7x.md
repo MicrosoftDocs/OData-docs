@@ -510,7 +510,7 @@ files for them to compile.
 > [!NOTE]
 > This release delivers OData core libraries including ODataLib, EdmLib and Spatial. OData Client for .NET is not published in this release.
 
-## Breaking changes - Validation settings
+## Breaking changes-Validation settings
 
 We used to have lots of validation related members/flags in `ODataMessageReaderSettings` and `ODataMessageWriterSettings`. In OData 7.0, we cleaned up the out-dated flags and put the remained flags together and keep them be considered in a consistent way.
 
@@ -622,7 +622,7 @@ Equal to:
 
 Same applies for the reader settings.
 
-## Breaking change - Change in Query Nodes
+## Breaking change-Change in Query Nodes
 
 The expression of `$filter` and `$orderby` will be parsed to multiple query nodes. Each node has particular representation, for example, a navigation property access will be interpreted as `SingleNavigationNode` and collection of navigation property access will be interpreted as `CollectionNavigationNode`.
 
@@ -689,7 +689,7 @@ Here lists the nodes that complex used before and now.
 | CollectionPropertyCastNode      | CollectionResourceCastNode         |
 | CollectionFunctionCallNode      | CollectionResourceFunctionCallNode |
 
-## Breaking change - Merged entity & complex types
+## Breaking change-Merged entity & complex types
 
 This page will describes the Public API changes for "Merge entity and complex". The basic idea is that we named both an entity and a complex instance as an `ODataResource`, and named a collection of entity or a collection of complex as an `ODataResourceSet`.
 
@@ -895,7 +895,7 @@ Support duplicate custom instance annotations.
 
 [Issue #491](https://github.com/OData/odata.net/issues/491) Simplified namespaces.
 
-[Issue #517](https://github.com/OData/odata.net/issues/517) Centralized reader/writer validation. [Breaking Changes](#Breaking-changes---Validation-settings)
+[Issue #517](https://github.com/OData/odata.net/issues/517) Centralized reader/writer validation. [Breaking Changes](#Breaking-changes-Validation-settings)
 
 - Add an Enum `ValidationKinds` to represent all validation kinds in reader and writer.
 - Add Validations property in `ODataMessageWriterSettings`/`ODataMessageReaderSettings` to control validations.
@@ -929,7 +929,7 @@ Support duplicate custom instance annotations.
 
 [Issue #640](https://github.com/OData/odata.net/issues/640) More sensible type, namely `IEnumerable<object>`, for ODataCollectionValue.Items.
 
-[Issue #643](https://github.com/OData/odata.net/issues/643) Adjust query node kinds in Uri Parser in order to support navigation under complex. [Breaking Changes](#Breaking-change---Change-in-Query-Nodes)
+[Issue #643](https://github.com/OData/odata.net/issues/643) Adjust query node kinds in Uri Parser in order to support navigation under complex. [Breaking Changes](#Breaking-change-Change-in-Query-Nodes)
 
 Improved standard-compliance by forbidding duplicate property names.
 
