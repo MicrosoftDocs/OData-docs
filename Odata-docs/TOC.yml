@@ -65,7 +65,6 @@
           href: /odata/webapi/convention-model-builder
         - name: Non-convention model builder
           href: /odata/webapi/model-builder-nonconvention
-      - name: WebAPI v6
       - name: Routing
         items:
         - name: Routing overview
@@ -333,35 +332,35 @@
       - name: Webapi v6
         items:
           - name: Add annotations to enummember 
-            href: add-annotations-to-enummember
+            href: /odata/webapi/v6/add-annotations-to-enummember
           - name: Additional prefer header 
-            href: additional-prefer-header
+            href: /odata/webapi/v6/additional-prefer-header
           - name: Aggregation support 
-            href: aggregation-support
+            href: /odata/webapi/v6/aggregation-support
           - name: Alternate key 
-            href: alternate-key-v6
+            href: /odata/webapi/v6/alternate-key-v6
           - name: Capabilities vocabulary 
-            href: capabilities-vocabulary
+            href: /odata/webapi/v6/capabilities-vocabulary
           - name: Composable function in client 
-            href: composable-function-in-client
+            href: /odata/webapi/v6/composable-function-in-client
           - name: Customizable type facets promotion 
-            href: customizable-type-facets-promotion
+            href: /odata/webapi/v6/customizable-type-facets-promotion
           - name: Disable instance annotation 
-            href: disable-instance-annotation
+            href: /odata/webapi/v6/disable-instance-annotation
           - name: Expanded navigation delta 
-            href: expanded-navigation-delta
+            href: /odata/webapi/v6/expanded-navigation-delta
           - name: Nextpage link and count for collection 
-            href: nextpage-link-and-count-for-collection
+            href: /odata/webapi/v6/nextpage-link-and-count-for-collection
           - name: Override primitive serialization deserialization 
-            href: override-primitive-serialization-deserialization
+            href: /odata/webapi/v6/override-primitive-serialization-deserialization
           - name: Parsing url template 
-            href: parsing-url-template
+            href: /odata/webapi/v6/parsing-url-template
           - name: Simplified convention 
-            href: simplified-convention
+            href: /odata/webapi/v6/simplified-convention
           - name: Support abstract entity type in client 
-            href: support-abstract-entity-type-in-client
+            href: /odata/webapi/v6/support-abstract-entity-type-in-client
           - name: Support untyped json 
-            href: support-untyped-json
+            href: /odata/webapi/v6/support-untyped-json
 - name: Resources
   items:
     - name: Tools
