@@ -208,7 +208,7 @@
         - name: Override type annotation in serialization
           href: /odata/odatalib/type-annotation
         - name: Centralized control for OData Simplified Options
-          href: /odata/odatalib/odata-simplified-options
+          href: /odata/odatalib/simplified-options
         - name: Read and Write Untyped values in ODataLib
           href: /odata/odatalib/support-untyped-json
         - name: IN Operator
@@ -295,6 +295,72 @@
     items:
       - name: Basic auth setup
         href: /odata/webapi/basic-auth
+  - name: Legacy APIs
+    items: 
+      - name: OData Lib v6
+        items:
+          - name: Build basic model
+            href: /odata/odatalib/build-basic-model
+          - name: Create spatial instances
+            href: /odata/odatalib/create-spatial-instances
+          - name: Define annotations
+            href: /odata/odatalib/define-annotations
+          - name: Define entity relations
+            href: /odata/odatalib/define-entity-relations
+          - name: Define operations
+            href: /odata/odatalib/define-operations
+          - name: Define referential constraints
+            href: /odata/odatalib/define-referential-constraints
+          - name: Define singleton
+            href: /odata/odatalib/define-singleton
+          - name: Define spatial property
+            href: /odata/odatalib/define-spatial-property
+          - name: Define type inheritance
+            href: /odata/odatalib/define-type-inheritance
+          - name: Model references
+            href: /odata/odatalib/model-references
+          - name: Read payload
+            href: /odata/odatalib/read-payload-v6
+          - name: Read write model
+            href: /odata/odatalib/read-write-model
+          - name: Use uri parser
+            href: /odata/odatalib/use-uri-parser-v6
+          - name: Using model utilities
+            href: /odata/odatalib/using-model-utilities
+          - name: Write payload
+            href: /odata/odatalib/write-payload-v6
+      - name: Webapi v6
+        items:
+          - name: Add annotations to enummember 
+            href: /odata/webapi/add-annotations-to-enummember
+          - name: Additional prefer header 
+            href: /odata/webapi/additional-prefer-header
+          - name: Aggregation support 
+            href: /odata/webapi/aggregation-support
+          - name: Alternate key 
+            href: /odata/webapi/alternate-key-v6
+          - name: Capabilities vocabulary 
+            href: /odata/webapi/capabilities-vocabulary
+          - name: Composable function in client 
+            href: /odata/webapi/composable-function-in-client
+          - name: Customizable type facets promotion 
+            href: /odata/webapi/customizable-type-facets-promotion
+          - name: Disable instance annotation 
+            href: /odata/webapi/disable-instance-annotation
+          - name: Expanded navigation delta 
+            href: /odata/webapi/expanded-navigation-delta
+          - name: Nextpage link and count for collection 
+            href: /odata/webapi/nextpage-link-and-count-for-collection
+          - name: Override primitive serialization deserialization 
+            href: /odata/webapi/override-primitive-serialization-deserialization
+          - name: Parsing url template 
+            href: /odata/webapi/parsing-url-template
+          - name: Simplified convention 
+            href: /odata/webapi/simplified-convention
+          - name: Support abstract entity type in client 
+            href: /odata/webapi/support-abstract-entity-type-in-client
+          - name: Support untyped json 
+            href: /odata/webapi/support-untyped-json
 - name: Resources
   items:
     - name: Tools

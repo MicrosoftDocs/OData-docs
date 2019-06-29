@@ -166,7 +166,7 @@ We can handle the behavior upon encountering a request within the batch that ret
 
 Preference `odata.continue-on-error` makes no sense by default, and service returns the error for that request and **continue processing additional requests within the batch as default behavior**.
 
-To enable `odata.continue-on-error`, please refer to section [4.20 Prefer odata.continue-on-error](/odata/webapi/ContinueOnError) for details.
+To enable `odata.continue-on-error`, please refer to section [4.20 Prefer odata.continue-on-error](/odata/webapi/continue-on-error) for details.
 
 ### Request Without Preference `odata.continue-on-error`
 
