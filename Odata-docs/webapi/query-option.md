@@ -2,7 +2,7 @@
 title : "4.11 Query Options"
 description: "Query Options"
 
-ms.date: 05/06/2015
+ms.date: 7/1/2019
 ---
 # Query Options
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

@@ -2,7 +2,7 @@
 title: " Build Edm Model Explicitly"
 description: "convention model builder"
 
-ms.date: 04/17/2015
+ms.date: 7/1/2019
 ---
 # Build Edm Model Explicitly
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

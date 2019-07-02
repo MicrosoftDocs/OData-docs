@@ -2,7 +2,7 @@
 title: " Complex Type with Navigation Property"
 description: "Build Navigation Property on Complex Type"
 
-ms.date: 08/30/2016
+ms.date: 7/1/2019
 ---
 # Complex Type with Navigation Property
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

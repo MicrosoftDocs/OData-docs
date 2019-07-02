@@ -2,7 +2,7 @@
 title : "Case-insensitive names and unqualified functions/actions"
 description: "7.x WebApi URI parser using case-insensitive names and unqualified functions & actions"
 
-ms.date: 02/05/2018
+ms.date: 7/1/2019
 ---
 # Case-insensitive names and unqualified functions and actions
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

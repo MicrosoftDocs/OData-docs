@@ -2,7 +2,7 @@
 title : "4.2 Referential constraint"
 
 
-ms.date: 01/16/2015
+ms.date: 7/1/2019
 ---
 # Referential constraint
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

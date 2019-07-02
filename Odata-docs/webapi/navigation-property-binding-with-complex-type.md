@@ -2,7 +2,7 @@
 title : "13.3 Multiple Navigation property binding path"
 description: "Navigation property binding with complex and containment"
 
-ms.date: 08/30/2016
+ms.date: 7/1/2019
 ---
 # Multiple Navigation property binding path
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

@@ -1,6 +1,6 @@
 ---
 title : "OData roadmap"
-ms.date: 06/14/2019
+ms.date: 7/1/2019
 ---
 # OData 4.01
 

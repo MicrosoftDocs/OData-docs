@@ -1,6 +1,6 @@
 ---
 title : "Batch Support"
-ms.date: 05/12/2015
+ms.date: 7/1/2019
 ---
 # Batch Support
 

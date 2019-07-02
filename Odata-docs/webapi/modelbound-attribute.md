@@ -2,7 +2,7 @@
 title : "13.1 Model Bound Attributes"
 description: "Model bound attributes"
 
-ms.date: 08/05/2016
+ms.date: 7/1/2019
 ---
 # Model Bound Attributes
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

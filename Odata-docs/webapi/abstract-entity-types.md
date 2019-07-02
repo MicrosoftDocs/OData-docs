@@ -1,6 +1,6 @@
 ---
 title : "Abstract entity types"
-ms.date: 03/24/2015
+ms.date: 7/1/2019
 ---
 # Abstract entity types
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

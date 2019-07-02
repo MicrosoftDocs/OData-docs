@@ -2,7 +2,7 @@
 title: " Introduction Routing"
 description: "Routing Conventions"
 
-ms.date: 04/27/2015
+ms.date: 7/1/2019
 ---
 # Introduction Routing
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

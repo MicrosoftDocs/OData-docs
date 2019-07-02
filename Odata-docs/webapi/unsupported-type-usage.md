@@ -2,7 +2,7 @@
 title: " Customize unsupported types"
 description: ""
 
-ms.date: 09/11/2017
+ms.date: 7/1/2019
 ---
 # Customize unsupported types
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

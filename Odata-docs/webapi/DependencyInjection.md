@@ -2,7 +2,7 @@
 title : "13.4 Dependency Injection Support"
 description: "Dependency injection support"
 
-ms.date: 08/30/2016
+ms.date: 7/1/2019
 ---
 # Dependency Injection Support
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

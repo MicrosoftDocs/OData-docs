@@ -1,7 +1,7 @@
 ---
 title : "Merge complex & entity value serialize/deserialize"
 description: "Merge complex & entity"
-ms.date: 09/01/2016
+ms.date: 7/1/2019
 ---
 # Merge complex & entity value serialize/deserialize
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

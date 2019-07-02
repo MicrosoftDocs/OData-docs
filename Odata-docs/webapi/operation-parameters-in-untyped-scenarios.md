@@ -1,7 +1,7 @@
 ---
 title : "Operation parameters in untyped scenarios"
 
-ms.date: 03/30/2015
+ms.date: 7/1/2019
 ---
 # Operation paramters in untyped scenarios
 
