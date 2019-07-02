@@ -2,7 +2,7 @@
 title: " OData V4 Web API Scaffolding"
 description: "How to Use OData V4 Web API Scaffolding"
 
-ms.date: 06/03/2015
+ms.date: 7/1/2019
 ---
 # OData V4 Web API Scaffolding
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

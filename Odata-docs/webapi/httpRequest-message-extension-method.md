@@ -2,7 +2,7 @@
 title: "Use HttpRequestMessage Extension Methods"
 description: ""
 
-ms.date: 09/17/2015
+ms.date: 7/1/2019
 ---
 # Use HttpRequestMessage Extension Methods
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

@@ -2,7 +2,7 @@
 title : "13.5 Use ODL path classes "
 description: "Path change"
 
-ms.date: 09/01/2016
+ms.date: 7/1/2019
 ---
 # Use ODL path classes
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

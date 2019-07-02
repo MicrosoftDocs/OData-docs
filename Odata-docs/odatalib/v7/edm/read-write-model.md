@@ -3,7 +3,7 @@ title: " Read and write models-ODL V7"
 description: "Read and write entity data models using EdmLib APIs-ODL V7"
 author: madansr7
 ms.author: madansr7
-ms.date: 02/19/2019
+ms.date: 7/1/2019
 ms.topic: article
  
 ---

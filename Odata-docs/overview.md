@@ -1,7 +1,7 @@
 ---
 title : "OData overview"
 description: "OData overview."
-ms.date: 06/17/2019
+ms.date: 7/1/2019
 ---
 
 # Welcome to OData

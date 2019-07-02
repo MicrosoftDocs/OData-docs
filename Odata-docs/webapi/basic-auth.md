@@ -1,7 +1,7 @@
 ---
 title : "5.1 Basic authentication over HTTPS"
 
-ms.date: 04/17/2015
+ms.date: 7/1/2019
 ---
 # Basic authentication over HTTPS
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

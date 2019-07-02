@@ -1,7 +1,7 @@
 ---
 title : "OData IN Operator filter function"
 
-ms.date: 07/03/2018
+ms.date: 7/1/2019
 ---
 
 # IN Operator

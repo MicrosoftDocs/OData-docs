@@ -6,7 +6,7 @@ metadata:
   meta.description: from-team
   author: madansr7
   layout: LandingPage
-  ms.date: 06/25/2019
+  ms.date: 7/1/2019
 abstract:
   description: OData (Open Data Protocol) is an ISO/IEC approved, OASIS standard that defines a set of best practices for building and consuming REST APIs.
     It enables creation of REST-based services which allow resources identified using Uniform Resource Locators (URLs) and defined in a data model, to be published and edited by Web clients using simple HTTP messages.

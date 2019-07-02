@@ -1,7 +1,7 @@
 ---
 title : "4.24 MaxExpansionDepth in EnableQueryAttribute"
 
-ms.date: 07/12/2016
+ms.date: 7/1/2019
 ---
 # MaxExpansionDepth in EnableQueryAttribute
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

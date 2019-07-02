@@ -2,7 +2,7 @@
 title : "14.1 7.0 Beta1 & Beta2 & Beta4"
 description: "7.0 Beta for ASP.NET and ASP.NET Core"
 
-ms.date: 12/21/2017
+ms.date: 7/1/2019
 ---
 # WebAPI 7.0
 

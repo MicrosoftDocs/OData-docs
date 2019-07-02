@@ -1,6 +1,6 @@
 ---
 title : "OData tools to help learn and consume odata service"
-ms.date: 06/14/2019
+ms.date: 7/1/2019
 ---
 
 # Tools

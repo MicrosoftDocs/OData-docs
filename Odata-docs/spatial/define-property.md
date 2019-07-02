@@ -1,7 +1,7 @@
 ---
 title: "Define spatial properties"
 description: "Define spatial properties in entity data models"
-ms.date: 06/17/2019
+ms.date: 7/1/2019
 ---
 # Define spatial properties
 

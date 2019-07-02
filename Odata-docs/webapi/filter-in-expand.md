@@ -3,7 +3,7 @@
 title: " Nested $filter in $expand"
 description: ""
 
-ms.date: 03/20/2015
+ms.date: 7/1/2019
 ---
 # Nested $filter in $expand
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

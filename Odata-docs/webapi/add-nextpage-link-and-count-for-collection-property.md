@@ -2,7 +2,7 @@
 title: "Add NextPageLink and $count for collection property"
 description: ""
 
-ms.date: 09/15/2015
+ms.date: 7/1/2019
 ---
 # Add NextPageLink and $count for collection property
 **Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

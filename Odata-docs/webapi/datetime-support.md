@@ -1,6 +1,6 @@
 ---
 title : "4.1 DateTime support"
-ms.date: 01/16/2015
+ms.date: 7/1/2019
 ---
 
 # DateTime support

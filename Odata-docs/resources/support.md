@@ -1,6 +1,6 @@
 ---
 title : "OData support"
-ms.date: 06/14/2019
+ms.date: 7/1/2019
 ---
 
 # Support

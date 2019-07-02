@@ -1,7 +1,7 @@
 ---
 title : "4.7 Action parameter support"
 
-ms.date: 03/30/2015
+ms.date: 7/1/2019
 ---
 # Action parameter support
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

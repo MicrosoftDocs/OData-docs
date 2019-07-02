@@ -2,7 +2,7 @@
 title: " How To Debug"
 description: "how to debug OData webapi source"
 
-ms.date: 06/01/2015
+ms.date: 7/1/2019
 ---
 # How To Debug
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

@@ -2,7 +2,7 @@
 title: "Ignore query option"
 description: ""
 
-ms.date: 08/11/2015
+ms.date: 7/1/2019
 ---
 # Ignore query option
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

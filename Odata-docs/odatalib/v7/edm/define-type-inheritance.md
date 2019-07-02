@@ -3,7 +3,7 @@ title: " Define type inheritance-ODL V7"
 description: "Define type inheritance using EdmLib APIs-ODL V7"
 author: madansr7
 ms.author: madansr7
-ms.date: 02/19/2019
+ms.date: 7/1/2019
 ms.topic: article
 ---
 # Define type inheritance

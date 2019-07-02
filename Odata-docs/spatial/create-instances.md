@@ -1,7 +1,7 @@
 ---
 title: " Create spatial instances"
 description: "Create spatial instances"
-ms.date: 06/17/2019
+ms.date: 7/1/2019
 ---
 # Create spatial instances
 
