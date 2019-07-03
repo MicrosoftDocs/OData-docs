@@ -3,21 +3,6 @@
     "content": [
       {
         "files": [
-<<<<<<< HEAD
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "exclude": [
-          "**/obj/**",
-          "**/includes/**",
-          "_themes/**",
-          "_themes.pdf/**",
-          "README.md",
-          "LICENSE",
-          "LICENSE-CODE",
-          "ThirdPartyNotices"
-        ]
-=======
           "**/*.{md,yml}"
         ],
         "exclude": [
@@ -60,19 +45,14 @@
         ],
         "src": "webapi/v6",
         "dest": "webapi"
->>>>>>> master
       }
     ],
     "resource": [
       {
         "files": [
           "**/*.png",
-<<<<<<< HEAD
-          "**/*.jpg"
-=======
           "**/*.jpg",
           "**/*.svg"
->>>>>>> master
         ],
         "exclude": [
           "**/obj/**",
@@ -87,11 +67,6 @@
     "globalMetadata": {
       "breadcrumb_path": "/odata/breadcrumb/toc.json",
       "extendBreadcrumb": true,
-<<<<<<< HEAD
-      "feedback_system": "None"
-    },
-    "fileMetadata": {},
-=======
       "feedback_system": "None", 
       "ms.author":"madansr7",
       "ms.prod": "odata",
@@ -108,7 +83,6 @@
         "/odata/concepts/**/*.md": "OData .NET"
       }
     },
->>>>>>> master
     "template": [],
     "dest": "OData-conceptual",
     "markdownEngineName": "markdig"
