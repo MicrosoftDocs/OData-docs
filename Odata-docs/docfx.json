@@ -3,6 +3,7 @@
     "content": [
       {
         "files": [
+<<<<<<< HEAD
           "**/*.md",
           "**/*.yml"
         ],
@@ -16,13 +17,62 @@
           "LICENSE-CODE",
           "ThirdPartyNotices"
         ]
+=======
+          "**/*.{md,yml}"
+        ],
+        "exclude": [
+          "odatalib/**/*",
+          "webapi/v6/*",
+          "client/v6/*"
+        ]
+      },
+      {
+        "files": [
+          "*.{md,yml}"
+        ],
+        "src": "odatalib/v6",
+        "dest": "odatalib"
+      },
+      {
+        "files": [
+          "*.{md,yml}"
+        ],
+        "src": "odatalib/v7",
+        "dest": "odatalib"
+      },
+      {
+        "files": [
+          "*.{md,yml}"
+        ],
+        "src": "odatalib/v7/edm",
+        "dest": "odatalib/edm"
+      },
+      {
+        "files": [
+          "*.{md,yml}"
+        ],
+        "src": "client/v6",
+        "dest": "client"
+      },
+      {
+        "files": [
+          "*.{md,yml}"
+        ],
+        "src": "webapi/v6",
+        "dest": "webapi"
+>>>>>>> master
       }
     ],
     "resource": [
       {
         "files": [
           "**/*.png",
+<<<<<<< HEAD
           "**/*.jpg"
+=======
+          "**/*.jpg",
+          "**/*.svg"
+>>>>>>> master
         ],
         "exclude": [
           "**/obj/**",
@@ -37,9 +87,28 @@
     "globalMetadata": {
       "breadcrumb_path": "/odata/breadcrumb/toc.json",
       "extendBreadcrumb": true,
+<<<<<<< HEAD
       "feedback_system": "None"
     },
     "fileMetadata": {},
+=======
+      "feedback_system": "None", 
+      "ms.author":"madansr7",
+      "ms.prod": "odata",
+      "ms.topic": "conceptual",
+      "uhfHeaderId": "MSDocsHeader-OData",
+      "titleSuffix": "OData"
+    },
+    "fileMetadata": {
+      "titleSuffix": {
+        "/odata/client/**/*.md": "OData Client",
+        "/odata/odatalib/**/*.md": "OData Core library",
+        "/odata/webapi/**/*.md": "OData AspNet WebAPI",
+        "/odata/spatial/**/*.md": "Microsoft Spatial",
+        "/odata/concepts/**/*.md": "OData .NET"
+      }
+    },
+>>>>>>> master
     "template": [],
     "dest": "OData-conceptual",
     "markdownEngineName": "markdig"
