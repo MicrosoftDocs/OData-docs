@@ -10,6 +10,15 @@ metadata:
 abstract:
   description: OData (Open Data Protocol) is an ISO/IEC approved, OASIS standard that defines a set of best practices for building and consuming REST APIs.
     It enables creation of REST-based services which allow resources identified using Uniform Resource Locators (URLs) and defined in a data model, to be published and edited by Web clients using simple HTTP messages.
+  aside:
+    image:
+      alt: Supercharging your Web APIs with OData and ASP.NET Core
+      height: 110
+      src: assets/video-thumb.jpg
+      width: 250
+    title: Supercharging your Web APIs with OData and ASP.NET Core (19:48)
+    href: https://youtu.be/ZCDWUBOJ5FU
+    width: 250
 sections:
 - items:
   - type: list
