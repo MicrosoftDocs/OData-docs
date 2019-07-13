@@ -149,7 +149,7 @@
             href: /odata/webapi/new-default-settings-v7
           - name: Key-Value Binding
             href: /odata/webapi/key-value-binding
-          - name: Merge Complex Type and Entity Type
+          - name: Merging Complex Types and Entity Types
             href: /odata/webapi/merge-complex-and-entity
       - name: Extending WebAPI
         items:
