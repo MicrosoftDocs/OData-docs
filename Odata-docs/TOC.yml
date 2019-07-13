@@ -1,4 +1,4 @@
-- name: OData documentation
+- name: OData Documentation
   href: /odata/index
   items:
   - name: What is OData?
@@ -10,7 +10,7 @@
     items:
     - name: Data Model
       href: /odata/concepts/data-model
-    - name: Url components
+    - name: Url Components
       href: /odata/concepts/url-components
     # - name: Service metadata
       # href: /odata/concepts/metadata
@@ -22,17 +22,17 @@
       href: /odata/concepts/get-data
   - name: Modifying Data
     items:
-    - name: Post data
+    - name: Post Data
       href: /odata/concepts/create-data
-    - name: Update data
+    - name: Update Data
       href: /odata/concepts/update-data
     - name: Delete Data
       href: /odata/concepts/delete-data
-  - name: Query options
+  - name: Query Options
     items:
-    - name: Query options overview
+    - name: Query Options Overview
       href: /odata/concepts/queryoptions-overview
-    - name: Query options usage
+    - name: Query Options Usage
       href: /odata/concepts/queryoptions-usage
   # - name: Advanced
   #   items:
@@ -53,163 +53,163 @@
   items:
   - name: ASP.NET WebAPI
     items:
-      - name: Getting started
+      - name: Getting Started
         href: /odata/webapi/getting-started
-      - name: Model creation
+      - name: Model Creation
         items:
-        - name: Model builder overview
+        - name: ModelBuilder Overview
           href: /odata/webapi/model-builder-abstract
-        - name: Build Edm model explicit
+        - name: Explicit EDM Models
           href: /odata/webapi/model-builder-untyped
-        - name: Convention model builder
+        - name: ODataConventionModelBuilder
           href: /odata/webapi/convention-model-builder
-        - name: Non-convention model builder
+        - name: ODataModelBuilder
           href: /odata/webapi/model-builder-nonconvention
       - name: Routing
         items:
-        - name: Routing overview
+        - name: Routing Overview
           href: /odata/webapi/routing-abstract
-        - name: Routing conventions
+        - name: Routing Conventions
           href: /odata/webapi/built-in-routing-conventions
         - name: Attribute Routing
           href: /odata/webapi/attribute-routing
-        - name: Custom routing
+        - name: Custom Routing
           href: /odata/webapi/custom-routing-convention
       - name: How-To
         items:
-          - name: DateTime operations
+          - name: DateTime Operations
             href: /odata/webapi/datetime-support
           - name: Edm.Date and Edm.TimeOfDay
             href: /odata/webapi/date-and-timeofday-support
           - name: Date/TimeOfDay with Entity Framework
             href: /odata/webapi/date-timeofday-with-entity-framework
-          - name: Referential constraint
+          - name: Referential Constraint
             href: /odata/webapi/referential-constraint
           - name: Nested $filter in $expand
             href: /odata/webapi/filter-in-expand
-          - name: Abstract entity types
+          - name: Abstract Entity Types
             href: /odata/webapi/abstract-entity-types
-          - name: Function parameters
+          - name: Function Parameters
             href: /odata/webapi/function-parameter-support
-          - name: Action parameters
+          - name: Action Parameters
             href: /odata/webapi/action-parameter-support
-          - name: Operation parameters in untyped scenarios
+          - name: Operation Parameters in Untyped Scenarios
             href: /odata/webapi/operation-parameters-in-untyped-scenarios
-          - name: Query by dynamic properties
+          - name: Query by Dynamic Properties
             href: /odata/webapi/query-by-dynamic-properties
-          - name: Open type in untyped scenarios
+          - name: Open Type in Untyped Scenarios
             href: /odata/webapi/open-type-in-untyped-scenarios
           - name: Query Options
             href: /odata/webapi/query-option
           - name: Delta Feed
             href: /odata/webapi/DeltaFeed_support
-          - name: Capabilities vocabulary
+          - name: Capabilities Vocabulary
             href: /odata/webapi/capabilities-vocabulary-support
-          - name: AutoExpand attribute
+          - name: AutoExpand Attribute
             href: /odata/webapi/autoexpand-attribute
-          - name: Ignoring query option
+          - name: Ignoring Query Options
             href: /odata/webapi/ignore-query-option
-          - name: Alternate keys
+          - name: Alternate Keys
             href: /odata/webapi/alternate-key
-          - name: NextPageLink and $count for collections
+          - name: NextPageLink and $count for Collections
             href: /odata/webapi/add-nextpage-link-and-count-for-collection-property
           - name: Prefer OData.include-annotations
             href: /odata/webapi/include-annotations
           - name: Prefer OData.continue-on-error
             href: /odata/webapi/continue-on-error
-          - name: Namespace for operations in model builder
+          - name: Namespacing Operations in ModelBuilder
             href: /odata/webapi/set-namespaces-for-operations
-          - name: HttpRequestMessage extension methods
+          - name: HttpRequestMessage Extension Methods
             href: /odata/webapi/httpRequest-message-extension-method
           - name: OData Simplified Uri
             href: /odata/webapi/simplified-uri-convention
           - name: MaxExpansionDepth in EnableQuery
             href: /odata/webapi/max-expansion-depth-in-enable-query-attribute
-          - name: Custom UriFunctions binding
+          - name: Custom UriFunctions Binding
             href: /odata/webapi/bind-custom-urifunctions-to-clr-methods
           - name: IN Operator
             href: /odata/webapi/in-operator
-          - name: Case-insensitive names and unqualified functions/actions
+          - name: Case-Insensitive Names and Unqualified Functions/Actions
             href: /odata/webapi/caseInsensitiveAndQualifiedFunctions
-          - name: Simplified optional-$-prefix query option
+          - name: Simplified Optional '$' QueryOptions
             href: /odata/webapi/enable-no-dollar-queryoptions
-          - name: Batch requests
+          - name: Batch Requests
             href: /odata/webapi/batch
           - name: Adding unit tests
             href: /odata/webapi/unittest-e2etest
-          - name: Expanded nav props in delta response
+          - name: Expanded Navigation Properties in Delta Responses
             href: /odata/webapi/expanded-navigation-delta
           - name: Scaffolding
             href: /odata/webapi/scaffolding
-          - name: Navigation Property Binding with Complex types
+          - name: Navigation Property Binding with Complex Types
             href: /odata/webapi/navigation-property-binding-with-complex-type
           - name: SkipToken & Deltatoken
             href: /odata/webapi/skipToken-for-server-side-paging
-          - name: Default settings
+          - name: Default Settings
             href: /odata/webapi/new-default-settings-v7
           - name: Key-Value Binding
             href: /odata/webapi/key-value-binding
-          - name: Merge complex type and entity type
+          - name: Merge Complex Type and Entity Type
             href: /odata/webapi/merge-complex-and-entity
       - name: Extending WebAPI
         items:
-        - name: Custom URL parsing
+        - name: Custom Url Parsing
           href: /odata/webapi/custom-url-parsing
-        - name: Relax version constraints
+        - name: Relax Version Constraints
           href: /odata/webapi/relax-version-constraints
         - name: Customize OData Formatter
           href: /odata/webapi/customize-formatter
         - name: Custom Stream Entity
           href: /odata/webapi/stream-entity
-        - name: Customize unsupported types
+        - name: Customize Unsupported Types
           href: /odata/webapi/unsupported-type-usage
-  - name: WebApi .NET Core
+  - name: ASP.NET Core WebAPI
     items:
     - name: Getting started
       href: /odata/webapi/netcore
-  - name: OData Lib
+  - name: ODataLib
     items:
-    - name: Core lib
+    - name: Core Library
       items:
-        - name: Write OData payload
+        - name: Write OData Payload
           href: /Odata/odatalib/write-payload
-        - name: Fluent functional-style writer API
+        - name: Fluent Writer API
           href: /odata/odatalib/fluent-writer-api
-        - name: Read OData payload
+        - name: Read OData Payload
           href: /odata/odatalib/read-payload
         - name: Use ODataUriParser
           href: /odata/odatalib/use-uri-parser
         - name: Dependency Injection
           href: /odata/odatalib/di-support
-        - name: Parsing uri path template
+        - name: Parsing Uri Path Template
           href: /odata/odatalib/parsing-url-template
         - name: Add additional prefer header
           href: /odata/odatalib/additional-prefer-header
-        - name: Skiptoken & Deltatoken
+        - name: SkipToken & DeltaToken
           href: /odata/odatalib/skipToken-and-deltaToken
-        - name: Write NextPageLink/Count for collection
+        - name: Write NextPageLink/Count for Collection
           href: /odata/odatalib/nextpage-link-and-count-for-collection
-        - name: Override primitive payload serialization 
+        - name: Override Primitive Payload Serialization 
           href: /odata/odatalib/override-primitive-serialization-deserialization
-        - name: Navigation property under complex type
+        - name: Navigation Properties on Complex Types
           href: /odata/odatalib/navigation-under-complex
-        - name: Serialization additional properties
+        - name: Serializing Additional Properties
           href: /odata/odatalib/allow-serialization-of-additional-properties
-        - name: Expanded Nav Property in Delta Response
+        - name: Expanded Navigation Properties in Delta Responses
           href: /odata/odatalib/expanded-navigation-delta
-        - name: Basic Uri parser for aggregations
+        - name: Basic Uri Parser for Aggregations
           href: /odata/odatalib/aggregation-support
-        - name: Customizable type facets promotion in URI parsing
+        - name: Customizable Type Facets Promotion in Uri Parsing
           href: /odata/odatalib/customizable-type-facets-promotion
-        - name: Merge complex type and entity type
+        - name: Merge Complex Type and Entity Type
           href: /odata/odatalib/merge-complex-and-entity
         - name: OData Uri Path Parser Extensibility
           href: /odata/odatalib/uri-parser-path-extensibility
-        - name: Override type annotation in serialization
+        - name: Override Type Annotation in Serialization
           href: /odata/odatalib/type-annotation
-        - name: Centralized control for OData Simplified Options
+        - name: Centralized Control for OData Simplified Options
           href: /odata/odatalib/simplified-options
-        - name: Read and Write Untyped values in ODataLib
+        - name: Read and Write Untyped Values in ODataLib
           href: /odata/odatalib/support-untyped-json
         - name: IN Operator
           href: /odata/odatalib/in-operator
@@ -221,145 +221,145 @@
       #   href: /odata/odatalib/edm/model-building
       # - name: Serializing/DeSe model
       #   href: /odata/odatalib/edm/model-serialization
-      - name: Build a basic model
+      - name: Building a Basic Model
         href: /odata/odatalib/edm/build-basic-model
-      - name: Read and write models
+      - name: Reading and Writing Models
         href: /odata/odatalib/edm/read-write-model
-      - name: Define entity relations
+      - name: Entity Relations
         href: /odata/odatalib/edm/define-entity-relations
-      - name: Define singletons
+      - name: Singletons
         href: /odata/odatalib/edm/define-singleton
-      - name: Define type inheritance
+      - name: Type Inheritance
         href: /odata/odatalib/edm/define-type-inheritance
-      - name: Define operations
+      - name: Operations
         href: /odata/odatalib/edm/define-operations
-      - name: Define annotations
+      - name: Annotations
         href: /odata/odatalib/edm/define-annotations
-      - name: Using model utilities
+      - name: Using Model Utilities
         href: /odata/odatalib/edm/using-model-utilities
-      - name: Model references
+      - name: Model References
         href: /odata/odatalib/edm/model-references
-      - name: Define referential constraints
+      - name: Referential Constraints
         href: /odata/odatalib/edm/define-referential-constraints
-      - name: Specify type facets for type definitions
+      - name: Specify Type Facets for Type Definitions
         href: /odata/odatalib/edm/type-facets
-      - name: Add annotations to Enum Member
+      - name: Adding Annotations to Enum Members
         href: /odata/odatalib/add-annotations-to-enummember
-      - name: Alternate Key
+      - name: Alternate Keys
         href: /odata/odatalib/alternate-key
-      - name: Capabilities vocabulary
+      - name: Capabilities Vocabulary
         href: /odata/odatalib/capabilities-vocabulary
       - name: Multi-Navigation Property Bindings
         href: /odata/odatalib/multi-binding
-      - name: Navigation property partner
+      - name: Navigation Property Partners
         href: /odata/odatalib/navigation-partner
       - name: Optional Parameters
         href: /odata/odatalib/optional-parameters
     - name: Batching
       items:
-        - name: Batching requests
+        - name: Batching Requests
           href: /odata/odatalib/json-batch
   - name: OData Client
     items:
-      - name: Basic CRUD operations
+      - name: Basic CRUD Operations
         href: /odata/client/basic-crud-operations
       - name: Annotations
         href: /odata/client/annotation-support
-      - name: Async operations
+      - name: Async Operations
         href: /odata/client/async-operations
-      - name: Batch operations
+      - name: Batch Operations
         href: /odata/client/batch-operations
-      - name: Client tracking
+      - name: Client Tracking
         href: /odata/client/tracking
-      - name: Server driven paging
+      - name: Server-Driven Paging
         href: /odata/client/deal-with-server-driven-paging
-      - name: Get response content
+      - name: Getting Response Content
         href: /odata/client/get-response-content
       - name: Client Code Generation Tool
         href: /odata/client/code-generation-tool
-      - name: Query options
+      - name: Query Options
         href: /odata/client/query-options
-      - name: Client hooks
+      - name: Client Hooks
         href: /odata/client/using-hooks
-      - name: Using Httpclient 
+      - name: Using HttpClient 
         href: /odata/client/using-httpclient
-  - name: Spatial lib
+  - name: Spatial
     items:
-        - name: Define spatial properties
+        - name: Defining Spatial Properties
           href: /odata/spatial/define-property
-        - name: Create spatial instances
+        - name: Creating Spatial Instances
           href: /odata/spatial/create-instances
-  - name: How to debug
+  - name: Debugging
     href: /odata/webapi/debugging
-  - name: Securing your API
+  - name: Securing Your API
     items:
-      - name: Basic auth setup
+      - name: Basic Auth Setup
         href: /odata/webapi/basic-auth
   - name: Legacy APIs
     items: 
-      - name: OData Lib v6
+      - name: ODataLib v6
         items:
-          - name: Build basic model
+          - name: Building Basic Models
             href: /odata/odatalib/build-basic-model
-          - name: Create spatial instances
+          - name: Creating Spatial Instances
             href: /odata/odatalib/create-spatial-instances
-          - name: Define annotations
+          - name: Annotations
             href: /odata/odatalib/define-annotations
-          - name: Define entity relations
+          - name: Entity Relations
             href: /odata/odatalib/define-entity-relations
-          - name: Define operations
+          - name: Operations
             href: /odata/odatalib/define-operations
-          - name: Define referential constraints
+          - name: Referential Constraints
             href: /odata/odatalib/define-referential-constraints
-          - name: Define singleton
+          - name: Singletons
             href: /odata/odatalib/define-singleton
-          - name: Define spatial property
+          - name: Spatial Properties
             href: /odata/odatalib/define-spatial-property
-          - name: Define type inheritance
+          - name: Type Inheritance
             href: /odata/odatalib/define-type-inheritance
-          - name: Model references
+          - name: Model References
             href: /odata/odatalib/model-references
-          - name: Read payload
+          - name: Reading Payloads
             href: /odata/odatalib/read-payload-v6
-          - name: Read write model
+          - name: Reading and Writing Models
             href: /odata/odatalib/read-write-model
-          - name: Use uri parser
+          - name: Using Uri Parser
             href: /odata/odatalib/use-uri-parser-v6
-          - name: Using model utilities
+          - name: Using Model Utilities
             href: /odata/odatalib/using-model-utilities
-          - name: Write payload
+          - name: Writing Payloads
             href: /odata/odatalib/write-payload-v6
-      - name: Webapi v6
+      - name: WebAPI v6
         items:
-          - name: Add annotations to enummember 
+          - name: Adding Annotations to EnumMembers 
             href: /odata/webapi/add-annotations-to-enummember
-          - name: Additional prefer header 
+          - name: Additional Prefer Header 
             href: /odata/webapi/additional-prefer-header
-          - name: Aggregation support 
+          - name: Aggregation Support 
             href: /odata/webapi/aggregation-support
-          - name: Alternate key 
+          - name: Alternate Keys
             href: /odata/webapi/alternate-key-v6
-          - name: Capabilities vocabulary 
+          - name: Capabilities Vocabulary 
             href: /odata/webapi/capabilities-vocabulary
-          - name: Composable function in client 
+          - name: Composable Functions in Client 
             href: /odata/webapi/composable-function-in-client
-          - name: Customizable type facets promotion 
+          - name: Customizable Type Facets
             href: /odata/webapi/customizable-type-facets-promotion
-          - name: Disable instance annotation 
+          - name: Disabling Instance Annotation 
             href: /odata/webapi/disable-instance-annotation
-          - name: Expanded navigation delta 
+          - name: Expanded Navigation Properties in Delta Responses
             href: /odata/webapi/expanded-navigation-delta
-          - name: Nextpage link and count for collection 
+          - name: Paging
             href: /odata/webapi/nextpage-link-and-count-for-collection
-          - name: Override primitive serialization deserialization 
+          - name: Overriding Primitive Serializers
             href: /odata/webapi/override-primitive-serialization-deserialization
-          - name: Parsing url template 
+          - name: Parsing Url Template 
             href: /odata/webapi/parsing-url-template
-          - name: Simplified convention 
+          - name: Simplified Conventions
             href: /odata/webapi/simplified-convention
-          - name: Support abstract entity type in client 
+          - name: Supporting Abstract Entity Types in Client 
             href: /odata/webapi/support-abstract-entity-type-in-client
-          - name: Support untyped json 
+          - name: Supporting Untyped Json
             href: /odata/webapi/support-untyped-json
 - name: Resources
   items:
@@ -371,9 +371,9 @@
       href: /odata/resources/roadmap
 - name: Changelog
   items:
-    - name: OData lib changes
+    - name: ODataLib Changes
       href: /odata/changelog/odatalib-7x
-    - name: WebApi lib changes
+    - name: WebApi Changes
       href: /odata/changelog/webapi-7x
 # - name: 10.2 Work around for SingleResult.Create an empty result
 #   href: posts\work-around-for-singleresult-create
