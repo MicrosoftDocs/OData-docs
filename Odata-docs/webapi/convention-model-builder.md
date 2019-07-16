@@ -9,7 +9,7 @@ ms.date: 7/1/2019
 
 In the previous two sections, we walk you through the required aspects to build an Edm model by directly using **[ODatalib](https://www.nuget.org/packages/Microsoft.OData.Core/)** or leveraging `ODataModelBuilder` fluent API in WebApi OData. 
 
-Obvious, there are many codes you should add to develop a simple *Customer-Order* business model. However, Web API OData also provides a simple method by using `ODataConventionModelBuilder` to do the same thing. It's called **convention model builder** and can extremely reduce your workload.
+Obviously, there are many codes you should add to develop a simple *Customer-Order* business model. However, Web API OData also provides a simple method by using `ODataConventionModelBuilder` to do the same thing. It's called **convention model builder** and can greatly reduce your workload.
 
 Convention model builder uses a set of pre-defined rules (called *conventions*) to help model builder identify Edm types, keys, associations, relationships, etc automatically, and build them into the final Edm data model.
 
@@ -17,11 +17,11 @@ In this section, we will go through all conventions used in convention model bui
 
 ### CLR Models
 
-We also use the *Customer-Order* business model presented in abstract section.
+We also use the *Customer-Order* business model present in the abstract section.
 
 ### Build the Edm Model
 
-The following codes can add all related entity types, complex types, enum type and the corresponding entity sets into the Edm model:
+The following code can add all related entity types, complex types, enum type and the corresponding entity sets into the Edm model:
 ```C#
 public static IEdmModel GetConventionModel()
 {
@@ -33,7 +33,7 @@ public static IEdmModel GetConventionModel()
 }
 ```
 
-It will generate the below metadata document:
+It will generate the following metadata document:
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="4.0" xmlns:edmx="https://docs.oasis-open.org/odata/ns/edmx">
@@ -82,12 +82,12 @@ It will generate the below metadata document:
 </edmx:Edmx>
 ```
 
-[!Note]: We omit the **function/action** building because it's same as non-convention model builder.
+[!Note]: We omit the **function/action** building because it's the same as the non-convention model builder.
 
 ### Conventions
 
-Wow, how the convention model builder do that! Actually, convention model builder uses a set of **pre-defined** rules (called *conventions*) to achieve this. 
-If you open the source code for [`ODataConventionModelBuilder`](https://github.com/OData/WebApi/blob/master/OData/src/System.Web.OData/OData/Builder/ODataConventionModelBuilder.cs), You can find the following codes at the beginning of the `ODataConventionModelBuilder` class:
+Wow, how did the convention model builder do that! Actually, convention model builder uses a set of **pre-defined** rules (called *conventions*) to achieve this. 
+If you open the source code for [`ODataConventionModelBuilder`](https://github.com/OData/WebApi/blob/master/OData/src/System.Web.OData/OData/Builder/ODataConventionModelBuilder.cs), you can find the following code at the beginning of the `ODataConventionModelBuilder` class:
 
 ```C#
 private static readonly List<IConvention> _conventions = new List<IConvention>
@@ -123,7 +123,7 @@ private static readonly List<IConvention> _conventions = new List<IConvention>
 };
 ```
 
-Where lists the conventions wrapped in convention model builder. However, in `ODataConventionModelBuilder`, there are some conventions which can't be clearly listed. Let's walk you through these conventions one by one with some relevant attributes & annotations to illustrate the convention model builder.
+Which lists the conventions wrapped in a convention model builder. However, in `ODataConventionModelBuilder`, there are some conventions which can't be clearly listed. Let's walk you through these conventions one by one with some relevant attributes & annotations to illustrate the convention model builder.
 
 #### Type Inheritance Identify Convention
 
@@ -187,7 +187,7 @@ It will generate the below entity type in the resulted EDM document:
 </EntityType>
 ```
 
-There is no `Base` entity type existed.
+There is no `Base` entity type existing.
 
 #### Abstract type convention
 
@@ -286,7 +286,7 @@ public class PairItem
 Then, the above two types wil be built as `Complex Type`.
 
 #### DataContract & DataMember
-Rule: If using DataContract or DataMember, only property with [DataMember] attribute will be added into Edm model.
+Rule: If using DataContract or DataMember, only properties with [DataMember] attribute will be added into Edm model.
 
 ```C#
 [DataContract]
@@ -301,7 +301,7 @@ public class Trip
 }
 ```
 
-The resulted EDM document is:
+The resulting EDM document is:
 
 ```XML
 <EntityType Name="Trip">
@@ -341,7 +341,7 @@ The result will become:
 
 Rule: [NotMapped] deselects the property to be serialized or deserialized, so to some extent, it can be seen as the converse of DataContract & DataMember.
 
-For example, the above if `Trip` class is changed to the below, it generates exactly the same Trip Entity in EDM document, that is, no ‘SharedId’ property.
+For example, the above if `Trip` class is changed to the below, it generates exactly the same Trip Entity in EDM document, that is, no ‘ShareId’ property.
 
 ```C#
 [DataContract]
@@ -371,7 +371,7 @@ The result is:
 
 #### Required Attribute Convention
 
-Rule: The property with [Required] attribute will be non-nullable. 
+Rule: The properties with [Required] attribute will be non-nullable. 
 
 ```C#
 
@@ -427,7 +427,7 @@ The expected result should be like the below:
 ```
 
 #### Timestamp Attribute Convention
-Rule: It's same as [ConcurrencyCheck].
+Rule: It's the same as [ConcurrencyCheck].
 
 ```C#
 
@@ -460,7 +460,7 @@ The expected result should be like the below:
 Rule: It has the same effect as `[NotMapped]` attribute. It is able to revert the `[DataMember] `attribute on the property when the model class doesn’t have `[DataContract]` attribute.
 
 #### NonFilterable & NotFilterable Attribute Convention
-Rule: Property marked with [NonFilterable] or [NotFilterable] will not support `$filter` query option.
+Rule: Properties marked with [NonFilterable] or [NotFilterable] will not support `$filter` query option.
 ```C#
 public class QueryLimitCustomer
 {
@@ -481,7 +481,7 @@ The query specified in the URI is not valid. The property 'Title' cannot be used
 ```
 
 #### NotSortable & Unsortable Attribute Convention
-Rule: Property marked with [NotSortable] or [Unsortable] will not support `$orderby` query option.
+Rule: Properties marked with [NotSortable] or [Unsortable] will not support `$orderby` query option.
 ```C#
 public class QueryLimitCustomer
 {
@@ -502,7 +502,7 @@ The query specified in the URI is not valid. The property 'Title' cannot be used
 ```
 
 #### NotNavigable Attribute Convention
-Rule: Property marked with [NotNavigable] will not support `$select` query option.
+Rule: Properties marked with [NotNavigable] will not support `$select` query option.
 ```C#
 public class QueryLimitCustomer
 {
@@ -522,7 +522,7 @@ The query specified in the URI is not valid. The property 'address' cannot be us
 ```
 
 #### NotExpandable Attribute Convention
-Rule: Property marked with [NotExpandable] will not support `$expand` query option.
+Rule: Properties marked with [NotExpandable] will not support `$expand` query option.
 ```C#
 public class QueryLimitCustomer
 {
@@ -542,7 +542,7 @@ The query specified in the URI is not valid. The property 'Orders' cannot be use
 ```
 
 #### NotCountable Attribute Convention
-Rule: Property marked with [NotCountable] will not support `$count` query option.
+Rule: Properties marked with [NotCountable] will not support `$count` query option.
 ```C#
 public class QueryLimitCustomer
 {
@@ -563,7 +563,7 @@ The query specified in the URI is not valid. The property 'Addresses' cannot be 
 
 #### ForeignKey Attribute Convention
 
-Rule: Property marked with [ForeignKey] will be used to build referential constraint.
+Rule: Properties marked with [ForeignKey] will be used to build referential constraint.
 
 ```C#
 public class ForeignCustomer
@@ -613,7 +613,7 @@ It'll get the same result.
 
 #### ActionOnDelete Attribute Convention
 
-Rule: Property marked with [ActionOnDelete] will be used to build referential constraint action on delete.
+Rule: Properties marked with [ActionOnDelete] will be used to build referential constraint action on delete.
 
 ```C#
 public class ForeignCustomer
