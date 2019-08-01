@@ -9,6 +9,69 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.2.0
+
+The NuGet packages for ASP.NET Web API OData v7.2.0 are available on the [NuGet gallery](https://www.nuget.org/).
+
+You can install or update the NuGet packages for OData Web API v7.2.0 using the [Package Manager Console](https://docs.nuget.org/docs/start-here/using-the-package-manager-console):
+
+```PowerShell
+
+PM> Install-Package Microsoft.AspNetCore.OData -Version 7.2.0 
+```
+
+or
+
+```PowerShell
+
+PM> Install-Package Microsoft.AspNet.OData -Version 7.2.0
+
+```
+### New Features:
+
+* [ [#1844](https://github.com/OData/WebApi/pull/1844) ] Support count in orderby and filter query options
+
+* [ [#1839](https://github.com/OData/WebApi/pull/1839) ] Support 4.01 OData version
+
+* [ [#1797](https://github.com/OData/WebApi/pull/1797) ] Enable $ref after $expand
+
+* [ [#1728](https://github.com/OData/WebApi/pull/1728) ] Support $apply for EF Core
+
+* [ [#1724](https://github.com/OData/WebApi/pull/1724) ] Custom NextLink generation with default SkipToken implementation
+
+
+### Improvements and fixes:
+
+* [ [#1867](https://github.com/OData/WebApi/pull/1867) ] Fix ordering the keys according to the ColumnAttribute.Order property
+Update to OData Library v7.6 1825
+* [ [#1855](https://github.com/OData/WebApi/pull/1855) ] Flatten properties before using in aggregation to avoid nested querie…
+
+* [ [#1854](https://github.com/OData/WebApi/pull/1854) ] Fix error response in ValidateODataBatchRequest
+
+* [ [#1851](https://github.com/OData/WebApi/pull/1851) ] Support default value for primitive and enum property
+
+* [ [#1849](https://github.com/OData/WebApi/pull/1849) ] Improvement support continue-on-error in batch request
+
+* [ [#1825](https://github.com/OData/WebApi/pull/1825) ] Update to OData Library v7.6
+
+* [ [#1823](https://github.com/OData/WebApi/pull/1823) ] Support leading and trailing spaces in query options
+
+* [ [#1802](https://github.com/OData/WebApi/issues/1802) ] ODataEnumDeserializer.ReadInline fails with InvalidCastException when edmType comes from CsdlParser
+
+* [ [#1742](https://github.com/OData/WebApi/pull/1715) ]  Fixes and coverage for primitives in URL parameters.
+
+* [ [#1725](https://github.com/OData/WebApi/issues/1802) ]
+No coercion operator is defined between types 'Microsoft.OData.Edm.Date' and 'System.DateTimeOffset'.
+* [ [#1715](https://github.com/OData/WebApi/pull/1715) ] Fix for Nav/any(f:false) conversion
+
+* [ [#1693](https://github.com/OData/WebApi/pull/1693) ] Fix assignment of CollectionExpandedProperty.TotalCount when using EF
+
+* [ [#1653](https://github.com/OData/WebApi/pull/1653) ] Fixing N+1 query bug on expands
+
+* [ [#1542](https://github.com/OData/WebApi/pull/1542) ] Fix SelectExpandBinder to take into account constant parameterization
+
+---
+
 ## WebAPI 7.1.0
 
 The NuGet packages for ASP.NET Web API OData v7.1.0 are available on the [NuGet gallery](https://www.nuget.org/).
