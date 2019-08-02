@@ -163,7 +163,7 @@
           href: /odata/webapi/stream-entity
         - name: Customize unsupported types
           href: /odata/webapi/unsupported-type-usage
-  - name: WebApi .NET Core
+  - name: ASP.NET Core
     items:
     - name: Getting started
       href: /odata/webapi/netcore
