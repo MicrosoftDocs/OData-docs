@@ -291,6 +291,14 @@
           href: /odata/spatial/create-instances
   - name: How to debug
     href: /odata/webapi/debugging
+  - name: Migration
+    items:
+        - name: OData Migration Library
+          href: /odata/migration/odata-migration
+        - name: Prerequisites
+          href: /odata/migration/prerequisites
+        - name: Setup
+          href: /odata/migration/setup
   - name: Securing your API
     items:
       - name: Basic auth setup
