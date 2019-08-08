@@ -63,15 +63,15 @@ public static void Configure(IApplicationBuilder builder)
 	// If using batching, you must call UseODataBatching before UseODataMigration
 	builder.UseODataBatching();
 
-	IEdmModel v4model = ...
+	IEdmModel v4model = /*your model*/;
 
-    // If you are working with a Data.Edm.IEdmModel:
-    Data.Edm.IEdmModel v3model = ...
-    builder.UseODataMigration(v3model, v4model);
+	// If you are working with a Data.Edm.IEdmModel:
+	Data.Edm.IEdmModel v3model = /*your model*/;
+	builder.UseODataMigration(v3model, v4model);
 
-    // If you have your OData V3 model representation as an EDMX string (e.g., by querying your V3 service for metadata):
-    //string v3Edmx = ...
-	//builder.UseODataMigration(v3Edmx, v4model);
+	// If you have your OData V3 model representation as an EDMX string (e.g., by querying your V3 service for metadata)
+	// string v3Edmx = /*your EDMX string*/
+	// builder.UseODataMigration(v3Edmx, v4model);
 
 	// your code here
 }
