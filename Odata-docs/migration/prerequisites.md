@@ -8,7 +8,7 @@ ms.topic: article
  
 ---
 # Prerequisites for using OData Migration
-**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odatalib-v7.md)]
 
 The OData Migration library applies to:
 

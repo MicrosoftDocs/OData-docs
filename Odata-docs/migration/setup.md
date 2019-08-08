@@ -8,7 +8,7 @@ ms.topic: article
  
 ---
 # Setup
-**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odatalib-v7.md)]
 
 There are two steps to configure your service to use OData Migration.
 
