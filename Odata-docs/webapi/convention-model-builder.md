@@ -9,7 +9,7 @@ ms.date: 7/1/2019
 
 In the previous two sections, we walk you through the required aspects to build an Edm model by directly using **[ODatalib](https://www.nuget.org/packages/Microsoft.OData.Core/)** or leveraging `ODataModelBuilder` fluent API in WebApi OData. 
 
-Obvious, there are many codes you should add to develop a simple *Customer-Order* business model. However, Web API OData also provides a simple method by using `ODataConventionModelBuilder` to do the same thing. It's called **convention model builder** and can extremely reduce your workload.
+Obviously, there are many codes you should add to develop a simple *Customer-Order* business model. However, Web API OData also provides a simple method by using `ODataConventionModelBuilder` to do the same thing. It's called **convention model builder** and can greatly reduce your workload.
 
 Convention model builder uses a set of pre-defined rules (called *conventions*) to help model builder identify Edm types, keys, associations, relationships, etc automatically, and build them into the final Edm data model.
 
@@ -17,11 +17,12 @@ In this section, we will go through all conventions used in convention model bui
 
 ### CLR Models
 
-We also use the *Customer-Order* business model presented in abstract section.
+We also use the *Customer-Order* business model present in the abstract section.
 
 ### Build the Edm Model
 
-The following codes can add all related entity types, complex types, enum type and the corresponding entity sets into the Edm model:
+The following code can add all related entity types, complex types, enum type and the corresponding entity sets into the Edm model:
+
 ```C#
 public static IEdmModel GetConventionModel()
 {
@@ -33,7 +34,8 @@ public static IEdmModel GetConventionModel()
 }
 ```
 
-It will generate the below metadata document:
+It will generate the following metadata document:
+
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="4.0" xmlns:edmx="https://docs.oasis-open.org/odata/ns/edmx">
@@ -82,12 +84,12 @@ It will generate the below metadata document:
 </edmx:Edmx>
 ```
 
-[!Note]: We omit the **function/action** building because it's same as non-convention model builder.
+[!Note]: We omit the **function/action** building because it's the same as the non-convention model builder.
 
 ### Conventions
 
-Wow, how the convention model builder do that! Actually, convention model builder uses a set of **pre-defined** rules (called *conventions*) to achieve this. 
-If you open the source code for [`ODataConventionModelBuilder`](https://github.com/OData/WebApi/blob/master/OData/src/System.Web.OData/OData/Builder/ODataConventionModelBuilder.cs), You can find the following codes at the beginning of the `ODataConventionModelBuilder` class:
+Wow, how did the convention model builder do that! Actually, convention model builder uses a set of **pre-defined** rules (called *conventions*) to achieve this. 
+If you open the source code for [`ODataConventionModelBuilder`](https://github.com/OData/WebApi/blob/master/OData/src/System.Web.OData/OData/Builder/ODataConventionModelBuilder.cs), you can find the following code at the beginning of the `ODataConventionModelBuilder` class:
 
 ```C#
 private static readonly List<IConvention> _conventions = new List<IConvention>
@@ -123,7 +125,7 @@ private static readonly List<IConvention> _conventions = new List<IConvention>
 };
 ```
 
-Where lists the conventions wrapped in convention model builder. However, in `ODataConventionModelBuilder`, there are some conventions which can't be clearly listed. Let's walk you through these conventions one by one with some relevant attributes & annotations to illustrate the convention model builder.
+Which lists the conventions wrapped in a convention model builder. However, in `ODataConventionModelBuilder`, there are some conventions which can't be clearly listed. Let's walk you through these conventions one by one with some relevant attributes & annotations to illustrate the convention model builder.
 
 #### Type Inheritance Identify Convention
 
@@ -187,7 +189,7 @@ It will generate the below entity type in the resulted EDM document:
 </EntityType>
 ```
 
-There is no `Base` entity type existed.
+There is no `Base` entity type existing.
 
 #### Abstract type convention
 
@@ -261,7 +263,7 @@ The result is:
 
 #### ComplexType Attribute Convention
 
-Rule-1: Create a class without any ‘id’ or ‘<class name>id’ or [`KeyAttribute`] property, like
+Rule-1: Create a class without any ‘id’ or `<class name>id` or [`KeyAttribute`] property, like
 
 ```C#
 public class City
@@ -272,7 +274,7 @@ public class City
 }
 ```
 
-Rule-2:	Add [ComplexType] attribute to a model class: it will remove ‘id’ or ‘<class name>id’ or [Key] properties, the model class will have no entity key, thus becomes a complex type.
+Rule-2:	Add [ComplexType] attribute to a model class: it will remove `id` or `<class name>id` or [Key] properties, the model class will have no entity key, thus becomes a complex type.
 
 ```C#
 [ComplexType]
@@ -286,7 +288,8 @@ public class PairItem
 Then, the above two types wil be built as `Complex Type`.
 
 #### DataContract & DataMember
-Rule: If using DataContract or DataMember, only property with [DataMember] attribute will be added into Edm model.
+
+Rule: If using DataContract or DataMember, only properties with [DataMember] attribute will be added into Edm model.
 
 ```C#
 [DataContract]
@@ -301,7 +304,7 @@ public class Trip
 }
 ```
 
-The resulted EDM document is:
+The resulting EDM document is:
 
 ```XML
 <EntityType Name="Trip">
@@ -318,7 +321,7 @@ You can also change name-space and property name in EDM document. For example, i
 ```C#
 [DataContract(Namespace="My.NewNameSpace")]
 public class Trip
-{ 
+{
    ...
 }
 ```
@@ -341,7 +344,7 @@ The result will become:
 
 Rule: [NotMapped] deselects the property to be serialized or deserialized, so to some extent, it can be seen as the converse of DataContract & DataMember.
 
-For example, the above if `Trip` class is changed to the below, it generates exactly the same Trip Entity in EDM document, that is, no ‘SharedId’ property.
+For example, the above if `Trip` class is changed to the below, it generates exactly the same Trip Entity in EDM document, that is, no ‘ShareId’ property.
 
 ```C#
 [DataContract]
@@ -354,15 +357,15 @@ public class Trip
     public Guid? ShareId { get; set; }
     [DataMember]
     public string Name { get; set; }
-}	
+}
 ```
 
 The result is:
-```XML
 
+```XML
 <EntityType Name="Trip">
   <Key>
-	<PropertyRef Name="TripNum"/>
+	  <PropertyRef Name="TripNum"/>
   </Key>
   <Property Name="TripNum" Type="Edm.Int32" Nullable="false"/>
   <Property Name="Name" Type="Edm.String"/>
@@ -371,10 +374,9 @@ The result is:
 
 #### Required Attribute Convention
 
-Rule: The property with [Required] attribute will be non-nullable. 
+Rule: The properties with [Required] attribute will be non-nullable. 
 
 ```C#
-
 public class Trip
 {
     [Key]
@@ -391,7 +393,7 @@ Then the result has `Nullable=”false”` for `Name` property:
 ```XML
 <EntityType Name="Trip">
   <Key>
-	<PropertyRef Name="TripNum"/>
+    <PropertyRef Name="TripNum"/>
   </Key>
   <Property Name="TripNum" Type="Edm.Int32" Nullable="false"/>
   <Property Name="Name" Type="Edm.String" Nullable="false"/>
@@ -402,7 +404,6 @@ Then the result has `Nullable=”false”` for `Name` property:
 Rule: It can mark one or more properties for doing optimistic concurrency check on entity updates.
 
 ```C#
-
 public class Trip
 {
     [Key]
@@ -427,10 +428,9 @@ The expected result should be like the below:
 ```
 
 #### Timestamp Attribute Convention
-Rule: It's same as [ConcurrencyCheck].
+Rule: It's the same as [ConcurrencyCheck].
 
 ```C#
-
 public class Trip
 {
     [Key]
@@ -454,13 +454,14 @@ The expected result should be like the below:
 </EntityType>
 ```
 
-
 #### IgnoreDataMember Attribute Convention
 
 Rule: It has the same effect as `[NotMapped]` attribute. It is able to revert the `[DataMember] `attribute on the property when the model class doesn’t have `[DataContract]` attribute.
 
 #### NonFilterable & NotFilterable Attribute Convention
-Rule: Property marked with [NonFilterable] or [NotFilterable] will not support `$filter` query option.
+
+Rule: Properties marked with [NonFilterable] or [NotFilterable] will not support `$filter` query option.
+
 ```C#
 public class QueryLimitCustomer
 {
@@ -481,7 +482,9 @@ The query specified in the URI is not valid. The property 'Title' cannot be used
 ```
 
 #### NotSortable & Unsortable Attribute Convention
-Rule: Property marked with [NotSortable] or [Unsortable] will not support `$orderby` query option.
+
+Rule: Properties marked with [NotSortable] or [Unsortable] will not support `$orderby` query option.
+
 ```C#
 public class QueryLimitCustomer
 {
@@ -494,15 +497,19 @@ public class QueryLimitCustomer
 ```
 
 Then, if you issue an query option as:
+```http
 `~/odata/Customers?$orderby=Title
+```
 
 You will get the following exception:
+
 ```C#
 The query specified in the URI is not valid. The property 'Title' cannot be used in the $orderby query option.
 ```
 
 #### NotNavigable Attribute Convention
-Rule: Property marked with [NotNavigable] will not support `$select` query option.
+Rule: Properties marked with [NotNavigable] will not support `$select` query option.
+
 ```C#
 public class QueryLimitCustomer
 {
@@ -514,15 +521,20 @@ public class QueryLimitCustomer
 ```
 
 Then, if you issue an query option as:
+```http
 `~/odata/Customers?$select=address
+```
 
 You will get the following exception:
+
 ```C#
 The query specified in the URI is not valid. The property 'address' cannot be used for navigation."
 ```
 
 #### NotExpandable Attribute Convention
-Rule: Property marked with [NotExpandable] will not support `$expand` query option.
+
+Rule: Properties marked with [NotExpandable] will not support `$expand` query option.
+
 ```C#
 public class QueryLimitCustomer
 {
@@ -534,15 +546,21 @@ public class QueryLimitCustomer
 ```
 
 Then, if you issue an query option as:
+
+```http
 `~/odata/Customers?$expand=Orders
+```
 
 You will get the following exception:
+
 ```C#
 The query specified in the URI is not valid. The property 'Orders' cannot be used in the $expand query option.
 ```
 
 #### NotCountable Attribute Convention
-Rule: Property marked with [NotCountable] will not support `$count` query option.
+
+Rule: Properties marked with [NotCountable] will not support `$count` query option.
+
 ```C#
 public class QueryLimitCustomer
 {
@@ -554,16 +572,20 @@ public class QueryLimitCustomer
 ```
 
 Then, if you issue an query option as:
+
+```http
 `~/odata/Customers(1)/Addresses?$count=true
+```
 
 You will get the following exception:
+
 ```C#
 The query specified in the URI is not valid. The property 'Addresses' cannot be used for $count.
 ```
 
 #### ForeignKey Attribute Convention
 
-Rule: Property marked with [ForeignKey] will be used to build referential constraint.
+Rule: Properties marked with [ForeignKey] will be used to build referential constraint.
 
 ```C#
 public class ForeignCustomer
@@ -584,6 +606,7 @@ public class ForeignOrder
 ```
 
 You will get the following result:
+
 ```XML
 <EntityType Name="ForeignOrder">
 <Key>
@@ -598,11 +621,12 @@ You will get the following result:
 ```
 
 [ForeignKey] can also put on dependent property. for example:
+
 ```C#
 public class ForeignOrder
 {
     public int ForeignOrderId { get; set; }
-	
+
     [ForeignKey("Customer")]
     public int CustomerId { get; set; }
     public ForeignCustomer Customer { get; set; }
@@ -613,7 +637,7 @@ It'll get the same result.
 
 #### ActionOnDelete Attribute Convention
 
-Rule: Property marked with [ActionOnDelete] will be used to build referential constraint action on delete.
+Rule: Properties marked with [ActionOnDelete] will be used to build referential constraint action on delete.
 
 ```C#
 public class ForeignCustomer
@@ -635,6 +659,7 @@ public class ForeignOrder
 ```
 
 You will get the following result:
+
 ```XML
 <EntityType Name="ForeignOrder">
 <Key>
@@ -659,7 +684,7 @@ Rule: A convention used to discover foreign key properties if there is no any fo
           For example: Customer (Id) <--> Order (CustomerId)
       2. or the **"Principal key name"** equals the **dependent property name**.
           For example: Customer (CustomerId) <--> Order (CustomerId)
-		  
+
 ```C#  
 public class PrincipalEntity
 {
@@ -672,11 +697,12 @@ public class DependentEntity
 
     public string PrincipalEntityId { get; set; }
     public PrincipalEntity Principal { get; set; }
-}		  
+}
 ```
 
 You will get the following result:
-```XML
+
+```xml
 <EntityType Name="PrincipalEntity">
 <Key>
   <PropertyRef Name="Id" />
@@ -694,7 +720,4 @@ You will get the following result:
   <ReferentialConstraint Property="PrincipalEntityId" ReferencedProperty="Id" />
 </NavigationProperty>
 </EntityType>
-```	
-
-  
-
+```
