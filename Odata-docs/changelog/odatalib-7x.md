@@ -28,7 +28,79 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
-RSS feed: Get notified when this page is updated by copying and pasting the following URL into your feed reader: [https://docs.microsoft.com/api/search/rss?search=%22What%27s+new+in+odata+lib&locale=en-us](https://docs.microsoft.com/api/search/rss?search=%22What%27s+new+in+odata+lib&locale=en-us)
+## ODataLib 7.6.0 Release
+
+***Features***
+
+[[#1440](https://github.com/OData/odata.net/pull/1440)] Add the Example Term into Core vocabulary.
+
+[[#1454](https://github.com/OData/odata.net/pull/1454)] Support versioned preferences for reading/writing OData prefix.
+
+[[#1459](https://github.com/OData/odata.net/pull/1459)] Write nested entity reference link(s) in request/response.
+
+[[#1464](https://github.com/OData/odata.net/pull/1464)] Enable to write the nextlink for the collection of entity reference links.
+
+[[#1476](https://github.com/OData/odata.net/pull/1476)] Support reading/writing EDMX with Version=4.01.
+
+***Fixed Bugs***
+
+[[#1318](https://github.com/OData/odata.net/issues/1318)] Unescaped colons in relative Uri cause Invalid URI exception.
+
+[[#1451](https://github.com/OData/odata.net/issues/1451)] FindType doesn't work with alias-qualified names.
+
+[[#1455](https://github.com/OData/odata.net/issues/1455)] Remove bogus validation error for EntitySetPath.
+
+[[#1463](https://github.com/OData/odata.net/pull/1463)] Validate the resource type and resource set type in the same inheritance tree.
+
+[[#1465](https://github.com/OData/odata.net/issues/1465)] Support out of line annotations can't target ENUM member.
+
+[[#1467](https://github.com/OData/odata.net/issues/1467)] Support ENUM parameters for Uri function.
+
+[[#1469](https://github.com/OData/odata.net/pull/1469)] Add a validation rule about target of the annotation should be allowed in the AppliesTo of the term.
+
+***Improvements***
+
+[[#1448](https://github.com/OData/odata.net/pull/1448)] Refactor & Improve the ODataMediaTypeResolver.
+
+[[#1458](https://github.com/OData/odata.net/pull/1458)] Align resource template and generated code.
+
+[[#1473](https://github.com/OData/odata.net/pull/1473)] Reduce ToList calls in operation overload resolver.
+
+[[#1474](https://github.com/OData/odata.net/pull/1474)] Fix tests disabled for large object streaming pull request.
+ 
+---
+
+This release delivers OData core libraries including ODataLib, EdmLib, Spatial and Client.
+
+## ODataLib 7.6.beta Release
+
+***Features***
+
+[[#1204](https://github.com/OData/odata.net/pull/1204)] Support Large object stream (reader & writer).
+
+[[#1400](https://github.com/OData/odata.net/pull/1400)] Enable Uri parser to parse escape function.
+
+[[#1414](https://github.com/OData/odata.net/pull/1414)] Add the IEdmOperationReturn interface and enable annotation on return type of operation.
+
+[[#1422](https://github.com/OData/odata.net/pull/1422)] & [[#1428](https://github.com/OData/odata.net/pull/1428)] Update capabilities, validation & authorization vocabularies.
+
+[[#1426](https://github.com/OData/odata.net/issues/1426)] Properties defined in $compute and $apply could be used in a following query options ($select, $compute, $filter or $orderby).
+
+***Fixed Bugs***
+
+[[#1260](https://github.com/OData/odata.net/issues/1260)] Throw error when null value passed for collection of non-nullable complex type.
+
+[[#1409](https://github.com/OData/odata.net/pull/1409)] Ensure that we could use aliases created in compute() in groupby.
+
+[[#1415](https://github.com/OData/odata.net/issues/1415)] Build filter with "any" and "or" fails on keeping operations priority.
+
+***Improvements***
+
+[[#1418](https://github.com/OData/odata.net/pull/1418)] Use buffer when writing binary or byte array.
+
+[[#1420](https://github.com/OData/odata.net/pull/1420)] Use array pool in JSON writer.
+
+---
 
 ## ODataLib 7.5.4 Release
 
