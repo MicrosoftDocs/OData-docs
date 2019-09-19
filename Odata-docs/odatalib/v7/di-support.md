@@ -42,7 +42,7 @@ public interface IContainerBuilder
 }
 ```
 
-The first `AddService` method registers a service by its implementation type while the second one registers using a factory method. The `BuildContainer` method is used to build a container that implements `IServiceProvider` which contains all the services registered. The first parameter of `AddService` indicates the lifetime of the service you register. Below is the [source](https://raw.githubusercontent.com/OData/odata.net/ODataV4-7.x/src/Microsoft.OData.Core/ServiceLifetime.cs) of `ServiceLifetime`. For the meaning of each member, please refer to the [doc](https://docs.asp.net/en/latest/fundamentals/dependency-injection.html?``` csharp=dependency#service-lifetimes-and-registration-options) from ASP.NET Core.
+The first `AddService` method registers a service by its implementation type while the second one registers using a factory method. The `BuildContainer` method is used to build a container that implements `IServiceProvider` which contains all the services registered. The first parameter of `AddService` indicates the lifetime of the service you register. Below is the [source](https://raw.githubusercontent.com/OData/odata.net/ODataV4-7.x/src/Microsoft.OData.Core/ServiceLifetime.cs) of `ServiceLifetime`. For the meaning of each member, please refer to the [doc](https://docs.asp.net/en/latest/fundamentals/dependency-injection.html?csharp=dependency#service-lifetimes-and-registration-options) from ASP.NET Core.
 
 ```C#
 public enum ServiceLifetime
