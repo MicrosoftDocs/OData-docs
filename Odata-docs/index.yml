@@ -62,7 +62,7 @@ sections:
         alt: OData specification
         src: https://docs.microsoft.com/media/common/i_policy.svg
       title: OData specification
-    - href: https://docs.microsoft.com/en-us/dotnet/api/overview/odata-dotnet/odata-dotnet
+    - href: https://docs.microsoft.com/en-us/dotnet/api/overview/odata-dotnet
       html: <p>Find technical documentation on OData APIs</p>
       image:
         alt: OData technical reference documentation
