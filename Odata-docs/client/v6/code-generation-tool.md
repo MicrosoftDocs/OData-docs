@@ -3,6 +3,7 @@ title: "OData Client Code Generation Tool"
 description: "How to generate client proxy file for an OData service"
 
 author: unchase
+date: 9/23/2019
 ms.author: madansr7
 ms.date: 7/1/2019
 ms.topic: article
@@ -26,13 +27,12 @@ OData provide three tools to generate client proxy file for an OData Service.
 
 	- Visual Studio 2015
 	
-- [Unchase OData Connected Service](https://marketplace.visualstudio.com/items?itemName=Unchase.unchaseodataconnectedservice) is a Visual Studio extension to generate C# or VB client proxy files for the OData web services (both V3 & V4) with some customization. It supports following Visual Studio:
+- [Unchase OData Connected Service](https://marketplace.visualstudio.com/items?itemName=Unchase.unchaseodataconnectedservice) is a Visual Studio extension to generate C# or VB client proxy files for the OData web services (both V3 & V4) with some customization and more options. Simply put, it is like Add Service Reference for WCF or Add Web Reference for WSDL, but for OData. It supports following Visual Studio:
 
 	- Visual Studio 2017
 	- Visual Studio 2019
 	
-The following part will mainly focus on how to use the OData Connected Service to generate client proxy file.  
-	
+The following part will mainly focus on how to use the OData Connected Service by Microsoft to generate client proxy file. Similar steps are used in the Unchase OData Connected Service. See [How To](https://medium.com/@unchase/how-to-generate-c-or-visual-basic-client-code-for-odata-protocol-versions-1-0-4-0-a3a4f9402ea1).	
 	
 ## Install OData Connected Service Extension
 
@@ -113,4 +113,6 @@ Now, the developer can write client code to consume the OData Service.
 
 ## Summary
 
-Now you have the OData Connected Service at your disposal to generate your client proxy for any OData service. To leave us feedback, please open github issues at [OData Lab GitHub](https://github.com/OData/lab/issues)
+Now you have the OData Connected Service at your disposal to generate your client proxy for any OData service. To leave us feedback, please open github issues at [OData Lab GitHub](https://github.com/OData/lab/issues).
+
+To leave feedback for the [Unchase OData Connected Service](https://marketplace.visualstudio.com/items?itemName=Unchase.unchaseodataconnectedservice), please open github issues at [Unchase OData Connected Service GitHub](https://github.com/unchase/Unchase.Odata.Connectedservice/issues).
