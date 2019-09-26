@@ -1,6 +1,6 @@
 ---
-title: "Nested query options in $select"
-description: "Enable nested query options in $select"
+title: "Nested query options in select query"
+description: "Nested query options in select query"
 author: saxu
 ms.author: saxu
 ms.date: 9/17/2019
@@ -29,7 +29,9 @@ From ODataLib 7.6.1.beta, OData query options parser supports parsing the follow
 
 **To be noted**, from OData spec, it's allowed $expand in $select. However, the $expand in $select can be achieved using the $expand and $select. For example:  
 
+```html
 `$select=1($expand=2)` <==> `$select=1&$expand=1/2`
+```
 
 So, in this implementation, $expand in $select is not enabled.
 
@@ -40,14 +42,14 @@ The main changes are in class `PathSelectItem`. Now, the develper can query the 
 ```C#
 class PathSelectItem
 {
-	(get)FilterOption
-	(get)OrderByClause
-	(get)TopOption
-	(get)SkipOption
-	(get)CountOption
-	(get)SearchOption
-	(get)SelectExpandClause
-	(get)ComputeClause
+    (get)FilterOption
+    get)OrderByClause
+    (get)TopOption
+    (get)SkipOption
+    (get)CountOption
+    (get)SearchOption
+    (get)SelectExpandClause
+    (get)ComputeClause
 }
 ```
 
@@ -71,13 +73,13 @@ Let's have the following nested query option:
 
 The parsed select and expand clause has the following result:
 
-```
+```html
 parsedSelectExpand
-	AllSelected = false
-	SelectedItems
-		PathSelectItem
-			SelectedPath[(Property: Addresses)]
-			FilterClause (title eq 'abc')
+    AllSelected = false
+    SelectedItems
+        PathSelectItem
+            SelectedPath[(Property: Addresses)]
+            FilterClause (title eq 'abc')
 ```
 
 ### $orderby
@@ -88,13 +90,13 @@ Let's have the following nested query option:
 
 The parsed select and expand clause has the following result:
 
-```
+```html
 parsedSelectExpand
-	AllSelected = false
-	SelectedItems
-		PathSelectItem
-			SelectedPath[(Property: Addresses)]
-			OrderByClause (title)
+    AllSelected = false
+    SelectedItems
+        PathSelectItem
+            SelectedPath[(Property: Addresses)]
+            OrderByClause (title)
 ```
 
 ### $search
@@ -105,13 +107,13 @@ Let's have the following nested query option:
 
 The parsed select and expand clause has the following result:
 
-```
+```html
 parsedSelectExpand
-	AllSelected = false
-	SelectedItems
-		PathSelectItem
-			SelectedPath[(Property: Addresses)]
-			SearchClause ('abc')
+    AllSelected = false
+    SelectedItems
+        PathSelectItem
+            SelectedPath[(Property: Addresses)]
+            SearchClause ('abc')
 ```
 
 ### $top & $skip & $Count
@@ -122,15 +124,15 @@ Let's have the following nested query option:
 
 The parsed select and expand clause has the following result:
 
-```
+```html
 parsedSelectExpand
-	AllSelected = false
-	SelectedItems
-		PathSelectItem
-			SelectedPath[(Property: Addresses)]
-			TopOption (2)
-			SkipOption (3)
-			CountOption (true)
+    AllSelected = false
+    SelectedItems
+        PathSelectItem
+            SelectedPath[(Property: Addresses)]
+            TopOption (2)
+            SkipOption (3)
+            CountOption (true)
 ```
 
 ### $select
@@ -141,22 +143,22 @@ Let's have the following nested query option:
 
 The parsed select and expand clause has the following result:
 
-```
+```html
 parsedSelectExpand
-	AllSelected = false
-	SelectedItems
-		PathSelectItem
-			SelectedPath[(Property: Addresses)]
-			SelectExpandClause
-			   AllSelected = false
-			   SelectedItems
-				   PathSelectItem
-					   SelectedPath[(Property: City)]
-					   SelectExpandClause
-						  AllSelected = false
-						  SelectedItems
-				               PathSelectItem
-					               SelectedPath[(Property: ZipCode)]
+    AllSelected = false
+    SelectedItems
+        PathSelectItem
+            SelectedPath[(Property: Addresses)]
+            SelectExpandClause
+                AllSelected = false
+                SelectedItems
+                    PathSelectItem
+                    SelectedPath[(Property: City)]
+                        SelectExpandClause
+                            AllSelected = false
+                            SelectedItems
+                                PathSelectItem
+                                SelectedPath[(Property: ZipCode)]
 ```
 
 ### $compute
@@ -167,17 +169,17 @@ Let's have the following $compute nested query option:
 
 The parsed select and expand clause has the following result:
 
-```
+```html
 parsedSelectExpand
-	AllSelected = false
-	SelectedItems
-		PathSelectItem
-			SelectedPath[(Property: Addresses)]
-			ComputeClause
-			SelectExpandClause
-			    AllSelected = False
-				SelectedItems
-					PathSelectItem
-						SelectedPath[(dynamic property: lowStreet)]
+    AllSelected = false
+    SelectedItems
+        PathSelectItem
+            SelectedPath[(Property: Addresses)]
+            ComputeClause
+            SelectExpandClause
+                AllSelected = False
+                SelectedItems
+                    PathSelectItem
+                    SelectedPath[(dynamic property: lowStreet)]
 ```
 
