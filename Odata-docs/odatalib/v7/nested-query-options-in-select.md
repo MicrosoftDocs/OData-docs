@@ -35,7 +35,7 @@ Starting ODataLib 7.6.1.beta, OData query options parser supports parsing the fo
 
 So, in this implementation, $expand in $select is not enabled.
 
-## Main changes
+## Enabling $select support
 
 The main changes are in class `PathSelectItem`. Now, the developer can query the nested query options from this class for a certain $select clause:
 
