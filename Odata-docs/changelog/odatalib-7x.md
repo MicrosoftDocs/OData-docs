@@ -28,6 +28,40 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
+## ODataLib 7.6.1.beta Release
+
+***Features***
+
+[[#1488](https://github.com/OData/odata.net/pull/1488)] & [[#1532](https://github.com/OData/odata.net/pull/1532)] Support nested query options ($filter, $orderby, $top, $skip, $count, $search, $select, $compute) in $select clause.
+
+[[#1494](https://github.com/OData/odata.net/pull/1494)] Support metadata select exposure control.
+
+***Fixed Bugs***
+
+[[#1395](https://github.com/OData/odata.net/issues/1395)] Fix the problem when defining custom uri function with name 'contains'.
+
+[[#1493](https://github.com/OData/odata.net/issues/1493)] Enable $expand=* after the complex type.
+
+[[#1506](https://github.com/OData/odata.net/pull/1506)] Support groupby with property path length greater than 2.
+
+[[#1516](https://github.com/OData/odata.net/pull/1516)] Do not enforc ContentID Uniqueness outside ChangeSet in MultipartMixed.
+
+[[#1517](https://github.com/OData/odata.net/pull/1517)] Fix async message write.
+
+[[#1526](https://github.com/OData/odata.net/pull/1526)] Correct @odata.context for combination of $select/$apply/$compute/$expand.
+
+[[#1530](https://github.com/OData/odata.net/issues/1530)] Fix TypeSegment class constructor and property setting mismatch.
+
+***Improvements***
+
+[[#1522](https://github.com/OData/odata.net/pull/1522)] Update Authorization, Core, Capabilites vocabularies annotation.
+
+[[#1523](https://github.com/OData/odata.net/pull/1523)] Change ODataInnerError to compliance OData spec.
+
+---
+
+This release delivers OData core libraries including ODataLib, EdmLib, Spatial and Client.
+
 ## ODataLib 7.6.0 Release
 
 ***Features***

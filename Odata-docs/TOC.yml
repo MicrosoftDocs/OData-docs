@@ -193,6 +193,8 @@
           href: /odata/odatalib/override-primitive-serialization-deserialization
         - name: Navigation property under complex type
           href: /odata/odatalib/navigation-under-complex
+        - name: Nested query options in select query
+          href: /odata/odatalib/nested-query-options-in-select
         - name: Serialization additional properties
           href: /odata/odatalib/allow-serialization-of-additional-properties
         - name: Expanded Nav Property in Delta Response
