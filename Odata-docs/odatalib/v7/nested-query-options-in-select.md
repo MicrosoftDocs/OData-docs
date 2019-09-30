@@ -8,7 +8,7 @@ ms.topic: article
  
 ---
 
-# $select
+# Nested query options in $select query
 
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
 
@@ -16,7 +16,7 @@ OData v4 specification says:
 
 *Query options can be applied to a selected property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property. Allowed system query options are $select and $expand, plus $filter, $search, $count, $orderby, $skip, and $top for collection-valued properties.*
 
-From ODataLib 7.6.1.beta, OData query options parser supports parsing the following nested query options in $select:
+Starting ODataLib 7.6.1.beta, OData query options parser supports parsing the following nested query options in $select:
 
 - $filter
 - $orderby
@@ -27,7 +27,7 @@ From ODataLib 7.6.1.beta, OData query options parser supports parsing the follow
 - $select
 - $compute
 
-**To be noted**, from OData spec, it's allowed $expand in $select. However, the $expand in $select can be achieved using the $expand and $select. For example:  
+[!Note] OData spec allows $expand in $select. However, the $expand in $select can be achieved using the $expand and $select. For example:  
 
 ```html
 `$select=1($expand=2)` <==> `$select=1&$expand=1/2`
@@ -35,15 +35,15 @@ From ODataLib 7.6.1.beta, OData query options parser supports parsing the follow
 
 So, in this implementation, $expand in $select is not enabled.
 
-## Main changes
+## Enabling $select support
 
-The main changes are in class `PathSelectItem`. Now, the develper can query the nested query options from this class for a certain $select clause:
+The main changes are in class `PathSelectItem`. Now, the developer can query the nested query options from this class for a certain $select clause:
 
 ```C#
 class PathSelectItem
 {
     (get)FilterOption
-    get)OrderByClause
+    (get)OrderByClause
     (get)TopOption
     (get)SkipOption
     (get)CountOption
@@ -69,7 +69,9 @@ SelectExpandClause parsedSelectExpand = parser.ParseSelectAndExpand();
 
 Let's have the following nested query option:
 
+```html
 `$select=Addresses($filter=title eq 'abc')`
+```
 
 The parsed select and expand clause has the following result:
 
@@ -86,7 +88,9 @@ parsedSelectExpand
 
 Let's have the following nested query option:
 
+```html
 `$select=Addresses($orderby=title)`
+```
 
 The parsed select and expand clause has the following result:
 
@@ -116,7 +120,7 @@ parsedSelectExpand
             SearchClause ('abc')
 ```
 
-### $top & $skip & $Count
+### $top & $skip & $count
 
 Let's have the following nested query option:
 
@@ -182,4 +186,3 @@ parsedSelectExpand
                     PathSelectItem
                     SelectedPath[(dynamic property: lowStreet)]
 ```
-
