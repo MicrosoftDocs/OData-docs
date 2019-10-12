@@ -28,14 +28,43 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
-RSS feed: Get notified when this page is updated by copying and pasting the following URL into your feed reader: [https://docs.microsoft.com/api/search/rss?search=%22What%27s+new+in+odata+lib&locale=en-us](https://docs.microsoft.com/api/search/rss?search=%22What%27s+new+in+odata+lib&locale=en-us)
+## ODataLib 7.6.1.beta Release
 
-## Changes in ODataLib 7.6.0 Release ##
+***Features***
 
-> [!NOTE]
-> ODataLib 7.6.0 includes the following new features, bug fixes and improvements on top of O:
+[[#1488](https://github.com/OData/odata.net/pull/1488)] & [[#1532](https://github.com/OData/odata.net/pull/1532)] Support nested query options ($filter, $orderby, $top, $skip, $count, $search, $select, $compute) in $select clause.
 
-## Features ##
+[[#1494](https://github.com/OData/odata.net/pull/1494)] Support metadata select exposure control.
+
+***Fixed Bugs***
+
+[[#1395](https://github.com/OData/odata.net/issues/1395)] Fix the problem when defining custom uri function with name 'contains'.
+
+[[#1493](https://github.com/OData/odata.net/issues/1493)] Enable $expand=* after the complex type.
+
+[[#1506](https://github.com/OData/odata.net/pull/1506)] Support groupby with property path length greater than 2.
+
+[[#1516](https://github.com/OData/odata.net/pull/1516)] Do not enforc ContentID Uniqueness outside ChangeSet in MultipartMixed.
+
+[[#1517](https://github.com/OData/odata.net/pull/1517)] Fix async message write.
+
+[[#1526](https://github.com/OData/odata.net/pull/1526)] Correct @odata.context for combination of $select/$apply/$compute/$expand.
+
+[[#1530](https://github.com/OData/odata.net/issues/1530)] Fix TypeSegment class constructor and property setting mismatch.
+
+***Improvements***
+
+[[#1522](https://github.com/OData/odata.net/pull/1522)] Update Authorization, Core, Capabilites vocabularies annotation.
+
+[[#1523](https://github.com/OData/odata.net/pull/1523)] Change ODataInnerError to compliance OData spec.
+
+---
+
+This release delivers OData core libraries including ODataLib, EdmLib, Spatial and Client.
+
+## ODataLib 7.6.0 Release
+
+***Features***
 
 [[#1440](https://github.com/OData/odata.net/pull/1440)] Add the Example Term into Core vocabulary.
 
@@ -45,9 +74,9 @@ RSS feed: Get notified when this page is updated by copying and pasting the foll
 
 [[#1464](https://github.com/OData/odata.net/pull/1464)] Enable to write the nextlink for the collection of entity reference links.
 
-[[#1476](https://github.com/OData/odata.net/pull/1476)] Support reading/writing Edmx with Version=4.01.
+[[#1476](https://github.com/OData/odata.net/pull/1476)] Support reading/writing EDMX with Version=4.01.
 
-## Fixed Bugs ##
+***Fixed Bugs***
 
 [[#1318](https://github.com/OData/odata.net/issues/1318)] Unescaped colons in relative Uri cause Invalid URI exception.
 
@@ -57,19 +86,19 @@ RSS feed: Get notified when this page is updated by copying and pasting the foll
 
 [[#1463](https://github.com/OData/odata.net/pull/1463)] Validate the resource type and resource set type in the same inheritance tree.
 
-[[#1465](https://github.com/OData/odata.net/issues/1465)] Support out of line annotations can't target enum member.
+[[#1465](https://github.com/OData/odata.net/issues/1465)] Support out of line annotations can't target ENUM member.
 
-[[#1467](https://github.com/OData/odata.net/issues/1467)] Support enum parameters for Uri function.
+[[#1467](https://github.com/OData/odata.net/issues/1467)] Support ENUM parameters for Uri function.
 
 [[#1469](https://github.com/OData/odata.net/pull/1469)] Add a validation rule about target of the annotation should be allowed in the AppliesTo of the term.
 
-## Improvements ##
+***Improvements***
 
 [[#1448](https://github.com/OData/odata.net/pull/1448)] Refactor & Improve the ODataMediaTypeResolver.
 
 [[#1458](https://github.com/OData/odata.net/pull/1458)] Align resource template and generated code.
 
-[[#1473](https://github.com/OData/odata.net/pull/1473)] Reduce ToList calls in operation overload resolver. 
+[[#1473](https://github.com/OData/odata.net/pull/1473)] Reduce ToList calls in operation overload resolver.
 
 [[#1474](https://github.com/OData/odata.net/pull/1474)] Fix tests disabled for large object streaming pull request.
  
@@ -77,13 +106,9 @@ RSS feed: Get notified when this page is updated by copying and pasting the foll
 
 This release delivers OData core libraries including ODataLib, EdmLib, Spatial and Client.
 
+## ODataLib 7.6.beta Release
 
-## Changes in ODataLib 7.6.beta Release ##
-
-> [!NOTE]
-> ODataLib 7.6.beta includes the following new features, bug fixes and improvements:
-
-## Features ##
+***Features***
 
 [[#1204](https://github.com/OData/odata.net/pull/1204)] Support Large object stream (reader & writer).
 
@@ -95,7 +120,7 @@ This release delivers OData core libraries including ODataLib, EdmLib, Spatial a
 
 [[#1426](https://github.com/OData/odata.net/issues/1426)] Properties defined in $compute and $apply could be used in a following query options ($select, $compute, $filter or $orderby).
 
-## Fixed Bugs ##
+***Fixed Bugs***
 
 [[#1260](https://github.com/OData/odata.net/issues/1260)] Throw error when null value passed for collection of non-nullable complex type.
 
@@ -103,7 +128,7 @@ This release delivers OData core libraries including ODataLib, EdmLib, Spatial a
 
 [[#1415](https://github.com/OData/odata.net/issues/1415)] Build filter with "any" and "or" fails on keeping operations priority.
 
-## Improvements ##
+***Improvements***
 
 [[#1418](https://github.com/OData/odata.net/pull/1418)] Use buffer when writing binary or byte array.
 
@@ -111,7 +136,6 @@ This release delivers OData core libraries including ODataLib, EdmLib, Spatial a
 
 ---
 
-This release delivers OData core libraries including ODataLib, EdmLib, Spatial and Client.
 ## ODataLib 7.5.4 Release
 
 > [!NOTE]
