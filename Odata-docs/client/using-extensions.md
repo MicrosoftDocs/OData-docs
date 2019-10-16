@@ -193,3 +193,66 @@ In the preceding code, a WaitAndRetryAsync policy is defined. Failed requests ar
 
 ## Unit Test Support
 
+With the introduction of OData client factory and associated bridge to IHttpClientFactory, now it's possible to mock the OData cient request without real network call.
+
+``` csharp
+using Moq;
+using Moq.Protected;
+
+[TestMethod]
+public void TestGetHappyCase()
+{
+    var mockHttpMessageHandler = new Mock<HttpMessageHandler>();
+            mockHttpMessageHandler.Protected()
+                .Setup<Task<HttpResponseMessage>>("SendAsync", ItExpr.IsAny<HttpRequestMessage>(), ItExpr.IsAny<CancellationToken>())
+                .Returns(new HttpResponseMessage()
+            {
+                StatusCode = HttpStatusCode.OK,
+                Content = new StringContent(@"{
+  ""@odata.context"": ""http://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/$metadata#People"",
+  ""@odata.nextLink"": ""https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/People?%24skiptoken=8"",
+  ""value"": [
+    {
+      ""@odata.id"": ""http://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/People('keithpinckney')"",
+      ""@odata.etag"": ""W/\""08D751CC35005AA0\"""",
+      ""@odata.editLink"": ""http://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/People('keithpinckney')"",
+      ""UserName"": ""keithpinckney"",
+      ""FirstName"": ""Keith"",
+      ""LastName"": ""Pinckney"",
+      ""Emails"": [ ""Keith@example.com"", ""Keith@contoso.com"" ],
+      ""AddressInfo"": [],
+      ""Gender"": ""Male"",
+      ""Concurrency"": 637067809800608416
+    }
+  ]
+}")});
+
+    var sc = new ServiceCollection();
+    sc.
+    .AddODataClient("TripPin")
+    .AddHttpClient()
+    .ConfigurePrimaryHttpHandler(() => mockHttpMessageHandler.Object);
+
+    var sp = sc.Build();
+
+    var controller = new PeopleController(sp.GetService<IODataClientFactory>());
+    var people = controller.Get().ToList();
+    people.Count.Should().Be(1);
+    people[0].UserName.Should().Be("keithpinckney");
+}
+
+```
+
+In the above example, it demonstrated a unit test that simulate a happy case scenario where the OData client call returned 1 item.
+
+You could also use similar approach to test other unhappy cases, for example, use below code to test the behavior when the dependency OData service is unavailable.
+``` csharp
+    var mockHttpMessageHandler = new Mock<HttpMessageHandler>();
+            mockHttpMessageHandler.Protected()
+                .Setup<Task<HttpResponseMessage>>("SendAsync", ItExpr.IsAny<HttpRequestMessage>(), ItExpr.IsAny<CancellationToken>())
+                .Returns(new HttpResponseMessage()
+            {
+                StatusCode = HttpStatusCode.ServiceUnavailable
+            )});
+
+```
