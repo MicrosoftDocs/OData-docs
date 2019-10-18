@@ -2,7 +2,7 @@
 title: "Use Extensions in OData Client"
 description: ""
 
-author: Chuanbo Zhang
+author: chuanboz
 ms.author: chuanboz
 ms.date: 10/10/2019
 ms.topic: article
@@ -10,7 +10,7 @@ ms.topic: article
 ---
 # Use Extensions in OData Client
 
-**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v6.md)][!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v6.md)][!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v7.md)]
 
 An IODataClientFactory can be registered and used to configure and create OData Client instances in an app. It offers the following benefits:
 
@@ -169,7 +169,7 @@ services.AddODataClient("TripPin")
 
 ## Bridge to IHttpClientFactory
 
-OData client enables developers to customize request message, and use it in `DataServiceContext.Configurations.RequestPipeline.OnMessageCreating`. This function will be triggered when creating request message. It will return an `IODataRequestMessage`, See [Use HttpClient in OData Client](odata/client/using-httpclient)
+OData client enables developers to customize request message, and use it in `DataServiceContext.Configurations.RequestPipeline.OnMessageCreating`. This function will be triggered when creating request message. It will return an `IODataRequestMessage`, See [Use HttpClient in OData Client](/odata/client/using-httpclient)
 
 Build on top of that and OData Client Handler, the OData Client Extensions now provides a default integration with IHttpClientFactory that is working out of box when you use Microsoft.OData.Extensions.Client NuGet package.
 
