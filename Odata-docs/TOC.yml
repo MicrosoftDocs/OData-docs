@@ -285,6 +285,8 @@
         href: /odata/client/using-hooks
       - name: Using Httpclient 
         href: /odata/client/using-httpclient
+      - name: Using Extensions
+        href: /odata/client/using-extensions
   - name: Spatial lib
     items:
         - name: Define spatial properties
@@ -377,5 +379,7 @@
       href: /odata/changelog/odatalib-7x
     - name: WebApi lib changes
       href: /odata/changelog/webapi-7x
+    - name: OData extensions changes
+      href: /odata/changelog/extensions-1x
 # - name: 10.2 Work around for SingleResult.Create an empty result
 #   href: posts\work-around-for-singleresult-create
