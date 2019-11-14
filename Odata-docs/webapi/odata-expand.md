@@ -4,7 +4,6 @@ author: FIVIL
 description: Using OData expand to query related data
 ms.author: riande
 ms.date: 4/5/2019
-uid: web-api/advanced/odata-expand
 ---
 
 # OData Expand
