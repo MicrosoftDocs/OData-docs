@@ -23,7 +23,7 @@ A malicious or naive client can construct a query that:
 * Takes significant system resources. Such a query can disrupt your service.
 * Leaks sensitive information from a clever join.
 
-The `[EnableQuery]` attribute is an action filter that parses, validates, and applies the query. The filter converts the query options into a [LINQ](/dotnet/csharp/linq/) expression. When the controller returns an <xref:System.Linq.IQueryable> type, the `IQueryable` LINQ provider converts the LINQ expression into a query. Therefore, performance depends on the LINQ provider that is used, and on the particular characteristics of the dataset or database schema.
+The `[EnableQuery]` attribute is an action filter that parses, validates, and applies the query. The filter converts the query options into a [LINQ](/dotnet/csharp/linq/) expression. When the controller returns an `System.Linq.IQueryable` type, the `IQueryable` LINQ provider converts the LINQ expression into a query. Therefore, performance depends on the LINQ provider that is used, and on the particular characteristics of the dataset or database schema.
 
 <!-- This could be eventually ported.
 For more information about using OData query options in ASP.NET Web API, see [Supporting OData Query Options](supporting-odata-query-options.md).
