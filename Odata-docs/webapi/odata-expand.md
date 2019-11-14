@@ -14,7 +14,7 @@ This article demonstrates querying related entities using [OData](https://www.od
 
 The [ContosoUniversity sample](https://github.com/aspnet/AspNetCore.Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/cu21) is used for the starter project.
 
-A malicious or naive client may construct a query that consumes excessive resources. Such a query can disrupt access to your service.<!-- Review <xref:web-api/advanced/odata-security> before starting this tutorial. -->
+A malicious or naive client may construct a query that consumes excessive resources. Such a query can disrupt access to your service. Review [Security Guidance for ASP.NET Core Web API OData](odata-security.md) before starting this tutorial.
 
 ## Enable OData
 
