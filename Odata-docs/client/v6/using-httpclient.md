@@ -13,17 +13,17 @@ ms.topic: article
 
 In this session, we will dive into how to use HttpClient in OData client request. We will use the hook mechanism in OData client which has been introduced in [Client Hooks in OData Client](/odata/client/using-hooks). See also [Use Extensions in OData Client](/odata/client/using-extensions#Bridge-to-IHttpClientFactory) for a built-in implementation to bridge OData Client and Http Client.
 
-OData client enables developers to customize request message, and use it in `DataServiceContext.Configurations.RequestPipeline.OnMessageCreating`. This function will be triggered when creating request message. It will return an `IODataRequestMessage`.
+OData client enables developers to customize a request message, and use it in `DataServiceContext.Configurations.RequestPipeline.OnMessageCreating`. This function will be triggered when creating a request message. It will return an `IODataRequestMessage`.
 
-Following is the code how to use `OnMessageCreating`.
+Following is the code on how to use `OnMessageCreating`.
 
 ``` csharp
 
 	public void UseHttpClientTest()
     {
-        DefaultContainer dsc = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
+        DefaultContainer dataServiceContext = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
 
-        dsc.Configurations.RequestPipeline.OnMessageCreating = (args) =>
+        dataServiceContext.Configurations.RequestPipeline.OnMessageCreating = (args) =>
             {
                 var message = new HttpClientRequestMessage(args.ActualMethod) { Url = args.RequestUri, Method = args.Method, };
                 foreach (var header in args.Headers)
@@ -33,7 +33,7 @@ Following is the code how to use `OnMessageCreating`.
 
                 return message;
             };
-        var people = dsc.People.ToList();
+        var people = dataServiceContext.People.Execute();
         foreach (var p in people)
         {
             Console.WriteLine(p.FirstName);
@@ -42,7 +42,7 @@ Following is the code how to use `OnMessageCreating`.
 
 ```
 
-In this sample, we create a `HttpClientRequestMessage` instance in `OnMessageCreating` method. `HttpClientRequestMessage` is a class derived from `DataServiceClientRequestMessage`. In this class, we use MemoryStream to write data, and use HttpClient to get response. Once we get the HttpResponseMessage, we will convert it to `IODataResponseMessage`. So we also write a `HttpClientResponseMessage` class which implements `IODataResponseMessage`.
+In this sample, we create a `HttpClientRequestMessage` instance in `OnMessageCreating` method. `HttpClientRequestMessage` is a class derived from `DataServiceClientRequestMessage`. In this class, we use `MemoryStream` to write data, and use `HttpClient` to get response. Once we get the `HttpResponseMessage`, we will convert it to `IODataResponseMessage`. So we also write a `HttpClientResponseMessage` class which implements `IODataResponseMessage`.
  
 ``` csharp
 	

@@ -341,11 +341,11 @@ The code for the packages can be found [here](https://github.com/OData/WebApi/tr
 ### OData V7.0.0 for ASP.NET Core 2.x
 
 The new OData V7.0.0 for ASP.NET Core 2.x package supports the same features set as Web API OData V6.0.0 but works with ASP.NET Core.
-You can learn more about ASP.NET Core from the [documentation](https://docs.microsoft.com/en-us/aspnet/core/).
+You can learn more about ASP.NET Core from the [documentation](/aspnet/core/).
 
 To get started with OData V7.0.0 for ASP.NET Core 2.x, you can use code that is very similar to Web API OData V6.0.0. All of the
 documentation in [Writing a simple OData V4 service](/odata/webapi/getting-started) is correct except for
-configuring the OData endpoint. Instead of using the Register() method, you'll follow the new [service + route configuration model](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/startup)
+configuring the OData endpoint. Instead of using the Register() method, you'll follow the new [service + route configuration model](/aspnet/core/fundamentals/startup)
 used in ASP.NET Core.
 
 The namespace for both Web API OData packages is Microsoft.AspNet.OData.

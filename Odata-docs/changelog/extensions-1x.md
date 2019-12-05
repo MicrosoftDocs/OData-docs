@@ -1,7 +1,7 @@
 ---
 title: "OData Extensions changes"
 description: "OData Extensions (OData Client Factory) 1.x changelog"
-author: Chuanbo Zhang
+author: chuanboz
 ms.author: chuanboz
 ms.date: 10/10/2019
 ms.topic: article
@@ -25,4 +25,4 @@ PM> Install-Package Microsoft.OData.Extensions.Client -Version 1.0.0-Beta0
 
 Both packages depends on [OData Client 7.x](https://www.nuget.org/packages/Microsoft.OData.Client/7.5.1), the code for the packages can be found [here](https://github.com/OData/Extensions/tree/master/src/Microsoft.OData.Extensions.Client), the namespace for both packages is Microsoft.OData.Extensions.Client.
 
-The new OData client extensions for ASP.NET Core 2.x package introduced OData Client Factory to supports the extensions model and have default extensions to integrate with Http client factory. To get started, see [Use Extensions in OData Client](/odata/extensions/using-extensions) that works naturally with ASP.NET Core dependency injection. You can learn more about ASP.NET Core from the [documentation](https://docs.microsoft.com/en-us/aspnet/core/).
+The new OData client extensions for ASP.NET Core 2.x package introduced OData Client Factory to supports the extensions model and have default extensions to integrate with Http client factory. To get started, see [Use Extensions in OData Client](/odata/extensions/using-extensions) that works naturally with ASP.NET Core dependency injection. You can learn more about ASP.NET Core from the [documentation](/aspnet/core/).
