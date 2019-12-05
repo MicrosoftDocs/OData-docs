@@ -62,7 +62,7 @@ For a non-batch response:
     dataServiceContext.People.First();
 ```
 
-For a batch request for query, the `ReceivingResponse` will firstly be fired when the client receives the top level response. Then, the event will be fired when the client enumerates the inner `QueryOperationResponse`. `ReceivingResponse` is fired as many times as the responses are enumerated. So about the following code, before the client executes `foreach`, the code will only print the `Content-Type` for the top-level request. The last several lines of following code enumerates each of the `QueryOperationResponse`. `RecivingResponse` will be fired accordingly. 
+For a batch request for query, the `ReceivingResponse` will firstly be fired when the client receives the top level response. Then, the event will be fired when the client enumerates the inner `QueryOperationResponse`. `ReceivingResponse` is fired as many times as the responses are enumerated. So about the following code, before the client executes `foreach`, the code will only print the `Content-Type` for the top-level request. The last several lines of following code enumerate each of the `QueryOperationResponse`. `ReceivingResponse` will be fired accordingly. 
 
 ```c#
 
@@ -80,7 +80,7 @@ For a batch request for query, the `ReceivingResponse` will firstly be fired whe
     }
 ```
 
-But for a batch request for changes. `ReceivingResponse` will be fired for both top level response and inner response even the client doesn't enumerate the response. So the following code will print
+But for a batch request for changes, `ReceivingResponse` will be fired for both top level response and inner response even though the client doesn't enumerate the response. So the following code will print
 
 ```html
     200
@@ -113,7 +113,7 @@ This event is fired before a request is sent to the server, giving the handler t
 
 The most common use of this event is to set the headers of the request. You can set the header for response payload format, or the authentication information like token or cert name. You also can use this event to set preferences, If-Match headers.
 
-The code below will add the `odata.include-annotations` preference in request header to enable getting instance annotations.
+The code below will add the `odata.include-annotations` preference in the request header to enable getting instance annotations.
 
 ```c#
 
@@ -143,7 +143,7 @@ You can also use this event to check other information in the request message.
 Developers can use this function to customize the request message.
 
 #### Customize request message 
-Following code provides a sample which overrides the `GetResponse()` method in user-defined request message which fakes a response message. We define a client request message which inherits `HttpWebRequestMessage`. `HttpWebRequestMessage` is a sub class of `DataServiceClientRequestMessage`
+The following code provides a sample which overrides the `GetResponse()` method in user-defined request message which fakes a response message. We define a client request message which inherits `HttpWebRequestMessage`. `HttpWebRequestMessage` is a sub class of `DataServiceClientRequestMessage`
 
 ```c#
 
@@ -180,7 +180,7 @@ Following code provides a sample which overrides the `GetResponse()` method in u
 
 #### Set `OnMessageCreating`
 
-Then, Developers can replace the default client message with `CustomizedClientRequestMessage` by using following code. Then if the client sends a request after this setting, it will automatically return the fake response message.
+Then, developers can replace the default client message with `CustomizedClientRequestMessage` by using the following code. Then, if the client sends a request after this setting, it will automatically return the fake response message.
 
 ```c#
 
@@ -208,11 +208,11 @@ Then, Developers can replace the default client message with `CustomizedClientRe
 
 `public DataServiceClientRequestPipelineConfiguration OnEntryStarting(Action<WritingEntryArgs> action)`
 
-Developer can use this function to control the information of an `ODataEntry` to be serialized.
+Developers can use this function to control the information of an `ODataEntry` to be serialized.
 
 #### Modify ODataEntry properties 
 
-Following code provides a sample to add properties to an `ODataEntry`.
+The following code provides a sample to add properties to an `ODataEntry`.
 
 ```c#
 
@@ -228,10 +228,13 @@ Following code provides a sample to add properties to an `ODataEntry`.
         entry.Properties = odataProps;
     }
 
-#### Set `OnEntryStarting` 
+```
 
-Then, to add new properties in the `OdataEntry`, developers can call `AddProperties` in `OnEntryStarting`.
+### Set `OnEntryStarting` 
 
+Then, to add new properties in the `ODataEntry`, developers can call `AddProperties` in `OnEntryStarting`.
+
+```c#
     DefaultContainer dataServiceContext = new DefaultContainer(new Uri("https://services.odata.org/v4/(S(ghojd5jj5d33cwotkyfwn431))/TripPinServiceRW/"));
 
     dataServiceContext.Configurations.RequestPipeline.OnEntryStarting(
@@ -249,7 +252,7 @@ Then, to add new properties in the `OdataEntry`, developers can call `AddPropert
     dataServiceContext.SaveChanges();
 ```
 
-### More client hooks in RequestPipeline && ResponsePipeline 
+### More client hooks in RequestPipeline and ResponsePipeline 
 
 These two configurations provide more other client hooks in request pipeline and response pipeline.
 
