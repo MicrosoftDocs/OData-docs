@@ -9,7 +9,46 @@ ms.topic: article
 
 # OData WebApi changelog
 
-## WebAPI 7.2.0
+## WebAPI 7.2.2
+
+The NuGet packages for ASP.NET Web API OData v7.2.2 are available on the [NuGet gallery](https://www.nuget.org/).
+
+You can install or update the NuGet packages for OData Web API v7.2.2 using the [Package Manager Console](https://docs.nuget.org/docs/start-here/using-the-package-manager-console):
+
+```PowerShell
+
+PM> Install-Package Microsoft.AspNetCore.OData -Version 7.2.2
+```
+
+or
+
+```PowerShell
+
+PM> Install-Package Microsoft.AspNet.OData -Version 7.2.2
+
+```
+### New Features:
+
+* [ [#1920](https://github.com/OData/WebApi/pull/1920) ] Add a compatibility flag for generating next link.
+
+This provides a flag that can revert the breaking change introduced in the last release. You can use this flag to generate the incorrect nextlink to avoid a null nextlink. 
+
+* [ [#1839](https://github.com/OData/WebApi/pull/1839) ] Support groupby with property path length greater than 2
+* [ [#1738](https://github.com/OData/WebApi/pull/1738) ] Support navigation properties on complex types
+
+### Improvements and fixes:
+* [ [#1919)](https://github.com/OData/WebApi/pull/1919)) ] Update to ODL 7.6.1. 
+* [ [#1910](https://github.com/OData/WebApi/pull/1910) ] Allow IN operator for enums
+* [ [#1907](https://github.com/OData/WebApi/pull/1907) ] AmbiguousMatchException in ApplyTo method
+* [ [#1895](https://github.com/OData/WebApi/pull/1895) ] Ensure generated skip token respects casing conventions
+* [ [#1884](https://github.com/OData/WebApi/issues/1872) ] Ensure that all expand item options preserved when translating SELECT *
+* [ [#1882](https://github.com/OData/WebApi/issues/1882) ] ODataQuerySettings missing copy EnableCorrelatedSubqueryBuffering in ODataQuerySettings .CopyFrom function.
+
+* [ [#1814](https://github.com/OData/WebApi/issues/1814) ] CreateODataResult.Entity made public
+---
+
+
+## WebAPI 7.2.1
 
 The NuGet packages for ASP.NET Web API OData v7.2.0 are available on the [NuGet gallery](https://www.nuget.org/).
 
@@ -27,6 +66,11 @@ or
 PM> Install-Package Microsoft.AspNet.OData -Version 7.2.0
 
 ```
+### Breaking Changes:
+* [ [#1724](https://github.com/OData/WebApi/pull/1724) ] Custom NextLink generation with default SkipToken implementation
+
+If your code is using the request extension method to generate the nextlink, you may encounter a breaking change. Previously, if the page size was greater than $top query option value, the nextlink generated would have contained negative $top value. Now, we return null if the page size is larger than the $top value.  
+
 ### New Features:
 
 * [ [#1844](https://github.com/OData/WebApi/pull/1844) ] Support count in orderby and filter query options
