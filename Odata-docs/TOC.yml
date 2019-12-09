@@ -8,7 +8,7 @@
   items:
   - name: Basics
     items:
-    - name: Data Model
+    - name: Data model
       href: /odata/concepts/data-model
     - name: Url components
       href: /odata/concepts/url-components
@@ -16,17 +16,17 @@
       # href: /odata/concepts/metadata
     # - name: Payload
     #   href: /odata/concepts/payload-formats
-  - name: Getting Data
+  - name: Getting data
     items:
-    - name: Get Data
+    - name: Get data
       href: /odata/concepts/get-data
-  - name: Modifying Data
+  - name: Modifying data
     items:
     - name: Post data
       href: /odata/concepts/create-data
     - name: Update data
       href: /odata/concepts/update-data
-    - name: Delete Data
+    - name: Delete data
       href: /odata/concepts/delete-data
   - name: Query options
     items:
@@ -71,11 +71,11 @@
           href: /odata/webapi/routing-abstract
         - name: Routing conventions
           href: /odata/webapi/built-in-routing-conventions
-        - name: Attribute Routing
+        - name: Attribute routing
           href: /odata/webapi/attribute-routing
         - name: Custom routing
           href: /odata/webapi/custom-routing-convention
-      - name: How-To
+      - name: How-to
         items:
           - name: DateTime operations
             href: /odata/webapi/datetime-support
@@ -99,7 +99,7 @@
             href: /odata/webapi/query-by-dynamic-properties
           - name: Open type in untyped scenarios
             href: /odata/webapi/open-type-in-untyped-scenarios
-          - name: Query Options
+          - name: Query options
             href: /odata/webapi/query-option
           - name: Delta Feed
             href: /odata/webapi/DeltaFeed_support
@@ -127,7 +127,7 @@
             href: /odata/webapi/max-expansion-depth-in-enable-query-attribute
           - name: Custom UriFunctions binding
             href: /odata/webapi/bind-custom-urifunctions-to-clr-methods
-          - name: IN Operator
+          - name: IN operator
             href: /odata/webapi/in-operator
           - name: Case-insensitive names and unqualified functions/actions
             href: /odata/webapi/caseInsensitiveAndQualifiedFunctions
@@ -147,7 +147,7 @@
             href: /odata/webapi/skipToken-for-server-side-paging
           - name: Default settings
             href: /odata/webapi/new-default-settings-v7
-          - name: Key-Value Binding
+          - name: Key value binding
             href: /odata/webapi/key-value-binding
           - name: Merge complex type and entity type
             href: /odata/webapi/merge-complex-and-entity
@@ -159,7 +159,7 @@
           href: /odata/webapi/relax-version-constraints
         - name: Customize OData Formatter
           href: /odata/webapi/customize-formatter
-        - name: Custom Stream Entity
+        - name: Custom stream entity
           href: /odata/webapi/stream-entity
         - name: Customize unsupported types
           href: /odata/webapi/unsupported-type-usage
@@ -167,7 +167,11 @@
     items:
     - name: Getting started
       href: /odata/webapi/netcore
-  - name: OData Lib
+    - name: OData Expand
+      href: /odata/webapi/odata-expand
+    - name: Security guidance
+      href: /odata/webapi/odata-security
+  - name: ODataLib
     items:
     - name: Core lib
       items:
@@ -179,7 +183,7 @@
           href: /odata/odatalib/read-payload
         - name: Use ODataUriParser
           href: /odata/odatalib/use-uri-parser
-        - name: Dependency Injection
+        - name: Dependency injection
           href: /odata/odatalib/di-support
         - name: Parsing uri path template
           href: /odata/odatalib/parsing-url-template
@@ -211,7 +215,7 @@
           href: /odata/odatalib/type-annotation
         - name: Centralized control for OData Simplified Options
           href: /odata/odatalib/simplified-options
-        - name: Read and Write Untyped values in ODataLib
+        - name: Read and write untyped values in ODataLib
           href: /odata/odatalib/support-untyped-json
         - name: IN Operator
           href: /odata/odatalib/in-operator
@@ -247,7 +251,7 @@
         href: /odata/odatalib/edm/type-facets
       - name: Add annotations to Enum Member
         href: /odata/odatalib/add-annotations-to-enummember
-      - name: Alternate Key
+      - name: Alternate key
         href: /odata/odatalib/alternate-key
       - name: Capabilities vocabulary
         href: /odata/odatalib/capabilities-vocabulary
@@ -255,7 +259,7 @@
         href: /odata/odatalib/multi-binding
       - name: Navigation property partner
         href: /odata/odatalib/navigation-partner
-      - name: Optional Parameters
+      - name: Optional parameters
         href: /odata/odatalib/optional-parameters
     - name: Batching
       items:
@@ -283,8 +287,10 @@
         href: /odata/client/query-options
       - name: Client hooks
         href: /odata/client/using-hooks
-      - name: Using Httpclient 
+      - name: Using HttpClient 
         href: /odata/client/using-httpclient
+      - name: Using Extensions
+        href: /odata/client/using-extensions
   - name: Spatial lib
     items:
         - name: Define spatial properties
@@ -299,7 +305,7 @@
         href: /odata/webapi/basic-auth
   - name: Legacy APIs
     items: 
-      - name: OData Lib v6
+      - name: ODataLib v6
         items:
           - name: Build basic model
             href: /odata/odatalib/build-basic-model
@@ -377,5 +383,7 @@
       href: /odata/changelog/odatalib-7x
     - name: WebApi lib changes
       href: /odata/changelog/webapi-7x
+    - name: OData extensions changes
+      href: /odata/changelog/extensions-1x
 # - name: 10.2 Work around for SingleResult.Create an empty result
 #   href: posts\work-around-for-singleresult-create

@@ -22,7 +22,7 @@ For example: `https://example.com/odata/Products(1)/Supplier?$top=2 `
 
 * *The service root* : https://example.com/odata
 * *The OData path* : Products(1)/Supplier
-* *Que OData ons* : ?$top=2  
+* *Query options* : ?$top=2  
 
 
 For OData routing, the important part is the OData path. The OData path is divided into segments, each segments are seperated with '/'.

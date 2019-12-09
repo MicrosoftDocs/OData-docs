@@ -52,6 +52,25 @@ Most of our API improvements fall into the category of namespace simplifications
 
 ---
 
+## ODataLib 7.6.1 Release
+
+***Features***
+
+* N/A
+
+***Fixed Bugs***
+
+[[#1547](https://github.com/OData/odata.net/issues/1547)] Remove the prefix for SrsName in GmlWriter.
+
+***Improvements***
+
+[[#1550](https://github.com/OData/odata.net/pull/1550)] Change naming of DataModification* terms and types in vocabularies.
+
+[[#1553](https://github.com/OData/odata.net/pull/1553)] Change the AssemblyVersionAttribute without the build revision.
+
+
+---
+
 This release delivers OData core libraries including ODataLib, EdmLib, Spatial and Client.
 
 ## ODataLib 7.6.1.beta Release
