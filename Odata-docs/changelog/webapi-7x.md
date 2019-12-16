@@ -9,6 +9,36 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.2.3
+===
+
+The NuGet packages for ASP.NET Web API OData v7.2.3 are available on the [NuGet gallery](https://www.nuget.org/).
+
+You can install or update the NuGet packages for OData Web API v7.2.3 using the [Package Manager Console](https://docs.nuget.org/docs/start-here/using-the-package-manager-console):
+
+```PowerShell
+
+PM> Install-Package Microsoft.AspNetCore.OData -Version 7.2.3
+```
+
+or
+
+```PowerShell
+
+PM> Install-Package Microsoft.AspNet.OData -Version 7.2.3
+
+```
+### New Features:
+
+* [ [#1941](https://github.com/OData/WebApi/pull/1941) ] Enable $select improvement with path and nested query options
+
+
+### Improvements and fixes:
+
+* [ [#1965](https://github.com/OData/WebApi/issues/1965) ] Inconsistent behavior on 'key' parameter convention for OData routes
+
+---
+
 ## WebAPI 7.2.2
 
 The NuGet packages for ASP.NET Web API OData v7.2.2 are available on the [NuGet gallery](https://www.nuget.org/).
@@ -46,7 +76,6 @@ This provides a flag that can revert the breaking change introduced in the last 
 
 * [ [#1814](https://github.com/OData/WebApi/issues/1814) ] CreateODataResult.Entity made public
 ---
-
 
 ## WebAPI 7.2.1
 
