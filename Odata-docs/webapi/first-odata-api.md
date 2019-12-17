@@ -1,10 +1,8 @@
 ---
 title: "Sample: Build web APIs with OData support using ASP.NET Core"
-author: FIVIL
 description: This tutorial demonstrates how to add OData support to your existing ASP.NET Core web API.
 ms.author: riande
 ms.date: 05/13/2019
-uid: tutorials/first-odata-api
 ---
 
 # Sample: Build web APIs with OData support using ASP.NET Core
@@ -19,7 +17,7 @@ This sample:
 
 A malicious or naive client may construct a query that consumes excessive resources. Such a query can disrupt access to your service. Review `<xref:web-api/advanced/odata-security>` before starting this tutorial.
 
-[!INCLUDE[](~/includes/net-core-prereqs-all-2.2.md)]
+* [.NET Core SDK 2.2 or later](https://www.microsoft.com/net/download/all)
 
 ## Download the starter app
 
