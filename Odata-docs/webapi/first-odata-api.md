@@ -8,14 +8,14 @@ ms.date: 05/13/2019
 
 # Sample: Build web APIs with OData support using ASP.NET Core
 
-https://docs.microsoft.com/en-us/aspnet/core/web-api/http-repl?view=aspnetcore-3.1&tabs=linux
+/aspnet/core/web-api/http-repl?view=aspnetcore-3.1&tabs=linux
 
 By [FIVIL](https://github.com/fivil) and [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 This sample:
 
-* Demonstrates how to add [OData](https://www.odata.org/) query options support in an ASP.NET Core Web API app.
-* Uses the completed [to-do Web API](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-3.1&tabs=visual-studio) as a starting point.
+* Demonstrates how to add [OData](https://www.odata.org/) query options support in an ASP.NET Core Web API app.?
+* Uses the completed [to-do Web API](/aspnet/core/tutorials/first-web-api) as a starting point.
 * Does not use an [Entity Data Model](http://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752491) (EDM).
 
 A malicious or naive client may construct a query that consumes excessive resources. Such a query can disrupt access to your service. Review [Security Guidance for ASP.NET Core Web API OData](odata-security.md) before starting this tutorial.
@@ -34,7 +34,7 @@ Update the `ConfigureServices` method in *Startup.cs* with the following highlig
 
  [!code-csharp[](first-odata-api/samples/2.2/TodoApi/Startup.cs?highlight=6-7&name=snippet_dic)]
 
-The preceding code registers the OData service in the [dependency injection (DI)](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1) container.
+The preceding code registers the OData service in the [dependency injection (DI)](/aspnet/core/fundamentals/dependency-injection) container.
 
 ## Configure middleware
 
@@ -59,7 +59,7 @@ Returning <xref:System.Linq.IQueryable> or [`ActionResult<IQueryable>`](xref:Mic
 
 ## Query resources using OData
 
-Post some data to the web API app, using a tool such as [HTTP REPL](https://docs.microsoft.com/en-us/aspnet/core/web-api/http-repl?view=aspnetcore-3.1&tabs=linux) or [Postman](https://www.getpostman.com/tools).
+Post some data to the web API app, using a tool such as [HTTP REPL](/aspnet/core/web-api/http-repl) or [Postman](https://www.getpostman.com/tools).
 
 Send 5 Post requests to `https://localhost:5001/api/todo` with the 5 items below **separately** in the request body.
 
