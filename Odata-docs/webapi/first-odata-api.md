@@ -8,8 +8,6 @@ ms.date: 05/13/2019
 
 # Sample: Build web APIs with OData support using ASP.NET Core
 
-/aspnet/core/web-api/http-repl?view=aspnetcore-3.1&tabs=linux
-
 By [FIVIL](https://github.com/fivil) and [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 This sample:
