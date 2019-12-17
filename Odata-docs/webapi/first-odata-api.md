@@ -8,21 +8,23 @@ ms.date: 05/13/2019
 
 # Sample: Build web APIs with OData support using ASP.NET Core
 
+https://docs.microsoft.com/en-us/aspnet/core/web-api/http-repl?view=aspnetcore-3.1&tabs=linux
+
 By [FIVIL](https://github.com/fivil) and [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 This sample:
 
 * Demonstrates how to add [OData](https://www.odata.org/) query options support in an ASP.NET Core Web API app.
-* Uses the completed [to-do Web API](xref:tutorials/first-web-api) as a starting point.
+* Uses the completed [to-do Web API](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-3.1&tabs=visual-studio) as a starting point.
 * Does not use an [Entity Data Model](http://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752491) (EDM).
 
-A malicious or naive client may construct a query that consumes excessive resources. Such a query can disrupt access to your service. Review `<xref:web-api/advanced/odata-security>` before starting this tutorial.
+A malicious or naive client may construct a query that consumes excessive resources. Such a query can disrupt access to your service. Review [Security Guidance for ASP.NET Core Web API OData](odata-security.md) before starting this tutorial.
 
 * [.NET Core SDK 2.2 or later](https://www.microsoft.com/net/download/all)
 
 ## Download the starter app
 
-[Download Web API starter app](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-odata-api/samples/2.2/StarterApp) ([How to download](xref:index#how-to-download-a-sample)).
+[Download Web API starter app](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-odata-api/samples/2.2/StarterApp).
 
 ## Register OData
 
@@ -32,7 +34,7 @@ Update the `ConfigureServices` method in *Startup.cs* with the following highlig
 
  [!code-csharp[](first-odata-api/samples/2.2/TodoApi/Startup.cs?highlight=6-7&name=snippet_dic)]
 
-The preceding code registers the OData service in the [dependency injection (DI)](xref:fundamentals/dependency-injection) container.
+The preceding code registers the OData service in the [dependency injection (DI)](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1) container.
 
 ## Configure middleware
 
@@ -57,7 +59,7 @@ Returning <xref:System.Linq.IQueryable> or [`ActionResult<IQueryable>`](xref:Mic
 
 ## Query resources using OData
 
-Post some data to the web API app, using a tool such as [Postman](https://www.getpostman.com/tools). See [How to use Postman](xref:tutorials/first-web-api#test-the-gettodoitems-method),
+Post some data to the web API app, using a tool such as [HTTP REPL](https://docs.microsoft.com/en-us/aspnet/core/web-api/http-repl?view=aspnetcore-3.1&tabs=linux) or [Postman](https://www.getpostman.com/tools).
 
 Send 5 Post requests to `https://localhost:5001/api/todo` with the 5 items below **separately** in the request body.
 
@@ -142,7 +144,7 @@ The preceding request returns the following data:
 
 ### $orderBy
 
-The `$orderBy` option can consume excessive resources. Consider using `[Queryable(AllowedQueryOptions=AllowedQueryOptions.{Option})]` to disable `$orderBy`.  See `<xref:web-api/advanced/odata-security#query-security>` for more information.
+The `$orderBy` option can consume excessive resources. Consider using `[Queryable(AllowedQueryOptions=AllowedQueryOptions.{Option})]` to disable `$orderBy`.  See [Security Guidance for ASP.NET Core Web API OData](odata-security.md) for more information.
 
 `$orderBy` sorts data based on one or more properties. For example, to order the data based on *priority* of each item, append `?$orderBy=priority` to the request. For example, `http://localhost:5001/api/todo?$orderBy=priority`.
 
@@ -205,7 +207,7 @@ Data can be sorted data based on multiple properties. For example, `?$orderBy=ty
 
 ### $filter
 
-The `$filter` option can consume excessive resources. Consider using `[Queryable(AllowedQueryOptions=AllowedQueryOptions.{Option})]` to disable `$filter`.  See `<xref:web-api/advanced/odata-security#query-security>` for more information.
+The `$filter` option can consume excessive resources. Consider using `[Queryable(AllowedQueryOptions=AllowedQueryOptions.{Option})]` to disable `$filter`.  See [Security Guidance for ASP.NET Core Web API OData](odata-security.md) for more information.
 
 `$filter` filters data based on a boolean condition. For example, to get only the items with `priority` greater than 1, append `?$filter=priority gt 1` to the  request path.
 
@@ -285,7 +287,7 @@ The preceding request returns the following data:
 
 ### Chained queries
 
-Chained queries can consume excessive resources. Consider using `[Queryable(AllowedQueryOptions=AllowedQueryOptions.{Option})]` to disable expensive operations. Consider restricting `$orderby` to properties in a clustered index.  See `<xref:web-api/advanced/odata-security#query-security>` for more information.
+Chained queries can consume excessive resources. Consider using `[Queryable(AllowedQueryOptions=AllowedQueryOptions.{Option})]` to disable expensive operations. Consider restricting `$orderby` to properties in a clustered index.  See [Security Guidance for ASP.NET Core Web API OData](odata-security.md) for more information.
 
 OData queries can be chained to make a complex query. For example, appending `?$skip=2&$select=name,priority&$orderBy=priority desc&filter=priority gt 1` returns the following data:
 
@@ -312,6 +314,6 @@ OData queries can be chained to make a complex query. For example, appending `?$
 
 ## Additional resources
 
-* [View or download sample code for this tutorial](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-odata-api/samples). See [how to download](xref:index#how-to-download-a-sample).
-* `<xref:web-api/advanced/odata-security>`
+* [View or download sample code for this tutorial](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-odata-api/samples).
+* [Security Guidance for ASP.NET Core Web API OData](odata-security.md)
 * [OData official website](https://www.odata.org/)
