@@ -38,7 +38,7 @@ public static ODataRoute MapODataServiceRoute(this HttpConfiguration configurati
 }
 ```
 
-However, you can call other version of `MapODataServiceRoute` to custom your own routing conventions. For example:
+However, you can call other version of `MapODataServiceRoute` to customize your own routing conventions. For example:
 
 ```C#
 public static ODataRoute MapODataServiceRoute(this HttpConfiguration configuration, string routeName, string routePrefix, IEdmModel model, IODataPathHandler pathHandler, IEnumerable<IODataRoutingConvention> routingConventions)
@@ -70,9 +70,9 @@ With this attribute, Web API OData tries to match the request Uri with `Customer
 ~/odata/Customers(301)/Address/City
 ```
 
-For the above request Uri, `id` in the function will have `1`, `2` and `301` value.
+For the above request Uri, `id` in the function will have `1`, `2` and `301` value respectively.
 
-However, for the following request Uri, it can't match to `GetCityOfACustomer()':
+However, for the following request Uri, it can't match to `GetCityOfACustomer()`:
 ```C#
 ~/odata/Customers
 ~/odata/Customers(1)/Address
