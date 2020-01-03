@@ -1,5 +1,5 @@
 ﻿---
-title: "OData Migration extension - usage and architecture"
+title: "OData Migration extension usage and architecture"
 description: ""
 
 author: aayc
@@ -8,7 +8,7 @@ ms.date: 01/03/2020
 ms.topic: article
 
 ---
-# OData Migration extension - usage and architecture
+# OData Migration extension usage and architecture
 
 **Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-core-v7.md)]
 
