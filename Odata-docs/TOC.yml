@@ -167,7 +167,7 @@
     items:
     - name: Getting started
       href: /odata/webapi/netcore
-    - name: Build web APIs with OData
+    - name: Web API with query options
       href: /odata/webapi/first-odata-api
     - name: OData Expand
       href: /odata/webapi/odata-expand
