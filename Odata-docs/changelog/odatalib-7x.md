@@ -28,6 +28,29 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
+## ODataLib 7.6.2 Release
+
+***Features***
+
+[[#1585](https://github.com/OData/odata.net/pull/1585)] Support deep updates
+
+***Fixed Bugs***
+
+[[#1598](https://github.com/OData/odata.net/pull/1598)] Support the namespace alias for operation in Uri parser
+
+[[#1586](https://github.com/OData/odata.net/pull/1586)] Fixes for Csdl.GetNamespaceAlias extension method
+
+[[#1583](https://github.com/OData/odata.net/pull/1583)] Allow duplicate properties in $select with no select options
+
+[[#1564](https://github.com/OData/odata.net/pull/1564)] Enable TLS 1.2 for package testing
+
+[[#1558](https://github.com/OData/odata.net/pull/1558)] Update style cop to not require net 3.5 installation
+
+***Improvements***
+
+[[#1595](https://github.com/OData/odata.net/pull/1595)] Update Clone() to copy array pool
+
+---
 
 ## ODataLib 7.6.1 Release
 
@@ -44,6 +67,7 @@ Most of our API improvements fall into the category of namespace simplifications
 [[#1550](https://github.com/OData/odata.net/pull/1550)] Change naming of DataModification* terms and types in vocabularies.
 
 [[#1553](https://github.com/OData/odata.net/pull/1553)] Change the AssemblyVersionAttribute without the build revision.
+
 
 ---
 

@@ -1,7 +1,8 @@
 ---
-title : "14.1 7.0 Beta1 & Beta2 & Beta4"
+title : 7.0 Beta for ASP.NET and ASP.NET Core
 description: "7.0 Beta for ASP.NET and ASP.NET Core"
-
+author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ---
 # WebAPI 7.0
@@ -19,6 +20,7 @@ The code for the packages can be found [here](https://github.com/OData/WebApi/tr
 
 ### Known Issues
 
+<!-- ASP.NET Core Beta1 is ancient, can we delete?
 **Web API OData for ASP.NET Core Beta1**, has following limitations which are known issues:
 * Batching is not fully supported
 * Using EnableQuery in an HTTP route, i.e. non-OData route, is not fully functional
@@ -26,17 +28,18 @@ The code for the packages can be found [here](https://github.com/OData/WebApi/tr
   likely make a request on a non-OData route. This will fail with an exception `Value cannot be null. Parameter name: routeName`. You
    can work around this issue by adding `routes.EnableDependencyInjection();` in `UseMvc()` lambda in `Configure`. You can configure
    the default startup request in **Project properties**, **Debug**, **App URL**.
+-->
 
 **Web API OData for ASP.NET**, there are no known issues.
 
 ### OData V7.0.0 for ASP.NET Core 2.x
 
 The new OData V7.0.0 for ASP.NET Core 2.x package supports the same features set as Web API OData V6.0.0 but works with ASP.NET Core.
-You can learn more about ASP.NET Core from the [documentation](https://docs.microsoft.com/en-us/aspnet/core/).
+You can learn more about ASP.NET Core from the [documentation](/aspnet/core/).
 
 To get started with OData V7.0.0 for ASP.NET Core 2.x, you can use code that is very similar to Web API OData V6.0.0. All of the
 documentation in [Writing a simple OData V4 service](/odata/webapi/getting-started) is correct except for
-configuring the OData endpoint. Instead of using the Register() method, you'll follow the new [service + route configuration model](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/startup)
+configuring the OData endpoint. Instead of using the Register() method, you'll follow the new [service + route configuration model](/aspnet/core/fundamentals/startup)
 used in ASP.NET Core.
 
 The namespace for both Web API OData packages is Microsoft.AspNet.OData.

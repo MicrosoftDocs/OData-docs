@@ -9,6 +9,36 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.2.3
+===
+
+The NuGet packages for ASP.NET Web API OData v7.2.3 are available on the [NuGet gallery](https://www.nuget.org/).
+
+You can install or update the NuGet packages for OData Web API v7.2.3 using the [Package Manager Console](https://docs.nuget.org/docs/start-here/using-the-package-manager-console):
+
+```PowerShell
+
+PM> Install-Package Microsoft.AspNetCore.OData -Version 7.2.3
+```
+
+or
+
+```PowerShell
+
+PM> Install-Package Microsoft.AspNet.OData -Version 7.2.3
+
+```
+### New Features:
+
+* [ [#1941](https://github.com/OData/WebApi/pull/1941) ] Enable $select improvement with path and nested query options
+
+
+### Improvements and fixes:
+
+* [ [#1965](https://github.com/OData/WebApi/issues/1965) ] Inconsistent behavior on 'key' parameter convention for OData routes
+
+---
+
 ## WebAPI 7.2.2
 
 The NuGet packages for ASP.NET Web API OData v7.2.2 are available on the [NuGet gallery](https://www.nuget.org/).
@@ -46,7 +76,6 @@ This provides a flag that can revert the breaking change introduced in the last 
 
 * [ [#1814](https://github.com/OData/WebApi/issues/1814) ] CreateODataResult.Entity made public
 ---
-
 
 ## WebAPI 7.2.1
 
@@ -341,11 +370,11 @@ The code for the packages can be found [here](https://github.com/OData/WebApi/tr
 ### OData V7.0.0 for ASP.NET Core 2.x
 
 The new OData V7.0.0 for ASP.NET Core 2.x package supports the same features set as Web API OData V6.0.0 but works with ASP.NET Core.
-You can learn more about ASP.NET Core from the [documentation](https://docs.microsoft.com/en-us/aspnet/core/).
+You can learn more about ASP.NET Core from the [documentation](/aspnet/core/).
 
 To get started with OData V7.0.0 for ASP.NET Core 2.x, you can use code that is very similar to Web API OData V6.0.0. All of the
 documentation in [Writing a simple OData V4 service](/odata/webapi/getting-started) is correct except for
-configuring the OData endpoint. Instead of using the Register() method, you'll follow the new [service + route configuration model](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/startup)
+configuring the OData endpoint. Instead of using the Register() method, you'll follow the new [service + route configuration model](/aspnet/core/fundamentals/startup)
 used in ASP.NET Core.
 
 The namespace for both Web API OData packages is Microsoft.AspNet.OData.

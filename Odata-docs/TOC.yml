@@ -167,6 +167,10 @@
     items:
     - name: Getting started
       href: /odata/webapi/netcore
+    - name: OData Expand
+      href: /odata/webapi/odata-expand
+    - name: Security guidance
+      href: /odata/webapi/odata-security
   - name: ODataLib
     items:
     - name: Core lib
