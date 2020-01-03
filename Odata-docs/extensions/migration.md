@@ -1,17 +1,23 @@
-﻿# Introduction
+﻿---
+title: "OData Migration extension - usage and architecture"
+author: aayc
+---
+# OData Migration extension - usage and architecture
+
+**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-core-v7.md)]
 
 The OData Migration library provides ASP.NET Core 2.2+ OData V4 services with the capability of handling and responding to OData V3 requests.  An OData V4 service that uses the OData Migration Library may appear to an OData V3 client as the equivalent V3 service.  This may be useful to you if you have migrated your service from OData V3 to OData V4, but wish to bridge the gap between your newly migrated V4 service and your OData V3 clients.
 
-# Usage
+## Usage
 
-## Requirements
+### Requirements
 The OData Migration library applies to:
 
 1. OData V4 services that wish to support V3 clients
 2. ASP.NET Core 2.2+ OData V4 services
 3. JSON formatted requests and responses
 
-## Not tested or supported
+### Not tested or supported
 | OData Feature | Tested | Example|
 |---|---|---|
 | OData XML/Atom format | Not supported | See [Atom and XML formats](https://www.odata.org/documentation/odata-version-3-0/atom-format/)
@@ -22,10 +28,10 @@ The OData Migration library applies to:
 | JSON Verbose Format | Not supported | -  |
 
 In addition, all features that are [new in OData V4](http://docs.oasis-open.org/odata/new-in-odata/v4.0/new-in-odata-v4.0.html) but not present in OData V3 are not supported by this extension.
-## Installation and Setup
+### Installation and Setup
 There are two steps to configure your service to use OData Migration.
 
-### Step 1: Configuring Services
+#### Step 1: Configuring Services
 
 Adding OData Migration to your service configuration simply one properly placed line of code.
 
@@ -58,7 +64,7 @@ These headers are `dataserviceversion: 3.0` and `maxdataserviceversion: 3.0`  If
 will deserialize the request as a OData v3 request, and the output formatter will return JSON that is OData v3 compliant.  Both of these formatters
 make use of the OData Edmx contract to validate requests and responses just as they would be validated in v4.
 
-### Step 2: Configuring IApplicationBuilder
+#### Step 2: Configuring IApplicationBuilder
 
 Configuring your application to use OData Migration in its pipeline requires two parameters:
 
@@ -108,7 +114,7 @@ OData Migration extension's middleware will take care of this conversion for you
 
 Be aware that in its current state, using this extension will cause your v3 metadata to always be returned in response to any metadata requests.
 
-# Project structure
+## Project structure
 This project uses the master branch for development.  
 
 The main point of entry for usage is `MigrationExtension.cs`.  This exposes public methods for services who want to use this extension.
@@ -119,12 +125,12 @@ The architecture of this extension can be thought of as three separate features:
 2) Request Body Translation
 3) Response Body Translation
 
-### URL Translation
+#### URL Translation
 
 URL translation in the code is split into two parts: path translation and query translation. The entry point for URL translation is `ODataMigrationMiddleware.cs` which
 formats and checks the request headers to see if the incoming request is an OData V3 request.  If so, it translates the path and query of the HttpContext.
 
-#### Path Translation
+##### Path Translation
 The path of the request URL is translated by:
 
 1) Parsing the request path into OData V3 segments (such as a property segment, entity segment, or key segment)
@@ -134,7 +140,7 @@ The path of the request URL is translated by:
 Translating each segment from V3 to V4 is a process of obtaining the relevant inner pieces of data of the V3 segment, looking up their equivalents
 in the V4 model, and constructing a new V4 segment with matching inner data.
 
-#### Query Translation
+##### Query Translation
 There are only a few key differences between OData V3 and OData V4 when it comes to queries.  Here is the list of OData query options and their differences:
 
 |Query option|Description|Syntactic difference between V3 and V4|
@@ -155,7 +161,7 @@ The OData Migration extension translates a V3 query by looking for either filter
 
 The $inlinecount option is translated by changing "allpages" to "true" and "none" to "false".
 
-### Request Body Translation
+#### Request Body Translation
 Request body translation is done by overridding the OData V4 ASP.NET Core InputFormatter.  InputFormatters in ASP.NET Core are responsible for deserializing incoming request bodies.
 In OData V4, the ODataInputFormatter uses a set of deserializers that are each responsible for a certain kind of request body payload.  For example, there is an ODataResourceDeserializer,
 which is responsible for deserializing incoming entities and complex types.  These deserializers are dispatched by the ODataDeserializerProvider; in OData V4 the implementation for the
@@ -166,10 +172,9 @@ The main difference between the ODataMigrationInputFormatter and ODataInputForma
 Each of these custom deserializers overrides the default OData V4 deserializer in order to insert logic that modifies the incoming request body _before_
 it is deserialized in OData V4.
 
-![](Images/RequestBody.PNG)
+![alt Request body translation](Images/RequestBody.PNG)
 
-#### Example
-
+##### Example
 One example of an incoming OData V3 request that would pose a problem to a V4 deserializer is:
 ```
 {
@@ -187,7 +192,7 @@ This extension overrides the resource, collection (an array of non-entity/non-co
 deserializers did not require modification to be V3 compatible, while others, such as the ODataResourceSetDeserializer, end up depending on the customized
 ODataMigrationResourceDeserializer.
 
-#### Deserializers
+##### Deserializers
 The following table explains why each deserializer was or was not overridden:
 
 |OData V4 ASP.NET Core Deserializer|Overridden?|Reason|
@@ -202,11 +207,11 @@ The following table explains why each deserializer was or was not overridden:
 
 The following picture shows the flow from the formatter to the service through the deserializers.
 
-![Thing](Images/FormatterFlow.png)
+![alt Input formatter flow](Images/FormatterFlow.png)
 
 Details on each of the custom deserializers can be found in the classes under `Formatters/Deserialization`.
 
-### Response Body Translation
+#### Response Body Translation
 Response body translation is done in a similar way to request body translation by overriding the OData V4 ASP.NET Core OutputFormatter.  OutputFormatters
 in ASP.NET Core are responsible for serializing response payloads to the response content type (in this case, JSON).  There is a similar architecture
 where the DefaultODataSerializerProvider is responsible for dispatching the appropriate ODataSerializers to serialize the outgoing data.
@@ -216,10 +221,9 @@ This customized provider dispatches customized ODataSerializers to translate the
 ODataSerializers are overridden; only the ODataResourceSerializer, ODataResourceSetSerializer, ODataCollectionSerializer, ODataPrimitiveSerializer have
 been replaced by their OData Migration counterparts.
 
-![](Images/ResponseBody.PNG)
+![alt Response body translation](Images/ResponseBody.PNG)
 
-#### Example
-
+##### Example
 In a similar example to what we examined in the [request body translation](#request-body-translation) section, suppose we have this response body:
 ```
 {
@@ -230,8 +234,7 @@ In a similar example to what we examined in the [request body translation](#requ
 The custom OData Migration serializers would add quotes to the `long` value in this case, because an OData V3 client would be expecting a quoted value
 if it knew the entity type was Edm.Int64.
 
-#### Serializers
-
+##### Serializers
 The following table explains why each serializer was or was not overridden:
 
 |OData V4 ASP.NET Core Serializer|Overridden?|Reason|
@@ -251,12 +254,11 @@ The following table explains why each serializer was or was not overridden:
 
 Details on each of the custom serializers can be found in the classes under `Formatters/Serialization`.
 
-# Building and Testing
+## Building and Testing
 The Microsoft.Extensions.OData.Migration.Tests project, found by opening the ODataMigration.sln in VS 2017+, contains unit tests for URL translation and
 E2E tests for request/response body translation.  All tests should be pass at the time of this writing.  Note that the E2E tests only test
 the request/response body translation and the URL translation is not being tested at the same time.
 
-# Future Features
-
+## Future Features
 One feature that would be nice is the automatic conversion of an OData V4 model to an OData V3 model.  Currently no such generalized process exists that we know of,
 and having this process would allow the usage of this package to be even more seamless, because you would only need to provide the V4 IEdmModel of the service.

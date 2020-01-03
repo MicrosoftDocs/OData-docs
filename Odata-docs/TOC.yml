@@ -369,6 +369,10 @@
             href: /odata/webapi/support-abstract-entity-type-in-client
           - name: Support untyped json 
             href: /odata/webapi/support-untyped-json
+      - name: Migration
+        items:
+          - name: OData Migration extension - usage and architecture
+            href: /odata/extensions/migration
 - name: Resources
   items:
     - name: Tools
