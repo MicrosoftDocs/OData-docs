@@ -1,12 +1,12 @@
 ﻿---
-title: "OData Migration extension usage and architecture"
+title: "Use Extensions in OData Client"
 description: ""
 
-author: aayc
-ms.author: aayc
-ms.date: 01/03/2020
+author: chuanboz
+ms.author: chuanboz
+ms.date: 10/10/2019
 ms.topic: article
-
+ 
 ---
 # OData Migration extension usage and architecture
 
