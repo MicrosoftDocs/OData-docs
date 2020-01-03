@@ -12,11 +12,12 @@ By [FIVIL](https://github.com/fivil) and [Rick Anderson](https://twitter.com/Ric
 
 This sample:
 
-* Demonstrates how to add [OData](https://www.odata.org/) query options support in an ASP.NET Core Web API app.?
+* Demonstrates how to add [OData](https://www.odata.org/) query options support in an ASP.NET Core Web API app.
 * Uses the completed [to-do Web API](/aspnet/core/tutorials/first-web-api) as a starting point.
 * Does not use an [Entity Data Model](http://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752491) (EDM).
 
-A malicious or naive client may construct a query that consumes excessive resources. Such a query can disrupt access to your service. Review [Security Guidance for ASP.NET Core Web API OData](odata-security.md) before starting this tutorial.
+> [!WARNING]
+> A malicious or naive client may construct a query that consumes excessive resources. Such a query can disrupt access to your service. Review [Security Guidance for ASP.NET Core Web API OData](odata-security.md) before starting this tutorial.
 
 * [.NET Core SDK 2.2 or later](https://www.microsoft.com/net/download/all)
 
