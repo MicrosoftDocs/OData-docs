@@ -1,6 +1,12 @@
 ﻿---
 title: "OData Migration extension - usage and architecture"
+description: ""
+
 author: aayc
+ms.author: aayc
+ms.date: 01/03/2020
+ms.topic: article
+
 ---
 # OData Migration extension - usage and architecture
 
