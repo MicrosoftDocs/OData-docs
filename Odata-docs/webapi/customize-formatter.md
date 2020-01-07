@@ -70,7 +70,7 @@ public class AnnotatingEntitySerializer : ODataEntityTypeSerializer
         if (entry != null && document != null)
         {
             // annotate the document with the score.
-            entry.InstanceAnnotations.Add(new                             ODataInstanceAnnotation("org.northwind.search.score", new ODataPrimitiveValue(document.Score)));
+            entry.InstanceAnnotations.Add(new ODataInstanceAnnotation("org.northwind.search.score", new ODataPrimitiveValue(document.Score)));
         }
         return entry;
     }
