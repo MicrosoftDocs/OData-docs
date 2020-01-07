@@ -9,8 +9,43 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.3.0
+
+The NuGet packages for ASP.NET Web API OData v7.3.0 are available on the [NuGet gallery](https://www.nuget.org/).
+
+You can install or update the NuGet packages for OData Web API v7.3.0 using the [Package Manager Console](https://docs.nuget.org/docs/start-here/using-the-package-manager-console):
+
+```PowerShell
+
+PM> Install-Package Microsoft.AspNetCore.OData -Version 7.3.0
+
+```
+
+or
+
+```PowerShell
+
+PM> Install-Package Microsoft.AspNet.OData -Version 7.3.0
+
+```
+
+### New Features:
+
+* [ [#1748](https://github.com/OData/WebApi/issues/1748) ] Add .NET Core 3.x supporting.
+
+  Be noted: v7.3.0 includes .NET Core 3.1 supporting, meanwhile v7.3.0-beta includes .NET Core 3.0 supporting.
+
+### Improvements and fixes:
+
+* [ [#1992)](https://github.com/OData/WebApi/issues/1992)) ] Missing Null check in SelectExpandNode class
+
+* [ [#1989](https://github.com/OData/WebApi/issues/1989) ] Fix error message to state that value must be 1 or greater, instead of zero or greater
+
+* [ [#1984](https://github.com/OData/WebApi/issues/1984) ] $select on property of type byte[] not working since 7.2.3
+
+---
+
 ## WebAPI 7.2.3
-===
 
 The NuGet packages for ASP.NET Web API OData v7.2.3 are available on the [NuGet gallery](https://www.nuget.org/).
 

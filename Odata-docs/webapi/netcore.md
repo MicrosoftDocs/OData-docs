@@ -149,7 +149,7 @@ the API between the two as similar as possible. While the APIs are similar, they
 ASP.NET and ASP.NET Core, such as HttpRequestMessage is now HttpRequest.
 
 ##### ODataRoutingConvention
-Both `Microsoft.AspNet.OData` and `Microsoft.AspNetCore.OData` packages support same set of OData routing conventions, including default built-in routing conventions and attribute rounting convention, so that each request can be routed to matching controller for processing. All routing conventions implement the interface `IODataRoutingConvention`, however, with different definitions, as ``` csharped below, for the two packages due to different route matching implementations based on ASP.NET Framework and ASP.NET Core:
+Both `Microsoft.AspNet.OData` and `Microsoft.AspNetCore.OData` packages support same set of OData routing conventions, including default built-in routing conventions and attribute rounting convention, so that each request can be routed to matching controller for processing. All routing conventions implement the interface `IODataRoutingConvention`, however, with different definitions for the two packages due to different route matching implementations based on ASP.NET Framework and ASP.NET Core:
 - For ASP.NET Framework:
 ```C#
 namespace Microsoft.AspNet.OData.Routing.Conventions
@@ -190,4 +190,4 @@ namespace Microsoft.AspNet.OData.Routing.Conventions
 }
 ```
 
-Specific routing convention, e.g. MetadataRoutingConvention, typically implements the package-specific interface, provides package-specific implementation, and shares common logic for both platform in the `Microsoft.AspNet.OData.Shared` shared project.
+Specific routing convention, e.g. `MetadataRoutingConvention`, typically implements the package-specific interface, provides package-specific implementation, and shares common logic for both platform in the `Microsoft.AspNet.OData.Shared` shared project.
