@@ -14,14 +14,14 @@ In the previous section, paired `WriteStart()`/`WriteEnd()` calls have been made
 
 The new API replaces paired `WriteStart()`/`WriteEnd()` calls with a single `Write()` call. `Write()` comes in two flavors. The first flavor takes a single argument which is the thing you want to write. For example, `writer.Write(entry);` is equivalent to
 
-```C#
+```csharp
 writer.WriteStart(entry);
 writer.WriteEnd();
 ```
 
-The second flavor takes two arguments. The first argument is same as before. The second argument is an [`Action`](https://msdn.microsoft.com/en-us/library/system.action(v=vs.110).aspx) delegate which is to be invoked in-between writing the first argument. For instance,
+The second flavor takes two arguments. The first argument is same as before. The second argument is an <xref:System.Action> delegate which is to be invoked in-between writing the first argument. For instance,
 
-```C#
+```csharp
 writer.Write(outer, () => writer
     .Write(inner1)
     .Write(inner2));
@@ -29,7 +29,7 @@ writer.Write(outer, () => writer
 
 is equivalent to
 
-```C#
+```csharp
 writer.WriteStart(outer);
     writer.WriteStart(inner1);
     writer.WriteEnd();
