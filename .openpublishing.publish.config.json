@@ -8,6 +8,9 @@
       "monikers": [],
       "moniker_ranges": [],
       "open_to_public_contributors": true,
+      "xref_query_tags": [
+        "/dotnet"
+      ],
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
