@@ -6,30 +6,28 @@ ms.date: 7/1/2019
 # Unit Test and E2E Test
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
-In OData WebApi, there are unit test, e2e test for V3 and V4, those [test cases](https://github.com/OData/WebApi/tree/master/OData/test) are to ensure the feature and bug fix, also to make sure not break old functionality.
+In OData WebApi, there are unit tests, e2e tests for V3 and V4, those [test cases](https://github.com/OData/WebApi/tree/master/OData/test) are to verify that features and bug fixes work as intended, and also to make sure they do not break existing functionality.
 
-### Unit Test
-Every class in OData WebApi has it's own unit test class, for example:
+### Unit Tests
+Every class in OData WebApi has its own unit test class, for example:
 OData/src/System.Web.OData/OData/Builder/ActionLinkBuilder.cs 's test class is 
-OData/test/UnitTest/System.Web.OData.Test/OData/Builder/ActionLinkBuilderTests.cs.
-
-You can find that the structural under `System.Web.OData` folder and `System.Web.OData.Test` folder are the same, also for V3 `System.Web.Http.OData.Test`, so if your pull request contains any class add/change, you should add/change(this change here means add test cases) unit test file.
+OData/test/UnitTest/System.Web.OData.Test/OData/Builder/ActionLinkBuilderTests.csYou can find that the structures under the `System.Web.OData` folder and the`System.Web.OData.Test` folder are the same, and the same goes for V3 `System.Web.Http.OData.Test`. So if your pull request contains any class addition/change, you should add/change(here "change" means adding test cases) the corresponding unit test file.
 
 #### How To Add Unit Test
-* Try to avoid other dependency use moq.
-* Make sure you add/change the right class(V4 or V3 or both).
-* Can add functional test for complicate scenario, but E2E test cases are better.
+* Try to avoid other dependency, use moq.
+* Make sure you add/change the right class (V4 or V3 or both).
+* Can add functional test for complicated scenarios, but E2E test cases are better.
 
 
-### E2E Test
+### E2E Tests
 E2E test are complete test for user scenarios, always begin with client request and end with server response. If your unit test in pull request can't cover all scenario well or you have a big pull request, please add E2E test for it.
 
 #### How To Add E2E Test
-* Add test cases in exist test class that related to your pull request.
+* Add test cases in existing test class that are related to your pull request.
 * Add new folder and test class for your own scenario.
-* If the test has any kind of state that is preserved between request, it should be the only test defined in the test class to avoid conflicts when executed along other tests.
-* Try to test with both in memory data and DB data.
-* Keep test folder, class style with exist test folder, class.
+* If the test has any kind of state that is preserved between requests, it should be the only test defined in the test class in order to avoid conflicts when executed along other tests.
+* Try to test with both in-memory data and DB data.
+* Keep the test folder and class style consistent with existing test folders and classes.
 
 
 #### Test Sample
