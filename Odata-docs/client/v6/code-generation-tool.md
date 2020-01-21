@@ -19,6 +19,7 @@ OData provide two tools to generate client proxy file for an OData Service.
 	- Visual Studio 2012
 	- Visual Studio 2013
 	- Visual Studio 2015
+	- Visual Studio 2017
 
 	For full documentation, please refere to "[How to use OData client generator to generate client proxy file](https://blogs.msdn.com/b/odatateam/archive/2014/03/12/how-to-use-odata-client-code-generator-to-generate-client-side-proxy-class.aspx)".
 
