@@ -11,7 +11,9 @@ In OData WebApi, there are unit tests, e2e tests for V3 and V4, those [test case
 ### Unit Tests
 Every class in OData WebApi has its own unit test class, for example:
 OData/src/System.Web.OData/OData/Builder/ActionLinkBuilder.cs 's test class is 
-OData/test/UnitTest/System.Web.OData.Test/OData/Builder/ActionLinkBuilderTests.csYou can find that the structures under the `System.Web.OData` folder and the`System.Web.OData.Test` folder are the same, and the same goes for V3 `System.Web.Http.OData.Test`. So if your pull request contains any class addition/change, you should add/change(here "change" means adding test cases) the corresponding unit test file.
+OData/test/UnitTest/System.Web.OData.Test/OData/Builder/ActionLinkBuilderTests.cs
+
+You can find that the structures under the `System.Web.OData` folder and the`System.Web.OData.Test` folder are the same, and the same goes for V3 `System.Web.Http.OData.Test`. So if your pull request contains any class addition/change, you should add/change (here "change" means adding test cases) the corresponding unit test file.
 
 #### How To Add Unit Test
 * Try to avoid other dependency, use moq.
