@@ -67,4 +67,4 @@ Build and run the sample. Then open the **csdl.xml** file under the **output dir
 ![image](/odata/assets/2015-04-18-csdl1.png)
 
 ### References
-[[Tutorial & Sample] Use Singleton to define your special entity](https://blogs.msdn.com/b/odatateam/archive/2014/03/05/use-singleton-to-define-your-special-entity.aspx).
+[[Tutorial & Sample] Use Singleton to define your special entity](https://devblogs.microsoft.com/odata/tutorial-sample-use-singleton-to-define-your-special-entity/).
