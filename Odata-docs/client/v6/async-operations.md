@@ -12,7 +12,7 @@ ms.topic: article
 
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v6.md)]
 
-*All samples in this doc are based on the Trippin Service. You can follow "[How to use OData Client Code Generator to generate client-side proxy class](https://blogs.msdn.com/b/odatateam/archive/2014/03/11/how-to-use-odata-client-code-generator-to-generate-client-side-proxy-class.aspx)" to generate the client proxy file.*
+*All samples in this doc are based on the Trippin Service. You can follow "[How to use OData Client Code Generator to generate client-side proxy class](https://devblogs.microsoft.com/odata/tutorial-sample-how-to-use-odata-client-code-generator-to-generate-client-side-proxy-class/)" to generate the client proxy file.*
 
 OData Client for .NET provides a serial of Begin/End methods to support asynchronous operations, such as executing queries and saving changes. Each Begin method takes a state parameter that can pass a state object to the callback. This state object is retrieved from the `IAsyncResult` that is supplied with the callback and is used to call the corresponding End method to complete the asynchronous operation.
 

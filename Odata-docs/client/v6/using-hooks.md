@@ -256,4 +256,4 @@ Then, to add new properties in the `ODataEntry`, developers can call `AddPropert
 
 These two configurations provide more other client hooks in request pipeline and response pipeline.
 
-Please refer to this [link](https://blogs.msdn.com/b/odatateam/archive/2013/07/26/using-the-new-client-hooks-in-wcf-data-services-client.aspx) for details.
+Please refer to this [link](https://devblogs.microsoft.com/odata/using-the-new-client-hooks-in-wcf-data-services-client/) for details.

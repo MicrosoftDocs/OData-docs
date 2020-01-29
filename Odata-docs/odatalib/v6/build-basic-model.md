@@ -289,4 +289,4 @@ As you can see, the document contains all the elements we have built so far.
 
 ## References
 
-[Use Enumeration types in OData](https://blogs.msdn.com/b/odatateam/archive/2014/03/18/use-enumeration-types-in-odata.aspx)
+[Use Enumeration types in OData](https://devblogs.microsoft.com/odata/tutorial-sample-use-enumeration-types-in-odata/)
