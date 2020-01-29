@@ -28,6 +28,36 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
+## ODataLib 7.6.3 Release
+
+***Features***
+
+* N/A
+
+***Fixed Bugs***
+
+[[#1653](https://github.com/OData/odata.net/pull/1653)] Combine Dispose methods on JsonWriter
+
+[[#1651](https://github.com/OData/odata.net/issues/1651)] $filter in (null) does not working
+
+[[#1643](https://github.com/OData/odata.net/issues/1643)] Allow Microsoft.OData.Client.Serializer.GetKeyString to receive an IDictionary Object
+
+[[#1623](https://github.com/OData/odata.net/issues/1623)] IN operator fails on strings with commas in them
+
+[[#1621](https://github.com/OData/odata.net/pull/1621)] Fixes for supporting escape function and key values terminating in colon
+
+[[#11576](https://github.com/OData/odata.net/issues/1576)] Fixes for OData.net Client throwing InvalidOperationException when calling 'Move' on a DataServiceCollection 
+
+
+***Improvements***
+
+[[#1603](https://github.com/OData/odata.net/pull/1603)] Save ODataPath ToList for improved performance
+
+[[#1602](https://github.com/OData/odata.net/pull/1602)] Performance improvements in FunctionOverloadResolver
+
+
+---
+
 ## ODataLib 7.6.2 Release
 
 ***Features***
