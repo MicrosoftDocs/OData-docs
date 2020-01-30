@@ -30,10 +30,6 @@ Most of our API improvements fall into the category of namespace simplifications
 
 ## ODataLib 7.6.3 Release
 
-***Features***
-
-* N/A
-
 ***Fixed Bugs***
 
 [[#1653](https://github.com/OData/odata.net/pull/1653)] Combine Dispose methods on JsonWriter
@@ -48,13 +44,11 @@ Most of our API improvements fall into the category of namespace simplifications
 
 [[#11576](https://github.com/OData/odata.net/issues/1576)] Fixes for OData.net Client throwing InvalidOperationException when calling 'Move' on a DataServiceCollection 
 
-
 ***Improvements***
 
 [[#1603](https://github.com/OData/odata.net/pull/1603)] Save ODataPath ToList for improved performance
 
 [[#1602](https://github.com/OData/odata.net/pull/1602)] Performance improvements in FunctionOverloadResolver
-
 
 ---
 
