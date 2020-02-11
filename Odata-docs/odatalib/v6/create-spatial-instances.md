@@ -88,4 +88,4 @@ GeometryCollection collection = GeometryFactory.Collection()
 More samples could be found in the test cases of the `Microsoft.Spatial.Tests` project. Please find the source code [here](https://github.com/OData/odata.net/tree/maintenance-6.x/test/FunctionalTests/Microsoft.Spatial.Tests).
 
 ### References
-[[Tutorial & Sample] Using Geospatial Data](https://blogs.msdn.com/b/odatateam/archive/2011/10/17/using-geospatial-data.aspx).
+[[Tutorial & Sample] Using Geospatial Data](https://devblogs.microsoft.com/odata/using-geospatial-data/).

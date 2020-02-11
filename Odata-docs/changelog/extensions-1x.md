@@ -9,6 +9,10 @@ ms.topic: article
 
 # OData Extensions changelog
 
+## Migration Extensions 1.0.2 Release
+
+This release fixes a bug in request/response body translation (between OData V3 and V4) where the extension fails to replace the body with the translated one.
+
 ## Migration Extensions 1.0.0 Release
 
 The NuGet packages for OData Migration Extensions are available on the [NuGet gallery](https://www.nuget.org/packages/Microsoft.OData.Extensions.Client/).
@@ -21,7 +25,8 @@ PM> Install-Package Microsoft.OData.Extensions.Migration -Version 1.0.0
 
 ```
 
-The new OData Migration extensions for ASP.NET Core 2.2+ enables an OData V4 service to handle OData V3 requests, allowing the migration of the service to OData V4 without changing its OData V3 clients. 
+The new OData Migration extensions for ASP.NET Core 2.2+ enables an OData V4 service to handle OData V3 requests, allowing the migration of the service to OData V4 without changing its OData V3 clients.
+
 To get started, refer to [OData Migration extension usage and architecture](/odata/extensions/migration).
 
 ## Client Extensions 1.0.0 Release

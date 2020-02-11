@@ -53,7 +53,7 @@ GET https://localhost/GetAllProducts()?$select=Name
 
 2. With codegen
 
-With [OData client generator](https://blogs.msdn.com/b/odatateam/archive/2014/03/12/how-to-use-odata-client-code-generator-to-generate-client-side-proxy-class.aspx), proxy class for function and action would be auto generated.
+With [OData client generator](https://devblogs.microsoft.com/odata/tutorial-sample-how-to-use-odata-client-code-generator-to-generate-client-side-proxy-class/), proxy class for function and action would be auto generated.
 For example:
 
 ``` c#
