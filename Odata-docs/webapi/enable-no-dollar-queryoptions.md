@@ -26,7 +26,7 @@ A public Boolean attribute EnableNoDollarQueryOptions is added to ODataUriResolv
         public virtual bool EnableNoDollarQueryOptions { get; set; }
         ...
     }
-~~~
+```
 
 ### WebAPI optional-$-prefix Setting using Dependency Injection
 WebAPI service injects the setting using the ODataUriResolver during service initialization:
@@ -37,7 +37,6 @@ Builder of service provider container sets the instantiated ODataUriResolver con
             {
                 EnableNoDollarQueryOptions = true,
                 EnableCaseInsensitive = enableCaseInsensitive
-
             };
 
 spContainerBuilder.AddService(ServiceLifetime.Singleton, sp => resolver));
