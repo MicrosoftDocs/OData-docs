@@ -21,7 +21,7 @@ The OData Client library allows you to consume data from and interact with OData
 
 In this article we are going to focus on the latter approach.
 
-## Using the OData Connected Service.
+## Using the OData Connected Service
 
 The OData Connected Service is a Visual Studio extension that generates strongly-type C# client code for an OData service that you specify. In this article we are going to use the OData Connected Service to create a client for the [OData sample TripPin service](https://www.odata.org/blog/trippin-new-odata-v4-sample-service/).
 
