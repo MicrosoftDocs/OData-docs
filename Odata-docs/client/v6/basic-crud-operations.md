@@ -75,7 +75,7 @@ context.DeleteObject(person); // create a delete request
 context.SaveChanges(); // send the request
 ```
 
-## Handle Client Exceptions
+## Handling Exceptions in OData Client
 OData Client has implemented a number of `Exception` classes including `DataServiceQueryException` and `DataServiceClientException`. Below is an example of how `Exception`s can be handled while using OData Client.
 
 ``` csharp
