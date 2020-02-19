@@ -97,6 +97,10 @@ OData Client has implemented a number of `Exception` classes including `DataServ
      // ODataErrorException contains odataErrorException.Message contains a message string that conforms to dotnet
      // Exception.Message standards
      ODataErrorException odataErrorException = dataServiceClientException.InnerException as ODataErrorException;
-     Console.WriteLine(odataErrorException.Message);
+     
+     if(odataErrorException != null)
+     {
+       Console.WriteLine(odataErrorException.Message);
+     }  
  }
 ```
