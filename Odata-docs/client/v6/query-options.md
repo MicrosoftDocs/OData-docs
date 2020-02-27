@@ -49,8 +49,18 @@ var count = context.People.Count();
 
 For `GET https://host/service/EntitySet?$count=true`:
 
+We have two ways of making this request.
 ``` csharp
-var people = context.People.IncludeTotalCount();
+var people = context.People.IncludeCount();
+```
+``` csharp
+var people = context.People.IncludeCount(true);
+```
+
+For `GET https://host/service/EntitySet?$count=false`:
+
+``` csharp
+var people = context.People.IncludeCount(false);
 ```
 
 ## $orderby
