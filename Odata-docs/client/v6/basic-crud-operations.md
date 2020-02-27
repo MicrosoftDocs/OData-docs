@@ -12,6 +12,10 @@ ms.topic: article
 
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v6.md)]
 
+## With Codegen/Connected service
+The odata client can be used by generating code using the odata connected service or odata codegen. You can learn more on this  from this [tutorial](https://docs.microsoft.com/en-us/aspnet/web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-client-app "Create an OData v4 Client App (C#)") 
+
+The code
 ## Request an entity set
 
 ```csharp
@@ -20,7 +24,7 @@ var context = new DefaultContainer(new Uri("https://services.odata.org/v4/(S(lqb
 var people = context.People.Execute();
 ```
 
-The `Execute()` API call will return an `IEnumerable<Person>`.
+The `Execute()` API call will return an `IEnumerable<Person>`. To use the async api the call for `Execute` can be replaced with `ExecuteAsync` which returns a `Task<IEnumerable<Person>>`
 
 ## Request an individual entity
 
@@ -74,3 +78,64 @@ context.DeleteObject(person); // create a delete request
 
 context.SaveChanges(); // send the request
 ```
+
+
+## Using with POCO's
+
+While developing you may have the need to use the client without using codegen so as to reduce duplication of code for the models. In this case one can still use the odata client 
+to access their service.
+
+In order to do this one can simply extend the `DataServiceContext` class in their code and add some convenience methods as shown below
+
+```csharp
+// Person class with Odata annotations
+[Key('Id')]
+public class Person
+{
+        public string Id { get; set; }
+        public string UserName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+}
+
+// Dataservice context
+ public class Container : DataServiceContext
+{
+    public Container(Uri serviceRoot) : base(serviceRoot)
+    {
+              this.People = base.CreateQuery<Person>("People");
+    }
+
+    public DataServiceQuery<Person> People {get; }
+
+    public void AddToPeople(Person person)
+    {
+       base.AddObject("People",person);
+    }
+}
+
+```
+
+The above context can then be used the same way as the codegen data service context. 
+
+To add new objects to the peoples entity set use `context.AddObject("People",person)` or create a convenience method in the class to do the same.
+
+### Loading the service model
+
+This example allows you to use the client while using the current metadata which is fetched from network. In some cases this is not convenient and to override this behavior you need to change the constructor of the DataService context to include an action that can be used to fetch the model. Codegen tools do this by downloading the metadata and storing it in a verbatim string or a separate file which is then read upon instantiation of the context.
+
+To provide the same for our code we need to do the following.
+
+```csharp
+    // ctor from above
+    public Container(Uri serviceRoot) : base(serviceRoot)
+    {
+        this.People = base.CreateQuery<Person>("People");
+        // add the following lines
+        this.Format.LoadServiceModel= ()=> util.GetEdmModel()  /* user action that returns a valid IEdmModel instance */  
+        this.Format.UseJson(); /* this instruction causes the model to be loaded instantly else the model is loaded lazily and cached when its needed */
+    }
+
+```
+
+Using the above method one can switch the model they want to use useful especially when writing tests.
