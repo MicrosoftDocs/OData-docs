@@ -27,6 +27,7 @@ OData provides three tools to generate client proxy file for an OData Service.
 - [OData Connected Service](https://visualstudiogallery.msdn.microsoft.com/b343d0eb-6493-44c2-b558-13a0408d013f) lets app developers connect their applications to OData Services (both V3 & V4) and generate the client proxy files for the services. It supports following Visual Studio:
 
 	- Visual Studio 2015
+	- Visual Studio 2019
 	
 - [Unchase OData Connected Service](https://marketplace.visualstudio.com/items?itemName=Unchase.unchaseodataconnectedservice) is a Visual Studio extension to generate C# or VB client proxy files for the OData web services (both V3 & V4) with some customization and more options. Simply put, it is like Add Service Reference for WCF or Add Web Reference for WSDL, but for OData. It supports following Visual Studio:
 
