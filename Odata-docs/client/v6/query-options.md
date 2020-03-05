@@ -75,11 +75,15 @@ var people = context.People.OrderBy(c => c.Trips.Count);
 
 ## $skip
 
+For `GET https://host/service/EntitySet?$skip=3:
+
 ``` csharp
 var people = context.People.Skip(3);
 ```
 
 ## $top
+
+For `GET https://host/service/EntitySet?$top=3:
 
 ``` csharp
 var people = context.People.Take(3);
@@ -87,11 +91,23 @@ var people = context.People.Take(3);
 
 ## $expand
 
+For `GET https://host/service/EntitySet?$expand=Trips:
+
 ``` csharp
 var people = context.People.Expand(c => c.Trips);
 ```
 
 ## $select
+
+For `GET https://host/service/EntitySet // selects all columns by default
+OR
+For `GET https://host/service/EntitySet?$select=*: // same as above
+
+``` csharp
+var people = context.People;
+```
+
+For `GET https://host/service/EntitySet?$select=FirstName,LastName:
 
 ``` csharp
 var people = context.People.Select(c => new {c.FirstName, c.LastName});
@@ -99,9 +115,11 @@ var people = context.People.Select(c => new {c.FirstName, c.LastName});
 
 ## A simple combined query combined
 
+For `GET https://host/service/EntitySet?$expand=Trips&$filter=FirstName eq 'Peter'&$orderby=Firstname asc&$skip=3&$top=3
+
 ``` csharp
 var people =
-    context.People.IncludeTotalCount()
+    context.People
         .Expand(c => c.Trips)
         .Where(c => c.FirstName == "Peter")
         .OrderBy(c => c.FirstName)
