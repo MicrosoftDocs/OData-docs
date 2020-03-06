@@ -14,9 +14,14 @@ ms.topic: article
 
 # Getting Started
 
-The OData Client library allows you to consume data from and interact with OData services from your .Net applications. There are multiple layers of abstraction available when working with the library: You can use the library directly to interact with any service, or you can use a code generation tool to generate strongly-typed client code that's specfic to the service you are interested in. In this article we are going to focus on the latter approach.
+The OData Client library allows you to consume data from and interact with OData services from .Net apps. There are multiple layers of abstraction available when working with the library: 
 
-## Using the OData Connected Service.
+* You can use the library directly to interact with any service.
+* You can use a code generation tool to generate strongly-typed client code that's specific to the service you are interested in.
+
+In this article we are going to focus on the latter approach.
+
+## Using the OData Connected Service
 
 The OData Connected Service is a Visual Studio extension that generates strongly-type C# client code for an OData service that you specify. In this article we are going to use the OData Connected Service to create a client for the [OData sample TripPin service](https://www.odata.org/blog/trippin-new-odata-v4-sample-service/).
 
@@ -133,4 +138,3 @@ And when you run it, you should see the following output:
 As you can see, the OData Connected Service generates C# classes corresponding to your specific OData service and uses the underlying OData client library to serialize and deserialize to and from JSON, saving you a lot of work.
 
 In this tutorial you have learned how to use the OData Connected Service to generate client code to interact with a specific OData service. To learn more about about using the client to read and write to the service, check out the [Basic CRUD operations](./basic-crud-operations) tutorial.
-
