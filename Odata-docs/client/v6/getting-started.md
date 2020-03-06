@@ -115,6 +115,7 @@ namespace ODataClientExample
     {
         static void Main(string[] args)
         {
+            // from c# 7.1 you can use async Main instead
             ListPeople().Wait();
         }
 
