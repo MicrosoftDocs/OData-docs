@@ -128,3 +128,38 @@ var people =
 ```
 
 The order of the query options matters.
+
+Based on the Query Options described above, there are mainly 2 ways to add Query Options to a DataServiceQuery
+1. Using strongly typed C# LINQ query methods.
+2. Using AddQueryOption method.
+
+## LINQ Query Methods
+In the example below, we are creating a linq query expression that returns only Females and orders the result by UserName. We are selecting specific columns
+
+```csharp
+DefaultContainer dsc = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
+
+var query = dsc.People.Where(p => p.Gender == PersonGender.Female)
+    .OrderBy(p => p.UserName)
+    .Select(p => new { p.FirstName, p.LastName, p.UserName, p.Gender });
+
+foreach(var person in query)
+{
+    Console.WriteLine($"Username: {person.UserName} First Name: {person.FirstName} Gender: {person.Gender}");
+}
+```
+
+## AddQueryOption Method
+The following example shows how to use to the AddQueryOption method to create a DataServiceQuery<TElement>
+
+```csharp
+DataServiceQuery peopleQuery = dsc.People
+    .AddQueryOption("$filter", "gender eq Female")
+    .AddQueryOption("$skip", "3")
+    .AddQueryOption("$orderby", "UserName desc");
+
+foreach (Person person in peopleQuery)
+{
+    Console.WriteLine($"Username: {person.UserName} First Name: {person.FirstName} Gender: {person.Gender}");
+}
+```
