@@ -243,36 +243,6 @@ Response Payload
 }
 ```
 
-### System Query Option $select
-
-The `$select` system query option allows the clients to requests a limited set of properties for each entity ***or complex type***. The request below returns ***Name*** and ***IcaoCode*** of all ***Airports***.
-
-`GET serviceRoot/Airports?$select=Name, IcaoCode`
-
-Response Payload
-
-```json
-{
-    "@odata.context": "serviceRoot/$metadata#Airports(Name,IcaoCode)",
-    "value": [
-        {
-            "@odata.id": "serviceRoot/Airports('KSFO')",
-            "@odata.editLink": "serviceRoot/Airports('KSFO')",
-            "Name": "San Francisco International Airport",
-            "IcaoCode": "KSFO"
-        },
-        ......
-        ,
-        {
-            "@odata.id": "serviceRoot/Airports('KJFK')",
-            "@odata.editLink": "serviceRoot/Airports('KJFK')",
-            "Name": "John F. Kennedy International Airport",
-            "IcaoCode": "KJFK"
-        }
-    ]
-}
-```
-
 ## Count
 
 The `$count` system query option allows clients to request a count of the matching resources included with the resources in the response.
