@@ -9,6 +9,9 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.4.0
+
+
 ## WebAPI 7.4.0-beta
 
 The NuGet packages for ASP.NET Web API OData v7.4.0 are available on the [NuGet gallery](https://www.nuget.org/).
