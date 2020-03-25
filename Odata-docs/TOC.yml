@@ -391,5 +391,7 @@
       href: /odata/changelog/webapi-7x
     - name: OData extensions changes
       href: /odata/changelog/extensions-1x
+    - name: OData ConnectedService changes
+      href: /odata/changelog/odataconnectedservice
 # - name: 10.2 Work around for SingleResult.Create an empty result
 #   href: posts\work-around-for-singleresult-create
