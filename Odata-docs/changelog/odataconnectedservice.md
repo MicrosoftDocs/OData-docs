@@ -1,3 +1,12 @@
+---
+title: "OData ConnectedService changes"
+description: "OData ConnectedService changelog"
+author: saxu
+ms.author: saxu
+ms.date: 03/24/2020
+ms.topic: article
+---
+
 # OData Connected Service changelog
 
 ## OData Connected Service 0.5.0 Release
