@@ -28,5 +28,3 @@ The OData Protocol is different from other REST-based web service approaches in 
 
 The following image shows how different libraries can be used for server and client side implementations.
 ![libraries](/odata/assets/library-relationship.png)
-
-You can find more information on OData specification at [OData.org](https://www.odata.org/).
