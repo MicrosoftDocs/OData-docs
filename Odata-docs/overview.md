@@ -24,7 +24,4 @@ OData improves semantic interoperability between systems and follows these desig
 - Extensibility is important. Services should be able to support extended functionality without breaking clients unaware of those extensions.
 - Prefer mechanisms that work on a variety of data sources. In particular, do not assume a relational data model.
 
-The OData Protocol is different from other REST-based web service approaches in that it provides a uniform way to describe both the data and the data model. This improves semantic interoperability between systems and allows an ecosystem to emerge. It follows these design principles:
-
-The following image shows how different libraries can be used for server and client side implementations.
-![libraries](/odata/assets/library-relationship.png)
+The OData Protocol is different from other REST-based web service approaches in that it provides a uniform way to describe both the data and the data model. This improves semantic interoperability between systems and allows an ecosystem to emerge. 
