@@ -269,6 +269,8 @@
           href: /odata/odatalib/json-batch
   - name: OData Client
     items:
+      - name: Getting Started
+        href: /odata/client/getting-started
       - name: Basic CRUD operations
         href: /odata/client/basic-crud-operations
       - name: Annotations
