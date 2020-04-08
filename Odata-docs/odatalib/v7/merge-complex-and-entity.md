@@ -22,7 +22,7 @@ We followed the existing implementation of serializing/deserializing entity inst
 
 `ODataNestedResourceInfo` class is used for both navigation property and complex property. For complex property, this class will be used to store the name of the complex property and a Boolean to indicate whether this property is a single instance or a collection.
 
-For other Public APIs, you can refer to the [Breaking changes about Merge Entity and Complex](../release notes/2016-08-29-23-17-Merge-Entity-And-Complex-Breaking)).
+For other Public APIs, you can refer to the [Breaking changes about Merge Entity and Complex](../../changelog/odatalib-7x.md#breaking-change-change-in-query-nodes).
 
 ## Model
 
