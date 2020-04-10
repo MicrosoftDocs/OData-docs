@@ -12,6 +12,15 @@ ms.topic: article
 ## WebAPI 7.4.0
 
 
+## WebAPI 7.4.0-beta2
+
+### Improvements and fixes:
+
+* Revert the default `HandleNullPropagationOption` to `HandleNullPropagationOption.False` by default for EF Core.
+
+* [ [#2055](https://github.com/OData/WebApi/issues/2055) ] Batch request copies content headers to embedded requests without content.
+
+
 ## WebAPI 7.4.0-beta
 
 The NuGet packages for ASP.NET Web API OData v7.4.0 are available on the [NuGet gallery](https://www.nuget.org/).
