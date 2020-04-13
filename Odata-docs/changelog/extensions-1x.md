@@ -32,6 +32,7 @@ PM> Install-Package Microsoft.OData.Extensions.Migration -Version 1.0.0
 ```
 
 The new OData Migration extensions for ASP.NET Core 2.2+ enables an OData V4 service to handle OData V3 requests, allowing the migration of the service to OData V4 without changing its OData V3 clients.
+
 To get started, refer to [OData Migration extension usage and architecture](/odata/extensions/migration).
 
 ## Client Extensions 1.0.0 Release
