@@ -29,6 +29,14 @@ The new OData Migration extensions for ASP.NET Core 2.2+ enables an OData V4 ser
 
 To get started, refer to [OData Migration extension usage and architecture](/odata/extensions/migration).
 
+
+## Client Extensions 1.0.1 Release
+
+This release relaxes the version upper bound on the dependencies so the extensions can be used in .NET Core 3 projects.
+
+There are separate packages for OData [V3](https://www.nuget.org/packages/Microsoft.OData.Extensions.V3Client/) and [V4](https://www.nuget.org/packages/Microsoft.OData.Extensions.Client/) clients.
+
+
 ## Client Extensions 1.0.0 Release
 
 The NuGet packages for OData Client Extensions are available on the [NuGet gallery](https://www.nuget.org/packages/Microsoft.OData.Extensions.Client/).
