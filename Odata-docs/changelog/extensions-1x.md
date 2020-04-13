@@ -9,6 +9,12 @@ ms.topic: article
 
 # OData Extensions changelog
 
+## Client Extensions 1.0.1 Release
+
+This release relaxes the version upper bound on the dependencies so the extensions can be used in .NetCore 3 projects.
+
+There are separate packages for OData [V3](https://www.nuget.org/packages/Microsoft.OData.Extensions.V3Client/) and [V4](https://www.nuget.org/packages/Microsoft.OData.Extensions.Client/) clients.
+
 ## Migration Extensions 1.0.2 Release
 
 This release fixes a bug in request/response body translation (between OData V3 and V4) where the extension fails to replace the body with the translated one.
