@@ -167,6 +167,8 @@
     items:
     - name: Getting started
       href: /odata/webapi/netcore
+    - name: Web API with query options
+      href: /odata/webapi/first-odata-api
     - name: OData Expand
       href: /odata/webapi/odata-expand
     - name: Security guidance
@@ -267,6 +269,8 @@
           href: /odata/odatalib/json-batch
   - name: OData Client
     items:
+      - name: Getting Started
+        href: /odata/client/getting-started
       - name: Basic CRUD operations
         href: /odata/client/basic-crud-operations
       - name: Annotations
@@ -389,5 +393,7 @@
       href: /odata/changelog/webapi-7x
     - name: OData extensions changes
       href: /odata/changelog/extensions-1x
+    - name: OData ConnectedService changes
+      href: /odata/changelog/odataconnectedservice
 # - name: 10.2 Work around for SingleResult.Create an empty result
 #   href: posts\work-around-for-singleresult-create

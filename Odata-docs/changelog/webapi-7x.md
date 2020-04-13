@@ -9,6 +9,49 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.4.0
+
+
+## WebAPI 7.4.0-beta2
+
+### Improvements and fixes:
+
+* Revert the default `HandleNullPropagationOption` to `HandleNullPropagationOption.False` by default for EF Core.
+
+* [ [#2055](https://github.com/OData/WebApi/issues/2055) ] Batch request copies content headers to embedded requests without content.
+
+
+## WebAPI 7.4.0-beta
+
+The NuGet packages for ASP.NET Web API OData v7.4.0 are available on the [NuGet gallery](https://www.nuget.org/).
+
+### EF Core 3.x breaking changes risk
+
+Assessed EF Core 3.x aggregation support
+
+Aggregation support was introduced in EF Core 2.0, however it was implemented as client-side execution. Query translation was rewritten in EF Core 3.0 and client-side evaluation was removed to leverage database side execution and achieve great performance. However, not all LINQ queries translated to appropriate SQL queries. As a result, $apply isn’t compatible with EF Core 3.0 and 3.1. We will work with EF Core team to extend aggregation support in next versions of EF Core. Meanwhile, we recommend using Entity Framework 6. Starting with EF 6.3 it works with .NET Core 3 on all supported platform.
+
+### New Features:
+
+* [ [#2035](https://github.com/OData/WebApi/pull/2035) ] Support Endpoint routing.
+
+* [ [#1877](https://github.com/OData/WebApi/pull/1877) ] Add supports for compute() transformation in $apply
+
+### Improvements and fixes:
+
+* [ [#2014](https://github.com/OData/WebApi/pull/2014) ] Fix performance drop when using a big model.
+
+* [ [#2048](https://github.com/OData/WebApi/pull/2048) ] Fix multiple batch issues
+
+* [ [#1962](https://github.com/OData/WebApi/pull/1962) ] Fix cast issue
+
+* [ [#1953](https://github.com/OData/WebApi/pull/1953) ] Fix Skiptoke value with DateTime
+
+* [ [#1948](https://github.com/OData/WebApi/pull/1948) ] Use ODataValueProvider
+
+* [ [#1933](https://github.com/OData/WebApi/pull/1933) ] Ensures nullable enums are handled for In operator
+---
+
 ## WebAPI 7.3.0
 
 The NuGet packages for ASP.NET Web API OData v7.3.0 are available on the [NuGet gallery](https://www.nuget.org/).

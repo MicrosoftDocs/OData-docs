@@ -140,4 +140,4 @@ Build and run the sample. Then open both the **csdl.xml** file and the **csdl1.x
 You can see that the contents of **csdl.xml** and **csdl1.xml** are exactly the same except for **the order of the elements**. This is because EdmLib will reorder the elements when parsing a CSDL document.
 
 ### References
-[[Tutorial & Sample] Refering when Constructing EDM Model](https://blogs.msdn.com/b/odatateam/archive/2014/06/30/refer-other-models-when-constructing-edm-model.aspx).
+[[Tutorial & Sample] Refering when Constructing EDM Model](https://devblogs.microsoft.com/odata/tutorial-sample-refering-when-constructing-edm-model/).

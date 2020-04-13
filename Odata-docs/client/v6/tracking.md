@@ -57,4 +57,4 @@ One sample to use `AttachTo` and `DeleteLink`.
 
 ## Property Tracking 
 
-Please refer to [client property tracking for patch](https://blogs.msdn.com/b/odatateam/archive/2014/04/10/client-property-tracking-for-patch.aspx) for detail.
+Please refer to [client property tracking for patch](https://devblogs.microsoft.com/odata/tutorial-sample-client-property-tracking-for-patch/) for detail.

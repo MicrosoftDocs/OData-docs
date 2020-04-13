@@ -24,7 +24,7 @@ The capabilities vocabulary is enabled as a reference model in the Edm Model.
 
 ## How to use capabilities vocabulary
 
-ODL doesn't provide a set of API to add capabilites, but it provoides an unified API to add all vocabularies:
+ODL doesn't provide a set of API to add capabilites, but it provides an unified API to add all vocabularies:
  
 ```C#
 SetVocabularyAnnotation
