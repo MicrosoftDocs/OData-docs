@@ -11,6 +11,9 @@ ms.topic: article
 
 ## WebAPI 7.4.0
 
+### New Features:
+
+* [ [#1977](https://github.com/OData/WebApi/pull/1977) ] Add support for derived type constraint annotation.
 
 ## WebAPI 7.4.0-beta2
 
