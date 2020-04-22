@@ -9,7 +9,20 @@ ms.topic: article
 
 # OData Connected Service changelog
 
-## OData Connected Service 0.5.0 Release
+## version 0.6.1 Release
+
+### Improvements and fixes:
+
+* Bug fix on adding option for a separate metadata file.
+
+## version 0.6.0 Release
+
+### New Features:
+
+* Custom Http headers. While generating code you can now pass headers including authorization headers to read your Edmx. 
+* Generation of multiple files. You can now opt to generate code in multiple files.
+
+## version 0.5.0 Release
 
 OData Connected Service extension v0.5.0 is available on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=laylaliu.ODataConnectedService).
 
@@ -35,7 +48,7 @@ It is therefore advisable to the users of [OData Client Code Generator](https://
 
 ---
 
-## OData Connected Service 0.4.0
+## version 0.4.0 Release
 
 ### New Features:
 * Allows user to make generated types internal
