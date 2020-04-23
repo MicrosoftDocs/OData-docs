@@ -19,7 +19,7 @@ OData Connected Service extension is available on [Visual Studio Marketplace](ht
 
 ### Improvements and Bug Fixes:
 * [ [#66](https://github.com/OData/ODataConnectedService/pull/66) ] Use _var_ where the type of variable is clear from the context
-* [ [#97](https://github.com/OData/ODataConnectedService/pull/97) ] Fix multiple prompts when updating Connected Service with proxy split into multiple files
+* [ [#97](https://github.com/OData/ODataConnectedService/pull/97) ] Fix multiple prompts when updating Connected Service proxy split into multiple files
 * [ [#99](https://github.com/OData/ODataConnectedService/pull/99) & [#102](https://github.com/OData/ODataConnectedService/pull/102) ] Fix loading of saved configuration options when updating Connected Service
 * [ [#101](https://github.com/OData/ODataConnectedService/pull/101) ] Fix caption on Connected Service wizard
 
@@ -54,9 +54,9 @@ OData Connected Service extension is available on [Visual Studio Marketplace](ht
 ## OData Connected Service 0.6.0
 
 ### New Features:
-* [ [#46](https://github.com/OData/ODataConnectedService/pull/46) ] Support emitting of service metadata to an XML file
 * [ [#27](https://github.com/OData/ODataConnectedService/pull/27) & [#51](https://github.com/OData/ODataConnectedService/pull/51) ] Support custom Http headers (e.g. authorization headers) when retrieving service metadata
 * [ [#30](https://github.com/OData/ODataConnectedService/pull/30) ] Support splitting of Connected Service proxy into multiple files
+* [ [#46](https://github.com/OData/ODataConnectedService/pull/46) ] Support emitting of service metadata to an XML file
 
 ## OData Connected Service 0.5.0
 
@@ -64,7 +64,7 @@ OData Connected Service extension is available on [Visual Studio Marketplace](ht
 * [ [#24](https://github.com/OData/ODataConnectedService/pull/24) ] Update Microsoft.OData.Client dependency to version 7.6.3
 
 ### New Features:
-* [ [#23](https://github.com/OData/ODataConnectedService/pull/23) ] Add built-in vocabulary models
+* [ [#23](https://github.com/OData/ODataConnectedService/pull/23) ] Make it possible to customize the built-in vocabulary models
 * [ [#26](https://github.com/OData/ODataConnectedService/pull/26) ] Support opening of generated Connected Service proxy files in IDE at completion
 * [ [#32](https://github.com/OData/ODataConnectedService/pull/32) ] Support mocking by making public methods `virtual`
 
