@@ -17,22 +17,21 @@ OData Connected Service extension is available on [Visual Studio Marketplace](ht
 * [ [#86](https://github.com/OData/ODataConnectedService/pull/86) ] Support for emitting service metadata to an XML file
 * [ [#100](https://github.com/OData/ODataConnectedService/pull/100) ] Support for excluding schema types from being emitted onto the Connected Service proxy class
 
-### Refinements and Bug Fixes
+### Improvements and Bug Fixes
 * [ [#66](https://github.com/OData/ODataConnectedService/pull/66) ] Use _var_ where the type of variable is clear from the context
 * [ [#97](https://github.com/OData/ODataConnectedService/pull/97) ] Fix multiple prompts when updating Connected Service with proxy split into multiple files
-* [ [#99](https://github.com/OData/ODataConnectedService/pull/99) ] Fix loading of saved configuration options when updating Connected Service/1
+* [ [#99](https://github.com/OData/ODataConnectedService/pull/99) & [#102](https://github.com/OData/ODataConnectedService/pull/102) ] Fix loading of saved configuration options when updating Connected Service
 * [ [#101](https://github.com/OData/ODataConnectedService/pull/101) ] Fix caption on Connected Service wizard
-* [ [#102](https://github.com/OData/ODataConnectedService/pull/102) ] Fix loading of saved configuration options when updating Connected Service/2
 
 ## OData Connected Service 0.8.0
 
-## New Features
+### New Features
 * [ [#50](https://github.com/OData/ODataConnectedService/pull/50) ] Support for loading configuration settings from a file
 * [ [#69](https://github.com/OData/ODataConnectedService/pull/69) ] Support for saving the configuration wizard state when navigating through the pages
 
 ## OData Connected Service 0.7.1
 
-## Bug Fix
+### Bug Fixes
 * [ [#77](https://github.com/OData/ODataConnectedService/pull/77) ] Fix bug causing service name to be reset to default value when updating Connected Service
 
 ## OData Connected Service 0.7.0
