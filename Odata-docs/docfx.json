@@ -72,7 +72,8 @@
       "ms.prod": "odata",
       "ms.topic": "conceptual",
       "uhfHeaderId": "MSDocsHeader-OData",
-      "titleSuffix": "OData"
+      "titleSuffix": "OData",
+      "searchScope": ["OData"]
     },
     "fileMetadata": {
       "titleSuffix": {
