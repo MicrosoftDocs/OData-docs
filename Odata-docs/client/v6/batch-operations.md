@@ -165,7 +165,7 @@ The request Payload is as following:
 	--batch_06d8a02a-854a-4a21-8e5c-f737bbd2dea8--
 ```
 
-## Relative Uris in Batch Requests
+## Relative URIs in Batch Requests
 There are instances where an odata service is behind a load balancer which usually rewrites the outer Uri but not the internal URIs such that the request going out from the client looks like:
 
 ```html
