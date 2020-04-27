@@ -213,7 +213,7 @@ But since we cant change the internal batch uri to the load balancer uri, we ins
 
 `ExecuteBatch` and `SaveChanges` defined in `DataServiceContext` accept `SaveChangesOptions.UseRelativeUri` option which allows individual requests in batch to use Relative Uris. In this case, they will rely on the Base Uri of the top level request.
 
-### Relative Uris in Batch Queries
+### Relative URIs in Batch Queries
 We can pass the `SaveChangesOptions.UseRelativeUri` option along with other batch options to `ExecuteBatch` method as follows.
 
 ```
