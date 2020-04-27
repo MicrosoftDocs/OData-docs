@@ -200,7 +200,7 @@ While the odata service actually expected
 	OData-Version: 4.0
 ```
 
-But since we cant change the internal batch uri to the load balancer uri, we instead get around the problem by using relative uri's to fix this as follows
+But since we can't change the internal batch URI to the load balancer URI, we instead get around the problem by using relative URI's to fix this as follows
 ```html
 	POST https://loadbalancer/$batch HTTP/1.1
 
