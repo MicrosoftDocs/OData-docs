@@ -211,7 +211,7 @@ But since we can't change the internal batch URI to the load balancer URI, we in
 	OData-Version: 4.0
 ```
 
-`ExecuteBatch` and `SaveChanges` defined in `DataServiceContext` accept `SaveChangesOptions.UseRelativeUri` option which allows individual requests in batch to use Relative Uris. In this case, they will rely on the Base Uri of the top level request.
+`ExecuteBatch` and `SaveChanges` defined in `DataServiceContext` accept `SaveChangesOptions.UseRelativeUri` option which allows individual requests in batch to use Relative URIs. In this case, they will rely on the Base URI of the top level request.
 
 ### Relative URIs in Batch Queries
 We can pass the `SaveChangesOptions.UseRelativeUri` option along with other batch options to `ExecuteBatch` method as follows.
