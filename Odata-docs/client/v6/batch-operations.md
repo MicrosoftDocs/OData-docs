@@ -166,7 +166,7 @@ The request Payload is as following:
 ```
 
 ## Relative URIs in Batch Requests
-There are instances where an odata service is behind a load balancer which usually rewrites the outer Uri but not the internal URIs such that the request going out from the client looks like:
+There are instances where an odata service is behind a load balancer which usually rewrites the outer URI but not the internal URIs such that the request going out from the client looks like:
 
 ```html
 	POST https://myservice.com/$batch HTTP/1.1
