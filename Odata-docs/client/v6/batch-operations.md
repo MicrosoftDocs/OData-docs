@@ -221,7 +221,7 @@ var batchResponse = dsc.ExecuteBatch(SaveChangesOptions.BatchWithIndependentOper
 ```
 The same options apply to `ExecuteBatchAsync` method.
 
-### Relative Uris in Batch Modification
+### Relative URIs in Batch Modification
 We can pass the `SaveChangesOptions.UseRelativeUri` option along with other batch options to `SaveChanges` method as follows.
 
 ```
