@@ -17,21 +17,25 @@ Function resolution will first attempt to find an overload that exactly matches 
 Optional parameters are annotated in CSDL using the new `Org.OData.Core.V1.OptionalParameter` annotation term:
 
 ```xml
-    "<Parameter Name = "optionalParam" Type="Edm.String">"
-       "<Annotation Term="Org.OData.Core.V1.OptionalParameter"/>"
-    "</Parameter>"
+
+    <Parameter Name = "optionalParam" Type="Edm.String">
+       <Annotation Term="Org.OData.Core.V1.OptionalParameter"/>
+    </Parameter>
+
 ```
 
 An optional parameter may optionally specify a default value. The default value is purely informational, and conveys to the consumer the value that will be used if the parameter is not supplied:
 
 ```xml
-     "<Parameter Name = "optionalParamWithDefault" Type="Edm.String">"
-        "<Annotation Term="Org.OData.Core.V1.OptionalParameter">"
-          "<Record>"
-            "<PropertyValue Property="DefaultValue" String="Smith"/>"
-           "</Record>"
-         "</Annotation>"
-      "</Parameter>"
+
+     <Parameter Name = "optionalParamWithDefault" Type="Edm.String">
+        <Annotation Term="Org.OData.Core.V1.OptionalParameter">
+          <Record>
+            <PropertyValue Property="DefaultValue" String="Smith"/>
+           </Record>
+         </Annotation>
+      </Parameter>
+
 ```
 
 Any optional parameters must be come after all non-optional parameters for a function or action.
