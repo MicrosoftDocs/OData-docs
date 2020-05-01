@@ -34,6 +34,8 @@ namespace ContosoUniversity
             services.AddDbContext<SchoolContext>(options =>
                options.UseInMemoryDatabase("OData-expand"));
 
+            services.AddMvc(option => option.EnableEndpointRouting = false);
+
             services.AddOData();
         }
 
