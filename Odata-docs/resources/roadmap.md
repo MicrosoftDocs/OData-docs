@@ -54,7 +54,7 @@ The follow table represents the state of implementation of the above mentioned s
 |Addressing a Member of an Ordered Collection.[Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652505) |N|N|
 |Annotation values in expressions.[Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652507) |N|N|
 |Casting String Values to Primitive Values.[Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652509) |N|N|
-|in Operator.[Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652512) |Y|N|
+|in Operator.[Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652512) |Y|Y|
 |divby Operator.[Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652513) |N|N|
 |hassubset and hassubsequence Collection Functions.[Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652514) |N|N|
 |$expand of Stream Properties and Media Resources.[Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652518) |N|N|
