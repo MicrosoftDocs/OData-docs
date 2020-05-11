@@ -34,8 +34,8 @@ Response content:
   "@odata.count": 3,  
   "@odata.nextLink":"https://localhost/Customers(5)/Colors?$count=true&$skip=2",
   "value": [  
-    ""Blue",  
-    ""Green"  
+    "Blue",  
+    "Green"  
   ]  
 } 
 ```
