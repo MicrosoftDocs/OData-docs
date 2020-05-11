@@ -28,6 +28,37 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
+## ODataLib 7.6.4 Release
+
+***Features***
+
+[[#1713](https://github.com/OData/odata.net/pull/1713)] Annotating an element using AnnotationPath
+
+***Fixed Bugs***
+
+[[#1700](https://github.com/OData/odata.net/pull/1700)] Fix null reference error when matching binding type 
+
+[[#1676](https://github.com/OData/odata.net/issues/1676)] Adding an EntitySet to a model using the includeServiceDocument throws exception
+
+[[#1671](https://github.com/OData/odata.net/issues/1671)] ArgumentNullException on Any in ODataUriResolver
+
+[[#1614](https://github.com/OData/odata.net/pull/1614)] DataServiceContext can't work with POCO's due to Missing IEdmModel
+
+[[#1334](https://github.com/OData/odata.net/issues/1334)] Missing overload of 'IncludeTotalCount' that takes a 'bool'
+
+[[#1332](https://github.com/OData/odata.net/issues/1332)] LINQ 'Select()' call not producing expected '$select' query option on expression
+
+[[#543](https://github.com/OData/odata.net/issues/543)] OData Client Requires Microsoft.OData.Client.Key attribute for the entity, does not support the common key
+
+***Improvements***
+
+[[#1633](https://github.com/OData/odata.net/pull/1633)] Change version date code to allow dates that don't fit Int16
+
+[[#1305](https://github.com/OData/odata.net/issues/1305)] Improve error message - Unable to call action with complex parameter in complex parameter. 
+
+[[#843](https://github.com/OData/odata.net/issues/843)] DataServiceClientException message improvement
+---
+
 ## ODataLib 7.6.3 Release
 
 ***Fixed Bugs***
