@@ -164,3 +164,102 @@ The request Payload is as following:
 	--changeset_b98a784d-af07-4723-9d5c-4722801f4c4d--
 	--batch_06d8a02a-854a-4a21-8e5c-f737bbd2dea8--
 ```
+
+## Relative URIs in Batch Requests
+There are instances where an odata service is behind a load balancer which usually rewrites the outer URI but not the internal URIs such that the request going out from the client looks like:
+
+```html
+	POST https://myservice.com/$batch HTTP/1.1
+
+	--batch_xyz
+	GET https://myservice.com/People HTTP/1.1
+	Content-Type: application/http
+	Content-Transfer-Encoding: binary
+	OData-Version: 4.0
+```
+
+BUT when it hits the load balancer it's rewritten to
+```html
+	POST https://loadbalancer/$batch HTTP/1.1 // changed to loadbalancer uri
+
+	--batch_xyz
+	GET https://myservice.com/People HTTP/1.1 // uri in the body remains unchanged
+	Content-Type: application/http
+	Content-Transfer-Encoding: binary
+	OData-Version: 4.0
+```
+
+While the odata service actually expected
+```html
+	POST https://loadbalancer/$batch HTTP/1.1
+
+	--batch_xyz
+	GET https://loadbalancer/People HTTP/1.1
+	Content-Type: application/http
+	Content-Transfer-Encoding: binary
+	OData-Version: 4.0
+```
+
+But since we can't change the internal batch URI to the load balancer URI, we instead get around the problem by using relative URI's to fix this as follows
+```html
+	POST https://loadbalancer/$batch HTTP/1.1
+
+	--batch_xyz
+	GET /People HTTP/1.1 // uses relative uri
+	Content-Type: application/http
+	Content-Transfer-Encoding: binary
+	OData-Version: 4.0
+```
+
+`ExecuteBatch` and `SaveChanges` defined in `DataServiceContext` accept `SaveChangesOptions.UseRelativeUri` option which allows individual requests in batch to use Relative URIs. In this case, they will rely on the Base URI of the top level request.
+
+### Relative URIs in Batch Queries
+We can pass the `SaveChangesOptions.UseRelativeUri` option along with other batch options to `ExecuteBatch` method as follows.
+
+```
+var batchResponse = dsc.ExecuteBatch(SaveChangesOptions.BatchWithIndependentOperations | SaveChangesOptions.UseRelativeUri, peopleQuery, airlinesQuery);
+```
+The same options apply to `ExecuteBatchAsync` method.
+
+### Relative URIs in Batch Modification
+We can pass the `SaveChangesOptions.UseRelativeUri` option along with other batch options to `SaveChanges` method as follows.
+
+```
+dsc.SaveChanges(SaveChangesOptions.BatchWithSingleChangeset | SaveChangesOptions.UseRelativeUri);
+```
+The same options apply to `SaveChangesAsync` method.
+
+A truncated request Payload will look like this:
+
+```html
+
+	--batch_06d8a02a-854a-4a21-8e5c-f737bbd2dea8
+	Content-Type: multipart/mixed; boundary=changeset_b98a784d-af07-4723-9d5c-4722801f4c4d
+	.....
+	.....
+	.....
+
+	GET /People HTTP/1.1 // Relative URI is used
+	OData-Version: 4.0
+	OData-MaxVersion: 4.0
+	Accept: application/json;odata.metadata=minimal
+
+	.....
+	.....
+	
+	PATCH /Me HTTP/1.1 // Relative URI is used
+	OData-Version: 4.0
+	OData-MaxVersion: 4.0
+	Content-Type: application/json;odata.metadata=minimal
+	.....
+	.....
+	.....
+
+	PATCH /Me/Trips(1001) HTTP/1.1 // Relative URI is used
+	OData-Version: 4.0
+	OData-MaxVersion: 4.0
+	Content-Type: application/json;odata.metadata=minimal
+	......
+	......
+	......
+```
