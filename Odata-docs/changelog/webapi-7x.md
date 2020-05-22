@@ -9,11 +9,33 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.4.1
+
+### Improvements and fixes:
+
+* [ [#2053](https://github.com/OData/WebApi/pull/2053) ] Fix client-side evaluation for string comparison queries
+
+* [ [#2147](https://github.com/OData/WebApi/pull/2147) ] Fix [#2141](https://github.com/OData/WebApi/issues/2141) and [#2144](https://github.com/OData/WebApi/issues/2144): the context Uri and location wrong with PathBase setting
+
+* [ [#2149](https://github.com/OData/WebApi/pull/2149) ] Remove sync calls within async batch processing
+
+* [ [#2154](https://github.com/OData/WebApi/pull/2154) ] SetDefaultODataOptions doesn't work
+
+* [ [#2160](https://github.com/OData/WebApi/pull/2160) ] Fix logic for patching structured type with complex type dynamic property
+
+* [ [#2169](https://github.com/OData/WebApi/pull/2169) ] Copy query settings correctly
+
+* [ [#2172](https://github.com/OData/WebApi/pull/2172) ] Fix EfCore memory leak when query contains collection constant
+
+---
+
 ## WebAPI 7.4.0
 
 ### New Features:
 
 * [ [#1977](https://github.com/OData/WebApi/pull/1977) ] Add support for derived type constraint annotation.
+
+---
 
 ## WebAPI 7.4.0-beta2
 
@@ -23,6 +45,7 @@ ms.topic: article
 
 * [ [#2055](https://github.com/OData/WebApi/issues/2055) ] Batch request copies content headers to embedded requests without content.
 
+---
 
 ## WebAPI 7.4.0-beta
 

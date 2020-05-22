@@ -26,7 +26,7 @@ A public Boolean attribute EnableNoDollarQueryOptions is added to ODataUriResolv
         public virtual bool EnableNoDollarQueryOptions { get; set; }
         ...
     }
-~~~
+```
 
 ### WebAPI optional-$-prefix Setting using Dependency Injection
 WebAPI service injects the setting using the ODataUriResolver during service initialization:
@@ -40,7 +40,7 @@ Builder of service provider container sets the instantiated ODataUriResolver con
 
             };
 
-spContainerBuilder.AddService(ServiceLifetime.Singleton, sp => resolver));
+            spContainerBuilder.AddService(ServiceLifetime.Singleton, sp => resolver));
 ```
 
 Note that UriResolver is typically a singleton for the service instance, since each instance should follow the same Uri convention. In case of other injected dependencies that are configurable per request, scoped dependency should be used.
