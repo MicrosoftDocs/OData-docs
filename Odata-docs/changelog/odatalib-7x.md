@@ -28,6 +28,52 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
+## ODataLib 7.7.0.beta Release
+
+***Features***
+[[#1749](https://github.com/OData/odata.net/pull/1749)] Add support for Json Batch Requests in Odata Client
+
+[[#1743](https://github.com/OData/odata.net/pull/1743)] Support Navigation Property on complex types on Client 
+
+[[#1740](https://github.com/OData/odata.net/pull/1740)] Add support for relative and absolute uris in json batch requests
+
+[[#1712](https://github.com/OData/odata.net/pull/1712)] Implement client support for dynamic properties dictionary
+
+***Fixed Bugs***
+[[#1783](https://github.com/OData/odata.net/pull/1783)] Fix decoding single quote within double-quoted string in action/function parameter alias
+
+[[#1778](https://github.com/OData/odata.net/pull/1778)] CSDL Serialization: NullReferenceException when serializing 1:n NavigationProperties
+
+[[#1770](https://github.com/OData/odata.net/pull/1770)] Fix how composite async methods invoke lower level methods.
+
+[[#1763](https://github.com/OData/odata.net/pull/1763)] Set IEEE754Compatible parameter from the batch request
+
+[[#1760](https://github.com/OData/odata.net/pull/1760)] Fix IN operator double quotes issue 
+
+[[#1756](https://github.com/OData/odata.net/pull/1756)] Fix Reading OData Error Response in OData Client
+
+[[#1731](https://github.com/OData/odata.net/pull/1731)] Support for abstract complex types with no properties
+
+[[#1727](https://github.com/OData/odata.net/pull/1727)] Fix bug where open types are not identified as such during serialization
+
+[[#1659](https://github.com/OData/odata.net/pull/1659)] Enable OData client to send IEEE754Compatible parameter in the request
+
+[[#1656](https://github.com/OData/odata.net/pull/1656)] Avoid carrying over Count query option to the next query.
+
+[[#1607](https://github.com/OData/odata.net/pull/1607)] Fix Select Expand Issue of selecting all navigation properties for Full Metadata request and fixing Odata Context
+
+***Improvements***
+
+[[#1758](https://github.com/OData/odata.net/pull/1758)] Added Severity enum to EdmError
+
+[[#1729](https://github.com/OData/odata.net/pull/1729)] Improve error message when adding unsupported query option
+
+[[#1695](https://github.com/OData/odata.net/pull/1695)] Support Mocking in OData Client
+
+During this release, we moved over the build setup to azure pipelines and updated the library to support Visual Studio 2019 which will make it easier for the community to contribute. 
+---
+
+
 ## ODataLib 7.6.4 Release
 
 ***Features***
