@@ -28,9 +28,14 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
-## ODataLib 7.7.0.beta Release
+## ODataLib 7.7.0-beta Release
 
 ***Features***
+
+[[#1775](https://github.com/OData/odata.net/pull/1775)] Json metadata writer and reader using System.Text.Json
+
+[[#1769](https://github.com/OData/odata.net/pull/1769)] Rule-based ODataUrlValidation engine
+
 [[#1749](https://github.com/OData/odata.net/pull/1749)] Add support for Json Batch Requests in Odata Client
 
 [[#1743](https://github.com/OData/odata.net/pull/1743)] Support Navigation Property on complex types on Client 
