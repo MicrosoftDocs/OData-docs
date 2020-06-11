@@ -31,7 +31,7 @@ landingContent:
             url: /odata/resources/support
       - linkListType: whats-new
         links:
-          - text: What's new？
+          - text: What's new?
             url: /odata/changelog/odatalib-7x
           - text: OData blogs
             url: https://devblogs.microsoft.com/odata
