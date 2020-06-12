@@ -22,12 +22,12 @@ var context = new DefaultContainer(new Uri("https://services.odata.org/v4/TripPi
 DataServiceQueryContinuation<Person> token = null;
 
 // Get the first page
-var response = context.People.Execute() as QueryOperationResponse<Person>;
+var response = await context.People.ExecuteAsync() as QueryOperationResponse<Person>;
 
 // Loop if there is a next link
 while ((token = response.GetContinuation()) != null)
 {
     // Get the next page
-    response = context.Execute<Person>(token);
+    response = await context.ExecuteAsync<Person>(token) as QueryOperationResponse<Person>;
 }
 ```
