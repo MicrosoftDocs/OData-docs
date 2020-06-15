@@ -23,6 +23,10 @@ landingContent:
         links:
           - text: What is OData?
             url: /odata/overview
+      - linkListType: video
+        links:
+          - text: Supercharging your Web APIs with OData and ASP.NET Core (19:48)
+            url: https://youtu.be/ZCDWUBOJ5FU
       - linkListType: get-started
         links:
           - text: Create your first REST API using OData
