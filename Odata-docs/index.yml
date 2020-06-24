@@ -9,7 +9,7 @@ metadata:
   ms.service: odata #Required; service per approved list. service slug assigned to your service by ACOM.
   ms.topic: landing-page # Required
   author: madansr7 #Required; your GitHub user alias, with correct capitalization.
-  ms.date: 06/11/2020 #Required; mm/dd/yyyy format.
+  ms.date: 06/24/2020 #Required; mm/dd/yyyy format.
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -27,18 +27,30 @@ landingContent:
         links:
           - text: Supercharging your Web APIs with OData and ASP.NET Core (19:48)
             url: https://youtu.be/ZCDWUBOJ5FU
+  
+  # Card (optional)
+  - title: Get started
+    linkLists:
       - linkListType: get-started
         links:
           - text: Create your first REST API using OData
             url: /odata/webapi/netcore
           - text: Get Support
             url: /odata/resources/support
+
+  # Card (optional)
+  - title: What's new?
+    linkLists:
       - linkListType: whats-new
         links:
           - text: What's new?
             url: /odata/changelog/odatalib-7x
           - text: OData blogs
             url: https://devblogs.microsoft.com/odata
+  
+  # Card (optional)
+  - title: Reference
+    linkLists:
       - linkListType: reference
         links:
           - text: OData specification
