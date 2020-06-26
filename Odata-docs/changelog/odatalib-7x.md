@@ -51,6 +51,7 @@ One of the main change includes upgrading OData package platform to output libra
 [[#1712](https://github.com/OData/odata.net/pull/1712)] Implement client support for dynamic properties dictionary
 
 ***Fixed Bugs***
+
 [[#1811](https://github.com/OData/odata.net/pull/1811)] Fix parsing of floats in $apply/aggregate/average expression
 
 [[#1783](https://github.com/OData/odata.net/pull/1783)] Fix decoding single quote within double-quoted string in action/function parameter alias
@@ -76,6 +77,7 @@ One of the main change includes upgrading OData package platform to output libra
 [[#1607](https://github.com/OData/odata.net/pull/1607)] Fix Select Expand Issue of selecting all navigation properties for Full Metadata request and fixing Odata Context
 
 ***Improvements***
+
 [[#1738](https://github.com/OData/odata.net/pull/1738)] Support for Media Link entities with no tracking
 
 [[#1796](https://github.com/OData/odata.net/pull/1796)] Update read write timeout value when timeout value is set
@@ -99,6 +101,7 @@ One of the main change includes upgrading OData package platform to output libra
 [[#1695](https://github.com/OData/odata.net/pull/1695)] Support Mocking in OData Client
 
 During this release, we moved over the build setup to azure pipelines and updated the library to support Visual Studio 2019 which will make it easier for the community to contribute. 
+
 ---
 
 ## ODataLib 7.7.0-beta Release
@@ -150,6 +153,7 @@ During this release, we moved over the build setup to azure pipelines and update
 [[#1695](https://github.com/OData/odata.net/pull/1695)] Support Mocking in OData Client
 
 During this release, we moved over the build setup to azure pipelines and updated the library to support Visual Studio 2019 which will make it easier for the community to contribute. 
+
 ---
 
 
@@ -182,6 +186,7 @@ During this release, we moved over the build setup to azure pipelines and update
 [[#1305](https://github.com/OData/odata.net/issues/1305)] Improve error message - Unable to call action with complex parameter in complex parameter. 
 
 [[#843](https://github.com/OData/odata.net/issues/843)] DataServiceClientException message improvement
+
 ---
 
 ## ODataLib 7.6.3 Release
