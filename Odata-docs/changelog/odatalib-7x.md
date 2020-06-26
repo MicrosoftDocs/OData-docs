@@ -31,7 +31,8 @@ Most of our API improvements fall into the category of namespace simplifications
 
 ## ODataLib 7.7.0 Release
 
-Following are the changes done after 7.6.4
+Following are the changes done after 7.6.4.
+One of the main change includes upgrading OData package platform to output libraries for .net4.5, .netstandard1.1 and .netstandard2.0, However for client package .netstandard1.1 is removed
 
 ***Features***
 
