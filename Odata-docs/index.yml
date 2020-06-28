@@ -1,7 +1,7 @@
 ### YamlMime:Landing
 
 title: OData documentation # < 60 chars
-summary: OData (Open Data Protocol) is an ISO/IEC approved, OASIS standard that defines a set of best practices for building and consuming REST APIs. # < 160 chars
+summary: OData (Open Data Protocol) is an ISO/IEC approved, OASIS standard that defines a set of best practices for building and consuming REST APIs. It enables creation of REST-based services which allow resources identified using Uniform Resource Locators (URLs) and defined in a data model, to be published and edited by Web clients using simple HTTP messages. # < 160 chars
 
 metadata:
   title: OData documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
