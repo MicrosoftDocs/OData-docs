@@ -24,19 +24,21 @@ Open Visual Studio 2019 and create a new C# .Net Core project and call the proje
 
 Install the OData Connected Service extension by going to **Extensions** menu -> **Manage Extensions**. In the exensions window, search online for "OData Connected Service" and install it.
 
-![OData Connected Service extension](../assets/2020-03-06-OCS-0-4-0-extension-download.png)
+![OData Connected Service extension](../assets/2020-07-15-OCS-0-10-0-extension-download.png)
 
 Once installed, right-click your project in the **Solution Explorer** -> **Add** -> **Connected Service**. In the **Connected Services** window that appears, select **OData Connected Service**.
 
 ![Add connected service](../assets/2020-03-06-add-connected-service-menu.png)
 
-![Select OData Connected Service](../assets/2020-03-06-connected-services-window-OCS.png)
+![Select OData Connected Service](../assets/2020-07-15-connected-services-window-OCS.png)
 
 Next, OData Connected Service provides us a wizard where we can configure settings for the service we want to connect to. In the **Service Name** field, enter "TripPinService" as the name of the service. And in the **Address** field, enter the URL of the metadata endpoint of the service. In this case, we enter: `https://services.odata.org/V4/TripPinServiceRW/$metadata`.
 
-Next, let's choose a name for the file to be generated. For this example, let's just stick with the default "Reference". The advanced settings allow you to configure things such as custom namespace, whether to hide generated classes from external assemblies, etc. But for now, let's stick with the default settings. Click **Finish** to complete the configuration and generate the client code.
+The connected service provides many options to control how the code is generated, but for this example we are just going to stick with the defaults. Click **Finish** to complete the configuration and generate the client code.
 
-After successful completion, you should see a **Connected Services** section under your project in the Solution Explorer. Below this section, you should see a folder for the "TripPinService" which contains the generated `Reference.cs` dile containing the generated C# client code.
+![Configure OData Connected Service](../assets/2020-07-15-OCS-endpoint-config.png)
+
+After successful completion, you should see a **Connected Services** section under your project in the Solution Explorer. Below this section, you should see a folder for the "TripPinService" which contains the generated `Reference.cs` file containing the generated C# client code.
 
 ![TripPin Connected Service added to project](../assets/2020-03-06-OCS-added-to-project.png)
 
