@@ -307,6 +307,10 @@
     items:
       - name: Basic auth setup
         href: /odata/webapi/basic-auth
+  - name: OData Connected Service
+    items:
+      - name: Getting Started
+        href: /odata/connectedservice/getting-started
   - name: Legacy APIs
     items: 
       - name: ODataLib v6
