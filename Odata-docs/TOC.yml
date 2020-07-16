@@ -311,6 +311,8 @@
     items:
       - name: Getting Started
         href: /odata/connectedservice/getting-started
+      - name: Generating code for VB clients
+        href: /odata/connectedservice/generating-code-for-vb-clients
   - name: Legacy APIs
     items: 
       - name: ODataLib v6
