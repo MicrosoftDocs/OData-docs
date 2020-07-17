@@ -313,6 +313,8 @@
         href: /odata/connectedservice/getting-started
       - name: Generating code for VB clients
         href: /odata/connectedservice/generating-code-for-vb-clients
+      - name: Choosing what to generate
+        href: /odata/connectedservice/choosing-what-to-generate
   - name: Legacy APIs
     items: 
       - name: ODataLib v6
