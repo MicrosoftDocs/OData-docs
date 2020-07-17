@@ -20,7 +20,7 @@ Add the OData Connnected Service to you project by right-clicking on the project
 
 For more details about installing and adding OData Connected Service to your project, visit the [Getting Started](./getting-started) section.
 
-In the OData Connected Service wizard, set the Service Name to "TripPinService" and the Endpoint to `https://services.odata.org/v4/TripPinService/$metadata` (this is a sample OData service for demonstration purposes).
+In the OData Connected Service wizard, set the **Service Name** to "TripPinService" and the **Address** to `https://services.odata.org/v4/TripPinService/$metadata` (this is a sample OData service for demonstration purposes).
 
 Click "Finish" to start the code generation process. After this process completes, you should see a `TripPinService` folder in the Connected Services section in the Solution. Under that folder, you should also see a `Reference.vb` file which contains the generated code.
 
