@@ -315,6 +315,8 @@
         href: /odata/connectedservice/generating-code-for-vb-clients
       - name: Choosing what to generate
         href: /odata/connectedservice/choosing-what-to-generate
+      - name: Generating multiple files
+        href: /odata/connectedservice/generating-multiple-files
   - name: Legacy APIs
     items: 
       - name: ODataLib v6
