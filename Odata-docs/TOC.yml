@@ -323,6 +323,8 @@
         href: /odata/connectedservice/updating-generated-code
       - name: Working with T4 Templates
         href: /odata/connectedservice/t4-templates
+      - name: Settings reference
+        href: /odata/connectedservice/reference
   - name: Legacy APIs
     items: 
       - name: ODataLib v6
