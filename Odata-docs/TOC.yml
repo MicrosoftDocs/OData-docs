@@ -321,6 +321,8 @@
         href: /odata/connectedserivce/accessing-endpoints-with-auth
       - name: Updating the generated code
         href: /odata/connectedservice/updating-generated-code
+      - name: Working with T4 Templates
+        href: /odata/connectedservice/t4-templates
   - name: Legacy APIs
     items: 
       - name: ODataLib v6
