@@ -14,11 +14,11 @@ ms.topic: article
 
 OData Connected Services makes a web request to the target OData service in order to fetch the metadata document containing the model schema. If the service restricts access to the metadata endpoints, then the request may fail and the connected service will display an error. One workaround is to manually download the metadata document into a local file and use the file's path as the service endpoint.
 
-However, OData Connected Service does provides means to provide authentication details via custom headers or network credentials.
+However, OData Connected Service provides means to provide authentication details via custom headers or network credentials.
 
 ## Custom Headers
 
-The **Custom Headers** field the **Endpoint** page (the first page of the wizard) allows you to specify arbitrary headers that will get sent along with the request when fetching the metadata document from the service.
+The **Custom Headers** field in the **Endpoint** page (the first page of the wizard) allows you to specify arbitrary headers that will get sent along with the request when fetching the metadata document from the service.
 
 To add customer headers, select the **Include Custom Http Headers** checkbox and enter the headers in the **Custom Headers** text field. Each entry consists of a key and value pair separated by a colon (`:`). Each entry should go on a separate line.
 

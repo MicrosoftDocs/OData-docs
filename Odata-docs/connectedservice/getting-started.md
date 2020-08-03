@@ -12,17 +12,17 @@ ms.topic: article
 
 **Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v6.md)]
 
-OData Connected Serice is a Visual Studio extension that generates strongly-types C# and Visual Basic client code for a specified OData service. It generates a `DataServiceContext` class to interact with the service and CLR types for each entity type and complex type in the service model.
+OData Connected Serice is a Visual Studio extension that generates strongly-typed C# and Visual Basic client code for a specified OData service. It generates a `DataServiceContext` class to interact with the service and CLR types for each entity type and complex type in the service model.
 
-The extension is available on [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=laylaliu.ODataConnectedService) and supports Visual Studio 2019 and 2017.
+The extension is available at [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=laylaliu.ODataConnectedService) and supports Visual Studio 2019 and 2017.
 
 ## Creatig a sample client application using OData Connected Service
 
-In this sample we are goind to install the extension and use it to create a sample client application for the sample [TripPin](https://www.odata.org/blog/trippin-new-odata-v4-sample-service/) OData service.
+In this sample we are going to install the extension and use it to create a sample client application for the sample [TripPin](https://www.odata.org/blog/trippin-new-odata-v4-sample-service/) OData service.
 
 Open Visual Studio 2019 and create a new C# .Net Core project and call the project `ODataClientExample` (.Net Framework is also supported).
 
-Install the OData Connected Service extension by going to **Extensions** menu -> **Manage Extensions**. In the exensions window, search online for "OData Connected Service" and install it.
+Install the OData Connected Service extension by going to **Extensions** menu -> **Manage Extensions**. In the Exensions window, search online for "OData Connected Service" and install it.
 
 ![OData Connected Service extension](../assets/2020-07-15-OCS-0-10-0-extension-download.png)
 
@@ -34,7 +34,7 @@ Once installed, right-click your project in the **Solution Explorer** -> **Add**
 
 Next, OData Connected Service provides us a wizard where we can configure settings for the service we want to connect to. In the **Service Name** field, enter "TripPinService" as the name of the service. And in the **Address** field, enter the URL of the metadata endpoint of the service. In this case, we enter: `https://services.odata.org/V4/TripPinServiceRW/$metadata`.
 
-The connected service provides many options to control how the code is generated, but for this example we are just going to stick with the defaults. Click **Finish** to complete the configuration and generate the client code.
+The Connected Service provides many options to control how the code is generated, but for this example we are just going to stick with the defaults. Click **Finish** to complete the configuration and generate the client code.
 
 ![Configure OData Connected Service](../assets/2020-07-15-OCS-endpoint-config.png)
 
