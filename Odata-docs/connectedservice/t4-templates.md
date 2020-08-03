@@ -10,7 +10,7 @@ ms.topic: article
 ---
 # Working with T4 templates
 
-**Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v7.md)]
 
 OData Connected Service can generate [T4 templates](https://docs.microsoft.com/en-us/visualstudio/modeling/code-generation-and-t4-text-templates?view=vs-2019) instead of the final code. The T4 templates can be used to generate the final C# or VB code. This comes in handy if you want to run the code generation process in a command-line environment, a continuous integration server or any other environment where the OData Connected Service extension is not installed.
 

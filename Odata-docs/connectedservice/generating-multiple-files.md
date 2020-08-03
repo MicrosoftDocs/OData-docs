@@ -10,7 +10,7 @@ ms.topic: article
 ---
 # Generating multiple files
 
-**Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v7.md)]
 
 By default, the OData Connected Service stores all the generated code into a single file (`Reference.cs` by default, but it can be renamed in the Settings). However, you can opt to have the generated code split into multiple files. This can be useful when the generated code is very large and difficult to maintain in one file or difficult for the IDE to handle properly.
 

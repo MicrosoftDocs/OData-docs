@@ -10,7 +10,7 @@ ms.topic: article
 ---
 # Choosing what to generate
 
-**Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v7.md)]
 
 OData Connected Service allows you to select which types and methods to include in the generated code. This allows you to avoid bloating the generated code with things that you do not need for your program. It also comes in handy when you are working with a very large service but want to keep the generated code small and manageable.
 

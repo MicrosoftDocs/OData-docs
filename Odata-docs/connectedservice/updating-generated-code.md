@@ -10,7 +10,7 @@ ms.topic: article
 ---
 # Updating the generated code
 
-**Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v7.md)]
 
 When the service metadata document is updated, or when you want to modify the connected service configuration, you can update your connected service by finding the relevant folder under the **Connected Services** node in **Solution Explorer**, right-click your folder and selecting **Update Connected Service**.
 

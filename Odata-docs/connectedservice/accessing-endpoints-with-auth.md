@@ -10,7 +10,7 @@ ms.topic: article
 ---
 # Accessing endpoints that require authentication
 
-**Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v7.md)]
 
 OData Connected Services makes a web request to the target OData service in order to fetch the metadata document containing the model schema. If the service restricts access to the metadata endpoints, then the request may fail and the connected service will display an error. One workaround is to manually download the metadata document into a local file and use the file's path as the service endpoint.
 

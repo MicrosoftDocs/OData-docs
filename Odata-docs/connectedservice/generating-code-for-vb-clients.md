@@ -10,7 +10,7 @@ ms.topic: article
 ---
 # Generating code for VB clients
 
-**Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v7.md)]
 
 OData Connected Service allows you to generate client code both for C# and Visual Basic. If you add OData Connected Service to a VB project, then it will generate VB code.
 

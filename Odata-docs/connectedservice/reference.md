@@ -10,7 +10,7 @@ ms.topic: article
 ---
 # Settings Reference
 
-**Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v7.md)]
 
 This is a comprehensive reference of the configuration options available on OData Connected Service
 
