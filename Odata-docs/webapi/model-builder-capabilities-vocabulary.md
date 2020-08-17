@@ -1,7 +1,8 @@
 ---
 title: " Non-convention model builder with capabilities vocabulary"
 description: "capabilities vocabulary"
-
+author: g2mula
+ms.author: g2mula
 ms.date: 8/17/2020
 ---
 # Non-convention model builder with capabilities vocabulary
