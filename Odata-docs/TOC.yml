@@ -307,6 +307,10 @@
     items:
       - name: Basic auth setup
         href: /odata/webapi/basic-auth
+      - name: WebApi Authorization
+        items:
+          - name: Overview
+            href: /odata/webapiauth/overview
   - name: OData Connected Service
     items:
       - name: Getting Started
