@@ -313,6 +313,8 @@
             href: /odata/webapiauth/overview
           - name: Getting Started
             href: /odata/webapiauth/getting-started
+          - name: How permissions are applied
+            href: /odata/webapiauth/how-permissions-are-applied
   - name: OData Connected Service
     items:
       - name: Getting Started
