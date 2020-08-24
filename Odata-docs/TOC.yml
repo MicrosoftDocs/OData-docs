@@ -311,6 +311,8 @@
         items:
           - name: Overview
             href: /odata/webapiauth/overview
+          - name: Getting Started
+            href: /odata/webapiauth/getting-started
   - name: OData Connected Service
     items:
       - name: Getting Started
