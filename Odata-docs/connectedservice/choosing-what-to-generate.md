@@ -22,7 +22,7 @@ The **Schema Types** page of the OData Connected Service wizard displays a list 
 
 When you select a type in the list, all the types that it depends on are also automatically selected. For example, if yo have an entity type `Person` that has an enum property of type `PropertyGender`, then selecting `Person` will cause `PropertyGender` to be auto-selected as well. This ensures that the generated code is able to compile successfully.
 
-In the current version, when you un-select a type, the types that depend on it or not automatically un-selected. However, when you leave the page, then all types that are dependent upon by other selected types will also be auto-selected. For example, if `Person` and `PropertyGender` are initially both selected and you un-select `PropertyGender`, then when you navigate away from the page (e.g. by clicking **Next**), the `PropertyGender` item will be auto-selected and you will get a pop-up like the following:
+You might encounter a pop-up similar to the one below, if you attempt navigating from the screen while having unselected a type that is required by another. For example, if `Person` and `PropertyGender` are initially both selected and you un-select `PropertyGender`, then when you navigate away from the page (e.g. by clicking **Next**), the `PropertyGender` item will be auto-selected and you will get a pop-up like the following:
 
 ![Auto-selected types when leaving Schema Types page](../assets/2020-07-17-OCS-types-auto-selected-dialog.png)
 
