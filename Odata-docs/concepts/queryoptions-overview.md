@@ -164,7 +164,7 @@ Parameter aliases MUST start with an @ character.
 
 - JSON array of strings as parameter alias value – note that [, ], and " need to be percent-encoded in real URLs, the clear-text representation used here is just for readability : `http://host/service/Products/Model.WithIngredients(Ingredients=@i)?@i=["Carrots","Ginger","Oranges"]`
 
-[!Note]
+## Conventions
 
 A request to a resource using Http verbs `GET`, `PATCH` or `PUT` follow these conventions:
 
