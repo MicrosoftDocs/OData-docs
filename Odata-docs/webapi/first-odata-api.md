@@ -310,6 +310,5 @@ OData queries can be chained to make a complex query. For example, appending `?$
 
 ## Additional resources
 
-* [View or download sample code for this tutorial](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-odata-api/samples).
 * [Security Guidance for ASP.NET Core Web API OData](odata-security.md)
 * [OData official website](https://www.odata.org/)
