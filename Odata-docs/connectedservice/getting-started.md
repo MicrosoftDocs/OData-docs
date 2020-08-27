@@ -16,7 +16,7 @@ OData Connected Serice is a Visual Studio extension that generates strongly-type
 
 The extension is available at [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=laylaliu.ODataConnectedService) and supports Visual Studio 2019 and 2017.
 
-## Creatig a sample client application using OData Connected Service
+## Creating a sample client application using OData Connected Service
 
 In this sample we are going to install the extension and use it to create a sample client application for the sample [TripPin](https://www.odata.org/blog/trippin-new-odata-v4-sample-service/) OData service.
 
@@ -52,7 +52,7 @@ using Microsoft.OData.SampleService.Models.TripPin
 
 By default, the OData Connected Service generates the relevant classes in the same namespace defined in the OData metadata document. In this case, it's `Microsoft.OData.SampleService.Models.TripPin`.
 
-Let's create a new method in `Program` class called `ListPeople()` wih the following code:
+Let's create a new method in `Program` class called `ListPeople()` with the following code:
 
 ```c#
 async Task ListPeople()
@@ -73,7 +73,7 @@ class that's defined in the OData client library (`Microsoft.OData.Client`). The
 
 `DefaultContainer` is generated based on the Trip Pin service entity container and it knows about its data model. In the code snippet above `context.People` is generated from the People entity set defined in the model. `context.People` is an instance of [DataServiceQuery&lt;Person&gt;](/dotnet/api/microsoft.odata.client.dataservicequery-1).
 
-The `DataServiceQuery<TElement>` class alows you to execute LINQ-enabled queries against a particular endpoint of the service. `context.People` executes queies that return a collection of `Persion` instances.
+The `DataServiceQuery<TElement>` class allows you to execute LINQ-enabled queries against a particular endpoint of the service. `context.People` executes queries that return a collection of `Person` instances.
 
 The `Person` class is in turn generated based on the `Person` entity in the OData model and contains the properties defined in the model. The generated code also includes enums, classes corresponding to complex types and methods corresponding to bound and unbound functions and actions.
 
