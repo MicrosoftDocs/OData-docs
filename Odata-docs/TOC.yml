@@ -318,7 +318,7 @@
       - name: Generating multiple files
         href: /odata/connectedservice/generating-multiple-files
       - name: Accessing endpoints that require authentication
-        href: /odata/connectedserivce/accessing-endpoints-with-auth
+        href: /odata/connectedservice/accessing-endpoints-with-auth
       - name: Updating the generated code
         href: /odata/connectedservice/updating-generated-code
       - name: Working with T4 Templates
