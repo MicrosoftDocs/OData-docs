@@ -37,9 +37,7 @@ Builder of service provider container sets the instantiated ODataUriResolver con
             {
                 EnableNoDollarQueryOptions = true,
                 EnableCaseInsensitive = enableCaseInsensitive
-
             };
-
             spContainerBuilder.AddService(ServiceLifetime.Singleton, sp => resolver));
 ```
 
