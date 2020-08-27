@@ -12,7 +12,7 @@ ms.topic: article
 
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v6.md)]
 
-## With Codegen/Connected service
+## With Connected Service
 The odata client can be used by generating code using the odata connected service or odata codegen. You can learn more on this  from this [tutorial](https://docs.microsoft.com/en-us/aspnet/web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-client-app "Create an OData v4 Client App (C#)") 
 
 The code
@@ -82,7 +82,7 @@ context.SaveChanges(); // send the request
 
 ## Using with POCO's
 
-While developing you may have the need to use the client without using codegen so as to reduce duplication of code for the models. In this case one can still use the odata client 
+While developing, you may want to use OData Client without a code generation tool like _ODataConnectedService_. In this case, one can still use the OData Client
 to access their service.
 
 In order to do this one can simply extend the `DataServiceContext` class in their code and add some convenience methods as shown below
@@ -106,11 +106,11 @@ public class Person
               this.People = base.CreateQuery<Person>("People");
     }
 
-    public DataServiceQuery<Person> People {get; }
+    public DataServiceQuery<Person> People { get; }
 
     public void AddToPeople(Person person)
     {
-       base.AddObject("People",person);
+       base.AddObject("People", person);
     }
 }
 
@@ -118,7 +118,7 @@ public class Person
 
 The above context can then be used the same way as the codegen data service context. 
 
-To add new objects to the peoples entity set use `context.AddObject("People",person)` or create a convenience method in the class to do the same.
+To add new objects to the peoples entity set use `context.AddObject("People", person)` or create a convenience method in the class to do the same.
 
 ### Loading the service model
 
@@ -132,7 +132,7 @@ To provide the same for our code we need to do the following.
     {
         this.People = base.CreateQuery<Person>("People");
         // add the following lines
-        this.Format.LoadServiceModel= ()=> util.GetEdmModel()  /* user action that returns a valid IEdmModel instance */  
+        this.Format.LoadServiceModel = () => util.GetEdmModel()  /* user action that returns a valid IEdmModel instance */  
         this.Format.UseJson(); /* this instruction causes the model to be loaded instantly else the model is loaded lazily and cached when its needed */
     }
 
