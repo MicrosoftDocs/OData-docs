@@ -21,9 +21,6 @@ This sample:
 
 * [.NET Core SDK 2.2 or later](https://www.microsoft.com/net/download/all)
 
-## Download the starter app
-
-[Download Web API starter app](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-odata-api/samples/2.2/StarterApp).
 
 ## Register OData
 
