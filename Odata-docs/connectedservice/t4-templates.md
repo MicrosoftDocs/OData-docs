@@ -14,9 +14,9 @@ ms.topic: article
 
 OData Connected Service can generate [T4 templates](https://docs.microsoft.com/en-us/visualstudio/modeling/code-generation-and-t4-text-templates?view=vs-2019) instead of the final code. The T4 templates can be used to generate the final C# or VB code. This comes in handy if you want to run the code generation process in a command-line environment, a continuous integration server or any other environment where the OData Connected Service extension is not installed.
 
-**Note**: [The TextTransform utility](https://docs.microsoft.com/en-us/visualstudio/modeling/generating-files-with-the-texttransform-utility?view=vs-2019) can be use to generate code on a command-line environment.
+**Note**: [The TextTransform utility](https://docs.microsoft.com/en-us/visualstudio/modeling/generating-files-with-the-texttransform-utility?view=vs-2019) can be used to generate code on a command-line environment.
 
-To generate T4 templates, go to the **Settings** page of the wizard, then toggle **Advance Settings** then select **Add cote templates (Whether to include T4 files into this project)**.
+To generate T4 templates, go to the **Settings** page of the wizard, then toggle **Advance Settings** then select **Add code templates (Whether to include T4 files into this project)**.
 
 ![Add T4 templates](../assets/2020-07-17-OCS-t4-templates-setting.png)
 
@@ -26,15 +26,15 @@ When you finish the code generation process, the following files will be added t
 
 ## Generating the C#/VB code
 
-To genarate the C#/VB code, right-click the `Reference.tt` file and click **Run Custom Tool**.
+To generate the C#/VB code, right-click the `Reference.tt` file and click **Run Custom Tool**.
 
 ![Run custom tool](../assets/2020-07-17-OCS-t4-run-custom-tool.png)
 
-The generated code is saved in the `Reference.cs` (or `Reference.vb`) file by default that you can view by expaning the `Reference.tt` node in **Solution Explorer**.
+The generated code is saved in the `Reference.cs` (or `Reference.vb`) file by default that you can view by expanding the `Reference.tt` node in **Solution Explorer**.
 
 ![Generate C# file](../assets/2020-07-20-OCS-t4-generated-code-file.png)
 
-## Updating generatd code
+## Updating generated code
 
 The `Reference.tt` file contains a C# `Configuration` class that provides you access to similar settings available in the connected service wizard. You can update the generated code by updating the properties of the `Configuration` class and then running the custom tool menu option again.
 
