@@ -1,19 +1,23 @@
 ---
-title: " Non-convention model builder with capabilities vocabulary"
+title: "Non-convention model builder with capabilities vocabulary"
 description: "capabilities vocabulary"
 author: g2mula
 ms.author: g2mula
 ms.date: 8/17/2020
 ---
+
 # Non-convention model builder with capabilities vocabulary
+
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
-The model builder now allows you to configure the [capabilities of a service](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.md). Please follow the link for more information on capabilities vocabulary.
+The model builder now allows you to configure the [capabilities of a service](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.md). Please [follow the link](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.md) for more information on [capabilities vocabulary](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.md).
 
-### Examples
+## Examples
+
 Find below some sample usage...
 
 Unless otherwise specified, examples will be based on the model below.
+
 ```csharp
 public class Customer
 {
@@ -21,9 +25,12 @@ public class Customer
   public string Name { get; set; }
 }
 
+var builder = new ODataConventionModelBuilder();
 var customerConfiguration = builder.EntitySet<Customer>("Customers");
 ```
+
 which produces the $metadata below
+
 ```xml
 <Schema Namespace="Default" xmlns="http://docs.oasis-open.org/odata/ns/edm">
   <EntityType Name="Customer">
@@ -39,12 +46,16 @@ which produces the $metadata below
 </Schema>
 ```
 
-### [CountRestrictions](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.xml#L221)
+## [CountRestrictions](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.xml#L221)
+
 Restrictions on /$count path suffix and $count=true system query option
+
 ```csharp
 _ = customerConfiguration.HasCountRestrictions().IsCountable(false);
 ```
+
 $metadata
+
 ```xml
 <Schema Namespace="Default" xmlns="http://docs.oasis-open.org/odata/ns/edm">
   <EntityType Name="Customer">
@@ -67,22 +78,26 @@ $metadata
 </Schema>
 ```
 
-### [SelectSupport](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.xml#L335)
+## [SelectSupport](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.xml#L335)
+
 Support for $select and nested query options within $select
+
 ```csharp
 _ = customerConfiguration.HasSelectSupport()
     .IsSupported(true)  // Supports $select
-    .IsInstanceAnnotationsSupported(false)  // Supports instance annotations in $select list
-    .IsExpandable(false)  // $expand within $select is supported
+    .IsInstanceAnnotationsSupported(false)  // Does *not* support instance annotations in $select list
+    .IsExpandable(false)  // $expand within $select is *not* supported
     .IsFilterable(true)  // $filter within $select is supported
-    .IsSearchable(false)  // $search within $select is supported
+    .IsSearchable(false)  // $search within $select is *not* supported
     .IsTopSupported(true)  // $top within $select is supported
-    .IsSkipSupported(false)  // $skip within $select is supported
-    .IsComputeSupported(false)  // $compute within $select is supported
+    .IsSkipSupported(false)  // $skip within $select is *not* supported
+    .IsComputeSupported(false)  // $compute within $select is *not* supported
     .IsCountable(true)  // $count within $select is supported
-    .IsSortable(false);  // $orderby within $select is supported
+    .IsSortable(false);  // $orderby within $select is *not* supported
 ```
+
 $metadata
+
 ```xml
 <Schema Namespace="Default" xmlns="http://docs.oasis-open.org/odata/ns/edm">
   <EntityType Name="Customer">
@@ -113,14 +128,18 @@ $metadata
   </Annotations>
 </Schema>
 ```
-Note that if you do not specify any property, then these will not be output eg
+
+Note that only specified properties will be output eg
+
 ```csharp
 _ = customerConfiguration.HasSelectSupport()
     .IsSupported(true)  // Supports $select
     .IsCountable(true)  // $count within $select is supported
-    .IsSortable(false); // $orderby within $select is supported
+    .IsSortable(false); // $orderby within $select is *not* supported
 ```
+
 $metadata
+
 ```xml
 <Schema Namespace="Default" xmlns="http://docs.oasis-open.org/odata/ns/edm">
   <EntityType Name="Customer">
@@ -145,7 +164,8 @@ $metadata
 </Schema>
 ```
 
-### [ReadRestrictions](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.xml#L901)
+## [ReadRestrictions](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.xml#L901)
+
 Restrictions for retrieving a collection of entities, retrieving a singleton instance.
 
 ```csharp
@@ -162,7 +182,9 @@ _ = customerConfiguration
             .HasScopes(scope => scope.HasScope("Customers.ReadWrite"))
             .HasScopes(scope => scope.HasScope("Customers.ReadAll")));
 ```
+
 $metadata
+
 ```xml
 <Schema Namespace="Default" xmlns="http://docs.oasis-open.org/odata/ns/edm">
   <EntityType Name="Customer">
@@ -216,8 +238,10 @@ $metadata
 </Schema>
 ```
 
-### [DeleteRestrictions](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.xml#L763)
+## [DeleteRestrictions](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.xml#L763)
+
 Restrictions on delete operations
+
 ```csharp
 _ = customerConfiguration
     .HasDeleteRestrictions()
@@ -225,7 +249,9 @@ _ = customerConfiguration
     .HasDescription("Delete not allowed")
     .HasLongDescription("Configuration could be done as shown in the read restrictions above, this is just for demo purposes");
 ```
+
 $metadata
+
 ```xml
 <Schema Namespace="Default" xmlns="http://docs.oasis-open.org/odata/ns/edm">
   <EntityType Name="Customer">
