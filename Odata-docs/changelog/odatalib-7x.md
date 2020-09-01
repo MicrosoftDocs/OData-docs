@@ -29,6 +29,44 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
 
+## ODataLib 7.7.1 Release
+
+Following are the changes done since 7.7.0.
+
+***Features***
+
+N/A
+
+***Fixed Bugs***
+
+[[#1848](https://github.com/OData/odata.net/pull/1848)] Fix platform not supported exception
+
+[[#1831](https://github.com/OData/odata.net/pull/1831)] Fix bug on atomicityGroup as a dependsOn value in Odata v4
+
+[[#1855](https://github.com/OData/odata.net/pull/1855)] Hotfix for the infinite loop if structured type has property which type is the declaring type
+
+[[#1865](https://github.com/OData/odata.net/pull/1865)] Fix Enum as string used with Has Issue
+
+[[#1762](https://github.com/OData/odata.net/pull/1762)] Enable Where clause to generate $filter query options for key predicates
+
+[[#1793](https://github.com/OData/odata.net/pull/1793)] Different null validation messages for complex and primitive collections
+
+***Improvements***
+
+[[#1853](https://github.com/OData/odata.net/pull/1853)] Removed the unnecessary string allocations from hot path in JsonReader
+
+[[#1849](https://github.com/OData/odata.net/pull/1849)] Add "RemovalDate" property to deprecation annotation
+
+[[#1840](https://github.com/OData/odata.net/pull/1840)] update client E2E xunit tests
+
+[[#1795](https://github.com/OData/odata.net/pull/1795)] Migrate FxCop Legacy (Legacy analysis) to FxCop Analyzers (Source analysis)
+
+[[#1779](https://github.com/OData/odata.net/pull/1779)] Build cmd and additional updates for VS upgrade
+
+[[#1854](https://github.com/OData/odata.net/pull/1854)] OData path fixes
+
+
+
 ## ODataLib 7.7.0 Release
 
 Following are the changes done since 7.6.4.
