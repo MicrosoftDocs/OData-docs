@@ -60,6 +60,7 @@ The follow table represents the state of implementation of the above mentioned s
 |$expand of Stream Properties and Media Resources.[Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652518) |N|N|
 |System Query Option $compute..[Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652521) |Y|N|
 |System Query Option $index..[Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652522) |Y|N|
+|Conditional Function: Case..[Spec](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html#sec_case) |N|N|
 ||
 |**IMPROVED**|
 |EQ Comparison. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652508)|N|N|

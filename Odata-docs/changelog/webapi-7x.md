@@ -71,7 +71,7 @@ Aggregation support was introduced in EF Core 2.0, however it was implemented as
 
 * [ [#1962](https://github.com/OData/WebApi/pull/1962) ] Fix cast issue
 
-* [ [#1953](https://github.com/OData/WebApi/pull/1953) ] Fix Skiptoke value with DateTime
+* [ [#1953](https://github.com/OData/WebApi/pull/1953) ] Fix Skiptoken value with DateTime
 
 * [ [#1948](https://github.com/OData/WebApi/pull/1948) ] Use ODataValueProvider
 

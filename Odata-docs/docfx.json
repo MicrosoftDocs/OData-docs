@@ -81,7 +81,8 @@
         "/odata/odatalib/**/*.md": "OData Core library",
         "/odata/webapi/**/*.md": "OData AspNet WebAPI",
         "/odata/spatial/**/*.md": "Microsoft Spatial",
-        "/odata/concepts/**/*.md": "OData .NET"
+        "/odata/concepts/**/*.md": "OData .NET",
+        "/odata/connectedservice/**/*.md": "OData Connected Service"
       }
     },
     "template": [],

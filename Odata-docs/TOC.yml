@@ -307,6 +307,24 @@
     items:
       - name: Basic auth setup
         href: /odata/webapi/basic-auth
+  - name: OData Connected Service
+    items:
+      - name: Getting Started
+        href: /odata/connectedservice/getting-started
+      - name: Generating code for VB clients
+        href: /odata/connectedservice/generating-code-for-vb-clients
+      - name: Choosing what to generate
+        href: /odata/connectedservice/choosing-what-to-generate
+      - name: Generating multiple files
+        href: /odata/connectedservice/generating-multiple-files
+      - name: Accessing endpoints that require authentication
+        href: /odata/connectedservice/accessing-endpoints-with-auth
+      - name: Updating the generated code
+        href: /odata/connectedservice/updating-generated-code
+      - name: Working with T4 Templates
+        href: /odata/connectedservice/t4-templates
+      - name: Settings reference
+        href: /odata/connectedservice/reference
   - name: Legacy APIs
     items: 
       - name: ODataLib v6

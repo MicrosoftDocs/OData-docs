@@ -104,3 +104,62 @@ OData Client has implemented a number of `Exception` classes including `DataServ
      }  
  }
 ```
+## Using with POCO's
+
+While developing, you may want to use OData Client without a code generation tool like _ODataConnectedService_. In this case, one can still use the OData Client
+to access their service.
+
+In order to do this you simply extend the `DataServiceContext` class in your code and add some convenience methods as shown below:
+
+```csharp
+// Person class with Odata annotations
+[Key('Id')]
+public class Person
+{
+        public string Id { get; set; }
+        public string UserName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+}
+
+// Dataservice context
+ public class Container : DataServiceContext
+{
+    public Container(Uri serviceRoot) : base(serviceRoot)
+    {
+              this.People = base.CreateQuery<Person>("People");
+    }
+
+    public DataServiceQuery<Person> People { get; }
+
+    public void AddToPeople(Person person)
+    {
+       base.AddObject("People", person);
+    }
+}
+
+```
+
+To add new objects to the peoples entity set use `context.AddObject("People", person)` or create a convenience method in the class to do the same.
+
+### Loading the service model
+
+This example allows you to use the client while using the current metadata which is fetched from network. In some cases this is not convenient and to override this behavior you need to change the constructor of the DataService context to include an action that can be used to fetch the model. Codegen tools do this by downloading the metadata and storing it in a verbatim string or a separate file which is then read upon instantiation of the context.
+
+To provide the same for our code we need to do the following.
+
+```csharp
+    // ctor from above
+    public Container(Uri serviceRoot) : base(serviceRoot)
+    {
+        this.People = base.CreateQuery<Person>("People");
+        // add the following lines
+        this.Format.LoadServiceModel = () => util.GetEdmModel()  /* user action that returns a valid IEdmModel instance */  
+        this.Format.UseJson(); /* this instruction causes the model to be loaded instantly else the model is loaded lazily and cached when its needed */
+    }
+
+```
+
+Using the above method one can switch the model they want to use useful especially when writing tests.
+
+**Note**: Using the OData Connected Service is the recommended way to utilize all the new features in the OData Client.

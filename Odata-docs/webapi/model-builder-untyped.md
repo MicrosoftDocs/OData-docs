@@ -308,7 +308,7 @@ It will generate the below metadata document:
 
 ### Action Import
 
-Unbound actioin can be called through action import. The following codes are used to build an action import:
+Unbound action can be called through action import. The following codes are used to build an action import:
 
 ```C#
 container.AddActionImport("ChangeCustomerById", change);
