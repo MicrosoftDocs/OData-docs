@@ -1,16 +1,24 @@
 ---
-title: "Non-convention model builder with capabilities vocabulary"
+title: "Adding Capability Annotations with the OData Model Builder"
 description: "capabilities vocabulary"
 author: g2mula
 ms.author: g2mula
 ms.date: 8/17/2020
 ---
 
-# Non-convention model builder with capabilities vocabulary
+# Adding Capability Annotations with the OData Model Builder
 
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
 The model builder now allows you to configure the [capabilities of a service](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.md). Please [follow the link](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.md) for more information on [capabilities vocabulary](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.md).
+
+It is available on the [Nuget gallery](https://www.nuget.org/packages/Microsoft.OData.ModelBuilder)
+
+You can install or update the NuGet package for OData Migration Extensions v1.0.0 using the [Package Manager Console](https://docs.nuget.org/docs/start-here/using-the-package-manager-console):
+
+```PowerShell
+PM> Install-Package Microsoft.OData.ModelBuilder
+```
 
 ## Examples
 
@@ -46,7 +54,7 @@ which produces the $metadata below
 </Schema>
 ```
 
-## [CountRestrictions](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.xml#L221)
+### [CountRestrictions](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.xml#L221)
 
 Restrictions on /$count path suffix and $count=true system query option
 
@@ -78,7 +86,7 @@ $metadata
 </Schema>
 ```
 
-## [SelectSupport](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.xml#L335)
+### [SelectSupport](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.xml#L335)
 
 Support for $select and nested query options within $select
 
@@ -164,7 +172,7 @@ $metadata
 </Schema>
 ```
 
-## [ReadRestrictions](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.xml#L901)
+### [ReadRestrictions](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.xml#L901)
 
 Restrictions for retrieving a collection of entities, retrieving a singleton instance.
 
@@ -238,7 +246,7 @@ $metadata
 </Schema>
 ```
 
-## [DeleteRestrictions](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.xml#L763)
+### [DeleteRestrictions](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.xml#L763)
 
 Restrictions on delete operations
 
@@ -275,3 +283,7 @@ $metadata
   </Annotations>
 </Schema>
 ```
+
+### Sample Project
+
+A sample project can be found in the [ODataSamples repository on github](https://github.com/OData/ODataSamples/tree/master/WebApiCore/ODataCapabilitiesVocabularySample)
