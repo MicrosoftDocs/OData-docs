@@ -11,12 +11,10 @@ ms.topic: article
 
 OData ModelBuilder available on the [Nuget gallery](https://www.nuget.org/packages/Microsoft.OData.ModelBuilder)
 
-You can install or update the NuGet package for OData Migration Extensions v1.0.0 using the [Package Manager Console](https://docs.nuget.org/docs/start-here/using-the-package-manager-console):
+You can install or update the NuGet package for OData ModelBuilder using the [Package Manager Console](https://docs.nuget.org/docs/start-here/using-the-package-manager-console):
 
 ```PowerShell
-
 PM> Install-Package Microsoft.OData.ModelBuilder
-
 ```
 
 ## OData ModelBuilder 1.0.3
