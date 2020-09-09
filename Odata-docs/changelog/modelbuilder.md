@@ -2,7 +2,7 @@
 title: "OData ModelBuilder changes"
 description: "OData ModelBuilder changelog"
 author: g2mula
-ms.author: g2mula
+ms.author: ginjira
 ms.date: 09/09/2020
 ms.topic: article
 ---

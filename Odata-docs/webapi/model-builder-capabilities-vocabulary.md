@@ -2,7 +2,7 @@
 title: "Adding Capability Annotations with the OData Model Builder"
 description: "capabilities vocabulary"
 author: g2mula
-ms.author: g2mula
+ms.author: ginjira
 ms.date: 8/17/2020
 ---
 
