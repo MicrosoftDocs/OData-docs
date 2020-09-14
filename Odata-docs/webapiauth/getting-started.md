@@ -2,7 +2,7 @@
 title : "Getting Started"
 description: "This tutorial takes you through how to use the OData Web API authorization library in an OData Web API application"
 
-author: clhabins
+author: habbes
 ms.author: clhabins
 ms.date: 8/23/2020
 ---
