@@ -38,9 +38,9 @@ Permission scope name     | Where it's defined
 `UpdateTaxRate`        | `OperationRestrictions` of `UpdateTaxRate` unbound action
 `TopProduct.Read`      | `ReadRestrictions` of `TopProduct` singleton
 
-## CRUD operations on entity sets and singleton
+## CRUD operations on entity sets and singletons
 
-For CRUD operations on entity sets and singleton, the permissions of the corresponding insert/update/delete/read restrictions are applied.
+For CRUD operations on entity sets and singletons, the permissions of the corresponding insert/update/delete/read restrictions are applied.
 
 Endpoint                     | Required permission scopes
 -----------------------------|----------------------
@@ -51,9 +51,9 @@ Endpoint                     | Required permission scopes
 `PUT Customers`              | `Customers.Update`
 `PATCH Customers`            | `Customers.Update`
 
-Note, in the case of `Customers(1)`, permissions will be extracted from two places if available. Permissions will be extracted from both `ReadRestrictions`
-as well as the `ReadByKeyRestrictions` property of the `ReadRestrictions`. If the user has any of the permissions defined in either the `ReadRestrictions` or
-`ReadByKeyRestrictions`, then access will be granted.
+Note, in the case of `Customers(1)`, permissions will be extracted from two places if available.
+Permissions will be extracted from both `ReadRestrictions` as well as the `ReadByKeyRestrictions` property of the `ReadRestrictions`.
+If the user has any of the permissions defined in either the `ReadRestrictions` or `ReadByKeyRestrictions`, then access will be granted.
 
 For example, if the model defines permission scopes `Customers.Read` in the `ReadRestrictions`, and `Customers.ReadByKey` in the `ReadByKeyRestrictions`, then access to the `GET Customers(1)` endpoint will be granted to uers with either the `Customers.Read` or `Customers.ReadByKey` permissions.
 
@@ -100,7 +100,7 @@ the `Customers` entity set. The permissions checked for Orders are extracted fro
 of `Orders` and the `ReadRestrictions` of the `NavigationRestrictions` of `Customers` that apply to the `Orders`
 property (`NS.EntityContainer.Customers/{key}/Orders` path).
 
-Assuming the model defines the scopes `Customers.Read`, `Customers.ReadByKey`, `CustomersOrders.Read` and `Orders.Read`,
+Assuming the model defines the scopes `Customers.Read`, `Customers.ReadByKey`, `CustomersOrders.Read`, and `Orders.Read`,
 the required scopes to read the endpoint would be:
 
 ```
@@ -116,4 +116,4 @@ Endpoint                     | Restrictions applied
 `POST Customers(1)/Orders`     | `(Customers.Update) AND (CustomerOrders.Insert or Orders.Insert)`
 `GET Customers(1)/Orders(2)/Product` | `(Customers.Read OR Customers.ReadByKey) AND (CustomerOrders.Read OR CustomerOrders.ReadByKey OR Orders.Read OR Orders.ReadByKey) AND (OrderProduct.Read OR OrderProduct.ReadByKey OR Products.Read)`
 
-Note that a POST, PUT, PATCH or DELETE access to a navigation property is considered an update access to the entity that the navigation property belongs to.
+Note that a POST, PUT, PATCH, or DELETE access to a navigation property is considered an update access to the entity that the navigation property belongs to.

@@ -6,19 +6,19 @@ ms.author: habbes
 ms.date: 8/23/2020
 ---
 # Tutorial: Getting started with OData WebApi Authorization
-**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
 
 This tutorial shows you how to use WebApi Authorization to authorization to your OData WebApi application based on the permission restrictions defined in your OData model.
 
 ## Creating the API
 
 - Create an ASP.NET Core 3.1 web application, using the API template. Let's call the application **ODataAuthorizationDemo**
-- Intsall the following NuGet packages:
+- Install the following NuGet packages:
   - `Microsoft.AspNetCore.OData` (7.4 or later)
   - `Microsoft.EntityFrameworkCore` (we'll use EF Core for interacting with a database)
   - `Microsoft.EntityFrameworkCore.InMemory` (we'll use an in-memory database for this demo)
   - **TODO** *not yet released to NuGet* `Microsoft.AspNetCore.OData.Authorization` (the WebApi Authorization library)
-  - **TODO** *not yet released to NuGet* `Microsoft.OData.ModelBuilder` (used to create the OData EdmModel)
+  - Microsoft.OData.ModelBuilder` (1.0.3 or later)
 
 
 ### Create the DB Context and model classes
@@ -260,8 +260,9 @@ namespace ODataAuthorizationDemo.Controllers
 }
 ```
 
-At this point you should be able to perform CRUD operations on the `odata/Products` endpoint. The permission restrictions that are defined in the metadata
-do not automatically apply and all requests should still be authorized. To apply these permissions, we'll need to configure the WebApi Authorization middleware. But before we can do that, we'll need to set up authentication.
+At this point you should be able to perform CRUD operations on the `odata/Products` endpoint.
+The permission restrictions that are defined in the metadata do not automatically apply and all requests should still be authorized.
+To apply these permissions, we'll need to configure the WebApi Authorization middleware. But before we can do that, we'll need to set up authentication.
 
 ## Setting up Authentication
 
@@ -389,7 +390,8 @@ Now that we have authentication set up, we can finally set up authorization.
 
 ## Adding authorization
 
-The authorization middleware will compare the scopes that the authenticated user to the ones required for the current requested based on the modelrestriction annotations. Since there many ways in which the scopes could be stored, we need to tell the middleware how to extract the scopes from the current user.
+The authorization middleware will compare the scopes that the authenticated user has to the ones required for the current request based on the model's restriction annotations.
+Since there are many ways in which the scopes could be stored, we need to tell the middleware how to extract the scopes from the current user.
 
 Modify `ConfigureServices` to match the following:
 
@@ -471,4 +473,8 @@ POST /auth/login
 
 Now we should be able to access `GET /odata/Products`, `GET /odata/Products({key})` and `POST /odata/Products`.
 
-We should get a `403 Forbidden` error if we try to access `DELETE /odata/Products({key})` or `PATCH/PUT /odata/Products({key})`
+We should get an error if we try to access `DELETE /odata/Products({key})` or `PATCH/PUT /odata/Products({key})`
+
+**Note**: Normally a `403 Forbidden` error response would be returned, but in this sample it might return a `404` error instead. This
+is because the cookie authentication handler attempts to redirect to a login page by default when authorization fails. And since this
+page does not exist in our sample application, a `404 Not found` error is returned.
