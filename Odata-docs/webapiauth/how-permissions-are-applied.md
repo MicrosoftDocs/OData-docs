@@ -1,5 +1,6 @@
 ---
 title : "How Permissions are Applied"
+description: "This articles describes how the library enforces permission restrictions defined in the model on different types of API endpoints."
 
 author: habbes
 ms.author: habbes
