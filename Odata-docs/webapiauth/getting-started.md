@@ -18,9 +18,21 @@ This tutorial shows you how to use WebApi Authorization to authorization to your
   - `Microsoft.AspNetCore.OData` (7.4 or later)
   - `Microsoft.EntityFrameworkCore` (we'll use EF Core for interacting with a database)
   - `Microsoft.EntityFrameworkCore.InMemory` (we'll use an in-memory database for this demo)
-  - **TODO** *not yet released to NuGet* `Microsoft.AspNetCore.OData.Authorization` (the WebApi Authorization library)
-  - Microsoft.OData.ModelBuilder` (1.0.3 or later)
+  - `Microsoft.OData.ModelBuilder` (1.0.3 or later) (we'll use to create the OData model and specify the permission restrictions)
+  - `Microsoft.AspNetCore.OData.Authorization` (the WebApi Authorization library) (available in pre-release nightly builds, see install instructions below)
 
+Since `Microsoft.AspNetCore.OData.Authorization` is still a pre-release version, it is currently only available through pre-release nightly builds
+on the OData Nightly MyGet feed: https://www.myget.org/F/odatanightly/api/v3/index.json
+
+To install the nightly build, first add the OData Nightly feed to your NuGet package manager sources.
+
+In Visual Studio go to **Tools** -> **Options** -> **NuGet Package Manager** -> **Package Sources**.
+Click the Add button and add the following source:
+- Name: odatanightly (The name could be anything)
+- Source: https://www.myget.org/F/odatanightly/api/v3/index.json
+
+Then go to **Manage NuGet Packages** as you would normally when installing packages. Make sure to check the **Include prerelease** checkbox, then under **Package source** select `odatanightly`.
+You should now be able to search for `Microsoft.AspNetCore.OData.Authorization`.
 
 ### Create the DB Context and model classes
 
