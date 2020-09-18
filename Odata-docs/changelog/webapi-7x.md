@@ -9,6 +9,57 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.5.0
+
+The NuGet packages for ASP.NET Web API OData v7.5.0 are available on the [NuGet gallery](https://www.nuget.org/).
+
+The corresponding symbols now can load from the nuget symbol server.
+
+### New Features:
+
+* [ [#2252](https://github.com/OData/WebApi/pull/2252) ] Add HEAD Support for Attribute Routing
+
+* [ [#2219](https://github.com/OData/WebApi/pull/2219) ] Support intance annotation
+
+* [ [#2195](https://github.com/OData/WebApi/pull/2195) ] Add cast operation to FilterBinder.BindIn
+
+* [ [#2191](https://github.com/OData/WebApi/pull/2191) ] support long URL pattern
+
+* [ [#2189](https://github.com/OData/WebApi/pull/2189) ] Enable convention routing for operation import
+
+* [ [#2167](https://github.com/OData/WebApi/pull/2167) ] support fine grained cors access control
+
+
+### Improvements and fixes:
+
+* [ [#2232](https://github.com/OData/WebApi/pull/2232) ] AspNetCore Resolving of Batch ContentId for AddRelatedObject
+
+* [ [#2231](https://github.com/OData/WebApi/pull/2231) ] Enhance $batch accept header decision
+
+* [ [#2288](https://github.com/OData/WebApi/pull/2288) ] ResourceContext.ResourceInstance throws exception if there's a select or expand
+
+* [ [#2287](https://github.com/OData/WebApi/pull/2287) ] Invalid partial JSON response happens expanding an entity
+
+* [ [#2279](https://github.com/OData/WebApi/pull/2279) ] Fix incorrect child collection nextlink
+
+* [ [#2267](https://github.com/OData/WebApi/pull/2267) ] enable enum member alias for query options
+
+* [ [#2248](https://github.com/OData/WebApi/pull/2248) ] Fix invalid location header generated when key property for a model contains unicode chars
+
+* [ [#2246](https://github.com/OData/WebApi/pull/2246) ] Fix Delta<TStructuralType>.GetInstance() method
+
+* [ [#2200](https://github.com/OData/WebApi/pull/2200) ] Avoid NullReferenceException on TruncatedCollection<T>
+
+* [ [#2197](https://github.com/OData/WebApi/pull/2197) ] Fix skip token encoding
+
+* [ [#2168](https://github.com/OData/WebApi/pull/2168) ] Improve action selector routing
+
+* [ [#2142](https://github.com/OData/WebApi/pull/2142) ] Remove the null check for classic EF
+
+* [ [#2060](https://github.com/OData/WebApi/pull/2060) ] opertation returns path for the return entity set or singleton
+
+---
+
 ## WebAPI 7.4.1
 
 ### Improvements and fixes:
