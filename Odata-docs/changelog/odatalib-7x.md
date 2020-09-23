@@ -29,6 +29,34 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
 
+
+## ODataLib 7.7.2 Release
+
+Following are the changes done since 7.7.1.
+
+***Features***
+
+N/A
+
+***Fixed Bugs***
+
+[[#1880](https://github.com/OData/odata.net/pull/1880)] Downgrade the System.Text.Json package reference version 
+
+[[#1886](https://github.com/OData/odata.net/pull/1886)] Http headers should be case insensitive
+
+[[#1891](https://github.com/OData/odata.net/pull/1891)] Fix logic to validate URL segment by type
+
+
+***Improvements***
+
+[[#1873](https://github.com/OData/odata.net/pull/1873)] Azure Pipeline update to include Symbols in snupkg
+
+[[#1887](https://github.com/OData/odata.net/pull/1887)] Fix issue #1883, MultipartMixed grows cache indefinitely
+
+[[#1888](https://github.com/OData/odata.net/pull/1888)] Performance Fix: OData.metadata=full is very CPU intensive
+
+
+
 ## ODataLib 7.7.1 Release
 
 Following are the changes done since 7.7.0.
