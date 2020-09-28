@@ -93,7 +93,7 @@ public class MoviesController : ODataController
 ### 6. Pass query options in request body
 Using an API client such as [Postman](https://www.getpostman.com/tools), send a POST request to http://localhost:PORT/odata/Movies/$query.
 - Set `Content-Type` header to `text/plain`
-- Set request body to `$filter=contains(Name,%20%27li%27)&$orderby=Name%20desc&$select=Id,Name,Classification,RunningTime`
+- Set request body to `$filter=contains(Name,'li')&$orderby=Name desc&$select=Id,Name,Classification,RunningTime`
 
 You should get the following response:
 ```json
@@ -115,4 +115,4 @@ You should get the following response:
     ]
 }
 ```
-The feature allows you split the query options between the request body and the request URL. Using the example, you can achieve the same outcome by sending a POST with request body as `$filter=contains(Name,%20%27li%27)&$select=Id,Name,Classification,RunningTime` to http://localhost:PORT/odata/Movies/$query?$orderby=Name%20desc
+The feature allows you split the query options between the request body and the request URL. Using the above example, you can achieve the same outcome by sending a POST with request body as `$filter=contains(Name,'li')&$select=Id,Name,Classification,RunningTime` to http://localhost:PORT/odata/Movies/$query?$orderby=Name desc
