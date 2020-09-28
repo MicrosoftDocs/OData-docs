@@ -9,7 +9,7 @@ ms.date: 9/28/2020
 
 The query options part of an OData URL can be quite long, potentially exceeding the maximum length that many hosting environments (including IIS) impose. This can limit the client's ability to request the exact set of data they are interested in, especially when using explict select statements.
 
-OData AspNet WebApi V7.5 introduced support for passing query options in the request body. This is achieved by sending a POST request to an endpoint comprising of the resource path appended with `/$query` (e.g. http://ServiceRoot/Movies/$query), with the `Content-Type` header set to `text/plain`
+OData AspNet WebApi V7.5 introduced support for passing query options in the request body. This is achieved by prepating a POST request with the query options part of the URL in the body and sending that to an endpoint comprising of the resource path appended with `/$query` - e.g. http://ServiceRoot/Movies/$query. The `Content-Type` header should be set to `text/plain`. 
 
 In the rest of this page, we demonstrate how the feature works by building a simple OData service
 
@@ -93,7 +93,7 @@ public class MoviesController : ODataController
 ### 6. Pass query options in request body
 Using an API client such as [Postman](https://www.getpostman.com/tools), send a POST request to http://localhost:PORT/odata/Movies/$query.
 - Set `Content-Type` header to `text/plain`
-- Set request body to `$filter=contains(Name, 'li')&$orderby=Name desc&$select=Id,Name,Classification,RunningTime`
+- Set request body to `$filter=contains(Name,%20%27li%27)&$orderby=Name%20desc&$select=Id,Name,Classification,RunningTime`
 
 You should get the following response:
 ```json
@@ -115,3 +115,4 @@ You should get the following response:
     ]
 }
 ```
+The feature allows you split the query options between the request body and the request URL. Using the example, you can achieve the same outcome by sending a POST with request body as `$filter=contains(Name,%20%27li%27)&$select=Id,Name,Classification,RunningTime` to http://localhost:PORT/odata/Movies/$query?$orderby=Name%20desc
