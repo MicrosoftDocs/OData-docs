@@ -151,6 +151,8 @@
             href: /odata/webapi/key-value-binding
           - name: Merge complex type and entity type
             href: /odata/webapi/merge-complex-and-entity
+          - name: Query options in request body
+            href: /odata/webapi/query-options-in-request-body.md
       - name: Extending WebAPI
         items:
         - name: Custom URL parsing
