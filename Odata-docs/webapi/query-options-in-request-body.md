@@ -28,7 +28,7 @@ Install-Package Microsoft.AspNetCore.OData -Version 7.5.0
 **Note:** You can also install any higher version
 
 ### 3. Define CLR type
-```
+```c#
 public class Movie
 {
 	[Key]
@@ -40,7 +40,7 @@ public class Movie
 ```
 
 ### 4. Configure service
-```
+```c#
 public class Startup
 {
 	public void ConfigureServices(IServiceCollection services)
@@ -65,7 +65,7 @@ public class Startup
 ```
 
 ### 5. Add controller
-```
+```c#
 public class MoviesController : ODataController
 {
 	static readonly List<Movie> Movies;
@@ -91,12 +91,12 @@ public class MoviesController : ODataController
 ```
 
 ### 6. Pass query options in request body
-Using a tool such as [HTTP REPL](/aspnet/core/web-api/http-repl) or [Postman](https://www.getpostman.com/tools), send a POST request to http://localhost:PORT/odata/Movies/$query.
+Using an API client such as [Postman](https://www.getpostman.com/tools), send a POST request to http://localhost:PORT/odata/Movies/$query.
 - Set `Content-Type` header to `text/plain`
 - Set request body to `$filter=contains(Name, 'li')&$orderby=Name desc&$select=Id,Name,Classification,RunningTime`
 
 You should get the following response:
-```
+```json
 {
     "@odata.context": "http://localhost:PORT/odata/$metadata#Movies(Id,Name,Classification,RunningTime)",
     "value": [
