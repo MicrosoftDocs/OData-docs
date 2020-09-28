@@ -1,6 +1,6 @@
 ---
 title:  "Passing OData query options in request body"
-date:   2020-09-28 07:49:00
+date:   2020-09-28 00:49:00
 
 ms.date: 9/28/2020
 ---
@@ -13,21 +13,21 @@ OData AspNet WebApi V7.5 introduced support for passing query options in the req
 
 In the rest of this page, we demonstrate how the feature works by building a simple OData service
 
-### 1. Create the project
+### 1. Create the Project
 Create a new C# project from the ASP.NET Core Web Application template
 - .NET Core platform
 - ASP.NET Core 3.1 runtime
 - Empty project template
 - Configure for HTTPS - unchecked
 
-### 2. Install packages
+### 2. Install Packages
 Install OData AspNetCore WebApi package. Using Package Manager Console:
 ```
 Install-Package Microsoft.AspNetCore.OData -Version 7.5.0
 ```
 **Note:** You can also install any higher version
 
-### 3. Define CLR type
+### 3. Define CLR Type
 ```c#
 public class Movie
 {
@@ -39,7 +39,7 @@ public class Movie
 }
 ```
 
-### 4. Configure service
+### 4. Configure the Service
 ```c#
 public class Startup
 {
