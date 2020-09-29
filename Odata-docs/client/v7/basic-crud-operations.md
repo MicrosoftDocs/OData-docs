@@ -10,7 +10,7 @@ ms.topic: article
 ---
 # Basic CRUD operations
 
-**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)]
 
 ## Request an entity set
 

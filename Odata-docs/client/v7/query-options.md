@@ -9,7 +9,7 @@ ms.topic: article
  
 ---
 # Query options
-**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)]
 
 ## $filter
 

@@ -10,7 +10,7 @@ ms.topic: article
  
 ---
 # Client code gen tool
-**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)]
 
 OData provides three tools to generate client proxy file for an OData Service.
 
