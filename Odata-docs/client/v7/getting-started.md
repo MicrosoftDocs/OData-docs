@@ -21,7 +21,7 @@ The OData Client library allows you to consume data from and interact with OData
 
 In this article we are going to focus on the latter approach.
 
-## What are Code Generation tools
+## What are Code Generation Tools
 * A tool used to generate a client proxy file for an Odata service. It used the schema to generate the proxy classes.
 * A proxy class shields the client from the complexities involved in invoking the Odata web service.
 * A proxy class contains all the methods and objects exposed by the Odata webservice.
@@ -85,7 +85,6 @@ The `DataServiceContext` keeps track of the objects created
 and fetched from the interactions with the service and allows you to
 execute queries and other operations against the service.
 
-
 `DefaultContainer` is generated based on the Trip Pin service and knows about
 its data model. In this case `context.People` is generated from the People
 entity set defined in the model. `context.People` is an instance of
@@ -145,3 +144,4 @@ And when you run it, you should see the following output:
 As you can see, the OData Connected Service generates C# classes corresponding to your specific OData service and uses the underlying OData client library to serialize and deserialize to and from JSON, saving you a lot of work.
 
 In this tutorial you have learned how to use the OData Connected Service to generate client code to interact with a specific OData service. To learn more about about using the client to read and write to the service, check out the [Basic CRUD operations](./basic-crud-operations) tutorial.
+For more information on using the OData Connected Service, checkout [OData Connected Service](../../connectedservice/getting-started) tutorial.
