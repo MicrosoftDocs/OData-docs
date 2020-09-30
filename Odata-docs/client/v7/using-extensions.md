@@ -1,16 +1,16 @@
 ---
 title: "Use Extensions in OData Client"
-description: ""
+description: "This tutorial describes how to use Extensions in OData Client"
 
-author: chuanboz
-ms.author: chuanboz
+author: mumbi-o
+ms.author: mowambug
 ms.date: 10/10/2019
 ms.topic: article
  
 ---
 # Use Extensions in OData Client
 
-**Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v6.md)][!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v7.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)][!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)]
 
 An IODataClientFactory can be registered and used to configure and create OData Client instances in an app. It offers the following benefits:
 

@@ -1,15 +1,15 @@
 ---
 title: "Deal with server-driven paging"
-description: ""
+description: "This tutorial describes how to deal with server driven paging"
 
-author: madansr7
-ms.author: madansr7
+author: mumbi-o
+ms.author: mowambug
 ms.date: 7/1/2019
 ms.topic: article
  
 ---
 # Server driven paging
-**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)]
 
 The OData Client for .NET deals with server-driven paging with the help of `DataServiceQueryContinuation` and `DataServiceQueryContinuation<T>`. They are classes that contain the next link of the partial set of items.
 

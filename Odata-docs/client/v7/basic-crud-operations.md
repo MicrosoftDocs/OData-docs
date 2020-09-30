@@ -1,16 +1,16 @@
 ---
 title: "Basic CRUD Operations"
-description: ""
+description: "This tutorial describes how to use basic crud operations on client side"
 
-author: madansr7
-ms.author: madansr7
+author: mumbi-o
+ms.author: mowambug
 ms.date: 7/1/2019
 ms.topic: article
  
 ---
 # Basic CRUD operations
 
-**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)]
 
 ## Request an entity set
 

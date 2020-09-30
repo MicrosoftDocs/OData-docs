@@ -1,16 +1,16 @@
 ---
 title: "Asynchronous operations"
-description: ""
+description: "This tutorial describes how to invoke async operations on client side"
 
-author: madansr7
-ms.author: madansr7
+author: mumbi-o
+ms.author: mowambug
 ms.date: 7/1/2019
 ms.topic: article
  
 ---
 # Asynchronous operations
 
-**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)]
 
 *All samples in this doc are based on the Trippin Service. You can follow "[How to use OData Client Code Generator to generate client-side proxy class](https://devblogs.microsoft.com/odata/tutorial-sample-how-to-use-odata-client-code-generator-to-generate-client-side-proxy-class/)" to generate the client proxy file.*
 
