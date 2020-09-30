@@ -12,8 +12,6 @@ ms.topic: article
 
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)]
 
-# Getting Started
-
 The OData Client library allows you to consume data from and interact with OData services from .Net apps. There are multiple layers of abstraction available when working with the library: 
 
 * You can use the library directly to interact with any service.
@@ -143,5 +141,5 @@ And when you run it, you should see the following output:
 
 As you can see, the OData Connected Service generates C# classes corresponding to your specific OData service and uses the underlying OData client library to serialize and deserialize to and from JSON, saving you a lot of work.
 
-In this tutorial you have learned how to use the OData Connected Service to generate client code to interact with a specific OData service. To learn more about about using the client to read and write to the service, check out the [Basic CRUD operations](./basic-crud-operations) tutorial.
-For more information on using the OData Connected Service, checkout [OData Connected Service](../../connectedservice/getting-started) tutorial.
+In this tutorial you have learned how to use the OData Connected Service to generate client code to interact with a specific OData service. To learn more about about using the client to read and write to the service, check out the [Basic CRUD operations](./basic-crud-operations.md) tutorial.
+For more information on using the OData Connected Service, checkout [OData Connected Service](../../connectedservice/getting-started.md) tutorial.
