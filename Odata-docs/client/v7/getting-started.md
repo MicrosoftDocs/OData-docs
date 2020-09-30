@@ -1,9 +1,9 @@
 ---
 title: "Getting Started with OData Client"
-description: ""
+description: "How to get started with the Odata client"
 
 author: habbes
-ms.author: habbes
+ms.author: clhabins
 ms.date: 1/27/2019
 ms.topic: article
  

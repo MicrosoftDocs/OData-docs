@@ -1,9 +1,9 @@
 ---
 title: "Basic CRUD Operations"
-description: ""
+description: "This tutorial describes how to use basic crud operations on client side"
 
-author: madansr7
-ms.author: madansr7
+author: mumbi-o
+ms.author: mowambug
 ms.date: 7/1/2019
 ms.topic: article
  
