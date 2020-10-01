@@ -272,7 +272,7 @@
       - name: Getting Started
         href: /odata/client/getting-started
       - name: Basic CRUD operations
-        href: /odata/client/basic-crud-operations
+        href: /odata/client/querying-odata-service
       - name: Annotations
         href: /odata/client/annotation-support
       - name: Async operations

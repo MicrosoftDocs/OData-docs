@@ -1,6 +1,6 @@
 ---
-title: "Basic CRUD Operations"
-description: "This tutorial describes how to use basic crud operations on client side"
+title: "Querying an OData Service"
+description: "This tutorial describes how to use query an OData Service"
 
 author: mumbi-o
 ms.author: mowambug
@@ -8,7 +8,7 @@ ms.date: 7/1/2019
 ms.topic: article
  
 ---
-# Basic CRUD operations
+# Querying an OData Service
 
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)]
 
@@ -33,6 +33,14 @@ foreach (var person in people)
     // business logic
 }
 ```
+or use the `Where()` with `First()` or `Single()` API call:
+
+```c#
+var person = context.People.Where(c => c.UserName == "russellwhyte").First();
+var person = context.People.Where(c => c.UserName == "russellwhyte").Single();
+```
+Note that `First()` will return one object, even if the lambda expression matches multiple objects.
+`Single()` always return one object and will throw an exception if the lambda expression matches multiple results.
 
 or use the `ByKey()` API:
 
