@@ -1,7 +1,9 @@
 ---
-title:  "Passing OData query options in request body"
-date:   2020-09-28 07:49:00
-
+title: "Passing OData query options in request body"
+description: "Describes how OData query options can be passed in the request body"
+date: 2020-09-28 07:49:00
+author: gathogojr
+ms.author: jogathog
 ms.date: 9/28/2020
 ---
 # Passing OData query options in request body
