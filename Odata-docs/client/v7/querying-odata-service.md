@@ -1,6 +1,6 @@
 ---
 title: "Querying an OData Service"
-description: "This tutorial describes how to use query an OData Service"
+description: "This tutorial describes how to query an OData Service"
 
 author: mumbi-o
 ms.author: mowambug
@@ -49,7 +49,7 @@ var person = context.People.Where(c => c.UserName == "russellwhyte").First();
 var person = context.People.Where(c => c.UserName == "russellwhyte").Single();
 ```
 Note that `First()` will return one object, even if the lambda expression matches multiple objects.
-`Single()` always return one object and will throw an exception if the lambda expression matches multiple results.
+`Single()` always return one object and will throw an exception if the lambda expression matches multiple objects.
 
 or use the `ByKey()` API:
 
