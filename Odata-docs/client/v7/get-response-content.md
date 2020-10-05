@@ -39,10 +39,17 @@ static void Main(string[] args)
     }
 }
 ```
+The `DataServiceResponse` has the following properties that enable you to access additional information about a modification response:
+
+- [BatchHeaders](/dotnet/api/microsoft.odata.client.dataserviceresponse.batchheaders) - contains headers from an HTTP response associated with a batch request.
+- [BatchStatusCode](/dotnet/api/microsoft.odata.client.dataserviceresponse.batchstatuscode)- contains status code from an HTTP response associated with a batch request.
+- [IsBatchResponse](/dotnet/api/microsoft.odata.client.dataserviceresponse.isbatchresponse) - gets a Boolean value that indicates whether the response contains multiple results.
+
+The `DataServiceResponse` is enumerated to retrieve responses to operations being tracked by [OperationResponse](/dotnet/api/microsoft.odata.client.operationresponse) objects within the `DataServiceResponse`.
 
 ## Query Responses
 We get a `Data Query Response` after calling `Execute()` or `ExecuteAsync()` on `DataServiceQueries`.
-`Execute()` will send a "GET" request.
+Calling `Execute()` will send a "GET" request.
 
 When executed, the [DataServiceQuery&lt;TElement&gt;](/dotnet/api/microsoft.odata.client.dataservicequery-1) returns an `IEnumerable<T>` of the requested entity type. This query result can be cast to a [QueryOperationResponse&lt;T&gt;](/dotnet/api/microsoft.odata.client.queryoperationresponse-1)object, as in the following example:
 ```csharp
