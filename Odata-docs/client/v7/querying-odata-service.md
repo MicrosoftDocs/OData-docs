@@ -12,6 +12,15 @@ ms.topic: article
 
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)]
 
+## Add an entity
+```csharp
+var context = new DefaultContainer(new Uri("https://services.odata.org/v4/TripPinServiceRW/"));
+    var person = Person.CreatePerson("russell", "Russell", "Whyte", new long());
+    context.AddToPeople(person);
+
+    context.SaveChanges();
+```
+
 ## Request an entity set
 
 ```csharp
