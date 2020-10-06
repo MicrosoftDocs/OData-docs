@@ -11,16 +11,21 @@ ms.date: 9/28/2020
 
 The query options part of an OData URL can be quite long, potentially exceeding the maximum length that many hosting environments (including IIS) impose. This can limit the client's ability to request the exact set of data they are interested in, especially when using explict select statements.
 
-OData AspNet WebApi V7.5 introduced support for passing query options in the request body. This is achieved by preparing a POST request with the query options part of the URL in the body and sending that to an endpoint comprising of the resource path appended with `/$query` - e.g. http://ServiceRoot/Movies/$query. The `Content-Type` header should be set to `text/plain`. 
+OData WebApi V7.5 introduced support for passing query options in the request body.  
+This is achieved by preparing a POST request with the query options part of the URL in the body and sending that to an endpoint comprising of the resource path appended with `/$query`
+### Example
+POST: http://ServiceRoot/Movies/$query  
+Content-Type: `text/plain`  
+Body: `$select=Id,Name,Classification,RunningTime&$filter=contains(Name,%20%27li%27)&$orderby=Name%20desc`
 
-In the rest of this page, we demonstrate how the feature works by building a simple OData service
+In the rest of this page, we demonstrate how this feature works by building a simple OData service
 
 ### 1. Create the Project
 Create a new C# project from the ASP.NET Core Web Application template
 - .NET Core platform
 - ASP.NET Core 3.1 runtime
 - Empty project template
-- Configure for HTTPS - unchecked
+- Uncheck Configure for HTTPS option
 
 ### 2. Install Packages
 Install OData AspNetCore WebApi package. Using Package Manager Console:
@@ -60,7 +65,10 @@ public class Startup
 		app.UseMvc(routeBuilder =>
 		{
 			routeBuilder.Select().Filter().Expand().Count().OrderBy().SkipToken().MaxTop(100);
-			routeBuilder.MapODataServiceRoute("odata", "odata", modelBuilder.GetEdmModel());
+			routeBuilder.MapODataServiceRoute(
+				routeName: "odata",
+				routePrefix: "odata",
+				model: modelBuilder.GetEdmModel());
 		});
 	}
 }
@@ -117,4 +125,8 @@ You should get the following response:
     ]
 }
 ```
-The feature allows you split the query options between the request body and the request URL. Using the above example, you can achieve the same outcome by sending a POST with request body as `$filter=contains(Name,'li')&$select=Id,Name,Classification,RunningTime` to http://localhost:PORT/odata/Movies/$query?$orderby=Name desc
+The feature also allows you split the query options between the request body and the request URL.
+### Example
+POST: http://ServiceRoot/Movies/$query?$orderby=Name%20desc  
+Content-Type: `text/plain`  
+Body: `$filter=contains(Name,'li')&$select=Id,Name,Classification,RunningTime`
