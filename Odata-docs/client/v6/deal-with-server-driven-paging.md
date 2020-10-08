@@ -24,12 +24,20 @@ DataServiceQueryContinuation<Person> nextLink = null;
 // Get the first page
 var response = await context.People.ExecuteAsync() as QueryOperationResponse<Person>;
 
-// Loop if there is a next link
-while ((nextLink = response.GetContinuation()) != null)
+do
 {
-    // Get the next page
-    response = context.Execute<Person>(nextLink);
+    if(nextLink != null)
+    {
+        response = await context.ExecuteAsync<Person>(nextLink) as QueryOperationResponse<Person>;
+    }
+    foreach (Person p in response)
+    {
+        Console.WriteLine("\tPerson Name: {0}", p.FirstName);
+    }
+
 }
+// Loop if there is a next link
+while ((nextLink = response.GetContinuation()) != null);
 ```
 
 ## Nested Pagination
@@ -40,7 +48,6 @@ We need to enumerate the response before calling `GetContinuation` on it.
 ``` csharp
 var context = new DefaultContainer(new Uri("https://services.odata.org/v4/TripPinServiceRW/"));
 var pageCount = 0;
-var innerPageCount = 0;
 DataServiceQueryContinuation<Person> nextLink = null;
 
 try
@@ -69,30 +76,40 @@ try
         // Enumerate the Person(s) in the response.
         foreach (Person p in response)
         {
+            var innerPageCount = 0;
             Console.WriteLine("\tPerson Name: {0}", p.FirstName);
-            Console.WriteLine("\tTrips Page {0}:", ++innerPageCount);
+
             // Get the next link for the collection of related Trips.
-            DataServiceQueryContinuation nextTripsLink =
+            DataServiceQueryContinuation tripsNextLink =
                 response.GetContinuation(p.Trips);
 
+            if (p.Trips.Count > 0)
+            {
+                Console.WriteLine("\t\tTrips Page {0}:", ++innerPageCount);
+            }
             foreach (Trip t in p.Trips)
             {
                 // Print out the trips in the first page.
-                Console.WriteLine("\t\tTripID: {0} - Name: ${1}",
+                Console.WriteLine("\t\t\tTripID: {0} - Name: ${1}",
                     t.TripId, t.Name);
             }
 
-            while (nextTripsLink != null)
+            while (tripsNextLink != null)
             {
                 Console.WriteLine("\t\t******Load Trips******");
 
                 // Load the next page of Trips.
-                var tripsResponse = await context.LoadPropertyAsync(p, "Trips", nextTripsLink);
-                nextTripsLink = tripsResponse.GetContinuation();
+                var tripsResponse = await context.LoadPropertyAsync(p, "Trips", tripsNextLink);
+                tripsNextLink = tripsResponse.GetContinuation();
+
+                if (tripsResponse.Count > 0)
+                {
+                    Console.WriteLine("\t\tTrips Page {0}:", ++innerPageCount);
+                }
                 foreach (Trip t in tripsResponse)
                 {
                     // Print out the trips.
-                    Console.WriteLine("\t\tTripID: {0} - Name: ${1}",
+                    Console.WriteLine("\t\t\tTripID: {0} - Name: ${1}",
                         t.TripId, t.Name);
                 }
             }
@@ -113,15 +130,15 @@ Below is the sample output (Assuming the Trippin service had a pagesize of 2):
 ```html
 Person Page 1:
         Person Name: Russell
-        Trips Page 1:
+            Trips Page 1:
                 TripID: 0 - Name: $Trip in US
                 TripID: 1003 - Name: $Trip in Beijing
 
-        Trips Page 2:
+            Trips Page 2:
                 TripID: 1007 - Name: $Honeymoon
 
         Person Name: Scott
-        Trips Page 2:
+            Trips Page 1:
                 TripID: 0 - Name: $Trip in US
                 TripID: 2004 - Name: $Trip in Beijing
         .............................................
@@ -130,16 +147,16 @@ Person Page 1:
 
 Person Page 2:
         Person Name: Marshall
-        Trips Page 3:
+            Trips Page 1:
                .............................................
                ............................................
 
         Person Name: Ryan
-        Trips Page 4:
+            Trips Page 1:
                .............................................
                .............................................
 
-        Trips Page 5:
+            Trips Page 2:
                .............................................
                .............................................
 ```
