@@ -22,7 +22,7 @@ In this article we are going to focus on the latter approach.
 ## What are Code Generation Tools
 * These are tools used to generate client proxy file for an Odata service. They use the schema to generate the proxy classes.
 * A proxy class shields the client from the complexities involved in invoking the Odata web service.
-* A proxy class contains all the methods and objects exposed by the Odata webservice.
+* A proxy class contains all the methods and objects exposed by the Odata web service.
 
 ## Using the OData Connected Service
 
