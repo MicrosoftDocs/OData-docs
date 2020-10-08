@@ -130,3 +130,5 @@ The feature also allows you split the query options between the request body and
 POST: http://ServiceRoot/Movies/$query?$orderby=Name%20desc  
 Content-Type: `text/plain`  
 Body: `$filter=contains(Name,'li')&$select=Id,Name,Classification,RunningTime`
+
+You can visit [this page](/odata/webapi/custom-query-options-parser) to learn how you can implement and plug in a custom parser for query options in the request body.
