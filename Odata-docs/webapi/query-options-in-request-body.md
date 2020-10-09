@@ -13,7 +13,7 @@ The query options part of an OData URL can be quite long, potentially exceeding 
 
 OData WebApi V7.5 introduced support for passing query options in the request body. You append `/query` to the resource path of the URL, use the `POST` verb instead of `GET`, and pass the query options part of the URL in the request body.
 ### Example
-POST: http://ServiceRoot/Movies/$query  
+POST: `http://ServiceRoot/Movies/$query`  
 Content-Type: `text/plain`  
 Body: `$select=Id,Name,Classification,RunningTime&$filter=contains(Name,%20%27li%27)&$orderby=Name%20desc`
 
@@ -100,7 +100,7 @@ public class MoviesController : ODataController
 ```
 
 ### 6. Pass query options in request body
-Using an API client such as [Postman](https://www.getpostman.com/tools), send a POST request to http://localhost:PORT/odata/Movies/$query.
+Using an API client such as [Postman](https://www.getpostman.com/tools), send a POST request to `http://localhost:PORT/odata/Movies/$query`.
 - Set `Content-Type` header to `text/plain`
 - Set request body to `$filter=contains(Name,'li')&$orderby=Name desc&$select=Id,Name,Classification,RunningTime`
 
@@ -126,7 +126,7 @@ You should get the following response:
 ```
 The feature also allows you split the query options between the request body and the request URL.
 ### Example
-POST: http://ServiceRoot/Movies/$query?$orderby=Name%20desc  
+POST: `http://ServiceRoot/Movies/$query?$orderby=Name%20desc`  
 Content-Type: `text/plain`  
 Body: `$filter=contains(Name,'li')&$select=Id,Name,Classification,RunningTime`
 

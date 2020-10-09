@@ -85,7 +85,7 @@ app.UseMvc(routeBuilder =>
 ```
 
 ### 3. Sample request
-POST: http://localhost:PORT/Movies/$query  
+POST: `http://localhost:PORT/Movies/$query`  
 Content-Type: `text/xml`  
 Body:
 ```xml
