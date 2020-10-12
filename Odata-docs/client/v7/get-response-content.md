@@ -11,6 +11,8 @@ ms.topic: article
 # Get Response Content
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)]
 
+In the previous section, we looked at how to carry out basic CRUD operations using the OData Client. In this section, we'll go ahead and drill a little deeper into how to handle the response object for each of these operations. We'll start with data modification responses for create, update and delete operations. We'll also look at query operations for read operations.
+
 ## Data modification response
 We get a `Data Modification Response` after calling cache updating functions like `UpdateObject` and then `SaveChanges()` or  `SaveChangesAsync()`.
 
@@ -38,7 +40,7 @@ static void Main(string[] args)
 
     DataServiceResponse responses = context.SaveChanges();
 
-    foreach (var response in responses)
+    foreach (OperationResponse response in responses)
     {
         var changeResponse = (ChangeOperationResponse) response;
         var entityDescriptor = (EntityDescriptor) changeResponse.Descriptor;
