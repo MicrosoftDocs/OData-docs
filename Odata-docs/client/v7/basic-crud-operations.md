@@ -8,7 +8,7 @@ ms.date: 7/1/2019
 ms.topic: article
  
 ---
-# Querying an OData Service
+# Basic CRUD Operations
 
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)]
 
