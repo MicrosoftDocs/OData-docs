@@ -1,6 +1,6 @@
 ---
-title: "Querying an OData Service"
-description: "This tutorial describes how to query an OData Service"
+title: "Basic CRUD Operations"
+description: "This tutorial describes how to use basic crud operations on the OData Client."
 
 author: mumbi-o
 ms.author: mowambug

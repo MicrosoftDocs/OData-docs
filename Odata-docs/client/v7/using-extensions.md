@@ -40,7 +40,7 @@ The IODataClientFactory can be registered by calling the AddODataClient extensio
 services.AddODataClient();
 ```
 
-Once registered, code can accept an IODataClientFactory anywhere services can be injected with dependency injection (DI). The IODataClientFactory can be used to create a generated client proxy instance, then follow [Querying OData Service](/odata/client/querying-odata-service.md) to use client proxy in business logic:
+Once registered, code can accept an IODataClientFactory anywhere services can be injected with dependency injection (DI). The IODataClientFactory can be used to create a generated client proxy instance, then follow [Basic CRUD Operations](/odata/client/basic-crud-operations.md) to use client proxy in business logic:
 
 ``` csharp
 public class PeopleController : ODataController
