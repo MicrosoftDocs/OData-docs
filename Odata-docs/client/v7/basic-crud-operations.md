@@ -14,7 +14,7 @@ ms.topic: article
 
 ## Add an entity
 ```csharp
-var context = new DefaultContainer(new Uri("https://services.odata.org/v4/TripPinServiceRW/"));
+var context = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(y5tuj04bxbfsxzimbxbnauqg))/TripPinServiceRW/"));
     var person = Person.CreatePerson("russell", "Russell", "Whyte", new long());
     context.AddToPeople(person);
 
