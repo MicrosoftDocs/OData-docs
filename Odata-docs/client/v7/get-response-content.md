@@ -11,7 +11,7 @@ ms.topic: article
 # Get Response Content
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)]
 
-In [Basic CRUD operations](./basic-crud-operations) page, we looked at how to carry out basic CRUD operations using the OData Client. In this page, we'll go ahead and drill a little deeper into how to handle the response object for each of these operations. We'll start with data modification responses for create, update and delete operations. We'll also look at query operations for read operations.
+In [Basic CRUD operations](/odata/client/v7/basic-crud-operations) page, we looked at how to carry out basic CRUD operations using the OData Client. In this page, we'll go ahead and drill a little deeper into how to handle the response object for each of these operations. We'll start with data modification responses for create, update and delete operations. We'll also look at query operations for read operations.
 
 ## Data modification response
 We get a `Data Modification Response` after calling cache updating functions like `UpdateObject` and then `SaveChanges()` or  `SaveChangesAsync()`.
