@@ -51,6 +51,8 @@ var person = context.People.Where(c => c.UserName == "russellwhyte").Single();
 Note that `First()` will return one object, even if the lambda expression matches multiple objects.
 `Single()` always return one object and will throw an exception if the lambda expression matches multiple objects.
 
+Both `First()` and `Single()` will throw an exception if no person with `UserName` as `russelwhyte` exists?
+
 or use the `ByKey()` API:
 
 ```C#
