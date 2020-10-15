@@ -11,7 +11,7 @@ ms.topic: article
 # Get Response Content
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)]
 
-In the previous section, we looked at how to carry out basic CRUD operations using the OData Client. In this section, we'll go ahead and drill a little deeper into how to handle the response object for each of these operations. We'll start with data modification responses for create, update and delete operations. We'll also look at query operations for read operations.
+In [Basic CRUD operations](./basic-crud-operations) page, we looked at how to carry out basic CRUD operations using the OData Client. In this page, we'll go ahead and drill a little deeper into how to handle the response object for each of these operations. We'll start with data modification responses for create, update and delete operations. We'll also look at query operations for read operations.
 
 ## Data modification response
 We get a `Data Modification Response` after calling cache updating functions like `UpdateObject` and then `SaveChanges()` or  `SaveChangesAsync()`.
@@ -57,10 +57,10 @@ The `DataServiceResponse` has the following properties that enable you to access
 The `DataServiceResponse` is enumerated to retrieve responses to operations being tracked by [OperationResponse](/dotnet/api/microsoft.odata.client.operationresponse) objects within the `DataServiceResponse`.
 
 ## Query Responses
-We get a [QueryOperationResponse](/dotnet/api/microsoft.odata.client.operationresponse) after calling `Execute()` or `ExecuteAsync()` on `DataServiceQueries`.
+We get a [QueryOperationResponse](/dotnet/api/microsoft.odata.client.operationresponse) after calling `Execute()` or `ExecuteAsync()` on [DataServiceQuery&lt;TElement&gt;](/dotnet/api/microsoft.odata.client.dataservicequery-1).
 Calling `Execute()` will send a "GET" request.
 
-When executed, the [DataServiceQuery&lt;TElement&gt;](/dotnet/api/microsoft.odata.client.dataservicequery-1) returns an `IEnumerable<T>` of the requested entity type. This query result can be cast to a [QueryOperationResponse&lt;T&gt;](/dotnet/api/microsoft.odata.client.queryoperationresponse-1)object, as in the following example:
+When executed, the [DataServiceQuery&lt;TElement&gt;](/dotnet/api/microsoft.odata.client.dataservicequery-1) returns an `IEnumerable<T>` of the requested entity type. This query result can be cast to a [QueryOperationResponse&lt;T&gt;](/dotnet/api/microsoft.odata.client.queryoperationresponse-1) object, as in the following example:
 ```csharp
 var context = new DefaultContainer(new Uri("https://services.odata.org/v4/TripPinServiceRW/"));
 DataServiceQuery<Person> query = context.People;
