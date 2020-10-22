@@ -9,6 +9,30 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.5.1
+
+### New Features:
+
+### Improvements and fixes:
+
+* [ [#2299](https://github.com/OData/WebApi/pull/2299) ] Create the correct expression when casting entity/complex type to derived type
+
+* [ [#2302](https://github.com/OData/WebApi/pull/2302) ] Group by on date throws exceptions
+
+* [ [#2306](https://github.com/OData/WebApi/pull/2306) ] Throw exception if the function call without providing the parameter value
+
+* [ [#2310](https://github.com/OData/WebApi/pull/2310) ] Fix buggy behaviour when addressing derived types
+
+* [ [#2313](https://github.com/OData/WebApi/pull/2313) ] Add support for parameters defined with type
+
+* [ [#2315](https://github.com/OData/WebApi/pull/2315) ] Fix routing regression causing 404 on actions with [FromQuery]
+
+* [ [#2320](https://github.com/OData/WebApi/pull/2320) ] Select a complex with null value fails
+
+* [ [#2323](https://github.com/OData/WebApi/pull/2323) ] Fix regression affecting usage of "in" expression with primitive collection property on RHS
+
+---
+
 ## WebAPI 7.5.0
 
 The NuGet packages for ASP.NET Web API OData v7.5.0 are available on the [NuGet gallery](https://www.nuget.org/).
