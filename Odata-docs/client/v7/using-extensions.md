@@ -19,7 +19,7 @@ An IODataClientFactory can be registered and used to configure and create OData 
 * Separated concern of configuration and usage of IODataClientFactory, which allowed library owner to only depends on IODataClientFactory abstraction while deferred the actual configuration to service owner.
 * Adds a configurable logging experience (via ILogger) for all requests sent through clients created by the default factory with HttpClient bridge.
 
-In this session, we will dive into how to use Extensions in OData client request. It leverage the generated client entity, and internally it used the same hook mechanism in OData client which has been introduced in [Client Hooks in OData Client](/odata/client/using-hooks), exposed it via OData client handler with a built-in handler to bridge to asp.net core HttpClientFactory.
+In this session, we will dive into how to use Extensions in OData client request. It leverage the generated client entity, and internally it used the same hook mechanism in OData client which has been introduced in [Client Hooks in OData Client](/odata/client/v7/using-hooks), exposed it via OData client handler with a built-in handler to bridge to asp.net core HttpClientFactory.
 
 ## Prerequisites
 
@@ -30,7 +30,7 @@ Service owner that also wants to configure the client factory needs to additiona
 
 ### Generated Client Proxy
 
-OData client factory assume the client proxy is used to do communication, see [Client code gen tool](/odata/client/code-generation-tool) for details on how to generate client proxy file for an OData Service.
+OData client factory assume the client proxy is used to do communication, see [Client code gen tool](/odata/client/v7/code-generation-tool) for details on how to generate client proxy file for an OData Service.
 
 ## Basic Usage
 
@@ -40,7 +40,7 @@ The IODataClientFactory can be registered by calling the AddODataClient extensio
 services.AddODataClient();
 ```
 
-Once registered, code can accept an IODataClientFactory anywhere services can be injected with dependency injection (DI). The IODataClientFactory can be used to create a generated client proxy instance, then follow [Basic CRUD operations](/odata/client/basic-crud-operations) to use client proxy in business logic:
+Once registered, code can accept an IODataClientFactory anywhere services can be injected with dependency injection (DI). The IODataClientFactory can be used to create a generated client proxy instance, then follow [Basic CRUD Operations](/odata/client/v7/basic-crud-operations) to use client proxy in business logic:
 
 ``` csharp
 public class PeopleController : ODataController
@@ -110,7 +110,7 @@ public class PeopleController : ODataController
 
 OData client handler is the new way of extend OData client function for library owner, it has only one method of OnClientCreated where you could get the logical name of the client and the instance of client proxy.
 
-With the access to the instance of client proxy, you could then modify many aspect of the client behavior, especially through Configurations property of DataServiceClientConfigurations type to hook up with internals of OData client. See [Client Hooks in OData Client](/odata/client/using-hooks) for more details on available hook point.
+With the access to the instance of client proxy, you could then modify many aspect of the client behavior, especially through Configurations property of DataServiceClientConfigurations type to hook up with internals of OData client. See [Client Hooks in OData Client](/odata/client/v7/using-hooks) for more details on available hook point.
 
 ``` csharp
     /// <summary>
@@ -169,7 +169,7 @@ services.AddODataClient("TripPin")
 
 ## Bridge to IHttpClientFactory
 
-OData client enables developers to customize request message, and use it in `DataServiceContext.Configurations.RequestPipeline.OnMessageCreating`. This function will be triggered when creating request message. It will return an `IODataRequestMessage`, See [Use HttpClient in OData Client](/odata/client/using-httpclient)
+OData client enables developers to customize request message, and use it in `DataServiceContext.Configurations.RequestPipeline.OnMessageCreating`. This function will be triggered when creating request message. It will return an `IODataRequestMessage`, See [Use HttpClient in OData Client](/odata/client/v7/using-httpclient)
 
 Build on top of that and OData Client Handler, the OData Client Extensions now provides a default integration with IHttpClientFactory that is working out of box when you use Microsoft.OData.Extensions.Client NuGet package.
 
