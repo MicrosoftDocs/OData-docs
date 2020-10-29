@@ -11,7 +11,6 @@ ms.topic: article
 # Query options
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)]
 
-# Adding query options to DataServiceQuery
 There are mainly 2 ways to add Query Options to a DataServiceQuery
 1. Using AddQueryOption method.
 2. Using strongly typed C# LINQ query methods.
