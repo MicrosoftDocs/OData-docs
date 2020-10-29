@@ -48,7 +48,7 @@ foreach(var person in query)
 }
 ```
 
-The [DataServiceQuery&lt;TElement&gt;](/dotnet/api/microsoft.odata.client.dataservicequery-1) class implements the [IQueryable&lt;T&gt;](/dotnet/api/system.linq.iqueryable-1) interface defined by LINQ, the OData client library is able to transform LINQ queries against entity set data into a URI that represents a query expression evaluated against a data service resource. 
+Since the [DataServiceQuery&lt;TElement&gt;](/dotnet/api/microsoft.odata.client.dataservicequery-1) class implements the [IQueryable&lt;T&gt;](/dotnet/api/system.linq.iqueryable-1) interface defined by LINQ, the OData client library is able to transform LINQ queries against entity set data into a URI that represents a query expression evaluated against a data service resource.
 
 The examples below demonstrate the kinds of LINQ queries that can be used to create various query options.
 
