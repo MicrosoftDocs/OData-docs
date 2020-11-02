@@ -277,6 +277,8 @@
         href: /odata/client/get-response-content
       - name: Query options
         href: /odata/client/query-options
+      - name: Navigation Properties
+        href: /odata/client/navigation-properties
       - name: Annotations
         href: /odata/client/annotation-support
       - name: Async operations
