@@ -87,3 +87,4 @@ DefaultContainer context = new DefaultContainer(new Uri("https://services.odata.
         Console.WriteLine("\n\n");
     }
 ```
+NOTE: When you consider which option to use, realize that there is a tradeoff between the number of requests to the data service and the amount of data that is returned in a single response. Use `eager loading` when your application requires associated objects and you want to avoid the added latency of additional requests to explicitly retrieve them. However, if there are cases when the application only needs the data for specific related entity instances, you should consider `explicitly loading` those entities by calling the `LoadProperty` method.
