@@ -14,6 +14,10 @@ ms.topic: article
 OData Client for .NET supports batch processing of requests to an OData service. This ensures that all operations in the batch are sent to the data service in a single HTTP request, enables the server to process the operations atomically, and reduces the number of round trips to the service.
 
 OData Client for .NET doesn't support sending both query and change in one batch request.
+
+There are 2 methods of invoking batch operations in odata client:
+1. Batch Query
+2. Batch Modification
  
 ## Batch Query 
 
@@ -21,36 +25,33 @@ To execute multiple queries in a single batch, you must create each query in the
 
 This method accepts an array of `DataServiceRequest` as parameters. It returns a `DataServiceResponse` object, which is a collection of `QueryOperationResponse<T>` objects that represent responses to individual queries in the batch, each of which contains either a collection of objects returned by the query or error information. When any single query operation in the batch fails, error information is returned in the `QueryOperationResponse<T>` object for the operation that failed and the remaining operations are still executed. 
 
-```c#
+``` csharp
+DefaultContainer dsc = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
 
-    DefaultContainer dsc = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
-    public void BatchQuery()
-    {
-        var peopleQuery = dsc.People;
-        var airlinesQuery = dsc.Airlines;
+DataServiceQuery<Person> peopleQuery = dsc.People;
+DataServiceQuery<Airline> airlinesQuery = dsc.Airlines;
 
-        var batchResponse = dsc.ExecuteBatch(peopleQuery, airlinesQuery);
-        foreach(var r in batchResponse)
-        {
-            var people = r as QueryOperationResponse<Person>;
-            if (people != null)
-            {
-                foreach (Person p in people)
-                {
-                    Console.WriteLine(p.UserName);
-                }
-            }
+DataServiceResponse batchResponse = dsc.ExecuteBatch(peopleQuery, airlinesQuery);
+foreach (OperationResponse r in batchResponse)
+{
+	QueryOperationResponse<Person> people = r as QueryOperationResponse<Person>;
+	if (people != null)
+	{
+		foreach (Person person in people)
+		{
+			Console.WriteLine($"Person Name: {person.UserName}");
+		}
+	}
 
-            var airlines = r as QueryOperationResponse<Airline>;
-            if (airlines != null)
-            {
-                foreach (var airline in airlines)
-                {
-                    Console.WriteLine(airline.Name);
-                }
-            }
-        }
-    }
+	QueryOperationResponse<Airline> airlines = r as QueryOperationResponse<Airline>;
+	if (airlines != null)
+	{
+		foreach (Airline airline in airlines)
+		{
+			Console.WriteLine($"Airline Name: {airline.Name}");
+		}
+	}
+}
 
 ```
 
@@ -85,7 +86,7 @@ The payload of the request is as following:
 ```
 ## Batch Modification 
 
-In order to batch a set of changes to the server, `ODataServiceContext` provides `SaveChangesOptions.BatchWithSingleChangeset` and `SaveChangesOptions.BatchWithIndependentOperations` when `SaveChanges`.
+In order to batch a set of changes to the server, `DataServiceContext` provides `SaveChangesOptions.BatchWithSingleChangeset` and `SaveChangesOptions.BatchWithIndependentOperations` when `SaveChanges`.
 
 `SaveChangesOptions.BatchWithSingleChangeset` will save changes in a single change set in a batch request.
 
@@ -93,26 +94,22 @@ In order to batch a set of changes to the server, `ODataServiceContext` provides
 
 You can refer to [odata v4.0 protocol 11.7](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html#_Toc406398359) to get more details about batch request and whether requests should be contained in one change set or not.
 
-```c#
+``` csharp
+DefaultContainer dsc = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
+dsc.MergeOption = MergeOption.PreserveChanges;
+Person me = dsc.Me.GetValue();
+Trip myTrip = dsc.Me.Trips.First();
 
-    DefaultContainer dsc = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
-    public void BatchModify()
-    {
-        dsc.MergeOption = MergeOption.PreserveChanges;
-        var me = dsc.Me.GetValue();
-        var myTrip = dsc.Me.Trips.First();
+me.LastName = "Update LastName";
+myTrip.Description = "Updated Trip";
 
-        me.LastName = "Test";
-        myTrip.Description = "Updated Trip";
+dsc.UpdateObject(me);
+dsc.UpdateObject(myTrip);
 
-        dsc.UpdateObject(me);
-        dsc.UpdateObject(myTrip);
+dsc.SaveChanges(SaveChangesOptions.BatchWithSingleChangeset);
 
-        dsc.SaveChanges(SaveChangesOptions.BatchWithSingleChangeset);
-
-        Console.WriteLine(me.LastName);
-        Console.WriteLine(myTrip.Description);
-    }
+Console.WriteLine($"Updated LastName: {me.LastName}");
+Console.WriteLine($"Updated Trip Description: {myTrip.Description}");
 ```
 
 The payload for all requests in one change set is like following
@@ -120,7 +117,7 @@ The payload for all requests in one change set is like following
 This will send request with URL https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/$batch.
 
 The request headers contain following two headers:
-```html
+``` html
 
 	Content-Type: multipart/mixed; boundary=batch_06d8a02a-854a-4a21-8e5c-f737bbd2dea8
 	Accept: multipart/mixed
@@ -262,4 +259,61 @@ A truncated request Payload will look like this:
 	......
 	......
 	......
+```
+
+## Json Batch
+OData spec has support for Json Batch requests https://docs.oasis-open.org/odata/odata-json-format/v4.01/os/odata-json-format-v4.01-os.html#sec_BatchRequestsandResponses
+
+Key attributes for a JSON batch request are as follows:
+- Payload is in JSON format.
+- Request headers `Content-Type` and `Accept` designates the batch request and response format to be JSON batching.
+
+In OData Client, we achieve Json batching by passing `SaveChangesOption.UseJsonBatch` flag when calling `SaveChanges` or `ExecuteBatch` methods.
+
+In `ExecuteBatch`
+```
+var batchResponse = dsc.ExecuteBatch(SaveChangesOptions.BatchWithIndependentOperations | SaveChangesOptions.UseJsonBatch, peopleQuery, airlinesQuery);
+```
+
+In `SaveChanges`
+```
+dsc.SaveChanges(SaveChangesOptions.BatchWithSingleChangeset | SaveChangesOptions.UseJsonBatch);
+```
+
+The payload will be as follows:
+
+``` json
+https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/$batch
+User-Agent: Fiddler
+Authorization: <authz token>
+Content-Type: application/json
+Accept: application/json
+Host: localhost:9000
+Content-Length: 1234
+
+{
+	"requests": [
+	{
+		"method": "PATCH",
+		"atomicityGroup": "g1",
+		"url": "https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/Me",
+		"headers": {
+		"content-type": "application/json; odata.metadata=minimal; odata.streaming=true",
+		"odata-version": "4.0"
+		},
+		"id": "1",
+		"body": {"@odata.type":"#Microsoft.OData.SampleService.Models.TripPin.Person","AddressInfo@odata.type":"#Collection(Microsoft.OData.SampleService.Models.TripPin.Location)","AddressInfo":[{"@odata.type":"#Microsoft.OData.SampleService.Models.TripPin.Location","Address":"P.O. Box 555","City":{"@odata.type":"#Microsoft.OData.SampleService.Models.TripPin.City","CountryRegion":"United States","Name":"Lander","Region":"WY"}}],"Concurrency":635657333837618321,"Emails@odata.type":"#Collection(String)","Emails":["April@example.com","April@contoso.com"],"FirstName":"April","Gender@odata.type":"#Microsoft.OData.SampleService.Models.TripPin.PersonGender","Gender":"Female","LastName":"Test","UserName":"aprilcline"}
+	},
+	{
+		"id": "2",
+		"method": "PATCH",
+		"url": "https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/Me/Trips(1001)",
+		"headers": {
+		"content-type": "application/json; odata.metadata=minimal; odata.streaming=true",
+		"odata-version": "4.0"
+		},
+		"body": {"@odata.type":"#Microsoft.OData.SampleService.Models.TripPin.Trip","Budget":3000,"Description":"Updated Trip","EndsAt":"2014-01-04T00:00:00Z","Name":"Trip in US","ShareId":"9d9b2fa0-efbf-490e-a5e3-bac8f7d47354","StartsAt":"2014-01-01T00:00:00Z","Tags@odata.type":"#Collection(String)","Tags":["Trip in New York","business","sightseeing"],"TripId":1001}
+	}
+	]
+}
 ```
