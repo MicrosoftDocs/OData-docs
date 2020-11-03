@@ -294,19 +294,20 @@ Content-Length: 1234
 {
 	"requests": [
 	{
+		"id": "1",
 		"method": "PATCH",
-		"atomicityGroup": "g1",
+		"atomicityGroup": "06d8a02a-854a-4a21-8e5c-f737bbd2dea8",
 		"url": "https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/Me",
 		"headers": {
 		"content-type": "application/json; odata.metadata=minimal; odata.streaming=true",
 		"odata-version": "4.0"
 		},
-		"id": "1",
 		"body": {"@odata.type":"#Microsoft.OData.SampleService.Models.TripPin.Person","AddressInfo@odata.type":"#Collection(Microsoft.OData.SampleService.Models.TripPin.Location)","AddressInfo":[{"@odata.type":"#Microsoft.OData.SampleService.Models.TripPin.Location","Address":"P.O. Box 555","City":{"@odata.type":"#Microsoft.OData.SampleService.Models.TripPin.City","CountryRegion":"United States","Name":"Lander","Region":"WY"}}],"Concurrency":635657333837618321,"Emails@odata.type":"#Collection(String)","Emails":["April@example.com","April@contoso.com"],"FirstName":"April","Gender@odata.type":"#Microsoft.OData.SampleService.Models.TripPin.PersonGender","Gender":"Female","LastName":"Test","UserName":"aprilcline"}
 	},
 	{
 		"id": "2",
 		"method": "PATCH",
+		"atomicityGroup": "06d8a02a-854a-4a21-8e5c-f737bbd2dea8",
 		"url": "https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/Me/Trips(1001)",
 		"headers": {
 		"content-type": "application/json; odata.metadata=minimal; odata.streaming=true",
