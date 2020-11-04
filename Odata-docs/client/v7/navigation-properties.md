@@ -72,19 +72,20 @@ The following example shows how to explicitly load the `Trips` that are related 
 
 ``` csharp
 DefaultContainer context = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
-    foreach (Person person in context.People)
-    {
-        // Explicitly load the Trips for each person.
-        context.LoadProperty(person, "Trips");
 
-        // Write out person and trips information.
-        Console.WriteLine($"First Name: {person.FirstName} Last Name: {person.FirstName}");
-        Console.WriteLine($"***{person.FirstName}'s Trips***");
-        foreach (Trip trip in person.Trips)
-        {
-            Console.WriteLine($"Trip Name: {trip.Name}");
-        }
-        Console.WriteLine("\n\n");
+foreach (Person person in context.People)
+{
+    // Explicitly load the Trips for each person.
+    context.LoadProperty(person, "Trips");
+
+    // Write out person and trips information.
+    Console.WriteLine($"First Name: {person.FirstName} Last Name: {person.FirstName}");
+    Console.WriteLine($"***{person.FirstName}'s Trips***");
+    foreach (Trip trip in person.Trips)
+    {
+        Console.WriteLine($"Trip Name: {trip.Name}");
     }
+    Console.WriteLine("\n\n");
+}
 ```
 NOTE: When you consider which option to use, realize that there is a tradeoff between the number of requests to the data service and the amount of data that is returned in a single response. Use `eager loading` when your application requires associated objects and you want to avoid the added latency of additional requests to explicitly retrieve them. However, if there are cases when the application only needs the data for specific related entity instances, you should consider `explicitly loading` those entities by calling the `LoadProperty` method.
