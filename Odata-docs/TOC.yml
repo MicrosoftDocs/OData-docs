@@ -63,6 +63,9 @@
           href: /odata/webapi/model-builder-untyped
         - name: Convention model builder
           href: /odata/webapi/convention-model-builder
+          items:
+            - name: Capabilities vocabulary extensions
+              href: /odata/webapi/model-builder-capabilities-vocabulary
         - name: Non-convention model builder
           href: /odata/webapi/model-builder-nonconvention
       - name: Routing
