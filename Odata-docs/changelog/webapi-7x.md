@@ -9,6 +9,27 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.5.2
+
+### New Features:
+
+### Improvements and fixes:
+
+* [ [#2342](https://github.com/OData/WebApi/pull/2342) ] Remove GuidCompare method in ExpressionBinderBase.cs
+
+  It's breaking change since 'GuidCompare' was a public API. Please use Guid.CompareTo(Guid) method directly.
+
+* [ [#2336](https://github.com/OData/WebApi/pull/2336) ] Full async reader & writer support
+
+  This change makes the call stack within ASP.NET Core OData completely asynchronous,
+  enabling ASP.NET Core applications to use OData without requiring `AsynchronousIO=true`.
+  The change also wraps the stream given to OData Library to ensure that all calls made
+  from OData Library to the stream are through asychnronous APIs.
+
+* [ [#2332](https://github.com/OData/WebApi/pull/2332) ] Fix invalid next page link in nested collections
+
+---
+
 ## WebAPI 7.5.1
 
 ### New Features:
