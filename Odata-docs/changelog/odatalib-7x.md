@@ -30,6 +30,32 @@ Most of our API improvements fall into the category of namespace simplifications
 
 
 
+## ODataLib 7.7.3 Release
+
+Following are the changes done since 7.7.2.
+
+***Features***
+
+N/A
+
+***Fixed Bugs***
+
+[[#1913](https://github.com/OData/odata.net/pull/1913)] Enable JSON metadata reader, writer in OData Core 
+
+[[#1915](https://github.com/OData/odata.net/pull/1915)] Issue #1904: GmlReader ignores srsDimension attribute in the posList 
+
+[[#1916](https://github.com/OData/odata.net/pull/1916)] Apply same backslash escaping to string literal within "IN" clause as Equals
+
+
+***Improvements***
+
+[[#1917](https://github.com/OData/odata.net/pull/1917)] Improve UrlValidation Performance
+
+[[#1924](https://github.com/OData/odata.net/pull/1924)] Add System.Text.Json dependency into the Nuspec
+
+
+
+
 ## ODataLib 7.7.2 Release
 
 Following are the changes done since 7.7.1.
