@@ -18,7 +18,7 @@ When you execute a query, only entities in the addressed entity set are returned
 ## Eager Loading
 You can use the `$expand` query option to request that the query return entities that are related by an association to the entity set that the query requested. 
 
-One way is to use the [Expand](/dotnet/api/microsoft.odata.client.dataservicequery-1.expand) method on the [DataServiceQuery&lt;TElement&gt;](/dotnet/api/microsoft.odata.client.dataservicequery-1) to add the `$expand` option to the query that is sent to the data service. You can request multiple related entity sets by separating them by a comma, as in the following example. All entities requested by the query are returned in a single response. The following example returns Trips and Friends together with the People entity set:
+On OData client you can use the [Expand](/dotnet/api/microsoft.odata.client.dataservicequery-1.expand) method on the [DataServiceQuery&lt;TElement&gt;](/dotnet/api/microsoft.odata.client.dataservicequery-1) to add the `$expand` option to the query that is sent to the data service. You can request multiple related entity sets by separating them by a comma, as in the following example. All entities requested by the query are returned in a single response. The following example returns Trips and Friends together with the People entity set:
 
 ``` csharp
 DefaultContainer context = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/"));
