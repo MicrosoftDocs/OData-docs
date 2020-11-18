@@ -15,7 +15,7 @@ OData Client for .NET supports batch processing of requests to an OData service.
 
 OData Client for .NET doesn't support sending both query and change in one batch request.
 
-There are 2 methods of invoking batch operations in odata client:
+There are 2 ways of invoking batch operations in odata client:
 1. Batch Query
 2. Batch Modification
  
@@ -100,7 +100,7 @@ dsc.MergeOption = MergeOption.PreserveChanges;
 Person me = dsc.Me.GetValue();
 Trip myTrip = dsc.Me.Trips.First();
 
-me.LastName = "Update LastName";
+me.LastName = "Updated LastName";
 myTrip.Description = "Updated Trip";
 
 dsc.UpdateObject(me);
@@ -262,11 +262,11 @@ A truncated request Payload will look like this:
 ```
 
 ## Json Batch
-OData spec has support for Json Batch requests https://docs.oasis-open.org/odata/odata-json-format/v4.01/os/odata-json-format-v4.01-os.html#sec_BatchRequestsandResponses
+OData spec has support for Json batch requests https://docs.oasis-open.org/odata/odata-json-format/v4.01/os/odata-json-format-v4.01-os.html#sec_BatchRequestsandResponses
 
-Key attributes for a JSON batch request are as follows:
-- Payload is in JSON format.
-- Request headers `Content-Type` and `Accept` designates the batch request and response format to be JSON batching.
+Key attributes for a Json batch request are as follows:
+- Payload is in Json format.
+- Request headers `Content-Type` and `Accept` designates the batch request and response format to be Json batching.
 
 In OData Client, we achieve Json batching by passing `SaveChangesOption.UseJsonBatch` flag when calling `SaveChanges` or `ExecuteBatch` methods.
 
