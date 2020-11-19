@@ -26,7 +26,7 @@ Response Payload
     "value": [
         {
             "@odata.id": "serviceRoot/People('russellwhyte')",
-            "@odata.etag": "W/"08D1694BD49A0F11"",
+            "@odata.etag": "W/\"08D1694BD49A0F11\"",
             "@odata.editLink": "serviceRoot/People('russellwhyte')",
             "UserName": "russellwhyte",
             "FirstName": "Russell",
@@ -52,7 +52,7 @@ Response Payload
         ,
         {
             "@odata.id": "serviceRoot/People('keithpinckney')",
-            "@odata.etag": "W/"08D1694BD49A0F11"",
+            "@odata.etag": "W/\"08D1694BD49A0F11\"",
             "@odata.editLink": "serviceRoot/People('keithpinckney')",
             "UserName": "keithpinckney",
             "FirstName": "Keith",
@@ -80,7 +80,7 @@ Response Payload
 {
     "@odata.context": "serviceRoot/$metadata#People/$entity",
     "@odata.id": "serviceRoot/People('russellwhyte')",
-    "@odata.etag": "W/"08D1694BF26D2BC9"",
+    "@odata.etag": "W/\"08D1694BF26D2BC9\"",
     "@odata.editLink": "serviceRoot/People('russellwhyte')",
     "UserName": "russellwhyte",
     "FirstName": "Russell",
