@@ -3,7 +3,7 @@ title : "Operation parameters in untyped scenarios"
 
 ms.date: 7/1/2019
 ---
-# Operation paramters in untyped scenarios
+# Operation parameters in untyped scenarios
 
 In this page, we introduce the Function/Action parameter in untyped scenario. For CLR typed scenarios, please refer to [Function page](/odata/webapi/function-parameter-support/) and [Action page](/odata/webapi/action-parameter-support).
 
