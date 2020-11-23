@@ -7,13 +7,13 @@ ms.date: 7/1/2019
 # Model Bound Attributes
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
-Since [Web API OData V6.0.0](https://www.nuget.org/packages/Microsoft.AspNet.OData/6.0.0) which depends on [OData Lib 7.0.0](https://www.nuget.org/packages/Microsoft.OData.Core/7.0.0), we add a new feature named ModelBoundAttribute, use this feature, we can control the query setting through those attributes to make our service more secure and even control the query result by set page size, automatic select, automatic expand.
+Since [Web API OData V6.0.0](https://www.nuget.org/packages/Microsoft.AspNet.OData/6.0.0) which depends on [OData Lib 7.0.0](https://www.nuget.org/packages/Microsoft.OData.Core/7.0.0), we add a new feature named ModelBoundAttribute, using this feature, we can control the query setting through those attributes to make our service more secure and even control the query result by set page size, automatic select, automatic expand.
 
 Let's see how to use this feature.
 
 ### Global Query Setting
 
-Now the default setting for WebAPI OData is : client can't apply `$count`, `$orderby`, `$select`, `$top`, `$expand`, `$filter` in the query, query like `localhost\odata\Customers?$orderby=Name` will failed as BadRequest, because all properties are not sort-able by default, this is a breaking change in 6.0.0, if we want to use the default behavior that all query option are enabled in 5.x version, we can configure the HttpConfigration to enable the query option we want like this:
+Now the default setting for WebAPI OData is : client can't apply `$count`, `$orderby`, `$select`, `$top`, `$expand`, `$filter` in the query, query like `localhost\odata\Customers?$orderby=Name` will fail as BadRequest, because all properties are not sort-able by default, this is a breaking change in 6.0.0, if we want to use the default behavior that all query option are enabled in 5.x version, we can configure the HttpConfigration to enable the query option we want like this:
 
 ```C#
 //...
@@ -58,7 +58,7 @@ The first page attribute on Customer type, means the query setting when we query
 
 For example:
 
-The query like `localhost\odata\Customers?$top=10` will failed with BadRequest : The limit of '5' for Top query has been exceeded.
+The query like `localhost\odata\Customers?$top=10` will fail with BadRequest : The limit of '5' for Top query has been exceeded.
 
 The page size is 1 if you request `localhost\odata\Customers`.
 
@@ -107,16 +107,16 @@ About the priority of attribute on property and type, please refer to `Page Attr
 
 So you can have those examples:
 
-Query `localhost\odata\Orders?$count=true` will failed with BadRequest that orders can't used for `$count`
+Query `localhost\odata\Orders?$count=true` will fail with BadRequest that orders can't use `$count` parameter.
 
-Query `localhost\odata\Customers?$expand=Orders($count=true)` will works
+Query `localhost\odata\Customers?$expand=Orders($count=true)` will work
 
 Query `localhost\odata\Customers(1)/Orders?$count=true` works too.
 
 ### OrderBy Attribute
 
 Ordering settings correlate to OData's `$orderby` query option.
-We can specify which property is sort-able very easy and we can also define very complex rule by use attribute on property and on type. For example:
+We can specify which property is sort-able very easily and we can also define very complex rules by using attribute on property and on type. For example:
 
 ```C#
 [OrderBy("AutoExpandOrder", "Address")]
@@ -153,7 +153,7 @@ public class Address
 
 #### Multiple Attribute
 
-We can see that the we can have multiple OrderBy attributes, how are they merged? The answer is the Attribute on a class with a constrained set of properties gets high priority, the order of their appear time doesn't matter.
+We can see that the we can have multiple OrderBy attributes, how are they merged? The answer is the Attribute on a class with a constrained set of properties gets high priority, the order of their appear doesn't matter.
 
 #### OrderBy Attribute on EntityType and ComplexType
 
