@@ -275,6 +275,8 @@
         href: /odata/client/basic-crud-operations
       - name: Get Response Content
         href: /odata/client/get-response-content
+      - name: Query options
+        href: /odata/client/query-options
       - name: Annotations
         href: /odata/client/annotation-support
       - name: Async operations
@@ -287,8 +289,6 @@
         href: /odata/client/deal-with-server-driven-paging
       - name: Client Code Generation Tool
         href: /odata/client/code-generation-tool
-      - name: Query options
-        href: /odata/client/query-options
       - name: Client hooks
         href: /odata/client/using-hooks
       - name: Using HttpClient 
