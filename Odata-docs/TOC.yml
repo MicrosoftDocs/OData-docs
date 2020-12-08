@@ -279,12 +279,12 @@
         href: /odata/client/query-options
       - name: Navigation Properties
         href: /odata/client/navigation-properties
+      - name: Batch operations
+        href: /odata/client/batch-operations
       - name: Annotations
         href: /odata/client/annotation-support
       - name: Async operations
         href: /odata/client/async-operations
-      - name: Batch operations
-        href: /odata/client/batch-operations
       - name: Client tracking
         href: /odata/client/tracking
       - name: Server driven paging
