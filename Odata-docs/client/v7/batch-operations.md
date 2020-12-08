@@ -57,6 +57,11 @@ foreach (OperationResponse r in batchResponse)
 
 `ExecuteBatch` will send a "POST" request to `https://services.odata.org/V4/(S(uvf1y321yx031rnxmcbqmlxw))/TripPinServiceRW/$batch`. Each internal request contains its own http method "GET".
 
+In .NetCore we can use the await/async syntax as follows.
+``` csharp
+DataServiceResponse batchResponse = await dsc.ExecuteBatchAsync(peopleQuery, airlinesQuery);
+```
+
 The payload of the request is as following:
 ```html
 
@@ -86,11 +91,11 @@ The payload of the request is as following:
 ```
 ## Batch Modification 
 
-In order to batch a set of changes to the server, `DataServiceContext` provides `SaveChangesOptions.BatchWithSingleChangeset` and `SaveChangesOptions.BatchWithIndependentOperations` when `SaveChanges`.
+In order to batch a set of changes to the server, `DataServiceContext` provides `SaveChangesOptions.BatchWithSingleChangeset` and `SaveChangesOptions.BatchWithIndependentOperations` when `SaveChanges` is called.
 
-`SaveChangesOptions.BatchWithSingleChangeset` will save changes in a single change set in a batch request.
+`SaveChangesOptions.BatchWithSingleChangeset` will save changes in a single change set in a batch request. If one request in the batch fails, all requests fail.
 
-`SaveChangesOptions.BatchWithIndependentOperations` will save each change independently in a batch request. 
+`SaveChangesOptions.BatchWithIndependentOperations` will save each change independently in a batch request. If one request in the batch fails, the other requests are not affected.
 
 You can refer to [odata v4.0 protocol 11.7](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html#_Toc406398359) to get more details about batch request and whether requests should be contained in one change set or not.
 
@@ -110,6 +115,11 @@ dsc.SaveChanges(SaveChangesOptions.BatchWithSingleChangeset);
 
 Console.WriteLine($"Updated LastName: {me.LastName}");
 Console.WriteLine($"Updated Trip Description: {myTrip.Description}");
+```
+
+In .NetCore we can use the await/async syntax as follows.
+``` csharp
+await dsc.SaveChangesAsync(SaveChangesOptions.BatchWithSingleChangeset);
 ```
 
 The payload for all requests in one change set is like following
