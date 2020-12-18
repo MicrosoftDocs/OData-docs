@@ -10,12 +10,12 @@ ms.topic: article
 ---
 # Pagination
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)]
-Loading large datasets can be slow. Services often rely on pagination to load the data incrementally to improve the response times and the user experience. Paging can be server-driven or client-driven:
+Loading large datasets can be slow. Services often rely on pagination to load the data incrementally to improve the response times and the user experience. Paging can be server-driven or client-driven.
 
 ## Server-driven paging
 In Server-driven paging, the server returns the first page of results. If total number of results is greater than the page size, the server returns the first page along with a nextlink that can be used to fetch the next page of results.
 
-The OData Client deals with server-driven paging with the help of [DataServiceQueryContinuation](/dotnet/api/microsoft.odata.client.dataservicequerycontinuation) and [DataServiceQueryContinuation&lt;T&gt;](/dotnet/api/microsoft.odata.client.dataservicequerycontinuation-1). They are classes that contain the next link of the partial set of items.
+The OData Client deals with server-driven paging with the help of [DataServiceQueryContinuation](/dotnet/api/microsoft.odata.client.dataservicequerycontinuation) and [DataServiceQueryContinuation&lt;T&gt;](/dotnet/api/microsoft.odata.client.dataservicequerycontinuation-1). These classes contain the nextLink of the partial set of items.
 
 ### Top Level Pagination
 
@@ -33,8 +33,7 @@ int pageCount = 0;
 
 do
 {
-    pageCount++;
-    Console.WriteLine($"Page {pageCount}");
+    Console.WriteLine($"Page {++pageCount}");
     if (nextLink != null)
     {
         response = await context.ExecuteAsync<Person>(nextLink) as QueryOperationResponse<Person>;
@@ -101,7 +100,7 @@ try
             foreach (Trip trip in person.Trips)
             {
                 // Print out the trips in the first page.
-                Console.WriteLine($"\t\t\tTripID: {trip.TripId} - Name: ${trip.Name}");
+                Console.WriteLine($"\t\t\tTripID: {trip.TripId} - Name: {trip.Name}");
             }
 
             while (tripsNextLink != null)
@@ -117,7 +116,7 @@ try
                 foreach (Trip trip in tripsResponse)
                 {
                     // Print out the trips.
-                    Console.WriteLine($"\t\t\tTripID: {trip.TripId} - Name: ${trip.Name}");
+                    Console.WriteLine($"\t\t\tTripID: {trip.TripId} - Name: {trip.Name}");
                 }
             }
         }
@@ -169,9 +168,9 @@ Person Page 2:
 ```
 
 ## Client-driven paging
-In client-driven paging, we request the server to return the specified number of results. There is no next link that is returned.
+In client-driven paging, we request the server to return the specified number of results. There is no nextLink that is returned.
 
-The OData Client deals with client-driven paging using `$skip` and `$top` in the query options.
+The OData Client deals with client-driven paging using `$skip` and `$top` query options.
 
 The `$top` query option requests the number of items in the queried collection to be included in the result. 
 
