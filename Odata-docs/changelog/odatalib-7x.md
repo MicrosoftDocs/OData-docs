@@ -30,6 +30,56 @@ Most of our API improvements fall into the category of namespace simplifications
 
 
 
+## ODataLib 7.8.1 Release
+
+Following are the changes done since 7.7.3.
+
+***Features***
+
+[[#1868](https://github.com/OData/odata.net/pull/1868)] Add IN operator support to client
+
+[[#1921](https://github.com/OData/odata.net/pull/1921)] Support for $apply/aggregate
+
+
+***Fixed Bugs***
+
+[[#1906](https://github.com/OData/odata.net/pull/1906)] Make $it in filters inside select/expand reference the resource path
+
+[[#1932](https://github.com/OData/odata.net/pull/1932)] Fix reading OData error at synchronous operations for .NET Core.
+
+[[#1933](https://github.com/OData/odata.net/pull/1933)] Fix deserialization of decimal in exponential notation
+
+[[#1934](https://github.com/OData/odata.net/pull/1934)] Fix location header missing for preflight requests
+
+[[#1939](https://github.com/OData/odata.net/pull/1939)] Make AuthorizationVocabularyModel public and add MeasuresVocabularyModel
+
+[[#1942](https://github.com/OData/odata.net/pull/1942)] ConvertFromUriLiteral can't work for short data type
+
+[[#1944](https://github.com/OData/odata.net/pull/1944)] Fix null dynamic property materialization
+
+[[#1946](https://github.com/OData/odata.net/pull/1946)] Added writer setting to add type annotations
+
+[[#1949](https://github.com/OData/odata.net/pull/1949)] Key attribute with one property throws exception
+
+[[#1950](https://github.com/OData/odata.net/pull/1950)] Fix the navigation property binding target path issue
+
+[[#1952](https://github.com/OData/odata.net/pull/1952)] Add CoreVocabularyModel.RevisionsTerm
+
+[[#1953](https://github.com/OData/odata.net/pull/1953)] Add HttpClient implementation of the DataServiceClientRequestMessage.cs
+
+[[#1957](https://github.com/OData/odata.net/pull/1957)] Remove reference to ODataRuleSets file
+
+
+***Improvements***
+
+[[#1930](https://github.com/OData/odata.net/pull/1930)] Address perf issue with Appending Cast Segment
+
+[[#1954](https://github.com/OData/odata.net/pull/1954)] Performance Fixes
+
+
+
+
+
 ## ODataLib 7.7.3 Release
 
 Following are the changes done since 7.7.2.
