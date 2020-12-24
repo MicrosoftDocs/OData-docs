@@ -9,6 +9,37 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.5.4
+
+### New Features:
+
+* [ [#2361](https://github.com/OData/WebApi/pull/2361) ] Enable JSON Metadata
+  You can use one of the following to return the JSON metadata:
+  - $format=application/json
+  - $format=json
+  - Accept=application/json
+
+* [ [#2341](https://github.com/OData/WebApi/pull/2341) ] Create ODataError in Non-Success responses
+
+* [ [#2311](https://github.com/OData/WebApi/pull/2311) ] Enable case insensitive request binding
+
+
+### Improvements and fixes:
+
+* [ [#2379](https://github.com/OData/WebApi/pull/2379) ] Fix duplicate batch Cookie header
+
+* [ [#2377](https://github.com/OData/WebApi/pull/2377) ] Fix MergeIndividualAndBatchPreferences method
+
+* [ [#2368](https://github.com/OData/WebApi/pull/2368) ] Fix bug in attribute convention route values
+
+* [ [#2362](https://github.com/OData/WebApi/pull/2362) ] Enabling query validation EnableQuery before action execution
+
+* [ [#2356](https://github.com/OData/WebApi/pull/2356) ] Fix behaviour for Preflight requests on the ODataBatchMiddleware
+
+* [ [#2332](https://github.com/OData/WebApi/pull/2332) ] Fix invalid next page link in nested collections
+
+---
+
 ## WebAPI 7.5.2
 
 ### New Features:
