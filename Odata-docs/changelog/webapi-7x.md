@@ -11,6 +11,20 @@ ms.topic: article
 
 ## WebAPI 7.5.4
 
+### Breaking Changes:
+* [ [#2341](https://github.com/OData/WebApi/pull/2341) ] Create ODataError in Non-Success responses
+
+If your code has custom implementations of the methods below, you may encounter a breaking change.
+``` csharp
+BadRequest(string message);
+Conflict(string message);
+Unauthorized(string message);
+NotFound(string message);
+UnprocessableEntity(string message);
+```
+
+For example, in your custom implementation of `BadRequest(string message)`, you may be inheriting from `BadRequestObjectResult`, yet in this fix, we are inheriting from `BadRequestResult`.
+
 ### New Features:
 
 * [ [#2361](https://github.com/OData/WebApi/pull/2361) ] Enable JSON Metadata
