@@ -13,9 +13,9 @@ ms.topic: article
 Loading large datasets can be slow. Services often rely on pagination to load the data incrementally to improve the response times and the user experience. Paging can be server-driven or client-driven.
 
 ## Server-driven paging
-In Server-driven paging, the server returns the first page of results. If total number of results is greater than the page size, the server returns the first page along with a nextlink that can be used to fetch the next page of results.
+In Server-driven paging, the server returns the first page of results. If total number of results is greater than the page size, the server returns the first page along with a `nextlink` that can be used to fetch the next page of results.
 
-The OData Client deals with server-driven paging with the help of [DataServiceQueryContinuation](/dotnet/api/microsoft.odata.client.dataservicequerycontinuation) and [DataServiceQueryContinuation&lt;T&gt;](/dotnet/api/microsoft.odata.client.dataservicequerycontinuation-1). These classes contain the nextLink of the partial set of items.
+The OData Client deals with server-driven paging with the help of [DataServiceQueryContinuation](/dotnet/api/microsoft.odata.client.dataservicequerycontinuation) and [DataServiceQueryContinuation&lt;T&gt;](/dotnet/api/microsoft.odata.client.dataservicequerycontinuation-1). These classes contain the `nextLink` of the partial set of items.
 
 ### Top Level Pagination
 
@@ -52,7 +52,7 @@ while ((nextLink = response.GetContinuation()) != null);
 
 ### Nested Pagination
 There are instances where we need to load pages of entities as well as pages of their related entities.
-The example below returns related Trips for each Person entity from the data service. It uses a do...while loop to paginate through Person entities and a nested while loop to paginate through the related Trips.
+The example below returns related `Trips` for each `Person` entity from the data service. It uses a do...while loop to paginate through `Person` entities and a nested while loop to paginate through the related `Trips`.
 We need to enumerate the response before calling `GetContinuation` on it.
 
 ``` csharp
@@ -168,7 +168,7 @@ Person Page 2:
 ```
 
 ## Client-driven paging
-In client-driven paging, we request the server to return the specified number of results. There is no nextLink that is returned.
+In client-driven paging, we request the server to return the specified number of results. There is no `nextLink` that is returned.
 
 The OData Client deals with client-driven paging using `$skip` and `$top` query options.
 
