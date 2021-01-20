@@ -9,6 +9,20 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.5.5
+
+### Breaking Changes:
+
+### New Features:
+
+### Improvements and fixes:
+
+* Fix the ODL package version dependency issue
+
+* [ [#2397](https://github.com/OData/WebApi/pull/2397) ] Moving EnableQuery request level query data storage to HttpContext
+
+---
+
 ## WebAPI 7.5.4
 
 ### Breaking Changes:
