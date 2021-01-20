@@ -17,6 +17,15 @@ You can install or update the NuGet package for OData ModelBuilder using the [Pa
 PM> Install-Package Microsoft.OData.ModelBuilder
 ```
 
+## OData ModelBuilder 1.0.5
+
+* ClrTypeAnnotation can accept null
+* Relax the system component package version dependency
+
+## OData ModelBuilder 1.0.4
+
+* Add instance annotation container
+
 ## OData ModelBuilder 1.0.3
 
 ### New Features
