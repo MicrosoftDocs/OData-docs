@@ -280,22 +280,24 @@
         href: /odata/client/getting-started
       - name: Basic CRUD operations
         href: /odata/client/basic-crud-operations
+      - name: Get Response Content
+        href: /odata/client/get-response-content
+      - name: Query options
+        href: /odata/client/query-options
+      - name: Navigation Properties
+        href: /odata/client/navigation-properties
+      - name: Batch operations
+        href: /odata/client/batch-operations
+      - name: Pagination
+        href: /odata/client/pagination
       - name: Annotations
         href: /odata/client/annotation-support
       - name: Async operations
         href: /odata/client/async-operations
-      - name: Batch operations
-        href: /odata/client/batch-operations
       - name: Client tracking
         href: /odata/client/tracking
-      - name: Server driven paging
-        href: /odata/client/deal-with-server-driven-paging
-      - name: Get response content
-        href: /odata/client/get-response-content
       - name: Client Code Generation Tool
         href: /odata/client/code-generation-tool
-      - name: Query options
-        href: /odata/client/query-options
       - name: Client hooks
         href: /odata/client/using-hooks
       - name: Using HttpClient 

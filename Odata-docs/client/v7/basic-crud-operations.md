@@ -1,16 +1,25 @@
 ---
 title: "Basic CRUD Operations"
-description: ""
+description: "This tutorial describes how to use basic crud operations on the OData Client."
 
-author: madansr7
-ms.author: madansr7
+author: mumbi-o
+ms.author: mowambug
 ms.date: 7/1/2019
 ms.topic: article
  
 ---
-# Basic CRUD operations
+# Basic CRUD Operations
 
-**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v6.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)]
+
+## Add an entity
+```csharp
+var context = new DefaultContainer(new Uri("https://services.odata.org/V4/(S(y5tuj04bxbfsxzimbxbnauqg))/TripPinServiceRW/"));
+    var person = Person.CreatePerson("russell", "Russell", "Whyte", new long());
+    context.AddToPeople(person);
+
+    context.SaveChanges();
+```
 
 ## Request an entity set
 
@@ -33,6 +42,16 @@ foreach (var person in people)
     // business logic
 }
 ```
+or use the `Where()` with `First()` or `Single()` API call:
+
+```c#
+var person = context.People.Where(c => c.UserName == "russellwhyte").First();
+var person = context.People.Where(c => c.UserName == "russellwhyte").Single();
+```
+Note that `First()` will return one object, even if the lambda expression matches multiple objects.
+`Single()` always return one object and will throw an exception if the lambda expression matches multiple objects.
+
+Both `First()` and `Single()` will throw an exception if no person with `UserName` as `russelwhyte` exists.
 
 or use the `ByKey()` API:
 
