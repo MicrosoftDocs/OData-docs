@@ -17,6 +17,26 @@ You can install or update the NuGet package for OData ModelBuilder using the [Pa
 PM> Install-Package Microsoft.OData.ModelBuilder
 ```
 
+## OData ModelBuilder 1.0.6
+
+* Update the OData.Lib dependency lib version to 7.7.3 and remove the explict `System.Text.Json` dependency.
+
+* Map System.Object to Edm.Untyped and Collection Of System.Object to Collection(Edm.Untyped)
+
+```C#
+pubic class Customer
+{
+    public object Info {get;set;}
+
+    public object[] Data {get;set;}
+}
+```
+With the model builder, 
+* The Edm type of `Info` property is `Edm.Untyped`
+* The Edm type of `Data` property is `Collection(Edm.Untyped)`
+
+---
+
 ## OData ModelBuilder 1.0.5
 
 * ClrTypeAnnotation can accept null
