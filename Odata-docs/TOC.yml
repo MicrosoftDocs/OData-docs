@@ -426,6 +426,8 @@
       href: /odata/changelog/odatalib-7x
     - name: WebApi lib changes
       href: /odata/changelog/webapi-7x
+    - name: Edm ModelBuilder
+      href: /odata/changelog/modelbuilder
     - name: OData extensions changes
       href: /odata/changelog/extensions-1x
     - name: OData ConnectedService changes
