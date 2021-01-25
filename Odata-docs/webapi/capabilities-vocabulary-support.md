@@ -39,7 +39,7 @@ public class Customer
 	public IList<Address> Addresses { get; set; }
 
 	[NotCountable]
-	public IList<Color> FavoriateColors { get; set; }
+	public IList<Color> FavoriteColors { get; set; }
 
 	[NotExpandable]
 	public IEnumerable<Order> Orders { get; set; }
@@ -77,7 +77,7 @@ Now, you can query the metadata document for capabilites vocabulary annotation a
         <Property Name="Token" Type="Edm.Guid" Nullable="false" />
         <Property Name="Email" Type="Edm.String" />
         <Property Name="Addresses" Type="Collection(CapabilitiesVocabulary.Address)" />
-        <Property Name="FavoriateColors" Type="Collection(CapabilitiesVocabulary.Color)" Nullable="false" />
+        <Property Name="FavoriteColors" Type="Collection(CapabilitiesVocabulary.Color)" Nullable="false" />
         <NavigationProperty Name="Orders" Type="Collection(CapabilitiesVocabulary.Order)" />
       </EntityType>
       <EntityType Name="Order">
@@ -110,7 +110,7 @@ Now, you can query the metadata document for capabilites vocabulary annotation a
               <PropertyValue Property="NonCountableProperties">
                 <Collection>
                   <PropertyPath>Addresses</PropertyPath>
-                  <PropertyPath>FavoriateColors</PropertyPath>
+                  <PropertyPath>FavoriteColors</PropertyPath>
                 </Collection>
               </PropertyValue>
               <PropertyValue Property="NonCountableNavigationProperties">
