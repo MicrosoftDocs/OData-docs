@@ -10,7 +10,7 @@ ms.topic: article
 ---
 # Getting Started with OData Client
 
-**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v7.md)]
 
 The OData Client library allows you to consume data from and interact with OData services from .Net apps. There are multiple layers of abstraction available when working with the library: 
 
@@ -32,21 +32,21 @@ To get started, open Visual Studio 2019 (2017 will also work for this example) a
 
 Next, let's install the OData Connected Service extension. To do that go to the **Extensions** menu, then **Manage Extensions**. In the extensions window, search online for "OData Connected Service" and install it.
 
-![OData Connected Service extension](../../assets/2020-03-06-OCS-0-4-0-extension-download.png)
+![OData Connected Service extension](../assets/2020-03-06-OCS-0-4-0-extension-download.png)
 
 
 Once installed, right-click your project in the Solution Explorer, then **Add** then **Connected Service**. In the **Connected Services** window that appears, select **OData Connected Service**.
 
-![Add connected service](../../assets/2020-03-06-add-connected-service-menu.png)
+![Add connected service](../assets/2020-03-06-add-connected-service-menu.png)
 
-![Select OData Connected Service](../../assets/2020-03-06-connected-services-window-OCS.png)
+![Select OData Connected Service](../assets/2020-03-06-connected-services-window-OCS.png)
 
 
 Next, OData Connected Service provides us a wizard where we can configure settings for the service we want to connect to.  In the Service Name field, enter "TripPinService" as the name of the service. And in the "Address" field, we enter the URL of the metadata endpoint of the service, in this case let's enter: `https://services.odata.org/V4/TripPinServiceRW/$metadata` (Notice the `$metadata` route in the URL). Next let's choose a name for the file to be generated. For this example, let's just stick with the default "Reference". The advanced settings allow you to configure things such as custom namespace, whether to hide generated classes from external assemblies, etc. But for now, let's stick with the default settings. Click "Finish" to complete the configuration and generated the client code.
 
 After successful completion, you should see a **Connected Services** section under your project in the Solution Explorer. Below this section, you will see a folder for the "TripPinService" which contains the generated "Reference.cs" file containing the generated C# client code.
 
-![TripPin Connected Service added to project](../../assets/2020-03-06-OCS-added-to-project.png)
+![TripPin Connected Service added to project](../assets/2020-03-06-OCS-added-to-project.png)
 
 ## Using the generated code
 
@@ -137,7 +137,7 @@ namespace ODataClientExample
 }
 ```
 And when you run it, you should see the following output:
-![Sample client app lists names of people fetched from OData service](../../assets/2020-03-06-OCS-sample-program-output.png)
+![Sample client app lists names of people fetched from OData service](../assets/2020-03-06-OCS-sample-program-output.png)
 
 As you can see, the OData Connected Service generates C# classes corresponding to your specific OData service and uses the underlying OData client library to serialize and deserialize to and from JSON, saving you a lot of work.
 
