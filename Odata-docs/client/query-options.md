@@ -9,7 +9,7 @@ ms.topic: article
  
 ---
 # Query options
-**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v7.md)]
 
 There are mainly 2 ways to add Query Options to a DataServiceQuery
 1. Using AddQueryOption method.

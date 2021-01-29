@@ -9,7 +9,7 @@ ms.topic: article
  
 ---
 # Navigation Properties
-**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v7.md)]
 
 When you execute a query, only entities in the addressed entity set are returned. For example, when a query against the Trippin service returns `People` entities, by default the related `Trips` entities are not returned, even though there is a relationship between `People` and `Trips`. There are two ways to load related entities:
 1. Eager Loading.

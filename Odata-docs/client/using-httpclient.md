@@ -9,7 +9,7 @@ ms.topic: article
  
 ---
 # Use HttpClient in OData Client
-**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v7.md)]
 
 In this session, we will dive into how to use HttpClient in OData client request. We will use the hook mechanism in OData client which has been introduced in [Client Hooks in OData Client](/odata/client/using-hooks). See also [Use Extensions in OData Client](/odata/client/using-extensions#Bridge-to-IHttpClientFactory) for a built-in implementation to bridge OData Client and Http Client.
 
