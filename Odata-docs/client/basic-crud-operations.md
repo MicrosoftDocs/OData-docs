@@ -10,7 +10,7 @@ ms.topic: article
 ---
 # Basic CRUD Operations
 
-**Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odataclient-v7.md)]
+**Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v7.md)]
 
 ## Add an entity
 ```csharp
