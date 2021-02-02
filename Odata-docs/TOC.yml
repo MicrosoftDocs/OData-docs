@@ -304,6 +304,8 @@
         href: /odata/client/using-httpclient
       - name: Using Extensions
         href: /odata/client/using-extensions
+      - name: Using Blazor WebAssembly With OData Client
+        href: /odata/client/using-blazor-wasm-with-odata-client
   - name: Spatial lib
     items:
         - name: Define spatial properties
