@@ -424,7 +424,9 @@
   items:
     - name: OData lib changes
       href: /odata/changelog/odatalib-7x
-    - name: WebApi lib changes
+    - name: ASP.NET Core OData (8.x) changes
+      href: /odata/changelog/aspnetcoreodata-8x
+    - name: WebApi lib (7.x) changes
       href: /odata/changelog/webapi-7x
     - name: Edm ModelBuilder
       href: /odata/changelog/modelbuilder
@@ -432,5 +434,7 @@
       href: /odata/changelog/extensions-1x
     - name: OData ConnectedService changes
       href: /odata/changelog/odataconnectedservice
+    - name: OData OpenAPI changes
+      href: /odata/changelog/odataopenapi
 # - name: 10.2 Work around for SingleResult.Create an empty result
 #   href: posts\work-around-for-singleresult-create
