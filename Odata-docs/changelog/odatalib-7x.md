@@ -28,7 +28,27 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
+## ODataLib 7.8.2 Release
 
+***Features***
+
+[[#1995](https://github.com/OData/odata.net/pull/1995)] Retrieve the content type for stream property from vocabulary annotation by convention
+
+[[#1991](https://github.com/OData/odata.net/pull/1991)] Add Dollar it in BuildUri response
+
+[[#1984](https://github.com/OData/odata.net/pull/1984)] Enable nullable setting for EdmUntypedTypeReference
+
+[[#1966](https://github.com/OData/odata.net/pull/1966)] Add WriteMetadataAsync API to enable write CSDL async
+
+***Fixed Bugs***
+
+[[#1985](https://github.com/OData/odata.net/pull/1985)] Fix reading untyped collections containing values with @type specified
+
+[[#1980](https://github.com/OData/odata.net/pull/1980)] Enable serialize and deseriaze the property with Untyped type
+
+***Improvements***
+
+N/A
 
 ## ODataLib 7.8.1 Release
 
@@ -75,9 +95,6 @@ Following are the changes done since 7.7.3.
 [[#1930](https://github.com/OData/odata.net/pull/1930)] Address perf issue with Appending Cast Segment
 
 [[#1954](https://github.com/OData/odata.net/pull/1954)] Performance Fixes
-
-
-
 
 
 ## ODataLib 7.7.3 Release
