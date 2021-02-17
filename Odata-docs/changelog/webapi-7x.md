@@ -9,6 +9,22 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.5.6
+
+### Breaking Changes:
+
+### New Features:
+
+* [ [#2401](https://github.com/OData/WebApi/pull/2401) ] Support write resource with stream property and Support query stream property
+
+### Improvements and fixes:
+
+* Add source link for source code debugging. To debug (at least):
+  - Enable Nuget.org Symbol Server
+  - Enable Source Link support
+
+---
+
 ## WebAPI 7.5.5
 
 ### Breaking Changes:
