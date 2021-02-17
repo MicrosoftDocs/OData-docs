@@ -12,11 +12,11 @@ ms.topic: article
 # Client Annotation Support
 **Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v7.md)]
 
-Before ODataLib 6.10.0, OData core library supported metadata annotations for elements in the model and instance annotations for particular instances in the payload. But on client side, there wasn’t a good way to access these annotations. ODataLib 6.10.0 introduced several APIs to enable user to access annotations on client side. Basically, OData client follows the rules defined in [OData V4.0 protocol](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html) (see [6.4 Vocabulary Extensibility](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html#_Toc406398214)) to access instance or metadata annotations.
+Before ODataLib 6.10.0, OData core library supported metadata annotations for elements in the model and instance annotations for particular instances in the payload. But on client side, there wasn’t a good way to access these annotations. ODataLib 6.10.0 introduced several APIs to enable users to access annotations on client side. Basically, OData client follows the rules defined in [OData V4.0 protocol](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html) (see [6.4 Vocabulary Extensibility](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html#_Toc406398214)) to access instance or metadata annotations.
 
 ## How to get annotations on client side 
 
-All client CLR types in this tutorial are generated using the OData Connected Service extension. Before we dive into this tutorial, checkout [OData Connected Service](/odata/connectedservice/getting-started) tutorial on how to generate the client side proxy classes.
+All client CLR types in this tutorial are generated using the OData Connected Service extension. Before we dive into this tutorial, check out the [OData Connected Service](/odata/connectedservice/getting-started) tutorial on how to generate the client side proxy classes.
 
 OData Client provides the following APIs for accessing annotations in `DataServiceContext` class.
 
