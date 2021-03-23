@@ -169,7 +169,7 @@ services.AddODataClient("TripPin")
 
 ## Bridge to IHttpClientFactory
 
-OData client enables developers to customize request message, and use it in `DataServiceContext.Configurations.RequestPipeline.OnMessageCreating`. This function will be triggered when creating request message. It will return an `IODataRequestMessage`, See [Use HttpClient in OData Client](https://docs.microsoft.com/en-us/odata/client/using-httpclient)
+OData client enables developers to customize request message, and use it in `DataServiceContext.Configurations.RequestPipeline.OnMessageCreating`. This function will be triggered when creating request message. It will return an `IODataRequestMessage`, See [Use HttpClient in OData Client](/odata/client/using-httpclient)
 
 Build on top of that and OData Client Handler, the OData Client Extensions now provides a default integration with IHttpClientFactory that is working out of box when you use Microsoft.OData.Extensions.Client NuGet package.
 
