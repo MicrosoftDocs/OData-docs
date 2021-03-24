@@ -44,7 +44,7 @@ public class CustomersController : ODataController
 }
 ```
 
-If `Customer` has hundreds of properties, a developer should add hundreds of similar functions in `CustomersController`. This is tedious, but with a custom routing convention we can overide this behavior.
+If `Customer` has hundreds of properties, a developer should add hundreds of similar functions in `CustomersController`. This is tedious, but with a custom routing convention we can override this behavior.
 
 ### Custom routing convention
 
@@ -119,7 +119,7 @@ Where, we route the following path templates to a certain action named `GetPrope
 
 ### Enable customized routing convention
 
-The following sample codes is used to enable the customized routing convention:
+The following sample code is used to enable the customized routing convention:
 
 ```C#
 HttpConfiguration configuration = ......
