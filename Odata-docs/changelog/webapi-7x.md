@@ -9,6 +9,32 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.5.7
+
+### Breaking Changes:
+
+### New Features:
+
+* N/A
+
+### Improvements and fixes:
+
+* [ [#2450](https://github.com/OData/WebApi/pull/2450) ] Add the OData version to reader settings when specified in the request
+
+* [ [#2445](https://github.com/OData/WebApi/pull/2445) ] ODataResourceDeserializer Preserves Request on ODataDeserializerContext for Nested Resource
+
+* [ [#2438](https://github.com/OData/WebApi/pull/2438) ] Extend runtime Type methods of OperationConfiguration
+
+* [ [#2436](https://github.com/OData/WebApi/pull/2436) ] Excessive memory in ODataConventionModelBuilder BuildDerivedTypesMapping
+
+* [ [#2431](https://github.com/OData/WebApi/pull/2431) ] Using Metadata writer async
+
+* [ [#2418](https://github.com/OData/WebApi/pull/2418) ] Check for empty Namespace
+
+* [ [#2398](https://github.com/OData/WebApi/pull/2398) ] Inconsistencies in query options when returnscollection is used on collection of entity types
+
+---
+
 ## WebAPI 7.5.6
 
 ### Breaking Changes:
