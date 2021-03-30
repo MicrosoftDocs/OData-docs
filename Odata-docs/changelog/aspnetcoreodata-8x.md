@@ -24,6 +24,29 @@ You can install or update the NuGet package for ASP.NET Core OData using the [Pa
 
 ---
 
+## [8.0.0-rc](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.0-rc)
+
+ * **Attribute routing**: Remove `ODataRouteAttribute`, `ODataRoutePrefix`, use `RouteAttribute`, `HttpGet`, `HttpPost`,... for attribute routing
+ * **Delta resource set**: Add DeltaSetOfT, DeltaT, DeltaLinkT and related interfaces
+ * **Entity Reference**: Support odata.bind and odata.id link
+ * Fix the TimeZone issue when deserializing
+ * Stream property serialization & stream property query
+ * Make basic non-Edm scenario working
+ * Add Json value converter for PageResult, SelectExpandWrapper
+ * Add Dynamic type wrapper type converter
+ * Rename IsUntyped to IsNoClrType in Deserializer context
+ * Rename ODataDeltaFeedSerializer to ODataDeltaResourceSetSerializer
+ * Retrieve the returned entity set for function from annotation
+ * Add / prefix for OData route template to prevent mergeing routing template from controller
+ * Use metadata writer async, change other WriteObjectAsync
+ * Change the Translate in segment template to TryTranslate
+ * Remove CompatibilityOptions and code clean
+ * Add request and timezone to the nested deserializer context
+ * Change PathTemplateSegment, DynamicSegment
+ * Add the OData version to reader settings when specified in the request
+
+---
+
 ## [8.0.0-beta](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.0-beta)
 
  * Fix the TimeZone issue when serializing
