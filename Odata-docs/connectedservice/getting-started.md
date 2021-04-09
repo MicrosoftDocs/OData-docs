@@ -12,7 +12,7 @@ ms.topic: article
 
 **Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v7.md)]
 
-OData Connected Serice is a Visual Studio extension that generates strongly-typed C# and Visual Basic client code for a specified OData service. It generates a `DataServiceContext` class to interact with the service and CLR types for each entity type and complex type in the service model.
+OData Connected Service is a Visual Studio extension that generates strongly-typed C# and Visual Basic client code for a specified OData service. It generates a `DataServiceContext` class to interact with the service and CLR types for each entity type and complex type in the service model.
 
 The extension is available at [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=laylaliu.ODataConnectedService) and supports Visual Studio 2019 and 2017.
 
