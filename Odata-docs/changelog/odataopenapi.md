@@ -17,6 +17,16 @@ You can install or update the NuGet package for ASP.NET Core OData using the [Pa
 
 ---
 
+## [1.0.7](https://www.nuget.org/packages/Microsoft.OpenApi.OData/1.0.7)
+
+ * [[#98](https://github.com/microsoft/OpenAPI.NET.OData/pull/98)] Fixes potential duplicate operationIds in action/function paths
+ 
+ * [[#92](https://github.com/microsoft/OpenAPI.NET.OData/pull/92)] Removes example property in path parameter objects
+ 
+ * Add config for ShowMsDocGroupPath
+ 
+ ---
+ 
 ## [1.0.6](https://www.nuget.org/packages/Microsoft.OpenApi.OData/1.0.6)
 
  * Add Path provider and path prefix provider into setting
