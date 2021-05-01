@@ -24,6 +24,26 @@ You can install or update the NuGet package for ASP.NET Core OData using the [Pa
 
 ---
 
+## [8.0.0-rc2](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.0-rc2)
+
+ * **Be noted** Move AddOData() to IMvcBuilder and IMvcCoreBuilder
+ * Move routing conventions to ODataOptions & use options setup
+ * Add the API for navigation source, navigation property, operation link builder
+ * Enable payload property case-insensitive
+ * Remove ContentLength check, support chunked request
+ * Add SingleResult JSON value converter
+ * Improve the "EnumTryParse" reflect for .NET 6
+ * Support long query URL pattern using $query
+ * Add a OData routing debug middleware. Call `app.UseODataRouteDebug()` to enable it
+ * Count in filter throws not supported
+ * Retrieve the default query setting
+ * Fix issue about absolute route template with two selector models
+ * Reuse WriteObjectInlineAsyc in ODataDeltaResourceSetSerializer
+ * Create selector model if we have route template on controller
+ * Improve ConvertPrimtiveValue assert
+
+---
+
 ## [8.0.0-rc](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.0-rc)
 
  * **Attribute routing**: Remove `ODataRouteAttribute`, `ODataRoutePrefix`, use `RouteAttribute`, `HttpGet`, `HttpPost`,... for attribute routing
