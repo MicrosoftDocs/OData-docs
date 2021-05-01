@@ -9,6 +9,24 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.5.8
+
+### Breaking Changes:
+
+### New Features:
+
+* N/A
+
+### Improvements and fixes:
+
+* [ [#2426](https://github.com/OData/WebApi/pull/2426) ] Multiple orderby level.
+
+* [ [#2457](https://github.com/OData/WebApi/pull/2457) ] Filter is not working with date function
+
+* [ [#2482](https://github.com/OData/WebApi/pull/2482) ] Revert "inconsistencies in query options when_returnscollection is used on collection entity. [#2398](https://github.com/OData/WebApi/pull/2398) ]" 
+
+---
+
 ## WebAPI 7.5.7
 
 ### Breaking Changes:
