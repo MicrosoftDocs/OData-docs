@@ -28,6 +28,73 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
+## ODataLib 7.9.0 Release
+
+***Features***
+
+[[#1806]](https://github.com/OData/odata.net/pull/1806) Sequencing Json Batch requests with the dependsOn property in OData Client
+
+[[#1998]](https://github.com/OData/odata.net/pull/1998) Add support for $this
+
+[[#2002]](https://github.com/OData/odata.net/pull/2002) Expand TextWriterWrapper abstract class with equivalent async method
+
+[[#2009]](https://github.com/OData/odata.net/pull/2009) Enable EdmReference, EdmInclude vocabulary annotation
+
+[[#2014]](https://github.com/OData/odata.net/pull/2014) Implement asynchronous support in JsonWriter
+
+[[#2030]](https://github.com/OData/odata.net/pull/2030) Implement asynchronous support in ODataJsonLightSerializer
+
+[[#2031]](https://github.com/OData/odata.net/pull/2031) Implement asynchronous support in ODataJsonWriterUtils
+
+[[#2032]](https://github.com/OData/odata.net/pull/2032) Implement asynchronous support in ODataJsonLightWriterUtils
+
+[[#2038]](https://github.com/OData/odata.net/pull/2038) Implement asynchronous support in JsonLightODataAnnotationWriter
+
+[[#2046]](https://github.com/OData/odata.net/pull/2046) Implement asynchronous support in ODataJsonLightCollectionSerializer
+
+[[#2048]](https://github.com/OData/odata.net/pull/2048) Implement asynchronous support in ODataJsonLightServiceDocumentSerializer
+
+[[#2050]](https://github.com/OData/odata.net/pull/2050) Implement asynchronous support in ODataJsonLightEntityReferenceLinkSerializer
+
+[[#2051]](https://github.com/OData/odata.net/pull/2051) Add support for $count segment within $expand
+
+[[#2052]](https://github.com/OData/odata.net/pull/2052) Implement asynchronous support in ODataJsonLightResourceSerializer
+
+[[#2055]](https://github.com/OData/odata.net/pull/2055) Add support for Singleton's in VocabularyAnnotationInaccessibleTarget
+
+[[#2058]](https://github.com/OData/odata.net/pull/2058) Modify IODataOutputInStreamErrorListener interface to support asynchronous notifications when an in-stream error is to be written
+
+[[#2069]](https://github.com/OData/odata.net/pull/2069) Add support for $search and $filter within $count segment of $filter collection properties
+
+[[#2075]](https://github.com/OData/odata.net/pull/2075) Modify IODataStreamListener interface to support asynchronous notifications when the content stream of an operation has been disposed
+
+***Fixed Bugs***
+
+[[#2017]](https://github.com/OData/odata.net/pull/2017) Fix IN operator precedence
+
+[[#2018]](https://github.com/OData/odata.net/pull/2018) Make sure we pass the no-dollar flag through
+
+[[#2022]](https://github.com/OData/odata.net/pull/2022) Translate PathSelectItem in ODataUriExtensions.BuildUri
+
+[[#2035]](https://github.com/OData/odata.net/pull/2035) Fix IN operator not working with null Guid values
+
+[[#2068]](https://github.com/OData/odata.net/pull/2068) Fix issue where OData.Core lib fails to parse IN operator with Date, DateTimeOffset and Time parameters
+
+[[#2087]](https://github.com/OData/odata.net/pull/2087) Translate ExpandedCountSelectItem in BuildUri
+
+***Improvements***
+
+[[#1741]](https://github.com/OData/odata.net/pull/1741) Convert BaseEntityType to interface
+
+[[#1992]](https://github.com/OData/odata.net/pull/1992) Client Perf improvement
+
+[[#1993]](https://github.com/OData/odata.net/pull/1993) Perf fixes for ODL- Linq
+
+[[#2024]](https://github.com/OData/odata.net/pull/2024) Performance Fix for swallowed exception in AppendKeySegment
+
+[[#2039]](https://github.com/OData/odata.net/pull/2039) Update Capabilities Vocabulary
+
+[[#2053]](https://github.com/OData/odata.net/pull/2053) Elide async and await in pass-through asynchronous methods
 
 ## ODataLib 7.8.3 Release
 
