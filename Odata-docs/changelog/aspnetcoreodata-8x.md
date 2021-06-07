@@ -24,6 +24,20 @@ You can install or update the NuGet package for ASP.NET Core OData using the [Pa
 
 ---
 
+## [8.0.0-rc3](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.0-rc3)
+
+ * **Be noted** Breaking changes in ODataSegmentTemplate
+ * Use ActionName in conventional routing
+ * Make CreateRef, DeleteRef, GetRef for generic navigation property working
+ * Support alternate key in attribute routing
+ * ClrTypeCache has memory leak owing to IEdmTypeReference
+ * Change ODataOptions by removing unnecessary APIs
+ * Remove EdmDeltaKind
+ * Change EdmDeltaLink, EdmDeltaDeletedLink, etc
+ * Add a config for non-parenthesis of empty parameter function
+ * Add a config for controller name case insensitive
+ * Enable string without single quote in key as segment
+
 ## [8.0.0-rc2](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.0-rc2)
 
  * **Be noted** Move AddOData() to IMvcBuilder and IMvcCoreBuilder
