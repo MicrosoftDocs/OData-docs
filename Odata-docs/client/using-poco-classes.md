@@ -1,6 +1,6 @@
 ---
 title: "Using POCO classes"
-description: "This tutorial describes how to use POCO classes on the OData Client."
+description: "This tutorial describes how to use POCO classes in the OData Client."
 
 author: mumbi-o
 ms.author: mowambug
@@ -14,10 +14,9 @@ ms.topic: article
 
 ## Using with POCO's
 
-While developing, you may want to use OData Client without a code generation tool like _ODataConnectedService_. In this case, one can still use the OData Client
-to access their service.
+While developing, you may want to use the OData Client without a code generation tool like _ODataConnectedService_. In this case, one can still use the OData Client to access their service.
 
-In order to do this you simply extend the `DataServiceContext` class in your code and add some convenience methods as shown below:
+In order to do this you only need to extend the `DataServiceContext` class in your code and add some convenience methods as shown below:
 
 ```csharp
 // Person class with Odata annotations
@@ -48,11 +47,11 @@ public class Person
 
 ```
 
-To add new objects to the peoples entity set use `context.AddObject("People", person)` or create a convenience method in the class to do the same.
+To add new objects to the `People` EntitySet use `context.AddObject("People", person)` or create a convenience method in the class to do the same.
 
 ### Loading the service model
 
-This example allows you to use the client while using the current metadata which is fetched from network. In some cases this is not convenient and to override this behavior you need to change the constructor of the DataService context to include an action that can be used to fetch the model. Codegen tools do this by downloading the metadata and storing it in a verbatim string or a separate file which is then read upon instantiation of the context.
+This example allows you to use the client while using the current metadata which is fetched from the network. In some cases this is not convenient and to override this behavior you need to change the constructor of the DataService context to include an action that can be used to fetch the model. Codegen tools do this by downloading the metadata and storing it in a verbatim string or in a separate file which is then read upon instantiation of the context.
 
 To provide the same for our code we need to do the following.
 
@@ -63,19 +62,19 @@ To provide the same for our code we need to do the following.
         this.People = base.CreateQuery<Person>("People");
         // add the following lines
         this.Format.LoadServiceModel = () => util.GetEdmModel()  /* user action that returns a valid IEdmModel instance */  
-        this.Format.UseJson(); /* this instruction causes the model to be loaded instantly else the model is loaded lazily and cached when its needed */
+        this.Format.UseJson(); /* this instruction causes the model to be loaded instantly else the model is loaded lazily and cached when it's needed */
     }
 
 ```
 
-Using the above method one can switch the model they want to use useful especially when writing tests.
+Using the above method one can switch the model they want to use especially when writing tests.
 
 **Note**: Using the OData Connected Service is the recommended way to utilize all the new features in the OData Client.
 
 ### Using OriginalNameAttribute
 The [OriginalNameAttribute](/dotnet/api/microsoft.odata.client.originalnameattribute) allows one to define an entity model with different property names from the OData service model.
 
-The [OriginalName](/dotnet/api/microsoft.odata.client.originalnameattribute.originalname) property denotes the original name of a property defined in OData service metadata.
+The [OriginalName](/dotnet/api/microsoft.odata.client.originalnameattribute.originalname) property denotes the original name of a property defined in the OData service metadata.
 
 In the example below, our OData service defines a property `IataCode`, but our Model has the property `AirportCode`. We use the `OriginalNameAttribute` to map `AirportCode` to `IataCode`.
 
