@@ -7,13 +7,13 @@ ms.date: 7/1/2019
 # Custom routing convention
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
-It's easy to custom your own routing convention to override the default Web API OData routing convention. Let's see how to target it.
+It is easy to create custom routing conventions to override the default Web API OData routing convention.
 
 ### Property access routing convention
 
 From built-in routing convention section, we know that users should add many actions for every property access. 
 
-For example, if the client issues the following property access request Uris:
+For example, if the client issues the following property access request URIs:
 
 ```C#
 ~/odata/Customers(1)/Orders
@@ -44,7 +44,7 @@ public class CustomersController : ODataController
 }
 ```
 
-If `Customer` has hundreds of properties, users should add hundres of similar functions in `CustomersController`. It's boring and we can create our own routing convention to override it.
+If `Customer` has hundreds of properties, a developer should add hundreds of similar functions in `CustomersController`. This is tedious, but with a custom routing convention we can override this behavior.
 
 ### Custom routing convention
 
@@ -108,7 +108,7 @@ public class CustomPropertyRoutingConvention : NavigationSourceRoutingConvention
 }
 ```
 
-Where, we routes the following path templates to a certain action named `GetProperty`.
+Where, we route the following path templates to a certain action named `GetProperty`.
 
 ```C#
 ~/entityset/key/property
@@ -119,7 +119,7 @@ Where, we routes the following path templates to a certain action named `GetProp
 
 ### Enable customized routing convention
 
-The following sample codes are used to enable the customized routing convention:
+The following sample code is used to enable the customized routing convention:
 
 ```C#
 HttpConfiguration configuration = ......
@@ -164,7 +164,7 @@ public class CustomersController : ODataController
 
 ### Samples
 
-Let's have some request Uri samples to test:
+Below are some request Uri samples to test:
 
 a)
 ```C#
