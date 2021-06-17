@@ -280,6 +280,8 @@
         href: /odata/client/getting-started
       - name: Basic CRUD operations
         href: /odata/client/basic-crud-operations
+      - name: Using POCO classes
+        href: /odata/client/using-poco-classes
       - name: Get Response Content
         href: /odata/client/get-response-content
       - name: Query options
