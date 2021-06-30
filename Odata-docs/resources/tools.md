@@ -6,7 +6,7 @@ ms.date: 7/1/2019
 
 # Tools
 
-The following tools aid development of an OData REST api service or helps consume an existing OData capable endpoint.
+The following tools aid development of an OData REST api service or helps consume an existing OData capable endpoint. A [more extensive list](https://www.odata.org/ecosystem/) of consumers can be found on the site of OData.
 
 ## OData client
 
