@@ -24,6 +24,24 @@ You can install or update the NuGet package for ASP.NET Core OData using the [Pa
 
 ---
 
+## [8.0.0](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.0)
+
+ * Change `AddModel()` to `AddRouteComponents`, Add `EnableQueryFeatures()` in ODataOptions
+ * Remove `IODataBuilder`, `DefaultODataBuilder`, Eliminate `BuilderFactory` and the need for external `ContainerBuilder`
+ * Rename `ODataRoutingAttribute` to `ODataAttributeRoutingAttribute`
+ * Rename `ODataModelAttribute` to `ODataRouteComponentAttribute`
+ * Remove `NonODataControllerAttribute` and `NonODataActionAttribute` and replace them using `ODataIgnoredAttribute`
+ * Rename `PrefixName` to `RoutePrefix`, Rename `SubServiceProvider` to `Services` in IODataFeature
+ * Add `ODataOptions()` in HttpContextExtensions and HttpRequestExtensions
+ * Rename `{Get|Create|Delete}SubServiceProvider` to `{Get|Create|Delete}RouteServices` in HttpRequestExtensions
+ * Improvement to (de)serialization code, using interface for (de)serializer
+ * Improve OData debug route and its pattern
+ * Enable $this query option
+ * Update dependency to ODL 7.9, ModelBuilder 1.0.6
+ * Fix AmbiguousMatchException for properties with new modifier
+ * Add bunch of test cases to increase the code coverage
+ * Other code clean up, for example, remove `IODataTypeMappingProvider` etc
+
 ## [8.0.0-rc3](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.0-rc3)
 
  * **Be noted** Breaking changes in ODataSegmentTemplate
