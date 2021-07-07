@@ -24,6 +24,11 @@ You can install or update the NuGet package for ASP.NET Core OData using the [Pa
 
 ---
 
+## [8.0.1](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.1)
+
+ * Make methods as virtual in ODataSerializerProvider
+ * Make methods as virtual in ODataDeserializerProvider
+
 ## [8.0.0](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.0)
 
  * Change `AddModel()` to `AddRouteComponents`, Add `EnableQueryFeatures()` in ODataOptions
