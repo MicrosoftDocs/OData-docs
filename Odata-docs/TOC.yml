@@ -76,6 +76,8 @@
           href: /odata/webapi/built-in-routing-conventions
         - name: Attribute routing
           href: /odata/webapi/attribute-routing
+        - name: Automatic routing for nested paths with [EnableNestedPaths]
+          href: /odata/webapi/nested-paths-routing
         - name: Custom routing
           href: /odata/webapi/custom-routing-convention
       - name: How-to
