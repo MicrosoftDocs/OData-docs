@@ -69,7 +69,7 @@ public class CustomersController {
 
     public IQueryable<Customer> Get(int key) { /* ... */ }
 
-    public IQueryable<Customer> GetOrders(int key) { /* ... */ }
+    public IQueryable<Order> GetOrders(int key) { /* ... */ }
 }
 ```
 
@@ -83,7 +83,7 @@ Path |  Actions
 `/Customers(1)/Name` | `Get()`
 `/Customers(1)/Orders(2)/Name` | `Get()`
 
-## Additional notes and limitaitons
+## Additional notes and limitations
 
 - The name of the controller action should be either `Get()` or `Get{NavigationSource}`
 - `[EnableNestedPaths]` currently does not accept any further configurations. In particular, you can not limit how deeply nested paths can be, you can limit which properties or navigation properties can be accessed, etc.
