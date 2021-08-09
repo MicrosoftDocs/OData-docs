@@ -33,7 +33,7 @@ Under the hood, `[EnableNestedPaths]` will apply LINQ query transformations to t
 
 ## Support for singletons
 
-In the case of a singleton, you would wrap it with a [`SingleResult<T>`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnet.odata.singleresult-1?view=odata-aspnetcore-7.0):
+In the case of a singleton, you would wrap it with a [`SingleResult<T>`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnet.odata.singleresult-1):
 
 ```c#
 public class TopCustomerController {
