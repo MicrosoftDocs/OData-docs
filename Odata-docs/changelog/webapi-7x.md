@@ -21,7 +21,7 @@ ms.topic: article
 
 ### Improvements and Fixes:
 
-* [ [#2470](https://github.com/OData/WebApi/pull/2470) ] Fix issue around casing preventing project from compiling under case-sensitive OS like Linux
+* [ [#2470](https://github.com/OData/WebApi/pull/2470) ] Fix casing issue preventing project from compiling under case-sensitive OS like Linux
 
 * [ [#2491](https://github.com/OData/WebApi/pull/2491) ] Improve logic around dependency injection and services registration
 
