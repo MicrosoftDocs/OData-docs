@@ -9,6 +9,40 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.5.9
+
+### New Features:
+
+* [ [#2421](https://github.com/OData/WebApi/pull/2421) ] Add support for $this
+
+* [ [#2456](https://github.com/OData/WebApi/pull/2456) ] Built-in support for deeply nested paths
+
+* [ [#2521](https://github.com/OData/WebApi/pull/2521) ] Add support for $count segment in filter
+
+### Improvements and Fixes:
+
+* [ [#2470](https://github.com/OData/WebApi/pull/2470) ] Fix casing issue preventing project from compiling under case-sensitive OS like Linux
+
+* [ [#2491](https://github.com/OData/WebApi/pull/2491) ] Improve logic around dependency injection and services registration
+
+* [ [#2492](https://github.com/OData/WebApi/pull/2492) ] Fix ClrTypeCache memory leak
+
+* [ [#2494](https://github.com/OData/WebApi/pull/2494) ] Fix API Explorer usage with OData
+
+* [ [#2497](https://github.com/OData/WebApi/pull/2497) ] Upgrade Microsoft.OData.Core, Microsoft.OData.Edm and Microsoft.Spatial dependencies to v7.9.0
+
+* [ [#2512](https://github.com/OData/WebApi/pull/2512) ] Fix behaviour on status code results (for example error response from a controller action decorated with EnableQuery attribute)
+
+* [ [#2515](https://github.com/OData/WebApi/pull/2515) ] Enable constant parameterization in DateTime constants
+
+* [ [#2525](https://github.com/OData/WebApi/pull/2525) ] Fixed Enum TryParse issue
+
+* [ [#2530](https://github.com/OData/WebApi/pull/2530) ] Fix bug in filter=any(...) within expand
+
+* [ [#2538](https://github.com/OData/WebApi/pull/2538)/[#2539](https://github.com/OData/WebApi/pull/2539)/[#2540](https://github.com/OData/WebApi/pull/2540) ] Bump System.Text.RegularExpressions from 4.3.0 to 4.3.1
+
+---
+
 ## WebAPI 7.5.8
 
 ### Breaking Changes:
