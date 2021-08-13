@@ -7,7 +7,7 @@ ms.author: clhabins
 ms.date: 8/09/2021
 ---
 # Automatic support for nested paths with [EnableNestedPaths]
-**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-core-v7.5.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.5.md)]
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-core-v7.5.md)]
 
 Usually, if you want to handle requests to nested resources, like `GET Customers(1)`, `GET Customers(1)/Orders`, `GET Customers(1)/Orders(1)`, you would need to implemen a separate controller action for each of them. Sometimes, the logic for retrieving an item by key or or a navigation property is as simple as making the corresponding LINQ query. In such cases, it would be handy to have an automated way of handling such requests.
 
@@ -33,7 +33,7 @@ Under the hood, `[EnableNestedPaths]` will apply LINQ query transformations to t
 
 ## Support for singletons
 
-In the case of a singleton, you would wrap it with a [`SingleResult<T>`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnet.odata.singleresult-1):
+In the case of a singleton, you would wrap it with a [`SingleResult<T>`](/dotnet/api/microsoft.aspnet.odata.singleresult-1):
 
 ```c#
 public class TopCustomerController {
