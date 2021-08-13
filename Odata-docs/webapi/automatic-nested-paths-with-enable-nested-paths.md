@@ -89,4 +89,4 @@ Path |  Actions
 - `[EnableNestedPaths]` currently does not accept any further configurations. In particular, you can not limit how deeply nested paths can be, you can limit which properties or navigation properties can be accessed, etc.
 - `[EnableNestedPaths]` only handles `GET` requests with entity set or singleton navigation sources. It does not handle functions or actions.
 - `[EnableNestedPaths]` does not handle $ref requests (i.e. `GET /Customers/1/Orders/1/$ref` will not be routed to the `Get()` method with `[EnableNestedPaths]`)
-- Currently only support on .NET Core (`Microsoft.AspNetCore.OData`)
+- This feature is currently only supported on .NET Core (`Microsoft.AspNetCore.OData`)
