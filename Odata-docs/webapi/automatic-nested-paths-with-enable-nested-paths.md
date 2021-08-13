@@ -7,11 +7,11 @@ ms.author: clhabins
 ms.date: 8/09/2021
 ---
 # Automatic support for nested paths with [EnableNestedPaths]
-**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-core-v7.6.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.6.md)]
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-core-v7.5.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.5.md)]
 
 Usually, if you want to handle requests to nested resources, like `GET Customers(1)`, `GET Customers(1)/Orders`, `GET Customers(1)/Orders(1)`, you would need to implemen a separate controller action for each of them. Sometimes, the logic for retrieving an item by key or or a navigation property is as simple as making the corresponding LINQ query. In such cases, it would be handy to have an automated way of handling such requests.
 
-OData WebApi 7.6 introduced the `[EnableNestedPaths]` attribute which allows you to handle different `GET` requests that have a common navigation source (i.e. entity set or singleton) using only a single controller action.
+OData WebApi 7.5.9 introduced the `[EnableNestedPaths]` attribute which allows you to handle different `GET` requests that have a common navigation source (i.e. entity set or singleton) using only a single controller action.
 
 ## How it works
 
@@ -89,3 +89,4 @@ Path |  Actions
 - `[EnableNestedPaths]` currently does not accept any further configurations. In particular, you can not limit how deeply nested paths can be, you can limit which properties or navigation properties can be accessed, etc.
 - `[EnableNestedPaths]` only handles `GET` requests with entity set or singleton navigation sources. It does not handle functions or actions.
 - `[EnableNestedPaths]` does not handle $ref requests (i.e. `GET /Customers/1/Orders/1/$ref` will not be routed to the `Get()` method with `[EnableNestedPaths]`)
+- Currently only support on .NET Core (`Microsoft.AspNetCore.OData`)
