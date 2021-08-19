@@ -90,3 +90,4 @@ Path |  Actions
 - `[EnableNestedPaths]` only handles `GET` requests with entity set or singleton navigation sources. It does not handle functions or actions.
 - `[EnableNestedPaths]` does not handle $ref requests (i.e. `GET /Customers/1/Orders/1/$ref` will not be routed to the `Get()` method with `[EnableNestedPaths]`)
 - This feature is currently only supported on .NET Core (`Microsoft.AspNetCore.OData`)
+- This feature is not yet available in `Microsoft.AspNetCore.OData` 8.x
