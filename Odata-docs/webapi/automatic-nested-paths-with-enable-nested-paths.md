@@ -9,7 +9,7 @@ ms.date: 8/09/2021
 # Automatic support for nested paths with [EnableNestedPaths]
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-core-v7.5.md)]
 
-Usually, if you want to handle requests to nested resources, like `GET Customers(1)`, `GET Customers(1)/Orders`, `GET Customers(1)/Orders(1)`, you would need to implemen a separate controller action for each of them. Sometimes, the logic for retrieving an item by key or or a navigation property is as simple as making the corresponding LINQ query. In such cases, it would be handy to have an automated way of handling such requests.
+Usually, if you want to handle requests to nested resources, like `GET Customers(1)`, `GET Customers(1)/Orders`, `GET Customers(1)/Orders(1)`, you would need to implement a separate controller action for each of them. Sometimes, the logic for retrieving an item by key or or a navigation property is as simple as making the corresponding LINQ query. In such cases, it would be handy to have an automated way of handling such requests.
 
 OData WebApi 7.5.9 introduced the `[EnableNestedPaths]` attribute which allows you to handle different `GET` requests that have a common navigation source (i.e. entity set or singleton) using only a single controller action.
 
@@ -27,7 +27,7 @@ public class CustomersController {
 
 ```
 
-Now this `Get()` methods will handle `GET` requests that start with `Customers/` as the navigation source, e.e.g: `GET Customers`, `GET Customers(1)`, `GET Customers(1)/Orders`, `GET Customers(1)/Orders(1)`, `GET Customers(1)/Orders/$count`, etc.
+Now this `Get()` methods will handle `GET` requests that start with `Customers/` as the navigation source, e.g: `GET Customers`, `GET Customers(1)`, `GET Customers(1)/Orders`, `GET Customers(1)/Orders(1)`, `GET Customers(1)/Orders/$count`, etc.
 
 Under the hood, `[EnableNestedPaths]` will apply LINQ query transformations to the returned collection matching the requested path. For example, if the path contains a key segment, then a where clause will be applied to the query to filter the collection by the specified key. In the case of a navigation property segment, a select clause will be applied. If your returned collection is an `IQueryable` then the resulting query will be handled by the backend query provider, if it's an `IEnumerable` then the query will be evaluated in-memory.
 
