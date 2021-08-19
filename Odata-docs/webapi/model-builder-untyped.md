@@ -7,7 +7,7 @@ ms.date: 7/1/2019
 # Build Edm Model Explicitly
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
-As mentioned in previous section, to build Edm model explicitly is to create an `IEdmModel` object directly using **[ODatalib](https://www.nuget.org/packages/Microsoft.OData.Core/)** API. The Edm model built by this method is called **type-less model**, or **week type model**, or just **un-typed model**.
+As mentioned in previous section, to build Edm model explicitly is to create an `IEdmModel` object directly using **[ODatalib](https://www.nuget.org/packages/Microsoft.OData.Core/)** API. The Edm model built by this method is called **type-less model**, or **weak type model**, or just **un-typed model**.
 
 Let's see how to build the *Customer-Order* business model.
 
