@@ -76,6 +76,8 @@
           href: /odata/webapi/built-in-routing-conventions
         - name: Attribute routing
           href: /odata/webapi/attribute-routing
+        - name: Automatic routing for nested paths with [EnableNestedPaths]
+          href: /odata/webapi/nested-paths-routing
         - name: Custom routing
           href: /odata/webapi/custom-routing-convention
       - name: How-to
@@ -156,6 +158,8 @@
             href: /odata/webapi/merge-complex-and-entity
           - name: Query options in request body
             href: /odata/webapi/query-options-in-request-body
+          - name: Automatic support for nested paths with [EnableNestedPaths]
+            href: /odata/webapi/automatic-support-for-nested-paths-with-enable-nested-paths
       - name: Extending WebAPI
         items:
         - name: Custom URL parsing
