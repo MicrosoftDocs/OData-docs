@@ -19,10 +19,6 @@ You can install or update the NuGet package for OData Migration Extensions v1.0.
 ```PowerShell
 PM> Install-Package Microsoft.OData.ModelBuilder
 ```
-Then Add the following using to your project class.
-```csharp
-using Microsoft.OData.ModelBuilder.Vocabularies
-```
 ## Examples
 
 Find below some sample usages...
@@ -76,31 +72,104 @@ enum RevisionKind
 ```
 
 
-To add deprecated revisions to the entity set. use the code below:
+To add revisions to an entity set for example. use the code below:
 ```csharp
 var builder = new ODataConventionModelBuilder();
-var customerConfiguration = builder.EntitySet<Customer>("Customers").HasRevisions("Deprecated", "v1.1.0", RevisionKind.Deprecated, new DateTime(2021,8,8), new DateTime(2022, 12,12)");
+var customerConfiguration = builder.EntitySet<Customer>("Customers").HasRevisions(a => a.HasVersion("v1.2").HasKind(RevisionKind.Added).HasDescription("Added a new entity set"));
 ```
-The following is a short description of the <code>HasRevisions()</code> method's parameters:
 
-Deprecated is a description of why the entity set or any other model element is being deprecated.
+Use this structure to add revisions to all the other supported model elements above. 
 
-v.1.1.0 is the model version the deprecation was made
+$metadata
 
-RevisionKind.Deprecated is the kind of revision being done. There are 3 kinds of revisions that can be made to a model element. 
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Default">
+            <EntityType Name="Customer">
+                <Key>
+                    <PropertyRef Name="CustomerId" />
+                </Key>
+                <Property Name="CustomerId" Type="Edm.Int32" Nullable="false" />
+                <Property Name="Name" Type="Edm.String" />
+            </EntityType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="Customers" EntityType="Default.Customer" />
+            </EntityContainer>
+            <Annotations Target="Default.Container/Customers">
+                <Annotation Term="Org.OData.Core.V1.Revisions">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Version" String="v1.2" />
+                            <PropertyValue Property="Kind">
+                                <EnumMember>Org.OData.Core.V1.RevisionKind/Added</EnumMember>
+                            </PropertyValue>
+                            <PropertyValue Property="Description" String="desc" />
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
+```
+To add a revision, you must provide the following properties: 
+1. RevisionKind - the kind of revision you are making. Added, Modified or Deprecated.
+1. Description - a description describing the revision you are making.
+1. 
+You can add also dynamic properties to provide more information for the model elements' revisions. Below is an example on how to add extra properties to a revision.  
 
 ```csharp
-enum RevisionKind
-{
-    //when a model element is added
-    Added,
 
-    //when a model element is modified
-    Modified,
+var builder = new ODataConventionModelBuilder();
+var config = builder.EntitySet<Customer>("Customers").HasRevisions(a => a.HasVersion("v1.2").HasKind(RevisionKind.Deprecated).HasDescription("The M").HasDynamicProperty("Date", new DateTime(2021,11,11)).HasDynamicProperty("RemovalDate", new DateTime(2022,12,12)));
 
-    //when a model elemeny is deprecated
-    Deprecated
-}
 ```
+$metadata
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="CoreCapabilities">
+            <EntityType Name="Customer">
+                <Key>
+                    <PropertyRef Name="CustomerId" />
+                </Key>
+                <Property Name="CustomerId" Type="Edm.Int32" Nullable="false" />
+                <Property Name="Name" Type="Edm.String" />
+            </EntityType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="Customers" EntityType="CoreCapabilities.Customer" />
+            </EntityContainer>
+            <Annotations Target="Default.Container/Customers">
+                <Annotation Term="Org.OData.Core.V1.Revisions">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Version" String="v1.2" />
+                            <PropertyValue Property="Kind">
+                                <EnumMember>Org.OData.Core.V1.RevisionKind/Deprecated</EnumMember>
+                            </PropertyValue>
+                            <PropertyValue Property="Description" String="The M" />
+                            <PropertyValue Property="Date" DateTimeOffset="2021-11-11T00:00:00+03:00" />
+                            <PropertyValue Property="RemovalDate" DateTimeOffset="2022-12-12T00:00:00+03:00" />
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+        </Schema>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Default">
+         <EntityContainer Name="Container">
+            <EntitySet Name="Customers" EntityType="CoreCapabilities.Customer" />
+         </EntityContainer>
+      </Schema>
+   </edmx:DataServices>
+</edmx:Edmx>
+
+```
+
+
+
 
 
