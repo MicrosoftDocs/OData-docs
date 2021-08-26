@@ -76,6 +76,8 @@ Most of our API improvements fall into the category of namespace simplifications
 
 [[#2110]](https://github.com/OData/odata.net/pull/2110) ODataNotificationWriter and ODataNotificationStream wrapper classes should not dispose the passed TextWriter and Stream respectively
 
+[[#2131]](https://github.com/OData/odata.net/pull/2131) Fix issue with async reader for Parsing the Context Uri
+
 [[#2139]](https://github.com/OData/odata.net/pull/2139) Fix escape function binding type constraint
 
 [[#2145]](https://github.com/OData/odata.net/pull/2145) Allow filter in empty string
