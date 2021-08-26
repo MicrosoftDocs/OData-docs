@@ -28,6 +28,78 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
+## ODataLib 7.9.1 Release
+
+***Features***
+
+[[#2041]](https://github.com/OData/odata.net/pull/2041) Remember the SelectItem instances that are thrown away because of the existence of a WildcardSelectItem 
+
+[[#2059]](https://github.com/OData/odata.net/pull/2059) Implement asynchronous support in ODataJsonLightCollectionWriter
+
+[[#2078]](https://github.com/OData/odata.net/pull/2078) Implement asynchronous support in ODataJsonLightWriter
+
+[[#2079]](https://github.com/OData/odata.net/pull/2079) Support asynchronous invocation of IODataStreamListener.StreamDisposedAsync method from ODataNotificationWriter class
+
+[[#2080]](https://github.com/OData/odata.net/pull/2080) Support asynchronous invocation of IODataStreamListener.StreamDisposedAsync method from ODataNotificationStream 
+
+[[#2082]](https://github.com/OData/odata.net/pull/2082) Implement asynchronous support in ODataJsonLightDeltaWriter
+
+[[#2096]](https://github.com/OData/odata.net/pull/2096) Implement asynchronous support for ODataJsonLightParameterWriter
+
+[[#2109]](https://github.com/OData/odata.net/pull/2109) Implement asynchronous support in ODataWriteStream
+
+[[#2111]](https://github.com/OData/odata.net/pull/2111) Implement asynchronous support in ODataJsonLightBatchWriter
+
+[[#2114]](https://github.com/OData/odata.net/pull/2114) Implement asynchronous support in ODataJsonLightOutputContext
+
+[[#2121]](https://github.com/OData/odata.net/pull/2121) Implement asynchronous support in RawValueWriter
+
+[[#2123]](https://github.com/OData/odata.net/pull/2123) Fixed issue with caching of enumerable instead of list
+
+[[#2124]](https://github.com/OData/odata.net/pull/2124) Implement asynchronous support in ODataAsynchronousWriter
+
+[[#2125]](https://github.com/OData/odata.net/pull/2125) Implement asynchronous support in ODataRawOutputContext
+
+[[#2126]](https://github.com/OData/odata.net/pull/2126) Implement asynchronous support in ODataMultipartMixedBatchWriter
+
+[[#2143]](https://github.com/OData/odata.net/pull/2143) Support empty collection with IN operator
+
+***Fixed Bugs***
+
+[[#2021]](https://github.com/OData/odata.net/pull/2021) HttpClientRequestMessage: Fix UnwrapAggregateException
+
+[[#2072]](https://github.com/OData/odata.net/pull/2072) No error message when reading an incorrect structure of a collection of entities
+
+[[#2090]](https://github.com/OData/odata.net/pull/2090) Entity tracker equality comparer
+
+[[#2097]](https://github.com/OData/odata.net/pull/2097) Add cancellation token to ExecuteAsync in DataServiceActionQuery and DataServiceActionQueryofT
+
+[[#2110]](https://github.com/OData/odata.net/pull/2110) ODataNotificationWriter and ODataNotificationStream wrapper classes should not dispose the passed TextWriter and Stream respectively
+
+[[#2131]](https://github.com/OData/odata.net/pull/2131) Fix issue with async reader for Parsing the Context Uri
+
+[[#2139]](https://github.com/OData/odata.net/pull/2139) Fix escape function binding type constraint
+
+[[#2145]](https://github.com/OData/odata.net/pull/2145) Allow filter in empty string
+
+[[#2155]](https://github.com/OData/odata.net/pull/2155) Fix AggregateException thrown by OData writers async API
+
+***Improvements***
+
+[[#2091]](https://github.com/OData/odata.net/pull/2091) Setup crank for performance tests
+
+[[#2093]](https://github.com/OData/odata.net/pull/2093) Consistently use CharArrayPool in JsonWriter to cut cost of initializing char arrays
+
+[[#2133]](https://github.com/OData/odata.net/pull/2133) Cache annotation full qualified name in FindDeclaredVocabularyAnnotations
+
+[[#2144]](https://github.com/OData/odata.net/pull/2144) Skip string allocation for keys of PropertyCache
+
+[[#2154]](https://github.com/OData/odata.net/pull/2154) Skip lambda allocation in FindTransientAnnotation
+
+[[#2156]](https://github.com/OData/odata.net/pull/2156) Fix string allocation performance issue for IsQualifiedName
+
+[[#2158]](https://github.com/OData/odata.net/pull/2158) Avoid delegate allocations calling InterceptException
+
 ## ODataLib 7.9.0 Release
 
 ***Features***
