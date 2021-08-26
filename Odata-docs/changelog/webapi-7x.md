@@ -9,6 +9,16 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.5.10
+
+### Improvements and Fixes:
+
+* [ [#2483](https://github.com/OData/WebApi/pull/2483) ] Support changing of updatable properties when handling delta updates
+
+* Fix an issue with Microsoft.OData.Core 7.9.0 dependency
+
+---
+
 ## WebAPI 7.5.9
 
 ### New Features:
