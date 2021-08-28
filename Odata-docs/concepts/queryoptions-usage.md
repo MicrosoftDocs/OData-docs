@@ -424,7 +424,7 @@ Response Payload
 
 The $search system query option restricts the result to include only those entities matching the specified search expression. The definition of what it means to match is dependent upon the implementation. The request below get all ***People*** who has 'Boise' in their contents.
 
-`serviceRoot/People?$search=Boise`
+`GET serviceRoot/People?$search=Boise`
 
 Response Payload
 
