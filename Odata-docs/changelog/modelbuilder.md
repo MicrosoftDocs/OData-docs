@@ -17,6 +17,22 @@ You can install or update the NuGet package for OData ModelBuilder using the [Pa
 PM> Install-Package Microsoft.OData.ModelBuilder
 ```
 
+## OData ModelBuilder 1.0.7
+
+* Update the OData.Lib dependency lib version to 7.9.0.
+
+* Excessive memory in `BuildDerivedTypesMapping` of `ODataConventionModelBuilder`
+
+* Implement convention model builder support for NonNullable Reference
+
+* Add more runtime configuration APIs for operation configuration
+
+* Enable model based query setting
+
+* Add revisions capability annotations
+
+---
+
 ## OData ModelBuilder 1.0.6
 
 * Update the OData.Lib dependency lib version to 7.7.3 and remove the explict `System.Text.Json` dependency.
