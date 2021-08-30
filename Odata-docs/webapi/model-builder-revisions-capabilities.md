@@ -12,7 +12,7 @@ ms.date: 7/22/2021
 
 The model builder now allows you to add [revisions annotations](https://github.com/oasis-tcs/odata-vocabularies/blob/main/vocabularies/Org.OData.Core.V1.xml#L77) to your model elements. Please [follow the link](https://github.com/oasis-tcs/odata-vocabularies/blob/main/vocabularies/Org.OData.Core.V1.md) for more information on [core capabilities vocabulary](https://github.com/oasis-tcs/odata-vocabularies/blob/main/vocabularies/Org.OData.Core.V1.md).
 
-It is available on the [Nuget gallery](https://www.nuget.org/packages/Microsoft.OData.ModelBuilder)
+It is available in the [Nuget gallery](https://www.nuget.org/packages/Microsoft.OData.ModelBuilder)
 
 You can install or update the NuGet package for OData Migration Extensions v1.0.0 using the [Package Manager Console](https://docs.nuget.org/docs/start-here/using-the-package-manager-console):
 
@@ -20,8 +20,6 @@ You can install or update the NuGet package for OData Migration Extensions v1.0.
 PM> Install-Package Microsoft.OData.ModelBuilder
 ```
 ## Examples
-
-Find below some sample usages...
 
 Unless otherwise specified, examples will be based on the model below.
 
@@ -72,7 +70,7 @@ enum RevisionKind
 ```
 
 
-To add revisions to an entity set for example. use the code below:
+To add revisions to an entity set for example, use the code below:
 
 ```csharp
 var builder = new ODataConventionModelBuilder();
