@@ -55,7 +55,7 @@ Revisions can be added to all model elements. So far, the OData Model Builder su
 1. Enum Members
 1. Properties
 
-There are three kinds of revisions that can be made to any of the model elements above: 
+There are three kinds of revisions that can be added to any of the model elements above: 
 
 ```csharp
 enum RevisionKind
@@ -73,6 +73,7 @@ enum RevisionKind
 
 
 To add revisions to an entity set for example. use the code below:
+
 ```csharp
 var builder = new ODataConventionModelBuilder();
 var customerConfiguration = builder.EntitySet<Customer>("Customers").HasRevisions(a => a.HasVersion("v1.2").HasKind(RevisionKind.Added).HasDescription("Added a new entity set"));
@@ -117,7 +118,8 @@ $metadata
 To add a revision, you must provide the following properties: 
 1. RevisionKind - the kind of revision you are making. Added, Modified or Deprecated.
 1. Description - a description describing the revision you are making.
-1. 
+1. Version - the version of the model the revision was made. 
+
 You can add also dynamic properties to provide more information for the model elements' revisions. Below is an example on how to add extra properties to a revision.  
 
 ```csharp
