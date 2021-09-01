@@ -24,6 +24,17 @@ You can install or update the NuGet package for ASP.NET Core OData using the [Pa
 
 ---
 
+## [8.0.2](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.2)
+
+ * DeltaOfT out of sync with WebAPI: missing UpdatableProperties
+ * Update model builder dependency to 1.0.7
+ * move the ReadUntypedAsString=false to setting
+ * Fix issue: filter binder does not use the timezone info from settings
+ * Fix bug in Filter Any within Expand
+ * Fix incorrect GetProperties method logic
+ * Change public virtual to protected virtual for ValidateCountNode
+ * Add support for $count segment in $filter
+ 
 ## [8.0.1](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.1)
 
  * Make methods as virtual in ODataSerializerProvider
