@@ -63,7 +63,7 @@ Let's create a new method in `Program` class called `ListPeople()` with the foll
 ```c#
 async Task ListPeople()
 {
-    var serviceRoot = "https://services.odata.org/V4/TripPinServiceRW/"
+    var serviceRoot = "https://services.odata.org/V4/TripPinServiceRW/";
     var context = new DefaultContainer(new Uri(serviceRoot));
 
     IEnumerable<Person> people = await context.People.ExecuteAsync();
