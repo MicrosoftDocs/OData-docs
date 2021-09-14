@@ -28,6 +28,26 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
+## ODataLib 7.9.2 Release
+
+***Features***
+
+N/A
+
+***Fixed Bugs***
+
+[[#2188]](https://github.com/OData/odata.net/pull/2188) Avoid creating unused objects when calling ODataUri.Clone()
+
+[[#2179]](https://github.com/OData/odata.net/pull/2179) Fix the issue when read nested resource untyped in the request
+
+[[#2178]](https://github.com/OData/odata.net/pull/2178) Clone reader settings when creating it
+
+[[#2130]](https://github.com/OData/odata.net/pull/2130) Fix NullReferenceException thrown during materialization of lower-camel-cased payload
+
+***Improvements***
+
+N/A
+
 ## ODataLib 7.9.1 Release
 
 ***Features***
