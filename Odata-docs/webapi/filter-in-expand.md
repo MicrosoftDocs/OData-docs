@@ -40,7 +40,7 @@ To Map route,
 config.MapODataServiceRoute("orest", "orest", model);
 ```
 
-- For Microsoft.AsnNetCore.OData, e.g., in `Startup.Configure((IApplicationBuilder app, IHostingEnvironment env)` method:
+- For Microsoft.AspNetCore.OData, e.g., in `Startup.Configure((IApplicationBuilder app, IHostingEnvironment env)` method:
 ```C#
 app.UseMvc(routeBuilder => 
     {
