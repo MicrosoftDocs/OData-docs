@@ -30,6 +30,9 @@ Most of our API improvements fall into the category of namespace simplifications
 
 ## ODataLib 7.9.2 Release
 
+**[Be NOTED]**
+To support gradual introduction of asynchronous cleanup of manage resources, a dependency on Microsoft.Bcl.Interfaces was added. If you update the OData core libraries packages in your project to 7.9.1 or higher, please add Microsoft.Bcl.Interfaces package as well.
+
 ***Features***
 
 N/A
@@ -49,6 +52,9 @@ N/A
 N/A
 
 ## ODataLib 7.9.1 Release
+
+**[Be NOTED]**
+To support gradual introduction of asynchronous cleanup of manage resources, a dependency on Microsoft.Bcl.Interfaces was added. If you update the OData core libraries packages in your project to 7.9.1 or higher, please add Microsoft.Bcl.Interfaces package as well.
 
 ***Features***
 
