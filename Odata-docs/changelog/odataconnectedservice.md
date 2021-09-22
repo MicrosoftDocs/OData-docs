@@ -11,6 +11,14 @@ ms.topic: article
 
 OData Connected Service extension is available on [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=marketplace.ODataConnectedService).
 
+## OData Connected Service 0.13.0
+
+### Improvements and Bug Fixes:
+* [ [#207](https://github.com/OData/ODataConnectedService/pull/207) ] Fix issue where the Connected Service added to a VB.NET project fails to emit the service metadata into the XML file as expected
+* [ [#214](https://github.com/OData/ODataConnectedService/pull/214) ] Add support for emitting property attributes (e.g. MaxLength, etc) when generating Connected Service proxy classes
+* [ [#216](https://github.com/OData/ODataConnectedService/pull/216) ] Allow users the option of persisting custom HTTP headers and proxy credentials to the Connected Service configuration file
+* [ [#217](https://github.com/OData/ODataConnectedService/pull/217) ] Add support for emitting obsolete attributes when generating Connected Service proxy classes
+
 ## OData Connected Service 0.12.1
 
 ### Improvements and Bug Fixes:
