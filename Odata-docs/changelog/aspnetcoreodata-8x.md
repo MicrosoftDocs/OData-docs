@@ -18,11 +18,24 @@ You can install or update the NuGet package for ASP.NET Core OData using the [Pa
 
     * [ASP.NET Core OData 8.0 Preview for .NET 5](https://devblogs.microsoft.com/odata/asp-net-odata-8-0-preview-for-net-5/)
     * [Routing in ASP.NET Core OData 8.0 Preview](https://devblogs.microsoft.com/odata/routing-in-asp-net-core-8-0-preview/)
+    * [API versioning extension with ASP.NET Core OData 8](https://devblogs.microsoft.com/odata/api-versioning-extension-with-asp-net-core-odata-8/)
+    * [Build formatter extensions in ASP.NET Core OData 8 and hooks in ODataConnectedService](https://devblogs.microsoft.com/odata/build-formatter-extensions-in-asp-net-core-odata-8-and-hooks-in-odataconnectedservice/)
 
 * Samples:
     * [ODataRoutingSample](https://github.com/OData/AspNetCoreOData/tree/master/sample/ODataRoutingSample)
 
 ---
+
+## [8.0.3](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.3)
+
+ * Enable auto expand navigation property on complex type property
+ * Enable nested resource case insensitive when reading
+ * Fix behaviour for Preflight requests on the ODataBatchMiddleware
+ * URedesign SelectExpandBinder to allow customizations
+ * Bump ODL dependency to 7.9.2
+ * Refactor ExpressionBinderBase
+ * Convert.ChangeType invalid cast from System.String to System.Guid
+ * Fixed issue DateTime Created with too Much Decimal Precision Causing SQL Query to Fail
 
 ## [8.0.2](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.2)
 
