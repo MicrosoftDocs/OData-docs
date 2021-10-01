@@ -9,6 +9,16 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.5.11
+
+### Improvements and Fixes:
+
+* [ [#2559](https://github.com/OData/WebApi/pull/2559) ] Fix attribute routing error when action parameters don't match route keys
+
+* [ [#2565](https://github.com/OData/WebApi/pull/2565) ] Consider the operation segment when determining the target structured type of an action or function
+
+* Fix a code signing issue affecting 7.5.10
+
 ## WebAPI 7.5.10
 
 ### Improvements and Fixes:
