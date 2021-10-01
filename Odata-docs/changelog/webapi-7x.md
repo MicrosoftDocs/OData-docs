@@ -17,7 +17,7 @@ ms.topic: article
 
 * [ [#2565](https://github.com/OData/WebApi/pull/2565) ] Consider the operation segment when determining the target structured type of an action or function
 
-* Fix a code signing issue affect 7.5.11
+* Fix a code signing issue affecting 7.5.10
 
 ## WebAPI 7.5.10
 
