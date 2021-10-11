@@ -9,6 +9,19 @@ ms.topic: article
 
 # OData WebApi changelog
 
+
+## WebAPI 7.5.12
+
+### Improvements and Fixes:
+
+* [ [#2339](https://github.com/OData/WebApi/pull/2339) ] Ensure that untyped values escaped in ODL are unescaped in OData WebApi during deserialization
+
+* [ [#2544](https://github.com/OData/WebApi/pull/2544) ] Fix to ignore Unmapped properties in Delta<T>
+
+* [ [#2575](https://github.com/OData/WebApi/pull/2575) ] Fixing Patching Complex type when using one derived type over another
+
+* [ [#2582](https://github.com/OData/WebApi/pull/2582) ] Enable Auto expand on complex type
+
 ## WebAPI 7.5.11
 
 ### Improvements and Fixes:
