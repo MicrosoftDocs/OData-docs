@@ -28,10 +28,41 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
+## ODataLib 7.9.3 Release
+
+**[Be NOTED]**
+To support gradual introduction of asynchronous cleanup of managed resources, a dependency on Microsoft.Bcl.Interfaces was added. If you update the OData core libraries packages in your project to 7.9.1 or higher, please add Microsoft.Bcl.Interfaces package as well.
+
+***Features***
+
+N/A
+
+***Fixed Bugs***
+
+[[#2130]](https://github.com/OData/odata.net/pull/2130) Fix NullReferenceException thrown during materialization of lower-camel-cased payload
+
+[[#2160]](https://github.com/OData/odata.net/pull/2160) Expand fully qualified type
+
+[[#2179]](https://github.com/OData/odata.net/pull/2179) Fix the issue when read nested resource untyped in the request
+
+***Improvements***
+
+[[#2178]](https://github.com/OData/odata.net/pull/2178) Clone reader settings when creating it
+
+[[#2188]](https://github.com/OData/odata.net/pull/2188) Avoid creating unused instances of ParamaterAliasValueAccessor
+
+[[#2193]](https://github.com/OData/odata.net/pull/2193) Remove delegate allocation in ODataWriterCore CheckForNestedResourceInfoWithContent method
+
+[[#2197]](https://github.com/OData/odata.net/pull/2197) Reduce memory allocations from closures and lambdas
+
+[[#2209]](https://github.com/OData/odata.net/pull/2209) Provide option for alternative form of delete link request Uri
+
+[[#2210]](https://github.com/OData/odata.net/pull/2210) Cache vocabulary annotations if model is immutable
+
 ## ODataLib 7.9.2 Release
 
 **[Be NOTED]**
-To support gradual introduction of asynchronous cleanup of manage resources, a dependency on Microsoft.Bcl.Interfaces was added. If you update the OData core libraries packages in your project to 7.9.1 or higher, please add Microsoft.Bcl.Interfaces package as well.
+To support gradual introduction of asynchronous cleanup of managed resources, a dependency on Microsoft.Bcl.Interfaces was added. If you update the OData core libraries packages in your project to 7.9.1 or higher, please add Microsoft.Bcl.Interfaces package as well.
 
 ***Features***
 
@@ -54,7 +85,7 @@ N/A
 ## ODataLib 7.9.1 Release
 
 **[Be NOTED]**
-To support gradual introduction of asynchronous cleanup of manage resources, a dependency on Microsoft.Bcl.Interfaces was added. If you update the OData core libraries packages in your project to 7.9.1 or higher, please add Microsoft.Bcl.Interfaces package as well.
+To support gradual introduction of asynchronous cleanup of managed resources, a dependency on Microsoft.Bcl.Interfaces was added. If you update the OData core libraries packages in your project to 7.9.1 or higher, please add Microsoft.Bcl.Interfaces package as well.
 
 ***Features***
 
