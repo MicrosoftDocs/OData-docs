@@ -28,6 +28,32 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
+## ODataLib 7.9.4 Release
+
+***Features***
+
+[[#2159]](https://github.com/OData/odata.net/pull/2159) Update namespaces to use aliases if aliases for the namespaces are set
+
+[[#2173]](https://github.com/OData/odata.net/pull/2173) EdmLib vocabulary annotation default values
+
+[[#2199]](https://github.com/OData/odata.net/pull/2199) Implement asynchronous support in ODataTextStreamReader class
+
+[[#2202]](https://github.com/OData/odata.net/pull/2202) Enable default value for vocabulary annotation
+
+[[#2212]](https://github.com/OData/odata.net/pull/2212) Implement asynchronous support in ODataBinaryStreamReader
+
+[[#2217]](https://github.com/OData/odata.net/pull/2217) Implement asynchronous support in JsonReader
+
+[[#2232]](https://github.com/OData/odata.net/pull/2232) Enable property case insensitive reading
+
+***Fixed Bugs***
+
+[[#2239]](https://github.com/OData/odata.net/pull/2239) Add direct reference to Microsoft.Bcl.AsyncInterfaces package to fix missing reference issue observed in dependent libraries
+
+***Improvements***
+
+[[#2223]](https://github.com/OData/odata.net/pull/2223) Performance fix for FindAcrossModels
+
 ## ODataLib 7.9.3 Release
 
 **[Be NOTED]**
