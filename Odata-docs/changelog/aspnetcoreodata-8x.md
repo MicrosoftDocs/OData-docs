@@ -26,6 +26,21 @@ You can install or update the NuGet package for ASP.NET Core OData using the [Pa
 
 ---
 
+## [8.0.4](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.4)
+
+**be noted**:
+ We are still working on refactoring ISelectExpandBinder and other query binders.
+ Be aware of any changes in the next release.
+
+ * Fix auto select and expand when baseentity type is null
+ * Prevent error from duplicating attribute
+ * Add possibility to bind params of custsom type
+ * Add IODataTypeMapper
+ * Bump ODL dependency to 7.9.4, and enable property name case-insensitive by default
+ * Fix Enum.TryParse exception when using in .NET 6
+ * Enable case-insensitive in query option by default
+ * Add AddODataQueryFilter extension methods
+ 
 ## [8.0.3](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.3)
 
  * Enable auto expand navigation property on complex type property
