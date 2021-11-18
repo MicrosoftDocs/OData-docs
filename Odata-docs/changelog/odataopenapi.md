@@ -17,7 +17,7 @@ You can install or update the NuGet package for ASP.NET Core OData using the [Pa
 
 ---
 
-## [1.0.7](https://www.nuget.org/packages/Microsoft.OpenApi.OData/1.0.8)
+## [1.0.8](https://www.nuget.org/packages/Microsoft.OpenApi.OData/1.0.8)
  
  * [[#104](https://github.com/microsoft/OpenAPI.NET.OData/pull/104)] Describes path operations description from vocabulary annotations
   
