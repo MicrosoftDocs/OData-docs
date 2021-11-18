@@ -17,6 +17,22 @@ You can install or update the NuGet package for ASP.NET Core OData using the [Pa
 
 ---
 
+## [1.0.9](https://www.nuget.org/packages/Microsoft.OpenApi.OData/1.0.9)
+ 
+ * [[#117](https://github.com/microsoft/OpenAPI.NET.OData/pull/117)] Resolves response schemas of actions/functions that return collection
+ 
+ * [[#115](https://github.com/microsoft/OpenAPI.NET.OData/pull/115)] Skips generation of action/function paths for non-contained nav. props
+
+ * [[#112](https://github.com/microsoft/OpenAPI.NET.OData/pull/112)] Creates DELETE operation for collection-valued nav. props $ref paths
+
+ * [[#110](https://github.com/microsoft/OpenAPI.NET.OData/pull/110)] Generate paths for stream properties in base types of entities
+
+ * [[#108](https://github.com/microsoft/OpenAPI.NET.OData/pull/108)] Set parameters' explode property to false
+ 
+ * [[#94](https://github.com/microsoft/OpenAPI.NET.OData/pull/94)] Expand containment navigation properties
+ 
+---
+
 ## [1.0.8](https://www.nuget.org/packages/Microsoft.OpenApi.OData/1.0.8)
  
  * [[#104](https://github.com/microsoft/OpenAPI.NET.OData/pull/104)] Describes path operations description from vocabulary annotations
