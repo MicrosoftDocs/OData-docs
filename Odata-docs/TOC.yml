@@ -444,5 +444,7 @@
       href: /odata/changelog/odataconnectedservice
     - name: OData OpenAPI changes
       href: /odata/changelog/odataopenapi
+    - name: OData lib (5.x) changes
+      href: /odata/changelog/odatalib-5x
 # - name: 10.2 Work around for SingleResult.Create an empty result
 #   href: posts\work-around-for-singleresult-create
