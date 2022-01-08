@@ -9,7 +9,7 @@ ms.topic: article
 
 # ASP.NET Core OData 8.x changelog
 
-ASP.NET Core OData 8.x is available on the [Nuget gallery](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.0-beta)
+ASP.NET Core OData 8.x is available on the [Nuget gallery](https://www.nuget.org/packages/Microsoft.AspNetCore.OData)
 
 You can install or update the NuGet package for ASP.NET Core OData using the [Package Manager Console](https://docs.nuget.org/docs/start-here/using-the-package-manager-console).
 
@@ -22,7 +22,24 @@ You can install or update the NuGet package for ASP.NET Core OData using the [Pa
     * [Build formatter extensions in ASP.NET Core OData 8 and hooks in ODataConnectedService](https://devblogs.microsoft.com/odata/build-formatter-extensions-in-asp-net-core-odata-8-and-hooks-in-odataconnectedservice/)
 
 * Samples:
-    * [ODataRoutingSample](https://github.com/OData/AspNetCoreOData/tree/master/sample/ODataRoutingSample)
+    * [ODataRoutingSample](https://github.com/OData/AspNetCoreOData/tree/main/sample/ODataRoutingSample)
+
+---
+
+## [8.0.5](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.5)
+
+**be noted**:
+ * Query option binder refactor.
+ * Enable $compute query option.
+ * Enable $search query option, developer needs to implement the ISearchBinder.
+ * Migrate OData/WebApi#2512 to AspNetCoreOData.
+ * Trim forward slashes from route prefix.
+ * Fixed overwriting of the ODataUriResolver, received upstream from DI (e.g. AlternateKeysODataUriResolver).
+ * Add TryGetNestedPropertyValue in DeltaOfT
+ * Update the model builder dependency to 1.0.8
+ * Move the timezone setting for ODataQuerySetting to EnableQuery executing
+ * Add EnablePropertyNameCaseInsensitive for Conventional routing
+ * Bump to ODL 7.9.4, Enable property name case-insensitive
 
 ---
 
