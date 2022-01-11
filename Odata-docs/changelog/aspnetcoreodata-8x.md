@@ -26,9 +26,15 @@ You can install or update the NuGet package for ASP.NET Core OData using the [Pa
 
 ---
 
+## [8.0.6](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.6)
+
+* Make TryGetNestedPropertyValue internal
+* Fix 'none OData' -> 'non-OData' typo
+
+---
+
 ## [8.0.5](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.5)
 
-**be noted**:
  * Query option binder refactor.
  * Enable $compute query option.
  * Enable $search query option, developer needs to implement the ISearchBinder.
@@ -36,6 +42,8 @@ You can install or update the NuGet package for ASP.NET Core OData using the [Pa
  * Trim forward slashes from route prefix.
  * Fixed overwriting of the ODataUriResolver, received upstream from DI (e.g. AlternateKeysODataUriResolver).
  * Add TryGetNestedPropertyValue in DeltaOfT
+     Be noted: TryGetNestedPropertyValue has been added accidentally as public, it will be internal in the next version.
+               Please use TryGetPropertyValue except TryGetNestedPropertyValue.
  * Update the model builder dependency to 1.0.8
  * Move the timezone setting for ODataQuerySetting to EnableQuery executing
  * Add EnablePropertyNameCaseInsensitive for Conventional routing
