@@ -28,6 +28,48 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
+## ODataLib 7.10.0 Release
+
+***Features***
+
+[[#2248]](https://github.com/OData/odata.net/pull/2248) Implement asynchronous support in JsonReaderExtensions
+
+[[#2255]](https://github.com/OData/odata.net/pull/2255) Implement asynchronous support in ODataJsonReaderCoreUtils
+
+[[#2264]](https://github.com/OData/odata.net/pull/2264) Implement asynchronous support in BufferingJsonReader
+
+***Fixed Bugs***
+
+[[#2231]](https://github.com/OData/odata.net/pull/2231) Remove single quotes from the type in a cast function
+
+[[#2250]](https://github.com/OData/odata.net/pull/2250) Support writing nested delta resource sets with non-delta writer
+
+[[#2257]](https://github.com/OData/odata.net/pull/2257) FunctionCallBinder promotes arguments without checking return type
+
+[[#2216]](https://github.com/OData/odata.net/pull/2216) Relative URIs for @oData.context are not supported
+
+[[#2277]](https://github.com/OData/odata.net/pull/2277) Should use for @type for serializing record in CSDL JSON
+
+[[#2275]](https://github.com/OData/odata.net/pull/2275) Names starting with underscore must be allowed
+
+[[#2191]](https://github.com/OData/odata.net/pull/2191) Compute navigation path should return null if navigation source kind is none in context uri info
+
+[[#2279]](https://github.com/OData/odata.net/pull/2279) Default to using entityType for incomplete serializationInfo
+
+***Improvements***
+
+[[#2247]](https://github.com/OData/odata.net/pull/2247) Fix memory leak
+
+[[#2204]](https://github.com/OData/odata.net/pull/2204) Perf: Optimize collections and enumerators
+
+[[#2256]](https://github.com/OData/odata.net/pull/2256) Refactor alternate key resolver to avoid relying on exceptions
+
+[[#2215]](https://github.com/OData/odata.net/pull/2215) Performance improvements
+
+[[#2288]](https://github.com/OData/odata.net/pull/2288) Cache Parent Scope
+
+[[7dcad7]](https://github.com/OData/odata.net/commit/7dcad74478debcfe54e93c63f47b7cb57f2d2e67) Add publicapi analyzer, clean up the warnings
+
 ## ODataLib 7.9.4 Release
 
 ***Features***
