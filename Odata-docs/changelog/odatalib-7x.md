@@ -40,31 +40,31 @@ Most of our API improvements fall into the category of namespace simplifications
 
 ***Fixed Bugs***
 
+[[#2191]](https://github.com/OData/odata.net/pull/2191) Compute navigation path should return null if navigation source kind is none in context uri info
+
+[[#2216]](https://github.com/OData/odata.net/pull/2216) Relative URIs for @oData.context are not supported
+
 [[#2231]](https://github.com/OData/odata.net/pull/2231) Remove single quotes from the type in a cast function
 
 [[#2250]](https://github.com/OData/odata.net/pull/2250) Support writing nested delta resource sets with non-delta writer
 
 [[#2257]](https://github.com/OData/odata.net/pull/2257) FunctionCallBinder promotes arguments without checking return type
 
-[[#2216]](https://github.com/OData/odata.net/pull/2216) Relative URIs for @oData.context are not supported
-
-[[#2277]](https://github.com/OData/odata.net/pull/2277) Should use for @type for serializing record in CSDL JSON
-
 [[#2275]](https://github.com/OData/odata.net/pull/2275) Names starting with underscore must be allowed
 
-[[#2191]](https://github.com/OData/odata.net/pull/2191) Compute navigation path should return null if navigation source kind is none in context uri info
+[[#2277]](https://github.com/OData/odata.net/pull/2277) Should use for @type for serializing record in CSDL JSON
 
 [[#2279]](https://github.com/OData/odata.net/pull/2279) Default to using entityType for incomplete serializationInfo
 
 ***Improvements***
 
-[[#2247]](https://github.com/OData/odata.net/pull/2247) Fix memory leak
-
 [[#2204]](https://github.com/OData/odata.net/pull/2204) Perf: Optimize collections and enumerators
 
-[[#2256]](https://github.com/OData/odata.net/pull/2256) Refactor alternate key resolver to avoid relying on exceptions
-
 [[#2215]](https://github.com/OData/odata.net/pull/2215) Performance improvements
+
+[[#2247]](https://github.com/OData/odata.net/pull/2247) Fix memory leak
+
+[[#2256]](https://github.com/OData/odata.net/pull/2256) Refactor alternate key resolver to avoid relying on exceptions
 
 [[#2288]](https://github.com/OData/odata.net/pull/2288) Cache Parent Scope
 
