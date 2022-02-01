@@ -26,6 +26,17 @@ You can install or update the NuGet package for ASP.NET Core OData using the [Pa
 
 ---
 
+## [8.0.7](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.7)
+
+* Support DateOnly and TimeOnly for .NET 6
+* Simpilify Nullable and non nullable type mapping registration
+* Unmapped properties in Delta
+* Change query validation to throw ODataException
+* Create type annotation only has the type name
+* No dollar sign query option setting to resolver
+
+---
+
 ## [8.0.6](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.6)
 
 * Make TryGetNestedPropertyValue internal
