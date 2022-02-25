@@ -10,6 +10,19 @@ ms.topic: article
 # OData WebApi changelog
 
 
+## WebAPI 7.5.13
+
+### Improvements and Fixes:
+
+* [ [#2601](https://github.com/OData/WebApi/pull/2601) ] Update Patch to Return TStructuralType and Handle Patch for Derived Complex type
+
+* [ [#2621](https://github.com/OData/WebApi/pull/2621) ] Update ODL version to Latest 7.10 in WebAPi projects
+
+* [ [#2622](https://github.com/OData/WebApi/pull/2622) ] Create type annotation only with type name
+
+* [ [#2626](https://github.com/OData/WebApi/pull/2626) ] Support $id references across entire batch
+
+
 ## WebAPI 7.5.12
 
 ### Improvements and Fixes:
