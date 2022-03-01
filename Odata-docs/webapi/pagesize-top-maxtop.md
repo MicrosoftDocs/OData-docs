@@ -1,6 +1,9 @@
 ---
 title: "PageSize, Top and MaxTop"
-description: ""
+description: "This tutorial describes how to configure PageSize, Top and MaxTop."
+
+author: KenitoInc
+ms.author: kemunga
 
 ms.date: 3/1/2022
 ---
