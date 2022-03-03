@@ -26,16 +26,17 @@ The `MaxTop()` sets the maximum value that can be set for the `$top` query param
 In `Microsoft.AspNetCore.OData v7.x`, we configure `MaxTop()` as follows:
 
 ```csharp
-app.UseEndpoints(endpoints =>
+app.UseMvc(routeBuilder =>
 {
-                endpoints.Count().Expand().Select().OrderBy().Filter().MaxTop(100);
-                MapVersionedODataRoutes<TModelConfiguration>(...);
+    routeBuilder.Select().Expand().Filter().OrderBy().MaxTop(100).Count();
+
+    routeBuilder.MapODataServiceRoute("ODataRoute", "odata", builder.GetEdmModel());
 });
 ```
 
-`MaxTop()` only impacts the scenarios in which the request Uri contains $top. If the `$top` value exceeds the `MaxTop` value, you will get an error message.
+`MaxTop()` only impacts the scenarios in which the request Uri contains `$top`. If the `$top` value exceeds the `MaxTop` value, you will get an error message.
 
-For example, is we set MaxTop value as 20 and then pass $top query parameter value as 100, you will get an error message as shown below:
+For example, if we set `MaxTop` value to 20 and then pass `$top` query parameter value as 100, you will get the error message as shown below:
 
 ```json
 {
@@ -46,15 +47,15 @@ For example, is we set MaxTop value as 20 and then pass $top query parameter val
 ```
 
 ### Server driven pagination
-In Server-driven paging, the server returns the first page of results. If total number of results is greater than the page size, the server returns the first page along with a nextlink that can be used to fetch the next page of results.
+In Server-driven paging, the server returns the first page of results. If total number of results is greater than the page size, the server returns the first page along with a `nextlink` that can be used to fetch the next page of results.
 
-We set in the `PageSize` in a controller method as follows:
+We set the `PageSize` for a controller method as follows:
 
 ```csharp
-[EnableQuery(PageSize =5)]
+[EnableQuery(PageSize=5)]
 public IQueryable<Book> Get()
 {
-    return _db.Books.AsQueryable<Book>();
+    return _db.Books;
 }
 ```
 
