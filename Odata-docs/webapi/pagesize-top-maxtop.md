@@ -10,9 +10,9 @@ ms.date: 3/1/2022
 # PageSize, Top and MaxTop
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
-In OData WebApi we support both client driven and client side paginations.
+In OData WebApi we support both client-driven and server-driven paginations.
 
-### Client driven pagination
+### Client-driven pagination
 In client-driven paging, we request the server to return the specified number of results. There is no `nextLink` that is returned.
 
 The OData WebApi deals with client-driven paging using `$skip` and `$top` query options.
@@ -46,13 +46,13 @@ For example, if we set `MaxTop` value to 20 and then pass `$top` query parameter
 }
 ```
 
-### Server driven pagination
-In Server-driven paging, the server returns the first page of results. If total number of results is greater than the page size, the server returns the first page along with a `nextlink` that can be used to fetch the next page of results.
+### Server-driven pagination
+In server-driven paging, the server returns the first page of results. If total number of results is greater than the page size, the server returns the first page along with a `nextlink` that can be used to fetch the next page of results.
 
 We set the `PageSize` for a controller method as follows:
 
 ```csharp
-[EnableQuery(PageSize=5)]
+[EnableQuery(PageSize=2)]
 public IQueryable<Book> Get()
 {
     return _db.Books;
