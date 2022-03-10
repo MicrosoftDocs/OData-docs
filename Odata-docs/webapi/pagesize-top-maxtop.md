@@ -36,12 +36,12 @@ app.UseMvc(routeBuilder =>
 
 `MaxTop()` only impacts the scenarios in which the request Uri contains `$top`. If the `$top` value exceeds the `MaxTop` value, you will get an error message.
 
-For example, if we set `MaxTop` value to 20 and then pass `$top` query parameter value as 100, you will get the error message as shown below:
+For example, if we set `MaxTop` value to 100 and then pass `$top` query parameter value as 150, you will get the error message as shown below:
 
 ```json
 {
   "error":{
-    "code":"","message":"The query specified in the URI is not valid. The limit of '20' for Top query has been exceeded. The value from the incoming request is '100'."
+    "code":"","message":"The query specified in the URI is not valid. The limit of '100' for Top query has been exceeded. The value from the incoming request is '150'."
   }
 }
 ```
