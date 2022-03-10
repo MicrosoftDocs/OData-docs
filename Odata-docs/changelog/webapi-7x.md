@@ -10,7 +10,7 @@ ms.topic: article
 # OData WebApi changelog
 
 
-## WebAPI 7.5.13
+## WebAPI 7.5.14
 
 ### Improvements and Fixes:
 
