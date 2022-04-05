@@ -159,7 +159,7 @@
           - name: Query options in request body
             href: /odata/webapi/query-options-in-request-body
           - name: Automatic support for nested paths with [EnableNestedPaths]
-            href: /odata/webapi/automatic-support-for-nested-paths-with-enable-nested-paths
+            href: /odata/webapi/automatic-nested-paths-with-enable-nested-paths
           - name: PageSize, Top and MaxTop
             href: /odata/webapi/pagesize-top-maxtop
       - name: Extending WebAPI
