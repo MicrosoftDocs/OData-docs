@@ -30,7 +30,7 @@ Service owner that also wants to configure the client factory needs to additiona
 
 ### Generated Client Proxy
 
-OData client factory assume the client proxy is used to do communication, see [Client code gen tool](/odata/client/v7/code-generation-tool) for details on how to generate client proxy file for an OData Service.
+OData client factory assume the client proxy is used to do communication, see [Client code gen tool](/odata/client/code-generation-tool) for details on how to generate client proxy file for an OData Service.
 
 ## Basic Usage
 
@@ -40,7 +40,7 @@ The IODataClientFactory can be registered by calling the AddODataClient extensio
 services.AddODataClient();
 ```
 
-Once registered, code can accept an IODataClientFactory anywhere services can be injected with dependency injection (DI). The IODataClientFactory can be used to create a generated client proxy instance, then follow [Basic CRUD Operations](/odata/client/v7/basic-crud-operations) to use client proxy in business logic:
+Once registered, code can accept an IODataClientFactory anywhere services can be injected with dependency injection (DI). The IODataClientFactory can be used to create a generated client proxy instance, then follow [Basic CRUD Operations](/odata/client/basic-crud-operations) to use client proxy in business logic:
 
 ``` csharp
 public class PeopleController : ODataController
