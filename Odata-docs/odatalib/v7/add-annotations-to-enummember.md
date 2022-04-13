@@ -1,7 +1,7 @@
 ---
 title: "Add vocabulary annotations to EdmEnumMember in odatalib v7"
-description: ""
-author: saumadan
+description: "Describes support to add vocabulary annotations to EdmEnumMember."
+author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article

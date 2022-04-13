@@ -1,7 +1,7 @@
 ---
 title: "Define spatial properties in odatalib"
 description: "Define spatial properties in entity data models"
-author: saumadan
+author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article

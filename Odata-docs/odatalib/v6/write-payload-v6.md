@@ -1,8 +1,7 @@
 ---
 title: " Write OData Payload"
 description: "Write OData payload using OData Core APIs"
-
-author: saumadan
+author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article

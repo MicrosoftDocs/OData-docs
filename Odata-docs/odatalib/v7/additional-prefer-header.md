@@ -1,7 +1,7 @@
 ---
 title: "Add additional prefer header webapi v7"
-description: ""
-author: saumadan
+description: "Describes creating request message with preferred header."
+author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article
