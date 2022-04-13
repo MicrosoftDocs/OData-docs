@@ -1,6 +1,6 @@
 ---
 title: "Create spatial instances in odatalib"
-description: "Create spatial instances"
+description: Describes how to create spatial instances using Spatial APIs.
 author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019

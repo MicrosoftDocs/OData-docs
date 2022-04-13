@@ -1,6 +1,6 @@
 ---
 title: " Define singleton"
-description: "Define singleton using EdmLib APIs"
+description: Describes process of defining a singleton in the entity container.
 author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019

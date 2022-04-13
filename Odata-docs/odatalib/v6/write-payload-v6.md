@@ -1,6 +1,6 @@
 ---
 title: " Write OData Payload"
-description: "Write OData payload using OData Core APIs"
+description: Outlines each kind of payload and describes the necessary code that is common to all kinds of payload.
 author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019
