@@ -1,6 +1,6 @@
 ---
 title : "OData WebApi v7.5 for .NET FX"
-Description: Describes the v7.5 iteration of the WebApi application.
+description: Describes the v7.5 iteration of the WebApi application.
 ms.date: 9/18/2020
 author: gathogojr
 ms.author: jogathog
