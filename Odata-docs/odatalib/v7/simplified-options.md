@@ -1,8 +1,8 @@
 ---
 title: "Centralized control for OData Simplified Options"
-description: ""
+description: "From ODataV7.0, we add a centralized control class for them, which is ODataSimplifiedOptions."
 author: madansr7
-ms.author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article
  

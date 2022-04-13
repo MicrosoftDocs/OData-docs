@@ -1,8 +1,9 @@
 ---
 title: "Optional Parameters"
-description: ""
+description: "Optional parameters may be omitted when invoking a custom function. 
+Function resolution will first attempt to find an overload that exactly matches the specified function."
 author: madansr7
-ms.author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article
  

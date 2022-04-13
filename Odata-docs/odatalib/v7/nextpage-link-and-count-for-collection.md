@@ -1,8 +1,8 @@
 ---
 title: "Write NextPageLink/Count for collection - odatalib"
-description: ""
+description: "From ODataLib 6.13.0, it supports to write the NextPageLink/Count instance annotation in top-level collection payload."
 author: madansr7
-ms.author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article
  

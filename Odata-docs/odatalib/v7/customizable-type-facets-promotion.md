@@ -1,8 +1,8 @@
 ---
 title: "Customizable type facets promotion in URI parsing in odatalib"
-description: ""
+description: "Class ODataUri has two properties Filter and OrderBy that are tree data structures representing part of the URI parsing result. When an operation is applied to types with different facets, they will first be converted to a common type with identical facets."
 author: madansr7
-ms.author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article
  

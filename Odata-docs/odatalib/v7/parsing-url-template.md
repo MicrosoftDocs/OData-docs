@@ -1,8 +1,8 @@
 ---
 title: "Parsing uri path template"
-description: ""
+description: "OData uri parser can parse uri path template. A path template is any identifier string enclosed with curly braces."
 author: madansr7
-ms.author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article
  
