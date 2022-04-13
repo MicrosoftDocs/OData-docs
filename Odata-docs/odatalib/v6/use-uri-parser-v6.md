@@ -2,8 +2,8 @@
 title: "Use ODataUriParser in odatalib v6"
 description: "Parse OData uri using OData Core APIs"
 
-author: madansr7
-ms.author: madansr7
+author: saumadan
+ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article
  
@@ -15,8 +15,8 @@ This post is intended to guide you through the UriParser for OData V4, which is 
 
 You may have already read the following posts about OData UriParser in ODataLib V5.x:
 
-- [Parsing $filter and $orderby using the ODataUriParser](https://docs.microsoft.com/archive/blogs/alexj/parsing-filter-and-orderby-using-the-odatauriparser)
-- [Parsing OData Paths, $select and $expand using the ODataUriParser](https://docs.microsoft.com/archive/blogs/alexj/parsing-odata-paths-select-and-expand-using-the-odatauriparser)
+- [Parsing $filter and $orderby using the ODataUriParser](/archive/blogs/alexj/parsing-filter-and-orderby-using-the-odatauriparser)
+- [Parsing OData Paths, $select and $expand using the ODataUriParser](/archive/blogs/alexj/parsing-odata-paths-select-and-expand-using-the-odatauriparser)
 Some parts of the articles still apply to V4 UriParser, such as introduction for ODataPath and QueryNode hierarchy. In this post, we will deal with API changes and features newly introduced.
 
 ## UriParser Overview

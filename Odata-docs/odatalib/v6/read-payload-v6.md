@@ -2,8 +2,8 @@
 title: " Read OData Payload"
 description: "Read OData payload using OData Core APIs"
 
-author: madansr7
-ms.author: madansr7
+author: saumadan
+ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article
  
