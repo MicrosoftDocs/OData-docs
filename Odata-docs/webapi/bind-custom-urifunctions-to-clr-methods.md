@@ -1,6 +1,6 @@
 ---
 title : "4.25 Bind Custom UriFunctions to CLR Methods"
-
+author: madansr7
 ms.date: 7/1/2019
 ---
 # Bind Custom UriFunctions to CLR Methods

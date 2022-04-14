@@ -2,6 +2,7 @@
 title : "4.4 Edm.Date and Edm.TimeOfDay"
 
 ms.date: 7/1/2019
+author: madansr7
 ---
 # Edm.Date and Edm.TimeOfDay
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

@@ -1,6 +1,6 @@
 ---
 title : "4.14 Capabilities vocabulary support"
-
+author: madansr7
 ms.date: 7/1/2019
 ---
 # Capabilities vocabulary support
