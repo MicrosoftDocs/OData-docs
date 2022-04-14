@@ -1,7 +1,7 @@
 ---
 title: "Alternate keys in webapi v7"
 ms.date: 7/1/2019
-author: madansr7
+author: xuzhg
 ---
 # Alternate key in WebApi
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
