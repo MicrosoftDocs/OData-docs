@@ -1,7 +1,6 @@
 ---
 title: "Prefer odata.continue-on-error"
-description: ""
-
+description: Learn how to enable the OData continue-on-error method.
 ms.date: 7/1/2019
 author: madansr7
 ---

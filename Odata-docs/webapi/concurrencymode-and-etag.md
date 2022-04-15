@@ -1,8 +1,6 @@
 ---
 title: " ConcurrencyMode and ETag"
-description: ""
-
-
+description: Learn how to use any primitive EDM type with OData concurrency Mode and ETag.
 ms.date: 7/1/2019
 author: madansr7
 ---

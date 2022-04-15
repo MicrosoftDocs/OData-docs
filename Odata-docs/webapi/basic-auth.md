@@ -1,5 +1,6 @@
 ---
 title : "5.1 Basic authentication over HTTPS"
+description: Learn how OData APIs work with authentication and authorization with examples from the ASP.NET web API.
 author: madansr7
 ms.date: 7/1/2019
 ---

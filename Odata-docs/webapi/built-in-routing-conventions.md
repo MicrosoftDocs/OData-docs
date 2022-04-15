@@ -1,6 +1,6 @@
 ---
 title: " Built-in routing conventions"
-description: "Routing Conventions"
+description: Learn how OData routing conventions replace default web API routing.
 author: madansr7
 ms.date: 7/1/2019
 ---

@@ -1,7 +1,6 @@
 ---
 title: " Convention model builder"
-description: "convention model builder"
-
+description: Learn how to use the OData convention model builder method.
 ms.date: 7/1/2019
 author: madansr7
 ---

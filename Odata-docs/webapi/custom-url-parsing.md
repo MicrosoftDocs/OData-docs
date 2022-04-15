@@ -1,7 +1,6 @@
 ---
 title : "6.1 Custom URL parsing"
-
-
+description: Learn how to configure and use the OData custom URL parsing methods.
 ms.date: 7/1/2019
 author: madansr7
 ---
