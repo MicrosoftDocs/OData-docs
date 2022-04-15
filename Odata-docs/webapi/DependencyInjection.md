@@ -1,7 +1,6 @@
 ---
 title : "13.4 Dependency Injection Support"
 description: "Dependency injection support"
-
 ms.date: 7/1/2019
 author: madansr7
 ---

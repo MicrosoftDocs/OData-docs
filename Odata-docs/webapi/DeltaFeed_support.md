@@ -1,7 +1,6 @@
 ---
 title : "4.13 Delta Feed Support"
 description: Describes how to create a serialized Delta Feed.
-
 ms.date: 7/1/2019
 author: madansr7
 ---
