@@ -1,8 +1,8 @@
 ---
 title: "AutoExpand attribute"
-description: ""
-
+description: Describes how to use the autoexpand attribute with the navigation property.
 ms.date: 7/1/2019
+author: madansr7
 ---
 # AutoExpand attribute
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

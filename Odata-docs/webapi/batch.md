@@ -1,6 +1,8 @@
 ---
 title : "Batch Support"
+description: Learn how to use batch requests to optimize and improve scalability.
 ms.date: 7/1/2019
+author: madansr7
 ---
 # Batch Support
 
