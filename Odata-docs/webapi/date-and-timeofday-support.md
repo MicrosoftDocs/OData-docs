@@ -1,6 +1,6 @@
 ---
 title : "4.4 Edm.Date and Edm.TimeOfDay"
-
+descrition: Learn how to use edm.date and edm.TimeOfDay supported in Web API OData.
 ms.date: 7/1/2019
 author: madansr7
 ---

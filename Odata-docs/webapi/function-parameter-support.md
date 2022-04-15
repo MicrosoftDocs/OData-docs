@@ -1,6 +1,6 @@
 ---
 title : "4.6 Function parameter support"
-
+descroption: Learn how to build and use Web API OData function parameters.
 ms.date: 7/1/2019
 author: madansr7
 ---

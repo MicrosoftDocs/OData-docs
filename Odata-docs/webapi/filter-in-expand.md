@@ -1,8 +1,6 @@
 ---
-
 title: " Nested $filter in $expand"
-description: ""
-
+description: Learn how to use $filter in $expand in the Web OData API.
 ms.date: 7/1/2019
 author: madansr7
 ---
