@@ -1,5 +1,6 @@
 ---
 title : "Abstract entity types"
+description: Provides examples of abstract entity types.
 ms.date: 7/1/2019
 author: madansr7
 ---

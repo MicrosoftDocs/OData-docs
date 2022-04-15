@@ -1,5 +1,6 @@
 ---
 title: "Alternate keys in webapi v7"
+description: Describes support, enabling and building alternate keys.
 ms.date: 7/1/2019
 author: xuzhg
 ---

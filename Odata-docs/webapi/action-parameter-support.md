@@ -1,5 +1,6 @@
 ---
 title : "4.7 Action parameter support"
+description: Describes how to build and use selected types as action parameters.
 ms.date: 7/1/2019
 author: madansr7
 ---

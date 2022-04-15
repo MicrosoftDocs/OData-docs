@@ -1,6 +1,6 @@
 ---
 title: "AutoExpand attribute"
-description: ""
+description: Describes how to use the autoexpand attribute with the navigation property.
 
 ms.date: 7/1/2019
 author: madansr7

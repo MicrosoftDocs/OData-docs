@@ -1,6 +1,6 @@
 ---
 title: "Add NextPageLink and $count for collection property"
-description: ""
+description: Learn how to enable NextPageLink and $ccount.
 author: madansr7
 ms.date: 7/1/2019
 ---
