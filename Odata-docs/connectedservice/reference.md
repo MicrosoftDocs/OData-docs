@@ -3,7 +3,7 @@ title: "Settings Reference"
 description: ""
 
 author: habbes
-ms.author: habbes
+ms.author: clhabins
 ms.date: 7/17/2020
 ms.topic: article
  
@@ -38,7 +38,7 @@ Setting/Control     | Description                 | Remarks
 --------------------|-----------------------------|--------------------------
 **Enter filename without extension** | The name of main the file where the generate code will be stored. The file will get a `.cs`, `.vb`, `.tt` extension depending on whether you're generating C# code, VB code, or T4 templates respectively. | **Required**. Disabled when updating the connected service.
 **Use a custom namespace** | Whether to override the namespace in the metadata document with a custom namespace. If this option is enabled, enter the custom namespace in the text field.
-**Enable entity and property tracking** | [Entity and property tracking](https://docs.microsoft.com/en-us/odata/client/tracking) allows the `DataServiceContext` to keep track of changes made to entities on the client side. This option generates events that are triggered when properties of the entities change.
+**Enable entity and property tracking** | [Entity and property tracking](/en-us/odata/client/tracking) allows the `DataServiceContext` to keep track of changes made to entities on the client side. This option generates events that are triggered when properties of the entities change.
 **Use c# casing** | Convert names in the model to `PascalCase` (e.g. `alertType` will be renamed to `AlertType`)
 **Make generated types internal** | If enabled, the generated types will have an `internal` modifier (`Friend` in VB). This is useful if you're generating client code as part of a class library and you don't want to expose the generated type outside the library.
 **Add code templates** | Instead of generating C#/VB code, this option generates T4 templates that can be used to generate the final code. | Disabled when updating the conneced service.

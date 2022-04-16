@@ -2,7 +2,7 @@
 title: "ODataLib 5.x changelog"
 description: "ODataLib 5.x"
 author: xuzhg
-ms.author: xuzhg
+ms.author: saxu
 ms.date: 1/3/2022
 ms.topic: article
 ---

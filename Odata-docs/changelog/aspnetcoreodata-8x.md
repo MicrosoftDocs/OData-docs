@@ -1,7 +1,7 @@
 ---
 title: "OData ASP.NET Core OData changelog"
 description: "OData WebApi 7.x changelog"
-author: Sam Xu
+author: xuzhg
 ms.author: saxu
 ms.date: 2/5/2021
 ms.topic: article
