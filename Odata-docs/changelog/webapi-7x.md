@@ -1,6 +1,6 @@
 ---
 title: "OData WebApi changelog"
-description: "OData WebApi 7.x changelog"
+description: OData WebApi 7.x changelog Improvements and Fixes
 author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019

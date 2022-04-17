@@ -1,7 +1,6 @@
 ---
 title: "Choosing what to generate"
-description: ""
-
+description: OData Connected Service allows you to select which types and methods to include in the generated code.
 author: habbes
 ms.author: clhabins
 ms.date: 7/16/2020

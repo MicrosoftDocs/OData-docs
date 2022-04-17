@@ -1,7 +1,6 @@
 ---
 title: "Settings Reference"
-description: ""
-
+description: This is a comprehensive reference of the configuration options available on OData Connected Service.
 author: habbes
 ms.author: clhabins
 ms.date: 7/17/2020

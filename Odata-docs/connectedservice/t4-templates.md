@@ -1,7 +1,6 @@
 ---
 title: "Working with T4 templates"
-description: ""
-
+description: OData Connected Service can generate T4 templates instead of the final code.
 author: habbes
 ms.author: clhabins
 ms.date: 7/14/2020
@@ -12,9 +11,9 @@ ms.topic: article
 
 **Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v7.md)]
 
-OData Connected Service can generate [T4 templates](/en-us/visualstudio/modeling/code-generation-and-t4-text-templates?view=vs-2019) instead of the final code. The T4 templates can be used to generate the final C# or VB code. This comes in handy if you want to run the code generation process in a command-line environment, a continuous integration server or any other environment where the OData Connected Service extension is not installed.
+OData Connected Service can generate [T4 templates](/en-us/visualstudio/modeling/code-generation-and-t4-text-templates?view=vs-2019&preserve-view=true) instead of the final code. The T4 templates can be used to generate the final C# or VB code. This comes in handy if you want to run the code generation process in a command-line environment, a continuous integration server or any other environment where the OData Connected Service extension is not installed.
 
-**Note**: [The TextTransform utility](/en-us/visualstudio/modeling/generating-files-with-the-texttransform-utility?view=vs-2019) can be used to generate code on a command-line environment.
+**Note**: [The TextTransform utility](/en-us/visualstudio/modeling/generating-files-with-the-texttransform-utility?view=vs-2019&preserve-view=true) can be used to generate code on a command-line environment.
 
 To generate T4 templates, go to the **Settings** page of the wizard, then toggle **Advance Settings** then select **Add code templates (Whether to include T4 files into this project)**.
 

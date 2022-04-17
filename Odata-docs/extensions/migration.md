@@ -1,7 +1,6 @@
 ﻿---
 title: "OData Migration extension usage and architecture"
-description: ""
-
+description: The OData Migration library provides ASP.NET Core 2.2+ OData V4 services with the capability of handling and responding to OData V3 requests.
 author: aayc
 ms.author: aaronchan
 ms.date: 01/03/2020

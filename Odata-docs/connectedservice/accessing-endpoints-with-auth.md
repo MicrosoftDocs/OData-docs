@@ -1,7 +1,6 @@
 ---
-title: "Accessing endpoints that require authentication"
-description: ""
-
+title: "Accessing Endpoints that Require Authentication"
+description: OData Connected Services makes a web request to the target OData service in order to fetch the metadata document containing the model schema.
 author: habbes
 ms.author: clhabins
 ms.date: 7/16/2020
