@@ -1474,7 +1474,7 @@ This page will describes the Public API changes for "Merge entity and complex". 
 
 Following is difference of public APIs between ODataLib 7.0 and ODataLib 6.15.
 
-||ODataLib 6.15|ODataLib 7.0|
+|Enumeration|ODataLib 6.15|ODataLib 7.0|
 |---|---|---|
 ||ODataEntry|ODataResource|
 ||ODataComplexValue|ODataResource|
@@ -1486,7 +1486,7 @@ Following is difference of public APIs between ODataLib 7.0 and ODataLib 6.15.
 ||Feed|ResourceSet|
 ||||
 |ODataReaderState|EntryStart|ResourceStart|
-||EntryEnd|ResourceEnd
+||EntryEnd|ResourceEnd|
 ||FeedStart|ResourceSetStart|
 ||FeedEnd|ResourceSetEnd|
 ||NavigationLinkStart|NestedResourceInfoStart|
