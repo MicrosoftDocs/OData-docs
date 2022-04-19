@@ -1,6 +1,6 @@
 ---
 title : "10.2 Work around for SingleResult.Create an empty result"
-
+author: madansr7
 ms.date: 7/1/2019
 ---
 # Work around for SingleResult.Create an empty result
