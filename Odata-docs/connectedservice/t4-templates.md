@@ -11,9 +11,9 @@ ms.topic: article
 
 **Applies To**: [!INCLUDE[appliesto-odataclient](../includes/appliesto-odataclient-v7.md)]
 
-OData Connected Service can generate [T4 templates](/en-us/visualstudio/modeling/code-generation-and-t4-text-templates?view=vs-2019&preserve-view=true) instead of the final code. The T4 templates can be used to generate the final C# or VB code. This comes in handy if you want to run the code generation process in a command-line environment, a continuous integration server or any other environment where the OData Connected Service extension is not installed.
+OData Connected Service can generate [T4 templates](/visualstudio/modeling/code-generation-and-t4-text-templates?view=vs-2019&preserve-view=true) instead of the final code. The T4 templates can be used to generate the final C# or VB code. This comes in handy if you want to run the code generation process in a command-line environment, a continuous integration server or any other environment where the OData Connected Service extension is not installed.
 
-**Note**: [The TextTransform utility](/en-us/visualstudio/modeling/generating-files-with-the-texttransform-utility?view=vs-2019&preserve-view=true) can be used to generate code on a command-line environment.
+**Note**: [The TextTransform utility](/visualstudio/modeling/generating-files-with-the-texttransform-utility?view=vs-2019&preserve-view=true) can be used to generate code on a command-line environment.
 
 To generate T4 templates, go to the **Settings** page of the wizard, then toggle **Advance Settings** then select **Add code templates (Whether to include T4 files into this project)**.
 
@@ -91,6 +91,6 @@ public static class Configuration
 }
 ```
 
-You can also update the `Configuration` class property values by [updating the connected service through the wizard](../updating-generated-code). This will re-generated the T4 templates with the values from the wizard. Then you re-generated the C#/VB code by re-running the custom tool option again.
+You can also update the `Configuration` class property values by [updating the connected service through the wizard](/odata/connectedservice/updating-generated-code). This will re-generated the T4 templates with the values from the wizard. Then you re-generated the C#/VB code by re-running the custom tool option again.
 
 Note that when updating through the connected service wizard, you cannot disable generation of T4 templates.
