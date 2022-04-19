@@ -1,6 +1,6 @@
 ---
 title : "Overview"
-description: "This articles gives an overview of what the OData WebApi Authorization library is"
+description: Learn about the OData WebApi Authorization library.
 
 author: habbes
 ms.author: clhabins
