@@ -1,5 +1,6 @@
 ---
 title : "10.2 Work around for SingleResult.Create an empty result"
+description: Learn about the work around that addresses when SingleResult.Create returns an empty result.
 author: madansr7
 ms.date: 7/1/2019
 ---
