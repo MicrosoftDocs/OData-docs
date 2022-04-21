@@ -39,10 +39,10 @@ odata-cli [-h|--help] [--version] <command>
 
 ## Options
 
- - **`version`**
+ - `version`
 
     Displays the version of the odata-cli
- - **`-h|--help`**
+ - `-h|--help`
 
     Shows the command-line help
 
@@ -61,7 +61,7 @@ odata-cli generate [-h|--help] [-m|--metadata-uri] [-fn|--file-name] [-h|--custo
 
 ### Options 
 
-- **`--metadata-uri|-m`** 
+- `--metadata-uri|-m` 
 
      The URI of the metadata document. The value must be set to a valid service document URI or a local file path. This is a required option
 
