@@ -112,3 +112,11 @@ odata-cli generate [-h|--help] [-m|--metadata-uri] [-fn|--file-name] [-h|--custo
  - `--outputdir|-o`
  
     Full path to output directory. This could be an empty directory or a directory with a .csproj/.vbproj file. This is a required option.
+
+### Examples
+```Console
+odata-cli generate -m "http://localhost/odata" -o "link-to-output-directory"
+```
+The metadata-uri could be a link to an OData endpoint or a link to an xml file in your local computer storage. 
+
+The output directory can be a link a to an empty folder or a link to a project folder(a folder with the .csproj file). 
