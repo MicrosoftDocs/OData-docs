@@ -1,6 +1,6 @@
 ---
 title: "Optional parameters in ODataLib 7.3"
-description: "Optional parameters may be omitted when invoking a custom function."
+description: "Optional parameters in OData functions."
 author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019

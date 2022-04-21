@@ -1,6 +1,6 @@
 ---
 title: " Dependency Injection Support"
-description: "In ODataLib v7.0, Dependency Injection support was introduced to dramatically increase the extensibility of the library where users can plug in their custom implementations and policies in an elegant way."
+description: "This section describes how we can use Dependency Injection to increase the extensibility of the library."
 author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019

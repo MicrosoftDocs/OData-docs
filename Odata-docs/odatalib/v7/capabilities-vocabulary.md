@@ -1,6 +1,6 @@
 ---
 title: "Capabilities vocabulary support in odatalib v7"
-description: "From ODataLib 6.13.0, it supports the capabilities vocabulary. The capabilities vocabulary is enabled as a reference model in the Edm Model."
+description: "This section describes how to use capabilities vocabulary in the Edm Model."
 author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019
