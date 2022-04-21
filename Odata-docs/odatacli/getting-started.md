@@ -117,6 +117,6 @@ odata-cli generate [-h|--help] [-m|--metadata-uri] [-fn|--file-name] [-h|--custo
 ```Console
 odata-cli generate -m "http://localhost/odata" -o "link-to-output-directory"
 ```
-The metadata-uri could be a link to an OData endpoint or a link to an xml file in your local computer file system.
+The `metadata-uri` could be a link to an OData endpoint or a link to an xml file in your local computer file system.
 
-The output directory can be a link a to an empty folder or a link to a project folder(a folder with the .csproj file). 
+The output directory can be a link a to an empty folder or a link to a project folder (a folder with the .csproj file). 
