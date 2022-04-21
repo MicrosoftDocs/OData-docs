@@ -2,6 +2,7 @@
 title: " Create spatial instances"
 description: "Create spatial instances"
 ms.date: 7/1/2019
+author: madansr7
 ---
 # Create spatial instances
 

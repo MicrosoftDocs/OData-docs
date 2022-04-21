@@ -1,6 +1,7 @@
 ---
 title : "OData support"
 ms.date: 7/1/2019
+author: madansr7
 ---
 
 # Support

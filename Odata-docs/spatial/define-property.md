@@ -2,6 +2,7 @@
 title: "Define spatial properties"
 description: "Define spatial properties in entity data models"
 ms.date: 7/1/2019
+author: madansr7
 ---
 # Define spatial properties
 
