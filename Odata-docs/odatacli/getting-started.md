@@ -3,7 +3,7 @@ title: "OData CLI"
 description: "How to generate code using the odata-cli dotnet tool"
 
 author: ElizabethOkerio
-ms.author: ElizabethOkerio
+ms.author: elokerio
 ms.date: 3/30/2022
 ms.topic: article
  
@@ -17,9 +17,9 @@ There are 2 ways to download and install the **OData CLI**
 
  - dotnet global tool:
  
-    To install the latest release of the OData CLI [Nuget Package](https://www.nuget.org/packages/Microsoft.OData.Cli/), use the [dotnet tool install](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-tool-install) command
+    To install the latest release of the OData CLI [Nuget Package](https://www.nuget.org/packages/Microsoft.OData.Cli/), use the [dotnet tool install](/dotnet/core/tools/dotnet-tool-install) command
 
-    ```.Net Cli
+    ```.NET CLI
     dotnet tool install --global Microsoft.OData.Cli --version 0.1.0
     ```
 
@@ -35,7 +35,7 @@ odata-cli [-h|--help] [--version] <command>
 
 ## Description
 
-**OData CLI** is a CLI tool that generates strongly-typed C# and Visual Basic client code for a specified OData service. It generates a `DataServiceContext` class to interact with the service and CLR types for each entity type and complex type in the service model.
+**OData CLI** is a CLI tool that generates strongly-typed C# and Visual Basic client code for a specified OData service. It generates a [DataServiceContext](/dotnet/api/microsoft.odata.client.dataservicecontext) class to interact with the service and CLR types for each entity type and complex type in the service model.
 
 ## Options
 
@@ -53,7 +53,7 @@ odata-cli [-h|--help] [--version] <command>
 
 This is the command that generates strongly typed C# and Visual Basic client code for a specified OData service. 
 
-## Synopsis
+### Synopsis
 
 ```Console
 
@@ -62,7 +62,7 @@ odata-cli generate [-h|--help] [-m|--metadata-uri] [-fn|--file-name] [-h|--custo
 ```
 
 
-## Options 
+### Options 
 
 - `--metadata-uri|-m` 
 
@@ -114,5 +114,4 @@ odata-cli generate [-h|--help] [-m|--metadata-uri] [-fn|--file-name] [-h|--custo
 
  - `--outputdir|-o`
  
-    Full path to output directory. This could be an empty directory or a directory with a .csproj/.vbproj file. This is a required option
-
+    Full path to output directory. This could be an empty directory or a directory with a .csproj/.vbproj file. This is a required option.
