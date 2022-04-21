@@ -35,14 +35,14 @@ odata-cli [-h|--help] [--version] <command>
 
 ## Description
 
-**OData CLI** is a CLI tool that generates strongly-typed C# and Visual Basic client code for a specified OData service. It generates a [DataServiceContext](/dotnet/api/microsoft.odata.client.dataservicecontext) class to interact with the service and CLR types for each entity type and complex type in the service model.
+**odata-cli** is a CLI tool that generates strongly-typed C# and Visual Basic client code for a specified OData service. It generates a [DataServiceContext](/dotnet/api/microsoft.odata.client.dataservicecontext) class to interact with the service and CLR types for each entity type and complex type in the service model.
 
 ## Options
 
- - `version`
+ - `**version**`
 
     Displays the version of the odata-cli
- - `-h|--help`
+ - `**-h|--help**`
 
     Shows the command-line help
 
@@ -51,20 +51,17 @@ odata-cli [-h|--help] [--version] <command>
 
 ### generate
 
-This is the command that generates strongly typed C# and Visual Basic client code for a specified OData service. 
+It generates strongly typed C# and Visual Basic client code for a specified OData service. 
 
 ### Synopsis
 
 ```Console
-
 odata-cli generate [-h|--help] [-m|--metadata-uri] [-fn|--file-name] [-h|--custom-headers] [-p}--proxy] [-ns|--namespace-prefix] [-ucc|--upper-camel-case] [-i|--internal] [--multiple-files] [-eoi|--excluded-operation-imports] [-ebo|--excluded-bound-operations] [-est|--excluded-schema-types] [-o|--outputdir]
-
 ```
-
 
 ### Options 
 
-- `--metadata-uri|-m` 
+- `**--metadata-uri|-m**` 
 
      The URI of the metadata document. The value must be set to a valid service document URI or a local file path. This is a required option
 
