@@ -1,6 +1,6 @@
 ---
 title: " Write OData payload"
-description: "Write OData payload using OData Core APIs"
+description: "Write OData payloads including including service document, model metadata, entity set, entity, entity references, complex values, primitive values using OData Core APIs."
 author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019
