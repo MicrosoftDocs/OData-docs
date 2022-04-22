@@ -1,6 +1,6 @@
 ---
 title : "OData WebApi v7 for aspnet webapi supported"
-description: Describes the v7 iteration of the WebApi application.
+description: Describes the v7 iteration of the WebApi.
 ms.date: 7/1/2019
 author: madansr7
 ms.author: saumadan

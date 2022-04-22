@@ -1,6 +1,6 @@
 ---
 title: "Alternate Key in odatalib"
-description: "Describes support for alternate key and codes to build alternate keys."
+description: "Describes support for alternate keys."
 author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019

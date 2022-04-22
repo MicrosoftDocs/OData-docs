@@ -1,5 +1,5 @@
 ---
-title: "Read and write models-ODL V6"
+title: "Read and write models in ODL v6"
 description: Describes how to read and write entity data models using EdmLib APIs.
 author: madansr7
 ms.author: saumadan

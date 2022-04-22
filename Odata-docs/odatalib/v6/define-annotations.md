@@ -1,5 +1,5 @@
 ---
-title: "Define annotations-ODL V6"
+title: "Define annotations in ODL v6"
 description: "Define annotations using EdmLib APIs-ODL V6"
 author: madansr7
 ms.author: saumadan

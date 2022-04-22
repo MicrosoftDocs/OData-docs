@@ -1,6 +1,6 @@
 ---
 title: "Read OData Payload"
-description: Describes process of setting up necessary code that is common to all kinds of payload.
+description: Describes how to read OData payloads using OData Core APIs.
 author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019

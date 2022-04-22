@@ -1,6 +1,6 @@
 ---
 title: "Basic Uri parser support for aggregations in odatalib"
-description: "Describes basic Uri parser first steps and support."
+description: "Describes basic Uri parser support for aggregations."
 author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019

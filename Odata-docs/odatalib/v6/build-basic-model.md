@@ -1,5 +1,5 @@
 ---
-title: "Build a basic model ODL V6"
+title: "Build a basic model in ODL v6"
 description: "Build a basic entity data model using EdmLib APIs - ODL.v6"
 author: madansr7
 ms.author: saumadan

@@ -1,6 +1,6 @@
 ---
 title : "OData Webapi for Webapi supported"
-description: Describes the OData Webapi support.
+description: Describes the OData v6 iteration.
 ms.date: 7/1/2019
 author: madansr7
 ms.author: saumadan

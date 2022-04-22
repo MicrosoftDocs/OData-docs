@@ -1,5 +1,5 @@
 ---
-title: "Define operations-ODL V6"
+title: "Define operations in ODL v6"
 description: "Define operations and operation imports using EdmLib APIs-ODL V6"
 author: madansr7
 ms.author: saumadan

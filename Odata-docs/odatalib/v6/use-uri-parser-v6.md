@@ -1,6 +1,6 @@
 ---
 title: "Use ODataUriParser in odatalib v6"
-description: Outlines the UriParser for OData V4, giving an overview of the application.
+description: Describes how to use the ODataUriParser in odatalib v6.
 author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019

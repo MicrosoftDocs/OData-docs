@@ -1,5 +1,5 @@
 ---
-title: "Define type inheritance-ODL V6"
+title: "Define type inheritance in ODL v6"
 description: "Define type inheritance using EdmLib APIs-ODL V6"
 author: madansr7
 ms.author: saumadan
