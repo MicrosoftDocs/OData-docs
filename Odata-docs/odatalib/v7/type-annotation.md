@@ -1,6 +1,6 @@
 ---
 title: "Override type annotation in serialization"
-description: "In ODataAnnotatable, there is a property called TypeAnnotation whose type is ODataTypeAnnotation. It is used to store the @odata.type annotation read from or written to the payload. "
+description: "This section describes how to override type annotation during serialization."
 author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019

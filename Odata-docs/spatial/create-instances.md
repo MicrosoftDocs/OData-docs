@@ -1,6 +1,6 @@
 ---
 title: " Create spatial instances"
-description: "Create spatial instances using Spatial APIs."
+description: "This section describes how to create spatial instances using Spatial APIs."
 ms.date: 7/1/2019
 author: madansr7
 ---

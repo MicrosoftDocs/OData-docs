@@ -1,6 +1,6 @@
 ---
 title : "OData roadmap"
-description: "OData Version 4.01 adds various new features and removes a few restrictions. New OData 4.01 query features and simplified syntax can be supported as compatible extensions to OData 4.0 syntax."
+description: "This section describes the OData roadmap."
 ms.date: 7/1/2019
 author: madansr7
 ---

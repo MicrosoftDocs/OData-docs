@@ -1,6 +1,6 @@
 ---
 title: "Use ODataUriParser in odatalib v7"
-description: "This post guides you through the URI parser for OData V4, which is released with ODataLib V6.0 and later."
+description: "This section describes how to parse OData uri using the ODataUriParser."
 author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019
