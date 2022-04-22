@@ -1,6 +1,8 @@
 ---
 title : "4.1 DateTime support"
+description: Learn how to use the DateTime in Web API OData .
 ms.date: 7/1/2019
+author: madansr7
 ---
 
 # DateTime support

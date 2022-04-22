@@ -1,6 +1,7 @@
 ---
 title : "4.14 Capabilities vocabulary support"
-
+description: Learn how to use the capabilities vocabulary support in Web API OData.
+author: madansr7
 ms.date: 7/1/2019
 ---
 # Capabilities vocabulary support

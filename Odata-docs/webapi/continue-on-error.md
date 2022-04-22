@@ -1,8 +1,8 @@
 ---
 title: "Prefer odata.continue-on-error"
-description: ""
-
+description: Learn how to enable the OData continue-on-error method.
 ms.date: 7/1/2019
+author: madansr7
 ---
 # Prefer odata.continue-on-error
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

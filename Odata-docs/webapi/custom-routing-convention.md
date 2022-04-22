@@ -1,8 +1,8 @@
 ---
 title: " Custom routing convention"
-description: "Routing Conventions"
-
+description: Learn how to override the default Web API OData routing convention with the OData custom routing convention.
 ms.date: 7/1/2019
+author: madansr7
 ---
 # Custom routing convention
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

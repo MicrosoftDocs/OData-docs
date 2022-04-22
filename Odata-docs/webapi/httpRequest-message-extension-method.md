@@ -1,8 +1,8 @@
 ---
 title: "Use HttpRequestMessage Extension Methods"
-description: ""
-
+description: Learn how to use HttpRequestMessage extension methods for services that don't use LINQ or ODataQueryOptions.ApplyTo().
 ms.date: 7/1/2019
+author: madansr7
 ---
 # Use HttpRequestMessage Extension Methods
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

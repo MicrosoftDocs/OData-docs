@@ -1,7 +1,8 @@
 ---
 title : "4.7 Action parameter support"
-
+description: Describes how to build and use selected types as action parameters.
 ms.date: 7/1/2019
+author: madansr7
 ---
 # Action parameter support
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
