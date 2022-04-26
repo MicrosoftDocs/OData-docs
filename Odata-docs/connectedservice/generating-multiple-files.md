@@ -1,6 +1,6 @@
 ---
 title: "Generating multiple files"
-description: By default, the OData Connected Service stores all the generated code into a single file. However, you can opt to have the generated code split into multiple files
+description: Describes how to split the generated code into multiple files.
 author: habbes
 ms.author: clhabins
 ms.date: 7/17/2020

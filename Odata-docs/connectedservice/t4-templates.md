@@ -1,6 +1,6 @@
 ---
 title: "Working with T4 templates"
-description: OData Connected Service can generate T4 templates instead of the final code.
+description: Describes how to generate T4 templates instead of the final code.
 author: habbes
 ms.author: clhabins
 ms.date: 7/14/2020

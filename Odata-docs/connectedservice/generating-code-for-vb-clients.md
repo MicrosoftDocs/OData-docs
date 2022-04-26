@@ -1,6 +1,6 @@
 ---
 title: "Generating code for VB clients"
-description: OData Connected Service allows you to generate client code both for C# and Visual Basic.
+description: Describes how to generate client code for Visual Basic.
 author: habbes
 ms.author: clhabins
 ms.date: 7/16/2020

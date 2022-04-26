@@ -1,6 +1,6 @@
 ---
 title: "Updating the generated code"
-description: When the service metadata document is updated, or when you want to modify the connected service configuration, you can update your connected service by finding the relevant folder under the Connected Services node in Solution Explorer.
+description: Describes how to update the generated code.
 author: habbes
 ms.author: clhabins
 ms.date: 7/16/2020

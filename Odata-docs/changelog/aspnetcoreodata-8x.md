@@ -1,6 +1,6 @@
 ---
 title: "OData ASP.NET Core OData changelog"
-description: You can install or update the NuGet package for ASP.NET Core OData using the Package Manager Console.
+description: AspNetCoreOData 8.x changelog
 author: xuzhg
 ms.author: saxu
 ms.date: 2/5/2021

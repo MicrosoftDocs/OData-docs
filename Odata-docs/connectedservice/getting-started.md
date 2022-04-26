@@ -1,6 +1,6 @@
 ---
 title: "OData Connected Service"
-description: OData Connected Service is a Visual Studio extension that generates strongly-typed C# and Visual Basic client code for a specified OData service.
+description: Describes how to get started using the OData Connected Service.
 author: habbes
 ms.author: clhabins
 ms.date: 7/14/2020
