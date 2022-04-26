@@ -1,6 +1,6 @@
 ---
 title: "Json batch format in ODataLib"
-description: "OData supports grouping multiple requests together, sending a single HTTP request to OData service, and grouping corresponding responses together before sending back as a single HTTP response."
+description: ""This section describes how to use batch operations in the OData core library."
 author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019

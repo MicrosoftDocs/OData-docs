@@ -1,6 +1,6 @@
 ---
 title: " Fluent functional-style writer API"
-description: "In this version, a new set of fluent functional-style API has been introduced as an improvement over the previous API which is rather primitive."
+description: "This section describes how to use the fluent functional-style API."
 author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019

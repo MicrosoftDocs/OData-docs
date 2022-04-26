@@ -1,6 +1,6 @@
 ---
 title: "Navigation property partner"
-description: "The library supports setting and retrieving partner information of navigation properties."
+description: "This section describes how to retrieve partner information of navigation properties."
 author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019

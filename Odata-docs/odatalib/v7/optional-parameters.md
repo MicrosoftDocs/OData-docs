@@ -1,5 +1,5 @@
 ---
-title: "Optional parameters in ODataLib 7.3"
+title: "Optional parameters in OData functions"
 description: "Optional parameters in OData functions."
 author: madansr7
 ms.author: saumadan
