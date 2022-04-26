@@ -1,6 +1,6 @@
 ---
 title: "Navigation property partner"
-description: "This section describes how to retrieve partner information of navigation properties."
+description: ""
 author: madansr7
 ms.author: madansr7
 ms.date: 7/1/2019
