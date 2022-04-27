@@ -1,8 +1,8 @@
 ---
-title: " Define entity relations-ODL V6"
+title: "Define entity relations in ODL v6"
 description: "Define entity relations using EdmLib APIs-ODL V6"
 author: madansr7
-ms.author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article
  

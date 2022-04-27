@@ -1,8 +1,8 @@
 ---
 title: "Define spatial properties in odatalib"
-description: "Define spatial properties in entity data models"
+description: Describes the process of defining spatial properties in the entity data models using EdmLib APIs.
 author: madansr7
-ms.author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article
  
