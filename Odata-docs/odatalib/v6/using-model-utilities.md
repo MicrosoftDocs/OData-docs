@@ -1,9 +1,8 @@
 ---
 title: " Using model utilities-ODL V6"
 description: "Using model utility APIs-ODL V6"
-
 author: madansr7
-ms.author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article
  
@@ -76,8 +75,8 @@ namespace EdmLibSample
 ### Run the Sample
 From the **DEBUG** menu, click **Start Without Debugging** to build and run the sample. The console window should **not** disappear after program exits.
 
-![image](/odata/assets/2015-04-20-debug.png)
+![Screenshot of Microsoft Visual Studio's Debug tab, with the Start Without Debugging option being highlighted.](/odata-docs/assets/2015-04-20-debug.png)
 
 The output of the console window should look like the following:
 
-![image](/odata/assets/2015-04-20-output.png)
+![Screenshot of the console window showing the output without debugging.](/odata-docs/assets/2015-04-20-output.png)
