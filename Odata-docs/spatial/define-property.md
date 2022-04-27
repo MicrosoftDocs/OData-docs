@@ -1,7 +1,8 @@
 ---
 title: "Define spatial properties"
-description: "Define spatial properties in entity data models"
+description: "This section describes how to define spatial properties in entity data models using EdmLib APIs."
 ms.date: 7/1/2019
+author: madansr7
 ---
 # Define spatial properties
 
