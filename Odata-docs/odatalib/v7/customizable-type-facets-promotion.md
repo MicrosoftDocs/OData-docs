@@ -1,8 +1,8 @@
 ---
 title: "Customizable type facets promotion in URI parsing in odatalib"
-description: ""
+description: "This section describes how to use customizable type facets promotion in Uri parsing."
 author: madansr7
-ms.author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article
  

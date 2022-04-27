@@ -2,7 +2,7 @@
 title: " Define annotations-ODL V7"
 description: "Define annotations using EdmLib APIs-ODL V7"
 author: madansr7
-ms.author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article
  

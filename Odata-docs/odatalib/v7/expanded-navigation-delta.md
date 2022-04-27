@@ -1,7 +1,8 @@
 ---
 title: "Expanded Navigation Property in ODL Delta Response"
+description: "This tutorial describes how to read and write expanded navigation properties (either collection or single) in delta responses."
 author: madansr7
-ms.author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article
  
