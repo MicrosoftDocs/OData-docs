@@ -1,8 +1,8 @@
 ---
 title: " Dependency Injection Support"
-description: ""
+description: "This section describes how we can use Dependency Injection to increase the extensibility of the library."
 author: madansr7
-ms.author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article
  

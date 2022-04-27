@@ -2,7 +2,7 @@
 title: " Using model utilities-ODL V7"
 description: "Using model utility APIs-ODL V7"
 author: madansr7
-ms.author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article
  
