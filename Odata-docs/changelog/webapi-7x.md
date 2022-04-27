@@ -1,8 +1,8 @@
 ---
 title: "OData WebApi changelog"
-description: "OData WebApi 7.x changelog"
+description: OData WebApi 7.x changelog Improvements and Fixes
 author: madansr7
-ms.author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article
 ---
@@ -29,7 +29,7 @@ ms.topic: article
 
 * [ [#2339](https://github.com/OData/WebApi/pull/2339) ] Ensure that untyped values escaped in ODL are unescaped in OData WebApi during deserialization
 
-* [ [#2544](https://github.com/OData/WebApi/pull/2544) ] Fix to ignore Unmapped properties in Delta<T>
+* [ [#2544](https://github.com/OData/WebApi/pull/2544) ] Fix to ignore Unmapped properties in Delta\<T\>
 
 * [ [#2575](https://github.com/OData/WebApi/pull/2575) ] Fixing Patching Complex type when using one derived type over another
 
@@ -290,9 +290,9 @@ The corresponding symbols now can load from the nuget symbol server.
 
 * [ [#2248](https://github.com/OData/WebApi/pull/2248) ] Fix invalid location header generated when key property for a model contains unicode chars
 
-* [ [#2246](https://github.com/OData/WebApi/pull/2246) ] Fix Delta<TStructuralType>.GetInstance() method
+* [ [#2246](https://github.com/OData/WebApi/pull/2246) ] Fix Delta\<TStructuralType\>.GetInstance() method
 
-* [ [#2200](https://github.com/OData/WebApi/pull/2200) ] Avoid NullReferenceException on TruncatedCollection<T>
+* [ [#2200](https://github.com/OData/WebApi/pull/2200) ] Avoid NullReferenceException on TruncatedCollection\<T\>
 
 * [ [#2197](https://github.com/OData/WebApi/pull/2197) ] Fix skip token encoding
 
