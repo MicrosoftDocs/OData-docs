@@ -1,8 +1,8 @@
 ---
 title: "Alternate Key in odatalib"
-description: ""
+description: "Describes support for alternate keys."
 author: madansr7
-ms.author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article
  
@@ -45,16 +45,17 @@ The following is the related metadata:
   <Property Name="SSN" Type="Edm.String" />
   <Annotation Term="OData.Community.Keys.V1.AlternateKeys">
     <Collection>
-     <Record Type="OData.Community.Keys.V1.AlternateKey">
-      <PropertyValue Property="Key">
-        <Collection>
-          <Record Type="OData.Community.Keys.V1.PropertyRef">
-            <PropertyValue Property="Alias" String="SocialSN" /> 
-            <PropertyValue Property="Name" PropertyPath="SSN" />
-          </Record>
-        </Collection>
-      </PropertyValue>
-    </Record>
+      <Record Type="OData.Community.Keys.V1.AlternateKey">
+        <PropertyValue Property="Key">
+          <Collection>
+            <Record Type="OData.Community.Keys.V1.PropertyRef">
+              <PropertyValue Property="Alias" String="SocialSN" /> 
+              <PropertyValue Property="Name" PropertyPath="SSN" />
+            </Record>
+          </Collection>
+        </PropertyValue>
+      </Record>
+    </Collection>
   </Annotation>
 </EntityType>
 ```

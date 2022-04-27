@@ -1,8 +1,8 @@
 ---
 title: " Fluent functional-style writer API"
-description: ""
+description: "This section describes how to use the fluent functional-style API."
 author: madansr7
-ms.author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article
  

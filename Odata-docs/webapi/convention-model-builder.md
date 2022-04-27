@@ -1,8 +1,8 @@
 ---
 title: " Convention model builder"
-description: "convention model builder"
-
+description: Learn how to use the OData convention model builder method.
 ms.date: 7/1/2019
+author: madansr7
 ---
 # Convention model builder
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

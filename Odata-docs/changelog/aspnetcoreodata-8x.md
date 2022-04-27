@@ -1,7 +1,7 @@
 ---
 title: "OData ASP.NET Core OData changelog"
-description: "OData WebApi 7.x changelog"
-author: Sam Xu
+description: AspNetCoreOData 8.x changelog
+author: xuzhg
 ms.author: saxu
 ms.date: 2/5/2021
 ms.topic: article
@@ -25,6 +25,10 @@ You can install or update the NuGet package for ASP.NET Core OData using the [Pa
     * [ODataRoutingSample](https://github.com/OData/AspNetCoreOData/tree/main/sample/ODataRoutingSample)
 
 ---
+## [8.0.9](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.9)
+
+See details at: https://github.com/OData/AspNetCoreOData/releases/tag/8.0.9
+
 ## [8.0.8](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.0.8)
 
 Starting from 8.0.8, we will use the release note on github.

@@ -1,9 +1,8 @@
 ---
-title: "Accessing endpoints that require authentication"
-description: ""
-
+title: "Accessing Endpoints that Require Authentication"
+description: Describes how to access endpoints that require authentication.
 author: habbes
-ms.author: habbes
+ms.author: clhabins
 ms.date: 7/16/2020
 ms.topic: article
  

@@ -1,8 +1,8 @@
 ---
 title: "Read and Write Untyped values in ODataLib"
-description: ""
+description: "This section describes ODataMessageReader & ODataMessageWriter's capability to read & write untyped primitive, structured, and collection values."
 author: madansr7
-ms.author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article
  

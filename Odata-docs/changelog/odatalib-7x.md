@@ -2,7 +2,7 @@
 title: "ODataLib changelog"
 description: "ODataLib 7.x"
 author: madansr7
-ms.author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article
 ---
@@ -1089,7 +1089,7 @@ This release delivers OData core libraries including ODataLib, EdmLib, Spatial a
 
 ***Fixed Bugs***
 
-[Issue #698](https://github.com/OData/odata.net/issues/698) DataServiceQuerySingle<T>.GetValueAsync inconsistent with GetValue in support for GET returning 404.
+[Issue #698](https://github.com/OData/odata.net/issues/698) DataServiceQuerySingle\<T\>.GetValueAsync inconsistent with GetValue in support for GET returning 404.
 
 [Issue #800](https://github.com/OData/odata.net/issues/800) Need for parsing Open types using OData.NET v7.X.
 
@@ -1474,7 +1474,7 @@ This page will describes the Public API changes for "Merge entity and complex". 
 
 Following is difference of public APIs between ODataLib 7.0 and ODataLib 6.15.
 
-||ODataLib 6.15|ODataLib 7.0|
+|Enumeration|ODataLib 6.15|ODataLib 7.0|
 |---|---|---|
 ||ODataEntry|ODataResource|
 ||ODataComplexValue|ODataResource|
@@ -1486,7 +1486,7 @@ Following is difference of public APIs between ODataLib 7.0 and ODataLib 6.15.
 ||Feed|ResourceSet|
 ||||
 |ODataReaderState|EntryStart|ResourceStart|
-||EntryEnd|ResourceEnd
+||EntryEnd|ResourceEnd|
 ||FeedStart|ResourceSetStart|
 ||FeedEnd|ResourceSetEnd|
 ||NavigationLinkStart|NestedResourceInfoStart|
@@ -1689,7 +1689,7 @@ Support duplicate custom instance annotations.
 - Merge `SerializationTypeNameAnnotation` into `ODataTypeAnnotation`
 - Refactor `ODataTypeAnnotation` to contain only the type name
 - Remove unnecessary inheritance from `ODataAnnotatable` in URI parser and simplify the API of `ODataAnnotatble`
-- `GetAnnotation<T>()` and `SetAnnotation<T>()` will no longer be available because `ODataAnnotatable` should only be responsible for managing instance annotations.
+- `GetAnnotation\<T\>()` and `SetAnnotation\<T\>()` will no longer be available because `ODataAnnotatable` should only be responsible for managing instance annotations.
 
 ### Public API Enhancement
 
