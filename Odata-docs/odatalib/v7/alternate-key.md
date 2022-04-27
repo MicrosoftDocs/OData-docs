@@ -45,16 +45,17 @@ The following is the related metadata:
   <Property Name="SSN" Type="Edm.String" />
   <Annotation Term="OData.Community.Keys.V1.AlternateKeys">
     <Collection>
-     <Record Type="OData.Community.Keys.V1.AlternateKey">
-      <PropertyValue Property="Key">
-        <Collection>
-          <Record Type="OData.Community.Keys.V1.PropertyRef">
-            <PropertyValue Property="Alias" String="SocialSN" /> 
-            <PropertyValue Property="Name" PropertyPath="SSN" />
-          </Record>
-        </Collection>
-      </PropertyValue>
-    </Record>
+      <Record Type="OData.Community.Keys.V1.AlternateKey">
+        <PropertyValue Property="Key">
+          <Collection>
+            <Record Type="OData.Community.Keys.V1.PropertyRef">
+              <PropertyValue Property="Alias" String="SocialSN" /> 
+              <PropertyValue Property="Name" PropertyPath="SSN" />
+            </Record>
+          </Collection>
+        </PropertyValue>
+      </Record>
+    </Collection>
   </Annotation>
 </EntityType>
 ```

@@ -1,6 +1,8 @@
 ---
 title : "OData support"
+description: "This section describes resources that can be leveraged to get help with OData .net libraries, report issues or ask questions in general about the protocol."
 ms.date: 7/1/2019
+author: madansr7
 ---
 
 # Support

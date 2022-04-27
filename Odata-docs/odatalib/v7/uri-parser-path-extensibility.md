@@ -2,7 +2,7 @@
 title: "OData Uri Path Parser Extensibility"
 description: "This feature enable developers to customize Uri path parser"
 author: madansr7
-ms.author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article
  

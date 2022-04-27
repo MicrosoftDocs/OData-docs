@@ -1,6 +1,8 @@
 ---
 title : "OData roadmap"
+description: "This section describes the OData roadmap."
 ms.date: 7/1/2019
+author: madansr7
 ---
 # OData 4.01
 
@@ -20,8 +22,7 @@ The follow table represents the state of implementation of the above mentioned s
 ## Protocol
 
 |FEATURE|ODL|WebAPI|
-|:---|:--:|:--:|
-||||||||||||||||
+|:--- |:--: |:--: |
 |**NEW**|
 | Default Namespaces. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652484)                                                  |N|N|
 | Schema Versioning. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652485)                                                   |N|N|
@@ -45,8 +46,7 @@ The follow table represents the state of implementation of the above mentioned s
 ## URL Conventions
 
 |FEATURE|ODL|WebAPI|
-|:---|:--:|:--:|
-||||||||||||||||
+|:--- |:--: |:--: |
 |**NEW**|
 |Alternate Keys.[Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652502) |N|N|
 |Key-as-Segment Convention.[Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652503) |Y|Y|
@@ -75,8 +75,7 @@ The follow table represents the state of implementation of the above mentioned s
 ## CSDL changes (XML)
 
 |FEATURE|ODL|WebAPI|
-|:---|:--:|:--:|
-||||||||||||||||
+|:--- |:--: |:--: |
 |**NEW**|
 |Decimal with Floating Scale. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652525) |N|N|
 |Built-in Abstract Type Edm.Untyped.. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652526) |Y|N|
@@ -99,8 +98,7 @@ The follow table represents the state of implementation of the above mentioned s
 ## OData JSON format
 
 |FEATURE|ODL|WebAPI|
-|:---|:--:|:--:|
-||||||||||||||||
+|:--- |:--: |:--: |
 |**NEW**|
 |Simplified representation of Delta with Expand. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652547) |Y|Y|
 |Advertise Actions/Functions on Collection-Valued Properties. [Spec](https://docs.oasis-open.org/odata/new-in-odata/v4.01/cn02/new-in-odata-v4.01-cn02.html#_Toc495652550) |N|N|

@@ -1,6 +1,8 @@
 ---
 title : "Abstract entity types"
+description: Provides examples of abstract entity types.
 ms.date: 7/1/2019
+author: madansr7
 ---
 # Abstract entity types
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

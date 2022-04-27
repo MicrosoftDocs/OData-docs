@@ -1,7 +1,7 @@
 ---
 title: "OData OpenAPI changelog"
 description: "OData OpenAPI changelog"
-author: Sam Xu
+author: xuzhg
 ms.author: saxu
 ms.date: 2/5/2021
 ms.topic: article
@@ -9,7 +9,7 @@ ms.topic: article
 
 # Open API  OData changelog
 
-# OpenAPI OData changelog
+## OpenAPI OData changelog
 
 Open API OData reader is available on the [Nuget gallery](https://www.nuget.org/packages/Microsoft.OpenApi.OData)
 

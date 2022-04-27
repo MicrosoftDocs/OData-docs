@@ -1,8 +1,9 @@
 ---
 title:  "1.2 Write a simple OData V4 service"
+description: Learn how to create a simple OData V4 service.
 date:   2015-03-30 16:54:10
-
 ms.date: 7/1/2019
+author: madansr7
 ---
 # Write a simple OData V4 service
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

@@ -1,7 +1,7 @@
 ---
 title: " Attribute Routing"
-description: "Routing Conventions"
-
+description: Learn how to use and gain control over attribute routing.
+author: madansr7
 ms.date: 7/1/2019
 ---
 # Attribute Routing
