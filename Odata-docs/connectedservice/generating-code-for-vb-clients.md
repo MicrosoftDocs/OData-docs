@@ -1,9 +1,8 @@
 ---
 title: "Generating code for VB clients"
-description: ""
-
+description: Describes how to generate client code for Visual Basic.
 author: habbes
-ms.author: habbes
+ms.author: clhabins
 ms.date: 7/16/2020
 ms.topic: article
  
@@ -18,7 +17,7 @@ To demonstrate this, let's create a simple Visual Basic .Net Core Console projec
 
 Add the OData Connnected Service to you project by right-clicking on the project in Solution Explorer, then Add -> Connected Service -> Connected Services -> OData Connected Service.
 
-For more details about installing and adding OData Connected Service to your project, visit the [Getting Started](./getting-started) section.
+For more details about installing and adding OData Connected Service to your project, visit the [Getting Started](/odata/connectedservice/getting-started) section.
 
 In the OData Connected Service wizard, set the **Service Name** to "TripPinService" and the **Address** to `https://services.odata.org/v4/TripPinService/$metadata` (this is a sample OData service for demonstration purposes).
 
