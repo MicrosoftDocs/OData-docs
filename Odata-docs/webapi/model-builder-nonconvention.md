@@ -1,6 +1,6 @@
 ---
 title: " Non-convention model builder"
-description: "convention model builder"
+description: Learn about the non-convention model builder for OData Webapi.
 author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019

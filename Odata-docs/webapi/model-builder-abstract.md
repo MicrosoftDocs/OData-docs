@@ -1,6 +1,6 @@
 ---
 title: " Introduction to the model builders"
-description: "convention model builder"
+description: Learn about model builders overview for OData Webapi. 
 author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019

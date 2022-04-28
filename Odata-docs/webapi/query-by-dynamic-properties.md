@@ -1,5 +1,6 @@
 ---
 title : "4.9 Query by dynamic properties"
+description: Learn how to query by dynamic properties in OData WebApi. 
 author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019
