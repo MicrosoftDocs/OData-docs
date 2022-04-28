@@ -28,6 +28,68 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
+## ODataLib 7.11.0 Release
+
+***Features***
+
+[[#2267]](https://github.com/OData/odata.net/pull/2267) Implement asynchronous support in ODataJsonLightDeserializer, ODataJsonLightPropertyAndValueDeserializer and ODataJsonLightResourceDeserializer 
+
+[[#2301]](https://github.com/OData/odata.net/pull/2301) Implement asynchronous support in ODataJsonLightEntityReferenceLinkDeserializer  
+
+[[#2305]](https://github.com/OData/odata.net/pull/2305) Implement asynchronous support in ODataJsonLightErrorDeserializer 
+
+[[#2306]](https://github.com/OData/odata.net/pull/2306) Implement asynchronous support ODataJsonLightCollectionDeserializer 
+
+[[#2308]](https://github.com/OData/odata.net/pull/2308) Implement asynchronous support in ODataJsonLightPayloadKindDetectionDeserializer 
+
+[[#2311]](https://github.com/OData/odata.net/pull/2311) Implement asynchronous support in ODataJsonLightParameterDeserializer 
+
+[[#2316]](https://github.com/OData/odata.net/pull/2316) Implement asynchronous support in ReorderingJsonReader 
+
+[[#2322]](https://github.com/OData/odata.net/pull/2322) Implement asynchronous support in ODataJsonLightServiceDocumentDeserializer 
+
+[[#2324]](https://github.com/OData/odata.net/pull/2324) Implement asynchronous support in ODataNotificationReader 
+
+[[#2327]](https://github.com/OData/odata.net/pull/2327) Implement asynchronous support in ODataJsonLightCollectionReader 
+
+[[#2335]](https://github.com/OData/odata.net/pull/2335) Implement asynchronous support in ODataJsonLightReader 
+
+[[#2351]](https://github.com/OData/odata.net/pull/2351) Implement asynchronous support in ODataJsonLightDeltaReader 
+
+[[#2353]](https://github.com/OData/odata.net/pull/2353) Implement asynchronous support in ODataJsonLightParameterReader 
+
+[[#2359]](https://github.com/OData/odata.net/pull/2359) Implement asynchronous support in ODataJsonLightBatchReader 
+
+[[#2364]](https://github.com/OData/odata.net/pull/2364) Implement asynchronous support in ODataRawInputContext 
+
+***Fixed Bugs***
+
+[[#2299]](https://github.com/OData/odata.net/pull/2299) fix filter using in operator with open types 
+
+[[#2300]](https://github.com/OData/odata.net/pull/2300) Fix cast in expand 
+
+[[#2313]](https://github.com/OData/odata.net/pull/2313) #1208 Support relative context URI starting with "$metadata" 
+
+[[#2341]](https://github.com/OData/odata.net/pull/2341) Validate key not defined multiple times in type hierarchy 
+
+[[#2346]](https://github.com/OData/odata.net/pull/2346) Set default scale to null 
+
+***Improvements***
+
+[[#2222]](https://github.com/OData/odata.net/pull/2222) Replaced the AsyncBufferedStream with a simple BufferedStream  
+
+[[#2303]](https://github.com/OData/odata.net/pull/2303) Bump System.Text.RegularExpressions
+
+[[#2304]](https://github.com/OData/odata.net/pull/2304) Bump System.Net.Http 
+
+[[#2328]](https://github.com/OData/odata.net/pull/2328) Add DuplicatePropertyNameChecker to ObjectPool 
+
+[[#2363]](https://github.com/OData/odata.net/pull/2363) Avoid zero-length array allocations 
+
+[[#2366]](https://github.com/OData/odata.net/pull/2366) ODataJsonLightCollectionReader improvements to reduce delegate allocations 
+
+[[#2367]](https://github.com/OData/odata.net/pull/2367) Fix unnecessary delegate allocations across OData writers 
+
 ## ODataLib 7.10.0 Release
 
 ***Features***
