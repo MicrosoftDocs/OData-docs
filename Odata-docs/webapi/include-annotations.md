@@ -1,8 +1,10 @@
 ---
 title: "Prefer odata.include-annotations"
 description: ""
-
+author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
+
 ---
 # Prefer odata.include-annotations
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

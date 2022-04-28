@@ -1,6 +1,7 @@
 ---
 title : "4.24 MaxExpansionDepth in EnableQueryAttribute"
-
+author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ---
 # MaxExpansionDepth in EnableQueryAttribute

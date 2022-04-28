@@ -1,8 +1,10 @@
 ---
 title: " Non-convention model builder"
 description: "convention model builder"
-
+author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
+
 ---
 # Non-convention model builder
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

@@ -1,8 +1,9 @@
 ---
 title : "6.4 Custom Stream Entity"
-
-
+author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
+
 ---
 # Custom Stream Entity
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

@@ -1,7 +1,8 @@
 ---
 title : "13.5 Use ODL path classes "
 description: "Path change"
-
+author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ---
 # Use ODL path classes

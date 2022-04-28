@@ -1,7 +1,8 @@
 ---
 title: " Build Edm Model Explicitly"
 description: "convention model builder"
-
+author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ---
 # Build Edm Model Explicitly

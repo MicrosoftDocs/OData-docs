@@ -1,7 +1,8 @@
 ---
 title : "13.3 Multiple Navigation property binding path"
 description: "Navigation property binding with complex and containment"
-
+author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ---
 # Multiple Navigation property binding path

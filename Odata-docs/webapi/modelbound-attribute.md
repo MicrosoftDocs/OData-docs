@@ -1,7 +1,8 @@
 ---
 title : "13.1 Model Bound Attributes"
 description: "Model bound attributes"
-
+author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ---
 # Model Bound Attributes

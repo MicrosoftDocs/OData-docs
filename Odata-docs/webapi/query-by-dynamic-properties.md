@@ -1,7 +1,9 @@
 ---
 title : "4.9 Query by dynamic properties"
-
+author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
+
 ---
 # Query by dynamic properties
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

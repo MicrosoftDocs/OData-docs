@@ -1,7 +1,9 @@
 ---
 title : "OData IN Operator filter function"
-
+author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
+
 ---
 
 # IN Operator

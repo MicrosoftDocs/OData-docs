@@ -1,8 +1,10 @@
 ---
 title: "Set namespace for operations in model builder"
 description: ""
-
+author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
+
 ---
 # Set namespace for operations in model builder
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
