@@ -2,7 +2,7 @@
 title: "OData Extensions changes"
 description: "OData Extensions (OData Client Factory) 1.x changelog"
 author: chuanboz
-ms.author: chuanboz
+ms.author: chuazhang
 ms.date: 10/10/2019
 ms.topic: article
 ---
