@@ -1,8 +1,10 @@
 ---
 title: " WebApi 7.0 Default Setting Updates"
 description: "Design document for updated default settings for WebApi 7.0"
-
+author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
+
 ---
 
 # WebApi Default Enable Unqualified Operations and Case-insensitive Uri

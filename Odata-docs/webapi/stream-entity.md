@@ -1,8 +1,10 @@
 ---
 title : "6.4 Custom Stream Entity"
-
-
+description: Learn how to use the Custom Stream entity for OData WebApi. 
+author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
+
 ---
 # Custom Stream Entity
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

@@ -1,6 +1,8 @@
 ---
 title : "4.24 MaxExpansionDepth in EnableQueryAttribute"
-
+description: Learn how to use the MaxExpansionDepth in EnableQueryAttribute in OData WebApi v7.
+author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ---
 # MaxExpansionDepth in EnableQueryAttribute

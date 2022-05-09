@@ -1,6 +1,8 @@
 ---
 title : "Operation parameters in untyped scenarios"
-
+description: Learn how to use the operation parameters in untyped scenarios. 
+author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
 ---
 # Operation parameters in untyped scenarios

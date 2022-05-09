@@ -1,8 +1,10 @@
 ---
 title: " Use $skiptoken for server side paging "
 description: "WebAPI to use $skiptoken for server side paging"
-
+author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
+
 ---
 # Use $skiptoken for server-driven paging
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]

@@ -1,9 +1,10 @@
 ---
 title: " Relax version constraints"
-description: ""
-
-
+description: Learn how to relax version constraints in OData WebApi. 
+author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
+
 ---
 # Relax version constraints
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
