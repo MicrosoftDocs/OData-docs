@@ -1,7 +1,10 @@
 ---
 title : "OData IN Operator filter function"
-
+description: Learn how to use the IN operator that enables a shorthand way of writing multiple EQ expressions joined by OR.
+author: madansr7
+ms.author: saumadan
 ms.date: 7/1/2019
+
 ---
 
 # IN Operator
