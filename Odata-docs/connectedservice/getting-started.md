@@ -35,7 +35,7 @@ Next, OData Connected Service provides us a wizard where we can configure settin
 
 The Connected Service provides many options to control how the code is generated, but for this example we are just going to stick with the defaults. Click **Finish** to complete the configuration and generate the client code.
 
-![Configure OData Connected Service](../assets/2020-07-15-OCS-endpoint-config.png)
+![Configure OData Connected Service](../assets/2022-05-11-OCS-endpoint-config.png)
 
 After successful completion, you should see a **Connected Services** section under your project in the Solution Explorer. Below this section, you should see a folder for the "TripPinService" which contains the generated `Reference.cs` file containing the generated C# client code.
 
