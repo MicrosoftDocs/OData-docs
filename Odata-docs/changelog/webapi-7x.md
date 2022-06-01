@@ -658,7 +658,7 @@ ASP.NET Web API OData 7.0 is available in two packages:
 1. [Microsoft.AspNetCore.OData](https://www.nuget.org/packages/Microsoft.AspNetCore.OData) is based on ASP.NET Core 2.0.
 2. [Microsoft.AspNet.OData](https://www.nuget.org/packages/Microsoft.AspNet.OData) is based on ASP.NET Web API.
 
-[Get started](https://github.com/OData/ODataSamples/tree/master/WebApi/v7.x) with ASP.NET Web API OData 7.0 today!
+[Get started](https://github.com/OData/ODataSamples/tree/master/WebApiCore/ODataAspnetCore7xSample) with ASP.NET Web API OData 7.0 today!
 
 ### Download this release
 
