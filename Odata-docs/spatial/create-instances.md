@@ -58,7 +58,7 @@ var addressValue = new ODataResource
 ```
 
 ### Construct more complex spatial instances
-Directly creating these instances using Spatial APIs would be a bit complicated. So we **highly** recommend that you download and add the [SpatialFactory.cs](https://github.com/OData/odata.net/blob/master/test/FunctionalTests/Microsoft.OData.TestCommon/SpatialFactory.cs) file to your project and use the `GeometryFactory` or the `GeographyFactory` class to construct more complex spatial instances.
+Directly creating these instances using Spatial APIs would be a bit complicated. So we **highly** recommend that you download and add the [SpatialFactory.cs](https://github.com/OData/odata.net/blob/master/src/Microsoft.Spatial/Spatial/SpatialFactory.cs) file to your project and use the `GeometryFactory` or the `GeographyFactory` class to construct more complex spatial instances.
 
 Here are some sample code of how to use the factory classes to create spatial instances:
 
