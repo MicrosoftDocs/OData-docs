@@ -16,7 +16,7 @@ Web API OData supports some query limitations, for example:
 * NotSortable / Unsortable -- $orderby
 
 However, the corresponding annotations cannot be exposed in metadata document. This sample introduces the capabilities vocabulary support in Web API OData V5.7, which will enable capabilities vocabulary annotations in metadata document. 
-The related sample codes can be found [here](https://github.com/OData/ODataSamples/tree/master/WebApi/v4/ODataCapabilitiesVocabularySample).
+The related sample codes can be found [here](https://github.com/OData/ODataSamples/tree/master/WebApiCore/ODataCapabilitiesVocabularySample).
 
 ### Build Edm Model
 
