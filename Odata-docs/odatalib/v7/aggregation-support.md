@@ -45,4 +45,4 @@ Apply queryoption will get parse first and we can add filter, orderby, top, skip
 `$apply=groupby((Address/City))&$orderby=Address/City`
 
 ## Test
-All the support scenarios can be found in [WebAPI case](https://github.com/OData/WebApi/blob/master/OData/test/UnitTest/System.Web.OData.Test/OData/Query/ApplyQueryOptionTest.cs), [ODL case](https://github.com/OData/odata.net/blob/master/test/FunctionalTests/Microsoft.OData.Core.Tests/UriParser/Extensions/Binders/ApplyBinderTests.cs).
+All the support scenarios can be found in [WebAPI case](https://github.com/OData/WebApi/blob/9b41ed5e81722415e8b19fcb5596f0aefec77e2e/test/UnitTest/Microsoft.AspNet.OData.Test.Shared/Query/ApplyQueryOptionTest.cs), [ODL case](https://github.com/OData/odata.net/blob/master/test/FunctionalTests/Microsoft.OData.Core.Tests/UriParser/Extensions/Binders/ApplyBinderTests.cs).
