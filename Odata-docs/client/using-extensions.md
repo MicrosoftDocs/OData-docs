@@ -19,7 +19,7 @@ An IODataClientFactory can be registered and used to configure and create OData 
 * Separated concern of configuration and usage of IODataClientFactory, which allowed library owner to only depends on IODataClientFactory abstraction while deferred the actual configuration to service owner.
 * Adds a configurable logging experience (via ILogger) for all requests sent through clients created by the default factory with HttpClient bridge.
 
-In this session, we will dive into how to use Extensions in OData client request. It leverage the generated client entity, and internally it used the same hook mechanism in OData client which has been introduced in [Client Hooks in OData Client](/odata/client/v7/using-hooks), exposed it via OData client handler with a built-in handler to bridge to asp.net core HttpClientFactory.
+In this session, we will dive into how to use Extensions in OData client request. It leverage the generated client entity, and internally it used the same hook mechanism in OData client which has been introduced in [Client Hooks in OData Client](/odata/client/using-hooks), exposed it via OData client handler with a built-in handler to bridge to asp.net core HttpClientFactory.
 
 ## Prerequisites
 
