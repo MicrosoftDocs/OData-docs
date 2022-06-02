@@ -13,7 +13,7 @@ ms.topic: article
 
 From ODataLib 6.13.0, it supports the alternate key. For detail information about alternate keys, please refer to [here](https://github.com/OData/vocabularies/blob/master/OData.Community.Keys.V1.md).
 
-The related Web API sample codes can be found [here](https://github.com/OData/ODataSamples/tree/master/WebApi/v4/ODataAlternateKeySamples).
+The related Web API sample codes can be found [here](https://github.com/OData/ODataSamples/tree/master/WebApiCore/ODataAspnetCore7xSample).
 
 ## Single alternate key
 
