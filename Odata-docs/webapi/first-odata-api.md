@@ -55,7 +55,7 @@ Returning `System.Linq.IQueryable` or `ActionResult<IQueryable>` enables **OData
 
 ## Query resources using OData
 
-Post some data to the web API app, using a tool such as [HTTP REPL](/aspnet/core/web-api/http-repl) or [Postman](https://www.getpostman.com/tools).
+Post some data to the web API app, using a tool such as [HTTP REPL](/aspnet/core/web-api/http-repl) or [Postman](https://www.postman.com/product/tools).
 
 Send 5 Post requests to `https://localhost:5001/api/todo` with the 5 items below **separately** in the request body.
 
