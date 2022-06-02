@@ -8,7 +8,7 @@ author: madansr7
 # Unit Test and E2E Test
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
 
-In OData WebApi, there are unit tests, e2e tests for V3 and V4, those [test cases](https://github.com/OData/WebApi/tree/master/OData/test) are to verify that features and bug fixes work as intended, and also to make sure they do not break existing functionality.
+In OData WebApi, there are unit tests, e2e tests for V3 and V4, those [test cases](https://github.com/OData/WebApi/tree/master/test) are to verify that features and bug fixes work as intended, and also to make sure they do not break existing functionality.
 
 ### Unit Tests
 Every class in OData WebApi has its own unit test class, for example:
