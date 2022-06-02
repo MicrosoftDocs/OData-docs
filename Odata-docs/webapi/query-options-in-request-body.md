@@ -100,7 +100,7 @@ public class MoviesController : ODataController
 ```
 
 ### 6. Pass query options in request body
-Using an API client such as [Postman](https://www.getpostman.com/tools), send a POST request to `http://localhost:PORT/odata/Movies/$query`.
+Using an API client such as [Postman](https://www.postman.com/product/tools/), send a POST request to `http://localhost:PORT/odata/Movies/$query`.
 - Set `Content-Type` header to `text/plain`
 - Set request body to `$filter=contains(Name,'li')&$orderby=Name desc&$select=Id,Name,Classification,RunningTime`
 
