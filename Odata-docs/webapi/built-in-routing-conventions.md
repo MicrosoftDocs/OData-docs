@@ -20,7 +20,7 @@ Before describing the OData routing conventions in Web API, it is helpful to und
 
 For example: `https://example.com/odata/Products(1)/Supplier?$top=2 `
 
-* *The service root* : https://example.com/odata
+* *The service root* : `https://example.com/odata`
 * *The OData path* : Products(1)/Supplier
 * *Query options* : ?$top=2  
 
