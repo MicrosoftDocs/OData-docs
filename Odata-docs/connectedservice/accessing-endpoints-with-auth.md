@@ -21,7 +21,7 @@ The **Custom Headers** field in the **Endpoint** page (the first page of the wiz
 
 To add customer headers, select the **Include Custom Http Headers** checkbox and enter the headers in the **Custom Headers** text field. Each entry consists of a key and value pair separated by a colon (`:`). Each entry should go on a separate line.
 
-![Custom headers](../assets/2020-07-17-OCS-custom-headers.png)
+![Custom headers](../assets/2022-05-11-OCS-custom-headers.png)
 
 ## Proxy and network credentials
 
@@ -29,7 +29,7 @@ If you're running OData Connected Service from an environment that's behind a ne
 
 In the **Endpoint** page of the wizard, enable the **Include WebProxy** checkbox. This will reveal a set fields that allow you to specify you proxy credentials
 
-![Proxy credentials](../assets/2020-07-17-OCS-proxy-credentials.png)
+![Proxy credentials](../assets/2022-05-11-OCS-proxy-credentials.png)
 
 ## Privacy concerns
 
