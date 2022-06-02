@@ -89,7 +89,7 @@ It will generate the following metadata document:
 ### Conventions
 
 Wow, how did the convention model builder do that! Actually, convention model builder uses a set of **pre-defined** rules (called *conventions*) to achieve this. 
-If you open the source code for [`ODataConventionModelBuilder`](https://github.com/OData/WebApi/blob/master/OData/src/System.Web.OData/OData/Builder/ODataConventionModelBuilder.cs), you can find the following code at the beginning of the `ODataConventionModelBuilder` class:
+If you open the source code for [ODataConventionModelBuilder](https://github.com/OData/WebApi/blob/master/src/Microsoft.AspNetCore.OData/Builder/ODataConventionModelBuilder.cs), you can find the following code at the beginning of the `ODataConventionModelBuilder` class:
 
 ```C#
 private static readonly List<IConvention> _conventions = new List<IConvention>
