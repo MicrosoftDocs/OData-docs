@@ -9,7 +9,7 @@ author: xuzhg
 
 Alternate keys is supported in Web API OData V5.7. For detail information about alternate keys, please refer to [here](https://github.com/OData/vocabularies/blob/master/OData.Community.Keys.V1.md)
 
-The related sample codes can be found [here](https://github.com/OData/ODataSamples/tree/master/WebApi/v4/ODataAlternateKeySamples)
+The related sample codes can be found [here](https://github.com/OData/ODataSamples/tree/master/WebApiCore/ODataAspnetCore7xSample)
 
 ### Enable Alternate key 
 
