@@ -8,7 +8,7 @@ ms.date: 05/05/2019
 
 # Security guidance for ASP.NET Core Web API OData
 
-By [Mike Wasson](https://github.com/MikeWasson), [FIVIL](https://github.com/fivil)  and [Rick Anderson](https://twitter.com/RickAndMSFT)
+By Mike Wasson, [FIVIL](https://github.com/fivil)  and [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 This page describes some of the security issues that you should consider when exposing a dataset through [OData](https://www.odata.org/) for ASP.NET Core Web API.
 
