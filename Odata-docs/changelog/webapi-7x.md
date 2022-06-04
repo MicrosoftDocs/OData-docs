@@ -9,6 +9,14 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.5.15
+
+### Improvements and Fixes:
+
+* [ [#2650](https://github.com/OData/WebApi/pull/2650) ] Argument null exception in containerbuilder on .net 6
+
+* [ [#2420](https://github.com/OData/WebApi/pull/2420) ] Scale is not working on decimal property
+
 
 ## WebAPI 7.5.14
 
