@@ -40,7 +40,7 @@ N/A
 
 ***Improvements***
 
-[[#2222]](https://github.com/OData/odata.net/pull/2407) Encode special chars in array elements in Contains expression
+[[#2407]](https://github.com/OData/odata.net/pull/2407) Encode special chars in array elements in Contains expression
 
 ## ODataLib 7.11.0 Release
 
