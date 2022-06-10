@@ -17,6 +17,12 @@ You can install or update the NuGet package for OData ModelBuilder using the [Pa
 PM> Install-Package Microsoft.OData.ModelBuilder
 ```
 
+## OData ModelBuilder 1.0.9
+
+* See https://github.com/OData/ModelBuilder/releases/tag/v1.0.9
+
+---
+
 ## OData ModelBuilder 1.0.8
 
 * Enable DateOnly and TimeOnly types introduced in .NET 6
