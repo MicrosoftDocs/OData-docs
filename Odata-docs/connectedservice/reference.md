@@ -91,4 +91,4 @@ Your configuration are persisted in a JSON file called `ConnectedService.json`. 
   }
 }
 ```
-The reason all the relevant fiels are nested inside the top-level `ExtendedData` object is to retain compatibility with the `ConnectedService.json` schema.
+The reason all the relevant fields are nested inside the top-level `ExtendedData` object is to retain compatibility with the `ConnectedService.json` schema.
