@@ -28,9 +28,9 @@ public class Customer
 {
   public int Id { get; set; }
   
-  public Order SingleOrder {get;set;}  // single navigation property
+  public Order SingleOrder { get; set; }  // single navigation property
   
-  public IList<Order> Orders {get;set;} // collection navigation property
+  public IList<Order> Orders { get; set; } // collection navigation property
 }
 
 public class Order
@@ -38,8 +38,8 @@ public class Order
   public int Id { get; set; }
 }
 
-ODataModelBuilder builder = new ODataModelBuilder();
-var customers = builder.EntitySet<Cusomter>("Customers");
+var builder = new ODataModelBuilder();
+var customers = builder.EntitySet<Customer>("Customers");
 customers.HasManyBinding(c => c.Orders, "Orders");
 customers.HasRequiredBinding(c => c.SingleOrder, "SingleOrders");
 
@@ -49,7 +49,7 @@ We can get the following result:
 
 ```xml
 <EntityContainer Name="Container">
-  <EntitySet Name="Customers" EntityType="System.Web.OData.Builder.Cusomter">
+  <EntitySet Name="Customers" EntityType="System.Web.OData.Builder.Customer">
     <NavigationPropertyBinding Path="Orders" Target="Orders" />
     <NavigationPropertyBinding Path="SingleOrder" Target="SingleOrders" />
   </EntitySet>
@@ -59,15 +59,15 @@ We can get the following result:
 ```
 
 Where, the binding path is straight-forward, just as the navigation property name.
-Before 6.0.0, it doesn't support to:
+Before 6.0.0, it doesn't support:
 
-1. Add the complex property into binding path
-2. Add the type cast into binding path
+1. Adding the complex property into binding path
+2. Adding the type cast into binding path
 
 
 ### Multiple navigation property binding path in model builder
 
-In [Web API OData V6.0.0 beta](https://www.nuget.org/packages/Microsoft.AspNet.OData/6.0.0-beta2), we add a new generic type class to configure the multiple binding path:
+In [Web API OData V6.0.0 beta](https://www.nuget.org/packages/Microsoft.AspNet.OData/6.0.0-beta2), we added a new generic type class to configure the multiple binding path:
 
 ```C#
 
@@ -84,7 +84,7 @@ In this class, it provides the following APIs to add binding path:
 
 ```
 
-It also provides the following APIs to bind the navigation property with multiple binding path to a targe navigation source.
+It also provides the following APIs to bind the navigation property with multiple binding path to a target navigation source.
 
 ```C#
 
@@ -121,14 +121,14 @@ Let's have the following CLR classes as the model:
 
 ```C#
 
-public class Cusomter
+public class Customer
 {
   public int Id { get; set; }
 
   public Animal Pet { get; set; }
 }
 
-public class VipCustomer : Cusomter
+public class VipCustomer : Customer
 {
   public List<Address> VipLocations { get; set; }
 }
@@ -193,7 +193,7 @@ So, we can get the following target binding:
 ```xml
 <Schema Namespace="Default" xmlns="https://docs.oasis-open.org/odata/ns/edm">
   <EntityContainer Name="Container">
-    <EntitySet Name="Customers" EntityType="System.Web.OData.Builder.Cusomter">
+    <EntitySet Name="Customers" EntityType="System.Web.OData.Builder.Customer">
       <NavigationPropertyBinding Path="Pet/System.Web.OData.Builder.Human/HumanAddress/SubCity" Target="HumanCities" />
       <NavigationPropertyBinding Path="Pet/System.Web.OData.Builder.Horse/HorseAddress/SubCity" Target="HorseCities" />
       <NavigationPropertyBinding Path="Pet/System.Web.OData.Builder.Horse/HorseAddresses/SubCity" Target="HorseCities" />
@@ -211,15 +211,15 @@ So, we can get the following target binding:
 Where: As example shown:
 
 1. It supports single property with multiple binding path.
-2. It supports collection property with mutliple binding path.
+2. It supports collection property with multiple binding path.
 3. It also supports mulitple binding path with inheritance type.
 
-Besides, the `HasManyPath()/HasSinglePath()` has onverload methods to configure the containment binding path. 
+Besides, the `HasManyPath()/HasSinglePath()` has overload methods to configure the containment binding path. 
 
 
 ### Multiple navigation property binding path in convention model builder
 
-In convention model builder, it will automatically traverl all property binding paths to add a binding for the navigation proeprty.
+In convention model builder, it will automatically traverse all property binding paths to add a binding for the navigation proeprty.
 
 There's an [unit test](https://github.com/OData/WebApi/blob/OData60/OData/test/UnitTest/System.Web.OData.Test/OData/MetadataControllerTest.cs#L1070-L1114) that you can refer to. 
 
