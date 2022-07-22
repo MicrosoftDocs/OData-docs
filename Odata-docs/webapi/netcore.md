@@ -52,7 +52,7 @@ In the New Project dialog, select **ASP.NET Core 2.0** and select the **WebApi**
 
 #### b. Install the OData packages
 
-In the Nuget Package Manager, install `Microsoft.AspNetCore.OData` and all it's dependencies.
+In the Nuget Package Manager, install `Microsoft.AspNetCore.OData` and all its dependencies.
 
 #### c. Add a model class
 
