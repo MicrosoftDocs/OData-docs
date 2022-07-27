@@ -193,6 +193,8 @@ Currently the default services provided by ODataLib and expected to be overridde
 |-------|---------------------|--------|----------|
 |IJsonReaderFactory|DefaultJsonReaderFactory|Singleton|N|
 |IJsonWriterFactory|DefaultJsonWriterFactory|Singleton|N|
+|IJsonWriterFactoryAsync|DefaultJsonWriterFactory|Singleton|N|
+|IStreamBasedJsonWriterFactory|N/A|Singleton|N|
 |ODataMediaTypeResolver|ODataMediaTypeResolver|Singleton|N|
 |ODataMessageReaderSettings|ODataMessageReaderSettings|Scoped|Y|
 |ODataMessageWriterSettings|ODataMessageWriterSettings|Scoped|Y|
