@@ -32,7 +32,7 @@ using Microsoft.OData.Json;
 ```c#
 IContainerBuilder builder = new TestContainerBuilder();
 builder.AddDefaultODataServices();
-builder.AddService<IStreamBasedJsonWriterFactory, DefaultStreamBasedJsonWriterFactory.Default>();
+builder.AddService<IStreamBasedJsonWriterFactory>(sp => DefaultStreamBasedJsonWriterFactory.Default);
 ```
 
 ## Limitations and other considerations
