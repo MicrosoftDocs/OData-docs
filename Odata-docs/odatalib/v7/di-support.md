@@ -234,6 +234,18 @@ After that, the container will be stored in the `Container` properties of `OData
 
 If you fail to set the `Container` in `IContainerProvider`, it will remain `null`. In this case, ODataLib will not fail internally but all services will have their default implementations and there would be NO way to replace them with custom ones. That said, if you want extensibility, please use DI :-)
 
+##### Considerations for injecting custom JSON writers
+
+For `ODataMessageWriter` to work correctly in both synchronous and asynchronous scenarios, it must have a single instance of an internal JSON writer that implements both `IJsonWriter` and `IJsonWriterAsync` interfaces.
+
+This means that if you inject your own custom JSON factory (either `IJsonWriterFactory`, `IJsonWriterFactoryAsync` or `IStreamBasedJsonWriterFactory`), the returned instance must implement both `IJsonWriter` and `IJsonWriterAsync`.
+
+The factories built-in to the library, i.e. `DefaultJsonWriterFactory` and `DefaultStreamBasedJsonWriterFactory` return writer instances that implement both `IJsonWriter` and `IJsonWriterAsync` interfaces.
+
+If you inject a custom `IStreamBasedJsonWriterFactory` that does not implement both synchronous and async interfaces, `ODataMessageWriter` will throw an exception informing you that both interfaces must be implemented.
+
+For backwards compatibility, we allow you to inject a custom `IJsonWriterFactory` that returns `IJsonWriter` implementation without implementing `IJsonWriterAsync`. In this case, asynchronous writing will not be supported, so you should not use the `Write***Async` methods. Bear in mind, that calling the [`container.AddDefaultODataServices()`](/dotnet/api/microsoft.odata.containerbuilderextensions.adddefaultodataservices) automatically injects a default `IJsonWriterFactoryAsync` implementation. So if you're only providing a synchronous `IJsonWriter` via a custom `IJsonWriterFactory`, then you should not call the `AddDefaultODataServices()`, otherwise `ODataMessageWriter` will end up creating two separate JSON writers (one that you injected, and the other from the default `IJsonWriterFactoryAsync` implementation) and this will also throw an exception.
+
 #### Part II: URI Parsing
 The way of passing container into URI parsers is a little bit different. You must use the constructor overloads (see below) of `ODataUriParser` that take a parameter `container` of `IServiceProvider` to do so. Using the other constructors will otherwise disable the DI support in URI parsers.
 

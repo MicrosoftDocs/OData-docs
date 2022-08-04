@@ -12,11 +12,11 @@ ms.topic: article
 
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
 
-The `ODataMessageWriter` internally uses a low-level `JsonWriter` to write JSON output to the destination stream. This `JsonWriter` is implemented as part of the `Microsoft.OData.Core` library. It implements the `IJsonWriter` and `IJsonWriterAsync` interfaces.
+The `ODataMessageWriter` internally uses an implementation of [`IJsonWriter`](/dotnet/api/microsoft.odata.json.ijsonwriter) (and [`IJsonWriterAsync`](/dotnet/api/microsoft.odata.json.ijsonwriterasync?view=odata-core-7.0)) to write JSON output to the destination stream. This is a low-level JSON writer that exposes methods for writing individual properties and values. Before v7.13.0, `Microsoft.OData.Core` shipped a single default implementation (internally called `JsonWriter`) that can be constructed using the [`DefaultJsonWriterFactory`](/dotnet/api/microsoft.odata.json.defaultjsonwriterfactory).
 
-It's possible to replace the writer a custom implementation by injecting your own implementation of `IJsonWriterFactory` to the [dependency-injection container. For more information about configuring dependency injection in ODate core library, [see this article](/odata/odatalib/di-support).
+It's possible to replace the writer with a custom implementation by injecting your own implementation of [`IJsonWriterFactory`](/dotnet/api/microsoft.odata.json.ijsonwriterfactory) into the dependency-injection container. For more information about configuring dependency injection in ODate core library, [see this article](/odata/odatalib/di-support).
 
-Microsoft.OData.Core 7.[TODO: version] introduced a new implementation of `IJsonWriter` and `IJsonWriterAsync` called `ODataUtf8JsonWriter`. This is based on .NET's built-in [Utf8JsonWriter](/dotnet/api/system.text.json.utf8jsonwriter). This writer is faster and uses less memory than the default `JsonWriter`.
+Microsoft.OData.Core 7.13.0 introduced a new implementation of `IJsonWriter` and `IJsonWriterAsync` called `ODataUtf8JsonWriter`. This is based on .NET's built-in [Utf8JsonWriter](/dotnet/api/system.text.json.utf8jsonwriter). This writer is faster and uses less memory than the default `JsonWriter`.
 
 Since the existing `IJsonWriterFactory` is tightly coupled to `TextWriter`, we introduced a new interface `IStreamBasedJsonWriterFactory` which accepts the destination `Stream` as input instead of `TextWriter`. The default implementation of this interface is `DefaultStreamBasedJsonWriterFactory`, which creates instances of `ODataUtf8JsonWriter`.
 
@@ -39,7 +39,7 @@ builder.AddService<IStreamBasedJsonWriterFactory>(sp => DefaultStreamBasedJsonWr
 
 ### Choosing a JavaScriptEncoder
 
-The `DefaultStreamBasedJsonWriterFactory.Default` instance uses the default [JavaScriptEncoder](/dotnet/api/system.text.encodings.web.javascriptencoder.default) used by Utf8JsonWriter to encode and escape output text. The default encoder escapes control characters, non-ASCII characters and HTML-sensitive characters like `<`. This differs from OData’s default behavior which does not escape HTML-sensitive characters.
+The `DefaultStreamBasedJsonWriterFactory.Default` instance uses the default [JavaScriptEncoder](/dotnet/api/system.text.encodings.web.javascriptencoder.default) used by `Utf8JsonWriter` to encode and escape output text. The default encoder escapes control characters, non-ASCII characters and HTML-sensitive characters like `<`. This differs from OData’s default behavior which does not escape HTML-sensitive characters.
 
 You can provide a different `JavaScriptEncoder`. Instead of injecting `DefaultStreamBasedJsonWriterFactory.Default`, you can create a new instance of the factory and pass the encoder to the constructor. The following snippet uses the [JavaScriptEncoder.UnsafeRelaxedJsonEscaping](/dotnet/api/system.text.encodings.web.javascriptencoder.unsaferelaxedjsonescaping) which does not escape HTML-sensitive characters. This is the default encoder used by ASP.NET Core.
 
@@ -47,7 +47,7 @@ You can provide a different `JavaScriptEncoder`. Instead of injecting `DefaultSt
 IStreamBasedJsonWriterFactory factory = new DefaultStreamBasedJsonWriterFactory(JavaScriptEncoder.UnsafeRelaxedJsonEscaping);
 ```
 
-Note that there’s no built-in JavaScriptEncoder that exactly matches the encoding of OData’s default JsonWriter. The raw output of the two writers will be different. But if the client is UTF-8 compliant, this should not be a problem. Nevertheless, this is something you should take into consideration before adopting the new writer. In general, you should not be highly dependent on a particular encoding because the internal implementation may change from one version of .NET to another.
+Note that there’s no built-in JavaScriptEncoder that exactly matches the escaping rules of `Microsoft.OData.Core`’s default `JsonWriter`. The raw output of the two writers will be different. But if the client is [standards-compliant](https://www.ietf.org/rfc/rfc4627.txt), this should not be a problem. Nevertheless, this is something you should take into consideration before adopting the new writer. In general, you should not be highly dependent on a particular escaping output because the internal implementation may change from one version of .NET to another (See relevant discussions [here](https://github.com/dotnet/runtime/issues/70419), [here](https://github.com/dotnet/runtime/issues/54193) and [here](https://github.com/dotnet/runtime/issues/1564#issuecomment-504780719)).
 
 ### Supported .NET versions
 
