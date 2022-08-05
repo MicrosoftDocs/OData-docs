@@ -42,7 +42,7 @@ The metadata document for *Customer* entity type will be:
 </EntityType>
 ```
 
-### Build-in Functions
+### Built-in Functions
 
 Along with the `Edm.Date` & `Edm.TimeOfDay`, new date and time related built-in functions are supported in Web API OData V5.5.
 
