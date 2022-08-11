@@ -314,6 +314,8 @@
         href: /odata/client/using-extensions
       - name: Using Blazor WebAssembly With OData Client
         href: /odata/client/using-blazor-wasm-with-odata-client
+      - name: Grouping and aggregation
+        href: /odata/client/grouping-and-aggregation
   - name: Spatial lib
     items:
         - name: Define spatial properties
