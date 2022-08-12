@@ -28,6 +28,32 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
+## ODataLib 7.12.2 Release
+
+***Features***
+
+[[#2466]](https://github.com/OData/odata.net/pull/2466) Implement `ODataUtf8JsonWriter` async API
+
+[[#2157]](https://github.com/OData/odata.net/pull/2157) Add extension method to get all navigation property bindings: `GetNavigationPropertyBindings(this IEdmEntityContainer container)`
+
+[[#2470]](https://github.com/OData/odata.net/pull/2470) Add support for `Core.AlternateKeys`
+
+## ODataLib 7.12.1 Release
+
+***Features***
+
+[[2425]](https://github.com/OData/odata.net/pull/2425) Make `ODataPathExtensions` public
+
+[[2416]](https://github.com/OData/odata.net/pull/2416) Create `Utf8JsonWriter`-based implementation of `IJsonWriter` and introduced `IStreamBasedJsonWriterFactory` interfaces
+
+[[1925]](https://github.com/OData/odata.net/pull/1925) Add support for `$apply/groupby` in OData Client
+
+***Fixed Bugs***
+
+[[2461]](https://github.com/OData/odata.net/pull/2461) Fix `DisposeAsync` implementation for .NET Core 3.1 and higher
+
+[[2459]](https://github.com/OData/odata.net/pull/2459) Fix issues synchronous I/O to occur in async code, leading to errors when using Kestrel
+
 ## ODataLib 7.12.0 Release
 
 ***Features***
