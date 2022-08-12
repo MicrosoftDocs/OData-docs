@@ -52,7 +52,7 @@ Most of our API improvements fall into the category of namespace simplifications
 
 [[2461]](https://github.com/OData/odata.net/pull/2461) Fix `DisposeAsync` implementation for .NET Core 3.1 and higher
 
-[[2459]](https://github.com/OData/odata.net/pull/2459) Fix issues synchronous I/O to occur in async code, leading to errors when using Kestrel
+[[2459]](https://github.com/OData/odata.net/pull/2459) Fix issues causing synchronous I/O to occur in asynchronous code. This was in turn causing exceptions when using Kestrel web server which by default does not allow synchronous I/O.
 
 ## ODataLib 7.12.0 Release
 
