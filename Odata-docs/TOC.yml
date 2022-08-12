@@ -186,8 +186,6 @@
       href: /odata/webapi/odata-expand
     - name: Security guidance
       href: /odata/webapi/odata-security
-    - name: "Using Utf8JsonWriter to improve serialization performance"
-      href: /odata/webapi/using-utf8jsonwriter-to-improve-serialization-performance
   - name: ODataLib
     items:
     - name: Core lib
