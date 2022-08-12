@@ -11,7 +11,7 @@ ms.date: 8/4/2022
 
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)]
 
-Microsoft.OData.Core version 7.13.0 introduced a new JSON writer that’s based on .NET’s [`Utf8JsonWriter`](/dotnet/api/system.text.json.utf8jsonwriter). This writer is more performant than the default JSON writer used in `Microsoft.OData.Core`. To learn more about the `Utf8JsonWriter`-based writer, [visit this page](/odata/odatalib/using-utf8jsonwriter-for-better-performance). In this article, we are going to show you how to configure your OData Web API application to use the `Utf8JsonWriter`-based writer.
+Microsoft.OData.Core version 7.12.2 introduced a new JSON writer that’s based on .NET’s [`Utf8JsonWriter`](/dotnet/api/system.text.json.utf8jsonwriter). This writer is more performant than the default JSON writer used in `Microsoft.OData.Core`. To learn more about the `Utf8JsonWriter`-based writer, [visit this page](/odata/odatalib/using-utf8jsonwriter-for-better-performance). In this article, we are going to show you how to configure your OData Web API application to use the `Utf8JsonWriter`-based writer.
 
 This feature is available in OData Web API starting from v7...[TODO: specify version], and only available in .NET Core 3.1 and later (i.e. .NET 6+). It is not available on .NET Framework.
 

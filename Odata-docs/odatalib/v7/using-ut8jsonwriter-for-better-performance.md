@@ -12,11 +12,11 @@ ms.topic: article
 
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../includes/appliesto-odatalib-v7.md)]
 
-The `ODataMessageWriter` internally uses an implementation of [`IJsonWriter`](/dotnet/api/microsoft.odata.json.ijsonwriter) (and [`IJsonWriterAsync`](/dotnet/api/microsoft.odata.json.ijsonwriterasync)) to write JSON output to the destination stream. This is a low-level JSON writer that exposes methods for writing individual properties and values. Before v7.13.0, `Microsoft.OData.Core` shipped a single default implementation (internally called `JsonWriter`) that can be constructed using the [`DefaultJsonWriterFactory`](/dotnet/api/microsoft.odata.json.defaultjsonwriterfactory).
+The `ODataMessageWriter` internally uses an implementation of [`IJsonWriter`](/dotnet/api/microsoft.odata.json.ijsonwriter) (and [`IJsonWriterAsync`](/dotnet/api/microsoft.odata.json.ijsonwriterasync)) to write JSON output to the destination stream. This is a low-level JSON writer that exposes methods for writing individual properties and values. Before v7.12.2, `Microsoft.OData.Core` shipped a single default implementation (internally called `JsonWriter`) that can be constructed using the [`DefaultJsonWriterFactory`](/dotnet/api/microsoft.odata.json.defaultjsonwriterfactory).
 
 It's possible to replace the writer with a custom implementation by injecting your own implementation of [`IJsonWriterFactory`](/dotnet/api/microsoft.odata.json.ijsonwriterfactory) into the dependency-injection container. For more information about configuring dependency injection in ODate core library, [see this article](/odata/odatalib/di-support).
 
-Microsoft.OData.Core 7.13.0 introduced a new implementation of `IJsonWriter` and `IJsonWriterAsync` called `ODataUtf8JsonWriter`. This is based on .NET's built-in [Utf8JsonWriter](/dotnet/api/system.text.json.utf8jsonwriter). This writer is faster and uses less memory than the default `JsonWriter`.
+Microsoft.OData.Core 7.12.2 introduced a new implementation of `IJsonWriter` and `IJsonWriterAsync` called `ODataUtf8JsonWriter`. This is based on .NET's built-in [Utf8JsonWriter](/dotnet/api/system.text.json.utf8jsonwriter). This writer is faster and uses less memory than the default `JsonWriter`.
 
 Since the existing `IJsonWriterFactory` is tightly coupled to `TextWriter`, we introduced a new interface `IStreamBasedJsonWriterFactory` which accepts the destination `Stream` as input instead of `TextWriter`. The default implementation of this interface is `DefaultStreamBasedJsonWriterFactory`, which creates instances of `ODataUtf8JsonWriter`.
 
