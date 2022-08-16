@@ -9,6 +9,16 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.5.16
+
+### Improvements and Fixes:
+
+* [ [#2668](https://github.com/OData/WebApi/pull/2668) ] Update Newtonsoft.Json version to 13.0.1
+
+* [ [#2652](https://github.com/OData/WebApi/pull/2668) ] Add settings flag to avoid swallowing serialization errors when ILogger is registered
+
+* [ [#2692](https://github.com/OData/WebApi/pull/2668) ] Update ODL version to 7.12.2
+
 ## WebAPI 7.5.15
 
 ### Improvements and Fixes:

@@ -162,6 +162,8 @@
             href: /odata/webapi/automatic-nested-paths-with-enable-nested-paths
           - name: PageSize, Top and MaxTop
             href: /odata/webapi/pagesize-top-maxtop
+          - name: "Using Utf8JsonWriter to improve serialization performance"
+            href: /odata/webapi/using-utf8jsonwriter-to-improve-serialization-performance
       - name: Extending WebAPI
         items:
         - name: Custom URL parsing
