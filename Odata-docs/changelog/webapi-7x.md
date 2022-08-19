@@ -9,7 +9,17 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.5.17
+
+### Improvements and Fixes:
+
+* [ [#2699](https://github.com/OData/WebApi/pull/2699) ] Add virtual method for complex property serialization.
+
+* Fix the NewtonSoft.JSON package version reference problem.
+
 ## WebAPI 7.5.16
+
+**Warning**: This version had [issues](https://github.com/OData/WebApi/issues/2700) and was unlisted from NuGet.
 
 ### Improvements and Fixes:
 
