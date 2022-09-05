@@ -12,7 +12,7 @@ ms.author: clhabins
 
 OData Web API is a .NET library for building REST API services that conform to the OData protocol. The OData protocol defines best-practices for consistent and strongly-typed REST APIs by specifying the format of requests and responses, type definition and service description as well as features like filtering, querying related data, pagination, etc. OData Web API library is a set of services that extend [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core) to provide OData-based routing, request and response serialization, query handling and more. To learn more about OData itself, visit [the OData docs](/odata/overview).
 
-Here are a few of the features provided by the library:
+Here are some of the features provided by the library:
 - Exposes a metadata endpoint that returns a document describing the API service' model, the data types it defines and the endpoints and capabilities it exposes. This document makes it easier for clients to consume the service. It can also be used by tooling to automatically generate client-side code that can interact with the service (e.g. [OData CLI](/odata/odatacli/getting-started), [OData Connected Service](/odata/connectedservice/getting-started)), allowing the user to focus on business logic.
 - Convention-based routing: Requests are routed to controllers and actions based on naming and URL conventions. You can easily override this using ASP.NET core's `[Route]` attribute.
 - Handles serialization and deserialization of requests and responses
