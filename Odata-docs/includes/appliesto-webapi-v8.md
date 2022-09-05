@@ -5,5 +5,4 @@ ms.date: 2/9/2022
 author: habbes
 ms.author: clhabins
 ---
-# OData WebApi v8 supported
- ![Green circle with a checkmark inside it.](/odata/assets/doc-assets/yes.png) OData AspNet WebApi V7
+![Green circle with a checkmark inside it.](/odata/assets/doc-assets/yes.png) OData Web API v8
