@@ -51,7 +51,7 @@
 - name: Develop
   expanded: true
   items:
-  - name: WebAPI 8
+  - name: OData Web API 8
     items:
       - name: Overview
         href: /odata/webapi-8/overview
