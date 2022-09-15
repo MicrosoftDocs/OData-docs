@@ -41,7 +41,7 @@ Here are some of the benefits and common use cases for using OData Web API:
 
 The library is shipped on NuGet under the package name: `Microsoft.AspNetCore.OData`.
 
-We also ship a library separately for building OData models from .NET model classes. This is available under the package name: `Microsoft.OData.ModelBuilder`.
+We also ship a separate library for building OData models from .NET model classes. This is available under the package name: `Microsoft.OData.ModelBuilder`.
 
 ## Choosing the right version
 
