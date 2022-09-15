@@ -29,7 +29,6 @@ Here are some of the features provided by the library:
 ## Why choose OData Web API:
 
 Here are some of the benefits and common use cases for using OData Web API:
-
 - Creating a standards-compliant Web API with support for filtering, selecting, expanding among other capabilities.
 - Interoperability with OpenAPI and Swagger
 - Type-safety
