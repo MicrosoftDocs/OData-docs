@@ -35,7 +35,7 @@ Here are some of the benefits and common use cases for using OData Web API:
 - Type-safety
 - Ability to generate client code from OData model description
 - Expose a REST API layer to your data source for analytics functions.
-- Add advanced querying capabilities via OData query options to your REST API even if it's not based on OData.
+- Add advanced querying capabilities via OData query options to your REST API even when it's not based on OData.
 
 ## NuGet packages
 
