@@ -34,7 +34,7 @@ Most of our API improvements fall into the category of namespace simplifications
 
 [[#2487]](https://github.com/OData/odata.net/pull/2487) Fixed bug in `LoadProperty` for complex properties and complex collection properties
 
-[[#2497]](https://github.com/OData/odata.net/pull/2497) Fixed bug causing JSON batch responses in WebAPI to be written out of order when using `DefaultStreamBasedJsonWrtierFactory`.
+[[#2497]](https://github.com/OData/odata.net/pull/2497) Fixed bug causing JSON batch responses in WebAPI to be written out of order when using `DefaultStreamBasedJsonWriterFactory`.
 
 ***Improvements***
 
