@@ -8,7 +8,7 @@ ms.author: kemunga
 ms.date: 9/15/2022
 ---
 # Actions and functions
-**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v6.md)]
+**Applies To**:[!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v8.md)]
 
 In OData, actions and functions are a way to add server-side behaviors that are not easily defined as CRUD operations on entities. This documentation shows how to add actions and functions to an OData v4 endpoint, using Web API v8.x.
 
