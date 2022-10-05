@@ -215,7 +215,7 @@ We get the response below:
 ```
 
 ## Bound Action
-Similar to bound fucntions, bound actions can be bound to entity type or collection of entity type.
+Similar to bound functions, bound actions can be bound to entity type or collection of entity type.
 However, the overload of bound actions are different. Bound actions can be overloaded, but overload must happen by different binding parameter. For one binding parameter, there can be only one bound action.
 
 In the Edm Model, we modify the code as follows.
@@ -295,3 +295,115 @@ We get the response below:
     "bookID": "1"
 }
 ```
+
+## Unbound Action
+Unbound actions don’t bound to any type and they are called as static operations same as unbound functions. However, unbound actions do not allow overloading.
+
+In the Edm Model, we modify the code as follows.
+
+```csharp
+private static IEdmModel GetEdmModel()
+{
+    var builder = new ODataConventionModelBuilder();
+    builder.EntitySet<Book>("books");
+    builder.EntityType<Book>().Collection
+        .Function("mostRecent")
+        .Returns<string>();
+    builder.Function("returnAllForKidsBooks").ReturnsFromEntitySet<Book>("books");
+    builder.EntityType<Book>()
+        .Action("rate")
+        .Parameter<int>("rating");
+    var action = builder.Action("incrementBookYear").ReturnsFromEntitySet<Book>("books");
+        action.Parameter<int>("increment");
+        action.Parameter<string>("id");
+    var model = builder.GetEdmModel();
+    return model;
+}
+```
+
+In the Edm Model above, we are adding an `incrementBookYear` action. The action takes an `increment` parameter of type `int` and
+an `id` parameter of type `string`.
+
+We will update the `BooksController` as follows.
+
+```csharp
+public class BooksController : ODataController
+{
+    // Get ~/Books
+    [EnableQuery]
+    public IActionResult Get()
+    {
+        return Ok(DataSource.Instance.Books);
+    }
+
+    [HttpGet("odata/Books/MostRecent()")]
+    public IActionResult MostRecent()
+    {
+        var maxBookId = DataSource.Instance.Books.Max(x => x.ID);
+        return Ok(maxBookId);
+    }
+
+    [HttpGet("odata/ReturnAllForKidsBooks")]
+    public IActionResult ReturnAllForKidsBooks()
+    {
+        var forKidsBooks = DataSource.Instance.Books.Where(m => m.ForKids == true);
+        return Ok(forKidsBooks);
+    }
+
+    [HttpPost("odata/Books({key})/Rate")]
+    public IActionResult Rate([FromODataUri] string key, ODataActionParameters parameters)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest();
+        }
+
+        int rating = (int)parameters["rating"];
+
+        if (rating < 0)
+        {
+            return BadRequest();
+        }
+
+        return Ok(new BookRating() { BookID = key, Rating = rating });
+    }
+
+    [HttpPost("odata/incrementBookYear")]
+    public IActionResult IncrementBookYear(ODataActionParameters parameters)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest();
+        }
+
+        int increment = (int)parameters["increment"];
+        string bookId = (string)parameters["id"];
+
+        var book = DataSource.Instance.Books.Where(m => m.ID == bookId).FirstOrDefault();
+
+        if (book != null)
+        {
+            book.Year = book.Year + increment;
+        }
+
+        return Ok(book);
+    }
+}
+```
+
+If we invoke `POST odata/incrementBookYear {"increment": 7, "id": "1"}`
+We get the response below:
+
+```json
+{
+    "@odata.context": "http://localhost:5000/odata/$metadata#books/$entity",
+    "id": "1",
+    "isbn": "AA0011",
+    "title": "Book 1",
+    "year": 2002,
+    "forKids": false
+}
+```
+
+## Conclusion
+In our examples above, we have provided very basic use cases for actions and functions. In real-world usage, actions and functions may contain complex logic to modify and get data across multiple entities.
