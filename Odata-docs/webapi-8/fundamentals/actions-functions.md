@@ -10,22 +10,22 @@ ms.date: 9/15/2022
 # Actions and functions
 **Applies To**:[!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v8.md)]
 
-In OData, actions and functions are a way to add server-side behaviors that are not easily defined as CRUD operations on entities. This documentation shows how to add actions and functions to an OData v4 endpoint, using Web API v8.x.
+In OData, actions and functions are a way to add server-side behavior that are not easily defined as CRUD operations on entities. This documentation shows how to add actions and functions to an OData v4 endpoint, using ASP.NET Core OData v8.x.
 
 ## What are actions and functions?
-- Functions are operations exposed by an OData service that MUST return data and MUST have no observable side effects. They may support further composition. Functions are invoked by using HTTP GET requests.
-- Actions are operations exposed by an OData service that MAY have side effects when invoked. Actions have a side effect on the server, so they are invoked by using HTTP POST requests. They cannot be further composed in order to avoid non-deterministic behavior.
+- `Functions` are operations exposed by an OData service that MUST return data and MUST have no observable side effects. They may support further composition. Functions are invoked by using HTTP GET requests.
+- `Actions` are operations exposed by an OData service that MAY have side effects when invoked. Actions have a side effect on the server, so they are invoked by using HTTP POST requests. They cannot be further composed in order to avoid non-deterministic behavior.
 
-## Difference between bound and unbound operations.
+## Bound and unbound operations.
 From OData V4 spec, functions and actions can be either bound to a type or unbound.
 Bound operations are bound to an entity type, primitive type, complex type, or a collection.
 Unbound operations are invoked as static operations on the service.
 
 ## Practical examples
 We will add detailed examples on how to configure bound and unbound functions and actions.
-We will start by setting up the OData WebAPI 8.x project.
+We will start by setting up the ASP.NET Core OData v8.x project.
 
-### CLR classes
+### Data Model classes
 ```csharp
 public class Book
 {
@@ -77,7 +77,10 @@ In the Edm Model, we modify the code as follows.
 private static IEdmModel GetEdmModel()
 {
     var builder = new ODataConventionModelBuilder();
-    builder.EntitySet<Book>("books");
+    // -------------
+    // Existing code
+    // -------------
+
     builder.EntityType<Book>().Collection
         .Function("mostRecent")
         .Returns<string>();
@@ -93,14 +96,11 @@ We will update the `BooksController` as follows.
 ```csharp
 public class BooksController : ODataController
 {
-    // Get ~/Books
-    [EnableQuery]
-    public IActionResult Get()
-    {
-        return Ok(DataSource.Instance.Books);
-    }
+    // -------------
+    // Existing code
+    // -------------
 
-    [HttpGet("odata/Books/MostRecent()")]
+    [HttpGet("odata/Books/mostRecent()")]
     public IActionResult MostRecent()
     {
         var maxBookId = DataSource.Instance.Books.Max(x => x.ID);
@@ -109,7 +109,7 @@ public class BooksController : ODataController
 }
 ```
 
-If we invoke `GET odata/Books/MostRecent()`
+If we invoke `GET odata/Books/mostRecent()`
 We get the response below:
 
 ```json
@@ -120,7 +120,7 @@ We get the response below:
 ```
 
 ## Unbound function
-Unbound functions don’t bound to any type and they are called as static operations. All unbound function overloads MUST have same return type.
+Unbound functions don’t bind to any type and they are invoked as static operations. All unbound function overloads MUST have same return type.
 
 In the Edm Model, we modify the code as follows.
 
@@ -128,10 +128,10 @@ In the Edm Model, we modify the code as follows.
 private static IEdmModel GetEdmModel()
 {
     var builder = new ODataConventionModelBuilder();
-    builder.EntitySet<Book>("books");
-    builder.EntityType<Book>().Collection
-        .Function("mostRecent")
-        .Returns<string>();
+    // -------------
+    // Existing code
+    // -------------
+
     builder.Function("returnAllForKidsBooks").ReturnsFromEntitySet<Book>("books");
     var model = builder.GetEdmModel();
     return model;
@@ -139,25 +139,16 @@ private static IEdmModel GetEdmModel()
 ```
 
 In the Edm Model above, we are adding a `returnAllForKidsBooks` function. The function returns a collection of books.
+For parameterless functions, we can ignore the parenthesis.
 
 We will update the `BooksController` as follows.
 
 ```csharp
 public class BooksController : ODataController
 {
-    // Get ~/Books
-    [EnableQuery]
-    public IActionResult Get()
-    {
-        return Ok(DataSource.Instance.Books);
-    }
-
-    [HttpGet("odata/Books/MostRecent()")]
-    public IActionResult MostRecent()
-    {
-        var maxBookId = DataSource.Instance.Books.Max(x => x.ID);
-        return Ok(maxBookId);
-    }
+    // -------------
+    // Existing code
+    // -------------
 
     [HttpGet("odata/ReturnAllForKidsBooks")]
     public IActionResult ReturnAllForKidsBooks()
@@ -224,11 +215,10 @@ In the Edm Model, we modify the code as follows.
 private static IEdmModel GetEdmModel()
 {
     var builder = new ODataConventionModelBuilder();
-    builder.EntitySet<Book>("books");
-    builder.EntityType<Book>().Collection
-        .Function("mostRecent")
-        .Returns<string>();
-    builder.Function("returnAllForKidsBooks").ReturnsFromEntitySet<Book>("books");
+    // -------------
+    // Existing code
+    // -------------
+
     builder.EntityType<Book>()
         .Action("rate")
         .Parameter<int>("rating");
@@ -244,26 +234,9 @@ We will update the `BooksController` as follows.
 ```csharp
 public class BooksController : ODataController
 {
-    // Get ~/Books
-    [EnableQuery]
-    public IActionResult Get()
-    {
-        return Ok(DataSource.Instance.Books);
-    }
-
-    [HttpGet("odata/Books/MostRecent()")]
-    public IActionResult MostRecent()
-    {
-        var maxBookId = DataSource.Instance.Books.Max(x => x.ID);
-        return Ok(maxBookId);
-    }
-
-    [HttpGet("odata/ReturnAllForKidsBooks")]
-    public IActionResult ReturnAllForKidsBooks()
-    {
-        var forKidsBooks = DataSource.Instance.Books.Where(m => m.ForKids == true);
-        return Ok(forKidsBooks);
-    }
+    // -------------
+    // Existing code
+    // -------------
 
     [HttpPost("odata/Books({key})/Rate")]
     public IActionResult Rate([FromODataUri] string key, ODataActionParameters parameters)
@@ -285,7 +258,12 @@ public class BooksController : ODataController
 }
 ```
 
-If we invoke `POST odata/Books('1')/Rate {"rating": 7}`
+If we invoke
+
+```json
+POST odata/Books('1')/Rate
+{"rating": 7}
+```
 We get the response below:
 
 ```json
@@ -297,7 +275,7 @@ We get the response below:
 ```
 
 ## Unbound Action
-Unbound actions don’t bound to any type and they are called as static operations same as unbound functions. However, unbound actions do not allow overloading.
+Unbound actions don’t bind to any type and they are invoked as static operations same as unbound functions. However, unbound actions do not allow overloading.
 
 In the Edm Model, we modify the code as follows.
 
@@ -305,14 +283,10 @@ In the Edm Model, we modify the code as follows.
 private static IEdmModel GetEdmModel()
 {
     var builder = new ODataConventionModelBuilder();
-    builder.EntitySet<Book>("books");
-    builder.EntityType<Book>().Collection
-        .Function("mostRecent")
-        .Returns<string>();
-    builder.Function("returnAllForKidsBooks").ReturnsFromEntitySet<Book>("books");
-    builder.EntityType<Book>()
-        .Action("rate")
-        .Parameter<int>("rating");
+    // -------------
+    // Existing code
+    // -------------
+
     var action = builder.Action("incrementBookYear").ReturnsFromEntitySet<Book>("books");
         action.Parameter<int>("increment");
         action.Parameter<string>("id");
@@ -329,44 +303,9 @@ We will update the `BooksController` as follows.
 ```csharp
 public class BooksController : ODataController
 {
-    // Get ~/Books
-    [EnableQuery]
-    public IActionResult Get()
-    {
-        return Ok(DataSource.Instance.Books);
-    }
-
-    [HttpGet("odata/Books/MostRecent()")]
-    public IActionResult MostRecent()
-    {
-        var maxBookId = DataSource.Instance.Books.Max(x => x.ID);
-        return Ok(maxBookId);
-    }
-
-    [HttpGet("odata/ReturnAllForKidsBooks")]
-    public IActionResult ReturnAllForKidsBooks()
-    {
-        var forKidsBooks = DataSource.Instance.Books.Where(m => m.ForKids == true);
-        return Ok(forKidsBooks);
-    }
-
-    [HttpPost("odata/Books({key})/Rate")]
-    public IActionResult Rate([FromODataUri] string key, ODataActionParameters parameters)
-    {
-        if (!ModelState.IsValid)
-        {
-            return BadRequest();
-        }
-
-        int rating = (int)parameters["rating"];
-
-        if (rating < 0)
-        {
-            return BadRequest();
-        }
-
-        return Ok(new BookRating() { BookID = key, Rating = rating });
-    }
+    // -------------
+    // Existing code
+    // -------------
 
     [HttpPost("odata/incrementBookYear")]
     public IActionResult IncrementBookYear(ODataActionParameters parameters)
