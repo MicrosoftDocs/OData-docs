@@ -37,6 +37,14 @@ GET ~/odata/Graphs/Default.GetShapeCount(shapeType=FunctionActionBlog.ShapeTypeâ
 
 `GetShapeCount` function has an overload that accepts a `ShapeType` parameter.
 
+We can bind to a single entity.
+
+`GET ~/odata/Books(1)/isChildBook()`
+
+We can also bind to a singleton
+
+`GET ~/odata/Me/isMyCalendarBlocked()`
+
 ### Unbound function
 Function is after the route prefix.
 
