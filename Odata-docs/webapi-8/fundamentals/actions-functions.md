@@ -16,10 +16,69 @@ In OData, actions and functions are a way to add server-side behavior that are n
 - `Functions` are operations exposed by an OData service that MUST return data and MUST have no observable side effects. They may support further composition. Functions are invoked by using HTTP GET requests.
 - `Actions` are operations exposed by an OData service that MAY have side effects when invoked. Actions have a side effect on the server, so they are invoked by using HTTP POST requests. They cannot be further composed in order to avoid non-deterministic behavior.
 
+Side effects means that actions results in a change in the server; either a resource is updated, deleted or a new resource is created.
+
 ## Bound and unbound operations.
 From OData V4 spec, functions and actions can be either bound to a type or unbound.
 Bound operations are bound to an entity type, primitive type, complex type, or a collection.
 Unbound operations are invoked as static operations on the service.
+
+## URI patterns for calling OData actions and functions
+In the examples below `odata` is the route prefix.
+
+### Bound function
+The function is after an entity, entityset, singleton. `Books` and `Graphs` are entity sets.
+
+```
+GET ~/odata/Books/mostRecent()
+GET ~/odata/Graphs/Default.GetShapeCount()
+GET ~/odata/Graphs/Default.GetShapeCount(shapeType=FunctionActionBlog.ShapeType’Circle’)
+```
+
+`GetShapeCount` function has an overload that accepts a `ShapeType` parameter.
+
+### Unbound function
+Function is after the route prefix.
+
+```
+GET ~/odata/ReturnAllForKidsBooks
+GET ~/odata/GetSalesTaxRate(10)
+```
+`ReturnAllForKidsBooks` doesn't have a parameter, while `GetSalesTaxRate` accepts one integer parameter.
+
+If `GetSalesTaxRate` had more than one parameter, the call would be
+
+`GET ~/odata/GetSalesTaxRate(10, "US")`
+
+Parameter-less functions can work with or without parenthesis `()` after function names.
+This is how we configure parameter-less functions to work without parenthesis.
+
+```csharp
+builder.Services.AddControllers().AddOData(opt =>
+{
+    opt.AddRouteComponents("odata", EdmModel.GetEdmModel()).Count().OrderBy().Filter().Select().Expand();
+    opt.RouteOptions.EnableNonParenthesisForEmptyParameterFunction = true;
+});
+```
+
+### Bound Action
+Actions are invoked via `POST` requests therefore we can pass a payload in the body.
+
+```json
+POST ~/odata/Books('1')/Rate
+{
+    "rating": 7
+}
+```
+
+### Unbound action
+```json
+POST ~/odata/incrementBookYear
+{
+    "increment": 7,
+    "id": "1"
+}
+```
 
 ## Practical examples
 We will add detailed examples on how to configure bound and unbound functions and actions.
@@ -330,7 +389,15 @@ public class BooksController : ODataController
 }
 ```
 
-If we invoke `POST odata/incrementBookYear {"increment": 7, "id": "1"}`
+If we invoke
+```json
+POST odata/incrementBookYear
+{
+    "increment": 7,
+    "id": "1"
+}
+```
+
 We get the response below:
 
 ```json
