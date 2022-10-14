@@ -159,7 +159,7 @@
           - name: Key value binding
             href: /odata/webapi/key-value-binding
           - name: Merge complex type and entity type
-            href: /odata/webapi/merge-complex-and-entity
+            href: /odata/odatalib/merge-complex-and-entity
           - name: Query options in request body
             href: /odata/webapi/query-options-in-request-body
           - name: Automatic support for nested paths with [EnableNestedPaths]
@@ -229,7 +229,7 @@
         - name: Customizable type facets promotion in URI parsing
           href: /odata/odatalib/customizable-type-facets-promotion
         - name: Merge complex type and entity type
-          href: /odata/odatalib/merge-complex-and-entity-read-writer
+          href: /odata/webapi/merge-complex-and-entity-read-writer
         - name: OData Uri Path Parser Extensibility
           href: /odata/odatalib/uri-parser-path-extensibility
         - name: Override type annotation in serialization
