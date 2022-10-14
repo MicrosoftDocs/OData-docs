@@ -28,6 +28,20 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
+## ODataLib 7.12.3 Release
+
+***Fixed Bugs***
+
+[[#2487]](https://github.com/OData/odata.net/pull/2487) Fixed bug in `LoadProperty` for complex properties and complex collection properties
+
+[[#2497]](https://github.com/OData/odata.net/pull/2497) Fixed bug causing JSON batch responses in WebAPI to be written out of order when using `DefaultStreamBasedJsonWriterFactory`.
+
+***Improvements***
+
+[[#2489]](https://github.com/OData/odata.net/pull/2489) Perf improvement in the internal `ODataPath` cloning constructor.
+
+[[#2506]](https://github.com/OData/odata.net/pull/2506) Reduce memory usage in OData Client by eliminating static `ConditionalWeakTable`.
+
 ## ODataLib 7.12.2 Release
 
 ***Features***
