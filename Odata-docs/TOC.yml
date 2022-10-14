@@ -51,6 +51,10 @@
 - name: Develop
   expanded: true
   items:
+  - name: OData Web API 8
+    items:
+      - name: Overview
+        href: /odata/webapi-8/overview
   - name: ASP.NET WebAPI
     items:
       - name: Getting started
