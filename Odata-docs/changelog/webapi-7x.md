@@ -9,6 +9,26 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.5.17
+
+### Improvements and Fixes:
+
+* [ [#2699](https://github.com/OData/WebApi/pull/2699) ] Add virtual method for complex property serialization.
+
+* Fix the NewtonSoft.JSON package version reference problem.
+
+## WebAPI 7.5.16
+
+**Warning**: This version had [issues](https://github.com/OData/WebApi/issues/2700) and was unlisted from NuGet.
+
+### Improvements and Fixes:
+
+* [ [#2668](https://github.com/OData/WebApi/pull/2668) ] Update Newtonsoft.Json version to 13.0.1
+
+* [ [#2652](https://github.com/OData/WebApi/pull/2668) ] Add settings flag to avoid swallowing serialization errors when ILogger is registered
+
+* [ [#2692](https://github.com/OData/WebApi/pull/2668) ] Update ODL version to 7.12.2
+
 ## WebAPI 7.5.15
 
 ### Improvements and Fixes:
