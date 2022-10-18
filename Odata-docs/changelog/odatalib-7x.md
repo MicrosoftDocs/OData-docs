@@ -33,7 +33,7 @@ Most of our API improvements fall into the category of namespace simplifications
 ***Fixed Bugs***
 
 * Fix `NullReferenceException` thrown by URI parsers when filtering by unknown property in [#2496](https://github.com/OData/odata.net/pull/2496)
-* fix the ordering of an assertion in [#2493](https://github.com/OData/odata.net/pull/2493)
+* Fix the ordering of an assertion in [#2493](https://github.com/OData/odata.net/pull/2493)
 * Fix MaterializerEntry Id property getter triggered in no tracking scenarios in [#2524](https://github.com/OData/odata.net/pull/2524)
 * Change the `ToJson` function of ODataErrorDetail to deal with escaped strings in [#2511](https://github.com/OData/odata.net/pull/2511)
 * Fix issue where CsdlWriter TryWriteCsdl does not trigger flushing of XmlWriter buffer in [#2523](https://github.com/OData/odata.net/pull/2523)
