@@ -8,7 +8,7 @@ ms.author: clhabins
 ---
 
 # Overview
-**Applies To**:[!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v8.md)]
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v8.md)]
 
 ASP.NET Core OData is a .NET library for building REST API services that conform to the OData protocol. The OData protocol defines best practices for consistent and strongly-typed REST APIs by specifying the format of requests and responses, type definition, and service description as well as features like filtering, querying related data, pagination, etc. OData Web API library is a set of services that extend [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core) to provide OData-based routing, request and response serialization, query-handling, and more. To learn more about OData, visit [the OData docs](/odata/overview).
 
