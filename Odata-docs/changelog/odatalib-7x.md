@@ -28,7 +28,7 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
-## ODataLib 7.23.4 Release
+## ODataLib 7.12.4 Release
 
 ***Fixed Bugs***
 
