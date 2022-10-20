@@ -9,6 +9,14 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.6.0
+
+### Improvements and Fixes:
+
+* [ [#2697](https://github.com/OData/WebApi/pull/2697) ] Support bulk operations serialization.
+
+* [ [#2686](https://github.com/OData/WebApi/pull/2686) ] Support bulk operations deserialization.
+
 ## WebAPI 7.5.17
 
 ### Improvements and Fixes:
