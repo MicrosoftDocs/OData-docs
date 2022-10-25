@@ -28,6 +28,31 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
+## ODataLib 7.12.5 Release
+
+***Fixed Bugs***
+
+* Fix race condition in `ClientEdmModel.GetOrCreateEdmType` in [#2533](https://github.com/OData/odata.net/pull/2533)
+* Fix `ArgumentException` in `ProjectPlanCompiler` caused by missing `materializerContext` argument in dynamic calls in [#2535](https://github.com/OData/odata.net/pull/2535)
+* Add `matchesPattern` support in [#2519](https://github.com/OData/odata.net/pull/2519)
+
+## ODataLib 7.12.4 Release
+
+***Fixed Bugs***
+
+* Fix `NullReferenceException` thrown by URI parsers when filtering by unknown property in [#2496](https://github.com/OData/odata.net/pull/2496)
+* Fix the ordering of an assertion in [#2493](https://github.com/OData/odata.net/pull/2493)
+* Fix MaterializerEntry Id property getter triggered in no tracking scenarios in [#2524](https://github.com/OData/odata.net/pull/2524)
+* Change the `ToJson` function of ODataErrorDetail to deal with escaped strings in [#2511](https://github.com/OData/odata.net/pull/2511)
+* Fix issue where CsdlWriter TryWriteCsdl does not trigger flushing of XmlWriter buffer in [#2523](https://github.com/OData/odata.net/pull/2523)
+* Fixed an issue that led us to ship a debug build in 7.12.3 [#2526](https://github.com/OData/odata.net/pull/2526)
+
+***Improvements***
+
+* Perfomance improvement in async serialization through async elision in [#2481](https://github.com/OData/odata.net/pull/2481)
+* Reduce ODataUri allocations during serialization in [#2500](https://github.com/OData/odata.net/pull/2500)
+
+
 ## ODataLib 7.12.3 Release
 
 ***Fixed Bugs***
