@@ -6,7 +6,6 @@ summary: OData (Open Data Protocol) is an ISO/IEC approved, OASIS standard that 
 metadata:
   title: OData documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: OData (Open Data Protocol) is an ISO/IEC approved, OASIS standard that defines a set of best practices for building and consuming REST APIs. # Required; article description that is displayed in search results. < 160 chars.
-  ms.prod: odata
   ms.topic: landing-page # Required
   author: madansr7 #Required; your GitHub user alias, with correct capitalization.
   ms.date: 06/24/2020 #Required; mm/dd/yyyy format.

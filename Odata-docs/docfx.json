@@ -65,11 +65,11 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
+      "ms.service": "odata",
       "breadcrumb_path": "/odata/breadcrumb/toc.json",
       "extendBreadcrumb": true,
       "feedback_system": "None", 
       "ms.author":"saumadan",
-      "ms.prod": "odata",
       "ms.topic": "conceptual",
       "uhfHeaderId": "MSDocsHeader-OData",
       "titleSuffix": "OData",
