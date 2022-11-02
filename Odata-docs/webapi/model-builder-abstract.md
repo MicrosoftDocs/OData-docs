@@ -34,7 +34,7 @@ public IEdmModel GetEdmModel()
 }
 ```
 
-The Edm Model built by this way is called **un-typed** (or **typeless, week type**) Edm model. Owing that there is no corresponding CLR classes.
+The Edm Model built by this way is called **un-typed** (or **typeless, weak type**) Edm model. Owing that there is no corresponding CLR classes.
 
 #### Non-convention model builder
 
