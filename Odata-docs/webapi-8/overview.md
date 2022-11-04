@@ -1,6 +1,6 @@
 ---
-title:  "OData Web API 8 Overview"
-description: A high-level overview of OData Web API, its benefits and common use cases.
+title:  "ASP.NET Core OData 8 Overview"
+description: A high-level overview of ASP.NET Core OData, its benefits and common use cases.
 date:   2022-09-05
 ms.date: 9/5/2022
 author: habbes
@@ -8,9 +8,9 @@ ms.author: clhabins
 ---
 
 # Overview
-**Applies To**:[!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v8.md)]
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v8.md)]
 
-OData Web API is a .NET library for building REST API services that conform to the OData protocol. The OData protocol defines best practices for consistent and strongly-typed REST APIs by specifying the format of requests and responses, type definition, and service description as well as features like filtering, querying related data, pagination, etc. OData Web API library is a set of services that extend [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core) to provide OData-based routing, request and response serialization, query-handling, and more. To learn more about OData, visit [the OData docs](/odata/overview).
+ASP.NET Core OData is a .NET library for building REST API services that conform to the OData protocol. The OData protocol defines best practices for consistent and strongly-typed REST APIs by specifying the format of requests and responses, type definition, and service description as well as features like filtering, querying related data, pagination, etc. OData Web API library is a set of services that extend [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core) to provide OData-based routing, request and response serialization, query-handling, and more. To learn more about OData, visit [the OData docs](/odata/overview).
 
 Here are some of the features provided by the library:
 - Exposes a metadata endpoint that returns a document describing the API service' model, the data types it defines and the endpoints and capabilities it exposes. This document makes it easier for clients to consume the service. It can also be used by code generation tools to automatically generate service proxy on the clients to facilitate interaction with the service (e.g. [OData CLI](/odata/odatacli/getting-started), [OData Connected Service](/odata/connectedservice/getting-started)), allowing the user to focus on business logic.
@@ -26,9 +26,9 @@ Here are some of the features provided by the library:
   - `$apply` allows you to apply aggregations: `/Orders?$apply=groupby(Product/Name, aggregate($count as Count))` returns the number of orders per product name.
 
 
-## Why choose OData Web API:
+## Why choose ASP.NET Core OData:
 
-Here are some of the benefits and common use cases for using OData Web API:
+Here are some of the benefits and common use cases for using ASP.NET Core OData:
 - Creating a standards-compliant Web API with support for filtering, selecting, expanding among other capabilities.
 - Interoperability with OpenAPI and Swagger
 - Type-safety
@@ -44,10 +44,10 @@ We also ship a separate library for building OData models from .NET model classe
 
 ## Choosing the right version
 
-There are two major versions of OData Web API under active maintenance and support:
-- OData Web API 8: `Microsoft.AspNetCore.OData` 8.x
+There are two major versions of ASP.NET Core OData under active maintenance and support:
+- ASP.NET Core OData 8: `Microsoft.AspNetCore.OData` 8.x
 - OData Web API 7: `Microsoft.AspNetCore.OData` 7.x and `Microsoft.AspNet.OData` 7.x
 
-For new development of OData services on .NET, OData Web API 8 is recommended. However, OData Web API 7 is actively maintained. There are also features in OData Web API 7 that have not been ported to OData Web API 8, e.g., [automatic support for deeply nested paths](/odata/webapi/automatic-nested-paths-with-enable-nested-paths).
+For new development of OData services on .NET, ASP.NET Core OData 8 is recommended. However, ASP.NET Core OData 7 is actively maintained. There are also features in ASP.NET Core OData 7 that have not been ported to ASP.NET Core OData 8, e.g., [automatic support for deeply nested paths](/odata/webapi/automatic-nested-paths-with-enable-nested-paths).
 
-OData Web API 8 leverages ASP.NET Core features and is only available for .NET Core 3.1 and newer versions of .NET. It does not support .NET Framework. OData Web API 7 supports ASP.NET classic and .NET Framework through the `Microsoft.AspNet.OData` package.
+ASP.NET Core OData 8 leverages ASP.NET Core features and is only available for .NET Core 3.1 and newer versions of .NET. It does not support .NET Framework. OData Web API 7 supports ASP.NET classic and .NET Framework through the `Microsoft.AspNet.OData` package.
