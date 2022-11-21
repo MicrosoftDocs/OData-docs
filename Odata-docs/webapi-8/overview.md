@@ -50,4 +50,4 @@ There are two major versions of ASP.NET Core OData under active maintenance and 
 
 For new development of OData services on .NET, ASP.NET Core OData 8 is recommended. However, ASP.NET Core OData 7 is actively maintained. There are also features in ASP.NET Core OData 7 that have not been ported to ASP.NET Core OData 8, e.g., [automatic support for deeply nested paths](/odata/webapi/automatic-nested-paths-with-enable-nested-paths).
 
-OData Web API 8 leverages ASP.NET Core features and is only available for .NET Core 3.1 and newer versions of .NET. It does not support .NET Framework. OData Web API 7 supports ASP.NET classic and .NET Framework through the `Microsoft.AspNet.OData` package.
+ASP.NET Core OData 8 leverages ASP.NET Core features and is only available for .NET Core 3.1 and newer versions of .NET. It does not support .NET Framework. OData Web API 7 supports ASP.NET classic and .NET Framework through the `Microsoft.AspNet.OData` package.
