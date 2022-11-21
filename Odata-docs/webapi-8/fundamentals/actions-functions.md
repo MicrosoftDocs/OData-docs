@@ -1,5 +1,5 @@
 ---
-title: "Actions and functions"
+title: "Actions and Functions"
 description: "This documentation describes how to add actions and functions."
 
 author: KenitoInc
@@ -10,7 +10,7 @@ ms.date: 9/15/2022
 # Actions and functions
 **Applies To**:[!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v8.md)]
 
-In OData, actions and functions are a way to add server-side behavior that are not easily defined as CRUD operations on entities. This documentation shows how to add actions and functions to an OData v4 endpoint, using ASP.NET Core OData v8.x.
+In OData, actions and functions are a way to add server-side behavior that is not easily defined as CRUD operations (Create-Read-Update-Delete) on entities. This documentation shows how to add actions and functions to an OData v4 endpoint, using ASP.NET Core OData v8.x.
 
 ## What are actions and functions?
 - `Functions` are operations exposed by an OData service that MUST return data and MUST have no observable side effects. They may support further composition. Functions are invoked by using HTTP GET requests.
