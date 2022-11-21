@@ -7,4 +7,4 @@ ms.author: clhabins
 ---
 # OData Web API 8 supported
 
-  ![Green circle with a checkmark inside it.](/odata/assets/doc-assets/yes.png) OData Web API v8
+  ![Green circle with a checkmark inside it.](/assets/doc-assets/yes.png) OData Web API v8
