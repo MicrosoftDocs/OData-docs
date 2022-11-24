@@ -57,6 +57,8 @@
         href: /odata/webapi-8/overview
       - name: Getting started
         href: /odata/webapi-8/getting-started
+      - name: Actions and Functions
+        href: /odata/webapi-8/fundamentals/actions-functions
   - name: ASP.NET WebAPI
     items:
       - name: Getting started
