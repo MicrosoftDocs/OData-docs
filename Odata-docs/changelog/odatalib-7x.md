@@ -28,6 +28,24 @@ There was a lot of vestigial code left around from the OData v1-3 days that we�
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
+## ODataLib 7.13.0 Release
+
+***Fixed Bugs***
+
+* shouldn't require id to write a deleted resource by @ElizabethOkerio in https://github.com/OData/odata.net/pull/2521
+* Update onboarding documentation to note that long repository root paths can cause build failures by @corranrogue9 in https://github.com/OData/odata.net/pull/2551
+* Fix compilation on Linux (duplicate) by @habbes in https://github.com/OData/odata.net/pull/2549
+* added logic to treat a dynamic property that contains a json array as… by @corranrogue9 in https://github.com/OData/odata.net/pull/2547
+* Support NavigationPropertyBinding paths ending in cast segments by @mikepizzo in https://github.com/OData/odata.net/pull/2504
+* Add test for throwing exception for multiple unnamed keys by @KenitoInc in https://github.com/OData/odata.net/pull/2559
+* odata.id annotation property should be written for transient complex resource by @gathogojr in https://github.com/OData/odata.net/pull/2566
+* Validate that a recursive complex-typed property must be nullable by @lisicase in https://github.com/OData/odata.net/pull/2558
+* issue #2098: fix the issue ODataException: To compute an entity's metadata, its key and concurrency-token property values must be provided by @xuzhg in https://github.com/OData/odata.net/pull/2552
+* Fix PublicAPI build checks by @corranrogue9 in https://github.com/OData/odata.net/pull/2575
+* Fix bugs causing separator to be omitted after ODataUtf8JsonWriter.WriteRawValue  by @habbes in https://github.com/OData/odata.net/pull/2527
+* Fix performance regression in DataServiceContext DefaultResolveType method by @gathogojr in https://github.com/OData/odata.net/pull/2569
+* revving version number to 7.13.0 and updating PublicAPI.Shipped.txt f… by @corranrogue9 in https://github.com/OData/odata.net/pull/2582
+
 ## ODataLib 7.12.5 Release
 
 ***Fixed Bugs***
