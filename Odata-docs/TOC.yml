@@ -79,6 +79,8 @@
                 href: /odata/webapi-8/fundamentals/ref-routing
               - name: Metadata routing
                 href: /odata/webapi-8/fundamentals/metadata-routing
+          - name: Query options
+            href: /odata/webapi-8/fundamentals/query-options
           - name: Actions and Functions
             href: /odata/webapi-8/fundamentals/actions-functions
       - name: Tutorials
