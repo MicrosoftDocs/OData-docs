@@ -57,6 +57,26 @@
         href: /odata/webapi-8/overview
       - name: Getting started
         href: /odata/webapi-8/getting-started
+      - name: Fundamentals
+        items:
+          - name: Routing
+            items:
+              - name: Routing overview
+                href: /odata/webapi-8/fundamentals/routing-overview
+              - name: EntitySet routing
+                href: /odata/webapi-8/fundamentals/entityset-routing
+              - name: Entity routing
+                href: /odata/webapi-8/fundamentals/entity-routing
+              - name: Singleton routing
+                href: /odata/webapi-8/fundamentals/singleton-routing
+              - name: Navigation routing
+                href: /odata/webapi-8/fundamentals/navigation-routing
+              - name: Function routing
+                href: /odata/webapi-8/fundamentals/function-routing
+              - name: Action routing
+                href: /odata/webapi-8/fundamentals/action-routing
+              - name: Reference routing
+                href: /odata/webapi-8/fundamentals/ref-routing
       - name: Actions and Functions
         href: /odata/webapi-8/fundamentals/actions-functions
       - name: Tutorials
