@@ -23,18 +23,18 @@ OData navigation routing convention supports the following route templates:
 | `GET` | `~/{singleton}/{navigationproperty}` |
 | `GET` | `~/{singleton}/{cast}/{navigationproperty}` |
 | `GET` | `~/{singleton}/{cast}/{collectionvaluednavigationproperty}/$count` |
-| `POST` | `~/{entityset}/{key}/{navigationproperty}` |
-| `POST` | `~/{entityset}/{key}/{cast}/{navigationproperty}` |
-| `POST` | `~/{singleton}/{navigationproperty}` |
-| `POST` | `~/{singleton}/{cast}/{navigationproperty}` |
+| `POST` | `~/{entityset}/{key}/{collectionvaluednavigationproperty}` |
+| `POST` | `~/{entityset}/{key}/{cast}/{collectionvaluednavigationproperty}` |
+| `POST` | `~/{singleton}/{collectionvaluednavigationproperty}` |
+| `POST` | `~/{singleton}/{cast}/{collectionvaluednavigationproperty}` |
 | `PUT` | `~/{entityset}/{key}/{singlevaluednavigationproperty}` |
 | `PUT` | `~/{entityset}/{key}/{cast}/{singlevaluednavigationproperty}` |
 | `PUT` | `~/{singleton}/{singlevaluednavigationproperty}` |
 | `PUT` | `~/{singleton}/{cast}/{singlevaluednavigationproperty}` |
-| `PATCH` | `~/{entityset}/{key}/{singlevaluednavigationproperty}` |
-| `PATCH` | `~/{entityset}/{key}/{cast}/{singlevaluednavigationproperty}` |
-| `PATCH` | `~/{singleton}/{singlevaluednavigationproperty}` |
-| `PATCH` | `~/{singleton}/{cast}/{singlevaluednavigationproperty}` |
+| `PATCH` | `~/{entityset}/{key}/{navigationproperty}` |
+| `PATCH` | `~/{entityset}/{key}/{cast}/{navigationproperty}` |
+| `PATCH` | `~/{singleton}/{navigationproperty}` |
+| `PATCH` | `~/{singleton}/{cast}/{navigationproperty}` |
 
 **Notes:**
 1. OData routing supports canonical parentheses-style key (e.g. `~/Employees(1)`) in addition to key-as-segment (e.g. `~/Employees/1`). Currently, ASP.NET Core OData 8 does not support key-as-segment convention in multi-part keys scenarios
@@ -63,6 +63,7 @@ namespace NavigationRouting.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public Employee Supervisor { get; set; }
+        public List<Employee> Peers { get; set; } = new List<Employee>();
     }
 }
 ```
@@ -297,28 +298,27 @@ public ActionResult GetDirectReportsFromManager([FromRoute] int key)
 3
 ```
 
-### Post to a single-valued navigation property on an entity
+### Post to a collection-valued navigation property on an entity
 The route templates for this request are:
-- `POST ~/{entityset}({key})/{navigationproperty}`
-- `POST ~/{entityset}/{key}/{navigationproperty}`
+- `POST ~/{entityset}({key})/{collectionvaluednavigationproperty}`
+- `POST ~/{entityset}/{key}/{collectionvaluednavigationproperty}`
 
-The following `POST` request adds a `Manager` derived entity as a `Supervisor` for employee 4:
+The following `POST` request adds an employee to the `Peers` collection-valued navigation property on employee 4:
 ```http
-POST http://localhost:5000/odata/Employees(4)/Supervisor
+POST http://localhost:5000/odata/Employees(4)/Peers
 ```
 
 Here's the request body:
 ```json
 {
-    "@odata.type": "#NavigationRouting.Models.Manager",
-    "Id": 6,
-    "Name": "Employee 6"
+    "Id": 7,
+    "Name": "Employee 7"
 }
 ```
 
-For the above request to be conventionally-routed, a controller action named `PostToSupervisor` is expected. The controller action should accept two parameters - the first is the key parameter and the second a parameter of type `Employee` decorated with `FromBody` attribute:
+For the above request to be conventionally-routed, a controller action named `PostToPeers` is expected. The controller action should accept two parameters - the first is the key parameter and the second a parameter of type `Employee` decorated with `FromBody` attribute:
 ```csharp
-public ActionResult PostToSupervisor([FromRoute] int key, [FromBody] Employee supervisor)
+public ActionResult PostToPeers([FromRoute] int key, [FromBody] Employee peer)
 {
     var employee = employees.SingleOrDefault(d => d.Id.Equals(key));
 
@@ -327,43 +327,43 @@ public ActionResult PostToSupervisor([FromRoute] int key, [FromBody] Employee su
         return NotFound();
     }
 
-    employee.Supervisor = supervisor;
+    employees.Add(peer);
+    employee.Peers.Add(peer);
 
-    return Created(supervisor);
+    return Created(peer);
 }
 ```
 
 The response status code should be `201`. The following JSON payload shows the expected response:
 ```json
 {
-    "@odata.context": "http://localhost:5000/odata/$metadata#Employees/NavigationRouting.Models.Manager/$entity",
-    "@odata.type": "#NavigationRouting.Models.Manager",
-    "Id": 6,
-    "Name": "Employee 6"
+    "@odata.context": "http://localhost:5000/odata/$metadata#Employees/$entity",
+    "Id": 7,
+    "Name": "Employee 7"
 }
 ```
 
-### Post to a single-valued navigation property on a derived entity
+### Post to a collection-valued navigation property on a derived entity
 The route templates for this request are:
-- `POST ~/{entityset}({key})/{cast}/{navigationproperty}`
-- `POST ~/{entityset}/{key}/{cast}/{navigationproperty}`
+- `POST ~/{entityset}({key})/{cast}/{collectionvaluednavigationproperty}`
+- `POST ~/{entityset}/{key}/{cast}/{collectionvaluednavigationproperty}`
 
-The following `POST` request adds an `Employee` entity as a `PersonalAssistant` for employee 6 (a manager):
+The following `POST` request adds an employee to the `DirectReports` collection-valued navigation property on employee 6 (a manager):
 ```http
-POST http://localhost:5000/odata/Employees(6)/NavigationRouting.Models.Manager/PersonalAssistant
+POST http://localhost:5000/odata/Employees(6)/NavigationRouting.Models.Manager/DirectReports
 ```
 
 Here's the request body:
 ```json
 {
-    "Id": 4,
-    "Name": "Employee 4"
+    "Id": 8,
+    "Name": "Employee 8"
 }
 ```
 
-For the above request to be conventionally-routed, a controller action named `PostToPersonalAssistantFromManager` is expected. The controller action should accept two parameters - the first is the key parameter and the second a parameter of type `Employee` decorated with `FromBody` attribute:
+For the above request to be conventionally-routed, a controller action named `PostToDirectReportsFromManager` is expected. The controller action should accept two parameters - the first is the key parameter and the second a parameter of type `Employee` decorated with `FromBody` attribute:
 ```csharp
-public ActionResult PostToPersonalAssistantFromManager([FromRoute] int key, [FromBody] Employee personalAssistant)
+public ActionResult PostToDirectReportsFromManager([FromRoute] int key, [FromBody] Employee employee)
 {
     var manager = employees.OfType<Manager>().SingleOrDefault(d => d.Id.Equals(key));
 
@@ -372,9 +372,10 @@ public ActionResult PostToPersonalAssistantFromManager([FromRoute] int key, [Fro
         return NotFound();
     }
 
-    manager.PersonalAssistant = personalAssistant;
+    employees.Add(employee);
+    manager.DirectReports.Add(employee);
 
-    return Created(personalAssistant);
+    return Created(employee);
 }
 ```
 
@@ -382,8 +383,8 @@ The response status code should be `201`. The following JSON payload shows the e
 ```json
 {
     "@odata.context": "http://localhost:5000/odata/$metadata#Employees/$entity",
-    "Id": 4,
-    "Name": "Employee 4"
+    "Id": 8,
+    "Name": "Employee 8"
 }
 ```
 
@@ -468,12 +469,12 @@ The response status code should be `200`. Querying the `PersonalAssistant` singl
 GET http://localhost:5000/odata/Employees(6)/NavigationRouting.Models.Manager/PersonalAssistant
 ```
 
-### Patching a single-valued navigation property on an entity
+### Patching a navigation property on an entity
 The route templates for this request are:
-- `PATCH ~/{entityset}({key})/{singlevaluednavigationproperty}`
-- `PATCH ~/{entityset}/{key}/{singlevaluednavigationproperty}`
+- `PATCH ~/{entityset}({key})/{navigationproperty}`
+- `PATCH ~/{entityset}/{key}/{navigationproperty}`
 
-The following `PATCH` request patches a `Supervisor` single-valued navigation property on employee 1:
+The following `PATCH` request patches a `Supervisor` navigation property on employee 1:
 ```http
 PATCH http://localhost:5000/odata/Employees(1)/Supervisor
 ```
@@ -505,17 +506,17 @@ public ActionResult PatchToSupervisor([FromRoute] int key, [FromBody] Delta<Empl
 }
 ```
 
-The response status code should be `200`. Querying the `Supervisor` single-valued navigation property on employee 1 should confirm that the navigation property was patched:
+The response status code should be `200`. Querying the `Supervisor` navigation property on employee 1 should confirm that the navigation property was patched:
 ```http
 GET http://localhost:5000/odata/Employees(1)/Supervisor
 ```
 
-### Patching a single-valued navigation property on a derived entity
+### Patching a navigation property on a derived entity
 The route templates for this request are:
-- `PATCH ~/{entityset}({key})/{cast}/{singlevaluednavigationproperty}`
-- `PATCH ~/{entityset}/{key}/{cast}/{singlevaluednavigationproperty}`
+- `PATCH ~/{entityset}({key})/{cast}/{navigationproperty}`
+- `PATCH ~/{entityset}/{key}/{cast}/{navigationproperty}`
 
-The following `PATCH` request patches a `PersonalAssistant` single-valued navigation property on employee 6 (a manager):
+The following `PATCH` request patches a `PersonalAssistant` navigation property on employee 6 (a manager):
 ```http
 PATCH http://localhost:5000/odata/Employees(6)/NavigationRouting.Models.Manager/PersonalAssistant
 ```
@@ -547,7 +548,7 @@ public ActionResult PatchToPersonalAssistantFromManager([FromRoute] int key, [Fr
 }
 ```
 
-The response status code should be `200`. Querying the `PersonalAssistant` single-valued navigation property on employee 6 (a manager) should confirm that the navigation property was patched:
+The response status code should be `200`. Querying the `PersonalAssistant` navigation property on employee 6 (a manager) should confirm that the navigation property was patched:
 ```http
 GET http://localhost:5000/odata/Employees(6)/NavigationRouting.Models.Manager/PersonalAssistant
 ```

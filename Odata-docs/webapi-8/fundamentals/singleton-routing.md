@@ -141,9 +141,6 @@ In the above block of code, we define a singleton named `Company`. Implicitly, `
 ## Controller
 The partial structure of the controller for the OData service is as follows:
 ```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Deltas;
 using Microsoft.AspNetCore.OData.Query;
