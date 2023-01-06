@@ -233,7 +233,7 @@ public ActionResult ConferSwagGifts(ODataActionParameters parameters)
 }
 ```
 
-The response status code should be `200`. Querying any of the employees should confirm that the `SwagGift` property is updated with `Mug` - a relevant controller action to support [retrieving a single entity](/odata/webapi-8/entity-routing#retrieving-a-single-entity) would need to be implemented for this to work.
+The response status code should be `200`. Querying any of the employees should confirm that the `SwagGift` property is updated with `Mug` - a relevant controller action to support [retrieving a single entity](/odata/webapi-8/fundamentals/entity-routing#retrieving-a-single-entity) would need to be implemented for this to work.
 
 ### Invoking an action bound to an entity
 The route templates for this request are:
@@ -282,7 +282,7 @@ public ActionResult ConferSwagGift([FromRoute] int key, ODataActionParameters pa
 }
 ```
 
-The response status code should be `200`. Querying employee 1 should confirm that the `SwagGift` property is updated with `Gaiter` - a relevant controller action to support [retrieving a single entity](/odata/webapi-8/entity-routing#retrieving-a-single-entity) would need to be implemented for this to work.
+The response status code should be `200`. Querying employee 1 should confirm that the `SwagGift` property is updated with `Gaiter` - a relevant controller action to support [retrieving a single entity](/odata/webapi-8/fundamentals/entity-routing#retrieving-a-single-entity) would need to be implemented for this to work.
 
 ### Invoking an action bound to a collection of derived entities or derived singleton
 The route template for this request is: `POST ~/{entityset}|{singleton}/{cast}/{action}`.
@@ -327,7 +327,7 @@ public ActionResult ConferBonusesOnCollectionOfManager(ODataActionParameters par
 }
 ```
 
-The response status code should be `200`. Querying any of the managers should confirm that the `Bonus` property is updated with `130` - a relevant controller action to support [retrieving a single derived entity](/odata/webapi-8/entity-routing#retrieving-a-single-derived-entity) would need to be implemented for this to work.
+The response status code should be `200`. Querying any of the managers should confirm that the `Bonus` property is updated with `130` - a relevant controller action to support [retrieving a single derived entity](/odata/webapi-8/fundamentals/entity-routing#retrieving-a-single-derived-entity) would need to be implemented for this to work.
 
 ### Invoking an action bound to a derived entity
 The route templates for this request are:
@@ -376,7 +376,7 @@ public ActionResult ConferBonusOnManager([FromRoute] int key, ODataActionParamet
 }
 ```
 
-The response status code should be `200`. Querying employee 5 (a manager) should confirm that the `Bonus` property is updated with `70` - a relevant controller action to support [retrieving a single derived entity](/odata/webapi-8/entity-routing#retrieving-a-single-derived-entity) would need to be implemented for this to work.
+The response status code should be `200`. Querying employee 5 (a manager) should confirm that the `Bonus` property is updated with `70` - a relevant controller action to support [retrieving a single derived entity](/odata/webapi-8/fundamentals/entity-routing#retrieving-a-single-derived-entity) would need to be implemented for this to work.
 
 ## Routing unbound Edm actions
 In this section we cover routing of unbound actions and the controller actions (endpoints) required for the requests to be routed successfully.
