@@ -71,15 +71,15 @@ public void ConfigureServices(IServiceCollection services)
 ## OData routing
 In the above block of code, we build an Edm model using the `ODataConventionModelBuilder`. We then call the `AddOData()` method resulting into the following OData routing conventions being registered in the [dependency injection](/aspnet/core/fundamentals/dependency-injection) container:
 - `MetadataRoutingConvention` - routes requests for service metadata
-- [`EntitySetRoutingConvention`](/odata/webapi-8/entityset-routing) - routes requests for entity sets
-- [`EntityRoutingConvention`](/odata/webapi-8/entity-routing) - routes requests for single entities by key
-- [`SingletonRoutingConvention`](/odata/webapi-8/singleton-routing) - routes requests for singletons
-- [`FunctionRoutingConvention`](/odata/webapi-8/function-routing) - routes requests for Edm functions
-- [`ActionRoutingConvention`](/odata/webapi-8/action-routing) - routes requests for Edm actions
+- [`EntitySetRoutingConvention`](/odata/webapi-8/fundamentals/entityset-routing) - routes requests for entity sets
+- [`EntityRoutingConvention`](/odata/webapi-8/fundamentals/entity-routing) - routes requests for single entities by key
+- [`SingletonRoutingConvention`](/odata/webapi-8/fundamentals/singleton-routing) - routes requests for singletons
+- [`FunctionRoutingConvention`](/odata/webapi-8/fundamentals/function-routing) - routes requests for Edm functions
+- [`ActionRoutingConvention`](/odata/webapi-8/fundamentals/action-routing) - routes requests for Edm actions
 - `OperationImportRoutingConvention` - routes requests for operation imports
 - `PropertyRoutingConvention` - routes requests for structural properties
-- [`NavigationRoutingConvention`](/odata/webapi-8/navigation-routing) - routes requests for navigation properties
-- [`RefRoutingConvention`](/odata/webapi-8/ref-routing) - routes requests for entity reference links
+- [`NavigationRoutingConvention`](/odata/webapi-8/fundamentals/navigation-routing) - routes requests for navigation properties
+- [`RefRoutingConvention`](/odata/webapi-8/fundamentals/ref-routing) - routes requests for entity reference links
 - `AttributeRoutingConvention` - represents a routing convention for attribute-routed requests
 
 A in-depth walkthrough for the core routing conventions can be found in the relevant tutorial.
