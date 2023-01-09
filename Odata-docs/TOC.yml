@@ -77,11 +77,11 @@
                 href: /odata/webapi-8/fundamentals/action-routing
               - name: Reference routing
                 href: /odata/webapi-8/fundamentals/ref-routing
-      - name: Actions and Functions
-        href: /odata/webapi-8/fundamentals/actions-functions
+          - name: Actions and Functions
+            href: /odata/webapi-8/fundamentals/actions-functions
       - name: Tutorials
         items:
-          - name: Basic CRUD Operations
+          - name: Basic CRUD operations
             href: /odata/webapi-8/tutorials/basic-crud
   - name: ASP.NET WebAPI
     items:
