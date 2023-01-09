@@ -7,7 +7,7 @@ ms.author: clhabins
 
 ms.date: 1/5/2023
 ---
-# Overview
+# Fundamentals overview
 **Applies To**:[!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v8.md)]
 
 This article provides an overview of the fundamental concepts for building ASP.NET Core OData apps.
@@ -16,9 +16,9 @@ ASP.NET Core OData is a .NET library that sits on top of ASP.NET Core to help yo
 
 To build an ASP.NET Core OData app, you start with an ASP.NET Core application, then install the `Microsoft.AspNetCore.OData` package as a dependency from NuGet. ASP.NET Core OData 8 supports .NET Core 3.1 and .NET Core 6.0 and above.
 
-Internally, ASP.NET Core OData depends on core .NET libraries for OData, including `Microsoft.OData.Core` that provides features like reading and writing OData payloads, parsing OData URIs and query options and `Microsoft.OData.Edm` that provides support for working OData schemas (represented by the `IEdmModel` interface).
+Internally, ASP.NET Core OData depends on core .NET libraries for OData, including `Microsoft.OData.Core` that provides features like reading and writing OData payloads, parsing OData URIs and query options and `Microsoft.OData.Edm` that provides support for working with OData schemas also referred to as EDM (Entity Data Model) model.
 
-The following code snippet demonstrats how you would add OData support to your ASP.NET Core application using ASP.NET Core OData in .NET Core 3.1 and .NET 6.0
+The following code snippet demonstrates how you would add OData support to your ASP.NET Core application using ASP.NET Core OData in .NET Core 3.1 and .NET 6.0
 
 # [.NET 6.0](#tab/net60)
 
@@ -28,7 +28,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.OData;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OData.ModelBuilder;
-using ActionRouting.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 var modelBuilder = new ODataConventionModelBuilder();
 modelBuilder.EntitySet<Customer>("Customers");
@@ -37,6 +37,7 @@ services.AddControllers().AddOData(
         routePrefix: "odata",
         model: modelBuilder.GetEdmModel()));
 var app = builder.Build();
+
 app.UseRouting();
 app.UseEndpoints(endpoints => endpoints.MapControllers());
 app.Run();
@@ -50,6 +51,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.OData;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OData.ModelBuilder;
+
 public class Startup
 {
     public void ConfigureServices(IServiceCollection services)
@@ -61,6 +63,7 @@ public class Startup
         services.AddControllers().AddOData(
             options => options.AddRouteComponents(edmModel));
     }
+
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
         app.UseRouting();
@@ -73,9 +76,7 @@ public class Startup
 
 We register OData services using the `services.AddControllers().AddOData()` extension method. The `AddOData()` method accepts a callback action that allows us to configure different aspects of the OData service. The `options` argument that is passed to the callback action contains methods and properties for configuring different components of the OData service.
 
-In this sample we're calling the `options.AddRouteComponents()` method which is used to register and configure and OData route. You can host different OData APIs within the same ASP.NET core application, distinguished by their route prefixes. In this example we only have a single OData API with the route prefix `odata`, meaning all the endpoints in this API will start with `odata`, e.g. `/odata/Customers`, `/odata/Customers(1)`, `/odata/Products`. You can also omit the route prefix on of the route components and it will be mapped to the root path `/`.
-
-Each registered route component also needs an `IEdmModel`. The `IEdmModel` defines the schema of the OData service. This includes the types and endpoints exposed by the OData service. In this sample, we're using the `ODataConventionModelBuilder` class from the `Microsoft.OData.ModelBuilder` package to defined an EDM model based on C# model classes. In this case, we're defining an entity set called `Customers` that contains entities of type `Customer`. The model builder will construct an EDM model with types that correspond to the C# types based on conventions (e.g. a `Customer` entity type with the same properties as the C# class). The service exposes the schema to clients via the `/odata/$metadata` endpoint. This allows clients of the services to know what types and endpoints the service exposes.
+In this sample we're calling the `options.AddRouteComponents()` method which is used to register and configure and OData route. This represents our OData API. We pass an EDM model that describes the service to the `options.AddRouteComponents()`.
 
 ## EDM model
 
@@ -93,7 +94,7 @@ There are a number of ways to create an `IEdmModel` instance:
     - `ODataModelBuilder` gives you more control to specify more things explicitly at the expense of brevity. For example usage, [visit this article](/odata/webapi/model-builder-nonconvention).
 
 > [!NOTE]
-> In ASP.NET Core OData 7, the model builder was built-in to the library. It was extracted into a standalone package `Microsoft.OData.Modelbuilder`. The two work mostly the same way and the 7.x model builder documentation still applies to the standalone ModelBuilder.
+> In ASP.NET Core OData 7, the model builder was built-in to the library. It was extracted into a standalone package `Microsoft.OData.Modelbuilder`. The two work mostly the same way and the 7.x model builder documentation still applies to the standalone `Microsoft.OData.ModelBuilder`.
 
 Here are examples of things that can be defined in an EDM model:
 - Entity types
@@ -131,6 +132,7 @@ You can call the `AddRouteComponents()` method multiple times with different pre
 ```c#
 services.AddControllers().AddOData(
     options => options.AddRouteComponents("api1", edmModel1).AddRouteComponents("api2", edmModel2));
+```
 
 ## Routing
 
@@ -151,18 +153,28 @@ public class CustomersController : ODataController
         _db = db;
     }
 
-    public IQueryable<Customer> Get()
+    public ActionResult<IQueryable<Customer>> Get()
     {
-        return _db.Customers;
+        return Ok(_db.Customers);
     }
 
-    public Customer Get(int id)
+    public ActionResult<Customer> Get(int id)
     {
         return _db.Customers.Find(id);
     }
+
+    public ActionResult<Customer> Post(Customer customer)
+    {
+        _db.Customers.Add(customer);
+        _db.SaveChanges();
+        return Created(customer);
+    }
 }
 ```
-The `Get()` and `Get(int id)` controller actions will be mapped to `GET /Customers` and `GET /Customers({id})` endpoints respectively.
+
+- The `Get()` controller action will be mapped to the `GET /Customers` endpoint.
+- The `Get(int id)` controller action will be mapped to the `GET /Customers({id})` and `GET /Customers/{id}` endpoints
+- The `Post(Customer customer)` controller action will be mapped to the `POST /Customers` endpoint.
 
 The library supports routing for common OData endpoints like entity sets, singletons, actions, functions, nested properties, etc. You can specify an endpoint for a specific controller action explicitly using ASP.NET Core `[Route]` attributes. You can also define your own routing conventions to extend the built-in conventions or define custom routing logic.
 
@@ -183,7 +195,7 @@ These query options are not enabled by default. You can enable and configure the
 services.AddControllers().AddOData(
     options => options.Select().Filter().Expand().SetMaxTop(100).AddRouteComponents(edmModel));
 ```
-In this example, we only enable the `$select`, `$filter`, `$expand`, and `$top` query options and we're setting the max allowable value for `$top` to be 100. If the client tries to use an OData query option that's not enabled, the service will return an error (TODO sample error).
+In this example, we only enable the `$select`, `$filter`, `$expand`, and `$top` query options and we're setting the max allowable value for `$top` to be 100. If the client tries to use an OData query option that's not enabled, the service will return an error.
 
 You can enable all supported query options in one go using the `EnableQueryFeatures` method:
 
@@ -284,4 +296,4 @@ Notice that the context URL has changed. Now the last part looks like `Customers
 To achieve this, ASP.NET Core OData uses customer input and output formatters to handle serialization and deserialization of inputs and outputs. These serializers and deserializers know how to handle the OData-specific JSON format. It may also perform some validation to ensure the payloads match OData's specification. For example, it may validate the properties in the request and response are actually defined in the OData model.
 
 > [!IMPORTANT]
-> ASP.NET Core OData does not use System.Text.Json or Newtonsoft.JSON for JSON serialization by default. Instead, it uses [`ODataMessageWriter`](odata/odatalib/write-payload) and `ODataMessageReader` from the [`Microsoft.OData.Core`](/odata/odatalib/read-payload) package.
+> ASP.NET Core OData does not use `System.Text.Json` or `Newtonsoft.JSON` for JSON serialization by default. Instead, it uses [`ODataMessageWriter`](/odata/odatalib/write-payload) and [`ODataMessageReader`](/odata/odatalib/read-payload) from the `Microsoft.OData.Core` package.
