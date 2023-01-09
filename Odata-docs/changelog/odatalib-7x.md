@@ -28,6 +28,13 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
+## ODataLib 7.14.0 Release
+
+***Fixed Bugs***
+
+* fix: ExpressionWriter only prepend slash to method when we have a parent by @uffelauesen in [#2572](https://github.com/OData/odata.net/pull/2572)
+* Ported DataServiceContext.AutoNullPropagation from V3 ODL by @uffelauesen in [#2573](https://github.com/OData/odata.net/pull/2573)
+
 ## ODataLib 7.13.0 Release
 
 ***Fixed Bugs***
