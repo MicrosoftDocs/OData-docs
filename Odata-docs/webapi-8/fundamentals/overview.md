@@ -74,9 +74,20 @@ public class Startup
 
 ---
 
+
 We register OData services using the `services.AddControllers().AddOData()` extension method. The `AddOData()` method accepts a callback action that allows us to configure different aspects of the OData service. The `options` argument that is passed to the callback action contains methods and properties for configuring different components of the OData service.
 
 In this sample we're calling the `options.AddRouteComponents()` method which is used to register and configure and OData route. This represents our OData API. We pass an EDM model that describes the service to the `options.AddRouteComponents()`.
+
+The EDM model is created with the lines:
+
+```c#
+var modelBuilder = new ODataConventionModelBuilder();
+modelBuilder.EntitySet<Customer>("Customers");
+var edmModel = modelBuilder.GetEdmModel();
+```
+
+This uses a model builder from the `Microsoft.OData.ModelBuilder` package to create an OData model with a single entity set called `Customers` that represents a collection of `Customer` entities.
 
 ## EDM model
 
@@ -137,7 +148,7 @@ services.AddControllers().AddOData(
 ## Routing
 
 > [!IMPORTANT]
-> ASP.NET Core OData routing is based on controllers and therefore does not support [minimal APIs](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/overview).
+> ASP.NET Core OData routing is based on controllers and therefore does not support [minimal APIs](/aspnet/core/fundamentals/minimal-apis/overview).
 
 The OData specification defines a number of conventions for routing and endpoints for accessing various resources based on REST best-practices. For example, if you have an entity set called `Customers` based on the `Customer` entity type, the service will be expected to expose a `GET /Customers` endpoint that returns a collection of `Customer` entities, it will also be expected to expose a `GET /Customers({id})` endpoint that returns a customer based on ID.
 
