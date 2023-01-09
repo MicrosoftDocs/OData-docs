@@ -34,7 +34,6 @@ Most of our API improvements fall into the category of namespace simplifications
 
 * fix: ExpressionWriter only prepend slash to method when we have a parent by @uffelauesen in [#2572](https://github.com/OData/odata.net/pull/2572)
 * Ported DataServiceContext.AutoNullPropagation from V3 ODL by @uffelauesen in [#2573](https://github.com/OData/odata.net/pull/2573)
-* IncrementVersion.ps1 fixes by @corranrogue9 in [#2581](https://github.com/OData/odata.net/pull/2581)
 
 ## ODataLib 7.13.0 Release
 
