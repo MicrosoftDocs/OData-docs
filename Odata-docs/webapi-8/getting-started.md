@@ -22,22 +22,64 @@ You'll learn how to:
 :white_check_mark: Interact with the OData service from an API client  
 
 ## Prerequisites
-- [Visual Studio 2022](https://visualstudio.microsoft.com/vs/#download) with the ASP.NET and web development workload - when targeting [.NET Core 3.1](https://dotnet.microsoft.com/en-us/download/dotnet/3.1) or [.NET 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) frameworks, or
-- [Visual Studio 2019](https://visualstudio.microsoft.com/vs/older-downloads/) with the ASP.NET and web development workload - when targeting [.NET Core 3.1](https://dotnet.microsoft.com/en-us/download/dotnet/3.1) framework.
+
+[!INCLUDE[](../includes/appliesto-webapi-v8-net-prereqs-vs.md)]
 
 ## Create an ASP.NET Core application
-In Visual Studio, create a new C# project from the **ASP.NET Core Empty** template. Name the project "Lab01".
 
-In the **Additional information** dialog, select either of **.NET Core 3.1 (Long Term Support)** or **.NET 6.0 (Long Term Support)** frameworks. Uncheck "Configure for HTTPS" checkbox. Click **Create**.
+# [Visual Studio 2022](#tab/visual-studio-2022)
 
-.NET Core 3.1 |  .NET 6.0
-:------------:|:------------:
-![Screenshot of creating aspnetcore project targeting netcore 3.1 framework](../assets/2022-11-11-aspnet-core-odata-8-getting-started-create-project-net31.png)  |  ![Screenshot of creating aspnetcore project targeting net 6.0 framework](../assets/2022-11-11-aspnet-core-odata-8-getting-started-create-project-net6.png)
+- Start Visual Studio 2022 and select **Create a new project**.
+- In the **Create a new project** dialog:
+  - Enter `Empty` in the **Search for templates** search box.
+  - Select **ASP.NET Core Empty** project template and select **Next**.
+
+    ![Screenshot of creating aspnetcore empty project using vs 2022 targeting net 6.0 framework](../assets/2022-12-22-aspnet-core-odata-8-create-empty-project-vs2022.png)
+- Name the project _Lab01_ and select **Next**.
+- In the **Additional information** dialog: 
+  - Select **.NET 6.0 (Long Term Support)**.
+  - Uncheck **Configure for HTTPS** checkbox.
+  - Select **Create**.
+
+  ![Screenshot of creating aspnetcore project using vs 2022 targeting net core 6.0 framework additional info](../assets/2022-12-22-aspnet-core-odata-8-create-project-vs2022-additional-info.png)
+
+# [Visual Studio 2019](#tab/visual-studio-2019)
+
+- Start Visual Studio 2019 and select **Create a new project**.
+- In the **Create a new project** dialog:
+  - Enter `Empty` in the **Search for templates** search box.
+  - Select **ASP.NET Core Empty** project template and select **Next**.
+
+    ![Screenshot of creating aspnetcore empty project using vs 2019 targeting net core 3.1 framework](../assets/2022-12-22-aspnet-core-odata-8-create-empty-project-vs2019.png)
+- Name the project _Lab01_ and select **Next**.
+- In the **Additional information** dialog: 
+  - Select **.NET Core 3.1 (Out of support)**.
+  - Uncheck **Configure for HTTPS** checkbox.
+  - Select **Create**.
+
+  ![Screenshot of creating aspnetcore project using vs 2019 targeting net core 3.1 framework additional info](../assets/2022-12-22-aspnet-core-odata-8-create-project-vs2019-additional-info.png)
+
+---
 
 ## Add Microsoft.AspNetCore.OData library package
-Using the **Nuget Package Manager** (under **Tools** menu) install the `Microsoft.AspNetCore.OData` nuget package and all the dependencies.
 
-![Screenshot of installing microsoft aspnetcore odata nuget package](../assets/2022-11-11-aspnet-core-odata-8-getting-started-nuget-package.png)
+Install the [Microsoft.AspNetCore.OData](https://www.nuget.org/packages/Microsoft.AspNetCore.OData) 8.x Nuget package:
+
+# [Visual Studio](#tab/visual-studio)
+
+In the Visual Studio **Package Manager Console**:
+
+```powershell
+Install-Package Microsoft.AspNetCore.OData
+```
+
+# [.NET Core CLI](#tab/netcore-cli)
+
+```dotnetcli
+dotnet add package Microsoft.AspNetCore.OData
+```
+
+---
 
 ## Define the CLR types
 Add a folder named **Models** to the project and then add the following C# classes.
@@ -125,8 +167,39 @@ In the controller, we define a `Customer` collection (`List<Customer>`) and init
 We also define two overloads of the `Get` method. The first overload does not accept any arguments while the second one accepts a single integer argument. In addition, the first overload returns a collection of `Customer` objects while the second one returns a single `Customer` object. These two methods will handle HTTP GET requests from the client. Both overloads are decorated with the `EnableQuery` attribute. This attribute is responsible for applying the query options that are passed in the query string.
 
 ## Build the Edm model and configure the service
-If the target framework for your project is [.NET Core 3.1](https://dotnet.microsoft.com/en-us/download/dotnet/3.1), replace the code in the _Startup.cs_ file with the following:
+
+# [.NET 6.0](#tab/net60)
+
 ```csharp
+// Program.cs
+using Lab01.Models;
+using Microsoft.AspNetCore.OData;
+using Microsoft.OData.ModelBuilder;
+
+var builder = WebApplication.CreateBuilder(args);
+
+var modelBuilder = new ODataConventionModelBuilder();
+modelBuilder.EntityType<Order>();
+modelBuilder.EntitySet<Customer>("Customers");
+
+builder.Services.AddControllers().AddOData(
+    options => options.Select().Filter().OrderBy().Expand().Count().SetMaxTop(null).AddRouteComponents(
+        "odata",
+        modelBuilder.GetEdmModel()));
+
+var app = builder.Build();
+
+app.UseRouting();
+
+app.UseEndpoints(endpoints => endpoints.MapControllers());
+
+app.Run();
+```
+
+# [.NET Core 3.1](#tab/netcoreapp31)
+
+```csharp
+// Startup.cs
 namespace Lab01
 {
     using Lab01.Models;
@@ -158,33 +231,10 @@ namespace Lab01
     }
 }
 ```
-If the target framework for your project is [.NET 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0), replace the code in the _Program.cs_ file with the following:
-```csharp
-using Lab01.Models;
-using Microsoft.AspNetCore.OData;
-using Microsoft.OData.ModelBuilder;
 
-var builder = WebApplication.CreateBuilder(args);
+---
 
-var modelBuilder = new ODataConventionModelBuilder();
-modelBuilder.EntityType<Order>();
-modelBuilder.EntitySet<Customer>("Customers");
-
-builder.Services.AddControllers().AddOData(
-    options => options.Select().Filter().OrderBy().Expand().Count().SetMaxTop(null).AddRouteComponents(
-        "odata",
-        modelBuilder.GetEdmModel()));
-
-var app = builder.Build();
-
-app.UseRouting();
-
-app.UseEndpoints(endpoints => endpoints.MapControllers());
-
-app.Run();
-```
-
-In the code snippets above, we define the Edm model. As part of the model, we register `Order` as an entity type and `Customers` as an entity set - `Customer` entity type also gets registered as a result. In this case, the `ODataConventionalModelBuilder` is being used to build the Edm model.
+In the preceding code block, we define the Edm model. As part of the model, we register `Order` as an entity type and `Customers` as an entity set - `Customer` entity type also gets registered as a result. In this case, the `ODataConventionalModelBuilder` is being used to build the Edm model.
 
 We then proceed to add essential OData services by calling the `AddOData` method, in the process enabling different OData query capabilities - `$select`, `$filter`, `$orderby`, `$expand`, `count`, `$top` and `$skip`. The `AddRouteComponents` method is used to register a route, passing along the Edm model to associate it with.
 
@@ -202,7 +252,7 @@ The following window will be displayed:
 
 ![Screenshot of running aspnet core odata 8 application](../assets/2022-11-11-aspnet-core-odata-8-getting-started-run-app.png)
 
-Take note of the endpoint that the application is listening on - `http://localhost:5000`
+Take note of the endpoint that the application is listening on - `http://localhost:5000`. The port might differ depending on the version of Visual Studio and other environmental settings.
 
 ## Interact with the OData service from an API client
 You can use any API client of your choice to interact with the OData service.
