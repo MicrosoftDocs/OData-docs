@@ -16,9 +16,9 @@ ASP.NET Core OData is a .NET library that sits on top of ASP.NET Core to help yo
 
 To build an ASP.NET Core OData app, you start with an ASP.NET Core application, then install the `Microsoft.AspNetCore.OData` package as a dependency from NuGet. ASP.NET Core OData 8 supports .NET Core 3.1 and .NET Core 6.0 and above.
 
-Internally, ASP.NET Core OData depends on core .NET libraries for OData, including `Microsoft.OData.Core` that provides features like reading and writing OData payloads, parsing OData URIs and query options and `Microsoft.OData.Edm` that provides support for working with OData schemas also referred to as EDM (Entity Data Model) model.
+Internally, ASP.NET Core OData depends on core .NET libraries for OData, including `Microsoft.OData.Core` that provides features like reading and writing OData payloads, parsing OData URIs and query options and `Microsoft.OData.Edm` that provides support for working with OData schemas, also referred to as EDM (Entity Data Model) model.
 
-The following code snippet demonstrates how you would add OData support to your ASP.NET Core application using ASP.NET Core OData in .NET Core 3.1 and .NET 6.0
+The following code snippet demonstrates how you would add OData support to your ASP.NET Core application using ASP.NET Core OData in .NET Core 3.1 and .NET 6.0.
 
 # [.NET 6.0](#tab/net60)
 
@@ -74,8 +74,7 @@ public class Startup
 
 ---
 
-
-We register OData services using the `services.AddControllers().AddOData()` extension method. The `AddOData()` method accepts a callback action that allows us to configure different aspects of the OData service. The `options` argument that is passed to the callback action contains methods and properties for configuring different components of the OData service.
+We register OData services using the `services.AddControllers().AddOData()` extension method. The `AddOData()` method accepts a callback action that allows us to configure different aspects of the OData service using the options argument (which is an instance of [`ODataOptions`](/dotnet/api/microsoft.aspnetcore.odata.odataoptions)).
 
 In this sample we're calling the `options.AddRouteComponents()` method which is used to register and configure and OData route. This represents our OData API. We pass an EDM model that describes the service to the `options.AddRouteComponents()`.
 
