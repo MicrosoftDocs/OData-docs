@@ -391,9 +391,6 @@ Notice that the context URL has changed. Now the last part looks like `Customers
 
 To achieve this, ASP.NET Core OData uses customer input and output formatters to handle serialization and deserialization. These formatters know how to handle the OData-specific JSON format. It may also perform some validation to ensure the payloads match OData's specification. For example, it may validate that the properties in the request and response are actually defined in the OData model.
 
-> [!IMPORTANT]
-> ASP.NET Core OData **does not** use `System.Text.Json` or `Newtonsoft.JSON` for JSON serialization by default. Instead, it uses [`ODataMessageWriter`](/odata/odatalib/write-payload) and [`ODataMessageReader`](/odata/odatalib/read-payload) from the `Microsoft.OData.Core` package.
-
 ## Batch requests
 
 OData allows you to group multiple operations in a single HTTP request using a batch request. The response to this batch request contains the responses to the individual operations that were in the batch request. Batch requests allow you to reduce the number of round trips between client and server and can improve the performance and scalability of a service.
@@ -578,4 +575,4 @@ The batch handler breaks down the batch request into separate requests, executes
 
 For more information about JSON batching, [visit this article](/odata/odatalib/json-batch).
 For examples using the `multipart/mixed` format, [visit this article](/odata/webapi/batch).
-<!-- TODO: replace these links with a link to an upto-date article dedicate to OData batching in ASP.NET Core OData 8 once that article has been written -->
+<!-- TODO: replace these links with a link to an upto-date article dedicate to OData batching in ASP.NET Core OData 8 once that article has been written (see work item 1980957)-->
