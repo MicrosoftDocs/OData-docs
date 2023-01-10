@@ -44,16 +44,19 @@ The following code snippet demonstrates how you would add OData support to your 
 ```csharp
 // Program.cs
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.OData;
 using Microsoft.Extensions.DependencyInjection;
+// OData namespaces
+using Microsoft.AspNetCore.OData;
 using Microsoft.OData.ModelBuilder;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Create the service EDM model.
 var modelBuilder = new ODataConventionModelBuilder();
 modelBuilder.EntitySet<Customer>("Customers");
 var edmModel = modelBuilder.GetEdmModel();
 
+// Register OData service.
 services.AddControllers().AddOData(
     options => options.AddRouteComponents(edmModel));
 
@@ -69,18 +72,21 @@ app.Run();
 ```csharp
 // Startup.cs
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.OData;
 using Microsoft.Extensions.DependencyInjection;
+// OData namespaces
+using Microsoft.AspNetCore.OData;
 using Microsoft.OData.ModelBuilder;
 
 public class Startup
 {
     public void ConfigureServices(IServiceCollection services)
     {
+        // Create the service EDM model.
         var modelBuilder = new ODataConventionModelBuilder();
         modelBuilder.EntitySet<Customer>("Customers");
         var edmModel = modelBuilder.GetEdmModel();
 
+        // Register OData service.
         services.AddControllers().AddOData(
             options => options.AddRouteComponents(edmModel));
     }
@@ -387,3 +393,185 @@ To achieve this, ASP.NET Core OData uses customer input and output formatters to
 
 > [!IMPORTANT]
 > ASP.NET Core OData **does not** use `System.Text.Json` or `Newtonsoft.JSON` for JSON serialization by default. Instead, it uses [`ODataMessageWriter`](/odata/odatalib/write-payload) and [`ODataMessageReader`](/odata/odatalib/read-payload) from the `Microsoft.OData.Core` package.
+
+## Batch requests
+
+OData allows you to group multiple operations in a single HTTP request using a batch request. The response to this batch request contains the responses to the individual operations that were in the batch request. Batch requests allow you to reduce the number of round trips between client and server and can improve the performance and scalability of a service.
+
+ASP.NET Core OData supports OData batch requests, but they are not enabled by default. To enable batch requests, you need to provide a batch handler and enable the OData batch middleware. The batch handler is the service that's responsible for processing a batch request. The batch middleware intercepts batch requests and sends them to the batch handler instead of conventional routing. The library provides a default batch handler to make batch support easy.
+
+# [.NET 6.0](#tab/net60)
+
+```csharp
+// Program.cs
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.OData;
+using Microsoft.OData.ModelBuilder;
+
+var builder = WebApplication.CreateBuilder(args);
+
+var modelBuilder = new ODataConventionModelBuilder();
+modelBuilder.EntitySet<Customer>("Customers");
+var edmModel = modelBuilder.GetEdmModel();
+
+// Register OData service with support for batch requests.
+services.AddControllers().AddOData(
+    options => options.AddRouteComponents(edmModel));
+
+var app = builder.Build();
+
+// Enable OData batching middleware
+app.UseODataBatching();
+
+app.UseRouting();
+app.UseEndpoints(endpoints => endpoints.MapControllers());
+app.Run();
+```
+
+# [.NET Core 3.1](#tab/netcoreapp31)
+
+```csharp
+// Startup.cs
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.OData;
+using Microsoft.OData.ModelBuilder;
+
+public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        var modelBuilder = new ODataConventionModelBuilder();
+        modelBuilder.EntitySet<Customer>("Customers");
+        var edmModel = modelBuilder.GetEdmModel();
+
+        // Register OData service with support for batch requests.
+        services.AddControllers().AddOData(
+            options => options.AddRouteComponents(edmModel, new DefaultODataBatchHandler()));
+    }
+
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+        // Enable OData batching middleware
+        app.UseODataBatching();
+
+        app.UseRouting();
+        app.UseEndpoints(endpoints => endpoints.MapControllers());
+    }
+}
+```
+
+We add instance of the [`DefaultODataBatchHandler`]() as an argument to the the `options.AddRouteComponents()` method. We register the batching middleware using `app.UseODataBatching()`. 
+
+> [!NOTE]
+> The order of middleware matters. It is important that `app.UseODataBatching()` is called before `app.UseRouting()`.
+
+With this setup, the service can now handle batch requests. OData batch requests are POST requests made to the `/$batch` endpoint. The request body contains the individual operations, these operations can independent or related `GET`, `PUT`, `PATCH`, `POST`, `DELETE` requests or function and action invocations. The body of the batch request supports two formats: JSON and multipart mixed. The format is specified in the `Content-Type` header: `application/json` and `multipart/mixed` for multipart mixed. The following sample shows an example of a JSON batch request:
+
+**Request**
+
+The body contains an array of separate requests, each specifying the HTTP method, URL, headers and body where applicable and an ID (The ID is optional and defaults to `null`.).
+
+```json
+POST http://localhost:5000/$batch
+Content-Type: application/json
+
+{
+    "requests": [
+        {
+            "method": "GET",
+            "url": "http://localhost:5000/Products/1",
+            "id": "r1"
+        },
+        {
+            "method": "GET",
+            "url": "http://localhost:5000/People?$select=FirstName&$top=2",
+            "id": "r2"
+        },
+        {
+            "method": "PATCH",
+            "url": "http://localhost:5000/Products/2",
+            "id": "r3",
+            "headers": {
+                "content-type": "application/json"
+            },
+            "body": {
+                "Category": "Electronics"
+            }
+        }
+    ]
+}
+
+```
+
+**Response**
+
+The response body contains an array of responses, on for each request. Each response includes the status, headers, body and other metadata that allows the client to process the response.
+
+```json
+{
+    "responses": [
+        {
+            "id": "r1",
+            "status": 200,
+            "headers": {
+                "content-type": "application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8",
+                "odata-version": "4.0"
+            },
+            "body": {
+                "@odata.context": "http://localhost:5000/$metadata#Products/$entity",
+                "Id": 1,
+                "Category": "Goods",
+                "Color": "Red",
+                "CreatedDate": "2001-04-15T16:24:08-08:00",
+                "UpdatedDate": "2011-02-15T16:24:08-08:00"
+            }
+        },
+        {
+            "id": "r2",
+            "status": 200,
+            "headers": {
+                "content-type": "application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8",
+                "odata-version": "4.0"
+            },
+            "body": {
+                "@odata.context": "http://localhost:5000/$metadata#People(FirstName)",
+                "value": [
+                    {
+                        "FirstName": "Fiction"
+                    },
+                    {
+                        "FirstName": "Goods"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "r3",
+            "status": 200,
+            "headers": {
+                "content-type": "application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8",
+                "odata-version": "4.0"
+            },
+            "body": {
+                "@odata.context": "http://localhost:5000/$metadata#Products/$entity",
+                "Id": 2,
+                "Category": "Electronics",
+                "Color": "Blue",
+                "CreatedDate": "2021-12-27T09:12:08-08:00",
+                "UpdatedDate": null
+            }
+        }
+    ]
+}
+```
+
+This batch request contained the requests:
+- `GET http://localhost:5000/Products/1`
+- `GET http://localhost:5000/People?$select=FirstName&$top=2`
+- `PATCH http://localhost:5000/Products/2`
+
+The batch handler breaks down the batch request into separate requests, executes them and combines them in a single batch response. Each request in the batch is routed and handled as if it had been made directly in the client. This means that each request will automatically be routed to the matching controller method. If there are any dependencies between requests (e.g. one request relies on the response of another), the batch handler will ensure they are executed in the right order.
+
+For more information about JSON batching, [visit this article](/en-us/odata/odatalib/json-batch).
