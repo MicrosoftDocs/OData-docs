@@ -462,6 +462,8 @@ public class Startup
 }
 ```
 
+---
+
 We add instance of the [`DefaultODataBatchHandler`]() as an argument to the the `options.AddRouteComponents()` method. We register the batching middleware using `app.UseODataBatching()`. 
 
 > [!NOTE]
