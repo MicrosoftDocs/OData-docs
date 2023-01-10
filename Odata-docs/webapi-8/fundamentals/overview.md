@@ -576,4 +576,6 @@ This batch request contained the requests:
 
 The batch handler breaks down the batch request into separate requests, executes them and combines them in a single batch response. Each request in the batch is routed and handled as if it had been made directly in the client. This means that each request will automatically be routed to the matching controller method. If there are any dependencies between requests (e.g. one request relies on the response of another), the batch handler will ensure they are executed in the right order.
 
-For more information about JSON batching, [visit this article](/en-us/odata/odatalib/json-batch).
+For more information about JSON batching, [visit this article](/odata/odatalib/json-batch).
+For examples using the `multipart/mixed` format, [visit this article](/odata/webapi/batch).
+<!-- TODO: replace these links with a link to an upto-date article dedicate to OData batching in ASP.NET Core OData 8 once that article has been written -->
