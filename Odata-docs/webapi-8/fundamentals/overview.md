@@ -10,9 +10,9 @@ ms.date: 1/5/2023
 # Fundamentals Overview
 **Applies To**:[!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v8.md)]
 
-This article provides an overview of the fundamental concepts for building ASP.NET Core OData apps.
+This article provides an overview of the fundamental concepts for building ASP.NET Core OData services.
 
-ASP.NET Core OData is a .NET library that sits on top of ASP.NET Core to help you build REST APIs. The ASP.NET Core OData library consists of a set of services and middleware that hook into ASP.NET Core's request pipeline to provide features like routing, query handling and serialization based on OData specifications and conventions. All these concepts will be covered in depth in separate articles, this just provides an overview.
+ASP.NET Core OData is a .NET library that sits on top of ASP.NET Core to help you build OData REST APIs. The ASP.NET Core OData library consists of a set of services and middleware that hook into ASP.NET Core's request pipeline to provide features like routing, query handling and serialization based on OData specifications and conventions. All these concepts will be covered in depth in separate articles, this just provides an overview.
 
 To build an ASP.NET Core OData app, you start with an ASP.NET Core application, then install the [`Microsoft.AspNetCore.OData`](https://www.nuget.org/packages/Microsoft.AspNetCore.OData) package as a dependency from NuGet. ASP.NET Core OData 8 supports .NET Core 3.1 and .NET Core 6.0 and above.
 
