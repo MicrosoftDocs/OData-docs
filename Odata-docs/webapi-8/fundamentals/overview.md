@@ -279,7 +279,7 @@ public class CustomersController : ODataController
 
 It is up to the developer to implement the actual logic for performing the expected operation and returning the expected response. For example, it is up to the developer to ensure that the `Get()` method returns a collection of `Customer` objects, the library does not enforce this. This means that it's possible for an application written with ASP.NET Core OData not to be compliant with OData specifications or conventions.
 
-The library supports routing for common OData endpoints like entity sets, singletons, actions, functions, properties, etc. You can specify an endpoint for a specific controller action explicitly using ASP.NET Core's [attribute routing](/aspnet/core/mvc/controllers/routing?view=aspnetcore-7.0#attribute-routing-for-rest-apis). You can also define your own routing conventions to extend the built-in conventions or define custom routing logic.
+The library supports routing for common OData endpoints like entity sets, singletons, actions, functions, properties, etc. You can specify an endpoint for a specific controller action explicitly using ASP.NET Core's [attribute routing](/aspnet/core/mvc/controllers/routing#attribute-routing-for-rest-apis). You can also define your own routing conventions to extend the built-in conventions or define custom routing logic.
 
 Visit the [routing documentation](/odata/webapi-8/fundamentals/routing-overview) to learn more about OData routing.
 
