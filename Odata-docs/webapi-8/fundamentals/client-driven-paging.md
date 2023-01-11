@@ -122,6 +122,8 @@ This returns the following result:
 
 Notice the client did not see product 3 because it was removed before it fetched page 2. In a similar way, if new products were added to the data source before product 2, then the client would see product 2 again in page 2 or later pages.
 
+If the underlying data source collection is not ordered, you may also need to manually order the results to have stable pages, e.g. `GET /Products?$top=2&$skip=2&$orderby=Id`.
+
 Using `$skip` can also lead to performance issues in large datasets in some data source implementation. In many SQL-based database systems `$skip` is implemented using `OFFSET`. A request like `/Products?$skip=50000&$top=100` could be translated in the following SQL query:
 
 ```sql
