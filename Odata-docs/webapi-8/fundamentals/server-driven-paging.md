@@ -118,7 +118,7 @@ GET http://localhost:5000/Products?$skip=4
 
 The last page does not include a next link. This is how the client knows that it has reached the end of the collection.
 
-## Combining both `PageSize` and `$top`
+## Combining `PageSize` and `$top`
 
 `PageSize` automatically limits the number of items in the response. The client can still apply `$top` to the request. In this case, `$top` will limit the total number of results rather than the number of items per page.
 
@@ -164,4 +164,6 @@ GET http://localhost:5000/Products?$top=1&$skip=2
     ]
 }
 ```
-This is now the last page. The server returns only item and no next link.
+This is now the last page. The server returns only one item and no next link.
+
+You may have noticed that ASP.NET Core OData generates next links using `$skip`. Using `$skip` on large collections may lead to performance degradation in some databases. For more information about the drawbaks of `$skip`, visit the [client-driven paging](/odata/webapi-8/fundamentals/client-driven-paging#drawbacks) article.
