@@ -122,6 +122,46 @@ The last page does not include a next link. This is how the client knows that it
 
 `PageSize` automatically limits the number of items in the response. The client can still apply `$top` to the request. In this case, `$top` will limit the total number of results rather than the number of items per page.
 
-If the client-requested `$top` is greater than `PageSize`, then the service should return the first page of results, with a next link that fetches the next page of results up to the maximum specified in the client's `$top`.
+If the client-requested `$top` is greater than `PageSize`, then the service should return the first page of results, with a next link that fetches the next page of results up to the maximum specified in the client's `$top`. If the `$top` is less that then page size, then server will return the number of items specified in the `$top` query option with no next link.
 
-For example, if there are 1000 rows but the client specifies `$top=100` and the service has a `PageSize` of 50, the service would return the first 50 records with a next link to return a result containing the remaining 50 of the 100 requested rows with no next link.
+To illustrate this, let's use our collection of 5 products as an example, with `PageSize` set to 2. The client makes a request with `$top=3`
+
+```http
+GET http://localhost:5000/Products?$top=3
+```
+**Response:**
+
+```json
+{
+    "@odata.context": "http://localhost:5000/$metadata#Products",
+    "value": [
+        {
+            "Id": 1,
+            "Name": "Product 1"
+        },
+        {
+            "Id": 2,
+            "Name": "Product 2"
+        }
+    ],
+    "@odata.nextLink": "http://localhost:5000/Products?$top=1&$skip=2"
+}
+```
+The response contains 2 products and a next link to the next page. The client fetches the next page using the next link:
+
+```http
+GET http://localhost:5000/Products?$top=1&$skip=2
+```
+**Response:**
+```json
+{
+    "@odata.context": "http://localhost:5000/$metadata#Products",
+    "value": [
+        {
+            "Id": 3,
+            "Name": "Product 3"
+        }
+    ]
+}
+```
+This is now the last page. The server returns only item and no next link.
