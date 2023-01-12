@@ -52,7 +52,7 @@ public class ProductsController : ODataController
 }
 ```
 
-This sets the number of items per page to 2. Let's assume the collection has a total of 5 products. To fetch the first page, simply fetch the entity set:
+This sets the number of items per page to 2. Let's assume the entity set has a total of 5 products. To fetch the first page, simply fetch the entity set:
 
 ```http
 GET http://localhost:5000/Products
@@ -118,13 +118,24 @@ GET http://localhost:5000/Products?$skip=4
 
 The last page does not include a next link. This is how the client knows that it has reached the end of the collection.
 
+If the request contains query options, they will also be included in the generated next link. Let's take the following request for example:
+
+```http
+GET http://localhost:5000/Products?$filter=Price gt 1000&$select=Name
+```
+
+The generated next link will look like:
+```
+http://localhost:5000/Products?$filter=Price%20gt%201000&$select=Name&$skip=2
+```
+
 ## Combining `PageSize` and `$top`
 
 `PageSize` automatically limits the number of items in the response. The client can still apply `$top` to the request. In this case, `$top` will limit the total number of results rather than the number of items per page.
 
 If the client-requested `$top` is greater than `PageSize`, then the service should return the first page of results, with a next link that fetches the next page of results up to the maximum specified in the client's `$top`. If the `$top` is less that then page size, then server will return the number of items specified in the `$top` query option with no next link.
 
-To illustrate this, let's use our collection of 5 products as an example, with `PageSize` set to 2. The client makes a request with `$top=3`
+To illustrate this, let's use our entity set of 5 products as an example, with `PageSize` set to 2. The client makes a request with `$top=3`
 
 ```http
 GET http://localhost:5000/Products?$top=3
@@ -166,4 +177,75 @@ GET http://localhost:5000/Products?$top=1&$skip=2
 ```
 This is now the last page. The server returns only one item and no next link.
 
+## Improving paging with `$skiptoken`
+
 You may have noticed that ASP.NET Core OData generates next links using `$skip`. Using `$skip` on large collections may lead to performance degradation in some databases. For more information about the drawbaks of `$skip`, visit the [client-driven paging](/odata/webapi-8/fundamentals/client-driven-paging#drawbacks) article.
+
+OData provides a [`$skiptoken`](https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_ServerDrivenPaging) query option that can be used in server-driven paging to encode information about the next page of a result. The content of `$skiptoken` is opaque and service-specific. The client should not try to interpret the value or rely on its format. OData clients must not use `$skiptoken` when constructing requests.
+
+ASP.NET Core OData 8 provides support for pagination based on `$skiptoken`, but it's not enabled by default. You can enable it using the [`ODataOptions.SkipToken()`](/dotnet/api/microsoft.aspnetcore.odata.odataoptions.skiptoken) method when configuring OData services in your application:
+
+```c#
+services.AddControllers().AddOData(options =>
+    options.SetMaxTop(null).SkipToken());
+```
+
+Assuming we have the same products entity set as in the previous section and a `PageSize` of 2, here's what the first page would look like:
+
+```http
+GET http://localhost:5000/Products
+```
+
+**Response**
+
+```json
+{
+    "@odata.context": "http://localhost:5000/$metadata#Products",
+    "value": [
+        {
+            "Id": 1,
+            "Name": "Product 1"
+        },
+        {
+            "Id": 2,
+            "Name": "Product 2"
+        }
+    ],
+    "@odata.nextLink": "http://localhost:64771/Products?$skiptoken=Id-2"
+}
+```
+The next link is now generated based on `$skiptoken` rather than `$skip`. This is what the second page would look like:
+
+```
+GET http://localhost:5000/Products?$skiptoken=Id-2
+```
+
+```json
+{
+    "@odata.context": "http://localhost:5000/$metadata#Products",
+    "value": [
+        {
+            "Id": 3,
+            "Name": "Product 3"
+        },
+        {
+            "Id": 4,
+            "Name": "Product 4"
+        }
+    ],
+    "@odata.nextLink": "http://localhost:64771/Products?$skiptoken=Id-4"
+}
+```
+
+The `$skiptoken` value is generated using an implementation of [`SkipTokenHandler`](/dotnet/api/microsoft.aspnetcore.odata.query.skiptokenhandler). By default, the built-in [`DefaultSkipTokenHandler`](/dotnet/api/microsoft.aspnetcore.odata.query.defaultskiptokenhandler) class. `DefaultSkipTokenHandler` generates the `$skiptoken` based on the values of the key fields and fields in the `$orderby` query option if present.
+
+You can customize the `$skiptoken` by providing your own implementation of `SkipTokenHandler` and adding it to the OData route's service container:
+
+```c#
+services.AddControllers().AddOData(options =>
+    options.SetMaxTop(null).SkipToken()
+    .AddRouteComponents("", edmModel, routeServices =>
+    {
+        routeServices.AddSingleton<SkipTokenHandler, CustomSkipTokenHandler>();
+    }));
+```
