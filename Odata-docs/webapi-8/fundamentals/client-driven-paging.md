@@ -89,10 +89,13 @@ GET /Products?$top=2
 This returns the following result:
 
 ```json
-[
-    { "Id": 1, "Name": "Product 1" },
-    { "Id": 2, "Name": "Product 2" }
-]
+{
+    "@odata.context": "http://localhost:5000/$metadata#Products",
+    "value": [
+        { "Id": 1, "Name": "Product 1" },
+        { "Id": 2, "Name": "Product 2" }
+    ]
+}
 ```
 
 Let's say that product 2 is removed from the data source before the client fetches the second page. The data source looks like:
@@ -114,10 +117,13 @@ GET /Products?$top=2&$skip=2
 This returns the following result:
 
 ```json
-[
-    { "Id": 4, "Name": "Product 4" },
-    { "Id": 5, "Name": "Product 5" }
-]
+{
+    "@odata.context": "http://localhost:5000/$metadata#Products",
+    "value": [
+        { "Id": 4, "Name": "Product 4" },
+        { "Id": 5, "Name": "Product 5" }
+    ]
+}
 ```
 
 Notice the client did not see product 3 because it was removed before it fetched page 2. In a similar way, if new products were added to the data source before product 2, then the client would see product 2 again in page 2 or later pages.
@@ -140,10 +146,13 @@ GET /Products?$top=2
 This will return the following result:
 
 ```json
-[
-    { "Id": 1, "Name": "Product 1" },
-    { "Id": 2, "Name": "Product 2" }
-]
+{
+    "@odata.context": "http://localhost:5000/$metadata#Products",
+    "value": [
+        { "Id": 1, "Name": "Product 1" },
+        { "Id": 2, "Name": "Product 2" }
+    ]
+}
 ```
 When the client gets this ersult, it records that the last product it saw was the product with ID 2. So, to fetch the next page, it makes the following request:
 ```http
