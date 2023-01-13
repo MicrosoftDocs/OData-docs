@@ -79,6 +79,14 @@
                 href: /odata/webapi-8/fundamentals/ref-routing
           - name: Actions and Functions
             href: /odata/webapi-8/fundamentals/actions-functions
+          - name: Pagination
+            items:
+              - name: Pagination overview
+                href: /odata/webapi-8/fundamentals/pagination-overview
+              - name: Client-driven paging
+                href: /odata/webapi-8/fundamentals/client-driven-paging
+              - name: Server-driven paging
+                href: /odata/webapi-8/fundamentals/server-driven-paging
       - name: Tutorials
         items:
           - name: Basic CRUD operations
