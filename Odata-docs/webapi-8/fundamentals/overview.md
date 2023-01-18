@@ -38,6 +38,7 @@ dotnet add package Microsoft.AspNetCore.OData
 Internally, ASP.NET Core OData depends on the following.NET libraries for OData: 
 - [`Microsoft.OData.Core`](https://www.nuget.org/packages/Microsoft.OData.Core), which provides features like reading and writing OData payloads, parsing OData URIs and query options
 - [`Microsoft.OData.Edm`](https://www.nuget.org/packages/Microsoft.OData.Edm), which provides support for working with OData schemas, also referred to as EDM (Entity Data Model) model.
+- [`Microsoft.Spatial`](https://www.nuget.org/packages/Microsoft.Spatial), which provides support for geospatial data types.
 
 The following code snippet demonstrates how you would add OData support to your ASP.NET Core application using ASP.NET Core OData in .NET Core 3.1 and .NET 6.0.
 
