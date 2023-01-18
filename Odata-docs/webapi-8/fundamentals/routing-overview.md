@@ -70,7 +70,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ## OData routing
 In the above block of code, we build an Edm model using the `ODataConventionModelBuilder`. We then call the `AddOData()` method resulting into the following OData routing conventions being registered in the [dependency injection](/aspnet/core/fundamentals/dependency-injection) container:
-- `MetadataRoutingConvention` - routes requests for service metadata
+- [`MetadataRoutingConvention`](/odata/webapi-8/fundamentals/metadata-routing) - routes requests for service metadata
 - [`EntitySetRoutingConvention`](/odata/webapi-8/fundamentals/entityset-routing) - routes requests for entity sets
 - [`EntityRoutingConvention`](/odata/webapi-8/fundamentals/entity-routing) - routes requests for single entities by key
 - [`SingletonRoutingConvention`](/odata/webapi-8/fundamentals/singleton-routing) - routes requests for singletons
