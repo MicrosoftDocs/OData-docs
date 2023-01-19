@@ -234,6 +234,8 @@ As an example, let's say we want to represent the skip token using base-64 encod
 Let's create a class called `CustomSkipTokenHandler` that extends `DefaultSkipTokenHandler`. You can put the class anywhere in the project where it makes sense to you.
 
 ```c#
+using Microsoft.AspNetCore.OData.Query;
+
 public class CustomSkipTokenHandler : DefaultSkipTokenHandler
 {
 }
@@ -251,6 +253,52 @@ options.SkipToken().AddRouteComponents(
 
 This tells the service to use `CustomSkipTokenHandler` where a `SkipTokenHandler` is required.
 
-With this configuration, requests that require a `$skiptoken` will go through our `CustomSkipTokenHandler`. But this handler behaves exactly like the `DefaultSkipTokenHandler` because we have not overriden any of its method. Let's start by base64-encoding the skip token when generating the next link>
+With this configuration, requests that require a `$skiptoken` will go through our `CustomSkipTokenHandler`. But this handler behaves exactly like the `DefaultSkipTokenHandler` because we have not overriden any of its method. Let's start by base64-encoding the skip token when generating the next link.
 
-### Customizing the skip token with `GenerateNextLink`
+### Customizing the skip token with `GenerateNextPageLink`
+
+We'll need to override the `GenerateNextPageLink` method. This method returns a `Uri` that will be used as the next link. The URI should contain the `$skiptoken` if applicable. Since we only want to base-64 encode the default skip token, we can leverage the `GenerateNextPageLink` of the parent `DefaultSkipTokenHandler` class to generate the URI, then extract the skip token and encode it.
+
+We can implement that with the following code:
+
+```c#
+
+public override Uri GenerateNextPageLink(
+    Uri baseUri, 
+    int pageSize, 
+    object instance, 
+    ODataSerializerContext context)
+{
+    var uri = base.GenerateNextPageLink(baseUri, pageSize, instance, context);
+
+    if (uri == null)
+    {
+        return uri;
+    }
+    
+    var queryOptions = HttpUtility.ParseQueryString(uri.Query);
+    string skipToken = queryOptions.Get("$skiptoken");
+    if (skipToken == null)
+    {
+        return uri;
+    }
+
+    string base64SkipToken = Convert.ToBase64String(Encoding.UTF8.GetBytes(skipToken));
+    queryOptions.Set("$skiptoken", base64SkipToken);
+    
+    string encodedQuery = queryOptions.ToString();
+    UriBuilder builder = new UriBuilder(uri);
+    builder.Query = encodedQuery;
+    var newUri = builder.Uri;
+    
+    return newUri;
+}
+```
+
+Now let's explain what this code does.
+
+The `GenerateNextPageLink` takes the following arguments:
+- `baseUri`: This is the request URL. This is the URL we want to add a `$skiptoken` to. It's possible that it contains the `$skiptoken` from the previous page.
+- `pageSize`: The maximum number of items per page. This is the same value that was passed to the `PageSize` property.
+- `instance`: The instance based on which to generate the skip token. It corresponds to the last item in the previous page.
+- `context`: Allows you to access information about the current serialization pipeline, such as the request instance, the EDM model, etc.
