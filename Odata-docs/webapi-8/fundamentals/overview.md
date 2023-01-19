@@ -207,7 +207,7 @@ Clients can consume this metadata to know what types and endpoints the service e
 
 It is possible to service multiple OData APIs in the same ASP.NET Core application.
 
-The sample code in the introduction registers a single OData service using `AddRouteComponents(edmModel)`. This is hosted on the "default" route, i.e. on the root path `/`. This means that the endpoints on this OData service look like :
+Our first sample code in this document registers a single OData service using `AddRouteComponents(edmModel)`. This is hosted on the "default" route, i.e. on the root path `/`. This means that the endpoints on this OData service look like :
 - `/Customers`
 - `/Products`
 - `/$metadata`.
@@ -292,9 +292,9 @@ OData defines various query options that clients can add to an OData request URL
 - `$expand` allows you to join and include related data in the response: `/OrderItems?$expand=Product` will return order items and include the related product in the response
 - `$skip` and `$top` allow you to limit the number of records in the response and can be used for client-driven pagination: `/Products$top=10&$skip=20` returns the third page of 10 products.
 - `$orderby` allows you to sort the results: `/Products?$orderby=DateCreated desc` will sort the products by date in descending order (most recent first).
-- `$apply` allows you to apply aggregations: `/Orders?$apply=groupby((Product/Name), aggregate($count as Count))` returns the number of orders per product name.
+- `$apply` allows you to group and aggregate results: `/Orders?$apply=groupby((Product/Name), aggregate($count as Count))` returns the number of orders per product name.
 
-These query options are not enabled by default. You can enable and configure them individually through the options passed to the `AddOData` method:
+These query options are not enabled by default. You can enable and configure them individually through the options parameter passed to the `AddOData` method:
 
 ```c#
 AddOData(
@@ -309,7 +309,7 @@ AddOData(
     options => options.EnableQueryFeatures(100).AddRouteComponents(edmModel));
 ```
 
-The argument passed to `EnableQueryFeatures` is the max top value. You can set it to `null` if you don't want to impose a limit the value specified in the `$top` query option.
+The argument passed to `EnableQueryFeatures` is the max top value. You can set it to `null` if you don't want to impose a limit to the value specified in the `$top` query option.
 
 After enabling query options on the service, you also need to enable querying on specific endpoints where you want to support query options. You can do this by adding the [`[EnableQuery]`](/dotnet/api/microsoft.aspnetcore.odata.query.enablequeryattribute) attribute to the corresponding controller actions. The [`EnableQuery`] attribute automatically applies the query options to the results returned by the controller action.
 
@@ -351,7 +351,7 @@ ASP.NET Core OData uses JSON format for its requests and responses (the `$metada
 
 For example. Let's say we have an OData service that has a `Customers` entity set which returns entities of type `Customer`.
 
-For a request like `GET /Customers`, we would a get a response like
+For a request like `GET /Customers`, we would a get a response like:
 
 ```json
 {
@@ -373,7 +373,7 @@ For a request like `GET /Customers`, we would a get a response like
 }
 ```
 
-Notice that this response does not just return an array of `Customer` object, it returns an object comprising of `@odata.context` and `value` properties. The `value` property's value is the array that contains the actual data. The `@odata.context` property is an annotation that gives that client information about where this data comes from. The `http://localhost:5000/odata/$metadata#Customers` is called the context URL, in this case it shows that this payload comes from the `Customers` entity set. The client can find out more information about the `Customers` entity set from the schema, which it can be retrieved from the service metadata endpoint - `http://localhost:5000/$metadata`. Using both the schema and the context URL, the client can tell that the payload value is a an array of `Customer` objects, and it can determine the properties contained in the `Customer` entity type and their respective types.
+Notice that this response does not just return an array of `Customer` object, it returns an object comprising of `@odata.context` and `value` properties. The `value` property's value is the array that contains the actual data. The `@odata.context` property is an annotation that gives that client information about where this data comes from. The `http://localhost:5000/$metadata#Customers` is called the context URL, in this case it shows that this payload comes from the `Customers` entity set. The client can find out more information about the `Customers` entity set from the schema, which can be retrieved from the service metadata endpoint - `http://localhost:5000/$metadata`. Using both the schema and the context URL, the client can tell that the payload value is a an array of `Customer` objects, and it can determine the properties contained in the `Customer` entity type and their respective types.
 
 Let's add a query option to the request to include only the `Name` field: `GET /Customers?$select=Name`.
 
