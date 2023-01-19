@@ -12,9 +12,9 @@ ms.date: 1/5/2023
 
 This article provides an overview of the fundamental concepts for building ASP.NET Core OData services.
 
-ASP.NET Core OData is a .NET library that sits on top of ASP.NET Core to help you build OData REST APIs. The ASP.NET Core OData library consists of a set of services and middleware that hook into ASP.NET Core's request pipeline to provide features like routing, query handling and serialization based on OData specifications and conventions. All these concepts will be covered in depth in separate articles, this just provides an overview.
+ASP.NET Core OData is a .NET library built on top of ASP.NET Core to help you build OData REST APIs. The ASP.NET Core OData library consists of a set of services and middleware that hook into ASP.NET Core's request pipeline to provide features like routing, query handling and serialization based on OData specifications and conventions. All these concepts will be covered in depth in separate articles, this article just provides an overview.
 
-To build an ASP.NET Core OData app, you start with an ASP.NET Core application, then install the [`Microsoft.AspNetCore.OData`](https://www.nuget.org/packages/Microsoft.AspNetCore.OData) package as a dependency from NuGet. ASP.NET Core OData 8 supports .NET Core 3.1 and .NET Core 6.0 and above.
+To build an ASP.NET Core OData app, you start with an ASP.NET Core application, then install the [`Microsoft.AspNetCore.OData`](https://www.nuget.org/packages/Microsoft.AspNetCore.OData) NuGet package as a dependency. ASP.NET Core OData 8 supports .NET Core 3.1 and .NET Core 6.0 and above.
 
 > [!NOTE]
 > ASP.NET COre OData 8 supports .NET Core 3.1 and .NET Core 6.0 and above.
@@ -60,7 +60,7 @@ modelBuilder.EntitySet<Customer>("Customers");
 var edmModel = modelBuilder.GetEdmModel();
 
 // Register OData service.
-services.AddControllers().AddOData(
+builder.Services.AddControllers().AddOData(
     options => options.AddRouteComponents(edmModel));
 
 var app = builder.Build();
@@ -104,9 +104,9 @@ public class Startup
 
 ---
 
-We register OData services using the `services.AddControllers().AddOData()` extension method. The `AddOData()` method accepts a callback action that allows us to configure different aspects of the OData service using the options argument (which is an instance of [`ODataOptions`](/dotnet/api/microsoft.aspnetcore.odata.odataoptions)).
+We register OData services using the `AddOData` extension method. The `AddOData` method accepts a callback action that allows us to configure different aspects of the OData service using the options argument (which is an instance of [`ODataOptions`](/dotnet/api/microsoft.aspnetcore.odata.odataoptions)).
 
-In this sample we're calling the [`options.AddRouteComponents()`](/dotnet/api/microsoft.aspnetcore.odata.odataoptions.addroutecomponents) method which is used to register and configure the components and services that make up our OData API. We pass an EDM model that describes the service schema to the `options.AddRouteComponents()`.
+In this sample we're calling the [`AddRouteComponents`](/dotnet/api/microsoft.aspnetcore.odata.odataoptions.addroutecomponents) method which is used to register and configure the components and services that make up our OData API. We pass an EDM model that describes the service schema to the `AddRouteComponents`.
 
 The EDM model is built using the following logic:
 
@@ -138,18 +138,18 @@ dotnet add package Microsoft.OData.ModelBuilder
 
 ## EDM model
 
-The EDM model refers to the in-memory representation of the OData schema. It defines the data types and endpoints exposed by the OData service. This allows clients to consume the API in a predictable, type-safe manner. The EDM model is represented by the [`IEdmModel`](/dotnet/api/microsoft.odata.edm.iedmmodel) interface defined in the `Microsoft.OData.Edm` package. When you create an OData service, you need specify the `IEdmModel` that describes the service. This interface exposes methods for retrieving the data types, metadata and other information defined in the schema. You specify the EDM model by passing an instance of `IEdmModel` to the `ODataOptions.AddRouteComponents` method:
+The EDM model refers to the in-memory representation of the OData schema. It defines the data types and endpoints exposed by the OData service. This allows clients to consume the API in a predictable, type-safe manner. The EDM model is represented by the [`IEdmModel`](/dotnet/api/microsoft.odata.edm.iedmmodel) interface defined in the `Microsoft.OData.Edm` package. When you create an OData service, you need specify the `IEdmModel` that describes the service. This interface exposes methods for retrieving the data types, metadata and other information defined in the schema. You specify the EDM model by passing an instance of `IEdmModel` to the `AddRouteComponents` method:
 
 ```c#
-services.AddControllers().AddOData(options => options.AddRouteComponents(edmModel));
+AddOData(options => options.AddRouteComponents(edmModel));
 ```
 
 There are a number of ways to create an `IEdmModel` instance:
-- You can use the `CsdlReader` class to parse an `IEdmModel` from a stream that contains the OData schema in [CSDL XML](https://docs.oasis-open.org/odata/odata-csdl-xml/v4.01/odata-csdl-xml-v4.01.html) or [CSDL JSON](https://docs.oasis-open.org/odata/odata-csdl-json/v4.01/odata-csdl-json-v4.01.html) format. The `CsdlReader` class is defined in the `Microsoft.OData.Edm` package. To learn more, [visit this article](/odata/odatalib/edm/read-write-model).
-- You can manually construct a model by creating an instance of the [`EdmModel`](/dotnet/api/microsoft.odata.edm.edmmodel) class (which implements `IEdmModel`). The `EdmModel` class is also part of the `Microsoft.OData.Edm` package. To learn more about creating EDM models manually, visit the [EDM documentation](/odata/odatalib/edm/build-basic-model).
-- You can use the `Microsoft.OData.ModelBuilder` package to easily create an `IEdmModel` based on CLR classes. The package provides 2 main classes:
-    - `ODataConventionModelBuilder` used to quickly create models from CLR classes based on opinionated conventions (for example, it can infer key properties based on conventional names like `Id`). This is the easiest method and what we use in most of the samples in this documentation. For example usage, [visit this article](/odata/webapi/convention-model-builder).
-    - `ODataModelBuilder` gives you more control to specify things explicitly but requires more work to use. For example usage, [visit this article](/odata/webapi/model-builder-nonconvention).
+- Using the `CsdlReader` class to parse an `IEdmModel` from a stream that contains the OData schema in [CSDL XML](https://docs.oasis-open.org/odata/odata-csdl-xml/v4.01/odata-csdl-xml-v4.01.html) or [CSDL JSON](https://docs.oasis-open.org/odata/odata-csdl-json/v4.01/odata-csdl-json-v4.01.html) format. The `CsdlReader` class is defined in the `Microsoft.OData.Edm` package. To learn more, [visit this article](/odata/odatalib/edm/read-write-model).
+- Manually constructing a model by creating an instance of the [`EdmModel`](/dotnet/api/microsoft.odata.edm.edmmodel) class (which implements `IEdmModel`). The `EdmModel` class is also part of the `Microsoft.OData.Edm` package. To learn more about creating EDM models manually, visit the [EDM documentation](/odata/odatalib/edm/build-basic-model).
+- Using the `Microsoft.OData.ModelBuilder` package to easily create an `IEdmModel` based on CLR classes. The package provides 2 main classes:
+    - `ODataConventionModelBuilder`, used to quickly create models from CLR classes based on opinionated conventions (for example, it can infer key properties based on conventional names like `Id`). This is the easiest method and what we use in most of the samples in this documentation. For example usage, [visit this article](/odata/webapi/convention-model-builder).
+    - `ODataModelBuilder`, that gives you more control to specify things explicitly but requires more work to use. For example usage, [visit this article](/odata/webapi/model-builder-nonconvention).
 
 > [!NOTE]
 > In ASP.NET Core OData 7, the model builder was built-in to the library. It was extracted into a standalone package `Microsoft.OData.Modelbuilder`. The two work the same mostly and the 7.x model builder documentation still applies to the standalone `Microsoft.OData.ModelBuilder`.
@@ -207,7 +207,7 @@ Clients can consume this metadata to know what types and endpoints the service e
 
 It is possible to service multiple OData APIs in the same ASP.NET Core application.
 
-The sample code in the introduction registers a single OData service using `options.AddRouteComponents(edmModel)`. This is hosted on the "default" route, i.e. on the root path `/`. This means that the endpoints on this OData service look like :
+The sample code in the introduction registers a single OData service using `AddRouteComponents(edmModel)`. This is hosted on the "default" route, i.e. on the root path `/`. This means that the endpoints on this OData service look like :
 - `/Customers`
 - `/Products`
 - `/$metadata`.
@@ -215,7 +215,7 @@ The sample code in the introduction registers a single OData service using `opti
 You can also specify a **route prefix** when registering route components. This is a string that will prefix all the paths on this API. There's an `AddRouteComponents` overload that accepts a route prefix as the first argument:
 
 ```c#
-services.AddControllers().AddOdata(
+AddOdata(
     options => options.AddRouteComponents("odata", edmModel));
 ```
 In this case, paths will be prefixed with `odata`:
@@ -228,7 +228,7 @@ The application's base URL together with the route prefix form the **service roo
 You can call the `AddRouteComponents()` method multiple times with different prefixes (and possibly different `IEdmModel` instances) to serve multiple OData APIs in the same application:
 
 ```c#
-services.AddControllers().AddOData(
+AddOData(
     options => options.AddRouteComponents("api1", edmModel1).AddRouteComponents("api2", edmModel2));
 ```
 
@@ -294,10 +294,10 @@ OData defines various query options that clients can add to an OData request URL
 - `$orderby` allows you to sort the results: `/Products?$orderby=DateCreated desc` will sort the products by date in descending order (most recent first).
 - `$apply` allows you to apply aggregations: `/Orders?$apply=groupby((Product/Name), aggregate($count as Count))` returns the number of orders per product name.
 
-These query options are not enabled by default. You can enable and configure them individually through the options passed to the `AddOData()` method:
+These query options are not enabled by default. You can enable and configure them individually through the options passed to the `AddOData` method:
 
 ```c#
-services.AddControllers().AddOData(
+AddOData(
     options => options.Select().Filter().Expand().OrderBy().SetMaxTop(100).AddRouteComponents(edmModel));
 ```
 In this example, we only enable the `$select`, `$filter`, `$expand`, `$orderby` and `$top` query options and we're setting the max allowable value for `$top` to be 100. If the client tries to use an OData query option that's not enabled, the service will return an error.
@@ -305,7 +305,7 @@ In this example, we only enable the `$select`, `$filter`, `$expand`, `$orderby` 
 You can enable all supported query options in one go using the `EnableQueryFeatures` method:
 
 ```c#
-services.AddControllers().AddOData(
+AddOData(
     options => options.EnableQueryFeatures(100).AddRouteComponents(edmModel));
 ```
 
@@ -422,7 +422,7 @@ modelBuilder.EntitySet<Customer>("Customers");
 var edmModel = modelBuilder.GetEdmModel();
 
 // Register OData service with support for batch requests.
-services.AddControllers().AddOData(
+builder.Services.AddControllers().AddOData(
     options => options.AddRouteComponents(edmModel, new DefaultODataBatchHandler()));
 
 var app = builder.Build();
@@ -470,7 +470,7 @@ public class Startup
 
 ---
 
-We add an instance of the [`DefaultODataBatchHandler`](/dotnet/api/microsoft.aspnetcore.odata.batch.defaultodatabatchhandler) as an argument to the the `options.AddRouteComponents()` method. We register the batching middleware using `app.UseODataBatching()`. 
+We add an instance of the [`DefaultODataBatchHandler`](/dotnet/api/microsoft.aspnetcore.odata.batch.defaultodatabatchhandler) as an argument to the the `AddRouteComponents` method. We register the batching middleware using `UseODataBatching`. 
 
 > [!NOTE]
 > The order of middleware matters. It is important that `app.UseODataBatching()` is called before `app.UseRouting()`.
