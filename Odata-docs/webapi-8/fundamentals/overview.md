@@ -207,7 +207,7 @@ Clients can consume this metadata to know what types and endpoints the service e
 
 It is possible to service multiple OData APIs in the same ASP.NET Core application.
 
-Our first sample code in this document registers a single OData service using `AddRouteComponents(edmModel)`. This is hosted on the "default" route, i.e. on the root path `/`. This means that the endpoints on this OData service look like :
+The first sample code in this document registers a single OData service using `AddRouteComponents(edmModel)`. This is hosted on the "default" route, i.e. on the root path `/`. This means that the endpoints on this OData service look like :
 - `/Customers`
 - `/Products`
 - `/$metadata`.
@@ -311,7 +311,7 @@ AddOData(
 
 The argument passed to `EnableQueryFeatures` is the max top value. You can set it to `null` if you don't want to impose a limit to the value specified in the `$top` query option.
 
-After enabling query options on the service, you also need to enable querying on specific endpoints where you want to support query options. You can do this by adding the [`[EnableQuery]`](/dotnet/api/microsoft.aspnetcore.odata.query.enablequeryattribute) attribute to the corresponding controller actions. The [`EnableQuery`] attribute automatically applies the query options to the results returned by the controller action.
+After enabling query options on the service, you also need to enable querying on specific endpoints where you want to support query options. You can do this by adding the [`[EnableQuery]`](/dotnet/api/microsoft.aspnetcore.odata.query.enablequeryattribute) attribute to the corresponding controller actions. The `EnableQuery` attribute automatically applies the query options to the results returned by the controller action.
 
 ```c#
 public class ProductsController : ODataController
