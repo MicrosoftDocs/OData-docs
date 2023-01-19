@@ -396,7 +396,7 @@ The response would look like:
 }
 ```
 
-Notice that the context URL has changed. Now the last part looks like `Customers(Name)` which means that the payload is from the `Customers` entity set (and therefore of the `Customer` type), but only includes the `Name` field. So we see that the response type does not only depend on the types defined in the model, but also the data transformations based on the request. The context URL and other annotations help the client figure out how to handle such dynamic payloads in a predictable and type-safe manner.
+Notice that the context URL is different in this case. Now the last part looks like `Customers(Name)` which means that the payload is from the `Customers` entity set (and therefore of the `Customer` type), but only includes the `Name` field. So we see that the response type does not only depend on the types defined in the model, but also the data transformations based on the request. The context URL and other annotations help the client figure out how to handle such dynamic payloads in a predictable and type-safe manner.
 
 To achieve this, ASP.NET Core OData uses custom input and output formatters to handle serialization and deserialization. These formatters know how to handle the OData-specific JSON format. It may also perform some validation to ensure the payloads match OData's specification. For example, it may validate that the properties in the request and response are actually defined in the EDM model.
 
@@ -404,7 +404,7 @@ To achieve this, ASP.NET Core OData uses custom input and output formatters to h
 
 OData allows you to group multiple operations in a single HTTP request, called a batch request. The response to this batch request contains the responses to the individual operations that were in the batch request. Batch requests allow you to reduce the number of round trips between client and server and can improve the performance and scalability of a service.
 
-ASP.NET Core OData supports OData batch requests, but they are not enabled by default. To enable batch requests, you need to provide a batch handler and enable the OData batch middleware. The batch handler is the service that's responsible for processing a batch request. The batch middleware intercepts batch requests and sends them to the batch handler instead of conventional routing. The library provides a default batch handler to make batch support easy.
+The ASP.NET Core OData batch requests feature is not enabled by default. To enable batch requests, you need to provide an OData batch handler and enable the OData batch middleware. The OData batch handler is the service that is responsible for processing a batch request. The OData batch middleware intercepts batch requests and routes them to the batch handler instead of conventional routing. The ASP.NET Core OData library provides a default batch handler to make batch support easy.
 
 # [.NET 6.0](#tab/net60)
 
@@ -470,16 +470,16 @@ public class Startup
 
 ---
 
-We add an instance of the [`DefaultODataBatchHandler`](/dotnet/api/microsoft.aspnetcore.odata.batch.defaultodatabatchhandler) as an argument to the the `AddRouteComponents` method. We register the batching middleware using `UseODataBatching`. 
+In the preceding block of code, we add an instance of the [`DefaultODataBatchHandler`](/dotnet/api/microsoft.aspnetcore.odata.batch.defaultodatabatchhandler) as an argument to the the `AddRouteComponents` method. We also register the batching middleware using `UseODataBatching`. 
 
 > [!NOTE]
 > The order of middleware matters. It is important that `app.UseODataBatching()` is called before `app.UseRouting()`.
 
-With this setup, the service can now handle batch requests. OData batch requests are POST requests made to the `/$batch` endpoint. The request body contains the individual operations, these operations can independent or related `GET`, `PUT`, `PATCH`, `POST`, `DELETE` requests or function and action invocations. The body of the batch request supports two formats: JSON and multipart mixed. The format is specified in the `Content-Type` header: `application/json` for JSON and `multipart/mixed` for multipart mixed. The following sample shows an example of a JSON batch request:
+With this setup, the service can now handle batch requests. OData batch requests are POST requests made to the `/$batch` endpoint. The request body contains the individual operations. These operations can be independent or related `GET`, `PUT`, `PATCH`, `POST`, `DELETE` requests or function and action invocations. The body of the batch request supports two formats: JSON and multipart mixed. The format is specified in the `Content-Type` header: `application/json` for JSON and `multipart/mixed` for multipart mixed. The following sample shows an example of a JSON batch request:
 
 **Request**
 
-The body contains an array of separate requests, each specifying the HTTP method, URL, headers and body where applicable and an ID - The ID is optional and defaults to `null`.
+The body contains an array of separate requests, each specifying the HTTP method, URL, headers and body where applicable and an ID - the ID is optional and defaults to `null`.
 
 ```json
 POST http://localhost:5000/$batch
