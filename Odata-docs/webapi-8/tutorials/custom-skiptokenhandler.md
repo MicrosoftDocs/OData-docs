@@ -7,12 +7,19 @@ author: habbes
 ms.author: clhabins
 ---
 
-# Customizing skip tokens with SkipTokenHandler
+# Customizing skip tokens with `SkipTokenHandler`
+
 **Applies To**:[!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v8.md)]
 
-Skip tokens are used in server-side paging to keep track of the last record that was sent the client so that it can generate the next page of results. The skip token is opaque to the client, this means that the server has freedom to decide what the contents of the skip token should be and how to interpret them. ASP.NET Core OData generates by default the skip token by combining the fields and values of the the a reference record. However, you can override this behaviour by providing your own custom logic for generating and processing skip tokens.
+Skip tokens are used in server-side paging to keep track of the last record that was sent the client so that it can generate the next page of results. The skip token is opaque to the client, this means that the server has freedom to decide what the contents of the skip token should be and how to interpret them. ASP.NET Core OData generates by default the skip token by combining the fields and values of the the a reference record. However, you can override this behavior by providing your own custom logic for generating and processing skip tokens.
 
-In this tutorial you'll learn how to customize the skip token logic using a custom `SkipTokenHandler`.
+This tutorial shows how to customize the skip token logic using a custom `SkipTokenHandler`.
+
+You'll learn:
+:white_check_mark: How ASP.NET Core OData uses `SkipTokenHandler` to generate and handle next links.  
+:white_check_mark: How to create a custom `SkipTokenHandler` that extends the `DefaultSkipTokenHandler`
+:white_check_mark: How to configure an ASP.NET Core OData application to use your custom handler
+
 
 This tutorial assumes a basic understanding of how to create and run an ASP.NET Core OData 8 application. If you're unfamiliar with ASP.NET Core OData 8, you may want to go through the [Getting started](/odata/webapi-8/getting-started) tutorial.
 
@@ -193,9 +200,8 @@ For example, let's order the results by name, in descending order:
 GET /odata/Customers?$orderby=Name desc
 ```
 
-> ![NOTE]
+> [!NOTE]
 > Ensure you enable the `$orderby` query option in your service configuration using `options.OrderBy()` or `options.EnableQueryFeatures(null)`
-
 
 **Response:**
 
@@ -218,6 +224,9 @@ GET /odata/Customers?$orderby=Name desc
 
 In this case, the skip token encodes both the name and Id of the last customer in the response. It will use the name to determine which customer should appear first in the next page, and if there are customers with the same name, it will use the ID as a tie-breaker.
 
+> [!IMPORTANT]
+> You should not rely on the `DefaultSkipTokenHandler` generating the skip token in a specific format. We make no guarantee that this format may not change between library versions.
+
 If you wish to change how skip tokens are generated or how they're processed, you can replace the `DefaultSkipTokenHandler` with your own custom implementation of `SkipTokenHandler`.
 
 ## Creating a custom `SkipTokenHandler`
@@ -229,7 +238,7 @@ The `SkipTokenHandler` is response for generating the *next link* in an OData re
 
 As an example, let's say we want to represent the skip token using base-64 encoding. This may be useful if we want to "hide" the implementation details and encoding from clients. This is a good use case for a custom `SkipTokenHandler`. We can create our handler from scratch by extending `SkipTokenHandler` directly, or we could extend `DefaultSkipTokenHandler`. The latter is usually more convenient as it allows us to re-use existing logic in `DefaultSkipTokenHandler`. That's the option we'll go with for this sample application.
 
-### Creating and registering the custom handler.
+### Creating and registering the custom handler
 
 Let's create a class called `CustomSkipTokenHandler` that extends `DefaultSkipTokenHandler`. You can put the class anywhere in the project where it makes sense to you.
 
@@ -240,6 +249,7 @@ public class CustomSkipTokenHandler : DefaultSkipTokenHandler
 {
 }
 ```
+
 To configure our service to use the `CustomSkipTokenHandler`, we have to inject it in the service container. To do this, we'll make use of an [`AddRouteComponents`](/dotnet/api/microsoft.aspnetcore.odata.odataoptions.addroutecomponents) overload that takes an action that configures services.
 
 Let's rewrite our service configuration to look as follows:
@@ -273,7 +283,7 @@ public override Uri GenerateNextPageLink(
 
     if (uri == null)
     {
-        return uri;
+        return null;
     }
     
     var queryOptions = HttpUtility.ParseQueryString(uri.Query);
@@ -289,16 +299,252 @@ public override Uri GenerateNextPageLink(
     string encodedQuery = queryOptions.ToString();
     UriBuilder builder = new UriBuilder(uri);
     builder.Query = encodedQuery;
-    var newUri = builder.Uri;
-    
-    return newUri;
+    return builder.Uri;
 }
 ```
 
 Now let's explain what this code does.
 
 The `GenerateNextPageLink` takes the following arguments:
+
 - `baseUri`: This is the request URL. This is the URL we want to add a `$skiptoken` to. It's possible that it contains the `$skiptoken` from the previous page.
 - `pageSize`: The maximum number of items per page. This is the same value that was passed to the `PageSize` property.
 - `instance`: The instance based on which to generate the skip token. It corresponds to the last item in the previous page.
 - `context`: Allows you to access information about the current serialization pipeline, such as the request instance, the EDM model, etc.
+
+The method first calls the `GenerateNextPageLink` method of the parent class (`DefaultSkipTokenHandler`) to generate the next link. The method returns `null` if we're on the last page.
+
+```c#
+var uri = base.GenerateNextPageLink(baseUri, pageSize, instance, context);
+
+if (uri == null)
+{
+    return null;
+}
+```
+
+The next block of code extracts the value of the `$skiptoken` query option from the generated URI. We use the `HttpUtility` class from the `System.Web` namespace to parse the query options.
+
+```c#
+var queryOptions = HttpUtility.ParseQueryString(uri.Query);
+string skipToken = queryOptions.Get("$skiptoken");
+if (skipToken == null)
+{
+    return uri;
+}
+```
+
+The next block of generates a base64 encoded version of the skip token to replace the original value.
+
+```c#
+string base64SkipToken = Convert.ToBase64String(Encoding.UTF8.GetBytes(skipToken));
+queryOptions.Set("$skiptoken", base64SkipToken);
+```
+
+Finally, we create a new URI by replacing the original query options with the updated version:
+
+```c#
+string encodedQuery = queryOptions.ToString();
+UriBuilder builder = new UriBuilder(uri);
+builder.Query = encodedQuery;
+return builder.Uri;
+```
+
+### Testing the new next link
+
+Let's make the following request to see the new skip tokens in action:
+
+```http
+GET /odata/Customers
+```
+
+**Response**:
+
+```json
+**Response**:
+
+```json
+{
+    "@odata.context": "http://localhost:5000/odata/$metadata#Customers",
+    "value": [
+        {
+            "Id": 1,
+            "Name": "Customer 1"
+        },
+        {
+            "Id": 2,
+            "Name": "Customer 2"
+        }
+    ],
+    "@odata.nextLink": "http://localhost:5000/odata/Customers?$skiptoken=SWQtMg%3d%3d"
+}
+```
+
+The `$skiptoken` is now `SWQtMg%3d%3d` instead of `Id-2`.
+
+> [!NOTE]
+> The actual base64 encoding of `Id-2` is `SWQtMg==`, but the final form eventually gets URL encoded to `SWQtMg%3d%3d`.
+
+Let's follow the next link to fetch the next page:
+
+```http
+GET http://localhost:5000/odata/Customers?$skiptoken=SWQtMg%3d%3d
+```
+
+This returns an error response like the following:
+
+```json
+{
+    "error": {
+        "code": "",
+        "message": "The query specified in the URI is not valid. Unable to parse the skiptoken value 'SWQtMg=='. Skiptoken value should always be server generated.",
+    }
+}
+```
+
+The reason we get the error is because our custom handler was not able to process the skip token. The skip token is process in the `ApplyTo` method. At the moment, we are still using the `ApplyTo` method in the `DefaultSkipTokenHandler` class because we have not defined our own. The base `ApplyTo` expects the skip token to be in a specific format, it cannot parse the base64 encoded value.
+
+### Processing the skip token with `ApplyTo`
+
+To fix the error in the previous we have to decode the skip token first then pass the decoded version to the `DefaultSkipTokenHandler`.
+
+We can achieve that by adding the following methods to our `CustomSkipTokenHandler` class:
+
+```c#
+public override IQueryable<T> ApplyTo<T>(IQueryable<T> query, SkipTokenQueryOption skipTokenQueryOption, ODataQuerySettings querySettings, ODataQueryOptions queryOptions)
+{
+    var decodedSkipTokenQueryOption = DecodeSkipToken(skipTokenQueryOption);
+    return base.ApplyTo(query, decodedSkipTokenQueryOption, querySettings, queryOptions);
+}
+
+public override IQueryable ApplyTo(IQueryable query, SkipTokenQueryOption skipTokenQueryOption, ODataQuerySettings querySettings, ODataQueryOptions queryOptions)
+{
+    var decodedSkipTokenQueryOption = DecodeSkipToken(skipTokenQueryOption);
+    return base.ApplyTo(query, decodedSkipTokenQueryOption, querySettings, queryOptions);
+}
+
+private static SkipTokenQueryOption DecodeSkipToken(SkipTokenQueryOption skipTokenQueryOption)
+{
+    string encodedSkipToken = skipTokenQueryOption.RawValue;
+    string decodedSkipToken = Encoding.UTF8.GetString(Convert.FromBase64String(encodedSkipToken));
+    return new SkipTokenQueryOption(decodedSkipToken, skipTokenQueryOption.Context);
+}
+```
+
+We override the `ApplyTo` methods with our custom logic. We override both the generic `ApplyTo` and generic `ApplyTo<T>` overloads. The methods accept the following parameters:
+
+- `query`: The `IQueryable` or `IQueryable<T>` that represents the query that will fetch the results.
+- `skipTokenQueryOption`: Contains information about the `$skiptoken` query option.
+- `querySettings`: The query settings to use while applying the `$skiptoken` (e.g. the page size).
+- `queryOptions`: Contains information about the other query options in the request.
+
+The `ApplyTo` method should transform the `query` and return a new query that implements the pagination logic, i.e. ensures that we only return records from where we left off in the last page, and that we do not exceed the page size. Luckily, the `DefaultSkipTokenHandler` already takes care of this logic.
+
+Our implementation simply decodes the query option and lets the base class take care of the rest:
+
+```c#
+var decodedSkipTokenQueryOption = DecodeSkipToken(skipTokenQueryOption);
+return base.ApplyTo(query, decodedSkipTokenQueryOption, querySettings, queryOptions);
+```
+
+To decode the skip token, we created a private helper method `DecodeSkipToken`. This method extracts the value of the `$skiptoken`, decodes it from its base64 encoding then creates a new `SkipTokenQueryOption` instance with the decoded value:
+
+```c#
+string encodedSkipToken = skipTokenQueryOption.RawValue;
+string decodedSkipToken = Encoding.UTF8.GetString(Convert.FromBase64String(encodedSkipToken));
+return new SkipTokenQueryOption(decodedSkipToken, skipTokenQueryOption.Context);
+```
+
+Now let's try to fetch the second page again:
+
+```http
+GET http://localhost:5000/odata/Customers?$skiptoken=SWQtMg%3d%3d
+```
+
+**Response:**
+
+```json
+{
+    "@odata.context": "http://localhost:5000/odata/$metadata#Customers",
+    "value": [
+        {
+            "Id": 3,
+            "Name": "Customer 3"
+        },
+        {
+            "Id": 4,
+            "Name": "Customer 4"
+        }
+    ],
+    "@odata.nextLink": "http://localhost:5000/odata/Customers?$skiptoken=SWQtNA%3d%3d"
+}
+```
+
+Now we get a successful response!
+
+### Complete `CustomSkipTokenHandler` source code
+
+Here's the full source code for our `CustomSkipTokenHandler`:
+
+```c#
+using System;
+using System.Linq;
+using System.Text;
+using System.Web;
+using Microsoft.AspNetCore.OData.Formatter.Serialization;
+using Microsoft.AspNetCore.OData.Query;
+
+namespace ODataRoutingSample
+{
+    public class CustomSkipTokenHandler : DefaultSkipTokenHandler
+    {
+        public override IQueryable<T> ApplyTo<T>(IQueryable<T> query, SkipTokenQueryOption skipTokenQueryOption, ODataQuerySettings querySettings, ODataQueryOptions queryOptions)
+        {
+            var decodedSkipTokenQueryOption = DecodeSkipToken(skipTokenQueryOption);
+            return base.ApplyTo(query, decodedSkipTokenQueryOption, querySettings, queryOptions);
+        }
+
+        public override IQueryable ApplyTo(IQueryable query, SkipTokenQueryOption skipTokenQueryOption, ODataQuerySettings querySettings, ODataQueryOptions queryOptions)
+        {
+            var decodedSkipTokenQueryOption = DecodeSkipToken(skipTokenQueryOption);
+            return base.ApplyTo(query, decodedSkipTokenQueryOption, querySettings, queryOptions);
+        }
+
+        public override Uri GenerateNextPageLink(
+            Uri baseUri,
+            int pageSize,
+            object instance,
+            ODataSerializerContext context)
+        {
+            var uri = base.GenerateNextPageLink(baseUri, pageSize, instance, context);
+
+            if (uri == null)
+            {
+                return null;
+            }
+
+            var queryOptions = HttpUtility.ParseQueryString(uri.Query);
+            string skipToken = queryOptions.Get("$skiptoken");
+            if (skipToken == null)
+            {
+                return uri;
+            }
+
+            string base64SkipToken = Convert.ToBase64String(Encoding.UTF8.GetBytes(skipToken));
+            queryOptions.Set("$skiptoken", base64SkipToken);
+
+            string encodedQuery = queryOptions.ToString();
+            UriBuilder builder = new UriBuilder(uri);
+            builder.Query = encodedQuery;
+            return builder.Uri;
+        }
+
+        private static SkipTokenQueryOption DecodeSkipToken(SkipTokenQueryOption skipTokenQueryOption)
+        {
+            string encodedSkipToken = skipTokenQueryOption.RawValue;
+            string decodedSkipToken = Encoding.UTF8.GetString(Convert.FromBase64String(encodedSkipToken));
+            return new SkipTokenQueryOption(decodedSkipToken, skipTokenQueryOption.Context);
+        }
+    }
+}
+```
