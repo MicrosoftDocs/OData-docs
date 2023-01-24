@@ -92,27 +92,29 @@ In the above configuration, `options` is an instance of `ODataOptions`.
 - `Count()` enables `$count` query option.
 - `SetMaxTop()` sets the maximum value of `$top` that a client can request. Read more in the [client-driven paging documentation](/odata/webapi-8/fundamentals/client-driven-paging)
 
+If you want to enable all query options at once, you would call `options.EnableQueryFeatures()`.
+
 ## Controller
 
 ```csharp
 public class CustomersController : ODataController
 {
     private static List<Order> Orders = new List<Order>
-        {
-            new Order { Id = "1001", Price = 10, Quantity = 10 },
-            new Order { Id = "1002", Price = 35, Quantity = 2 },
-            new Order { Id = "1003", Price = 70, Quantity = 5 },
-            new Order { Id = "1004", Price = 20, Quantity = 20 },
-            new Order { Id = "1005", Price = 40, Quantity = 15 },
-            new Order { Id = "1006", Price = 15, Quantity = 50 },
-        };
+    {
+        new Order { Id = "1001", Price = 10, Quantity = 10 },
+        new Order { Id = "1002", Price = 35, Quantity = 2 },
+        new Order { Id = "1003", Price = 70, Quantity = 5 },
+        new Order { Id = "1004", Price = 20, Quantity = 20 },
+        new Order { Id = "1005", Price = 40, Quantity = 15 },
+        new Order { Id = "1006", Price = 15, Quantity = 50 },
+    };
 
     private static List<Customer> Customers = new List<Customer>
-        {
-            new Customer { Id = 1, Name = "Customer 1", Age = 31, Orders = new List<Order>(){Orders[0], Orders[1]} },
-            new Customer { Id = 2, Name = "Customer 2", Age = 32, Orders = new List<Order>(){Orders[2], Orders[3]} },
-            new Customer { Id = 3, Name = "Customer 3", Age = 33, Orders = new List<Order>(){Orders[4], Orders[5]} }
-        };
+    {
+        new Customer { Id = 1, Name = "Customer 1", Age = 31, Orders = new List<Order>(){Orders[0], Orders[1]} },
+        new Customer { Id = 2, Name = "Customer 2", Age = 32, Orders = new List<Order>(){Orders[2], Orders[3]} },
+        new Customer { Id = 3, Name = "Customer 3", Age = 33, Orders = new List<Order>(){Orders[4], Orders[5]} }
+    };
 
     [EnableQuery]
     public IActionResult Get()
@@ -319,9 +321,11 @@ public IActionResult Get()
 ```
 
 ## Invoking query options directly
-There are scenarios where we are unable to use `EnableQuery` attribute e.g When inside the controller method, we are getting data from multiple sources and we would want that data to be processed before it's returned to the controller method.
+There are scenarios where we are unable to use `EnableQuery` attribute. For example, if our controller fetches data from multiple data sources and not just a single `IQueryable`, we may want to control how the query options are applied and process the data before it's returned by the controller.
 
-We use the `ODataQueryOptions.ApplyTo` method to apply the required query options.
+We use the [ODataQueryOptions.ApplyTo](/dotnet/api/microsoft.aspnet.odata.query.odataqueryoptions.applyto) method to apply the required query options.
+
+[ODataQueryOptions<`TEntity`>](/dotnet/api/microsoft.aspnet.odata.query.odataqueryoptions-1) can be used an argument in a controller method.
 
 ### SelectExpand query
 ```csharp
@@ -518,7 +522,7 @@ public IQueryable<Customer> Get(ODataQueryOptions<Customer> options)
 ```
 
 ## Extending the EnableQueryAttribute class
-The `EnableQueryAttribute` class is NOT sealed. This means it can be extended.
+The `EnableQueryAttribute` class can be extended.
 
 `EnableQueryAttribute` class has several virtual methods that can be overriden.
 
