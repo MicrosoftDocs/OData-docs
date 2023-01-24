@@ -77,7 +77,7 @@ In the above block of code, we build an Edm model using the `ODataConventionMode
 - [`FunctionRoutingConvention`](/odata/webapi-8/fundamentals/function-routing) - routes requests for Edm functions
 - [`ActionRoutingConvention`](/odata/webapi-8/fundamentals/action-routing) - routes requests for Edm actions
 - `OperationImportRoutingConvention` - routes requests for operation imports
-- `PropertyRoutingConvention` - routes requests for structural properties
+- [`PropertyRoutingConvention`](/odata/webapi-8/fundamentals/property-routing) - routes requests for structural properties
 - [`NavigationRoutingConvention`](/odata/webapi-8/fundamentals/navigation-routing) - routes requests for navigation properties
 - [`RefRoutingConvention`](/odata/webapi-8/fundamentals/ref-routing) - routes requests for entity reference links
 - `AttributeRoutingConvention` - represents a routing convention for attribute-routed requests
