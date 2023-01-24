@@ -45,7 +45,7 @@ public class Order
 }
 ```
 
-We have a `Customer` entity with `Orders` navigation property.
+We have a `Customer` entity with `Orders` navigation property. We define a one to many relationship between Customer and Order entities. One `Customer` can have one or more `Orders`. Read more on [OData data model](/odata/concepts/data-model) and [Entity relations](/odata/odatalib/edm/define-entity-relations).
 
 ## Registering OData services
 
@@ -90,7 +90,7 @@ In the above configuration, `options` is an instance of `ODataOptions`.
 - `OrderBy()` enables `$orderby` query option.
 - `Expand()` enables `$expand` query option.
 - `Count()` enables `$count` query option.
-- `SetMaxTop()` sets the maximum value of `$top` that a client can request.
+- `SetMaxTop()` sets the maximum value of `$top` that a client can request. Read more in the [client-driven paging documentation](/odata/webapi-8/fundamentals/client-driven-paging)
 
 ## Controller
 
@@ -294,6 +294,27 @@ We can combine multiple query options as shown below:
 public IQueryable<Customer> Get()
 {
     return Customers.AsQueryable<Customer>();
+}
+```
+
+## Config options vs AllowedQueryOptions
+When registering OData services, we add query options configurations as shown below:
+
+```csharp
+.AddOData(
+    options => options.Select().OrderBy().Expand().Count().SetMaxTop(null)
+)
+```
+
+These are global configurations. If a query option is not enabled here, it cannot be enabled in the controller.
+
+In the above example, we did not enable the $filter query option. If we configure a controller as shown below, the $filter will not be applied since we had not enabled $filter in the global configuration.
+
+```csharp
+[EnableQuery(AllowedQueryOptions = AllowedQueryOptions.Filter)]
+public IActionResult Get()
+{
+    return Ok(Customers);
 }
 ```
 
