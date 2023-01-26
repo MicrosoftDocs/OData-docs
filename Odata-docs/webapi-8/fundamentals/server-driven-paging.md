@@ -8,6 +8,7 @@ ms.author: clhabins
 ---
 
 # Server-driven paging in ASP.NET Core OData 8
+
 **Applies To**:[!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v8.md)]
 
 In [server-driven paging](https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_ServerDrivenPaging), the server returns the first page of results. If total number of results is greater than the page size, the server returns the first page along with a "next link" that can be used to fetch the next page of results. Each subsequent page should include a next link except for the last page. Using this approach, the client needs to fetch pages sequentially. It cannot jump to an arbitrary page. The next link is included in the response using the [`@odata.nextLink`](http://docs.oasis-open.org/odata/odata-json-format/v4.01/odata-json-format-v4.01.html#sec_ControlInformationnextLinkodatanextL) annotation.
@@ -101,9 +102,11 @@ GET http://localhost:5000/Products?$skip=2
 ```
 
 And finally, the last page:
+
 ```http
 GET http://localhost:5000/Products?$skip=4
 ```
+
 ```json
 {
     "@odata.context": "http://localhost:5000/$metadata#Products",
@@ -125,6 +128,7 @@ GET http://localhost:5000/Products?$filter=Price gt 1000&$select=Name
 ```
 
 The generated next link will look like:
+
 ```
 http://localhost:5000/Products?$filter=Price%20gt%201000&$select=Name&$skip=2
 ```
@@ -158,12 +162,15 @@ GET http://localhost:5000/Products?$top=3
     "@odata.nextLink": "http://localhost:5000/Products?$top=1&$skip=2"
 }
 ```
+
 The response contains 2 products and a next link to the next page. The client fetches the next page using the next link:
 
 ```http
 GET http://localhost:5000/Products?$top=1&$skip=2
 ```
+
 **Response:**
+
 ```json
 {
     "@odata.context": "http://localhost:5000/$metadata#Products",
@@ -175,6 +182,7 @@ GET http://localhost:5000/Products?$top=1&$skip=2
     ]
 }
 ```
+
 This is now the last page. The server returns only one item and no next link.
 
 ## Improving paging with `$skiptoken`
@@ -214,9 +222,10 @@ GET http://localhost:5000/Products
     "@odata.nextLink": "http://localhost:5000/Products?$skiptoken=Id-2"
 }
 ```
+
 The next link is now generated based on `$skiptoken` rather than `$skip`. This is what the second page would look like:
 
-```
+```http
 GET http://localhost:5000/Products?$skiptoken=Id-2
 ```
 
@@ -237,13 +246,14 @@ GET http://localhost:5000/Products?$skiptoken=Id-2
 }
 ```
 
-The `$skiptoken` value is generated using an implementation of [`SkipTokenHandler`](/dotnet/api/microsoft.aspnetcore.odata.query.skiptokenhandler). By default, the built-in [`DefaultSkipTokenHandler`](/dotnet/api/microsoft.aspnetcore.odata.query.defaultskiptokenhandler) class. `DefaultSkipTokenHandler` generates the `$skiptoken` based on the values of the key fields and fields in the `$orderby` query option if present. It encodes the key of the last value in the response in the `$skiptoken`'s value. When fetching the next page, it will use this value to know where it left off. It will generate a query that's conceptually similar to:
+The `$skiptoken` value is generated using an implementation of [`SkipTokenHandler`](/dotnet/api/microsoft.aspnetcore.odata.query.skiptokenhandler). By default, the built-in [`DefaultSkipTokenHandler`](/dotnet/api/microsoft.aspnetcore.odata.query.defaultskiptokenhandler) class. `DefaultSkipTokenHandler` generates the `$skiptoken` based on the values of the key fields and fields in the `$orderby` query option if present. It encodes the key of the last value in the response in the `$skiptoken`'s value. When fetching the next page, it will use this value to determine where it left off and generate a query that's conceptually similar to:
 
 ```SQL
 SELECT * FROM products
 WHERE id > 4
 LIMIT 2;
 ```
+
 This query is more effcient and scalable than using `OFFSET` (assuming the `id` field is properly indexed).
 
 You can customize the `$skiptoken` by providing your own implementation of `SkipTokenHandler` and injecting it into the OData service dependency injection (DI) container:
