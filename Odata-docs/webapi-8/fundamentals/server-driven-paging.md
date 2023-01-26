@@ -41,7 +41,7 @@ ASP.NET Core OData allow you to configure the page size on the server side using
 
 The following code snippet demonstrates how to configure the `PageSize` on a controller action:
 
-```c#
+```csharp
 public class ProductsController : ODataController
 {
     [EnableQuery(PageSize = 2)]
@@ -185,7 +185,7 @@ OData provides a [`$skiptoken`](https://docs.oasis-open.org/odata/odata/v4.01/od
 
 ASP.NET Core OData 8 provides support for pagination based on `$skiptoken`, but it's not enabled by default. You can enable it using the [`ODataOptions.SkipToken()`](/dotnet/api/microsoft.aspnetcore.odata.odataoptions.skiptoken) method when configuring OData services in your application:
 
-```c#
+```csharp
 services.AddControllers().AddOData(options =>
     options.SetMaxTop(null).SkipToken());
 ```
@@ -211,7 +211,7 @@ GET http://localhost:5000/Products
             "Name": "Product 2"
         }
     ],
-    "@odata.nextLink": "http://localhost:64771/Products?$skiptoken=Id-2"
+    "@odata.nextLink": "http://localhost:5000/Products?$skiptoken=Id-2"
 }
 ```
 The next link is now generated based on `$skiptoken` rather than `$skip`. This is what the second page would look like:
@@ -233,15 +233,22 @@ GET http://localhost:5000/Products?$skiptoken=Id-2
             "Name": "Product 4"
         }
     ],
-    "@odata.nextLink": "http://localhost:64771/Products?$skiptoken=Id-4"
+    "@odata.nextLink": "http://localhost:5000/Products?$skiptoken=Id-4"
 }
 ```
 
-The `$skiptoken` value is generated using an implementation of [`SkipTokenHandler`](/dotnet/api/microsoft.aspnetcore.odata.query.skiptokenhandler). By default, the built-in [`DefaultSkipTokenHandler`](/dotnet/api/microsoft.aspnetcore.odata.query.defaultskiptokenhandler) class. `DefaultSkipTokenHandler` generates the `$skiptoken` based on the values of the key fields and fields in the `$orderby` query option if present.
+The `$skiptoken` value is generated using an implementation of [`SkipTokenHandler`](/dotnet/api/microsoft.aspnetcore.odata.query.skiptokenhandler). By default, the built-in [`DefaultSkipTokenHandler`](/dotnet/api/microsoft.aspnetcore.odata.query.defaultskiptokenhandler) class. `DefaultSkipTokenHandler` generates the `$skiptoken` based on the values of the key fields and fields in the `$orderby` query option if present. It encodes the key of the last value in the response in the `$skiptoken`'s value. When fetching the next page, it will use this value to know where it left off. It will generate a query that's conceptually similar to:
 
-You can customize the `$skiptoken` by providing your own implementation of `SkipTokenHandler` and adding it to the OData route's service container:
+```SQL
+SELECT * FROM products
+WHERE id > 4
+LIMIT 2;
+```
+This query is more effcient and scalable than using `OFFSET` (assuming the `id` field is properly indexed).
 
-```c#
+You can customize the `$skiptoken` by providing your own implementation of `SkipTokenHandler` and injecting it into the OData service dependency injection (DI) container:
+
+```csharp
 services.AddControllers().AddOData(options =>
     options.SetMaxTop(null).SkipToken()
     .AddRouteComponents("", edmModel, routeServices =>

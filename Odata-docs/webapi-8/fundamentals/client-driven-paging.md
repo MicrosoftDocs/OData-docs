@@ -10,7 +10,7 @@ ms.author: clhabins
 # Client-driven paging in ASP.NET Core OData 8
 **Applies To**:[!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v8.md)]
 
-The client can implement paging by telling the OData service how many items to return for a given request. The `$top` query option is used to limit the number of results and the `skip` query option used to specify the offset. For example `GET /Customers?$skip=3$top=5` will return up to 5 items starting from the 4th item in the collection (i.e. after skipping the first 3).
+The client can request the OData service to return a specific number of results. The `$top` query option is used to limit the number of results and the `skip` query option used to specify the offset. For example `GET /Customers?$skip=3$top=5` will return up to 5 items starting from the 4th item in the collection (i.e. after skipping the first 3).
 
 Using these two query options the client can divide a large collection into separate pages and fetch the pages in separate requests. For example, if our collection has 25 items, and we want each page to have 10 items, then we can fetch the different page as follows:
 - First page: `$top=10`
@@ -29,7 +29,7 @@ By default, ASP.NET Core OData 8 limits the maximum value for `$top` to 0. So if
 
 You can configure the maximum top value using the [`ODataOptions.SetMaxTop()`](/dotnet/api/microsoft.aspnetcore.odata.odataoptions.setmaxtop) when adding OData services to your application. The following snippet would set the maximum allowed `$top` value to 100.
 
-```c#
+```csharp
 services.AddOData(options =>
     options.SetMaxTop(100)
     //...
@@ -40,7 +40,7 @@ Now this will support values of up to 100, but return an error if `$top` exceeds
 
 You can also remove the limit by setting it to `null`:
 
-```c#
+```csharp
 services.AddOData(options =>
     options.SetMaxTop(null)
     // ...
@@ -49,7 +49,7 @@ services.AddOData(options =>
 
 Next, we add the [`EnableQuery`](/dotnet/api/microsoft.aspnetcore.odata.query.enablequeryattribute) attribute to the controller action that handles the request. This attribute automatically applies the OData query options in the request to the results returned by the controller action.
 
-```c#
+```csharp
 public class ProductsController : ODataController
 {
     [EnableQuery]
@@ -69,7 +69,7 @@ This client-driven paging approach has a number of benefits:
 
 ## Drawbacks
 
-Paging based on `$top` and `$skip` has a number of drawbacks that may make unsuitable in some scenarios.
+Paging based on `$top` and `$skip` has a few drawbacks that may make it unsuitable in some scenarios.
 
 This approach is sensitive to changes in that data source which may lead the page contents to be unstable. To illustrate this, let's assume we have a data source with the following 5 items and we want to fetch 2 items per page:
 ```json
@@ -154,7 +154,7 @@ This will return the following result:
     ]
 }
 ```
-When the client gets this ersult, it records that the last product it saw was the product with ID 2. So, to fetch the next page, it makes the following request:
+When the client gets this result, it records that the last product it saw was the product with ID 2. So, to fetch the next page, it makes the following request:
 ```http
 GET /Products?$filter=Id gt 2&$top=2
 ```
@@ -166,8 +166,8 @@ SELECT * FROM products
 WHERE id > 2
 LIMIT 2;
 ```
-If the database has an ordered index on the `id` column, the this query will scale well and perform significantly better on larger datasets and pages than if it wa using `OFFSET`.
+If the database has an ordered index on the `id` column, then this query will scale well and perform significantly better on larger datasets and pages than if it was using `OFFSET`.
 
-This approach also makes the pages more resilient to concurrent changes in the data source. But we lose some features like being able to easily compute the total number pages or to jump to a random page. We are limited to visit the pages sequentially.
+This approach also makes the pages more resilient to concurrent changes in the data source. But we lose some features like being able to easily compute the total number of pages or to jump to a random page. We are limited to visiting the pages sequentially.
 
 This approach requires the client to keep track of the last fetched record. It also needs to know which field(s) to use as the "cursor". A more robust approach would be to let the server handle these implementation details and provide a link in the response that the client can use to fetch the next page. To learn more about how you can implement this in OData, visit the [server-driven paging documentation](/odata/webapi-8/fundamentals/server-driven-paging).
