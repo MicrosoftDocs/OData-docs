@@ -8,11 +8,13 @@ ms.author: clhabins
 ---
 
 # Client-driven paging in ASP.NET Core OData 8
+
 **Applies To**:[!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v8.md)]
 
 The client can request the OData service to return a specific number of results. The `$top` query option is used to limit the number of results and the `skip` query option used to specify the offset. For example `GET /Customers?$skip=3$top=5` will return up to 5 items starting from the 4th item in the collection (i.e. after skipping the first 3).
 
 Using these two query options the client can divide a large collection into separate pages and fetch the pages in separate requests. For example, if our collection has 25 items, and we want each page to have 10 items, then we can fetch the different page as follows:
+
 - First page: `$top=10`
 - Second page: `$skip=10&$top=10`
 - Third page: `$skip=20&top=10` (The last page will return only 5 items)
@@ -63,6 +65,7 @@ public class ProductsController : ODataController
 ## Benefits of this approach
 
 This client-driven paging approach has a number of benefits:
+
 - It's relatively easy to implement
 - It allows the client to fetch pages independently and to jump to an arbitrary page. For example, the client can fetch page 5 without having fetched page 4 previously.
 - If the client knows the total size of the collection (e.g. using the `$count` query option), the client can compute the total number of pages as well as generate links for each page in advance.
@@ -72,6 +75,7 @@ This client-driven paging approach has a number of benefits:
 Paging based on `$top` and `$skip` has a few drawbacks that may make it unsuitable in some scenarios.
 
 This approach is sensitive to changes in that data source which may lead the page contents to be unstable. To illustrate this, let's assume we have a data source with the following 5 items and we want to fetch 2 items per page:
+
 ```json
 [
     { "Id": 1, "Name": "Product 1" },
@@ -81,11 +85,13 @@ This approach is sensitive to changes in that data source which may lead the pag
     { "Id": 5, "Name": "Product 5" }
 ]
 ```
+
 The client can fetch the first page with 
 
 ```http
 GET /Products?$top=2
 ```
+
 This returns the following result:
 
 ```json
@@ -99,6 +105,7 @@ This returns the following result:
 ```
 
 Let's say that product 2 is removed from the data source before the client fetches the second page. The data source looks like:
+
 ```json
 [
     { "Id": 1, "Name": "Product 1" },
@@ -136,6 +143,7 @@ Using `$skip` can also lead to performance issues in large datasets in some data
 SELECT * FROM products
 LIMIT 100, OFFSET 50000;
 ```
+
 This query will return 100 rows, from row 50,001 to row 50,100. However it will scan through all the first 50,100 rows in the table, then drop the first 50,000. The larger the offset, the longer the query will take.
 
 This makes `$skip`-based pagination unsuitable for large datasets in many database systems. An alternative approach would be to keep track of where you left off using a unique ordered field. In our example, we can use the `Id` field to keep track of the last product we saw. using this technique, the client can fetch the first page with the following request:
@@ -143,6 +151,7 @@ This makes `$skip`-based pagination unsuitable for large datasets in many databa
 ```http
 GET /Products?$top=2
 ```
+
 This will return the following result:
 
 ```json
@@ -154,18 +163,23 @@ This will return the following result:
     ]
 }
 ```
+
 When the client gets this result, it records that the last product it saw was the product with ID 2. So, to fetch the next page, it makes the following request:
+
 ```http
 GET /Products?$filter=Id gt 2&$top=2
 ```
+
 This fetches only products with id greater than 2.
 
 This roughly translate to the following SQL query:
+
 ```sql
 SELECT * FROM products
 WHERE id > 2
 LIMIT 2;
 ```
+
 If the database has an ordered index on the `id` column, then this query will scale well and perform significantly better on larger datasets and pages than if it was using `OFFSET`.
 
 This approach also makes the pages more resilient to concurrent changes in the data source. But we lose some features like being able to easily compute the total number of pages or to jump to a random page. We are limited to visiting the pages sequentially.

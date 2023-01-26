@@ -248,13 +248,13 @@ GET http://localhost:5000/Products?$skiptoken=Id-2
 
 The `$skiptoken` value is generated using an implementation of [`SkipTokenHandler`](/dotnet/api/microsoft.aspnetcore.odata.query.skiptokenhandler). By default, the built-in [`DefaultSkipTokenHandler`](/dotnet/api/microsoft.aspnetcore.odata.query.defaultskiptokenhandler) class. `DefaultSkipTokenHandler` generates the `$skiptoken` based on the values of the key fields and fields in the `$orderby` query option if present. It encodes the key of the last value in the response in the `$skiptoken`'s value. When fetching the next page, it will use this value to determine where it left off and generate a query that's conceptually similar to:
 
-```SQL
+```sql
 SELECT * FROM products
 WHERE id > 4
 LIMIT 2;
 ```
 
-This query is more effcient and scalable than using `OFFSET` (assuming the `id` field is properly indexed).
+This query is more efficient and scalable than using `OFFSET` (assuming the `id` field is properly indexed).
 
 You can customize the `$skiptoken` by providing your own implementation of `SkipTokenHandler` and injecting it into the OData service dependency injection (DI) container:
 
