@@ -1,6 +1,6 @@
 ---
-title:  "Customizing skip tokens with SkipTokenHandler"
-description: A tutorial on how to customize generated skip token whith a custom SkipTokenHandler class.
+title:  "Customizing Skip Tokens with SkipTokenHandler"
+description: A tutorial on how to customize generated skip token with a custom SkipTokenHandler class.
 date:   2023-01-19
 ms.date: 01/19/2023
 author: habbes
@@ -19,7 +19,6 @@ You'll learn:
 :white_check_mark: How ASP.NET Core OData uses `SkipTokenHandler` to generate and handle next links.  
 :white_check_mark: How to create a custom `SkipTokenHandler` that extends the `DefaultSkipTokenHandler`
 :white_check_mark: How to configure an ASP.NET Core OData application to use your custom handler
-
 
 This tutorial assumes a basic understanding of how to create and run an ASP.NET Core OData 8 application. If you're unfamiliar with ASP.NET Core OData 8, you may want to go through the [Getting started](/odata/webapi-8/getting-started) tutorial.
 
@@ -113,7 +112,7 @@ public class Startup
 
 ---
 
-The important thing to note here is that we enable the `$skiptoken` query option by calling the `options.SkipToken()` method (we can also enable all query feaures using `options.EnableQueryFeatures(null)`).
+The important thing to note here is that we enable the `$skiptoken` query option by calling the `options.SkipToken()` method (we can also enable all query features using `options.EnableQueryFeatures(null)`).
 
 ## Controllers
 
@@ -231,7 +230,7 @@ If you wish to change how skip tokens are generated or how they're processed, yo
 
 ## Creating a custom `SkipTokenHandler`
 
-The `SkipTokenHandler` is response for generating the *next link* in an OData response when using server-driven paging. It's also responsible for applying the `$skiptoken` to the results. `SkipTokenHandler` is an abstract exploses and it defines the following methods to be implemented by child classes:
+The `SkipTokenHandler` is response for generating the *next link* in an OData response when using server-driven paging. It's also responsible for applying the `$skiptoken` to the results. `SkipTokenHandler` is an abstract class that defines the following methods to be implemented by child classes:
 
 - [`GenerateNextPageLink`](/dotnet/api/microsoft.aspnet.odata.query.skiptokenhandler.generatenextpagelink): generates the `Uri` that's used as the next link in the response
 - [`ApplyTo`](/dotnet/api/microsoft.aspnet.odata.query.skiptokenhandler.applyto): applies the `$skiptoken` to an `IQueryable` collection. This should transform the query to perform the pagination. It has two overloads, a generic `ApplyTo<T>` and non-generic `ApplyTo` to handle the generic `IQueryable<T>` and non-generic `IQueryable` respectively.
@@ -263,7 +262,7 @@ options.SkipToken().AddRouteComponents(
 
 This tells the service to use `CustomSkipTokenHandler` where a `SkipTokenHandler` is required.
 
-With this configuration, requests that require a `$skiptoken` will go through our `CustomSkipTokenHandler`. But this handler behaves exactly like the `DefaultSkipTokenHandler` because we have not overriden any of its method. Let's start by base64-encoding the skip token when generating the next link.
+With this configuration, requests that require a `$skiptoken` will go through our `CustomSkipTokenHandler`. But this handler behaves exactly like the `DefaultSkipTokenHandler` because we have not overridden any of its method. Let's start by base64-encoding the skip token when generating the next link.
 
 ### Customizing the skip token with `GenerateNextPageLink`
 
