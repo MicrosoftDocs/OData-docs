@@ -1,5 +1,5 @@
 ---
-title:  "Server-driven paging in ASP.NET Core OData 8"
+title:  "Server-driven Paging in ASP.NET Core OData 8"
 description: Server-driven paging in ASP.NET Core OData 8.
 date:   2023-01-11
 ms.date: 1/11/2023
@@ -7,7 +7,7 @@ author: habbes
 ms.author: clhabins
 ---
 
-# Server-driven paging in ASP.NET Core OData 8
+# Server-driven Paging in ASP.NET Core OData 8
 
 **Applies To**:[!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v8.md)]
 
@@ -191,7 +191,7 @@ You may have noticed that ASP.NET Core OData generates next links using `$skip`.
 
 OData provides a [`$skiptoken`](https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_ServerDrivenPaging) query option that can be used in server-driven paging to encode information about the next page of a result. The content of `$skiptoken` is opaque and service-specific. The client should not try to interpret the value or rely on its format. OData clients must not use `$skiptoken` when constructing requests.
 
-ASP.NET Core OData 8 provides support for pagination based on `$skiptoken`, but it's not enabled by default. You can enable it using the [`ODataOptions.SkipToken()`](/dotnet/api/microsoft.aspnetcore.odata.odataoptions.skiptoken) method when configuring OData services in your application:
+ASP.NET Core OData 8 provides support for paging based on `$skiptoken`, but it's not enabled by default. You can enable it using the [`ODataOptions.SkipToken()`](/dotnet/api/microsoft.aspnetcore.odata.odataoptions.skiptoken) method when configuring OData services in your application:
 
 ```csharp
 services.AddControllers().AddOData(options =>
@@ -246,7 +246,7 @@ GET http://localhost:5000/Products?$skiptoken=Id-2
 }
 ```
 
-The `$skiptoken` value is generated using an implementation of [`SkipTokenHandler`](/dotnet/api/microsoft.aspnetcore.odata.query.skiptokenhandler). By default, the built-in [`DefaultSkipTokenHandler`](/dotnet/api/microsoft.aspnetcore.odata.query.defaultskiptokenhandler) class. `DefaultSkipTokenHandler` generates the `$skiptoken` based on the values of the key fields and fields in the `$orderby` query option if present. It encodes the key of the last value in the response in the `$skiptoken`'s value. When fetching the next page, it will use this value to determine where it left off and generate a query that's conceptually similar to:
+The `$skiptoken` value is generated using an implementation of [`SkipTokenHandler`](/dotnet/api/microsoft.aspnetcore.odata.query.skiptokenhandler). By default, the built-in [`DefaultSkipTokenHandler`](/dotnet/api/microsoft.aspnetcore.odata.query.defaultskiptokenhandler) class generates the `$skiptoken` based on the values of the key fields and fields in the `$orderby` query option if present. It encodes the key of the last value in the response in the `$skiptoken`'s value. When fetching the next page, it will use this value to determine where it left off and generate a query that's conceptually similar to:
 
 ```sql
 SELECT * FROM products

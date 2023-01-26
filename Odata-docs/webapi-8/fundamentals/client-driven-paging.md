@@ -1,5 +1,5 @@
 ---
-title:  "Client-driven paging in ASP.NET Core OData 8"
+title:  "Client-driven Paging in ASP.NET Core OData 8"
 description: Client-driven paging in ASP.NET Core OData 8.
 date:   2023-01-10
 ms.date: 1/10/2023
@@ -7,7 +7,7 @@ author: habbes
 ms.author: clhabins
 ---
 
-# Client-driven paging in ASP.NET Core OData 8
+# Client-driven Paging in ASP.NET Core OData 8
 
 **Applies To**:[!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v8.md)]
 
