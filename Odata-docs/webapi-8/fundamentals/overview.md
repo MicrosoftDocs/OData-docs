@@ -16,9 +16,6 @@ ASP.NET Core OData is a .NET library built on top of ASP.NET Core to help you bu
 
 To build an ASP.NET Core OData app, you start with an ASP.NET Core application, then install the [`Microsoft.AspNetCore.OData`](https://www.nuget.org/packages/Microsoft.AspNetCore.OData) NuGet package as a dependency. ASP.NET Core OData 8 supports .NET Core 3.1 and .NET Core 6.0 and above.
 
-> [!NOTE]
-> ASP.NET COre OData 8 supports .NET Core 3.1 and .NET Core 6.0 and above.
-
 # [Visual Studio](#tab/visual-studio)
 
 In the Visual Studio **Package Manager Console**:
@@ -35,7 +32,7 @@ dotnet add package Microsoft.AspNetCore.OData
 
 ---
 
-Internally, ASP.NET Core OData depends on the following.NET libraries for OData: 
+Internally, ASP.NET Core OData depends on the following .NET libraries for OData: 
 - [`Microsoft.OData.Core`](https://www.nuget.org/packages/Microsoft.OData.Core), which provides features like reading and writing OData payloads, parsing OData URIs and query options
 - [`Microsoft.OData.Edm`](https://www.nuget.org/packages/Microsoft.OData.Edm), which provides support for working with OData schemas, also referred to as EDM (Entity Data Model) model.
 - [`Microsoft.Spatial`](https://www.nuget.org/packages/Microsoft.Spatial), which provides support for geospatial data types.
@@ -104,7 +101,7 @@ public class Startup
 
 ---
 
-We register OData services using the `AddOData` extension method. The `AddOData` method accepts a callback action that allows us to configure different aspects of the OData service using the options argument (which is an instance of [`ODataOptions`](/dotnet/api/microsoft.aspnetcore.odata.odataoptions)).
+We register OData services using the [`AddOData`](/dotnet/api/microsoft.aspnetcore.odata.odatamvcbuilderextensions.addodata) extension method. The `AddOData` method accepts a callback action that allows us to configure different aspects of the OData service using the options argument (which is an instance of [`ODataOptions`](/dotnet/api/microsoft.aspnetcore.odata.odataoptions)).
 
 In this sample we're calling the [`AddRouteComponents`](/dotnet/api/microsoft.aspnetcore.odata.odataoptions.addroutecomponents) method which is used to register and configure the components and services that make up our OData API. We pass an EDM model that describes the service schema to the `AddRouteComponents`.
 
@@ -158,7 +155,7 @@ Here are examples of things that can be defined in an EDM model:
 - Entity types
 - Complex types
 - Enums
-- Entity Sets
+- Entity sets
 - Singletons
 - Functions
 - Actions
@@ -205,9 +202,9 @@ Clients can consume this metadata to know what types and endpoints the service e
 
 ## Registering OData services
 
-It is possible to service multiple OData APIs in the same ASP.NET Core application.
+It is possible to serve multiple OData APIs in the same ASP.NET Core application.
 
-The first sample code in this document registers a single OData service using `AddRouteComponents(edmModel)`. This is hosted on the "default" route, i.e. on the root path `/`. This means that the endpoints on this OData service look like :
+The first sample code in this document registers a single OData service using `AddRouteComponents(IEdmModel)`. This is hosted on the "default" route, i.e. on the root path `/`. This means that the endpoints on the OData service look like :
 - `/Customers`
 - `/Products`
 - `/$metadata`.
@@ -239,7 +236,7 @@ This will create OData services with the following url:
 ## Routing
 
 > [!IMPORTANT]
-> ASP.NET Core OData routing is based on controllers and therefore does not support [minimal APIs](/aspnet/core/fundamentals/minimal-apis/overview).
+> ASP.NET Core OData routing is based on controllers and currently does not support [minimal APIs](/aspnet/core/fundamentals/minimal-apis/overview).
 
 The OData specification defines a number of conventions for routing and accessing various resources based on REST best-practices. For example, if you have an entity set called `Customers` based on the `Customer` entity type, the convention is to expose a `GET /Customers` endpoint that returns a collection of `Customer` entities, and a `GET /Customers({id})` endpoint that returns a customer based on ID.
 
@@ -265,7 +262,7 @@ public class CustomersController : ODataController
         return Ok(_db.Customers.Find(id));
     }
 
-    public ActionResult<Customer> Post(Customer customer)
+    public ActionResult<Customer> Post([FromBody] Customer customer)
     {
         _db.Customers.Add(customer);
         _db.SaveChanges();
@@ -275,7 +272,7 @@ public class CustomersController : ODataController
 ```
 
 - The `Get()` controller action will be mapped to the `GET /Customers` endpoint.
-- The `Get(int id)` controller action will be mapped to the `GET /Customers({id})` and `GET /Customers/{id}` endpoints
+- The `Get(int id)` controller action will be mapped to the `GET /Customers({id})` and `GET /Customers/{id}` endpoints.
 - The `Post(Customer customer)` controller action will be mapped to the `POST /Customers` endpoint.
 
 It is up to the developer to implement the actual logic for performing the expected operation and returning the expected response. For example, it is up to the developer to ensure that the `Get()` method returns a collection of `Customer` objects, the library does not enforce this. This means that it's possible for an application written with ASP.NET Core OData not to be compliant with OData specifications or conventions.
@@ -309,7 +306,7 @@ AddOData(
     options => options.EnableQueryFeatures(100).AddRouteComponents(edmModel));
 ```
 
-The argument passed to `EnableQueryFeatures` is the max top value. You can set it to `null` if you don't want to impose a limit to the value specified in the `$top` query option.
+The argument passed to `EnableQueryFeatures` is the maximum allowed value for `$top` query option. You can set it to `null` if you don't want to impose a limit to the value specified in the `$top` query option.
 
 After enabling query options on the service, you also need to enable querying on specific endpoints where you want to support query options. You can do this by adding the [`[EnableQuery]`](/dotnet/api/microsoft.aspnetcore.odata.query.enablequeryattribute) attribute to the corresponding controller actions. The `EnableQuery` attribute automatically applies the query options to the results returned by the controller action.
 
