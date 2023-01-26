@@ -146,7 +146,7 @@ LIMIT 100, OFFSET 50000;
 
 This query will return 100 rows, from row 50,001 to row 50,100. However it will scan through all the first 50,100 rows in the table, then drop the first 50,000. The larger the offset, the longer the query will take.
 
-This makes `$skip`-based pagination unsuitable for large datasets in many database systems. An alternative approach would be to keep track of where you left off using a unique ordered field. In our example, we can use the `Id` field to keep track of the last product we saw. using this technique, the client can fetch the first page with the following request:
+This makes `$skip`-based paging unsuitable for large datasets in many database systems. An alternative approach would be to keep track of where you left off using a unique ordered field. In our example, we can use the `Id` field to keep track of the last product we saw. using this technique, the client can fetch the first page with the following request:
 
 ```http
 GET /Products?$top=2
