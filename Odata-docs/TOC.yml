@@ -59,6 +59,8 @@
         href: /odata/webapi-8/getting-started
       - name: Fundamentals
         items:
+          - name: Overview
+            href: /odata/webapi-8/fundamentals/overview
           - name: Routing
             items:
               - name: Routing overview
