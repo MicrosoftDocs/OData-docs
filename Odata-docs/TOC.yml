@@ -99,7 +99,7 @@
         items:
           - name: Basic CRUD operations
             href: /odata/webapi-8/tutorials/basic-crud
-          - name: Customizing skip tokens with SkipTokenHandler
+          - name: Implementing a Custom Skip Token Handler
             href: /odata/webapi-8/tutorials/custom-skiptokenhandler
   - name: ASP.NET WebAPI
     items:
