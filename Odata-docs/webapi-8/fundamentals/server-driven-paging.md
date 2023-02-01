@@ -34,7 +34,7 @@ Here's an example of response:
 
 In this example, the client would make a request to `GET http://localhost:5000/odata/Products?$skiptoken=foobar` to retrieve the next page.
 
-The format of the next link is opaque to the client. This means that the client should not try to decode the link, modify it or make any assumptions about how it is generated or what its components mean. It can only assume that it's a valid URL that will return the next page. This allows the server freedom in how it chooses to generate and interpret the next link. It allows the server to change the underlying implementation of the next link without affecting the client.
+The format of the next link is opaque to the client. This means that the client should not try to decode the link, modify it or make any assumptions about how it is generated or what its components mean. It can only assume that it's a valid URL that will return the next page. This allows the server freedom in how it chooses to generate and interpret the next link. It also allows the server to change the underlying implementation of the next link without affecting the client.
 
 ## Configuring paging using `PageSize`
 
