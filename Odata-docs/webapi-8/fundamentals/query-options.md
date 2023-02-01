@@ -14,7 +14,7 @@ ASP.NET Core OData 8.x provides out of the box querying capabilities.
 
 A query option is basically requesting that a service perform a set of transformations such as filtering, sorting, etc. to its data before returning the results. 
 
-There are various types of query options.
+There are various types of query options:
 - `System query options` - Query options that are defined by OData. System query options are prefixed with the dollar ($) character, which is optional in OData 4.01. Example is `$filter`.
 - `Parameter aliases` - Parameter aliases can be used in place of literal values in entity keys, function parameters, or within a $compute, $filter or $orderby expression. Example `http://host/service.svc/Employees?$filter=Region eq @p1&@p1='WA'`.
 - `Custom query options` - Custom query options are not defined in the OData specification. They are defined by the users. They MUST NOT begin with the `$` or `@` character and MUST NOT conflict with any OData-defined system query options. Example `http://host/service/Products?debug-mode=true`.
@@ -23,7 +23,7 @@ See more information on the types of query options [here](/odata/concepts/queryo
 
 This tutorial demonstrates how to use query options in ASP.NET Core OData 8.x.
 
-## Model classes OR Data model
+## Model classes
 We will define our model as follows:
 
 ```csharp
@@ -124,8 +124,8 @@ public class CustomersController : ODataController
 }
 ```
 
-In the controller method, we add the `EnableQuery` attribute.
-The `EnableQuery` attribute is an action filter that parses, validates, and applies the query. The filter converts the query options into a LINQ expression. When the controller returns an `IQueryable` or `IActionResult` type, the Linq provider converts the Linq expression into a query e.g Entity Framework (EF) Core will convert the Linq expression to a Sql statement. 
+In the preceding code, the `Get` controller method is decorated with the `EnableQuery` attribute.
+The `EnableQuery` attribute is an action filter that parses, validates, and applies the query. The filter converts the query options into a [LINQ (Language-Integrated Query)](/dotnet/csharp/programming-guide/concepts/linq) expression. When the controller returns an `IQueryable` or `IActionResult` type, the LINQ provider converts the LINQ expression into a query, e.g., Entity Framework (EF) Core will convert the LINQ expression into an SQL statement.
 
 ## Basic queries
 We can select a specific property or properties in an entity:
@@ -259,7 +259,7 @@ http://localhost:6285/odata/Customers?$select=Name&$expand=Orders($filter=Id gt 
 ```
 
 ### Limiting query options
-We can limit the type of query option that can be used while calling a certain API action.
+We can limit the type of query option that can be used while calling a certain API.
 
 ```csharp
 public class CustomersController : ODataController
@@ -310,7 +310,7 @@ When registering OData services, we add query options configurations as shown be
 
 These are global configurations. If a query option is not enabled here, it cannot be enabled in the controller.
 
-In the above example, we did not enable the `$filter` query option. If we configure a controller as shown below, the `$filter` will not be applied since we had not enabled `$filter` in the global configuration.
+In the above example, we did not enable the `$filter` query option. If we configure a controller as shown below, the `$filter` will not be applied since it's not enabled in the global configuration.
 
 ```csharp
 [EnableQuery(AllowedQueryOptions = AllowedQueryOptions.Filter)]
@@ -325,7 +325,7 @@ There are scenarios where we may be unable to use `EnableQuery` attribute. For e
 
 We use the [ODataQueryOptions.ApplyTo](/dotnet/api/microsoft.aspnet.odata.query.odataqueryoptions.applyto) method to apply the required query options.
 
-[ODataQueryOptions<`TEntity`>](/dotnet/api/microsoft.aspnet.odata.query.odataqueryoptions-1) can be used an argument in a controller method.
+[ODataQueryOptions<`TEntity`>](/dotnet/api/microsoft.aspnet.odata.query.odataqueryoptions-1) can be used an argument in a controller method:
 
 ```csharp
 public IQueryable<Customer> Get(ODataQueryOptions<Customer> options)
@@ -338,10 +338,10 @@ public IQueryable<Customer> Get(ODataQueryOptions<Customer> options)
 
 In the example above, the [ApplyTo](/dotnet/api/microsoft.aspnet.odata.query.odataqueryoptions.applyto) method applies to all query options.
 
-We call ApplyTo for each individual query as shown in the sub-sections below.
+We can call `ApplyTo` on individual query options as shown in the subsections below.
 
 ### SelectExpand query
-We call `ApplyTo` on the `SelectExpand` property as follows:
+We can call `ApplyTo` on the `SelectExpand` property of `ODataQueryOptions` class as follows:
 
 ```csharp
 public IQueryable<Customer> Get(ODataQueryOptions<Customer> options)
@@ -360,18 +360,18 @@ The `options.SelectExpand` property is an instance of `SelectExpandQueryOption`.
 GET http://localhost:6285/odata/Customers?$expand=Orders
 ```
 
-If we don't want to pass the query option in the request, but we want the `Orders` property to be expanded, we can initialize the `SelectExpandQueryOption` and set it in the request.
+If we don't want to pass the query option in the request, but we want the `Orders` property to be expanded, we can initialize the `SelectExpandQueryOption` and set it in the request URL.
 
 ```csharp
 public IQueryable<Customer> Get(ODataQueryOptions<Customer> options)
 {
     options.Request.ODataFeature().SelectExpandClause = new SelectExpandQueryOption(null, "Orders", options.Context,
         new ODataQueryOptionParser(
-            options.Context.Model,
-            options.Context.NavigationSource.EntityType(),
-            options.Context.NavigationSource,
-            new Dictionary<string, string> { { "$expand", "Orders" } },
-            options.Context.RequestContainer)).SelectExpandClause;
+            model: options.Context.Model,
+            targetEdmType: options.Context.NavigationSource.EntityType(),
+            targetNavigationSource: options.Context.NavigationSource,
+            queryOptions: new Dictionary<string, string> { { "$expand", "Orders" } },
+            container: options.Context.RequestContainer)).SelectExpandClause;
 
     IQueryable results = options.ApplyTo(Customers.AsQueryable());
 
@@ -379,7 +379,7 @@ public IQueryable<Customer> Get(ODataQueryOptions<Customer> options)
 }
 ```
 
-When making the request, we don't need to use the `$expand` query option.
+When making the request, we don't need to include the `$expand` query option.
 
 ```http
 GET http://localhost:6285/odata/Customers
@@ -415,7 +415,7 @@ Below will be the output:
 ```
 
 ### Filter query
-We call `ApplyTo` on the `Filter` property as follows:
+We can call `ApplyTo` on the `Filter` property of `ODataQueryOptions` class as follows:
 
 ```csharp
 public IQueryable<Customer> Get(ODataQueryOptions<Customer> options)
@@ -432,25 +432,25 @@ The `options.Filter` property is an instance of `FilterQueryOption`. It will be 
 GET http://localhost:6285/odata/Customers?$filter=Id eq 1
 ```
 
-If we don't want to pass the filter query option in the request, but we want a filter to be applied, we can initialize the `FilterQueryOption` and call `ApplyTo` to apply the filter query to the data.
+If we don't want to pass the filter query option in the request URL, but we want a filter to be applied, we can initialize the `FilterQueryOption` and call `ApplyTo` to apply the filter query to the data.
 
 ```csharp
 public IQueryable<Customer> Get(ODataQueryOptions<Customer> options)
 {
     var filter = new FilterQueryOption("Id eq 1", options.Context,
         new ODataQueryOptionParser(
-            options.Context.Model,
-            options.Context.NavigationSource.EntityType(),
-            options.Context.NavigationSource,
-            new Dictionary<string, string> { { "$filter", "Id eq 1" } },
-            options.Context.RequestContainer));
+            model: options.Context.Model,
+            targetEdmType: options.Context.NavigationSource.EntityType(),
+            targetNavigationSource: options.Context.NavigationSource,
+            queryOptions: new Dictionary<string, string> { { "$filter", "Id eq 1" } },
+            container: options.Context.RequestContainer));
 
     IQueryable results = filter.ApplyTo(Customers.AsQueryable(), new ODataQuerySettings());
 
     return results as IQueryable<Customer>;
 }
 ```
-When making the request, we don't need to use the `$filter` query option.
+When making the request, we don't need to include the `$filter` query option.
 
 ```http
 GET http://localhost:6285/odata/Customers
@@ -472,9 +472,9 @@ Below will be the output:
 ```
 
 ### Apply query
-Apply query feature is applied in grouping and aggregating data.
+The `$apply` query option is used in grouping and aggregating data.
 
-We call `ApplyTo` on the `Apply` property as follows:
+We can call `ApplyTo` on the `Apply` property of `ODataQueryOptions` class as follows:
 
 ```csharp
 public IQueryable<Customer> Get(ODataQueryOptions<Customer> options)
@@ -497,11 +497,11 @@ If we don't want to pass the query option in the request, but we want to aggrega
 public IQueryable<Customer> Get(ODataQueryOptions<Customer> options)
 {
     var queryOptionParser = new ODataQueryOptionParser(
-            options.Context.Model,
-            options.Context.NavigationSource.EntityType(),
-            options.Context.NavigationSource,
-            new Dictionary<string, string> { { "$apply", "aggregate(Age with max as MaxAge)" } },
-            options.Context.RequestContainer);
+            model: options.Context.Model,
+            targetEdmType: options.Context.NavigationSource.EntityType(),
+            targetNavigationSource: options.Context.NavigationSource,
+            queryOptions: new Dictionary<string, string> { { "$apply", "aggregate(Age with max as MaxAge)" } },
+            container: options.Context.RequestContainer);
 
     options.Request.ODataFeature().ApplyClause = new ApplyQueryOption("aggregate(Age with max as MaxAge)", options.Context, queryOptionParser).ApplyClause;
 
@@ -559,4 +559,4 @@ public IQueryable<Customer> Get()
 }
 ```
 
-We will only use the `MyFilterValidator` in `$filter` queries. In other queries, we will use the default validators.
+The `MyFilterValidator` will only be used in `$filter` queries. In other queries, the default validators will be used.
