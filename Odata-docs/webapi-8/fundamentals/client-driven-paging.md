@@ -11,7 +11,7 @@ ms.author: clhabins
 
 **Applies To**:[!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v8.md)]
 
-The client can request the OData service to return a specific number of results. The `$top` query option is used to limit the number of results and the `skip` query option used to specify the offset. For example `GET /Customers?$skip=3$top=5` will return up to 5 items starting from the 4th item in the collection (i.e. after skipping the first 3).
+A client can request the OData service to return a specific number of results. The `$top` query option is used to limit the number of results and the `skip` query option used to specify the offset. For example `GET /Customers?$skip=3$top=5` will return up to 5 items starting from the 4th item in the collection (i.e. after skipping the first 3).
 
 Using these two query options the client can divide a large collection into separate pages and fetch the pages in separate requests. For example, if our collection has 25 items, and we want each page to have 10 items, then we can fetch the different page as follows:
 
@@ -28,6 +28,13 @@ By default, ASP.NET Core OData 8 limits the maximum value for `$top` to 0. So if
         "message": "The query specified in the URI is not valid. The limit of '0' for Top query has been exceeded. The value from the incoming request is '2'."
 }
 ```
+
+## Configuring client-side paging in OData
+
+Configuring client-side paging involves two steps:
+
+1. Configuring the max `$top` query option value
+2. Adding `EnableQuery` attribute to the controller method
 
 You can configure the maximum top value using the [`ODataOptions.SetMaxTop()`](/dotnet/api/microsoft.aspnetcore.odata.odataoptions.setmaxtop) when adding OData services to your application. The following snippet would set the maximum allowed `$top` value to 100.
 
@@ -62,19 +69,22 @@ public class ProductsController : ODataController
 }
 ```
 
-## Benefits of this approach
+## Benefits of client-side paging approach
 
 This client-driven paging approach has a number of benefits:
 
-- It's relatively easy to implement
+- It's relatively easy to implement.
 - It allows the client to fetch pages independently and to jump to an arbitrary page. For example, the client can fetch page 5 without having fetched page 4 previously.
 - If the client knows the total size of the collection (e.g. using the `$count` query option), the client can compute the total number of pages as well as generate links for each page in advance.
 
-## Drawbacks
+## Drawbacks of client-side paging approach
 
-Paging based on `$top` and `$skip` has a few drawbacks that may make it unsuitable in some scenarios.
+Paging based on `$top` and `$skip` has a few drawbacks that may make it unsuitable in some scenarios:
 
-This approach is sensitive to changes in that data source which may lead the page contents to be unstable. To illustrate this, let's assume we have a data source with the following 5 items and we want to fetch 2 items per page:
+- This approach is sensitive to changes in that data source which may lead the page contents to be unstable.
+- `$skip`-based paging can cause performance and scalability issues in some database implementations.
+
+To illustrate the sensitivity to data source changes, let's assume we have a data source with the following 5 items and we want to fetch 2 items per page:
 
 ```json
 [
@@ -86,7 +96,7 @@ This approach is sensitive to changes in that data source which may lead the pag
 ]
 ```
 
-The client can fetch the first page with 
+The client can fetch the first page with:
 
 ```http
 GET /Products?$top=2
