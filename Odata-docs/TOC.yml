@@ -87,6 +87,14 @@
             href: /odata/webapi-8/fundamentals/query-options
           - name: Actions and Functions
             href: /odata/webapi-8/fundamentals/actions-functions
+          - name: Paging
+            items:
+              - name: Paging overview
+                href: /odata/webapi-8/fundamentals/paging-overview
+              - name: Client-driven paging
+                href: /odata/webapi-8/fundamentals/client-driven-paging
+              - name: Server-driven paging
+                href: /odata/webapi-8/fundamentals/server-driven-paging
       - name: Tutorials
         items:
           - name: Basic CRUD operations
