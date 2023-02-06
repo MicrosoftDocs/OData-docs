@@ -11,7 +11,7 @@ ms.author: clhabins
 
 **Applies To**:[!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v8.md)]
 
-In [server-driven paging](https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_ServerDrivenPaging), the server returns the first page of results. If total number of results is greater than the page size, the server returns the first page along with a "next link" that can be used to fetch the next page of results. Each subsequent page should include a next link except for the last page. Using this approach, the client needs to fetch pages sequentially. It cannot jump to an arbitrary page. The next link is included in the response using the [`@odata.nextLink`](http://docs.oasis-open.org/odata/odata-json-format/v4.01/odata-json-format-v4.01.html#sec_ControlInformationnextLinkodatanextL) annotation.
+In [server-driven paging](http://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part1-protocol/odata-v4.0-errata03-os-part1-protocol-complete.html#_Server-Driven_Paging), the server returns the first page of results. If total number of results is greater than the page size, the server returns the first page along with a "next link" that can be used to fetch the next page of results. Each subsequent page should include a next link except for the last page. Using this approach, the client needs to fetch pages sequentially. It cannot jump to an arbitrary page. The next link is included in the response using the [`@odata.nextLink`](http://docs.oasis-open.org/odata/odata-json-format/v4.0/errata03/os/odata-json-format-v4.0-errata03-os-complete.html#odataNext) annotation.
 
 Here's an example of response:
 
