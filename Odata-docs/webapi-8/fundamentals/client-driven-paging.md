@@ -33,7 +33,7 @@ By default, ASP.NET Core OData 8 limits the maximum value for `$top` to 0. So if
 
 Configuring client-side paging involves two steps:
 
-1. Configuring the max `$top` query option value
+1. Configuring the`$top` query option with a max value
 2. Adding `EnableQuery` attribute to the controller method
 
 You can configure the maximum top value using the [`ODataOptions.SetMaxTop()`](/dotnet/api/microsoft.aspnetcore.odata.odataoptions.setmaxtop) when adding OData services to your application. The following snippet would set the maximum allowed `$top` value to 100.
@@ -47,7 +47,7 @@ services.AddOData(options =>
 
 Now this will support values of up to 100, but return an error if `$top` exceeds 100.
 
-You can also remove the limit by setting it to `null`:
+You can also remove the limit by setting it to `null`. This allows `$top` to be set to any value greater or equal to 0:
 
 ```csharp
 services.AddOData(options =>
