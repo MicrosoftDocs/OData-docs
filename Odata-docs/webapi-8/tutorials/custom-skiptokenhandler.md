@@ -11,7 +11,7 @@ ms.author: clhabins
 
 **Applies To**:[!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v8.md)]
 
-Skip tokens are used in server-side paging to keep track of the last record that was sent the client so that it can generate the next page of results. The skip token is opaque to the client, this means that the server has freedom to decide what the contents of the skip token should be and how to interpret them. ASP.NET Core OData generates by default the skip token by combining the fields and values of the reference record. However, you can override this behavior by providing your own custom logic for generating and processing skip tokens.
+Skip tokens are used in [server-side paging](/odata/webapi-8/fundamentals/server-driven-paging) to keep track of the last record that was sent the client so that it can generate the next page of results. The skip token is opaque to the client, this means that the server has freedom to decide what the contents of the skip token should be and how to interpret them. ASP.NET Core OData generates by default the skip token by combining the fields and values of the reference record. However, you can override this behavior by providing your own custom logic for generating and processing skip tokens.
 
 This tutorial shows how to customize the skip token logic using a custom `SkipTokenHandler`.
 
