@@ -230,7 +230,7 @@ If you wish to change how skip tokens are generated or how they're processed, yo
 
 ## Creating a custom `SkipTokenHandler`
 
-The `SkipTokenHandler` is response for generating the *next link* in an OData response when using server-driven paging. It's also responsible for applying the `$skiptoken` to the results. `SkipTokenHandler` is an abstract class that defines the following methods to be implemented by child classes:
+The `SkipTokenHandler` generates the *next link* in an OData response when using server-driven paging. It's also responsible for applying the `$skiptoken` to the results. `SkipTokenHandler` is an abstract class that defines the following methods to be implemented by child classes:
 
 - [`GenerateNextPageLink`](/dotnet/api/microsoft.aspnet.odata.query.skiptokenhandler.generatenextpagelink): generates the `Uri` that's used as the next link in the response
 - [`ApplyTo`](/dotnet/api/microsoft.aspnet.odata.query.skiptokenhandler.applyto): applies the `$skiptoken` to an `IQueryable` collection. This should transform the query to perform the pagination. It has two overloads, a generic `ApplyTo<T>` and non-generic `ApplyTo` to handle the generic `IQueryable<T>` and non-generic `IQueryable` respectively.
@@ -333,7 +333,7 @@ if (skipToken == null)
 }
 ```
 
-The next block of generates a base64 encoded version of the skip token to replace the original value.
+The next block of code generates a base64 encoded version of the skip token to replace the original value.
 
 ```c#
 string base64SkipToken = Convert.ToBase64String(Encoding.UTF8.GetBytes(skipToken));
@@ -401,11 +401,11 @@ This returns an error response like the following:
 }
 ```
 
-The reason we get the error is because our custom handler was not able to process the skip token. The skip token is process in the `ApplyTo` method. At the moment, we are still using the `ApplyTo` method in the `DefaultSkipTokenHandler` class because we have not defined our own. The base `ApplyTo` expects the skip token to be in a specific format, it cannot parse the base64 encoded value.
+The reason we get the error is because our custom handler was not able to process the skip token. The skip token is processed in the `ApplyTo` method. At the moment, we are still using the `ApplyTo` method in the `DefaultSkipTokenHandler` class because we have not defined our own. The base `ApplyTo` expects the skip token to be in a specific format, it cannot parse the base64 encoded value.
 
 ### Processing the skip token with `ApplyTo`
 
-To fix the error in the previous we have to decode the skip token first then pass the decoded version to the `DefaultSkipTokenHandler`.
+To fix the error in the previous section we have to decode the skip token first then pass the decoded version to the `DefaultSkipTokenHandler`.
 
 We can achieve that by adding the following methods to our `CustomSkipTokenHandler` class:
 
