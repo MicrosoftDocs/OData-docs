@@ -266,3 +266,5 @@ services.AddControllers().AddOData(options =>
         routeServices.AddSingleton<SkipTokenHandler, CustomSkipTokenHandler>();
     }));
 ```
+
+To learn more about customizing the `SkipTokenHandler`, visit [this tutorial](/odata/webapi-8/tutorials/custom-skiptokenhandler).
