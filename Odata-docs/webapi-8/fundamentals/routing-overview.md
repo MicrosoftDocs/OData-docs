@@ -113,18 +113,18 @@ using Microsoft.AspNetCore.OData.Routing.Controllers;
 public class CustomersController : ODataController
 {
     [EnableQuery]
-    public ActionResult Get()
+    public ActionResult<IEnumerable<Customer>> Get()
     {
-        return Ok(new List<Customer>
+        return new List<Customer>
         {
             new Customer { Id = 1, Name = "Customer 1" },
             new Customer { Id = 2, Name = "Customer 2" }
-        });
+        };
     }
 
-    public ActionResult Get([FromRoute] int key)
+    public ActionResult<Customer> Get([FromRoute] int key)
     {
-        return Ok(new Customer { Id = key, Name = $"Customer {key}" });
+        return new Customer { Id = key, Name = $"Customer {key}" };
     }
 }
 
@@ -153,19 +153,19 @@ public class CustomersController : ODataController
 {
     [EnableQuery]
     [HttpGet("odata/Customers")]
-    public ActionResult List()
+    public ActionResult<IEnumerable<Customer>> List()
     {
-        return Ok(new List<Customer>
+        return new List<Customer>
         {
             new Customer { Id = 1, Name = "Customer 1" },
             new Customer { Id = 2, Name = "Customer 2" }
-        });
+        };
     }
 
     [HttpGet("odata/Customers({key})")]
-    public ActionResult Details([FromRoute] int key)
+    public ActionResult<Customer> Details([FromRoute] int key)
     {
-        return Ok(new Customer { Id = key, Name = $"Customer {key}" });
+        return new Customer { Id = key, Name = $"Customer {key}" };
     }
 }
 ```

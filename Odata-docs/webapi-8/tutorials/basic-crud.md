@@ -337,7 +337,7 @@ In the sections that follow, we implement support for different CRUD operations.
 ## Request entity collection
 To support the ability to return all `Customer` entities from an OData service, we implement a controller action to handle that request. Add the following logic to the `CustomersController` class:
 ```csharp
-public ActionResult Get()
+public ActionResult<IQueryable<Customer>> Get()
 {
     return Ok(db.Customers);
 }
@@ -376,7 +376,7 @@ The following JSON payload shows the expected response:
 ## Request a single entity
 To support this request, we add a controller action named `Get` (or `GetCustomer`) to the `CustomersController` class. The action should accept a single parameter named `key` of type `int` - same type as the entity's key property:
 ```csharp
-public ActionResult Get([FromRoute] int key)
+public ActionResult<Customer> Get([FromRoute] int key)
 {
     var customer = db.Customers.SingleOrDefault(d => d.Id == key);
 
