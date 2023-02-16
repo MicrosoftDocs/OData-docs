@@ -400,7 +400,7 @@ using Microsoft.AspNetCore.OData.Routing.Controllers;
 public class DefaultController : ODataController
 {
     [HttpPost("odata/ComputeSalary")]
-    public ActionResult ComputeSalary(ODataActionParameters parameters)
+    public ActionResult<decimal> ComputeSalary(ODataActionParameters parameters)
     {
         object hourlyRateAsObject, hoursWorkedAsObject;
         decimal hourlyRate;
@@ -415,7 +415,7 @@ public class DefaultController : ODataController
             return BadRequest();
         }
 
-        return Ok(hourlyRate * hoursWorked);
+        return hourlyRate * hoursWorked;
     }
 }
 ```

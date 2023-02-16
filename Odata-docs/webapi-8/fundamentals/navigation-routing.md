@@ -196,7 +196,7 @@ GET http://localhost:5000/odata/Employees(1)/Supervisor
 
 For the above request to be conventionally-routed, a controller action named `GetSupervisor` that accepts the key parameter is expected:
 ```csharp
-public ActionResult GetSupervisor([FromRoute] int key)
+public ActionResult<Employee> GetSupervisor([FromRoute] int key)
 {
     var employee = employees.SingleOrDefault(d => d.Id.Equals(key));
 
@@ -205,7 +205,7 @@ public ActionResult GetSupervisor([FromRoute] int key)
         return NotFound();
     }
 
-    return Ok(employee.Supervisor);
+    return employee.Supervisor;
 }
 ```
 
@@ -231,7 +231,7 @@ GET http://localhost:5000/odata/Employees(5)/NavigationRouting.Models.Manager/Di
 
 For the above request to be conventionally-routed, a controller action named `GetDirectReportsFromManager` that accepts the key parameter is expected:
 ```csharp
-public ActionResult GetDirectReportsFromManager([FromRoute] int key)
+public ActionResult<IEnumerable<Employee>> GetDirectReportsFromManager([FromRoute] int key)
 {
     var manager = employees.OfType<Manager>().SingleOrDefault(d => d.Id.Equals(key));
 
@@ -240,7 +240,7 @@ public ActionResult GetDirectReportsFromManager([FromRoute] int key)
         return NotFound();
     }
 
-    return Ok(manager.DirectReports);
+    return manager.DirectReports;
 }
 ```
 
@@ -280,7 +280,7 @@ GET http://localhost:5000/odata/Employees(5)/NavigationRouting.Models.Manager/Di
 For the above request to be conventionally-routed, a controller action named `GetDirectReportsFromManager` that accepts the key parameter is expected, same as is expected when retrieving a collection-valued navigation property. However, the controller action needs to be decorated with `EnableQuery` attribute:
 ```csharp
 [EnableQuery]
-public ActionResult GetDirectReportsFromManager([FromRoute] int key)
+public ActionResult<IEnumerable<Employee>> GetDirectReportsFromManager([FromRoute] int key)
 {
     var manager = employees.OfType<Manager>().SingleOrDefault(d => d.Id.Equals(key));
 
@@ -289,7 +289,7 @@ public ActionResult GetDirectReportsFromManager([FromRoute] int key)
         return NotFound();
     }
 
-    return Ok(manager.DirectReports);
+    return manager.DirectReports;
 }
 ```
 

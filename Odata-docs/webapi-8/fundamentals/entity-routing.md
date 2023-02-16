@@ -184,7 +184,7 @@ GET http://localhost:5000/odata/Shapes(1)
 
 For the above request to be conventionally-routed, a controller action named `Get` (or `GetShape`) that accepts the key parameter is expected:
 ```csharp
-public ActionResult Get([FromRoute] int key)
+public ActionResult<Shape> Get([FromRoute] int key)
 {
     var shape = shapes.SingleOrDefault(d => d.Id.Equals(key));
 
@@ -193,7 +193,7 @@ public ActionResult Get([FromRoute] int key)
         return NotFound();
     }
 
-    return Ok(shape);
+    return shape;
 }
 ```
 
@@ -223,7 +223,7 @@ GET http://localhost:5000/odata/Shapes(2)/EntityRouting.Models.Circle
 
 For the above request to be conventionally-routed, a controller action named `GetCircle` that accepts the key parameter is expected:
 ```csharp
-public ActionResult GetCircle([FromRoute] int key)
+public ActionResult<Circle> GetCircle([FromRoute] int key)
 {
     var circle = shapes.OfType<Circle>().SingleOrDefault(d => d.Id.Equals(key));
 
@@ -232,7 +232,7 @@ public ActionResult GetCircle([FromRoute] int key)
         return NotFound();
     }
 
-    return Ok(circle);
+    return circle;
 }
 ```
 

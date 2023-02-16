@@ -206,14 +206,14 @@ The Edm organizes elements into a hierarchy. Based on our Edm model, `GetHighest
 For the above request to be conventionally-routed, a controller action named `GetHighestRating` that accepts no parameters is expected. The controller action should be decorated with `HttpGet` attribute:
 ```csharp
 [HttpGet]
-public ActionResult GetHighestRating()
+public ActionResult<decimal> GetHighestRating()
 {
     if (employees.Count < 1)
     {
         return NoContent();
     }
 
-    return Ok(employees.Select(d => d.PerfRating).OrderByDescending(d => d).First());
+    return employees.Select(d => d.PerfRating).OrderByDescending(d => d).First();
 }
 ```
 
@@ -243,7 +243,7 @@ GET http://localhost:5000/odata/Employees(1)/Default.GetRating()
 For the above request to be conventionally-routed, a controller action named `GetRating` that accepts the key parameter is expected. The controller action should be decorated with `HttpGet` attribute:
 ```csharp
 [HttpGet]
-public ActionResult GetRating([FromRoute] int key)
+public ActionResult<decimal> GetRating([FromRoute] int key)
 {
     var employee = employees.SingleOrDefault(d => d.Id.Equals(key));
 
@@ -252,7 +252,7 @@ public ActionResult GetRating([FromRoute] int key)
         return NotFound();
     }
 
-    return Ok(employee.PerfRating);
+    return employee.PerfRating;
 }
 ```
 
@@ -280,7 +280,7 @@ GET http://localhost:5000/odata/Employees/FunctionRouting.Models.Manager/Default
 For the above request to be conventionally-routed, a controller action named `GetHighestBonusOnCollectionOfManager` that accepts no parameters is expected. The controller action should be decorated with `HttpGet` attribute:
 ```csharp
 [HttpGet]
-public ActionResult GetHighestBonusOnCollectionOfManager()
+public ActionResult<decimal> GetHighestBonusOnCollectionOfManager()
 {
     var managers = employees.OfType<Manager>().ToArray();
 
@@ -289,7 +289,7 @@ public ActionResult GetHighestBonusOnCollectionOfManager()
         return NoContent();
     }
 
-    return Ok(managers.Select(d => d.Bonus).OrderByDescending(d => d).First());
+    return managers.Select(d => d.Bonus).OrderByDescending(d => d).First();
 }
 ```
 
@@ -319,7 +319,7 @@ GET http://localhost:5000/odata/Employees(5)/FunctionRouting.Models.Manager/Defa
 For the above request to be conventionally-routed, a controller action named `GetBonusOnManager` that accepts the key parameter is expected. The controller action should be decorated with `HttpGet` attribute:
 ```csharp
 [HttpGet]
-public ActionResult GetBonusOnManager([FromRoute] int key)
+public ActionResult<decimal> GetBonusOnManager([FromRoute] int key)
 {
     var manager = employees.OfType<Manager>().SingleOrDefault(d => d.Id.Equals(key));
 
@@ -328,7 +328,7 @@ public ActionResult GetBonusOnManager([FromRoute] int key)
         return NotFound();
     }
 
-    return Ok(manager.Bonus);
+    return manager.Bonus;
 }
 ```
 
@@ -358,9 +358,9 @@ In ASP.NET Core, the default route is one where the route prefix is an empty str
 public class DefaultController : ODataController
 {
     [HttpGet("odata/GetSalary(hourlyRate={hourlyRate},hoursWorked={hoursWorked})")]
-    public ActionResult GetSalary(decimal hourlyRate, int hoursWorked)
+    public ActionResult<decimal> GetSalary(decimal hourlyRate, int hoursWorked)
     {
-        return Ok(hourlyRate * hoursWorked);
+        return hourlyRate * hoursWorked;
     }
 }
 ```

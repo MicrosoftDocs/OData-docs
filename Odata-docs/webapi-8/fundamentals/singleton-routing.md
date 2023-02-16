@@ -178,9 +178,9 @@ GET http://localhost:5000/odata/Company
 
 For the above request to be conventionally-routed, a controller action named `Get` (or `GetCompany`) is expected:
 ```csharp
-public ActionResult Get()
+public ActionResult<Company> Get()
 {
-    return Ok(company);
+    return company;
 }
 ```
 
@@ -205,14 +205,14 @@ GET http://localhost:5000/odata/Company/SingletonRouting.Models.HoldingCompany
 
 For the above request to be conventionally-routed, a controller action named `GetFromHoldingCompany` is expected:
 ```csharp
-public ActionResult GetFromHoldingCompany()
+public ActionResult<HoldingCompany> GetFromHoldingCompany()
 {
     if (!(company is HoldingCompany holdingCompany))
     {
         return NotFound();
     }
 
-    return Ok(holdingCompany);
+    return holdingCompany;
 }
 ```
 

@@ -142,13 +142,13 @@ namespace Lab01.Controllers
             }));
 
         [EnableQuery]
-        public ActionResult Get()
+        public ActionResult<IEnumerable<Customer>> Get()
         {
             return Ok(customers);
         }
 
         [EnableQuery]
-        public ActionResult Get([FromRoute] int key)
+        public ActionResult<Customer> Get([FromRoute] int key)
         {
             var item = customers.SingleOrDefault(d => d.Id.Equals(key));
 

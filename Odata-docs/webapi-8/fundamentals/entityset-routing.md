@@ -182,9 +182,9 @@ GET http://localhost:5000/odata/Shapes
 
 For the above request to be conventionally-routed, a controller action named `Get` (or `GetShapes`) is expected:
 ```csharp
-public ActionResult Get()
+public ActionResult<IEnumerable<Shape>> Get()
 {
-    return Ok(shapes);
+    return shapes;
 }
 ```
 
@@ -232,9 +232,9 @@ GET http://localhost:5000/odata/Shapes/$count
 For the above request to be conventionally-routed, a controller action named `Get` (or `GetShapes`) is expected, same as is expected when [retrieving an entity set](#retrieving-an-entity-set). However, the controller action needs to be decorated with `EnableQuery` attribute. The `EnableQuery` attribute is responsible for generating the relevant query for determining the number of items:
 ```csharp
 [EnableQuery]
-public ActionResult Get()
+public ActionResult<IEnumerable<Shape>> Get()
 {
-    return Ok(shapes);
+    return shapes;
 }
 ```
 
@@ -253,9 +253,9 @@ GET http://localhost:5000/odata/Shapes/EntitySetRouting.Models.Rectangle
 
 For the above request to be conventionally-routed, a controller action named `GetFromRectangle` (or `GetShapesFromRectangle`) is expected:
 ```csharp
-public ActionResult GetFromRectangle()
+public ActionResult<IEnumerable<Rectangle>> GetFromRectangle()
 {
-    return Ok(shapes.OfType<Rectangle>());
+    return shapes.OfType<Rectangle>().ToList();
 }
 ```
 
@@ -293,9 +293,9 @@ GET http://localhost:5000/odata/Shapes/EntitySetRouting.Models.Rectangle/$count
 For the above request to be conventionally-routed, a controller action named `GetFromRectangle` (or `GetShapesFromRectangle`) is expected, same as is expected when [retrieving a collection of derived entities](#retrieving-a-collection-of-derived-entities). However, the controller action needs to be decorated with `EnableQuery` attribute:
 ```csharp
 [EnableQuery]
-public ActionResult GetFromRectangle()
+public ActionResult<IEnumerable<Rectangle>> GetFromRectangle()
 {
-    return Ok(shapes.OfType<Rectangle>());
+    return shapes.OfType<Rectangle>().ToList();
 }
 ```
 

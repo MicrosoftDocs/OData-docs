@@ -263,7 +263,7 @@ GET http://localhost:5000/odata/Customers(1)/BillingAddress
 
 For the above request to be conventionally-routed, a controller action named `GetBillingAddress` that accepts the key parameter is expected:
 ```csharp
-public ActionResult GetBillingAddress([FromRoute] int key)
+public ActionResult<Address> GetBillingAddress([FromRoute] int key)
 {
     var customer = customers.SingleOrDefault(d => d.Id.Equals(key));
 
@@ -272,7 +272,7 @@ public ActionResult GetBillingAddress([FromRoute] int key)
         return NotFound();
     }
 
-    return Ok(customer.BillingAddress);
+    return customer.BillingAddress;
 }
 ```
 
@@ -299,7 +299,7 @@ The cast segment (e.g. `/PropertyRouting.Models.PostalAddress`) serves the purpo
 
 For the above request to be conventionally-routed, a controller action named `GetBillingAddressOfPostalAddress` that accepts the key parameter is expected:
 ```csharp
-public ActionResult GetBillingAddressOfPostalAddress([FromRoute] int key)
+public ActionResult<PostalAddress> GetBillingAddressOfPostalAddress([FromRoute] int key)
 {
     var customer = customers.SingleOrDefault(d => d.Id.Equals(key));
 
@@ -308,7 +308,7 @@ public ActionResult GetBillingAddressOfPostalAddress([FromRoute] int key)
         return NotFound();
     }
 
-    return Ok(billingAddress);
+    return billingAddress;
 }
 ```
 
@@ -349,7 +349,7 @@ GET http://localhost:5000/odata/Customers(3)/PropertyRouting.Models.EnterpriseCu
 
 For the above request to be conventionally-routed, a controller action named `GetRegisteredAddressFromEnterpriseCustomer` that accepts the key parameter is expected:
 ```csharp
-public ActionResult GetRegisteredAddressFromEnterpriseCustomer([FromRoute] int key)
+public ActionResult<Address> GetRegisteredAddressFromEnterpriseCustomer([FromRoute] int key)
 {
     var enterpriseCustomer = customers.OfType<EnterpriseCustomer>().SingleOrDefault(d => d.Id.Equals(key));
 
@@ -358,7 +358,7 @@ public ActionResult GetRegisteredAddressFromEnterpriseCustomer([FromRoute] int k
         return NotFound();
     }
 
-    return Ok(enterpriseCustomer.RegisteredAddress);
+    return enterpriseCustomer.RegisteredAddress;
 }
 ```
 
@@ -383,7 +383,7 @@ GET http://localhost:5000/odata/Customers(4)/PropertyRouting.Models.EnterpriseCu
 
 For the above request to be conventionally-routed, a controller action named `GetRegisteredAddressOfPostalAddressFromEnterpriseCustomer` that accepts the key parameter is expected:
 ```csharp
-public ActionResult GetRegisteredAddressOfPostalAddressFromEnterpriseCustomer([FromRoute] int key)
+public ActionResult<PostalAddress> GetRegisteredAddressOfPostalAddressFromEnterpriseCustomer([FromRoute] int key)
 {
     var enterpriseCustomer = customers.OfType<EnterpriseCustomer>().SingleOrDefault(d => d.Id.Equals(key));
 
@@ -392,7 +392,7 @@ public ActionResult GetRegisteredAddressOfPostalAddressFromEnterpriseCustomer([F
         return NotFound();
     }
 
-    return Ok(registeredAddress);
+    return registeredAddress;
 }
 ```
 
@@ -448,7 +448,7 @@ GET http://localhost:5000/odata/Customers(3)/PropertyRouting.Models.EnterpriseCu
 
 For the above request to be conventionally-routed, a controller action named `GetCreditLimitFromEnterpriseCustomer` that accepts the key parameter is expected:
 ```csharp
-public ActionResult GetCreditLimitFromEnterpriseCustomer([FromRoute] int key)
+public ActionResult<decimal> GetCreditLimitFromEnterpriseCustomer([FromRoute] int key)
 {
     var enterpriseCustomer = customers.OfType<EnterpriseCustomer>().SingleOrDefault(d => d.Id.Equals(key));
 
@@ -457,7 +457,7 @@ public ActionResult GetCreditLimitFromEnterpriseCustomer([FromRoute] int key)
         return NotFound();
     }
 
-    return Ok(enterpriseCustomer.CreditLimit);
+    return enterpriseCustomer.CreditLimit;
 }
 ```
 
@@ -482,7 +482,7 @@ GET http://localhost:5000/odata/Customers(1)/ContactPhones/$count
 For the above request to be conventionally-routed, a controller action named `GetContactPhones` that accepts the key parameter is expected. The action should be decorated with `EnableQuery` attribute. The `EnableQuery` attribute is responsible for generating the relevant query for determining the number of items:
 ```csharp
 [EnableQuery]
-public ActionResult GetContactPhones([FromRoute] int key)
+public ActionResult<IEnumerable<string>> GetContactPhones([FromRoute] int key)
 {
     var customer = customers.SingleOrDefault(d => d.Id.Equals(key));
 
@@ -491,7 +491,7 @@ public ActionResult GetContactPhones([FromRoute] int key)
         return NotFound();
     }
 
-    return Ok(customer.ContactPhones);
+    return customer.ContactPhones;
 }
 ```
 
