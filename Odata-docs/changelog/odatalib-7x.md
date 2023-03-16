@@ -28,6 +28,19 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
+## ODataLib 7.15.0 Release
+
+***Improvements***
+
+* Add support for writing JsonElement values in ODataWriter by @habbes in https://github.com/OData/odata.net/pull/2619
+* support reading relative context urls with bulk updates by @ElizabethOkerio in https://github.com/OData/odata.net/pull/2618
+* Cache container elements in ODataUriResolver model elements cache by @habbes in https://github.com/OData/odata.net/pull/2623
+* Update version to 7.15.0 by @habbes in https://github.com/OData/odata.net/pull/2629
+
+***Fixed bugs***
+
+* Fix ArgumentException regression in ProjectPlanCompiler by @habbes in https://github.com/OData/odata.net/pull/2624
+
 ## ODataLib 7.14.0 Release
 
 ***Fixed Bugs***
