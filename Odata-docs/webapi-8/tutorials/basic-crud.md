@@ -437,7 +437,9 @@ To support this request, we add a controller action named `Post` (or `PostCustom
 public ActionResult Post([FromBody] Customer customer)
 {
     db.Customers.Add(customer);
-
+    
+    db.SaveChanges();
+    
     return Created(customer);
 }
 ```
