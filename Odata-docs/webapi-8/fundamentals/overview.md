@@ -233,6 +233,16 @@ This will create OData services with the following url:
 - `<baseUrl>/api1` using the schema defined by `edmModel1`.
 - `<baseUrl>/api2` using the schema defined by `edmModel2`.
 
+> [!IMPORTANT]
+> The more specific route should be registered ahead of the more generic one.
+
+If you register two routes where one is more generic than the other, do it such that the more specific route is registered ahead of the generic one. For example, where `odata` is more generic than `odata/v1` you should register the routes as follows:
+```csharp
+AddOData(options => options
+    .AddRouteComponents("odata/v1", edmModel1)
+    .AddRouteComponents("odata", edmModel2);
+```
+
 ## Routing
 
 > [!IMPORTANT]
