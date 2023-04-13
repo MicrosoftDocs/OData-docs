@@ -67,7 +67,6 @@
     "globalMetadata": {
       "ms.service": "odata",
       "breadcrumb_path": "/odata/breadcrumb/toc.json",
-      "extendBreadcrumb": true,
       "feedback_system": "None", 
       "ms.author":"saumadan",
       "ms.topic": "conceptual",
