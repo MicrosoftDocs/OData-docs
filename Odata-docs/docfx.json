@@ -67,7 +67,7 @@
     "globalMetadata": {
       "ms.service": "odata",
       "breadcrumb_path": "/odata/breadcrumb/toc.json",
-      "feedback_system": "None", 
+      "feedback_system": "Standard", 
       "ms.author":"saumadan",
       "ms.topic": "conceptual",
       "uhfHeaderId": "MSDocsHeader-OData",
