@@ -150,14 +150,8 @@ namespace Lab01.Controllers
         [EnableQuery]
         public ActionResult<Customer> Get([FromRoute] int key)
         {
-            var item = customers.SingleOrDefault(d => d.Id.Equals(key));
-
-            if (item == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(item);
+            var item = customers.AsQueryable().Where(c=>c.Id==key);           
+            return SingleResult.Create(item);
         }
     }
 }
