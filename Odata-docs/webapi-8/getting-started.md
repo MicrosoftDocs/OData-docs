@@ -150,7 +150,7 @@ namespace Lab01.Controllers
         [EnableQuery]
         public SingleResult<Customer> Get([FromRoute] int key)
         {
-            var item = customers.AsQueryable().Where(c=>c.Id==key);           
+            var item = customers.AsQueryable().Where(c => c.Id == key);
             return SingleResult.Create(item);
         }
     }
