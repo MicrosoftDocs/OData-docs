@@ -376,20 +376,14 @@ The following JSON payload shows the expected response:
 ## Request a single entity
 To support this request, we add a controller action named `Get` (or `GetCustomer`) to the `CustomersController` class. The action should accept a single parameter named `key` of type `int` - same type as the entity's key property:
 ```csharp
-public ActionResult<Customer> Get([FromRoute] int key)
+public SingleResult<Customer> Get([FromRoute] int key)
 {
-    var customer = db.Customers.SingleOrDefault(d => d.Id == key);
-
-    if (customer == null)
-    {
-        return NotFound();
-    }
-
-    return Ok(customer);
+    var item = customers.AsQueryable().Where(c => c.Id == key);
+    return SingleResult.Create(item);
 }
 ```
 
-In the above block of code, we're using `LINQ` to write an expression to retrieve a entity with the specified key from the `Customers` table. We return a status 404 `NotFound` if we don't find any match; otherwise we return the matched entity.
+The SingleResult.Create method return a status 404 `NotFound` if we don't find any match; otherwise we return the matched entity.
 
 The `FromRoute` attribute is only added for documentation purposes to show that the parameter should be bound using route-data from the current request - it is neither necessary nor mandatory.
 
@@ -398,14 +392,8 @@ Note that for the built-in routing conventions to route the request successfully
 [HttpGet("odata/Customers({id})")]
 public ActionResult Get([FromRoute] int id)
 {
-    var customer = db.Customers.SingleOrDefault(d => d.Id == id);
-
-    if (customer == null)
-    {
-        return NotFound();
-    }
-
-    return Ok(customer);
+    var item = customers.AsQueryable().Where(c => c.Id == id);
+    return SingleResult.Create(item);
 }
 ```
 
