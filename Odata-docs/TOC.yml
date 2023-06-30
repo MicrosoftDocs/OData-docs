@@ -324,6 +324,8 @@
         href: /odata/client/using-blazor-wasm-with-odata-client
       - name: Grouping and aggregation
         href: /odata/client/grouping-and-aggregation
+      - name: Bulk Update Operations
+        href: /odata/client/bulk-update-operations
   - name: Spatial lib
     items:
         - name: Define spatial properties
