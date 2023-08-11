@@ -392,6 +392,10 @@
             href: /odata/webapiauth/getting-started
           - name: How permissions are applied
             href: /odata/webapiauth/how-permissions-are-applied
+  - name: Performance tips and guidelines
+    items:
+      - name: Marking IEdmModel as immutable
+        href: /performace/mark-edm-model-immutable.md
   - name: OData Connected Service
     items:
       - name: Getting Started
