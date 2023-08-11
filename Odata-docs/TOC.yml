@@ -291,7 +291,7 @@
         - name: Resource (Complex & Entity) Value
           href: /odata/odatalib/resource-value
         - name: Using Utf8JsonWriter for better performance
-          href: /odata/odatalib/using-utf8jsonwriter-for-better-performance
+          href: /odata/odatalib/v7/using-utf8jsonwriter-for-better-performance
     - name: Entity Data Model (EDM)
       items:
       # - name: Model Building
