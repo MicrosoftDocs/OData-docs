@@ -395,7 +395,7 @@
   - name: Performance tips and guidelines
     items:
       - name: Marking IEdmModel as immutable
-        href: /odata/performace/mark-edm-model-immutable
+        href: /odata/performance/mark-edm-model-immutable
   - name: OData Connected Service
     items:
       - name: Getting Started
