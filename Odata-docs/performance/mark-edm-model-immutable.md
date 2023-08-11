@@ -1,14 +1,15 @@
 ---
-title:  "Mark IEdmModel as immutable"
-description: A guide on how to improve performance by marking IEdmModel as immutable.
+title:  "Mark the IEdmModel as immutable"
+description: A guide on how to improve performance by marking the IEdmModel as immutable.
 date:   2023-08-11
 ms.date: 9/5/2022
 author: habbes
 ms.author: clhabins
 ---
 
-**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v8.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-odatalib](../includes/appliesto-odatalib-v7.md)]
+# Mark the `IEdmModel` as immutable
 
+**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v8.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-odatalib](../includes/appliesto-odatalib-v7.md)]
 
 OData libraries may perform multiple lookups in the `IEdmModel` when processing a request. Some of these lookups may be expensive, especially for large models with a lot of schema elements.
 We have some optimizations in place to reduce the performance overhead of these internal lookups, but some of these optimizations are only applicable if the library knows that the EDM model

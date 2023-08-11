@@ -7,6 +7,8 @@ author: habbes
 ms.author: clhabins
 ---
 
+# Using ODataUtf8JsonWriter to improve serialization performance
+
 **Applies To**:[!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v8.md)]
 
 `Microsoft.OData.Core` version 7.12.2 introduced a new JSON writer that writes to a `Stream` instead of a `TextWriter`. It also introduced a default implementation of this "stream-based" JSON writer that’s based on .NET’s [`Utf8JsonWriter`](/dotnet/api/system.text.json.utf8jsonwriter). Internally, it's referred to as `ODataUtf8JsonWriter`. This writer is more performant than the default JSON writer used in `Microsoft.OData.Core`. To learn more about the stream-based writer, [visit this page](/odata/odatalib/using-utf8jsonwriter-for-better-performance). In this article, we are going to show you how to configure your ASP.NET Core OData application to use the `ODataUtf8JsonWriter`.
