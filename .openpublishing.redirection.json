@@ -1,8 +1,8 @@
 {
   "redirections": [
     {
-      "source_path": "/odatalib/v7/using-ut8jsonwriter-for-better-performance",
-      "redirect_url": "/odata/odatalib/using-ut8jsonwriter-for-better-performance",
+      "source_path": "odatalib/v7/using-ut8jsonwriter-for-better-performance",
+      "redirect_url": "odatalib/using-ut8jsonwriter-for-better-performance",
       "redirect_document_id": true
     }
   ]
