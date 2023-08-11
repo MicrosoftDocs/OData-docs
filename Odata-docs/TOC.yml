@@ -101,6 +101,8 @@
             href: /odata/webapi-8/tutorials/basic-crud
           - name: Implementing a custom skip token handler
             href: /odata/webapi-8/tutorials/custom-skiptokenhandler
+          - name: Using ODataUtf8JsonWriter to improve serialization performance
+            href: /odata/webapi-8/tutorials/using-odatautf8jsonwriter-to-improve-serialization-performance
   - name: ASP.NET WebAPI
     items:
       - name: Getting started
