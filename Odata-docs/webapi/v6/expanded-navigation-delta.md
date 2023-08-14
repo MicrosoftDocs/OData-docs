@@ -5,6 +5,7 @@ ms.author: saumadan
 ms.date: 7/1/2019
 ms.topic: article
  
+description: Learn about Expanded Navigation Delta in OData WebAPI, including new APIs, writing & reading expanded properties, and more. Boost your OData skills now.
 ---
 # Expand navigation property support in delta response
 **Applies To**: [!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v6.md)]
