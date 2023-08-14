@@ -1,6 +1,6 @@
 ---
 title: "Customizable type facets promotion in URI parsing in webapi"
-description: ""
+description: "Discover Customizable Type Facets Promotion in OData WebAPI with Microsoft's library. Learn to customize rules for precision & scale conversions."
 author: madansr7
 ms.author: saumadan
 ms.date: 7/1/2019
