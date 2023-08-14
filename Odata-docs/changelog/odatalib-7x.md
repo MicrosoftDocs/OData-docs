@@ -28,6 +28,38 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
+## ODataLib 7.17.0 Release
+
+***Features***
+* Feature/deep insert request in [#2653](https://github.com/OData/odata.net/pull/2653)
+
+***Improvements***
+
+* Implement IAsyncDisposable for ODataMessageWriter in [#2683](https://github.com/OData/odata.net/pull/2683)
+
+***Fixed Bugs***
+
+* Fix nightly hang issue in [#2670](https://github.com/OData/odata.net/pull/2670)
+* Fix nuget installer issue in [#2671](https://github.com/OData/odata.net/pull/2671)
+* Fix issue in finding navigation target for type segment present in OData path in [#2690](https://github.com/OData/odata.net/pull/2690)
+
+## ODataLib 7.16.0 Release
+
+***Features***
+* Bulk update request in [#2561](https://github.com/OData/odata.net/pull/2561)
+* Feature/read bulk updates in [#2627](https://github.com/OData/odata.net/pull/2627)
+* Add bulkupdateasync in [#2655](https://github.com/OData/odata.net/pull/2655)
+
+***Improvements***
+
+* Support declared Edm.Untyped property serialization using ODataPrimitiveValue, etc in [#2664](https://github.com/OData/odata.net/pull/2664)
+* Write the nested resource within nested collection in collection in [#2666](https://github.com/OData/odata.net/pull/2666)
+
+***Fixed Bugs***
+
+* Fix function path validation in [#2635](https://github.com/OData/odata.net/pull/2635)
+* Fix JsonElementValue support edge cases and bugs in [#2652](https://github.com/OData/odata.net/pull/2652)
+
 ## ODataLib 7.15.0 Release
 
 ***Improvements***
