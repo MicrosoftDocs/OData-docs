@@ -127,7 +127,7 @@ These restrictions are added as [capability annotations](https://github.com/oasi
 
 Now let's configure the different services and the app builder in the `Startup.cs` file.
 
-Let's modify the `ConfgiureServices` method so that it looks like this:
+Let's modify the `ConfigureServices` method so that it looks like this:
 
 ```c#
 public void ConfigureServices(IServiceCollection services)
