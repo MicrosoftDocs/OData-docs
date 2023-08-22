@@ -99,6 +99,8 @@
         items:
           - name: Basic CRUD operations
             href: /odata/webapi-8/tutorials/basic-crud
+          - name: Basic CRUD operations in F#
+            href: /odata/webapi-8/tutorials/basic-crud-in-fsharp
           - name: Implementing a custom skip token handler
             href: /odata/webapi-8/tutorials/custom-skiptokenhandler
   - name: ASP.NET WebAPI
