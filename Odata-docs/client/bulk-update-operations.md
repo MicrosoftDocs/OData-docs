@@ -174,6 +174,17 @@ context.AddLink(customer, "Orders", ordersCollection[0]);
 context.AddLink(customer, "Orders", ordersCollection[1]);
 
 DataServiceResponse response = await context.BulkUpdateAsync(customer);
+
+// You can traverse the DataServiceResponse object like below: 
+var changeOperationResponse = response.First() as ChangeOperationResponse;
+EntityDescriptor entityDescriptor = changeOperationResponse.Descriptor as EntityDescriptor;
+var returnedCustomer = entityDescriptor.Entity as Customer;
+var nestedResponse = changeOperationResponse.NestedResponses[0] as ChangeOperationResponse;
+LinkDescriptor orderDescriptor = nestedResponse.Descriptor as LinkDescriptor;
+var linkedOrder = orderDescriptor.Target as Order;
+
+Assert.Equal("Customer1", returnedCustomer.Name);
+Assert.Equal(1, linkedOrder.ID);
 ```
 
 ```http
