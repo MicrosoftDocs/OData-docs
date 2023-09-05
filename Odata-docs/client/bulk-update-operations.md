@@ -254,4 +254,19 @@ Request Body
 ## Things to Note: 
 When calling the `BulkUpdateAsync` method, you need to pass in the top-level objects that you want to perform a bulk update on. 
 
-If the request gets processed successfully, the `DataServiceResponse` returned from the call to `BulkUpdateAsync` will have all the `ChangeOperationResponse`'s for all the operations in the bulk update request. If any of the operations failed, then the failed operation's `ChangeOperationResponse`'s Descriptor's `SaveResultWasProcessed` value will be `Unchanged`. Also, the Descriptor's `SaveError` property will have the error of the failed operation. 
+If the request gets processed successfully, the `DataServiceResponse` returned from the call to `BulkUpdateAsync` will have all the `ChangeOperationResponse`'s for all the operations in the bulk update request. If any of the operations failed, then the failed operation's `ChangeOperationResponse`'s Descriptor's `SaveResultWasProcessed` value will be `Unchanged`. Also, the Descriptor's `SaveError` property will have the error of the failed operation.
+
+```csharp
+
+// ...
+
+DataServiceResponse response = await context.BulkUpdateAsync(customer);
+
+var customerChangeOperationResponse = response.FirstOrDefault() as ChangeOperationResponse;
+
+// For a failed operation, the SaveResultWasProcessed value is equal to EntityStates.Unchanged.
+// For a successful operation, the SaveResultWasProcessed value is equal to either EntityStates.Modified or EntityStates.Added or EntityStates.Deleted depending on the performed operation. 
+customerChangeOperationResponse.Descriptor.SaveResultWasProcessed = EntityStates.Unchanged
+
+
+```
