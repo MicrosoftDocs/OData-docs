@@ -38,7 +38,7 @@ public class Order
 }
 ```
 ### Sample Request 1
-Thie sample request below demonstrates how to create a bulk update request in OData client to create 2 new customers in a single request:
+This sample request below demonstrates how to create a bulk update request in OData client to create 2 new customers in a single request:
 
 How to make the above request from OData client.
 
