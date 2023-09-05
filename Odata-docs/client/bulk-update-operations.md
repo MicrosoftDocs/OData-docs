@@ -184,7 +184,7 @@ LinkDescriptor orderDescriptor = nestedResponse.Descriptor as LinkDescriptor;
 var linkedOrder = orderDescriptor.Target as Order;
 
 Assert.Equal("Customer1", returnedCustomer.Name);
-Assert.Equal(1, linkedOrder.ID);
+Assert.Equal(1, linkedOrder.Id);
 ```
 
 ```http
