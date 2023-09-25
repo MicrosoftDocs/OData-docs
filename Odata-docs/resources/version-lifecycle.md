@@ -1,7 +1,7 @@
 ---
 title : "Supported library version lifecycle"
-author: unchase
-ms.date: 7/1/2019
+author: gdebruin
+ms.date: 9/25/2023
 ---
 
 # Accidental breaking change releases
