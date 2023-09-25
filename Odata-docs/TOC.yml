@@ -492,6 +492,8 @@
       href: /odata/resources/support
     - name: Roadmap
       href: /odata/resources/roadmap
+    - name: Supported library version lifecycle
+      href: /odata/resources/version-lifecycle
 - name: Changelog
   items:
     - name: OData lib changes
