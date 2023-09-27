@@ -268,7 +268,6 @@ Request Body
 ![A sample screenshot of how the ChangeOperationResponse looks like](../assets/descriptor-status.png)
 
 ```csharp
-
 // ...
 
 DataServiceResponse response = await context.BulkUpdateAsync(customer);
@@ -278,6 +277,5 @@ var customerChangeOperationResponse = response.FirstOrDefault() as ChangeOperati
 // For a failed operation, the SaveResultWasProcessed value is equal to EntityStates.Unchanged.
 // For a successful operation, the SaveResultWasProcessed value is equal to either EntityStates.Modified or EntityStates.Added or EntityStates.Deleted depending on the performed operation. 
 customerChangeOperationResponse.Descriptor.SaveResultWasProcessed = EntityStates.Unchanged
-
 
 ```
