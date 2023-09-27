@@ -38,9 +38,7 @@ public class Order
 }
 ```
 ### Sample Request 1
-This sample request below demonstrates how to create a bulk update request in OData client to create 2 new customers in a single request:
-
-How to make the above request from OData client.
+The following code demonstrates how to create 2 customers in a bulk update request:
 
 ```csharp
 var context = new Container(new Uri("http://localhost:6285/odata/"));
@@ -65,32 +63,32 @@ context.AddToCustomers(customer2)
 
 DataServiceResponse response = await context.BulkUpdateAsync(customer1, customer2);
 ```
+The code above generates the following bulk update request payload: 
 
 ```http
 PATCH http://localhost:6285/odata/Customers
 ```
-Request Body
 
 ```json
 {
   "@context": "http://localhost:6285/odata/$metadata#Customers/$delta",
-  "value": [{
-	"Id": 1,
-	"Name": "Customer1",
-	"Age": 26
-	},
-	{
-	  "Id": 2,
-	  "Name": "Customer2",
-	  "Age": 34
-	}]
+  "value": [
+    {
+      "Id": 1,
+      "Name": "Customer1",
+      "Age": 26
+    },
+    {
+      "Id": 2,
+      "Name": "Customer2",
+      "Age": 34
+    }
+  ]
 }
 ```
 
 ### Sample Request 2
-This sample request demonstrates how to create a bulk update request to create a new customer and 2 new orders and link the 2 created orders to the created customer.
-
-How to make the above request from OData client.
+The following code demonstrates how to create 1 customer and 2 orders, and then link the created orders to the created customer in a bulk update request:
 
 ```csharp
 var context = new Container(new Uri("http://localhost:6285/odata/"));
@@ -102,7 +100,7 @@ var customer = new Customer
     Age = 26
 };
 
-context.AddToCustomers(customer1);
+context.AddToCustomers(customer);
 
 var order = new Order
 {
@@ -116,13 +114,12 @@ var order2 = new Order
     Amount = 11.54
 }
 
-context.AddToCustomers(customer2);
-
 context.AddRelatedOject(customer, "Orders", order);
 context.AddRelatedObject(customer, "Orders", order2);
 
 DataServiceResponse response = await context.BulkUpdateAsync(customer);
 ```
+The code above generates the following bulk update request payload: 
 
 ```http
 PATCH http://localhost:6285/odata/Customers
@@ -132,25 +129,27 @@ Request Body
 ```json
 {
   "@context": "http://localhost:6285/odata/Customers/$delta",
-  "value": [{
-	"Id": 1,
-	"Name": "Customer1",
-	"Orders@delta": [{
-	  "Id": 1,
-	  "Amount": 10.24,
-	  },
-	  {
-		"Id": 2,
-		"Amount": 11.54
-	  }]
-  }]
+  "value": [
+    {
+      "Id": 1,
+      "Name": "Customer1",
+      "Orders@delta": [
+        {
+          "Id": 1,
+          "Amount": 10.24
+        },
+        {
+          "Id": 2,
+          "Amount": 11.54
+        }
+      ]
+    }
+  ]
 }
 ```
 
 ### Sample Request 3
-This sample request demonstrates how to create a new customer and update the amounts of 2 existing orders then link the updated orders to the created customer.
-
-How to make the above request from OData client.
+The following code demonstrates how to create 1 customer, update the amounts of 2 existing orders, and then link the updated orders to the created customer in a bulk update request:.
 
 ```csharp
 var context = new Container(new Uri("http://localhost:6285/odata/"));
@@ -186,6 +185,7 @@ var linkedOrder = orderDescriptor.Target as Order;
 Assert.Equal("Customer1", returnedCustomer.Name);
 Assert.Equal(1, linkedOrder.Id);
 ```
+The code above generates the following bulk update request payload: 
 
 ```http
 PATCH http://localhost:6285/odata/Customers
@@ -194,25 +194,27 @@ Request Body
 ```json
 {
   "@context": "http://localhost:6285/odata/Customers/$delta",
-  "value": [{
-	"Id": 1,
-	"Name": "Customer1",
-	"Orders@delta": [{
-	  "@id":"Orders(1)", 
-	  "Amount": 14.12
-	  },
-	  {
-		"@id": "Orders(2)",
-		"Amount": 23.21
-	  }]
-  }]
+  "value": [
+    {
+      "Id": 1,
+      "Name": "Customer1",
+      "Orders@delta": [
+        {
+          "@id": "Orders(1)",
+          "Amount": 14.12
+        },
+        {
+          "@id": "Orders(2)",
+          "Amount": 23.21
+        }
+      ]
+    }
+  ]
 }
 ```
 
 ### Sample Request 4
-This sample request demonstrates how to update the age of an existing customer and remove a link to an existing order.
-
-How to make the above request from OData client.
+This sample request demonstrates how to update the age of an existing customer and remove a link to an existing order in a bulk update request:
 
 ```csharp
 var context = new Container(new Uri("http://localhost:6285/odata/"));
@@ -229,6 +231,7 @@ context.DeleteLink(customer, "Orders", order);
 
 DataServiceResponse response = await context.BulkUpdateAsync(customer);
 ```
+The code above generates the following bulk update request payload: 
 
 ```http
 PATCH http://localhost:6285/odata/Customers
@@ -237,24 +240,32 @@ Request Body
 ```json
 {
   "@context": "http://localhost:6285/odata/Customers/$delta",
-  "value": [{
-	"Id": 1,
-	"Name": "Customer1",
-	"Age": 56,
-	"Orders@delta": [{
-	  "@removed": {
-	    "reason": "changed"
-		},
-		"@id": "http://localhost:6285/odata/Orders(2)"
-	  }]
-	}]
+  "value": [
+    {
+      "Id": 1,
+      "Name": "Customer1",
+      "Age": 56,
+      "Orders@delta": [
+        {
+          "@removed": {
+            "reason": "changed"
+          },
+          "@id": "http://localhost:6285/odata/Orders(2)"
+        }
+      ]
+    }
+  ]
 }
 ```
 
 ## Things to Note: 
-When calling the `BulkUpdateAsync` method, you need to pass in the top-level objects that you want to perform a bulk update on. 
+1. The `BulkUpdateAsync` method should be called with the top-level objects that you want to perform a bulk update on.
 
-If the request gets processed successfully, the `DataServiceResponse` returned from the call to `BulkUpdateAsync` will have all the `ChangeOperationResponse`'s for all the operations in the bulk update request. If any of the operations failed, then the failed operation's `ChangeOperationResponse`'s Descriptor's `SaveResultWasProcessed` value will be `Unchanged`. Also, the Descriptor's `SaveError` property will have the error of the failed operation.
+2. There is a synchronous method - BulkUpdate- that works as the `BulkUpdateAsync` method.
+
+3. If the request gets processed successfully, the `DataServiceResponse` returned from the call to `BulkUpdateAsync` will have all the `ChangeOperationResponse`'s for all the operations in the bulk update request. If any of the operations failed, then the failed operation's `ChangeOperationResponse`'s descriptor's `SaveResultWasProcessed` value will be `Unchanged`. Also, the descriptor's `SaveError` property will have the error of the failed operation.
+
+![A sample screenshot of how the ChangeOperationResponse looks like](../assets/descriptor-status.png)
 
 ```csharp
 
