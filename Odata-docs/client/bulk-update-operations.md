@@ -68,6 +68,7 @@ The code above generates the following bulk update request payload:
 ```http
 PATCH http://localhost:6285/odata/Customers
 ```
+Request body:
 
 ```json
 {
@@ -124,7 +125,7 @@ The code above generates the following bulk update request payload:
 ```http
 PATCH http://localhost:6285/odata/Customers
 ```
-Request Body
+Request body:
 
 ```json
 {
@@ -190,7 +191,8 @@ The code above generates the following bulk update request payload:
 ```http
 PATCH http://localhost:6285/odata/Customers
 ```
-Request Body
+Request body:
+
 ```json
 {
   "@context": "http://localhost:6285/odata/Customers/$delta",
@@ -236,7 +238,8 @@ The code above generates the following bulk update request payload:
 ```http
 PATCH http://localhost:6285/odata/Customers
 ```
-Request Body
+Request body:
+
 ```json
 {
   "@context": "http://localhost:6285/odata/Customers/$delta",
@@ -261,7 +264,7 @@ Request Body
 ## Things to Note: 
 1. The `BulkUpdateAsync` method should be called with the top-level objects that you want to perform a bulk update on.
 
-2. There is a synchronous method - BulkUpdate- that works as the `BulkUpdateAsync` method.
+2. There is a complementary `BulkUpdate` method applicable in synchronous scenarios.
 
 3. If the request gets processed successfully, the `DataServiceResponse` returned from the call to `BulkUpdateAsync` will have all the `ChangeOperationResponse`'s for all the operations in the bulk update request. If any of the operations failed, then the failed operation's `ChangeOperationResponse`'s descriptor's `SaveResultWasProcessed` value will be `Unchanged`. Also, the descriptor's `SaveError` property will have the error of the failed operation.
 
@@ -276,6 +279,6 @@ var customerChangeOperationResponse = response.FirstOrDefault() as ChangeOperati
 
 // For a failed operation, the SaveResultWasProcessed value is equal to EntityStates.Unchanged.
 // For a successful operation, the SaveResultWasProcessed value is equal to either EntityStates.Modified or EntityStates.Added or EntityStates.Deleted depending on the performed operation. 
-customerChangeOperationResponse.Descriptor.SaveResultWasProcessed = EntityStates.Unchanged
+customerChangeOperationResponse.Descriptor.SaveResultWasProcessed == EntityStates.Unchanged
 
 ```
