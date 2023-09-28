@@ -26,6 +26,22 @@ You can install or update the NuGet package for ASP.NET Core OData using the [Pa
 
 ---
 
+## [8.2.2](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.2.2)
+
+See details at: https://github.com/OData/AspNetCoreOData/releases/tag/8.2.2
+
+## [8.2.1](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.2.1)
+
+See details at: https://github.com/OData/AspNetCoreOData/releases/tag/8.2.1
+
+## [8.2.0](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.2.0)
+
+See details at: https://github.com/OData/AspNetCoreOData/releases/tag/8.2.0
+
+## [8.1.2](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.1.2)
+
+See details at: https://github.com/OData/AspNetCoreOData/releases/tag/8.1.2
+
 ## [8.1.1](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/8.1.1)
 
 See details at: https://github.com/OData/AspNetCoreOData/releases/tag/8.1.1
