@@ -267,18 +267,16 @@ Request body:
 2. There is a complementary `BulkUpdate` method applicable in synchronous scenarios.
 
 3. If the request gets processed successfully, the `DataServiceResponse` returned from the call to `BulkUpdateAsync` will have all the `ChangeOperationResponse`'s for all the operations in the bulk update request. If any of the operations failed, then the failed operation's `ChangeOperationResponse`'s descriptor's `SaveResultWasProcessed` value will be `Unchanged`. Also, the descriptor's `SaveError` property will have the error of the failed operation.
-
 ![A sample screenshot of how the ChangeOperationResponse looks like](../assets/descriptor-status.png)
+	```csharp
+	// ...
 
-```csharp
-// ...
+	DataServiceResponse response = await context.BulkUpdateAsync(customer);
 
-DataServiceResponse response = await context.BulkUpdateAsync(customer);
+	var customerChangeOperationResponse = response.FirstOrDefault() as ChangeOperationResponse;
 
-var customerChangeOperationResponse = response.FirstOrDefault() as ChangeOperationResponse;
+	// For a failed operation, the SaveResultWasProcessed value is equal to EntityStates.Unchanged.
+	// For a successful operation, the SaveResultWasProcessed value is equal to either EntityStates.Modified or EntityStates.Added or EntityStates.Deleted depending on the performed operation. 
+	customerChangeOperationResponse.Descriptor.SaveResultWasProcessed == EntityStates.Unchanged
 
-// For a failed operation, the SaveResultWasProcessed value is equal to EntityStates.Unchanged.
-// For a successful operation, the SaveResultWasProcessed value is equal to either EntityStates.Modified or EntityStates.Added or EntityStates.Deleted depending on the performed operation. 
-customerChangeOperationResponse.Descriptor.SaveResultWasProcessed == EntityStates.Unchanged
-
-```
+	```
