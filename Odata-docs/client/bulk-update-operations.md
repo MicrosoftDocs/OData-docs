@@ -275,9 +275,10 @@ Request body:
 
 	var customerChangeOperationResponse = response.FirstOrDefault() as ChangeOperationResponse;
 
-	// For a failed operation, the SaveResultWasProcessed value is equal to EntityStates.Unchanged.
-	// For a successful operation, the SaveResultWasProcessed value is equal to either EntityStates.Modified 
-	//or EntityStates.Added or EntityStates.Deleted depending on the performed operation. 
+	// For a failed operation, the SaveResultWasProcessed value is equal to 
+	// EntityStates.Unchanged. For a successful operation, the 
+	// SaveResultWasProcessed value is equal to either EntityStates.Modified 
+	// or EntityStates.Added or EntityStates.Deleted depending on the performed operation. 
 	customerChangeOperationResponse.Descriptor.SaveResultWasProcessed == EntityStates.Unchanged
 
 	```
