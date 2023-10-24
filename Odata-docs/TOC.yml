@@ -332,6 +332,8 @@
         href: /odata/odatalib/navigation-partner
       - name: Optional parameters
         href: /odata/odatalib/optional-parameters
+      - name: Set schema for out-of-line annotations
+        href: /odata/odatalib/edm/set-annotations-schema
     - name: Batching
       items:
         - name: Batching requests
