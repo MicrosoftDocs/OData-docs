@@ -1,5 +1,6 @@
 ---
 title : "Supported library version lifecycle"
+description: "This section describes what support policy customers can expect for the lifecycle of different OData library versions."
 author: gdebruin
 ms.date: 9/25/2023
 ---
