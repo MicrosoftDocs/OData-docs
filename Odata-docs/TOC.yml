@@ -394,7 +394,7 @@
             href: /odata/webapiauth/how-permissions-are-applied
   - name: Performance tips and guidelines
     items:
-      - name: Marking IEdmModel as immutable
+      - name: Marking the Edm model as immutable
         href: /odata/performance/mark-edm-model-immutable
   - name: OData Connected Service
     items:
