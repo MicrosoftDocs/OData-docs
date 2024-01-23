@@ -1,6 +1,6 @@
 ---
 title:  "Using ODataUtf8JsonWriter to improve serialization performance"
-description: Learn how to configure ASP.NET Core OData 8 to use Utf8JsonWriter to improve serialization performance. 
+description: Learn how to configure ASP.NET Core OData 8 to use ODataUtf8JsonWriter to improve serialization performance. 
 date:   2023-08-11
 ms.date: 08/11/2023
 author: habbes
