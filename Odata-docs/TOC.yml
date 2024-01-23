@@ -394,8 +394,14 @@
             href: /odata/webapiauth/how-permissions-are-applied
   - name: Performance tips and guidelines
     items:
+      - name: Overview
+        href: /odata/performance/overview
       - name: Marking the Edm model as immutable
         href: /odata/performance/mark-edm-model-immutable
+      - name: Using ODataUtf8JsonWriter
+        href: /odata/performance/using-odatautf8jsonwriter
+      - name: Disable writer validations
+        href: /odata/performance/disable-writer-validations
   - name: OData Connected Service
     items:
       - name: Getting Started
