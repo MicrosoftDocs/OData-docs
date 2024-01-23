@@ -29,7 +29,7 @@ IEdmModel GetEdmModel()
 
 It is recommended to mark the EDM model as immutable since most applications do not modify the model after it has been constructed.
 
-It is however important to note that the library makes no effort to ensure or verify that the model actually doesn't change after calling this method. It is the responsibility of the caller to ensure that the model is not be modified after this `MarkAsImmutable` is called. If the model is modified after calling `MarkAsImmutable` you may experience unexpected behavior. The following code snippet shows an example of incorrect usage of this method:
+It is however important to note that the library makes no effort to ensure or verify that the model actually doesn't change after calling this method. It is the responsibility of the caller to ensure that the model is not modified after the `MarkAsImmutable` method is called. Modifying the model after `MarkAsImmutable` method has been called may lead to unexpected behavior. The following code snippet shows an example of incorrect usage of this method:
 
 ```csharp
 using Microsoft.OData.Edm;
