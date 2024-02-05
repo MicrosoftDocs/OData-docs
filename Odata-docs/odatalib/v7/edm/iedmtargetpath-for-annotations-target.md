@@ -1,6 +1,6 @@
 ---
-title: "Set schema for out-of-line annotations"
-description: "Set schema for out-of-line annotations"
+title: "Use IEdmTargetPath for out-of-line annotations target"
+description: "Use IEdmTargetPath for out-of-line annotations target"
 author: kenitoinc
 ms.author: kemunga
 ms.date: 05/2/2023

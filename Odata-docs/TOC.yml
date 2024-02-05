@@ -334,6 +334,8 @@
         href: /odata/odatalib/optional-parameters
       - name: Set schema for out-of-line annotations
         href: /odata/odatalib/edm/set-annotations-schema
+      - name: Use IEdmTargetPath for out-of-line annotations target
+        href: /odata/odatalib/edm/iedmtargetpath-for-annotations-target
     - name: Batching
       items:
         - name: Batching requests
