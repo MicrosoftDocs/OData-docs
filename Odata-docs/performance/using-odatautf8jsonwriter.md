@@ -15,6 +15,8 @@ The OData Core library implements a wrapper on top of the `Utf8JsonWriter` named
 
 To enable `ODataUtf8JsonWriter`, consult the following guides depending on the library you are using in your application:
 
-- [Enable `ODataUt8fJsonWriter` when using `Microsoft.OData.Core` directly](../odatalib/v7/using-utf8jsonwriter-for-better-performance.md)
-- [Enable `ODataUtf8JsonWriter` when using `Microsoft.AspNetCore.OData` 8.x](../webapi-8/tutorials/using-odatautf8jsonwriter-to-improve-serialization-performance.md)
-- [Enable `ODataUt8fJsonWriter` when using `Microsoft.AspNetCore.OData` 7.x](../webapi/using-utf8jsonwriter-to-improve-serialization-performance.md)
+- [Enable `ODataUt8fJsonWriter` when using `Microsoft.OData.Core` directly](/odata/odatalib/using-utf8jsonwriter-for-better-performance)
+- [Enable `ODataUtf8JsonWriter` when using `Microsoft.AspNetCore.OData` 8.x](/odata/webapi-8/tutorials/using-odatautf8jsonwriter-to-improve-serialization-performance)
+- [Enable `ODataUt8fJsonWriter` when using `Microsoft.AspNetCore.OData` 7.x](/odata/webapi/using-utf8jsonwriter-to-improve-serialization-performance)
+
+When using `ODataUtf8JsonWriter`, consider using the [`UnsafeRelaxedJsonEscaping`](/dotnet/api/system.text.encodings.web.javascriptencoder.unsaferelaxedjsonescaping) encoder to perform escaping as described [here](/odata/odatalib/using-utf8jsonwriter-for-better-performance#choosing-a-javascriptencoder). This encoder is more relaxed and escapes fewer characters. This can improve performance over the default encoder which escapes more character. Frequent escaping of large strings may result in additional performance and memory overhead.
