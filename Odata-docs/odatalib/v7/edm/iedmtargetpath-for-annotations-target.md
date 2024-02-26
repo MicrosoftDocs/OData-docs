@@ -1,22 +1,20 @@
 ---
-title: "Use IEdmTargetPath for out-of-line annotations target"
-description: "Use IEdmTargetPath for out-of-line annotations target"
+title: "Enable annotations on target path"
+description: "Enable annotations on target path"
 author: kenitoinc
 ms.author: kemunga
 ms.date: 05/2/2023
 ms.topic: article
  
 ---
-# Use IEdmTargetPath for out-of-line annotations target
+# Enable annotations on target path
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../../includes/appliesto-odatalib-v7.md)]
 
-The Edm library lets you [define annotations](/odata/odatalib/edm/define-annotations).
+The Edm library lets you [define annotations](/odata/odatalib/edm/define-annotations).When annotations relevant to a particular model element are expressed **out-of-line/externally** in an `Annotations` element, a path expression that uniquely identifies the target element must be specified. [This](/odata/odatalib/edm/set-annotations-schema) page demonstrates how to set the target for **out-of-line** annotations.
 
-[This](/odata/odatalib/edm/set-annotations-schema) documentation describes how to define **out-of-line** annotations that targets a model element.
+## Introduction
 
-## Background
-
-Below is a simple Edm model with an out-of-line annotation that targets a model element.
+In the previous versions of `Microsoft.OData.Edm` library, we could annotate model elements, however we couldn't annotate paths to a model element. Consider the follow sample metadata describing a service where a model element Employee defined in the Ns namespace has annotations defined out-of-line in the Default namespace:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -35,9 +33,18 @@ Below is a simple Edm model with an out-of-line annotation that targets a model 
 </edmx:Edmx>
 ```
 
-`IEdmTargetPath` allows us to define out-of-line annotations that target a path to a model element.
+Take note of the **Target** attribute on the `Annotations` element. It specifies the path expression to the target model element, in this case the fully qualified name of the element comprising of the namespace and the element name.
+
+There are scenarios where we need to annotate on a path. For example, a customer can annotate different permissions to a path.
+Users could have permissions to access path `/Me/Inbox` but could not have permissions to access path `/Admin/Inbox`.
+
+[Target Path](https://docs.oasis-open.org/odata/odata-csdl-xml/v4.01/odata-csdl-xml-v4.01.html#sec_TargetPath) is a path to a model element. The allowed path expressions are:
+
+- The qualified name of an entity container, followed by a forward slash and the name of a container child element
+- The target path of a container child followed by a forward slash and one or more forward-slash separated property, navigation property, or type-cast segments
 
 Below are examples of paths to a model element.
+
 ```
 MySchema.MyEntityContainer/MyEntitySet/MyProperty
 MySchema.MyEntityContainer/MyEntitySet/MyNavigationProperty
@@ -46,6 +53,14 @@ MySchema.MyEntityContainer/MyEntitySet/MySchema.MyEntityType/MyNavProperty
 MySchema.MyEntityContainer/MyEntitySet/MyComplexProperty/MyProperty
 MySchema.MyEntityContainer/MyEntitySet/MyComplexProperty/MyNavigationProperty
 MySchema.MyEntityContainer/MySingleton/MyComplexProperty/MyNavigationProperty
+```
+
+[IEdmTargetPath](https://github.com/OData/odata.net/blob/57572612f1ff833d395b44e6b2c498d7d0d31890/src/Microsoft.OData.Edm/Schema/Interfaces/IEdmTargetPath.cs#L15) is an interface in the `Microsoft.OData.Edm` that allows us to define a target a path.
+
+[EdmTargetPath](https://github.com/OData/odata.net/blob/57572612f1ff833d395b44e6b2c498d7d0d31890/src/Microsoft.OData.Edm/Schema/EdmTargetPath.cs#L14) is a class that implements the `IEdmTargetPath` interface. Below is an example of how we use the `EdmTargetPath` class to define a target path.
+
+```csharp
+EdmTargetPath targetPath = new EdmTargetPath(sampleModel.Container, sampleModel.EntitySet, sampleModel.NameProperty);
 ```
 
 Below is a simple Edm model with an out-of-line annotation that targets a path to a model element.
@@ -67,6 +82,8 @@ Below is a simple Edm model with an out-of-line annotation that targets a path t
 </edmx:Edmx>
 ```
 
+We will look into implementations of reading and writing out-of-line annotations in sections below.
+
 ## Create a .NET Core console application
 Create a .NET Core console application and import the `Microsoft.OData.Edm` nuget package:
 
@@ -87,93 +104,53 @@ dotnet add package Microsoft.OData.Edm
 
 ---
 
-## Configure the Edm model
-Add a _SampleModel.cs_ and replace the code with the following code
+## Define the Edm model
+In the _Program.cs_ file, add the GetEdmModel method.
 
 ```csharp
-using Microsoft.OData.Edm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace AnnotationsTarget
 {
-    internal class SampleModel
+    internal class Program
     {
-        public SampleModel()
+        static void Main(string[] args)
         {
-            this.Model = new EdmModel();
-            this.Address = new EdmComplexType("NS", "Address");
-            this.Address.AddStructuralProperty("Road", EdmCoreModel.Instance.GetString(false));
-            this.Model.AddElement(this.Address);
-
-            this.DerivedAddress = new EdmComplexType("NS", "DerivedAddress", this.Address);
-            this.DerivedAddress.AddStructuralProperty("MyRoad", EdmCoreModel.Instance.GetString(false));
-            this.Model.AddElement(this.DerivedAddress);
-
-            this.Customer = new EdmEntityType("NS", "Customer");
-            this.Customer.AddKeys(this.Customer.AddStructuralProperty("Id", EdmCoreModel.Instance.GetInt32(false)));
-            this.Customer.AddStructuralProperty("Name", EdmPrimitiveTypeKind.String, isNullable: false);
-            this.Customer.AddStructuralProperty("Address", new EdmComplexTypeReference(this.Address, false));
-            this.Model.AddElement(this.Customer);
-
-            this.VipCustomer = new EdmEntityType("NS", "VipCustomer", this.Customer);
-            this.Model.AddElement(this.VipCustomer);
-            this.City = new EdmEntityType("NS", "City");
-            this.City.AddStructuralProperty("Name", EdmPrimitiveTypeKind.String, isNullable: false);
-            this.Model.AddElement(this.City);
-
-            this.NavUnderComplex = this.Address.AddUnidirectionalNavigation(
-                new EdmNavigationPropertyInfo()
-                {
-                    Name = "City",
-                    Target = this.City,
-                    TargetMultiplicity = EdmMultiplicity.One,
-                });
-
-            this.NavUnderCustomer = this.Customer.AddUnidirectionalNavigation(
-                new EdmNavigationPropertyInfo()
-                {
-                    Name = "Cities",
-                    Target = this.City,
-                    TargetMultiplicity = EdmMultiplicity.Many,
-                });
-
-            this.NameProperty = this.Customer.DeclaredProperties.Where(x => x.Name == "Name").FirstOrDefault();
-            this.AddressProperty = this.Customer.DeclaredProperties.Where(x => x.Name == "Address").FirstOrDefault();
-
-            this.Container = new EdmEntityContainer("NS", "Default");
-            this.EntitySet = new EdmEntitySet(this.Container, "Customers", this.Customer);
-            this.Singleton = new EdmSingleton(this.Container, "Me", this.Customer);
-            this.Container.AddElement(this.EntitySet);
-            this.Container.AddElement(this.Singleton);
-
-            this.Model.AddElement(this.Container);
         }
 
-        public EdmModel Model { get; private set; }
-        public EdmEntityContainer Container { get; private set; }
-        public EdmEntitySet EntitySet { get; private set; }
-        public EdmSingleton Singleton { get; private set; }
-        public EdmEntityType Customer { get; private set; }
-        public EdmEntityType VipCustomer { get; private set; }
-        public EdmEntityType City { get; private set; }
-        public EdmComplexType Address { get; private set; }
-        public EdmComplexType DerivedAddress { get; private set; }
-        public IEdmProperty NameProperty { get; private set; }
-        public IEdmProperty AddressProperty { get; private set; }
-        public EdmNavigationProperty NavUnderComplex { get; private set; }
-        public EdmNavigationProperty NavUnderCustomer { get; private set; }
+        private static EdmModel GetEdmModel()
+        {
+            EdmModel model = new EdmModel();
+
+            var customer = new EdmEntityType("NS", "Customer");
+            customer.AddKeys(customer.AddStructuralProperty("Id", EdmCoreModel.Instance.GetInt32(false)));
+            customer.AddStructuralProperty("Name", EdmPrimitiveTypeKind.String, isNullable: false);
+            model.AddElement(customer);
+
+            var container = new EdmEntityContainer("NS", "Default");
+            var entitySet = new EdmEntitySet(container, "Customers", customer);
+            container.AddElement(entitySet);
+
+            model.AddElement(container);
+
+            return model;
+        }
     }
 }
 
 ```
 
-## Write out-of-line annotations
+The method above creates an `IEdmModel` that we will use in writing annotations.
 
-Replace the contents of _Program.cs_ file with the following code:
+## Write out-of-line annotations
+Add the `WriteAnnotations` method to the _Program.cs_ file.
+
+This is what the `WriteAnnotations` method does:
+- Call GetEdmModel method to create an `EdmModel`
+- Create a target path
+- Define a `WritePermission` Edm term
+- Create an annotation with the target path
+- Write the xml metadata to the console
+
+We are setting the `Write permission` to the path `NS.Default/Customers/Name` as `false`.
 
 ```csharp
 using Microsoft.OData.Edm.Csdl;
@@ -192,22 +169,26 @@ namespace AnnotationsTarget
     {
         static void Main(string[] args)
         {
-            SampleModel sampleModel = new SampleModel();
-            EdmModel model = sampleModel.Model;
+            WriteAnnotations();
+        }
 
-            // Write Annotations
-            EdmTargetPath targetPath = new EdmTargetPath(sampleModel.Container, sampleModel.EntitySet, sampleModel.NameProperty);
-            EdmTerm term = new EdmTerm("NS", "MyTerm", EdmCoreModel.Instance.GetString(true));
+        // Other existing method(s)
+
+        internal static void WriteAnnotations()
+        {
+            EdmModel model = GetEdmModel();
+            var container = model.EntityContainer;
+            var entitySet = model.FindDeclaredEntitySet("Customers");
+            var customer = model.FindDeclaredType("NS.Customer") as IEdmStructuredType;
+            var nameProperty = customer.DeclaredProperties.Where(x => x.Name == "Name").FirstOrDefault();
+
+            EdmTargetPath targetPath = new EdmTargetPath(container, entitySet, nameProperty);
+            EdmTerm term = new EdmTerm("NS", "WritePermission", EdmCoreModel.Instance.GetBoolean(false));
             model.AddElement(term);
-            EdmVocabularyAnnotation annotation = new EdmVocabularyAnnotation(targetPath, term, new EdmStringConstant("Name OutOfLine MyTerm Value"));
+            EdmVocabularyAnnotation annotation = new EdmVocabularyAnnotation(targetPath, term, new EdmStringConstant("Write Permission on Customer Name."));
             annotation.SetSerializationLocation(model, EdmVocabularyAnnotationSerializationLocation.OutOfLine);
             model.SetVocabularyAnnotation(annotation);
 
-            WriteXml(model);
-        }
-
-        private static void WriteXml(IEdmModel model, CsdlTarget target = CsdlTarget.OData)
-        {
             using (StringWriter sw = new StringWriter())
             {
                 XmlWriterSettings settings = new XmlWriterSettings();
@@ -217,7 +198,7 @@ namespace AnnotationsTarget
                 using (XmlWriter xw = XmlWriter.Create(sw, settings))
                 {
                     IEnumerable<EdmError> errors;
-                    CsdlWriter.TryWriteCsdl(model, xw, target, out errors);
+                    CsdlWriter.TryWriteCsdl(model, xw, CsdlTarget.OData, out errors);
                     xw.Flush();
                 }
 
@@ -228,7 +209,6 @@ namespace AnnotationsTarget
     }
 }
 ```
-Run the console application.
 
 The output on the console should be as below:
 
@@ -237,33 +217,19 @@ The output on the console should be as below:
 <edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
   <edmx:DataServices>
     <Schema Namespace="NS" xmlns="http://docs.oasis-open.org/odata/ns/edm">
-      <ComplexType Name="Address">
-        <Property Name="Road" Type="Edm.String" Nullable="false" />
-        <NavigationProperty Name="City" Type="NS.City" Nullable="false" />
-      </ComplexType>
-      <ComplexType Name="DerivedAddress" BaseType="NS.Address">
-        <Property Name="MyRoad" Type="Edm.String" Nullable="false" />
-      </ComplexType>
       <EntityType Name="Customer">
         <Key>
           <PropertyRef Name="Id" />
         </Key>
         <Property Name="Id" Type="Edm.Int32" Nullable="false" />
         <Property Name="Name" Type="Edm.String" Nullable="false" />
-        <Property Name="Address" Type="NS.Address" Nullable="false" />
-        <NavigationProperty Name="Cities" Type="Collection(NS.City)" />
       </EntityType>
-      <EntityType Name="VipCustomer" BaseType="NS.Customer" />
-      <EntityType Name="City">
-        <Property Name="Name" Type="Edm.String" Nullable="false" />
-      </EntityType>
-      <Term Name="MyTerm" Type="Edm.String" />
+      <Term Name="WritePermission" Type="Edm.Boolean" Nullable="false" />
       <EntityContainer Name="Default">
         <EntitySet Name="Customers" EntityType="NS.Customer" />
-        <Singleton Name="Me" Type="NS.Customer" />
       </EntityContainer>
       <Annotations Target="NS.Default/Customers/Name">
-        <Annotation Term="NS.MyTerm" String="Name OutOfLine MyTerm Value" />
+        <Annotation Term="NS.WritePermission" Bool="false" />
       </Annotations>
     </Schema>
   </edmx:DataServices>
@@ -271,110 +237,85 @@ The output on the console should be as below:
 ```
 
 ## Read out-of-line annotation
-Replace the contents of _Program.cs_ file with the following code:
+Add the `ReadAnnotations` method to the _Program.cs_ file.
+
+The `ReadAnnotations` method does the following
+- Parse the metadata to an edm model
+- Use the model's `GetTargetPath` extension method to get the target path
+- Use the model's `FindDeclaredTerm` extension method to get the edm term
+- Use the model's `FindVocabularyAnnotations(IEdmTargetPath, IEdmTerm)` extension method to get the annotation
+- Write the annotation value to console
+
 
 ```csharp
-using Microsoft.OData.Edm.Csdl;
-using Microsoft.OData.Edm.Vocabularies;
-using Microsoft.OData.Edm;
-using System.Reflection;
-using System.ComponentModel;
-using Microsoft.OData.Edm.Validation;
-using System.Xml;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using System.Xml.Linq;
-
 namespace AnnotationsTarget
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            // Read Annotations
-            string csdl = @"<?xml version=""1.0"" encoding=""UTF-8""?>
-<edmx:Edmx xmlns:edmx=""http://docs.oasis-open.org/odata/ns/edmx"" Version=""4.0"">
-	<edmx:DataServices>
-		<Schema xmlns=""http://docs.oasis-open.org/odata/ns/edm"" Namespace=""NS"">
-			<ComplexType Name=""Address"">
-				<Property Name=""Road"" Type=""Edm.String"" Nullable=""false"" />
-				<NavigationProperty Name=""City"" Type=""NS.City"" Nullable=""false"" />
-			</ComplexType>
-			<ComplexType Name=""DerivedAddress"" BaseType=""NS.Address"">
-				<Property Name=""MyRoad"" Type=""Edm.String"" Nullable=""false"" />
-			</ComplexType>
-			<EntityType Name=""Customer"">
-				<Key>
-					<PropertyRef Name=""Id""/>
-				</Key>
-				<Property Name=""Id"" Type=""Edm.Int32"" Nullable=""false"" />
-				<Property Name=""Name"" Type=""Edm.String"" Nullable=""false"" />
-				<Property Name=""Address"" Type=""NS.Address"" Nullable=""false"" />
-				<NavigationProperty Name=""Cities"" Type=""Collection(NS.City)"" />
-			</EntityType>
-			<EntityType Name=""VipCustomer"" BaseType=""NS.Customer"" />
-			<EntityType Name=""City"">
-				<Property Name=""Name"" Type=""Edm.String"" Nullable=""false"" />
-			</EntityType>
-			<Term Name=""MyTerm"" Type=""Edm.String"" />
-			<EntityContainer Name=""Default"">
-				<EntitySet Name=""Customers"" EntityType=""NS.Customer"" />
-				<Singleton Name=""Me"" Type=""NS.Customer"" />
-			</EntityContainer>
-			<Annotations Target=""NS.Default/Customers/Name"">
-				<Annotation Term=""NS.MyTerm"" String=""Name OutOfLine MyTerm Value"" />
-			</Annotations>
-		</Schema>
-	</edmx:DataServices>
-</edmx:Edmx>"
-            ;
-
-            IEdmModel parsedModel;
-            IEnumerable<EdmError> errors;
-            CsdlReader.TryParse(XElement.Parse(csdl).CreateReader(), out parsedModel, out errors);
-            IEdmTargetPath tgtPath = parsedModel.GetTargetPath("NS.Default/Customers/Name");
-            IEdmTerm fooBarTerm = parsedModel.FindDeclaredTerm("NS.MyTerm");
-            string nameAnnotation = GetAnnotation(parsedModel, tgtPath, fooBarTerm, EdmVocabularyAnnotationSerializationLocation.OutOfLine);
-            Console.WriteLine(nameAnnotation);
+            // Other codes
+            ReadAnnotations();
         }
 
-        private static string GetAnnotation(IEdmModel model, IEdmVocabularyAnnotatable target, IEdmTerm term, EdmVocabularyAnnotationSerializationLocation location)
+        // Other methods
+
+        internal static void ReadAnnotations()
         {
-            IEdmVocabularyAnnotation annotation = model.FindVocabularyAnnotations<IEdmVocabularyAnnotation>(target, term).FirstOrDefault();
+            string csdl = @"<edmx:Edmx Version=""4.0"" xmlns:edmx=""http://docs.oasis-open.org/odata/ns/edmx"">
+  <edmx:DataServices>
+    <Schema Namespace=""NS"" xmlns=""http://docs.oasis-open.org/odata/ns/edm"">
+      <EntityType Name=""Customer"">
+        <Key>
+          <PropertyRef Name=""Id"" />
+        </Key>
+        <Property Name=""Id"" Type=""Edm.Int32"" Nullable=""false"" />
+        <Property Name=""Name"" Type=""Edm.String"" Nullable=""false"" />
+      </EntityType>
+      <Term Name=""WritePermission"" Type=""Edm.Boolean"" Nullable=""false"" />
+      <Term Name=""DeletePermission"" Type=""Edm.Boolean"" Nullable=""false"" />
+      <EntityContainer Name=""Default"">
+        <EntitySet Name=""Customers"" EntityType=""NS.Customer"" />
+      </EntityContainer>
+      <Annotations Target=""NS.Default/Customers/Name"">
+        <Annotation Term=""NS.WritePermission"" Bool=""false"" />
+        <Annotation Term=""NS.DeletePermission"" Bool=""false"" />
+      </Annotations>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>";
+
+            IEdmModel model;
+            IEnumerable<EdmError> errors;
+            CsdlReader.TryParse(XElement.Parse(csdl).CreateReader(), out model, out errors);
+            IEdmTargetPath targetPath = model.GetTargetPath("NS.Default/Customers/Name");
+            IEdmTerm deletePermissionTerm = model.FindDeclaredTerm("NS.DeletePermission");
+
+            // Get annotation for a specific target path and term.
+            IEdmVocabularyAnnotation annotation = model.FindVocabularyAnnotations<IEdmVocabularyAnnotation>(targetPath, deletePermissionTerm).FirstOrDefault();
             if (annotation != null)
             {
-                IEdmStringConstantExpression stringConstant = annotation.Value as IEdmStringConstantExpression;
-                if (stringConstant != null)
+                IEdmBooleanConstantExpression boolConstant = annotation.Value as IEdmBooleanConstantExpression;
+                if (boolConstant != null)
                 {
-                    return stringConstant.Value;
+                    Console.WriteLine(boolConstant.Value);
                 }
             }
-
-            return null;
         }
     }
 }
 ```
 
-Run the console application.
-
 The output on the console should be as below:
 
-`Name OutOfLine MyTerm Value`
+`False`
 
 ## Read all annotations with a specific annotation target
-We use the `Model.FindVocabularyAnnotations(IEdmTargetPath)` extension method.
-Replace the contents of _Program.cs_ file with the following code:
+We use the `Model.FindVocabularyAnnotations(IEdmTargetPath)` extension method to get all the annotations that target a specific target path
+
+Add the following contents to the `ReadAnnotations` method:
 
 ```csharp
-using Microsoft.OData.Edm.Csdl;
-using Microsoft.OData.Edm.Vocabularies;
-using Microsoft.OData.Edm;
-using System.Reflection;
-using System.ComponentModel;
-using Microsoft.OData.Edm.Validation;
-using System.Xml;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using System.Xml.Linq;
 
 namespace AnnotationsTarget
 {
@@ -382,82 +323,41 @@ namespace AnnotationsTarget
     {
         static void Main(string[] args)
         {
-            // Read Annotations
-            string csdl = @"<?xml version=""1.0"" encoding=""UTF-8""?>
-<edmx:Edmx xmlns:edmx=""http://docs.oasis-open.org/odata/ns/edmx"" Version=""4.0"">
-	<edmx:DataServices>
-		<Schema xmlns=""http://docs.oasis-open.org/odata/ns/edm"" Namespace=""NS"">
-			<ComplexType Name=""Address"">
-				<Property Name=""Road"" Type=""Edm.String"" Nullable=""false"" />
-				<NavigationProperty Name=""City"" Type=""NS.City"" Nullable=""false"" />
-			</ComplexType>
-			<ComplexType Name=""DerivedAddress"" BaseType=""NS.Address"">
-				<Property Name=""MyRoad"" Type=""Edm.String"" Nullable=""false"" />
-			</ComplexType>
-			<EntityType Name=""Customer"">
-				<Key>
-					<PropertyRef Name=""Id""/>
-				</Key>
-				<Property Name=""Id"" Type=""Edm.Int32"" Nullable=""false"" />
-				<Property Name=""Name"" Type=""Edm.String"" Nullable=""false"" />
-				<Property Name=""Address"" Type=""NS.Address"" Nullable=""false"" />
-				<NavigationProperty Name=""Cities"" Type=""Collection(NS.City)"" />
-			</EntityType>
-			<EntityType Name=""VipCustomer"" BaseType=""NS.Customer"" />
-			<EntityType Name=""City"">
-				<Property Name=""Name"" Type=""Edm.String"" Nullable=""false"" />
-			</EntityType>
-			<Term Name=""MyTerm"" Type=""Edm.String"" />
-			<Term Name=""MyTerm2"" Type=""Edm.String"" />
-			<EntityContainer Name=""Default"">
-				<EntitySet Name=""Customers"" EntityType=""NS.Customer"" />
-				<Singleton Name=""Me"" Type=""NS.Customer"" />
-			</EntityContainer>
-			<Annotations Target=""NS.Default/Customers/Name"">
-				<Annotation Term=""NS.MyTerm"" String=""Name OutOfLine MyTerm Value"" />
-			</Annotations>
-            <Annotations Target=""NS.Default/Customers/Name"">
-				<Annotation Term=""NS.MyTerm2"" String=""Name OutOfLine MyTerm Value 2"" />
-			</Annotations>
-		</Schema>
-	</edmx:DataServices>
-</edmx:Edmx>"
-            ;
+            // Other codes
+        }
 
-            IEdmModel parsedModel;
-            IEnumerable<EdmError> errors;
-            CsdlReader.TryParse(XElement.Parse(csdl).CreateReader(), out parsedModel, out errors);
-            IEdmTargetPath tgtPath = parsedModel.GetTargetPath("NS.Default/Customers/Name");
-            IEdmTerm fooBarTerm = parsedModel.FindDeclaredTerm("NS.MyTerm");
+        // Other methods
 
-            List<IEdmVocabularyAnnotation> annotations = parsedModel.FindVocabularyAnnotations(tgtPath).ToList();
+        internal static void ReadAnnotations()
+        {
+            // Other codes
+
+            // Get all annotations for a certain target path.
+            List<IEdmVocabularyAnnotation> annotations = model.FindVocabularyAnnotations(targetPath).ToList();
             IEdmVocabularyAnnotation annotation1 = annotations[0];
             IEdmVocabularyAnnotation annotation2 = annotations[1];
-            IEdmStringConstantExpression stringConstant1 = annotation1.Value as IEdmStringConstantExpression;
-            IEdmStringConstantExpression stringConstant2 = annotation2.Value as IEdmStringConstantExpression;
+            IEdmBooleanConstantExpression boolConstant1 = annotation1.Value as IEdmBooleanConstantExpression;
+            IEdmBooleanConstantExpression boolConstant2 = annotation2.Value as IEdmBooleanConstantExpression;
             IEdmTargetPath targetPath1 = annotation1.Target as IEdmTargetPath;
             IEdmTargetPath targetPath2 = annotation2.Target as IEdmTargetPath;
 
             Console.WriteLine($"Annotations count: {annotations.Count}");
             Console.WriteLine($"Annotations target 1: {targetPath1.Path}");
             Console.WriteLine($"Annotations target 2: {targetPath2.Path}");
-            Console.WriteLine($"Annotations value 1: {stringConstant1.Value}");
-            Console.WriteLine($"Annotations value 2: {stringConstant2.Value}");
+            Console.WriteLine($"Annotations value 1: {boolConstant1.Value}");
+            Console.WriteLine($"Annotations value 2: {boolConstant2.Value}");
         }
     }
 }
 ```
 
-Run the console application.
-
 The output on the console should be as below:
 
 ```
+Delete Permission on Customer Name.
 Annotations count: 2
 Annotations target 1: NS.Default/Customers/Name
 Annotations target 2: NS.Default/Customers/Name
-Annotations value 1: Name OutOfLine MyTerm Value
-Annotations value 2: Name OutOfLine MyTerm Value 2
+Annotations value 1: False
+Annotations value 2: False
 ```
-
-
