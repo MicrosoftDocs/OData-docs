@@ -335,7 +335,7 @@
       - name: Set schema for out-of-line annotations
         href: /odata/odatalib/edm/set-annotations-schema
       - name: Enable annotations on target path
-        href: /odata/odatalib/edm/iedmtargetpath-for-annotations-target
+        href: /odata/odatalib/edm/annotations-on-target-path
     - name: Batching
       items:
         - name: Batching requests
