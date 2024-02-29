@@ -10,23 +10,31 @@ ms.topic: article
 # Enable annotations on target path
 **Applies To**: [!INCLUDE[appliesto-odataclient](../../../includes/appliesto-odatalib-v7.md)]
 
-The Edm library lets you [define annotations](/odata/odatalib/edm/define-annotations).When annotations relevant to a particular model element are expressed **out-of-line/externally** in an `Annotations` element, a path expression that uniquely identifies the target element must be specified. [This](/odata/odatalib/edm/set-annotations-schema) page demonstrates how to set the target for **out-of-line** annotations.
+The Edm library lets you [define annotations](/odata/odatalib/edm/define-annotations). When annotations relevant to a particular model element are expressed **out-of-line/externally** in an `Annotations` element, a path expression that uniquely identifies the target element must be specified. [This](/odata/odatalib/edm/set-annotations-schema) page demonstrates how to set the target for **out-of-line** annotations.
 
 ## Introduction
 
-In the previous versions of `Microsoft.OData.Edm` library, we could annotate model elements, however we couldn't annotate paths to a model element. Consider the follow sample metadata describing a service where a model element Employee defined in the Ns namespace has annotations defined out-of-line in the Default namespace:
+In the previous versions of `Microsoft.OData.Edm` library, we could annotate model elements, however we couldn't annotate paths to a model element. Consider the follow sample metadata describing a service where a model element Employee defined in the `NS` namespace has annotations defined out-of-line in the Default namespace:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
     <edmx:DataServices>
-        <!-- Model elements -->
-        <Schema Namespace="Default" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Schema Namespace="NS" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityType Name="Employee">
+                <Key>
+                    <PropertyRef Name="EmployeeId"/>
+                </Key>
+                <Property Name="EmployeeId" Type="Edm.String" Nullable="false"/>
+                <Property Name="FirstName" Type="Edm.String" Nullable="false"/>
+                <Property Name="LastName" Type="Edm.String" MaxLength="26"/>
+            </EntityType>
+            <Term Name="MyTerm" Type="Edm.String" Nullable="false" />
             <EntityContainer Name="Container">
-                <EntitySet Name="Employees" EntityType="Ns.Employee" />
+                <EntitySet Name="Employees" EntityType="NS.Employee" />
             </EntityContainer>
-            <Annotations Target="Ns.Employee">
-                <Annotation Term="Ns.MyTerm" String="Name OutOfLine MyTerm Value" />
+            <Annotations Target="NS.Employee">
+                <Annotation Term="NS.MyTerm" String="Name OutOfLine MyTerm Value" />
             </Annotations>
         </Schema>
     </edmx:DataServices>
@@ -69,13 +77,25 @@ Below is a simple Edm model with an out-of-line annotation that targets a path t
 <?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
     <edmx:DataServices>
-        <!-- Model elements -->
-        <Schema Namespace="Default" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Schema Namespace="NS" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityType Name="Employee">
+                <Key>
+                    <PropertyRef Name="EmployeeId"/>
+                </Key>
+                <Property Name="EmployeeId" Type="Edm.String" Nullable="false"/>
+                <Property Name="FirstName" Type="Edm.String" Nullable="false"/>
+                <Property Name="LastName" Type="Edm.String" MaxLength="26"/>
+            </EntityType>
+            <EntityType Name="Manager" BaseType="NS.Employee">
+                <Property Name="Budget" Type="Edm.Int64" Nullable="false"/>
+                <NavigationProperty Name="DirectReports" Type="Collection(NS.Person)"/>
+            </EntityType>
+            <Term Name="MyTerm" Type="Edm.String" Nullable="false" />
             <EntityContainer Name="Container">
-                <EntitySet Name="Employees" EntityType="Ns.Employee" />
+                <EntitySet Name="Employees" EntityType="NS.Employee" />
             </EntityContainer>
-            <Annotations Target="Default.Container/Employees/Ns.Manager/EmployeeId">
-                <Annotation Term="Ns.MyTerm" String="Name OutOfLine MyTerm Value" />
+            <Annotations Target="NS.Container/Employees/NS.Manager/EmployeeId">
+                <Annotation Term="NS.MyTerm" String="Name OutOfLine MyTerm Value" />
             </Annotations>
         </Schema>
     </edmx:DataServices>
