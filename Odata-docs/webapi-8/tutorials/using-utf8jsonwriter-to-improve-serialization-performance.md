@@ -11,9 +11,7 @@ ms.author: clhabins
 
 **Applies To**:[!INCLUDE[appliesto-webapi](../../includes/appliesto-webapi-v8.md)]
 
-`Microsoft.OData.Core` version 7.12.2 introduced a new JSON writer that’s based on .NET’s [`Utf8JsonWriter`](/dotnet/api/system.text.json.utf8jsonwriter). This writer offers better performance than the JSON writer that is used by default in `Microsoft.OData.Core`. To learn more, [visit this page](../../odatalib/v7/using-utf8jsonwriter-for-better-performance.md). In this article, we are going to show you how to configure your ASP.NET Core OData application to use the `Utf8JsonWriter`.
-
-This feature is available in ASP.NET Core OData version 8.0.11 or later.
+`Microsoft.OData.Core` version 7.12.2 introduced a new JSON writer that’s based on .NET’s [`Utf8JsonWriter`](/dotnet/api/system.text.json.utf8jsonwriter). This writer offers better performance than the JSON writer that is used by default in `Microsoft.OData.Core`. Reference `Microsoft.AspNetCore.OData 8.0.11` or higher to use the new writer. To learn more, [visit this page](../../odatalib/v7/using-utf8jsonwriter-for-better-performance.md). In this article, we are going to show you how to configure your ASP.NET Core OData application to use the `Utf8JsonWriter`.
 
 You register OData services through use of `AddRouteComponents` method. To use the `Utf8JsonWriter`, register the `IStreamBasedJsonWriterFactory` service. The `Microsoft.OData.Core` library provides a default implementation of this interface - `DefaultStreamBasedJsonWriterFactory`.
 
