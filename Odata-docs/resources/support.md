@@ -16,3 +16,7 @@ Code related issues in the OData .NET libraries can be reported by creating GitH
 ## Questions
 
 General question on library usage should be posted on [stackoverflow](https://stackoverflow.com/questions/tagged/odata) and tagged with `odata` tag.
+
+## Supported library version lifecycle
+
+Resources about the lifecycle of individual library versions can be found [here](./version-lifecycle.md).
