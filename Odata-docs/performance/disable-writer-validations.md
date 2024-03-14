@@ -37,7 +37,7 @@ To learn more about different validation options, consult the [`ValidationKinds`
 
 ## Disabling writer validations when using `Microsoft.OData.Core` library directly
 
-When using the core library directly, you pass the [`ODataMessageWriterSettings`](/dotnet/api/microsoft.odata.odatamessagewritersettings) to the [`ODataMessageWriter`](/dotnet/api/microsoft.odata.odatamessagewriter) construtor.
+When using the core library directly, you pass the [`ODataMessageWriterSettings`](/dotnet/api/microsoft.odata.odatamessagewritersettings) to the [`ODataMessageWriter`](/dotnet/api/microsoft.odata.odatamessagewriter) constructor.
 
 ```csharp
 ODataMessageWriterSettings settings = new ODataMessageWriterSettings
@@ -107,7 +107,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 }
 ```
 
-### Using MVC Routing
+### Using MVC routing
 
 ```csharp
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

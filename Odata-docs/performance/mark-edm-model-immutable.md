@@ -12,7 +12,7 @@ ms.author: clhabins
 **Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v8.md)][!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v7.md)][!INCLUDE[appliesto-odatalib](../includes/appliesto-odatalib-v7.md)]
 
 OData libraries at times perform multiple lookups in the EDM model when processing a request. Some of these lookups may be expensive, especially for large models with a lot of schema elements.
-We have some optimizations in place to reduce the performance overhead of these internal lookups, but some of these optimizations are only applicable if the library knows that the EDM model will not change. You can enable these optimization by explicitly marking your EDM as immutable by calling the `MarkAsImmutable` method, which is an extension method in the `Microsoft.OData.Edm` namespace.
+We have some optimizations in place to reduce the performance overhead of these internal lookups, but some of these optimizations are only applicable if the library knows that the EDM model will not change. You can enable these optimizations by explicitly marking your EDM as immutable by calling the `MarkAsImmutable` method, which is an extension method in the `Microsoft.OData.Edm` namespace.
 
 ```csharp
 using Microsoft.OData.Edm;
