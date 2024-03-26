@@ -208,15 +208,15 @@ Then, developers can replace the default client message with `CustomizedClientRe
 
 `public DataServiceClientRequestPipelineConfiguration OnEntryStarting(Action<WritingEntryArgs> action)`
 
-Developers can use this function to control the information of an `ODataEntry` to be serialized.
+Developers can use this function to control the information of an `ODataResource` to be serialized.
 
-#### Modify ODataEntry properties 
+#### Modify ODataResource properties 
 
-The following code provides a sample to add properties to an `ODataEntry`.
+The following code provides a sample to add properties to an `ODataResource`.
 
 ```c#
 
-    public static void AddProperties(this ODataEntry entry, params ODataProperty[] newProperties)
+    public static void AddProperties(this ODataResource entry, params ODataProperty[] newProperties)
     {
         var odataProps = entry.Properties as List<ODataProperty>;
         if (odataProps == null)
@@ -232,7 +232,7 @@ The following code provides a sample to add properties to an `ODataEntry`.
 
 ### Set `OnEntryStarting` 
 
-Then, to add new properties in the `ODataEntry`, developers can call `AddProperties` in `OnEntryStarting`.
+Then, to add new properties in the `ODataResource`, developers can call `AddProperties` in `OnEntryStarting`.
 
 ```c#
     DefaultContainer dataServiceContext = new DefaultContainer(new Uri("https://services.odata.org/v4/(S(ghojd5jj5d33cwotkyfwn431))/TripPinServiceRW/"));
