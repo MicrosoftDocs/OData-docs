@@ -103,6 +103,8 @@
             href: /odata/webapi-8/tutorials/basic-crud-in-fsharp
           - name: Implementing a custom skip token handler
             href: /odata/webapi-8/tutorials/custom-skiptokenhandler
+          - name: Using Utf8JsonWriter to improve serialization performance
+            href: /odata/webapi-8/tutorials/using-utf8jsonwriter-to-improve-serialization-performance
   - name: ASP.NET WebAPI
     items:
       - name: Getting started
@@ -334,6 +336,8 @@
         href: /odata/odatalib/optional-parameters
       - name: Set schema for out-of-line annotations
         href: /odata/odatalib/edm/set-annotations-schema
+      - name: Enable annotations on target path
+        href: /odata/odatalib/edm/annotations-on-target-path
     - name: Batching
       items:
         - name: Batching requests
@@ -396,6 +400,16 @@
             href: /odata/webapiauth/getting-started
           - name: How permissions are applied
             href: /odata/webapiauth/how-permissions-are-applied
+  - name: Performance tips and guidelines
+    items:
+      - name: Overview
+        href: /odata/performance/overview
+      - name: Marking the Edm model as immutable
+        href: /odata/performance/mark-edm-model-immutable
+      - name: Using Utf8JsonWriter
+        href: /odata/performance/using-utf8jsonwriter
+      - name: Disable writer validations
+        href: /odata/performance/disable-writer-validations
   - name: OData Connected Service
     items:
       - name: Getting Started

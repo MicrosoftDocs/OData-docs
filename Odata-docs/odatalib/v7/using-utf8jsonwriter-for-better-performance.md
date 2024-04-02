@@ -14,13 +14,13 @@ ms.topic: article
 
 The `ODataMessageWriter` internally uses an implementation of [`IJsonWriter`](/dotnet/api/microsoft.odata.json.ijsonwriter) (and [`IJsonWriterAsync`](/dotnet/api/microsoft.odata.json.ijsonwriterasync)) to write JSON output to the destination stream. This is a low-level JSON writer that exposes methods for writing individual properties and values. Before v7.12.2, `Microsoft.OData.Core` shipped a single default implementation (internally called `JsonWriter`) that can be constructed using the [`DefaultJsonWriterFactory`](/dotnet/api/microsoft.odata.json.defaultjsonwriterfactory).
 
-It's possible to replace the writer with a custom implementation by injecting your own implementation of [`IJsonWriterFactory`](/dotnet/api/microsoft.odata.json.ijsonwriterfactory) into the dependency-injection container. For more information about configuring dependency injection in ODate core library, [see this article](/odata/odatalib/di-support).
+It's possible to replace the writer with a custom implementation by injecting your own implementation of [`IJsonWriterFactory`](/dotnet/api/microsoft.odata.json.ijsonwriterfactory) into the dependency-injection container. For more information about configuring dependency injection in OData core library, [see this article](/odata/odatalib/di-support).
 
-Microsoft.OData.Core 7.12.2 introduced a new implementation of `IJsonWriter` and `IJsonWriterAsync` called `ODataUtf8JsonWriter`. This is based on .NET's built-in [Utf8JsonWriter](/dotnet/api/system.text.json.utf8jsonwriter). This writer is faster and uses less memory than the default `JsonWriter`.
+Microsoft.OData.Core 7.12.2 introduced a [`Utf8JsonWriter`](/dotnet/api/system.text.json.utf8jsonwriter) wrapper that implements `IJsonWriter` and `IJsonWriterAsync`. This writer is faster and uses less memory than the default `JsonWriter`.
 
-Since the existing `IJsonWriterFactory` is tightly coupled to `TextWriter`, we introduced a new interface `IStreamBasedJsonWriterFactory` which accepts the destination `Stream` as input instead of `TextWriter`. The default implementation of this interface is `DefaultStreamBasedJsonWriterFactory`, which creates instances of `ODataUtf8JsonWriter`.
+Since the existing `IJsonWriterFactory` is tightly coupled to `TextWriter`, we introduced a new interface `IStreamBasedJsonWriterFactory` which accepts the destination `Stream` as input instead of `TextWriter`. The default implementation of this interface is `DefaultStreamBasedJsonWriterFactory`, which creates instances of the `Utf8JsonWriter`-based writer.
 
-Therefore, in order to use `ODataUtf8JsonWriter`, you have to inject an instance of `DefaultStreamBasedJsonWriterFactory` to the dependency-injection container.
+Therefore, in order to use `Utf8JsonWriter`, you have to inject an instance of `DefaultStreamBasedJsonWriterFactory` to the dependency-injection container.
 
 Here's an example:
 
@@ -39,11 +39,11 @@ builder.AddService<IStreamBasedJsonWriterFactory>(sp => DefaultStreamBasedJsonWr
 
 ### No support for streaming writes
 
-The default `JsonWriter` implements the `IJsonStreamWriter` and `IJsonStreamWriterAsync` interfaces. This interface allows you to pipe data directly from an input stream to the output destination. This may be useful when writing the contents of large binary file into base-64 output without buffering everything in memory first. The new `ODataUtf8JsonWriter` does not yet implement this interface, which means input from a stream will be buffered entirely in memory before being written out to the destination. If your use case requires writing from a stream input, consider using the default `JsonWriter`.
+The default `JsonWriter` implements the `IJsonStreamWriter` and `IJsonStreamWriterAsync` interfaces. These interfaces allow you to pipe data directly from an input stream to the output destination. This may be useful when writing the contents of large binary file into base-64 output without buffering everything in memory first. The `Utf8JsonWriter`-based writer does not implement these interfaces yet, which means input from a stream will be buffered entirely in memory before being written out to the destination. If your use case requires writing from a stream input, consider using the default `JsonWriter`. Follow [this issue](https://github.com/OData/odata.net/issues/2422) to find out when this will be resolved.
 
 ### Supported .NET versions
 
-This feature is only available with Microsoft.OData.Core on .NET Core 3.1 and above (i.e. .NET 6 etc.). It is not supported on Microsoft.OData.Core versions running on .NET Framework.
+This feature is only available with Microsoft.OData.Core on .NET Core 3.1 and .NET 5 and above. It is not supported on Microsoft.OData.Core versions running on .NET Framework.
 
 ### Choosing a JavaScriptEncoder
 
