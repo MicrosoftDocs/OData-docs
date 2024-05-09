@@ -236,7 +236,7 @@ namespace Lab01
 
 In the preceding code block, we define the Edm model. As part of the model, we register `Order` as an entity type and `Customers` as an entity set - `Customer` entity type also gets registered as a result. In this case, the `ODataConventionalModelBuilder` is being used to build the Edm model.
 
-We then proceed to add essential OData services by calling the `AddOData` method, in the process enabling different OData query capabilities - `$select`, `$filter`, `$orderby`, `$expand`, `count`, `$top` and `$skip`. The `AddRouteComponents` method is used to register a route, passing along the Edm model to associate it with.
+We then proceed to add essential OData services by calling the `AddOData` method, in the process enabling different OData query capabilities - `$select`, `$filter`, `$orderby`, `$expand`, `$count`, `$top` and `$skip`. The `AddRouteComponents` method is used to register a route, passing along the Edm model to associate it with.
 
 The final step in configuring the service is adding the two middlewares responsible for matching incoming HTTP requests and dispatching those requests to the application's executable endpoints. We do this by calling [`UseRouting`](/dotnet/api/microsoft.aspnetcore.builder.endpointroutingapplicationbuilderextensions.userouting) and [`UseEndpoints`](/dotnet/api/microsoft.aspnetcore.builder.endpointroutingapplicationbuilderextensions.useendpoints) - the former adds [route matching](/aspnet/core/fundamentals/routing?#routing-basics) to the middleware pipeline while the latter adds [endpoint execution](/aspnet/core/fundamentals/routing?#endpoints).
 
