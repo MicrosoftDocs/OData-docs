@@ -38,7 +38,7 @@ OData.NET libraries in this context refer to `Microsoft.OData.Core`, `Microsoft.
 | ------------|-----------------------|-----------------------|---------------------------|---------------|----------------|
 | 8.x | TBD | 8.0.0-preview-3 | 2024-05-31 | Preview | TBD |
 | 7.x | 2016-08-22 |7.21.3 |2024-06-05 | Active | TBD |
-| 6.x | 2013-12-09 | 6.19.0 | 2017-11-14 | Maintenance Mode | 2025-07-11 |
+| 6.x | 2013-12-09 | 6.19.0 | 2017-11-14 | Maintenance Mode | 2025-07-15 |
 | 5.x | 2012-11-07 | 5.8.5 | 2021-11-12 | Maintenace Mode | TBD |
 
 ### OData.NET 8.x
@@ -55,7 +55,7 @@ OData.NET 8 will support the following OData protocal versions:
 
 OData.NET 7.x refers to 7.x versions OData.NET libraries.
 
-The library is actively supported but will enter maintenance mode 6 months after the OData.NET 8 release.
+The libraries are actively supported but will enter maintenance mode 6 months after the OData.NET 8 release.
 
 OData.NET 7 supports the following .NET versions:
 
@@ -67,6 +67,30 @@ OData.NET 7 supports the following OData protocol versions:
 
 - OData version 4.0
 - OData version 4.01
+
+### OData.NET 6.x
+
+OData.NET 6.x refers to 6.x versions of OData.NET libraries.
+
+The library is currently in maintenance mode and will go out of support on July 15, 2025.
+
+OData.NET 6 supports OData protocol version 4.0.
+
+### OData.NET 5.x
+
+OData.NET 5.x refers to 5.x versions of the following libraries:
+
+- Microsoft.Data.OData
+- Microsoft.Data.Edm
+- System.Spatial
+- Microsoft.Data.Services.Client
+- Microsoft.Data.Services
+
+The libraries are currently in maintenance mode. There are no current plans to end support. There will be an official announcements at least 12 months before official support ends.
+
+The libraries support .NET Framework 4.0 and later.
+
+The libraries support OData proctocol versions 1 to 3.
 
 ## AspNetCore OData
 
