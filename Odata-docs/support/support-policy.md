@@ -102,6 +102,12 @@ This refers to the `Microsoft.AspNetCore.OData`  library which adds OData integr
 | 8.x | 7.x | 2021-07-03 | 8.2.5 |2023-03-01 | Active | TBD |
 | 7.x | 7.x | 2018-06-29 | 7.7.4 | 2024-01-29 | Active | TBD |
 
+Microsoft.AspNetCore.OData 9.x will be the next major release. This version will only support .NET 8 and later and OData.NET 8 and later.
+
+Microsoft.AspNetCore 8.x is currently actively supported. It supports .NET 5 and later and OData.NET 7.x.
+
+Microsoft.AspNetCore 7.x is currently actively supports. It supports .NET Framework 4.5 and later and .NET 5 and later. It supports OData.NET 7.x. It will enter maintenance mode soon.
+
 ## AspNet OData
 
 This refers to the `Microsoft.AspNet.OData` library which adds OData integration to ASP.NET 4.x on .NET Framework.
