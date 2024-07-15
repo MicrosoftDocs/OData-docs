@@ -303,7 +303,7 @@ To support this request, we add a controller action named `Post` to the `PeopleC
 ```fsharp
     [<HttpPost>]
     member this.Post([<FromBody>] person : Person) =
-        if not (this.ModelState.IsValid || person.Id = 0) then
+        if not (this.ModelState.IsValid) || person.Id = 0 then
             this.BadRequest() :> ActionResult
         else
             match DataSource.People |> Seq.tryFind(fun d -> d.Id.Equals(person.Id)) with
