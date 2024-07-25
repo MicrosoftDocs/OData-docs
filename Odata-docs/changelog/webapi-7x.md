@@ -9,6 +9,35 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.6.4
+
+### Improvements and Fixes:
+
+* Fixes [ [#2737](https://github.com/OData/WebApi/issues/2737) ]: Support getting navigation source for complex types by @mikepizzo in [[#2744](https://github.com/OData/WebApi/pull/2744)]
+
+* Bump version to 7.6.4 by @xuzhg in [[#2750](https://github.com/OData/WebApi/pull/2750)]
+
+## WebAPI 7.6.3
+
+### Improvements and Fixes:
+
+* update the version 7.6.2 and update the Core dependency version to 2.0.1 by @xuzhg in [[#2720](https://github.com/OData/WebApi/pull/2720)]
+* Upgrade Kestrel to 2.2.0 by @gathogojr in [[#2718](https://github.com/OData/WebApi/pull/2718)]
+* Maintain case for parameter alias in generated nextlink by @gathogojr in [[#2724](https://github.com/OData/WebApi/pull/2724)]
+* Change VmImage from latest to 2019 to finish the build pipeline build by @xuzhg in [[#2725](https://github.com/OData/WebApi/pull/2725)]
+* Fix issue for nested next page link with singleton containment navigation property by @lisicase in [[#2722](https://github.com/OData/WebApi/pull/2722)]
+* Updated out-of-date .NET Foundation Code of Conduct Link by @garaydev in [[#2727](https://github.com/OData/WebApi/pull/2727)]
+* Fix serialization issue affecting nested complex property by @gathogojr in [[#2729](https://github.com/OData/WebApi/pull/2729)]
+* Bulk Operations Handlers by @KenitoInc in [[#705](https://github.com/OData/WebApi/pull/2705)]
+* Bump version to 7.6.3 and ODL version to 7.13.0 by @habbes in [[#2740](https://github.com/OData/WebApi/pull/2740)]
+
+## WebAPI 7.6.1
+
+### Improvements and Fixes:
+
+* Port [[#2714](https://github.com/OData/WebApi/pull/2714)]: Fix the missing method exception when using Dependency Injection package version 6.x on .NET Framework by @xuzhg
+* Update version to 7.6.1 and do some clean up by @xuzhg in [[#2715](https://github.com/OData/WebApi/pull/2715)]
+
 ## WebAPI 7.6.0
 
 ### Improvements and Fixes:
@@ -16,6 +45,12 @@ ms.topic: article
 * [ [#2697](https://github.com/OData/WebApi/pull/2697) ] Support bulk operations serialization.
 
 * [ [#2686](https://github.com/OData/WebApi/pull/2686) ] Support bulk operations deserialization.
+
+## WebAPI 7.5.18
+
+### Improvements and Fixes:
+
+* [ [#2714](https://github.com/OData/WebApi/pull/2714) ] Fix the missing method exception when using Dependency Injection package version 6.x on .NET Framework by @xuzhg
 
 ## WebAPI 7.5.17
 
