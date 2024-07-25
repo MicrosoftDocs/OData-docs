@@ -20,7 +20,7 @@ In order to do this you only need to extend the `DataServiceContext` class in yo
 
 ```csharp
 // Person class with Odata annotations
-[Key('Id')]
+[Key("Id")]
 public class Person
 {
         public string Id { get; set; }
