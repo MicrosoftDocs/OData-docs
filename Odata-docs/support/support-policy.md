@@ -13,7 +13,7 @@ ms.author: clhabins
 
 This guide documents official support policy for official OData libraries for .NET distributed by Microsoft.
 
-Supported releases are patched for security and other critical bugs and may receive new features. Only the latest minor and patch of a given release is supported. For example, for Microsoft.OData.Core 7 release, only the least 7.x.y release is supported. Customers are encouraged to always use the latest patch of a given release. In case issues are encountered, the first step should generally be to update to the latest version of that major release.
+Supported releases are patched for security and other critical bugs and may receive new features. Only the latest minor and patch of a given release is supported. For example, for Microsoft.OData.Core 7 release, only the latest 7.x.y release is supported. Customers are encouraged to always use the latest patch of a given release. In case issues are encountered, the first step should generally be to update to the latest version of that major release.
 
 Throughout this document, the use of the term *release* is tied to the major version. When we say that we support this release, it means we can ship changes to this package under the same major version, but potentially different minor or patch version. That is to say, if version 7 of a library is actively supported, and the latest version is 7.2.1, we can ship new version such as 7.2.2 or 7.3.0. If it is out of support, it means we'll not release a new 7.x version.
 
@@ -25,7 +25,7 @@ Minor version updates do not typically contain breaking changes. However, thorou
 
 A major release will go through the following support phases:
 
-- **Preview mode**: Before a new major version is officially release, pre-release versions are published to public to allow people to assess the product and share feedback or point out flaws. Pre-release software may contain critical bugs. Additional we can make breaking changes during the preview phase of a release. As a result, preview releases are not recommended in production. This phase includes preview releases, alpha releases, beta releases and release candidates.
+- **Preview mode**: Before a new major version is officially released, pre-release versions are published to public to allow people to assess the product and share feedback or point out flaws. Pre-release software may contain critical bugs. Additionally, we can make breaking changes during the preview phase of a release. As a result, preview releases are not recommended in production. This phase includes preview releases, alpha releases, beta releases and release candidates.
 - **Active support**: The release is in active development, receives security patches, bug fixes and feature updates.
 - **Maintenance mode**: The release will receive security patches and critical bug fixes only . A release will be in maintenance mode at least 6 months before entering End of Life.
 - **End of Life**: The release is out of support. While it may be available for download, it will not receive any new updates, including security patches. Microsoft will provide a minimum of 12 months notification before an OData library goes out of support.
@@ -36,7 +36,7 @@ OData.NET libraries in this context refer to `Microsoft.OData.Core`, `Microsoft.
 
 | Version     | Original release date | Latest patch version  | Latest patch release date | Support phase | End of support |
 | ------------|-----------------------|-----------------------|---------------------------|---------------|----------------|
-| 8.x | TBD | 8.0.0-preview-3 | 2024-05-31 | Preview | TBD |
+| 8.x | TBD | 8.0.0-rc.1 | 2024-07-11 | Preview | TBD |
 | 7.x | 2016-08-22 |7.21.3 |2024-06-05 | Active | TBD |
 | 6.x | 2013-12-09 | 6.19.0 | 2017-11-14 | Maintenance Mode | 2025-07-15 |
 | 5.x | 2012-11-07 | 5.8.5 | 2021-11-12 | Maintenace Mode | TBD |
@@ -53,7 +53,7 @@ OData.NET 8 will support the following OData protocal versions:
 
 ### OData.NET 7.x
 
-OData.NET 7.x refers to 7.x versions OData.NET libraries.
+OData.NET 7.x refers to 7.x versions of OData.NET libraries.
 
 The libraries are actively supported but will enter maintenance mode 6 months after the OData.NET 8 release.
 
@@ -106,7 +106,7 @@ Microsoft.AspNetCore.OData 9.x will be the next major release. This version will
 
 Microsoft.AspNetCore 8.x is currently actively supported. It supports .NET 5 and later and OData.NET 7.x.
 
-Microsoft.AspNetCore 7.x is currently actively supports. It supports .NET Framework 4.5 and later and .NET 5 and later. It supports OData.NET 7.x. It will enter maintenance mode soon.
+Microsoft.AspNetCore 7.x is currently actively supported but will enter maintenance mode soon. It supports .NET Framework 4.5 and later and .NET 5 and later. It supports OData.NET 7.x.
 
 ## AspNet OData
 
@@ -114,9 +114,9 @@ This refers to the `Microsoft.AspNet.OData` library which adds OData integration
 
 | Version     | OData.NET version | Original release date | Latest patch version  | Latest patch release date | Support phase | End of support |
 | ------------|-------------------|-----------------------|-----------------------|---------------------------|---------------|----------------|
-| 7.x | 7.x | 2018-06-29 | 7.7.4 | 2024-04-01 | Maintenance Mode | TBD |
+| 7.x | 7.x | 2018-06-29 | 7.7.4 | 2024-04-01 | Active | TBD |
 
-Microsoft.AspNet.OData 7.x is in maintenance phase. It will only receive security patches and critical bug fixes. There are no current plans to end support. Should there be plans to drop support, there will be an official announcement at least 12 months before official support ends. This version supports .NET Framework 4.5 and later.
+Microsoft.AspNet.OData 7.x is currently actively support but will enter maintenance mode soon. This version supports .NET Framework 4.5 and later. It supports OData.NET 7.x.
 
 ## OData ModelBuilder
 
@@ -124,4 +124,4 @@ The `Microsoft.OData.ModelBuilder` library provides APIs that make it easier to 
 
 | Version     | OData.NET version | Original release date | Latest patch version  | Latest patch release date | Support phase | End of support |
 | ------------|-------------------|-----------------------|-----------------------|---------------------------|---------------|----------------|
-| 1.x | 7.x and 8.x | 2020-09-02 | 1.0.9 | 2022-06-10 | Maintenance | 2025-06-27 |
+| 1.x | 7.x and 8.x | 2020-09-02 | 1.0.9 | 2022-06-10 | Active | TBD |
