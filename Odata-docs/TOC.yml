@@ -502,6 +502,8 @@
         items:
           - name: OData Migration extension usage and architecture
             href: /odata/extensions/migration
+  - name: Support policy
+    href: /odata/support/support-policy
 - name: Resources
   items:
     - name: Tools
