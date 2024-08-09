@@ -10,6 +10,7 @@ ms.topic: article
 # OData lib 8.x changelog
 
 OData lib is loosely used to refer to the following group of OData libraries available on the [Nuget gallery](https://www.nuget.org/packages):
+
 - [Microsoft.OData.Core](https://www.nuget.org/packages/Microsoft.OData.Core)
 - [Microsoft.OData.Edm](https://www.nuget.org/packages/Microsoft.OData.Edm)
 - [Microsoft.Spatial](https://www.nuget.org/packages/Microsoft.Spatial)
@@ -17,12 +18,32 @@ OData lib is loosely used to refer to the following group of OData libraries ava
 
 You can install or update any of the NuGet packages for OData lib using the [Package Manager Console](https://docs.nuget.org/docs/start-here/using-the-package-manager-console).
 
+## [8.0.0-rc.1](https://github.com/OData/odata.net/releases/tag/8.0.0-rc.1)
+
+### [Microsoft.OData.Core](https://www.nuget.org/packages/Microsoft.OData.Core/8.0.0-rc.1)
+
+- Made `ODataUtf8JsonWriter` the default JSON writer implementation to enhance serialization performance. Benchmarks and feedback from some OData users have shown that `ODataUtf8JsonWriter` offers better performance and memory efficiency compared to the current default JsonWriter.
+- Changed the `ODataLibraryCompatibility` enum into a flags enum, where each bit represents a different compatibility setting that can enable some legacy serialization behavior.
+- Refactored `ODataError`, `ODataErrorDetail` and `ODataInnerError` classes.
+  - The `ODataErrorDetail`’s `ErrorCode` property updated to Code
+  - The initialization of `ODataInnerError` changed to `ODataInnerError(new Dictionary<string, ODataValue>())`
+- The `ODataResource.Properties` property type was changed to `IEnumerable<ODataPropertyInfo>` to facilitate metadata reading or writing, even in scenarios where the property lacks a value.
+- When writing the `Scale` attribute in XML CSDL, use `variable` in lowercase instead of `Variable`. An enum flag, `UseLegacyVariableCasing`, was added to support the legacy behavior.
+
+### [Microsoft.OData.Edm](https://www.nuget.org/packages/Microsoft.OData.Edm/8.0.0-rc.1)
+
+- Added `UsesDefault` property to `IEdmVocabularyAnnotation` to support creating vocabulary annotations without explicit values but with default values. These default values are not written to the CSDL but can be read.
+
+### [Microsoft.OData.Client](https://www.nuget.org/packages/Microsoft.OData.Client/8.0.0-rc.1)
+
+- Renamed `IBaseEntityType.Context` to `DataServiceContext` to avoid naming conflicts that cause compilation or runtime errors when `Context` is used as a property name in customer schemas.
 
 ## [8.0.0-preview.1](https://github.com/OData/odata.net/releases/tag/8.0.0-preview.1)
 
 Starting version 8, OData lib will only target .NET 8 or later.
 
 ### [Microsoft.OData.Core](https://www.nuget.org/packages/Microsoft.OData.Core/8.0.0-preview.1)
+
 - `IJsonReaderAsync` interface has been merged into `IJsonReader` interface.
   - Any implementation of `IJsonReader` needs to implement methods previously defined in `IJsonReaderAsync` interfaces.
   - The `Value` property in `IJsonReader` interface is replaced by `GetValue` method.
