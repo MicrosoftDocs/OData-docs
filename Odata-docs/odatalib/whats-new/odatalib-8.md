@@ -292,11 +292,11 @@ An `AddMessage(ODataUrlValidationMessage)` overload has been added to the `OData
 
 ## Changes in `Microsoft.OData.Client`
 
-### Added support for `HttpClientFactory`
+### Added support for `IHttpClientFactory`
 
-In OData .NET 7, the `DataServiceContext` class had a `HttpClientHandlerProvider` that allowed developer to provide custom instances of `HttpClientHandler` for making requests. The `HttpClientHandlerProvider` was based on a custom `IHttpClientHandlerProvider` interface. Customers desired the familiar `HttpClientFactory` class, but we could not support because it would result in breaking changes.
+In OData .NET 7, the `DataServiceContext` class had a `HttpClientHandlerProvider` that allowed developer to provide custom instances of `HttpClientHandler` for making requests. The `HttpClientHandlerProvider` was based on a custom `IHttpClientHandlerProvider` interface. Customers requested support for the familiar `IHttpClientFactory` interface, but we could not support because it would result in breaking changes.
 
-In OData .NET 8, `DataServiceContext` now has a `HttpClientFactory` property of type `HttpClientFactory`. This allows developers to provide custom `HttpClient` instances and control their lifetimes. Subsequently, we have removed the `IHttpClientHandlerProvider` interface and the `DataServiceContext.HttpClientProvider` property.
+In OData .NET 8, `DataServiceContext` now has a `HttpClientFactory` property of type `IHttpClientFactory`. This allows developers to provide custom `HttpClient` instances and control their lifetimes. Subsequently, we have removed the `IHttpClientHandlerProvider` interface and the `DataServiceContext.HttpClientProvider` property.
 
 ### Renamed `IBaseEntityType.Context` to `DataServiceContext`
 
@@ -382,10 +382,47 @@ var friend = context.People.Where(p => p.UserName == "russellwhyte").Select(p =>
 Console.WriteLine(friend.FirstName);
 ```
 
+### Dropped support for `HttpWebRequest`
+
+OData .NET 8 removed support for `HttpWebRequest`, `HttpClient` should be used instead.
+
+Subsequently the following related APIs have also been removed:
+
+- The `HttpWebRequestMessage` class was removed.
+- The `HttpRequestTransportMode` enum was removed.
+- The `DataServiceContext.HttpRequestTransportMode` property was removed.
+
+### Other obsolete APIs that have been removed
+
+- Obsolete `Credentials` property dropped from `DataServiceClientRequestMessage` abstract class. The recommended way to configure credentials is through `HttpClientHandler` that can be provided using `IHttpClientFactory`.
+- Obsolete `Credentials` property dropped from `HttpClientRequestMessage` class. The recommended way to configure credentials is through `HttpClientHandler` that can be provided using `IHttpClientFactory`.
+- Obsolete `Credentials` property dropped from `DataServiceContext` class. The recommended way to configure credentials is through `HttpClientHandler` that can be provided using `IHttpClientFactory`.
+- Obsolete `ReadWriteTimeout` property dropped from `DataServiceClientRequestMessage` abstract class. This property would be used with `HttpWebRequestMessage`. The `Timeout` property should be used instead.
+- Obsolete `ReadWriteTimeout` property dropped from `HttpClientRequestMessage` class. This property would be used with `HttpWebRequestMessage`. The `Timeout` property should be used instead.
+- In `DataServiceClientRequestMessageArgs` class, the `DataServiceClientRequestMessageArgs(string, Uri, bool, bool, IDictionary<string, string>)` constructor has changed to `DataServiceClientRequestMessageArgs(string, Uri, bool, IDictionary<string, string>)`. The boolean `useDefaultCredentials` parameter is no longer supported.
+- In `DataServiceClientRequestMessageArgs` class, the `DataServiceClientRequestMessageArgs(string, Uri, bool, bool, IDictionary<string, string>, IHttpClientHandlerProvider)` constructor has changed to `DataServiceClientRequestMessageArgs(string, Uri, bool, IDictionary<string, string>, IHttpClientFactory)`. The boolean `useDefaultCredentials` parameter is no longer supported.
+- In `DataServiceClientRequestMessageArgs` class, the `UseDefaultCredentials` property dropped from `DataServiceClientRequestMessageArgs` class. The recommended way to configure credentials is through `HttpClientHandler` that can be provided using `IHttpClientFactory`.
+- Obsolete `IncludeTotalCount()` method was dropped from `DataServiceQuery<TElement>` class. Use `IncludeCount()` method.
+- Obsolete `IncludeTotalCount(bool)` method was dropped from `DataServiceQuery<TElement>` class: Use `IncludeCount(bool)` the method.
+- Obsolete `TotalCount` property was dropped from `QueryOperationResponse` class. Use `Count` property.
+- Obsolete `TotalCount` property was dropped from `QueryOperationResponse<T>` class. Use `Count` property.
+- Obsolete `CreateODataDeltaReader(IEdmEntitySetBase, IEdmEntityType)` method dropped from `ODataMessageReader` class. Use `CreateODataDeltaResourceSetReader(IEdmEntitySetBase, IEdmStructuredType)` method.
+- Obsolete `CreateODataDeltaReaderAsync(IEdmEntitySetBase, IEdmEntityType)` method dropped from `ODataMessageReader` class. Use `CreateODataDeltaResourceSetReader(IEdmEntitySetBase, IEdmStructuredType)` method.
+- Obsolete `CreateODataDeltaWriter(IEdmEntitySetBase, IEdmEntityType)` method dropped from `ODataMessageReader` class. Use `CreateODataDeltaResourceSetWriter(IEdmEntitySetBase, IEdmStructuredType)` method.
+- Obsolete `CreateODataDeltaWriterAsync(IEdmEntitySetBase, IEdmEntityType)` method dropped from `ODataMessageReader` class. Use `CreateODataDeltaResourceSetWriterAsync(IEdmEntitySetBase, IEdmStructuredType)` method.
+- Obsolete `Expressions` property dropped from `AggregateToken` class. Use `AggregateExpressions` property.
+- Obsolete `Expressions` property dropped from `AggregateTransformationNode` class. Use `AggregateExpressions` property.
+- Obsolete `EntityTypeInvalidKeyKeyDefinedInBaseClass` validation rule dropped from `ValidationRules` class. Use `EntityTypeInvalidKeyKeyDefinedInAncestor` validation rule.
+- Obsolete `EntityTypeKeyMissingOnEntityType` validation rule dropped from `ValidationRules` class. Use `NavigationSourceTypeHasNoKeys` validation rule.
+
 ## Changes in `Microsoft.OData.Edm`
 
 ### Added `UseDefault` property to `IEdmVocabularyAnnotation` interface
 
-Added `UsesDefault` property to IEdmVocabularyAnnotation to support creating vocabulary annotations with default values. We do not write an `EdmVocabularyAnnotation`'s value to the serialized CSDL if it has a default value. When creating an `EdmVocabularyAnnotation` if the value is not provided, we check whether the `EdmTerm` has a default value or not. If the term has a default value and no value was provided, we set the `UsesDefault` to `true`, otherwise `false`.
+Added `UsesDefault` property to `IEdmVocabularyAnnotation` to support creating vocabulary annotations with default values. We do not write an `EdmVocabularyAnnotation`'s value to the serialized CSDL if it has a default value. When creating an `EdmVocabularyAnnotation` if the value is not provided, we check whether the `EdmTerm` has a default value or not. If the term has a default value and no value was provided, we set the `UsesDefault` to `true`, otherwise `false`.
 
 We also added new extension method, `CreateVocabularyAnnotation` for creating an `EdmVocabularyAnnotation` when a value is provided. OData .NET 7 already had an extension method for creating an `EdmVocabularyAnnotation` when a value is not provided.
+
+### Added `EntityType` property to `IEdmNavigationSource` interface
+
+OData .NET 8 added a property called `EntityType` of type `IEdmEntityType` to the `IEdmNavigationSource` interface. Existing implementation of that interface have been updated to implement that property. This makes it possible to get the entity type of a navigation source without having to perform a cast. Subsequently, the `EntityType(IEdmNavigationSource)` static helper method is no longer recommended. It has been marked as obsolete and may be removed in a future major version.
