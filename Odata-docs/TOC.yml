@@ -244,6 +244,10 @@
       href: /odata/webapi/odata-security
   - name: ODataLib
     items:
+    - name: What's new
+      items:
+        - name: What's new in OData .NET 8
+          href: /odata/odatalib/whats-new/odatalib-8
     - name: Core lib
       items:
         - name: Write OData payload
