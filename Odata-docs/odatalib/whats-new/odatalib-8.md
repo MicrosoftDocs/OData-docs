@@ -13,6 +13,7 @@ ms.author: clhabins
 ## Target Framework
 
 OData .NET libraries target .NET 8. Applications targeting older .NET, .NET Core and .NET Framework versions will need to update to target .NET 8.
+To learn more about supported OData libraries and .NET frameworks, visit out [support policy](/odata/support/support-policy).
 
 ## Changes in `Microsoft.OData.Core`
 
