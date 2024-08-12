@@ -297,7 +297,73 @@ An `AddMessage(ODataUrlValidationMessage)` overload has been added to the `OData
 
 In OData .NET 7, the `DataServiceContext` class had a `HttpClientHandlerProvider` that allowed developer to provide custom instances of `HttpClientHandler` for making requests. The `HttpClientHandlerProvider` was based on a custom `IHttpClientHandlerProvider` interface. Customers requested support for the familiar `IHttpClientFactory` interface, but we could not support because it would result in breaking changes.
 
-In OData .NET 8, `DataServiceContext` now has a `HttpClientFactory` property of type `IHttpClientFactory`. This allows developers to provide custom `HttpClient` instances and control their lifetimes. Subsequently, we have removed the `IHttpClientHandlerProvider` interface and the `DataServiceContext.HttpClientProvider` property.
+In OData .NET 8, we introduced support for [`IHttpClientFactory`](/dotnet/core/extensions/httpclient-factory) `DataServiceContext` now has a `HttpClientFactory` property of type `IHttpClientFactory`. This allows developers to provide custom `HttpClient` instances and control their lifetimes. Subsequently, we have removed the `IHttpClientHandlerProvider` interface and the `DataServiceContext.HttpClientProvider` property.
+
+Here's a basic code sample of using injecting an `IHttpClientFactory` instance to OData Client's `DataServiceContext`. In the following examples, we make use of the following packages:
+
+- [`Microsoft.Extensions.DependencyInjection`](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection)
+- [`Microsoft.Extension.Http`](https://www.nuget.org/packages/Microsoft.Extensions.Http)
+
+We also assume the following `using` statement exists at the top of the soure code:
+
+```c#
+using Microsoft.Extensions.DependencyInjection
+```
+
+We can obtain an instance of `IHttpClientFactory` by injecting in a `ServiceCollection` instance:
+
+```c#
+using Microsoft.Extensions.DependencyInjection
+
+ServiceCollection serviceCollection = new ServiceCollection();
+serviceCollection.AddHttpClient();
+IServiceProvider services = serviceCollection.BuildServiceProvider();
+
+// Create a new DataServiceContext instance that points to our OData service
+var client = new DefaultContainer(new Uri("https://services.odata.org/V4/TripPinServiceRW/"));
+
+// Configure te IHttpClientFactory to use
+client.HttpClientFactory = services.GetRequiredService<IHttpClientFactory>();
+
+// Make a request
+var people = await client.People.ExecuteAsync();
+
+foreach (var p in people)
+{
+    Console.WriteLine($"{p.FirstName} {p.LastName}");
+}
+```
+
+Let's look at another example. This time we'll configure the underlying `HttpMessageHandler` with custom credentials and lifetime. To configure the handler, we need
+to use a named client by using the `AddHttpClient` overload that accepts a string. Since OData Client isn't aware of custom client names, we'll use an empty string as the name.
+
+```csharp
+using Microsoft.Extensions.DependencyInjection
+
+ServiceCollection serviceCollection = new ServiceCollection();
+
+serviceCollection.AddHttpClient("")
+.ConfigurePrimaryHttpMessageHandler(_ =>
+{
+    // configure credentials
+    return new HttpClientHandler
+    {
+        Credentials = new NetworkCredential(secureUsername, securePassword)
+    };
+})
+// configure lifetime
+.SetHandlerLifetime(TimeSpan.FromMinutes(5));
+
+client.HttpClientFactory = services.GetRequiredService<IHttpClientFactory>();
+
+// Make a request
+var people = await client.People.ExecuteAsync();
+
+foreach (var p in people)
+{
+    Console.WriteLine($"{p.FirstName} {p.LastName}");
+}
+```
 
 ### Renamed `IBaseEntityType.Context` to `DataServiceContext`
 
