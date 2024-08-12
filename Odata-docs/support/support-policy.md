@@ -106,7 +106,7 @@ Microsoft.AspNetCore.OData 9.x will be the next major release. This version will
 
 Microsoft.AspNetCore 8.x is currently actively supported. It supports .NET 5 and later and OData.NET 7.x.
 
-Microsoft.AspNetCore 7.x is currently actively supported but will enter maintenance mode soon. It supports .NET Framework 4.5 and later and .NET 5 and later. It supports OData.NET 7.x.
+Microsoft.AspNetCore 7.x is currently actively supported but will enter maintenance mode soon. It supports .NET Standard 2.0, .NET Core 3.1 and .NET 5 and later. It supports OData.NET 7.x.
 
 ## AspNet OData
 
