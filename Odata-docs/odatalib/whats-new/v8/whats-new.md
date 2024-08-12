@@ -2,13 +2,14 @@
 title:  "What's new in OData .NET 8"
 description: Get an overview of new features and changes in OData.NET 8 and guides to help you migrate from OData .NET 7.
 date:   2024-08-05
-ms.date: 08/05/2024
+ms.date: 8/5/2024
 author: habbes
 ms.author: clhabins
 ---
 
 # What's new in OData .NET 8.0
-**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-odatalib-v8.md)] [!INCLUDE[appliesto-webapi](../includes/appliesto-odataclient-v8.md)]
+
+**Applies To**:[!INCLUDE[appliesto-odatalib](../includes/appliesto-odatalib-v8.md)] [!INCLUDE[appliesto-webapi](../includes/appliesto-odataclient-v8.md)]
 
 ## Target Framework
 
