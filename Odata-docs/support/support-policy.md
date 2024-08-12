@@ -125,3 +125,26 @@ The `Microsoft.OData.ModelBuilder` library provides APIs that make it easier to 
 | Version     | OData.NET version | Original release date | Latest patch version  | Latest patch release date | Support phase | End of support |
 | ------------|-------------------|-----------------------|-----------------------|---------------------------|---------------|----------------|
 | 1.x | 7.x and 8.x | 2020-09-02 | 1.0.9 | 2022-06-10 | Active | TBD |
+
+## OData Connected Service
+
+OData Connected Service is a Visual Studio (VS) extension that allows you to generate C# and VB.NET client code for an OData service from an OData CSDL schema.
+OData Connected Service is distributed via the Visual Studio Marketplace. We support two variants of the extension:
+
+- [OData Connected Service 2022+](https://marketplace.visualstudio.com/items?itemName=marketplace.ODataConnectedService2022) for Visual Studio 2022 and later
+- [OData Connected Service](https://marketplace.visualstudio.com/items?itemName=marketplace.ODataConnectedService) for Visual studio 2017 and 2019
+
+| Variant | Supported VS editions | Version | Latest patch version  | Latest patch release date | Support phase | End of support |
+| --------|-----------------------|---------|-----------------------|---------------------------|---------------|----------------|
+| OData Connected Service 2022+ | 2022 | 1.x | 1.1.0 | 2024-06-18 | Active | TBD |
+| OData Conencted Service | 2017, 2019 | 1.x | 1.1.0 | 2024-06-18 | Active | TBD |
+
+## OData CLI
+
+OData CLI is a cross-platform command-line tool for generating C# and VB.NET client code for an OData service based on the CSDL schema.
+
+| Version     | OData.NET version | Original release date | Latest patch version  | Latest patch release date | Support phase | End of support |
+| ------------|-------------------|-----------------------|-----------------------|---------------------------|---------------|----------------|
+| 0.x | 7.x and 8.x | 2022-03-30 | 0.3.1 | 2024-06-19 | Active | TBD |
+
+OData CLI supports .NET 6 and later.
