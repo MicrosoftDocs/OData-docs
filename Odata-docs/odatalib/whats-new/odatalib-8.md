@@ -129,11 +129,14 @@ Create implementation of `IODataRequestMessage` or `IODataResponseMessage` that 
 ```csharp
 public class ODataMessage : IODataRequestMessage, IODataResponseMessage, IServiceCollectionProvider
 {
-    // ...
+
     public ODataMessage(..., IServiceProvider services)
     {
         ServiceProvider = services;
     }
+
+    // redacted ...
+    
     public IServiceProvider ServiceProvider { get; private set; }
 }
 ```
@@ -153,7 +156,7 @@ Configure custom services:
 serviceCollecton.AddSingleton<IJsonWriterFactory>(ODataJsonWriterFactory.Default);
 ```
 
-Build service provider:
+Build the service provider:
 
 ```csharp
 IServiceProvider services = serviceCollection.BuildServiceProvider();
