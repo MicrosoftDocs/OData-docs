@@ -122,6 +122,50 @@ OData .NET 8 has removed the `IContainerBuilder` interface and now uses `IServic
 - `ODataBatchOperationRequestMessage` now implements `IServiceCollectionProvider` instead of `IContainerProvider`.
 - `ODataBatchOperationResponseMessage` now implements `IServiceCollectionProvider` instead of `IContainerProvider`.
 
+For example, if you want to add custom configurations to OData services, you'd follow these steps:
+
+Create implementation of `IODataRequestMessage` or `IODataResponseMessage` that also implements `IServiceCollectionProvider`
+
+```csharp
+public class ODataMessage : IODataRequestMessage, IODataResponseMessage, IServiceCollectionProvider
+{
+    // ...
+    public ODataMessage(..., IServiceProvider services)
+    {
+        ServiceProvider = services;
+    }
+    public IServiceProvider ServiceProvider { get; private set; }
+}
+```
+
+Create service collection and add default OData services:
+
+```csharp
+using Microsoft.Extensions.DependencyInjection;
+
+var serviceCollection = new ServiceCollection();
+serviceCollection.AddDefaultODataServices();
+```
+
+Configure custom services:
+
+```csharp
+serviceCollecton.AddSingleton<IJsonWriterFactory>(ODataJsonWriterFactory.Default);
+```
+
+Build service provider:
+
+```csharp
+IServiceProvider services = serviceCollection.BuildServiceProvider();
+```
+
+Add service provider to message writer or reader:
+
+```csharp
+var message = new ODataMessage(..., services);
+var messageWriter = new ODataMessageWriter(message, messageWriterSettings, model);
+```
+
 ### Changed `ODataError` and related classes
 
 The implementation of `ODataError` in OData .NET 7 did not adhere to [OData specification and guidelines](https://github.com/OData/odata.net/issues/1421#issuecomment-1309673556), for example it exposed an `ODataError.ErrorCode` property instead of `ODataError.Code` and other issues.
