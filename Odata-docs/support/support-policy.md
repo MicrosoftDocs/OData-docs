@@ -90,7 +90,7 @@ The libraries are currently in maintenance mode. There are no current plans to e
 
 The libraries support .NET Framework 4.0 and later.
 
-The libraries support OData proctocol versions 1 to 3.
+The libraries support OData protocol versions 1 to 3.
 
 ## AspNetCore OData
 
@@ -116,7 +116,7 @@ This refers to the `Microsoft.AspNet.OData` library which adds OData integration
 | ------------|-------------------|-----------------------|-----------------------|---------------------------|---------------|----------------|
 | 7.x | 7.x | 2018-06-29 | 7.7.6 | 2024-07-12 | Active | TBD |
 
-Microsoft.AspNet.OData 7.x is currently actively support but will enter maintenance mode soon. This version supports .NET Framework 4.5 and later. It supports OData.NET 7.x.
+Microsoft.AspNet.OData 7.x is currently actively supported but will enter maintenance mode soon. This version supports .NET Framework 4.5 and later. It supports OData.NET 7.x.
 
 ## OData ModelBuilder
 
