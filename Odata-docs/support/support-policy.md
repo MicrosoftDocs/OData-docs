@@ -36,8 +36,8 @@ OData.NET libraries in this context refer to `Microsoft.OData.Core`, `Microsoft.
 
 | Version     | Original release date | Latest patch version  | Latest patch release date | Support phase | End of support |
 | ------------|-----------------------|-----------------------|---------------------------|---------------|----------------|
-| 8.x | TBD | 8.0.0-rc.1 | 2024-07-11 | Preview | TBD |
-| 7.x | 2016-08-22 |7.21.3 |2024-06-05 | Active | TBD |
+| 8.x | 2024-08-12 | 8.0.0 | 2024-08-12 | Active | TBD |
+| 7.x | 2016-08-22 |7.21.3 |2024-06-03 | Active | TBD |
 | 6.x | 2013-12-09 | 6.19.0 | 2017-11-14 | Maintenance Mode | 2025-07-15 |
 | 5.x | 2012-11-07 | 5.8.5 | 2021-11-12 | Maintenace Mode | TBD |
 
@@ -98,9 +98,9 @@ This refers to the `Microsoft.AspNetCore.OData`  library which adds OData integr
 
 | Version     | OData.NET version | Original release date | Latest patch version  | Latest patch release date | Support phase | End of support |
 | ------------|-------------------|-----------------------|-----------------------|---------------------------|---------------|----------------|
-| 9.x | 8.x | TBD | 9.0.0-preview-2| 2024-06-05 | Preview | TBD |
+| 9.x | 8.x | TBD | 9.0.0-rc.1 | 2024-06-05 | Preview | TBD |
 | 8.x | 7.x | 2021-07-03 | 8.2.5 |2023-03-01 | Active | TBD |
-| 7.x | 7.x | 2018-06-29 | 7.7.4 | 2024-01-29 | Active | TBD |
+| 7.x | 7.x | 2018-06-29 | 7.7.6 | 2024-07-12 | Active | TBD |
 
 Microsoft.AspNetCore.OData 9.x will be the next major release. This version will only support .NET 8 and later and OData.NET 8 and later.
 
@@ -114,7 +114,7 @@ This refers to the `Microsoft.AspNet.OData` library which adds OData integration
 
 | Version     | OData.NET version | Original release date | Latest patch version  | Latest patch release date | Support phase | End of support |
 | ------------|-------------------|-----------------------|-----------------------|---------------------------|---------------|----------------|
-| 7.x | 7.x | 2018-06-29 | 7.7.4 | 2024-04-01 | Active | TBD |
+| 7.x | 7.x | 2018-06-29 | 7.7.6 | 2024-07-12 | Active | TBD |
 
 Microsoft.AspNet.OData 7.x is currently actively support but will enter maintenance mode soon. This version supports .NET Framework 4.5 and later. It supports OData.NET 7.x.
 
