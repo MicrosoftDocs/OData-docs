@@ -274,7 +274,7 @@ writerSettings.ShouldIncludeAnnotation == (name) => name.StartsWith("important."
 
 In OData .NET 7, when `ODataBinaryStreamValue` class is initialized using the `ODataBinaryStreamValue(Stream)` constructor, the stream is left open by default upon the object being disposed.
 
-In OData .NET 8, the stream is closed by default when the object objects is disposed. `The ODataBinaryStreamValue(Stream, bool)` constructor overload may be used when leaving the stream open is intended.
+In OData .NET 8, the stream is closed by default when the object is disposed. `The ODataBinaryStreamValue(Stream, bool)` constructor overload may be used when leaving the stream open is intended.
 
 ### Added `INavigationSourceSegment` interface
 
