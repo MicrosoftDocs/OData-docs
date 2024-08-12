@@ -244,6 +244,10 @@
       href: /odata/webapi/odata-security
   - name: ODataLib
     items:
+    - name: What's new
+      items:
+        - name: What's new in OData .NET 8
+          href: /odata/odatalib/whats-new/odatalib-8
     - name: Core lib
       items:
         - name: Write OData payload
@@ -502,6 +506,8 @@
         items:
           - name: OData Migration extension usage and architecture
             href: /odata/extensions/migration
+  - name: Support policy
+    href: /odata/support/support-policy
 - name: Resources
   items:
     - name: Tools
