@@ -259,7 +259,7 @@ OData .NET 8 exposes a single factory interface, `IJsonWriterFactory` which acce
 In OData .NET 7, custom instance annotations would not be included in the written output if they were not inluded in the `@odata.include-annotations` preference token in preference header.
 However, in some cases, customers want to add custom instance annotations to the payload that should always be written regardless of end-user preference.
 
-In OData .NET 8, we introduced a `ShouldIncludeAnnotation` proeprty to the `ODataMessageWriterSettings` that allows developers to force a custom instance annotation to be written. It works as follows:
+In OData .NET 8, we introduced a `ShouldIncludeAnnotation` property to the `ODataMessageWriterSettings` that allows developers to force a custom instance annotation to be written. It works as follows:
 
 - The property is a `Func<string, bool>` that receives an annotation name and returns true if the annotation should be written
 - If the writer was going to skip a certain annotation (e.g. because it was not part of the annotations filter), it will check this delegate before skipping the annotation. If the delegate returns `true`, then the annotation will not be skipped.
