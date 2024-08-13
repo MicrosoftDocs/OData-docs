@@ -6,6 +6,7 @@
           "**/*.{md,yml}"
         ],
         "exclude": [
+          "odatalib/**/*",
           "webapi/v6/*",
           "client/v6/*"
         ]
@@ -30,6 +31,13 @@
         ],
         "src": "odatalib/v7/edm",
         "dest": "odatalib/edm"
+      },
+      {
+        "files": [
+          "*.{md,yml}"
+        ],
+        "src": "odatalib/release-notes",
+        "dest": "odatalib/release-notes"
       },
       {
         "files": [
