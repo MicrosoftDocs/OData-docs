@@ -6,7 +6,6 @@
           "**/*.{md,yml}"
         ],
         "exclude": [
-          "odatalib/**/*",
           "webapi/v6/*",
           "client/v6/*"
         ]
