@@ -8,10 +8,3 @@ author: habbes
 # OData client v8 supported
 
  ![OData Client V8](/odata/assets/doc-assets/yes.png) OData Client V8
-
-
-## `Microsoft.OData.Core`
-
-### Default JSON writer changed
-
-The

@@ -43,7 +43,7 @@ OData.NET libraries in this context refer to `Microsoft.OData.Core`, `Microsoft.
 
 ### OData.NET 8.x
 
-OData.NET 8 is the next major release of the OData.NET libraries, including `Microsoft.OData.Core` 8, `Microsoft.OData.Edm` 8, `Microsoft.Spatial` 8 and `Microsoft.OData.Client` 8.
+OData.NET 8 is the current major release of the OData.NET libraries, including `Microsoft.OData.Core` 8, `Microsoft.OData.Edm` 8, `Microsoft.Spatial` 8 and `Microsoft.OData.Client` 8.
 These libraries will only support .NET 8 and later.
 
 OData.NET 8 will support the following OData protocal versions:

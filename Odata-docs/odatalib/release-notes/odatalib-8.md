@@ -2,13 +2,14 @@
 title:  "What's new in OData .NET 8"
 description: Get an overview of new features and changes in OData.NET 8 and guides to help you migrate from OData .NET 7.
 date:   2024-08-05
-ms.date: 08/05/2024
+ms.date: 8/5/2024
 author: habbes
 ms.author: clhabins
 ---
 
 # What's new in OData .NET 8.0
-**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-odatalib-v8.md)] [!INCLUDE[appliesto-webapi](../includes/appliesto-odataclient-v8.md)]
+
+**Applies To**:[!INCLUDE[appliesto-odatalib](../../includes/appliesto-odatalib-v8.md)] [!INCLUDE[appliesto-webapi](../../includes/appliesto-odataclient-v8.md)]
 
 ## Target Framework
 
@@ -31,8 +32,8 @@ This writer has some notable changes in how some values are handled during seria
 
 The default writer in version 8 uses uppercase letters for unicode code points, the default in version 7 uses lowercase letters
 
-- OData.NET v7 default writer: "Cust1 \ud800\udc05 \u00e4"
-- OData .NET v8 default writer: "Cust1 \uD800\uDC05 \u00E4"
+- OData .NET v7 default writer: `"Cust1 \ud800\udc05 \u00e4"`
+- OData .NET v8 default writer: `"Cust1 \uD800\uDC05 \u00E4"`
 
 Both versions are valid and equivalent, compliant clients should handle them the same way.
 

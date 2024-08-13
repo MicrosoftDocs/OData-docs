@@ -36,6 +36,13 @@
         "files": [
           "*.{md,yml}"
         ],
+        "src": "odatalib/release-notes",
+        "dest": "odatalib/release-notes"
+      },
+      {
+        "files": [
+          "*.{md,yml}"
+        ],
         "src": "client/v6",
         "dest": "client"
       },
