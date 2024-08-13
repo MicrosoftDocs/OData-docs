@@ -32,7 +32,7 @@ This writer has some notable changes in how some values are handled during seria
 
 The default writer in version 8 uses uppercase letters for unicode code points, the default in version 7 uses lowercase letters
 
-- OData.NET v7 default writer: `"Cust1 \ud800\udc05 \u00e4"`
+- OData .NET v7 default writer: `"Cust1 \ud800\udc05 \u00e4"`
 - OData .NET v8 default writer: `"Cust1 \uD800\uDC05 \u00E4"`
 
 Both versions are valid and equivalent, compliant clients should handle them the same way.
