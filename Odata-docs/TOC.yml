@@ -248,8 +248,6 @@
       items:
         - name: What's new in OData .NET 8
           href: /odata/odatalib/release-notes/odatalib-8
-    - name: Getting started
-      href: /odata/odatalib/getting-started
     - name: Core lib
       items:
         - name: Write OData payload
