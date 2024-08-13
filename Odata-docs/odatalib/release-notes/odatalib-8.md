@@ -9,7 +9,7 @@ ms.author: clhabins
 
 # What's new in OData .NET 8.0
 
-**Applies To**:[!INCLUDE[appliesto-odatalib](../includes/appliesto-odatalib-v8.md)] [!INCLUDE[appliesto-webapi](../includes/appliesto-odataclient-v8.md)]
+**Applies To**:[!INCLUDE[appliesto-odatalib](../../includes/appliesto-odatalib-v8.md)] [!INCLUDE[appliesto-webapi](../../includes/appliesto-odataclient-v8.md)]
 
 ## Target Framework
 
