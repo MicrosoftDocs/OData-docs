@@ -39,17 +39,10 @@ The preceding code enables OData queries and returns enrollment entities `School
 
 OData `expand` functionality can be used to query related data. For example, to get the *Course* data for each *Enrollment* entity, include `?$expand=course` at the end of the request path:
 
+Use a tool such as [HTTP REPL](/aspnet/core/web-api/http-repl) or [HTTP REPL](/aspnet/core/web-api/http-repl) or [curl](https://curl.haxx.se/) to test the web API:
 This tutorial uses Postman to test the web API.
 
-* Install [Postman](https://www.getpostman.com/apps)
-* Start the web app.
-* Start Postman.
-* Disable **SSL certificate verification**
-  
-  * From  **File > Settings** (**General* tab), disable **SSL certificate verification**.
-    > [!WARNING]
-    > Re-enable SSL certificate verification after testing the controller.
-
+* Start the web app. and the endpoint testing tool.
 * Create a new request.
   * Set the HTTP method to `GET`.
   * Set the request URL to `https://localhost:5001/api/Enrollment/?$expand=course($expand=Department)`. Change the port as necessary.
