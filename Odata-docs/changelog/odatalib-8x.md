@@ -18,6 +18,26 @@ OData lib is loosely used to refer to the following group of OData libraries ava
 
 You can install or update any of the NuGet packages for OData lib using the [Package Manager Console](https://docs.nuget.org/docs/start-here/using-the-package-manager-console).
 
+## [8.0.1](https://github.com/OData/odata.net/releases/tag/8.0.1)
+
+### [Microsoft.OData.Core](https://www.nuget.org/packages/Microsoft.OData.Core/8.0.1)
+
+- Fix error that occurs when you check whether a string or integer literal is in an enum collection in [#3039](https://github.com/OData/odata.net/pull/3039)
+- Fix argument null exception during projection when expanded navigation property is null in [#3038](https://github.com/OData/odata.net/pull/3038)
+
+## [8.0.0](https://github.com/OData/odata.net/releases/tag/8.0.0)
+
+### [Microsoft.OData.Core](https://www.nuget.org/packages/Microsoft.OData.Core/8.0.0)
+
+- Add Microsoft.Extensions.Http dependency in [#3035](https://github.com/OData/odata.net/pull/3035)
+- Replace `IsType` using `IsOf` to align with the OData standard in [#3025](https://github.com/OData/odata.net/pull/3025)
+- Remove obsolete ReadUntypedAsString and address string comparison warnings in [#3024](https://github.com/OData/odata.net/pull/3024)
+- Support enum as integer value (enclosed and not enclosed with single quotes) in `$filter` in [#3018](https://github.com/OData/odata.net/pull/3018)
+- Port E2E tests in [#3017](https://github.com/OData/odata.net/pull/3017), [#3028](https://github.com/OData/odata.net/pull/3028)
+- Support enums as keys in OData client in [#3013](https://github.com/OData/odata.net/pull/3013)
+- Provide async APIs for CsdlWriter and SchemaWriter in [#3006](https://github.com/OData/odata.net/pull/3006)
+- Remove references to ATOM in [#2972](https://github.com/OData/odata.net/pull/2972)
+
 ## [8.0.0-rc.1](https://github.com/OData/odata.net/releases/tag/8.0.0-rc.1)
 
 ### [Microsoft.OData.Core](https://www.nuget.org/packages/Microsoft.OData.Core/8.0.0-rc.1)
