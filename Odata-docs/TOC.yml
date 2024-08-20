@@ -522,12 +522,16 @@
       href: /odata/changelog/odatalib-8x
     - name: OData lib (7.x) changes
       href: /odata/changelog/odatalib-7x
+    - name: ASP.NET Core OData (9.x) changes
+      href: /odata/changelog/aspnetcoreodata-9x
     - name: ASP.NET Core OData (8.x) changes
       href: /odata/changelog/aspnetcoreodata-8x
     - name: WebApi lib (7.x) changes
       href: /odata/changelog/webapi-7x
-    - name: Edm ModelBuilder
+    - name: OData model builder (1.x) changes
       href: /odata/changelog/modelbuilder
+    - name: OData model builder (2x) changes
+      href: /odata/changelog/modelbuilder-2x
     - name: OData extensions changes
       href: /odata/changelog/extensions-1x
     - name: OData ConnectedService changes
