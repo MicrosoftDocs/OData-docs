@@ -3,7 +3,7 @@ title: "OData ModelBuilder cangelog"
 description: "OData ModelBuilder 2.x changelog"
 author: gathogojr
 ms.author: jogathog
-ms.date: 08/20/2020
+ms.date: 8/20/2024
 ms.topic: article
 ---
 

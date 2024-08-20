@@ -3,7 +3,7 @@ title: "ASP.NET Core OData changelog"
 description: AspNetCoreOData 9.x changelog
 author: gathogojr
 ms.author: jogathog
-ms.date: 08/20/2024
+ms.date: 8/20/2024
 ms.topic: article
 ---
 
