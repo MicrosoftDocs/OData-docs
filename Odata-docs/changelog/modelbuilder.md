@@ -7,7 +7,7 @@ ms.date: 09/09/2020
 ms.topic: article
 ---
 
-# OData ModelBuilder changelog
+# OData ModelBuilder 1.x changelog
 
 OData ModelBuilder available on the [Nuget gallery](https://www.nuget.org/packages/Microsoft.OData.ModelBuilder)
 
