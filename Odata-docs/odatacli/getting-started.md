@@ -20,12 +20,12 @@ There are 2 ways to download and install the **OData CLI**
     To install the latest release of the OData CLI [Nuget Package](https://www.nuget.org/packages/Microsoft.OData.Cli/), use the [dotnet tool install](/dotnet/core/tools/dotnet-tool-install) command
 
     ```.NET CLI
-    dotnet tool install --global Microsoft.OData.Cli --version 0.1.0
+    dotnet tool install --global Microsoft.OData.Cli --version 0.3.1
     ```
 
  - Direct Download:
 
-    You can download the binary files from this [GitHub Release](https://github.com/OData/ODataConnectedService/releases/tag/v0.1.0) and use them directly to generate code.
+    You can download the binary files from this [GitHub Release](https://github.com/OData/ODataConnectedService/releases) and use them directly to generate code.
 
 ## Synopsis
 
@@ -56,14 +56,21 @@ It generates strongly typed C# and Visual Basic client code for a specified ODat
 ### Synopsis
 
 ```Console
-odata-cli generate [-h|--help] [-m|--metadata-uri] [-fn|--file-name] [-h|--custom-headers] [-p}--proxy] [-ns|--namespace-prefix] [-ucc|--upper-camel-case] [-i|--internal] [--multiple-files] [-eoi|--excluded-operation-imports] [-ebo|--excluded-bound-operations] [-est|--excluded-schema-types] [-o|--outputdir]
+odata-cli generate [options]
 ```
 
 ### Options 
 
 - `--metadata-uri|-m` 
 
-     The URI of the metadata document. The value must be set to a valid service document URI or a local file path. This is a required option
+   The URI of the metadata document. The value must be set to a
+   valid service document URI or a local file path. Optional if
+   config file is specified. If specified, it will take precedence
+   over the value in config file.
+
+- `--config-file|-c`
+      
+   Path to the OData Connected Service config file.
 
  - `--file-name|-fn`
  
@@ -71,15 +78,19 @@ odata-cli generate [-h|--help] [-m|--metadata-uri] [-fn|--file-name] [-h|--custo
 
  - `--custom-headers|-h`
  
-     Headers that will get sent along with the request when fetching the metadata document from the service. `Format: Header1:HeaderValue, Header2:HeaderValue`. 
+     Headers that will get sent along with the request when fetching the metadata document from the service. `Format: Header1:HeaderValue, Header2:HeaderValue`.
 
  - `--proxy|-p` 
  
-    Proxy settings. `Format: domain\\user:password@SERVER:PORT`. 
+    Proxy settings. `Format: domain\\user:password@SERVER:PORT`.
 
  - `--namespace-prefix|-ns`
  
-    The namespace of the client code generated. Example: NorthWindService.Client or it could be a name related to the OData endpoint that you are generating code for. 
+    The namespace of the client code generated. Example: `NorthWindService.Client` or it could be a name related to the OData endpoint that you are generating code for.
+
+- `--enable-tracking|-et`
+    
+     Enable entity and property tracking.
 
  - `--upper-camel-case|-ucc`
  
@@ -88,6 +99,10 @@ odata-cli generate [-h|--help] [-m|--metadata-uri] [-fn|--file-name] [-h|--custo
  - `--internal|-i`
  
     Applies the `internal` class modifier on generated classes instead of `public` thereby making them invisible outside the assembly. 
+
+- `omit-versioning-info|-vi`
+
+    Omit runtime version and code generation timestamp from the generated files.
 
  - `--multiple-files`
  
