@@ -20,7 +20,7 @@ There are 2 ways to download and install the **OData CLI**
     To install the latest release of the OData CLI [Nuget Package](https://www.nuget.org/packages/Microsoft.OData.Cli/), use the [dotnet tool install](/dotnet/core/tools/dotnet-tool-install) command
 
     ```.NET CLI
-    dotnet tool install --global Microsoft.OData.Cli --version 0.3.1
+    dotnet tool install --global Microsoft.OData.Cli
     ```
 
  - Direct Download:
