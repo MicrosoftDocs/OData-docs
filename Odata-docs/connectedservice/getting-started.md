@@ -25,7 +25,7 @@ In this sample we are going to install the extension and use it to create a samp
 Open Visual Studio 2022 and create a new C# .NET project and call the project `ODataClientExample`.
 
 > [!NOTE]
-> .NET Framework is also support, but you would have to manually install Microsoft.OData.Client 7.x, Microsoft.OData.Core 7.x, Microsoft.OData.Edm 7.x, Microsoft.Spatial 7.x since the latest version of OData core libraries do no support .NET Framework.
+> .NET Framework is also supported, but you would have to manually install Microsoft.OData.Client 7.x, Microsoft.OData.Core 7.x, Microsoft.OData.Edm 7.x, Microsoft.Spatial 7.x since the latest version of OData core libraries do no support .NET Framework.
 
 Install the OData Connected Service extension by going to **Extensions** menu -> **Manage Extensions**. In the Exensions window, search online for "OData Connected Service" and install **OData Connected Service 2022+**.
 
