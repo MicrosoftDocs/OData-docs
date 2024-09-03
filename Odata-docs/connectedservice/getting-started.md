@@ -13,17 +13,23 @@ ms.topic: article
 
 OData Connected Service is a Visual Studio extension that generates strongly-typed C# and Visual Basic client code for a specified OData service. It generates a `DataServiceContext` class to interact with the service and CLR types for each entity type and complex type in the service model.
 
-The extension is available at [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=laylaliu.ODataConnectedService) and supports Visual Studio 2019 and 2017.
+The extension is available at Visual Studio Marketplace:
+
+- [OData Connected Service 2022+](https://marketplace.visualstudio.com/items?itemName=marketplace.ODataConnectedService2022) for Visual Studio 2022
+- [OData Connected Service](https://marketplace.visualstudio.com/items?itemName=marketplace.ODataConnectedService) for Visual Studio 2019 and 2017
 
 ## Creating a sample client application using OData Connected Service
 
 In this sample we are going to install the extension and use it to create a sample client application for the sample [TripPin](https://www.odata.org/blog/trippin-new-odata-v4-sample-service/) OData service.
 
-Open Visual Studio 2019 and create a new C# .Net Core project and call the project `ODataClientExample` (.Net Framework is also supported).
+Open Visual Studio 2022 and create a new C# .NET project and call the project `ODataClientExample`.
 
-Install the OData Connected Service extension by going to **Extensions** menu -> **Manage Extensions**. In the Exensions window, search online for "OData Connected Service" and install it.
+> [!NOTE]
+> .NET Framework is also support, but you would have to manually install Microsoft.OData.Client 7.x, Microsoft.OData.Core 7.x, Microsoft.OData.Edm 7.x, Microsoft.Spatial 7.x since the latest version of OData core libraries do no support .NET Framework.
 
-![OData Connected Service extension](../assets/2020-07-15-OCS-0-10-0-extension-download.png)
+Install the OData Connected Service extension by going to **Extensions** menu -> **Manage Extensions**. In the Exensions window, search online for "OData Connected Service" and install **OData Connected Service 2022+**.
+
+![OData Connected Service extension](../assets/2024-09-03-ocs-vs22-extension.png)
 
 Once installed, right-click your project in the **Solution Explorer** -> **Add** -> **Connected Service**. In the **Connected Services** window that appears, select **OData Connected Service**.
 
@@ -41,6 +47,9 @@ After successful completion, you should see a **Connected Services** section und
 
 ![TripPin Connected Service added to project](../assets/2020-03-06-OCS-added-to-project.png)
 
+> [!NOTE]
+> OData Connected Service installs the latest versions of OData core libraries (i.e. OData.NET) if they are not installed. OData.NET 8 libraries support .NET 8 and later, they do not support older versions of .NET Core or any version of .NET Framework. If your project is targetting any of these .NET versions, then you should manually install Microsoft.Spatial 7.x Microsoft.OData.Edm 7.x, Microsoft.OData.Core 7.x and Microsoft.Client 7.x.
+
 ## Using the generated code
 
 Now let's use the generated classes to implement our application logic. Open your `Program.cs` file and add the following `using` statement at the top:
@@ -51,7 +60,7 @@ using Microsoft.OData.SampleService.Models.TripPin
 
 By default, the OData Connected Service generates the relevant classes in the same namespace defined in the OData metadata document. In this case, it's `Microsoft.OData.SampleService.Models.TripPin`.
 
-Let's create a new method in `Program` class called `ListPeople()` with the following code:
+Let's create a new method in `Program.cs` file called `ListPeople()` with the following code:
 
 ```c#
 async Task ListPeople()
@@ -76,47 +85,28 @@ The `DataServiceQuery<TElement>` class allows you to execute LINQ-enabled querie
 
 The `Person` class is in turn generated based on the `Person` entity in the OData model and contains the properties defined in the model. The generated code also includes enums, classes corresponding to complex types and methods corresponding to bound and unbound functions and actions.
 
-Now let's call the `ListPeople()` method from the `Main` method by adding the following statement in `Main`:
+Now let's call the `ListPeople()` method from the top of the file:
 
 ```c#
-ListPeople().Wait();
-```
-
-Don't forget to add the following using statements as well:
-```c#
-using System.Collections.Generic;
-using System.Threading.Tasks;
+await ListPeople();
 ```
 
 The final code should look like:
 
 ```c#
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Microsoft.OData.SampleService.Models.TripPin;
 
-namespace ODataClientExample
+await ListPeople();
+
+static async Task ListPeople()
 {
-    class Program
+    var serviceRoot = "https://services.odata.org/V4/TripPinServiceRW/";
+    var context = new DefaultContainer(new Uri(serviceRoot));
+
+    IEnumerable<Person> people = await context.People.ExecuteAsync();
+    foreach (var person in people)
     {
-        static void Main(string[] args)
-        {
-            // from c# 7.1 you can use async Main instead
-            ListPeople().Wait();
-        }
-
-        static async Task ListPeople()
-        {
-            var serviceRoot = "https://services.odata.org/V4/TripPinServiceRW/";
-            var context = new DefaultContainer(new Uri(serviceRoot));
-
-            IEnumerable<Person> people = await context.People.ExecuteAsync();
-            foreach (var person in people)
-            {
-                Console.WriteLine("{0} {1}", person.FirstName, person.LastName);
-            }
-        }
+        Console.WriteLine("{0} {1}", person.FirstName, person.LastName);
     }
 }
 ```
