@@ -54,7 +54,7 @@ behaviour of `Utf8JsonWriter` which uses `+00:00` like `2022-11-09T09:42:30+00:0
 You can change the JSON writer used by `ODataMessageWriter` and by injecting an implementation of `IJsonWriterFactory` to the service provider attached to the `IODataRequestMessage` or `IODataResponseMessage`. The implementation that corresponds to the old default writer is called `ODataJsonWriterFactory`:
 
 ```csharp
-services.AddService<IJsonWriterFactory>(ODataJsonWriterFactory.Default);
+services.AddSingleton<IJsonWriterFactory>(new ODataJsonWriterFactory());
 ```
 
 #### Changing `JavaScriptEncoder`
@@ -63,7 +63,7 @@ If you want to change which characters are escaped or encoded you can change the
 and specifying the instance of `JavaScriptEncoder` to be used:
 
 ```csharp
-services.AddService<IJsonWriterFactory>(new ODataUtf8JsonWriterFactory(JavaScriptEncoder.Default));
+services.AddSingleton<IJsonWriterFactory>(new ODataUtf8JsonWriterFactory(JavaScriptEncoder.Default));
 ```
 
 ### Changed `ODataResource.Properties` property type
