@@ -18,6 +18,17 @@ OData lib is loosely used to refer to the following group of OData libraries ava
 
 You can install or update any of the NuGet packages for OData lib using the [Package Manager Console](https://docs.nuget.org/docs/start-here/using-the-package-manager-console).
 
+## [8.0.2](https://github.com/OData/odata.net/releases/tag/8.0.2)
+
+### [Microsoft.OData.Core](https://www.nuget.org/packages/Microsoft.OData.Core/8.0.2)
+
+- Support type cast in group in [#3041](https://github.com/OData/odata.net/pull/3041)
+- Update message writer and reader to ignore Message info from DI [#3058](https://github.com/OData/odata.net/pull/3058)
+- Add support for "Any" and Predicates method call expressions in [#3061](https://github.com/OData/odata.net/pull/3061)
+- Isolate scoped settings in default OData services in [#3071](https://github.com/OData/odata.net/pull/3071)
+- Port E2E tests to 8.0 in [#3042](https://github.com/OData/odata.net/pull/3042), [#3046](https://github.com/OData/odata.net/pull/3046), [#3048](https://github.com/OData/odata.net/pull/3048)
+- Add ODataPathInfo tests by @gathogojr in [#3053](https://github.com/OData/odata.net/pull/3053)
+
 ## [8.0.1](https://github.com/OData/odata.net/releases/tag/8.0.1)
 
 ### [Microsoft.OData.Core](https://www.nuget.org/packages/Microsoft.OData.Core/8.0.1)
