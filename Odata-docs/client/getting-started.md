@@ -141,5 +141,5 @@ And when you run it, you should see the following output:
 
 As you can see, the OData Connected Service generates C# classes corresponding to your specific OData service and uses the underlying OData client library to serialize and deserialize to and from JSON, saving you a lot of work.
 
-In this tutorial you have learned how to use the OData Connected Service to generate client code to interact with a specific OData service. To learn more about using the client to read and write to the service, check out the [Basic CRUD Operations](/odata/client/v7/basic-crud-operations) tutorial.
+In this tutorial you have learned how to use the OData Connected Service to generate client code to interact with a specific OData service. To learn more about using the client to read and write to the service, check out the [Basic CRUD Operations](/odata/client/basic-crud-operations) tutorial.
 For more information on using the OData Connected Service, checkout [OData Connected Service](/odata/connectedservice/getting-started) tutorial.
