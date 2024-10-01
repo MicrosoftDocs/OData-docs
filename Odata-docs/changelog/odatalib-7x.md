@@ -28,6 +28,19 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
+## ODataLib 7.21.4 Release
+
+*** Improvements***
+* Support enums as keys in OData Client in [#3013](https://github.com/OData/odata.net/pull/3013)
+* Provide async APIs for CsdlWriter and SchemaWriter in [#3060](https://github.com/OData/odata.net/pull/3060)
+
+*** Fixed Bugs***
+* Remove hardcoded 'Fred' from EdmModel_Validator_Semantic_TypeMismatchRelationshipConstraint error message in [#2993](https://github.com/OData/odata.net/pull/2993)
+* Fix async wrapper over sync API in reading nested property info in [#2995](https://github.com/OData/odata.net/pull/2995)
+* Allow $filtering with enum integer value in squote and without squote in [#3014](https://github.com/OData/odata.net/pull/3014)
+* Fix for error that occurs when you check whether a string or integer literal is in an enum collection in [#3023](https://github.com/OData/odata.net/pull/3023)
+* Update message writer and reader to ignore Message info from DI in [#3072](https://github.com/OData/odata.net/pull/3072)
+
 ## ODataLib 7.17.0 Release
 
 ***Features***
