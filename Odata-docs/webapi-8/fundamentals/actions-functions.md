@@ -136,7 +136,7 @@ private static IEdmModel GetEdmModel()
 ## Bound Function
 Bound functions can be bound to an entity type or a collection of entity type.
 In our example model above, the bound function can be bound to a single book or a collection of books.
-We will demonstrated how to add a function that is bound to a collection.
+We will demonstrate how to add a function that is bound to a collection.
 
 In the Edm Model, we modify the code as follows.
 
