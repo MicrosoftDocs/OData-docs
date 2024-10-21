@@ -367,9 +367,6 @@ GET http://localhost:5000/odata/Customers
 **Response**:
 
 ```json
-**Response**:
-
-```json
 {
     "@odata.context": "http://localhost:5000/odata/$metadata#Customers",
     "value": [
