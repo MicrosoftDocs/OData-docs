@@ -312,7 +312,7 @@ In the controller, we add a contructor that accepts a `BasicCrudDbContext` param
 We will add controller actions to this controller progressively to support different CRUD operations.
 
 > [!IMPORTANT]
-> If you've made changes to the code, make sure that the controller's name matches the entity set's name registered in the entity data model (e. g. modelBuilder.EntitySet<Customer>("**Customers**") matches **Customers**Controller).
+> If you've made changes to the code, make sure that the controller's name matches the entity set's name registered in the entity data model (e. g. modelBuilder.EntitySet\<Customer>("**Customers**") matches **Customers**Controller).
 > Failing to do so will result in the controller's endpoints aren't registered properly.
 > As a workaround you could specify manually a method and a route for every endpoint in the controller.
 > More info [here](/odata/webapi/built-in-routing-conventions#built-in-routing-conventions-1).
