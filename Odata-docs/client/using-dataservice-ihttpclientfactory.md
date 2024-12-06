@@ -2,7 +2,7 @@
 title: "Using DataserviceContext IHttpClientFactory in Microsoft.OData.Client"
 description: "This tutorial provides guidance on using IHttpClientFactory with OData Client in a .NET application."
 
-author: WanjohiSammy
+author: Wanjohi Sammy
 ms.author: swanjohi
 ms.date: 11/29/2024
 ms.topic: article
