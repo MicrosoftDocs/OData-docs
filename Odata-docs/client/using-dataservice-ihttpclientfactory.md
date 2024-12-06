@@ -1,6 +1,6 @@
 ---
-title: "Using DataserviceContext IHttpClientFactory in Microsoft.OData.Client"
-description: "This tutorial provides guidance on using IHttpClientFactory with OData Client in a .NET application."
+title: "Configuring HttpClient with IHttpClientFactory in Microsoft.OData.Client"
+description: "This tutorial provides guidance on configuring HttpClient with IHttpClientFactory in OData.NET 8"
 
 author: Wanjohi Sammy
 ms.author: swanjohi
