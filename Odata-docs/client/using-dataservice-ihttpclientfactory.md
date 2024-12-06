@@ -2,7 +2,7 @@
 title: "Configuring HttpClient with IHttpClientFactory in Microsoft.OData.Client"
 description: "This tutorial provides guidance on configuring HttpClient with IHttpClientFactory in OData.NET 8"
 
-author: Wanjohi Sammy
+author: WanjohiSammy
 ms.author: swanjohi
 ms.date: 11/29/2024
 ms.topic: article
