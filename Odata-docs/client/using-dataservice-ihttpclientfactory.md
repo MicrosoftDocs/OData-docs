@@ -12,22 +12,22 @@ ms.topic: article
 
 This feature was introduced in [OData.NET 8](/odata/odatalib/release-notes/odatalib-8#added-support-for-ihttpclientfactory).
 
-`Microsoft.OData.Client` uses `HttpClient` by default, but this document will guide you on how to configure `HttpClient` by providing settings like timeouts and custom handlers using `IHttpClientFactory`.
+`Microsoft.OData.Client` uses [`HttpClient`](/dotnet/api/system.net.http.httpclient) by default, but this document will guide you on how to configure `HttpClient` by providing settings like timeouts and custom handlers using `IHttpClientFactory`.
 
 ## Why Use IHttpClientFactory?
 
 [`IHttpClientFactory`](/dotnet/core/extensions/httpclient-factory) is a feature in .NET Core that helps you manage `HttpClient` instances. Here are some benefits:
-- **Automatic Management**: It handles the lifecycle of HttpClient instances, preventing issues like socket exhaustion.
+- **Automatic Management**: It handles the lifecycle of `HttpClient` instances, preventing issues like socket exhaustion.
 - **Configuration**: You can set up policies like retries and timeouts.
 - **Dependency Injection**: It integrates with .NET Core's DI system, making it easy to use in your services.
 
 ## Getting Started
 
-To customize **HttpClient** with `Microsoft.OData.Client`, you can use the `HttpClientFactory` property of `DataServiceContext`. This lets you inject your custom HttpClient instance.
+To customize **`HttpClient`** with `Microsoft.OData.Client`, you can use the `HttpClientFactory` property of `DataServiceContext`. This lets you inject your custom `HttpClient` instance.
 
 ### 1. Using Dependency Injection
 
-You can use the [`IHttpClientFactory with .NET`](/dotnet/core/extensions/dependency-injection) to configure and inject HttpClient instances. 
+You can use the [`IHttpClientFactory with .NET`](/dotnet/core/extensions/dependency-injection) to configure and inject `HttpClient` instances. 
 
 > **Note that we use an `empty string` here since `OData Client` does not detect `named clients`.**
 Here's how:
@@ -51,7 +51,7 @@ var context = new Container(new Uri("{Your endpoint here. For example, https://l
 
 ### 2. Create a Custom HttpClientFactory
 
-Alternatively, you can create a custom HttpClientFactory:
+Alternatively, you can create a custom `HttpClientFactory`:
 
 ```cs
 public class CustomHttpClientFactory : IHttpClientFactory
@@ -70,7 +70,7 @@ public class CustomHttpClientFactory : IHttpClientFactory
 }
 ```
 
-Next, create an HttpClient instance and set the timeout:
+Next, create an `HttpClient` instance and set the timeout:
 
 ```cs
 var httpClient = new HttpClient
@@ -89,10 +89,10 @@ var context = new Container(new Uri("{Your endpoint here. For example, https://l
 ## Additional Resources
 
 For more details, check out:
-- [Added support for IHttpClientFactory in OData.NET 8](/odata/odatalib/release-notes/odatalib-8#added-support-for-ihttpclientfactory)
-- [Use HttpClient in OData.NET 7 Client](/odata/client/using-httpclient)
+- [Added support for `IHttpClientFactory` in `OData.NET 8`](/odata/odatalib/release-notes/odatalib-8#added-support-for-ihttpclientfactory)
+- [Use `HttpClient` in OData.NET 7 Client](/odata/client/using-httpclient)
 
 ## Conclusion
-Using IHttpClientFactory with Microsoft.OData.Client makes managing HttpClient instances easier and more efficient. Whether you create a custom HttpClientFactory or use the DI system, integrating HttpClient with your OData client is straightforward.
+Using `IHttpClientFactory` with `Microsoft.OData.Client` makes managing and customizing `HttpClient` instances easier. Whether you create a custom `HttpClientFactory` or use the DI system, integrating `HttpClient` with your OData client is straightforward.
 
 Happy coding!
