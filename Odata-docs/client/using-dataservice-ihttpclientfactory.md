@@ -30,6 +30,7 @@ To customize **`HttpClient`** with `Microsoft.OData.Client`, you can use the `Ht
 You can use the [`IHttpClientFactory with .NET`](/dotnet/core/extensions/dependency-injection) to configure and inject `HttpClient` instances. 
 
 > **Note that we use an `empty string` here since `OData Client` does not detect `named clients`.**
+
 Here's how:
 
 ```cs
@@ -89,7 +90,7 @@ var context = new Container(new Uri("{Your endpoint here. For example, https://l
 ## Additional Resources
 
 For more details, check out:
-- [Added support for `IHttpClientFactory` in `OData.NET 8`](/odata/odatalib/release-notes/odatalib-8#added-support-for-ihttpclientfactory)
+- [Added support for `IHttpClientFactory` in OData.NET 8](/odata/odatalib/release-notes/odatalib-8#added-support-for-ihttpclientfactory)
 - [Use `HttpClient` in OData.NET 7 Client](/odata/client/using-httpclient)
 
 ## Conclusion
