@@ -69,7 +69,7 @@ Now, you can issue a request:
 
 ```html
 
-GET https://~/odata/Customers(StringKey='my',DateKey=2016-05-11,GuidKey=46538EC2-E497-4DFE-A039-1C22F0999D6C)
+GET https://~/odata/Customers(StringProp='my',DateProp=2016-05-11,GuidProp=46538EC2-E497-4DFE-A039-1C22F0999D6C)
 
 ```
 
