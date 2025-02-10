@@ -223,7 +223,7 @@ But since we can't change the internal batch URI to the load balancer URI, we in
 ### Relative URIs in Batch Queries
 We can pass the `SaveChangesOptions.UseRelativeUri` option along with other batch options to `ExecuteBatch` method as follows.
 
-```csharp
+```
 var batchResponse = dsc.ExecuteBatch(SaveChangesOptions.BatchWithIndependentOperations | SaveChangesOptions.UseRelativeUri, peopleQuery, airlinesQuery);
 ```
 The same options apply to `ExecuteBatchAsync` method.
@@ -281,12 +281,12 @@ Key attributes for a Json batch request are as follows:
 In OData Client, we achieve Json batching by passing `SaveChangesOption.UseJsonBatch` flag when calling `SaveChanges` or `ExecuteBatch` methods.
 
 In `ExecuteBatch`
-```csharp
+```
 var batchResponse = dsc.ExecuteBatch(SaveChangesOptions.BatchWithIndependentOperations | SaveChangesOptions.UseJsonBatch, peopleQuery, airlinesQuery);
 ```
 
 In `SaveChanges`
-```csharp
+```
 dsc.SaveChanges(SaveChangesOptions.BatchWithSingleChangeset | SaveChangesOptions.UseJsonBatch);
 ```
 

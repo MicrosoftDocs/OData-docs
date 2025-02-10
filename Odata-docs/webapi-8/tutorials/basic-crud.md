@@ -284,9 +284,6 @@ In addition, we're also registering the database context as a service with the [
 The other thing that we are doing is to seed our database with some data by calling `SeedDb` method from our `BasicCrudDbHelper` class. We resolve the `BasicCrudDbContext` service from the DI container and pass it to the `SeedDb` method. There will be only one instance of `BasicCrudDbContext` in the [lifetime of the application](/aspnet/core/fundamentals/dependency-injection#entity-framework-contexts).
 
 ## Add an OData controller
-
-In this tutorial, we are going to use conventional routing. OData's conventional routing takes advantage of naming and structural conventions. For example, if you define an entity set named `Customers`, the framework expects to find a controller named `CustomersController` to handle requests to that endpoint. Once the framework determines which controller should handle the request, it further applies method conventions. For example, `HTTP` `GET` requests are mapped to methods like `Get()` or `Get([key])` in the controller. Similarly, `HTTP` `POST`, `PUT`, `PATCH`, and `DELETE` requests are routed to their corresponding methods. To learn more about OData routing, visit the [routing overview](/odata/webapi-8/fundamentals/routing-overview#odata-routing) tutorial.
-
 Add a folder named **Controllers** and then add the following C# class.
 ```csharp
 namespace BasicCrud.Controllers
