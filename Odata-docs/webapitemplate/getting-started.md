@@ -91,7 +91,7 @@ Create a new project using the template:
     Build and run the application. Navigate to the `{Your-project-name}.http` to test some endpoints provided there.
     ![{Your-project-name}.http](../assets/2025-03-17-your-project-name_http.png)
 
-## Feedback
+## Conclusion
 
 We value your feedback! Please report any issues or suggestions on our [GitHub repository](https://github.com/OData/ODataDotNetTemplate).
 
