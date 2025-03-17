@@ -1,5 +1,5 @@
 ---
-title : "Getting Started"
+title : "Getting Started with OData ASP.NET Core WebAPI Template Pack" 
 description: "This article introduces the OData ASP.NET Core WebAPI Template Pack, a tool designed to simplify the initial setup of OData-enabled ASP.NET Core WebAPI projects."
 
 author: WanjohiSammy
