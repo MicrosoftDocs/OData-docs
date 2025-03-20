@@ -73,8 +73,6 @@ If an app requires many distinct uses of OData client proxy, each with a differe
 services.AddODataClient("TripPin")
     .ConfigureODataClient(dsc =>
     {
-        dsc.BaseUri = new Uri("https://services.odata.org/v4/(S(lqbvtwide0ngdev54adgc0lu))/TripPinServiceRW/");
-
         // Github API versioning
         dsc.Configurations.Properties.Add("User-Agent", "ODataClientFactory-Sample"));
     });
@@ -99,7 +97,8 @@ public class PeopleController : ODataController
     [EnableQuery]
     public IEnumerable<Person> Get()
     {
-        var client = _clientFactory.CreateClient<DefaultContainer>("TripPin");
+        var baseUri = new Uri("https://services.odata.org/v4/(S(lqbvtwide0ngdev54adgc0lu))/TripPinServiceRW/");
+        var client = _clientFactory.CreateClient<DefaultContainer>(baseUri, "TripPin");
         var people = client.People.Execute();
         return people;
     }
