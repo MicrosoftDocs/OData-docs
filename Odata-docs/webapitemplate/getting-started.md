@@ -8,9 +8,11 @@ ms.date: 3/17/2025
 ms.topic: article
 ---
 # OData ASP.NET Core WebAPI Template Pack Release
-**Applies To**:[!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v8.md)]
 
-We are excited to announce the first public preview release of the OData ASP.NET Core WebAPI Template Pack. This template helps you create an ASP.NET Core WebAPI project with OData support, providing a streamlined setup for .NET 6.0 and above. The following preview release is now available on NuGet:
+**Applies To**: [!INCLUDE[appliesto-webapi](../includes/appliesto-webapi-v8.md)]
+
+The OData ASP.NET Core WebAPI Template Pack simplifies the creation of OData-enabled ASP.NET Core WebAPI projects. This template supports .NET 8.0 and above, providing a streamlined setup experience. The following preview release is now available on NuGet:
+
 - [`Microsoft.OData.WebApiTemplate/1.0.0-preview.1`](https://www.nuget.org/packages/Microsoft.OData.WebApiTemplate/1.0.0-preview.1)
 
 ## Key Features
