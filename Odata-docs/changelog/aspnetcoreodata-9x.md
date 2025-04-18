@@ -15,6 +15,10 @@ You can install or update the NuGet package for ASP.NET Core OData using the [Pa
 
 ---
 
+## [9.3.0](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/9.3.0)
+
+See details at: https://github.com/OData/AspNetCoreOData/releases/tag/9.3.0
+
 ## [9.2.1](https://www.nuget.org/packages/Microsoft.AspNetCore.OData/9.2.1)
 
 See details at: https://github.com/OData/AspNetCoreOData/releases/tag/9.2.1
