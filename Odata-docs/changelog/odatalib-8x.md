@@ -18,6 +18,101 @@ OData lib is loosely used to refer to the following group of OData libraries ava
 
 You can install or update any of the NuGet packages for OData lib using the [Package Manager Console](https://docs.nuget.org/docs/start-here/using-the-package-manager-console).
 
+## [8.2.4](https://github.com/OData/odata.net/releases/tag/8.2.4)
+
+### [Microsoft.OData.Core](https://www.nuget.org/packages/Microsoft.OData.Core/8.2.4)
+
+- Optimize ODataNullValue allocations with singleton implementation [#3284](https://github.com/OData/odata.net/pull/3284)
+- Handle null segment type when validating URL [#3276](https://github.com/OData/odata.net/pull/3276)
+- Avoid redundant verifications when appending new resource properties [#3269](https://github.com/OData/odata.net/pull/3269)
+- Allow filtering models using `Contains` with `Enum` collections [#3253](https://github.com/OData/odata.net/pull/3253)
+- Update `.NET 9.0` Public API [#3271](https://github.com/OData/odata.net/pull/3271)
+- Enable `$root` path [#3157](https://github.com/OData/odata.net/pull/3157)
+- Resolve `FormatException` when generating strings using `Error.Format` or `string.Format` [#3241](https://github.com/OData/odata.net/pull/3241)
+- Enable serialization/deserialization of navigation properties with `count` and no content [#3155](https://github.com/OData/odata.net/pull/3155)
+- Update build pipeline and PR template to reflect CI build instructions [#3243](https://github.com/OData/odata.net/pull/3243)
+- Set `ElementTypeReference` from current navigation property [#3239](https://github.com/OData/odata.net/pull/3239)
+- `FunctionCallBinder` returns `SingleValueFunctionCallNode` for complex types [#3234](https://github.com/OData/odata.net/pull/3234)
+- Support `Average` aggregation method for `Int16` in `UriParser` [#3168](https://github.com/OData/odata.net/pull/3168)
+- Remove vulnerable and unused assemblies [#3211](https://github.com/OData/odata.net/pull/3211)
+- Enable `$select=colProperty/$count` query option parsing [#3175](https://github.com/OData/odata.net/pull/3175)
+- Fix `$filter` for collection of dynamic primitive values [#3190](https://github.com/OData/odata.net/pull/3190)
+- Migrate code signing to ESRPv5 [#3184](https://github.com/OData/odata.net/pull/3184)
+- Update NuGet release notes changelog URL [#3179](https://github.com/OData/odata.net/pull/3179)
+- Add `net9.0` support [#3171](https://github.com/OData/odata.net/pull/3171)
+- Add README to `.nuspec` [#3152](https://github.com/OData/odata.net/pull/3152)
+- Replace usage of resource files for error messages [#3146](https://github.com/OData/odata.net/pull/3146)
+- Port E2E tests to 8.0 in [#3042](https://github.com/OData/odata.net/pull/3042), [#3046](https://github.com/OData/odata.net/pull/3046), [#3048](https://github.com/OData/odata.net/pull/3048), [#3251](https://github.com/OData/odata.net/pull/3251), [#3223](https://github.com/OData/odata.net/pull/3223), [#3231](https://github.com/OData/odata.net/pull/3231), [#3225](https://github.com/OData/odata.net/pull/3225), [#3220](https://github.com/OData/odata.net/pull/3220), [#3210](https://github.com/OData/odata.net/pull/3210), [#3208](https://github.com/OData/odata.net/pull/3208), [#3202](https://github.com/OData/odata.net/pull/3202), [#3203](https://github.com/OData/odata.net/pull/3203), [#3164](https://github.com/OData/odata.net/pull/3164), [#3195](https://github.com/OData/odata.net/pull/3195), [#3194](https://github.com/OData/odata.net/pull/3194), [#3187](https://github.com/OData/odata.net/pull/3187), [#3180](https://github.com/OData/odata.net/pull/3180), [#3177](https://github.com/OData/odata.net/pull/3177), [#3176](https://github.com/OData/odata.net/pull/3176), [#3163](https://github.com/OData/odata.net/pull/3163), [#3169](https://github.com/OData/odata.net/pull/3169), [#3161](https://github.com/OData/odata.net/pull/3161), [#3160](https://github.com/OData/odata.net/pull/3160), [#3159](https://github.com/OData/odata.net/pull/3159), [#3172](https://github.com/OData/odata.net/pull/3172), [#3167](https://github.com/OData/odata.net/pull/3167), [#3156](https://github.com/OData/odata.net/pull/3156)
+
+### [Microsoft.OData.Edm](https://www.nuget.org/packages/Microsoft.OData.Edm/8.2.4)
+- Fix `IEdmModel.GetTargetPath` type cast error for properties named `Geography` [#3218](https://github.com/OData/odata.net/pull/3218)
+- Fix endless loop when `Schema` tag has no correct `xmlns` value [#3192](https://github.com/OData/odata.net/pull/3192)
+
+### [Microsoft.OData.Client](https://www.nuget.org/packages/Microsoft.OData.Client/8.2.4)
+- Track `DependsOnIds` when `UseJsonBatch` flag is applied to batch requests [#3272](https://github.com/OData/odata.net/pull/3272)
+
+## [8.2.3](https://github.com/OData/odata.net/releases/tag/8.2.3)
+
+### [Microsoft.OData.Core](https://www.nuget.org/packages/Microsoft.OData.Core/8.2.3)
+
+- Remove `#if NETCOREAPP` directives after migrating to .NET 8 [#3128](https://github.com/OData/odata.net/pull/3128)
+- Update package metadata to address security vulnerability [#3129](https://github.com/OData/odata.net/pull/3129)
+- Allow responses without an associated entity set [#3137](https://github.com/OData/odata.net/pull/3137)
+- Include README in NuGet package [#3143](https://github.com/OData/odata.net/pull/3143)
+- Fix `ArgumentNullException` for `$filter=property in ['']` expression [#3122](https://github.com/OData/odata.net/pull/3122)
+- Support parameter aliases in key segments [3278](https://github.com/OData/odata.net/pull/3278)
+- General code cleanup [#3142](https://github.com/OData/odata.net/pull/3142)
+  - Remove backup files
+  - Remove outdated .NET Core-related code
+  - Add `Microsoft.CodeAnalysis.NetAnalyzers` for static code analysis
+
+### [Microsoft.OData.Client](https://www.nuget.org/packages/Microsoft.OData.Client/8.2.3)
+- Add `DependsOnId` parameter in `AddRelatedObject` API [#3079](https://github.com/OData/odata.net/pull/3079)
+- Mark `Timeout` property as obsolete and recommend using `IHttpClientFactory` [#3135](https://github.com/OData/odata.net/pull/3135)
+
+## [8.2.2](https://github.com/OData/odata.net/releases/tag/8.2.2)
+
+### [Microsoft.OData.Core](https://www.nuget.org/packages/Microsoft.OData.Core/8.2.2)
+- Continue replacing substring in `HttpHeaderValueLexer` to resolve parsing issue [#3097](https://github.com/OData/odata.net/pull/3097)
+- Throw exception when an undefined enum member is used with the `in` operator [#3125](https://github.com/OData/odata.net/pull/3125)
+- Revert fix for `isof` with unquoted type parameters due to regression [#3126](https://github.com/OData/odata.net/pull/3126)
+
+### [Microsoft.OData.Edm](https://www.nuget.org/packages/Microsoft.OData.Edm/8.2.2)
+- Fix line number reporting when parsing CSDL with multi-line reference elements [#3118](https://github.com/OData/odata.net/pull/3118)
+- Prevent `StackOverflowException` when retrieving navigation partners in large CSDL models [#3121](https://github.com/OData/odata.net/pull/3121)
+
+## [8.2.1](https://github.com/OData/odata.net/releases/tag/8.2.1)
+
+### [Microsoft.OData.Edm](https://www.nuget.org/packages/Microsoft.OData.Edm/8.2.1)
+
+- Report accurate line numbers for multi-line elements in payloads [#3115](https://github.com/OData/odata.net/pull/3115)
+
+## [8.2.0](https://github.com/OData/odata.net/releases/tag/8.2.0)
+
+### [Microsoft.OData.Core](https://www.nuget.org/packages/Microsoft.OData.Core/8.2.0)
+
+- Add writer validation tests for failure scenarios [#3083](https://github.com/OData/odata.net/pull/3083)
+- Optimize string handling by replacing `new string(...)` with `ReadOnlySpan<char>` [#3077](https://github.com/OData/odata.net/pull/3077)
+- Remove incorrect target framework in NuGet specification [#3096](https://github.com/OData/odata.net/pull/3096)
+- Improve expression support for dynamic properties [#3091](https://github.com/OData/odata.net/pull/3091)
+- Do not force flush when `ODataUtf8JsonWriter` buffer threshold is reached [#3102](https://github.com/OData/odata.net/pull/3102)
+- Fix unquoted type parameters in `isof` expressions [#3108](https://github.com/OData/odata.net/pull/3108)
+
+### [Microsoft.OData.Client](https://www.nuget.org/packages/Microsoft.OData.Client/8.2.0)
+
+- Fix issue where entity with enum key could not be attached to `DataServiceContext` [#3106](https://github.com/OData/odata.net/pull/3106)
+
+## [8.1.0](https://github.com/OData/odata.net/releases/tag/8.1.0)
+
+### [Microsoft.OData.Core](https://www.nuget.org/packages/Microsoft.OData.Core/8.1.0)
+
+- Fix code coverage analysis in test projects [#3074](https://github.com/OData/odata.net/pull/3074)
+- Enable support for `DateOnly` and `TimeOnly` primitives [#3078](https://github.com/OData/odata.net/pull/3078)
+
+### [Microsoft.OData.Edm](https://www.nuget.org/packages/Microsoft.OData.Edm/8.1.0)
+- Fix issue when writing large metadata documents asynchronously [#3081](https://github.com/OData/odata.net/pull/3081)
+- Update Core Vocabulary to include `IsDelta` term [#3087](https://github.com/OData/odata.net/pull/3087)
+
 ## [8.0.2](https://github.com/OData/odata.net/releases/tag/8.0.2)
 
 ### [Microsoft.OData.Core](https://www.nuget.org/packages/Microsoft.OData.Core/8.0.2)
