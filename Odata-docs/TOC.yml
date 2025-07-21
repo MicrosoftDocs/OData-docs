@@ -518,6 +518,8 @@
       href: /odata/resources/roadmap
 - name: Changelog
   items:
+    - name: OData lib (9.x) changes
+      href: /odata/changelog/odatalib-9x
     - name: OData lib (8.x) changes
       href: /odata/changelog/odatalib-8x
     - name: OData lib (7.x) changes
