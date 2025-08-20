@@ -2,7 +2,7 @@
 title: Security Guidance for ASP.NET Core Web API OData
 author: rick-anderson
 description: Describes security issues to consider when exposing a dataset through OData for ASP.NET Core Web API
-ms.author: riande
+ms.author: wpickett
 ms.date: 05/05/2019
 ---
 
