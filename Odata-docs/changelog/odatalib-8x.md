@@ -18,6 +18,14 @@ OData lib is loosely used to refer to the following group of OData libraries ava
 
 You can install or update any of the NuGet packages for OData lib using the [Package Manager Console](https://docs.nuget.org/docs/start-here/using-the-package-manager-console).
 
+## [8.3.0](https://github.com/OData/odata.net/releases/tag/8.3.0)
+
+### [Microsoft.OData.Core](https://www.nuget.org/packages/Microsoft.OData.Core/8.3.0)
+
+- Optimize ODataNullValue allocations with singleton implementation [#3284](https://github.com/OData/odata.net/pull/3284)
+- Support parameter aliases in key segments [#3278](https://github.com/OData/odata.net/pull/3278)
+- Support more kinds of relative context URIs [#3235](https://github.com/OData/odata.net/pull/3235)
+
 ## [8.2.4](https://github.com/OData/odata.net/releases/tag/8.2.4)
 
 ### [Microsoft.OData.Core](https://www.nuget.org/packages/Microsoft.OData.Core/8.2.4)
