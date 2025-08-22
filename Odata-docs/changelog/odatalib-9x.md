@@ -30,5 +30,17 @@ You can install or update any of the NuGet packages for OData lib using the [Pac
 * Fix CSDL type name validation [#3268](https://github.com/OData/odata.net/pull/3268)
 
 ### [Microsoft.OData.Client](https://www.nuget.org/packages/Microsoft.OData.Client/9.0.0-preview.1)
+* Remove support for nullable generic key types [#3261](https://github.com/OData/odata.net/pull/3261)
 * Remove `DataServiceContext.KeyComparisonGeneratesFilterQuery` flag [#3274](https://github.com/OData/odata.net/pull/3274)
 * Avoid unnecessary inclusion of `@odata.type` annotations for declared properties in OData client payloads [#3281](https://github.com/OData/odata.net/pull/3281)
+
+## [9.0.0-preview.2](https://github.com/OData/odata.net/releases/tag/9.0.0-preview.2)
+
+### [Microsoft.OData.Core](https://www.nuget.org/packages/Microsoft.OData.Core/9.0.0-preview.2)
+
+* Register custom URI functions per Edm model [#3322](https://github.com/OData/odata.net/pull/3322)
+* Register custom URI literal parsers and prefixes per Edm model [#3323](https://github.com/OData/odata.net/pull/3323)
+
+### [Microsoft.OData.Client](https://www.nuget.org/packages/Microsoft.OData.Client/9.0.0-preview.2)
+
+* Remove Obsolete DataserviceContext.Timeout property [#3319](https://github.com/OData/odata.net/pull/3319)

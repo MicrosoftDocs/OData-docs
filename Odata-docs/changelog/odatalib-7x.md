@@ -28,6 +28,29 @@ There was a lot of vestigial code left around from the OData v1-3 days that weâ€
 
 Most of our API improvements fall into the category of namespace simplifications or updating verbiage. The single most impactful change that we made was deciding to merge entity type and complex type in ODataLib. We did this because complex type and entity type are becoming more and more similar in the protocol, but we continue to pay overhead to make things work for both of them.
 
+## ODataLib 7.22.0 Release
+
+*** Improvements***
+* Optimize ODataNullValue allocations with singleton implementation [#3285](https://github.com/OData/odata.net/pull/3285)
+
+## ODataLib 7.21.7 Release
+
+*** Improvements***
+* Avoid excessive property verifications when adding resource properties in OData reader [#3267](https://github.com/OData/odata.net/pull/3267)
+* Migrate pipeline to ESRP V5 [#3186](https://github.com/OData/odata.net/pull/3186)
+
+## ODataLib 7.21.6 Release
+
+*** Improvements***
+* Write stream instead of flush [#3101](https://github.com/OData/odata.net/pull/3101)
+* Update status badges [#2990](https://github.com/OData/odata.net/pull/2990)
+
+## ODataLib 7.21.5 Release
+
+*** Improvements***
+* Fix issue of writing huge metadata asynchronously [#3084](https://github.com/OData/odata.net/pull/3084)
+* Fix code coverage analysis [#3062](https://github.com/OData/odata.net/pull/3062)
+
 ## ODataLib 7.21.4 Release
 
 *** Improvements***
