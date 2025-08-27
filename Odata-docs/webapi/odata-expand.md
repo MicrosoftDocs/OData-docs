@@ -2,7 +2,7 @@
 title: "OData Expand"
 author: FIVIL
 description: Using OData expand to query related data
-ms.author: riande
+ms.author: wpickett
 ms.date: 4/5/2019
 ---
 
