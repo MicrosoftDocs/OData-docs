@@ -42,7 +42,7 @@ Most of our API improvements fall into the category of namespace simplifications
 ## ODataLib 7.21.6 Release
 
 *** Improvements***
-* Write stream instead of flush [#3101](https://github.com/OData/odata.net/pull/3101)
+* Decouple write to stream and flushing stream [#3101](https://github.com/OData/odata.net/pull/3101)
 * Update status badges [#2990](https://github.com/OData/odata.net/pull/2990)
 
 ## ODataLib 7.21.5 Release
