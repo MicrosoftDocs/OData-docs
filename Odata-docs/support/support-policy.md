@@ -34,12 +34,12 @@ A major release will go through the following support phases:
 
 OData.NET libraries in this context refer to `Microsoft.OData.Core`, `Microsoft.OData.Edm`, `Microsoft.Spatial` and `Microsoft.OData.Client`.
 
-| Version     | Original release date | Latest patch version  | Latest patch release date | Support phase | End of support |
+| Version     | Original release date | Latest supported patch version  | Latest supported patch release date | Support phase | End of support |
 | ------------|-----------------------|-----------------------|---------------------------|---------------|----------------|
 | 8.x | 2024-08-12 | 8.0.0 | 2024-08-12 | Active | TBD |
 | 7.x | 2016-08-22 |7.21.3 |2024-06-03 | Active | TBD |
 | 6.x | 2013-12-09 | 6.19.0 | 2017-11-14 | Maintenance Mode | 2025-07-15 |
-| 5.x | 2012-11-07 | 5.8.5 | 2021-11-12 | Maintenace Mode | TBD |
+| 5.x | 2012-11-07 | 5.8.4 | 2018-8-14 | Maintenace Mode | TBD |
 
 ### OData.NET 8.x
 
@@ -86,11 +86,15 @@ OData.NET 5.x refers to 5.x versions of the following libraries:
 - Microsoft.Data.Services.Client
 - Microsoft.Data.Services
 
+These libraries support the older OData protocol versions 1 to 3. OData.NET versions 6.x and above support the OASIS and ISO/IEC Standard OData V4.x protocol.
+
 The libraries are currently in maintenance mode. There are no current plans to end support. There will be an official announcements at least 12 months before official support ends.
 
 The libraries support .NET Framework 4.0 and later.
 
-The libraries support OData protocol versions 1 to 3.
+Clients and services using these libraries are encouraged to migrate to version 4.x of the OData protocol with the latest OData.NET libraries. Services that have compatibility requirements with existing OData 3.x clients can use the [Microsoft.OData.Extensions.Migration](https://www.nuget.org/packages/Microsoft.OData.Extensions.Migration) library to continue to support OData V3 requests from their OData V4 endpoints.
+
+Clients and services that require binary compatibility with the OData.NET 5.x libraries should ensure that they are using the latest supported patch version as earlier versions may have security vulnerabilities.
 
 ## AspNetCore OData
 
