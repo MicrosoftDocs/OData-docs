@@ -148,7 +148,7 @@ Currently services Available in Web API OData include:
  - `ODataXXXSerializer` and `ODataXXXDeserializer` whose lifetime are all `Singleton`. But please note that they are ONLY effective when `DefaultODataSerializerProvider` and `DefaultODataDeserializerProvider` are present. Custom serializer and deserializer providers are NOT guaranteed to call those serializers and deserializers from the DI container.
  - `ODataSerializerProvider` and `ODataDeserializerProvider` whose implementation types are `DefaultODataSerializerProvider` and `DefaultODataDeserializerProvider` respectively and lifetime are all `Singleton`. Please note that you might lose all the default serializers and deserializers registered in the DI container if you don't call into the default providers in your own providers.
  - `IAssembliesResolver` whose implementation type is the default one from ASP.NET Web API.
- - `FilterBinder` whose implementation type is `Transient` because each `EnableQueryAttribute` instance will create its own `FilterBinder`. Override it if you want to customize the process of binding a $filter syntax tree.
+ - `FilterBinder` whose implementation type is `Transient` because each `EnableQueryAttribute` instance will create its own `FilterBinder`. Override `IFilterBinder` if you want to customize the process of binding a $filter syntax tree.
  
 #### Services Available in OData Lib
 [Services in OData Lib also can be injected through Web API OData](/odata/odatalib/di-support).
