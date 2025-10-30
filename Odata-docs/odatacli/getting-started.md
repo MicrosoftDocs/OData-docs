@@ -96,11 +96,11 @@ odata-cli generate [options]
  
     Transforms names (class and property names) to upper camel-case so that to better conform with C# naming conventions.
 
- - `--internal|-i`
+ - `--enable-internal|-i`
  
     Applies the `internal` class modifier on generated classes instead of `public` thereby making them invisible outside the assembly. 
 
-- `omit-versioning-info|-vi`
+ - `--omit-versioning-info|-vi`
 
     Omit runtime version and code generation timestamp from the generated files.
 
@@ -127,6 +127,10 @@ odata-cli generate [options]
  - `--outputdir|-o`
  
     Full path to output directory. This could be an empty directory or a directory with a .csproj/.vbproj file. This is a required option.
+
+ - `--service-name|-s`
+ 
+    Human-readable display name of the service instance. If not provided, the default name 'OData Service' is used.
 
 ### Examples
 ```Console
