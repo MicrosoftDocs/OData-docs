@@ -18,6 +18,22 @@ OData lib is loosely used to refer to the following group of OData libraries ava
 
 You can install or update any of the NuGet packages for OData lib using the [Package Manager Console](https://docs.nuget.org/docs/start-here/using-the-package-manager-console).
 
+## [8.4.2](https://github.com/OData/odata.net/releases/tag/8.4.2)
+
+- Remove hard-coded network isolation policies [#3372](https://github.com/OData/odata.net/pull/3372)
+
+### [Microsoft.OData.Core](https://www.nuget.org/packages/Microsoft.OData.Core/8.4.2)
+
+- Aggregate on collection property using custom methods [#3339](https://github.com/OData/odata.net/pull/3339)
+- `UriInvariantInsensitiveIsBaseOf` should preserve double slashes in base URI - RFC 3986 [#3361](https://github.com/OData/odata.net/pull/3361)
+- Reduce memory allocations using `ReadOnlySpan` [#3360](https://github.com/OData/odata.net/pull/3360)
+- Refactor `JsonReader` async paths to reduce GC pressure [#3364](https://github.com/OData/odata.net/pull/3364)
+- Swap `Tuple` with `ValueTuple` [#3369](https://github.com/OData/odata.net/pull/3369)
+- Filter operator "IN" fails to handle empty strings [#3370](https://github.com/OData/odata.net/pull/3370)
+- Fix regression when parsing query option with no = [#3371](https://github.com/OData/odata.net/pull/3371)
+- Introduce non-capturing overloads of `InterceptException` and `InterceptExceptionAsync` in `ODataReaderCore` for improved performance [#3378](https://github.com/OData/odata.net/pull/3378)
+- Refactor `BufferingJsonReader` async paths to reduce GC pressure [#3380](https://github.com/OData/odata.net/pull/3380)
+
 ## [8.4.0](https://github.com/OData/odata.net/releases/tag/8.4.0)
 
 - Upgraded version of Windows used on the build pipelines from 2019 to 2022 [#3320](https://github.com/OData/odata.net/pull/3320)
@@ -30,7 +46,7 @@ You can install or update any of the NuGet packages for OData lib using the [Pac
 - Add support for parsing custom query options when present on the OData URI [#3318](https://github.com/OData/odata.net/pull/3318)
 - Support unencoded slash inside quoted literals such that it's treated as data rather than path segment separators [#3340](https://github.com/OData/odata.net/pull/3340)
 
-### [Microsoft.OData.Core](https://www.nuget.org/packages/Microsoft.OData.Edm/8.4.0)
+### [Microsoft.OData.Edm](https://www.nuget.org/packages/Microsoft.OData.Edm/8.4.0)
 
 - Deprecated `IEdmOperation.ReturnType` [#3330](https://github.com/OData/odata.net/pull/3330)
 
