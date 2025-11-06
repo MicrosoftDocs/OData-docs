@@ -193,4 +193,4 @@ The `GetAddress` matches to `Customers({id})/Address` route template. It's calle
 
 Web API OData team also works to add the third template, that is the dynamic property template. It's planed to ship in next release.
 
-You can refer to [this blog](https://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2) for attribute routing in Web API 2.
+You can refer to [this blog](https://learn.microsoft.com/en-us/aspnet/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2) for attribute routing in Web API 2.
