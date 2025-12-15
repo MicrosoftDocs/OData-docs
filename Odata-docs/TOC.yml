@@ -120,6 +120,8 @@
           items:
             - name: Capabilities vocabulary extensions
               href: /odata/webapi/model-builder-capabilities-vocabulary
+            - name: Revisions vocabulary annotations
+              href: /odata/webapi/model-builder-revisions-capabilities
         - name: Non-convention model builder
           href: /odata/webapi/model-builder-nonconvention
       - name: Routing
