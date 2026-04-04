@@ -45,19 +45,19 @@ So, the controller convention is:  **[entityset name] + "Controller"**, derived 
 
 **Querying Entities**
 
-![queryEntitiesConvention](/odata/assets/03-02-queryEntitiesConvention.png)
+![queryEntitiesConvention](/Odata-docs/assets/03-02-queryEntitiesConvention.png)
 
 **Creating, Updating, and Deleting Entities**
 
-![updateDeleteEntitiesConvention](/odata/assets/03-02-updateDeleteEntitiesConvention.png)
+![updateDeleteEntitiesConvention](/Odata-docs/assets/03-02-updateDeleteEntitiesConvention.png)
 
 **Operation on Navigation Property**
 
-![navigationRoutingConvention](/odata/assets/03-02-navigationRoutingConvention.png)
+![navigationRoutingConvention](/Odata-docs/assets/03-02-navigationRoutingConvention.png)
 
 **Querying, Creating and Deleting Links**
 
-![navigationlinkeConvention](/odata/assets/03-02-navigationlinkeConvention.png)
+![navigationlinkeConvention](/Odata-docs/assets/03-02-navigationlinkeConvention.png)
 
 **Properties**
 
@@ -70,13 +70,13 @@ GET /entityset(key)/cast/property | /Products(1)/Models.Book/Author | GetPropert
 
 **Action** only supports the **POST** request method, and the parameters are sent using the request body. In controller, each action is using an `ODataActionParameters` to accept the parameters' value:
 
-![actionConvention](/odata/assets/03-02-actionConvention.png)
+![actionConvention](/Odata-docs/assets/03-02-actionConvention.png)
 
 **Functions**
 
 **Functions** only supports the **GET** request method.
 
-![functionConvention](/odata/assets/03-02-functionConvention.png)
+![functionConvention](/Odata-docs/assets/03-02-functionConvention.png)
 
 
 **Method Signatures**

@@ -127,4 +127,4 @@ This code adds an **inline** `Edm.Int32` annotation `Sample.NS.Width` targetting
 ### Run the Sample
 Build and run the sample. Then open the **csdl.xml** file under the **output directory**. The content of **csdl.xml** should look like the following:
 
-![image](/odata/assets/2015-04-20-csdl1.png)
+![image](/Odata-docs/assets/2015-04-20-csdl1.png)

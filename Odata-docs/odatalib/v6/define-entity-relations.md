@@ -184,7 +184,7 @@ This code:
 ### Run the Sample
 Build and run the sample. Then open the **csdl.xml** file under the **output directory**. The content of **csdl.xml** should look like the following:
 
-![image](/odata/assets/2015-04-18-csdl.png)
+![image](/Odata-docs/assets/2015-04-18-csdl.png)
 
 ### References
 [[Tutorial & Sample] Containment is Coming with OData V4](https://devblogs.microsoft.com/odata/tutorial-sample-containment-is-coming-with-odata-v4/).

@@ -7,4 +7,4 @@ author: madansr7
 
 # OData client v7 supported
 
- ![OData Client V7](/odata/assets/doc-assets/yes.png) OData Client V7
+ ![OData Client V7](/Odata-docs/assets/doc-assets/yes.png) OData Client V7

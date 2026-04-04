@@ -7,4 +7,4 @@ author: madansr7
 
 # OData client v6 supported
 
- 6![OData Client V^](/odata/assets/doc-assets/yes.png) OData Client V6
+ 6![OData Client V^](/Odata-docs/assets/doc-assets/yes.png) OData Client V6

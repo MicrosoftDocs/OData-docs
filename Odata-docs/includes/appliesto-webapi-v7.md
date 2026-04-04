@@ -6,4 +6,4 @@ author: madansr7
 ms.author: saumadan
 ---
 # OData WebApi v7 for aspnet webapi supported
- ![Green circle with a checkmark inside it.](/odata/assets/doc-assets/yes.png) OData AspNet WebApi V7
+ ![Green circle with a checkmark inside it.](/Odata-docs/assets/doc-assets/yes.png) OData AspNet WebApi V7

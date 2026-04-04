@@ -124,4 +124,4 @@ This code:
 
 Build and run the sample. Then open the **csdl.xml** file under the **output directory**. The content of **csdl.xml** should look like the following:
 
-![image](/odata/assets/2015-04-19-csdl.png)
+![image](/Odata-docs/assets/2015-04-19-csdl.png)
