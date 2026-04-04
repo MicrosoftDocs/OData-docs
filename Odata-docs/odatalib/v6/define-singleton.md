@@ -63,7 +63,7 @@ namespace EdmLibSample
 ### Run the Sample
 Build and run the sample. Then open the **csdl.xml** file under the **output directory**. The content of **csdl.xml** should look like the following:
 
-![image](/odata/assets/2015-04-18-csdl1.png)
+![image](/Odata-docs/assets/2015-04-18-csdl1.png)
 
 ### References
 [[Tutorial & Sample] Use Singleton to define your special entity](https://devblogs.microsoft.com/odata/tutorial-sample-use-singleton-to-define-your-special-entity/).

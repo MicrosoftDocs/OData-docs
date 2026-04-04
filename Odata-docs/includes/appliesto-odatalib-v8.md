@@ -6,4 +6,4 @@ author: habbes
 ---
 # OData core lib v8 supported
 
- ![OData core lib v8 supported](/odata/assets/doc-assets/yes.png) OData Core Lib V8
+ ![OData core lib v8 supported](/Odata-docs/assets/doc-assets/yes.png) OData Core Lib V8

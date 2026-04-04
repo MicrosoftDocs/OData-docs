@@ -6,5 +6,5 @@ author: madansr7
 ---
 # OData WebApi v7.5 for .NET Core
 
- ![OData WebApi v7.5 for dot NET Core](/odata/assets/doc-assets/yes.png) OData AspNetCore WebApi V7.5
+ ![OData WebApi v7.5 for dot NET Core](/Odata-docs/assets/doc-assets/yes.png) OData AspNetCore WebApi V7.5
 

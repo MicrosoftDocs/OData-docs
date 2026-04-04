@@ -26,7 +26,7 @@ In Visual Studio, from the **File** menu, select **New > Project**.
 
 Expand **Installed > Templates > Visual C# > Windows Desktop**, and select the **Console Application** template. Name the project **EdmLibSample**, and click **OK**.
 
-![new project](/odata/assets/2015-04-16-new-project.png)
+![new project](/Odata-docs/assets/2015-04-16-new-project.png)
 
 ## Install the EdmLib package
 
@@ -44,7 +44,7 @@ The `SampleModelBuilder` class is used to build and return an entity data model 
 
 In Solution Explorer, right-click the project **EdmLibSample**. From the context menu, select **Add > Class**. Name the class **SampleModelBuilder**.
 
-![add class](/odata/assets/2015-04-16-add-class.png)
+![add class](/Odata-docs/assets/2015-04-16-add-class.png)
 
 In the **SampleModelBuilder.cs** file, add the following `using` directives to introduce the EDM definitions:
 
@@ -318,11 +318,11 @@ For now, there is no need to understand how the model is written to CSDL. The de
 
 From the **DEBUG** menu, click **Start Debugging** to build and run the sample. The console window should appear and then disappear in a flash.
 
-![debugging](/odata/assets/2015-04-17-debug.png)
+![debugging](/Odata-docs/assets/2015-04-17-debug.png)
 
 Open the **csdl.xml** file under the **output directory** with Internet Explorer (or any other XML viewer you prefer). The content should look similar to the following:
 
-![csdl](/odata/assets/2015-04-17-csdl.png)
+![csdl](/Odata-docs/assets/2015-04-17-csdl.png)
 
 As you can see, the document contains all the elements we have built so far.
 

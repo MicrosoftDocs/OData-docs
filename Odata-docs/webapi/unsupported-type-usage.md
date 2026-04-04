@@ -14,4 +14,4 @@ Web API OData adds supporting for some unsupported types in ODataLib, for exampl
  
 The mapping list for the unsupported types are:
 
-![typemapping](/odata/assets/06-05-typemapping.png)
+![typemapping](/Odata-docs/assets/06-05-typemapping.png)

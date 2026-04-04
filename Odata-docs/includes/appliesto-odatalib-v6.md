@@ -6,5 +6,5 @@ author: madansr7
 ---
 # OData Core lib v6 supported
 
- ![OData Core lib v6 supported](/odata/assets/doc-assets/yes.png) OData Core Lib V6
+ ![OData Core lib v6 supported](/Odata-docs/assets/doc-assets/yes.png) OData Core Lib V6
 

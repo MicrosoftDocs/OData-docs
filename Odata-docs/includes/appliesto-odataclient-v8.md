@@ -7,4 +7,4 @@ author: habbes
 
 # OData client v8 supported
 
- ![OData Client V8](/odata/assets/doc-assets/yes.png) OData Client V8
+ ![OData Client V8](/Odata-docs/assets/doc-assets/yes.png) OData Client V8

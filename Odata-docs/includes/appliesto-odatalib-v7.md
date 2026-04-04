@@ -6,5 +6,5 @@ author: madansr7
 ---
 # OData core lib v7 supported
 
- ![OData core lib v7 supported](/odata/assets/doc-assets/yes.png) OData Core Lib V7
+ ![OData core lib v7 supported](/Odata-docs/assets/doc-assets/yes.png) OData Core Lib V7
 
